@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 import Lenis from "lenis";
 import "lenis/dist/lenis.css";
 
@@ -10,17 +11,18 @@ interface SmoothScrollProps {
 
 export default function SmoothScroll({ children }: SmoothScrollProps) {
   const lenisRef = useRef<Lenis | null>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
-    // Initialize Lenis with luxury deceleration curve matching Integrated Bio
+    // Initialize Lenis with hydrodynamic liquid momentum (fluid water physics)
     const lenis = new Lenis({
-      duration: 1.25,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      lerp: 0.075, // Viscous fluid inertia damping (glides effortlessly like water)
+      wheelMultiplier: 1.02,
+      touchMultiplier: 1.25,
+      smoothWheel: true,
+      syncTouch: true,
       orientation: "vertical",
       gestureOrientation: "vertical",
-      smoothWheel: true,
-      wheelMultiplier: 0.95,
-      touchMultiplier: 1.2,
       infinite: false,
     });
 
@@ -38,7 +40,7 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
 
     rafId = requestAnimationFrame(raf);
 
-    // Smoothly handle all hash anchor clicks (#details, #roadmap, #framework, etc.)
+    // Smoothly handle all hash anchor clicks with fluid wave surge
     const handleAnchorClick = (e: MouseEvent) => {
       const target = (e.target as HTMLElement).closest("a");
       if (!target) return;
@@ -48,9 +50,11 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
         if (targetElement) {
           e.preventDefault();
           lenis.scrollTo(targetElement as HTMLElement, {
-            offset: -70,
-            duration: 1.4,
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            offset: -80,
+            duration: 1.5,
+            // Hydrodynamic fluid wave surge (zero jerk, liquid coast, soft settling)
+            easing: (t) =>
+              t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2,
           });
         }
       }
@@ -64,6 +68,18 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
       lenis.destroy();
     };
   }, []);
+
+  // Smooth liquid reset on route changes across pages
+  useEffect(() => {
+    if (lenisRef.current) {
+      lenisRef.current.scrollTo(0, {
+        immediate: false,
+        duration: 1.2,
+        easing: (t) =>
+          t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2,
+      });
+    }
+  }, [pathname]);
 
   return <>{children}</>;
 }

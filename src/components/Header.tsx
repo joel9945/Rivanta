@@ -15,6 +15,7 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
   const handleOpenPartner = onOpenPartnerModal || modalContext.openPartnerModal;
 
   const [scrolled, setScrolled] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [solutionsDropdownOpen, setSolutionsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -22,6 +23,10 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 40);
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      if (max > 0) {
+        setScrollProgress(Math.min(100, Math.max(0, (window.scrollY / max) * 100)));
+      }
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -78,10 +83,15 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
           {/* Center / Right Floating Navigation Capsule */}
           <div className="pointer-events-auto flex items-center gap-2">
             <nav
-              className={`hidden xl:flex items-center gap-1 bg-white/85 backdrop-blur-xl border border-[#13271e]/8 rounded-xl p-1.5 shadow-sm transition-all duration-300 ${
+              className={`relative hidden xl:flex items-center gap-1 bg-white/85 backdrop-blur-xl border border-[#13271e]/8 rounded-xl p-1.5 shadow-sm transition-all duration-300 overflow-hidden ${
                 scrolled ? "bg-white/95 shadow-md" : ""
               }`}
             >
+              {/* Fluid Liquid Water Flow Indicator on Capsule Edge */}
+              <div
+                className="absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-[#ea6e2d] via-[#e06425] to-[#2d7a54] transition-all duration-150 pointer-events-none rounded-full"
+                style={{ width: `${scrollProgress}%` }}
+              />
               <Link
                 href="/about"
                 className="px-3 py-1.5 rounded-lg text-xs font-mono uppercase tracking-wider text-[#13271e]/80 hover:text-[#13271e] hover:bg-[#13271e]/5 transition-all"
