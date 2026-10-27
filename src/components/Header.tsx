@@ -88,10 +88,8 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
         <div className="max-w-[1300px] mx-auto pointer-events-auto">
           {/* Architectural Borderless Floating Island */}
           <div
-            className={`w-full flex items-center justify-between px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 rounded-full transition-all duration-300 border-0 ${
-              scrolled
-                ? "bg-white/94 backdrop-blur-2xl shadow-[0_16px_40px_-12px_rgba(19,39,30,0.12),0_2px_8px_rgba(19,39,30,0.04)]"
-                : "bg-white/75 backdrop-blur-xl shadow-[0_4px_24px_-4px_rgba(19,39,30,0.06),0_1px_3px_rgba(19,39,30,0.02)]"
+            className={`w-full flex items-center justify-between px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 rounded-full border-0 glass-nav-pill ${
+              scrolled ? "scrolled" : ""
             }`}
           >
             {/* Left Cluster: Brand Lockup + Seamless Desktop Navigation */}
@@ -108,8 +106,7 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
                     alt="RIVANTA - Green Innovative Venture Private Limited"
                     width={230}
                     height={48}
-                    style={{ width: "auto", height: "100%" }}
-                    className="object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+                    className="h-10 sm:h-11 md:h-11.5 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
                     priority
                   />
                 </div>
@@ -152,7 +149,7 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
 
                   {/* Dropdown Menu Panel (Frosted Floating Console, Zero Borders) */}
                   {activeDropdown === "manufacturing" && (
-                    <div className="absolute top-full left-0 mt-2.5 w-84 bg-white/95 backdrop-blur-2xl rounded-3xl shadow-[0_24px_60px_-12px_rgba(19,39,30,0.22),0_8px_24px_rgba(19,39,30,0.06)] p-3.5 animate-in fade-in slide-in-from-top-2 duration-200 z-50 text-left border-0">
+                    <div className="absolute top-full left-0 mt-2.5 w-84 rounded-3xl p-3.5 animate-in fade-in slide-in-from-top-2 duration-200 z-50 text-left border-0 glass-dropdown-panel">
                       <Link
                         href="/green-silicon"
                         onClick={() => setActiveDropdown(null)}
@@ -319,7 +316,7 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
 
                   {/* Dropdown Menu Panel (Frosted Floating Console, Zero Borders) */}
                   {activeDropdown === "company" && (
-                    <div className="absolute top-full left-0 mt-2.5 w-80 bg-white/95 backdrop-blur-2xl rounded-3xl shadow-[0_24px_60px_-12px_rgba(19,39,30,0.22),0_8px_24px_rgba(19,39,30,0.06)] p-3.5 animate-in fade-in slide-in-from-top-2 duration-200 z-50 text-left border-0">
+                    <div className="absolute top-full left-0 mt-2.5 w-80 rounded-3xl p-3.5 animate-in fade-in slide-in-from-top-2 duration-200 z-50 text-left border-0 glass-dropdown-panel">
                       <Link
                         href="/about"
                         onClick={() => setActiveDropdown(null)}
@@ -454,8 +451,7 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
                   alt="RIVANTA - Green Innovative Venture Private Limited"
                   width={230}
                   height={48}
-                  style={{ width: "auto", height: "100%" }}
-                  className="object-contain"
+                  className="h-10 sm:h-11 w-auto object-contain"
                   priority
                 />
               </div>

@@ -130,7 +130,8 @@ export default function Hero({ onExploreVentures }: HeroProps = {}) {
                 className={`object-cover transition-transform duration-[12000ms] ease-out ${
                   activePillar === idx ? "scale-110" : "scale-105"
                 }`}
-                priority={idx === 0}
+                priority
+                loading="eager"
               />
             </div>
           ))}
