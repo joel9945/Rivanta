@@ -36,6 +36,7 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
+    handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -77,14 +78,16 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
     pathname === "/about" ||
     pathname?.startsWith("/newsroom");
 
+  const isTransparent = !scrolled;
+
   return (
     <>
       <header
         role="banner"
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-0 outline-none ${
-          scrolled
-            ? "bg-white/94 backdrop-blur-2xl shadow-[0_4px_24px_rgba(19,39,30,0.06)] py-3 sm:py-3.5"
-            : "bg-white/60 backdrop-blur-xl py-4 sm:py-4.5"
+          isTransparent
+            ? "bg-transparent backdrop-blur-none shadow-none py-5 sm:py-6"
+            : "bg-white/95 backdrop-blur-2xl shadow-[0_4px_24px_rgba(19,39,30,0.07)] py-3 sm:py-3.5"
         }`}
       >
         <div className="max-w-[1520px] mx-auto px-5 sm:px-8 md:px-10 flex items-center justify-between">
