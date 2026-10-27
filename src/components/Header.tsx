@@ -105,12 +105,12 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
             : "bg-white/95 backdrop-blur-2xl shadow-[0_4px_24px_rgba(19,39,30,0.07)] py-3 sm:py-3.5"
         }`}
       >
-        <div className="w-full max-w-[1560px] mx-auto px-6 sm:px-8 md:px-10 lg:px-12 flex items-center justify-between">
-          {/* 1. Left Zone: Precision-Aligned Brand Lockup (Shifted comfortably to the right) */}
+        <div className="w-full px-6 sm:px-8 md:px-10 lg:px-12 xl:px-14 flex items-center justify-between">
+          {/* 1. Left Zone: Brand Lockup (All the way to the Left) */}
           <div className="flex-1 flex items-center justify-start min-w-0">
             <Link
               href="/"
-              className="group flex items-center transition-all duration-300 flex-shrink-0 select-none ml-4 sm:ml-8 md:ml-12 lg:ml-16 xl:ml-20"
+              className="group flex items-center transition-all duration-300 flex-shrink-0 select-none"
               aria-label="RIVANTA - Green Innovative Venture Private Limited"
             >
               <div className="relative h-11.5 sm:h-12 md:h-12.5 w-auto flex-shrink-0 flex items-center">
@@ -130,7 +130,7 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
           <div className="flex-shrink-0 hidden lg:flex items-center justify-center">
             <nav
               ref={navRef}
-              className="flex items-center gap-0.5 xl:gap-1.5"
+              className="flex items-center gap-1 xl:gap-2"
               aria-label="Main Navigation"
             >
               {/* 1. Manufacturing Dropdown Console */}
@@ -403,8 +403,8 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
             </nav>
           </div>
 
-          {/* 3. Right Zone: Contact Us Action Button & Mobile Drawer Toggle */}
-          <div className="flex-1 flex items-center justify-end gap-3 min-w-0 mr-2 sm:mr-4 md:mr-6 lg:mr-8 xl:mr-10">
+          {/* 3. Right Zone: Contact Us Action Button & Mobile Drawer Toggle (All the way to the Right) */}
+          <div className="flex-1 flex items-center justify-end gap-3 min-w-0">
             {onOpenPartnerModal ? (
               <button
                 type="button"
