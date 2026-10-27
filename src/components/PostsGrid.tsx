@@ -110,6 +110,7 @@ export default function PostsGrid({ onSelectArticle }: PostsGridProps) {
                 src="/images/newsroom-solar.jpg"
                 alt="Western Grid 180MW Solar Installation"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
             </div>

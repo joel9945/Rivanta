@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ChevronRight } from "lucide-react";
@@ -37,10 +39,61 @@ export default function SubpageHero({
   secondaryCtaHref,
   telemetryTag = "Operational Target • ISO 14064 Aligned",
 }: SubpageHeroProps) {
+  const canvasRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    let ticking = false;
+
+    const updateScrollState = () => {
+      const scrollY = window.scrollY;
+      const threshold = 160;
+      const progress = Math.min(1, Math.max(0, scrollY / threshold));
+
+      const isMobile = window.innerWidth <= 1024;
+      const initialMargin = isMobile ? 8 : 12;
+      const initialRadius = isMobile ? 18 : 28;
+      const initialPt = isMobile ? 8 : 12;
+
+      const currentMargin = Math.max(0, initialMargin * (1 - progress));
+      const currentRadius = Math.max(0, initialRadius * (1 - progress));
+      const currentPt = Math.max(0, initialPt * (1 - progress));
+
+      if (canvasRef.current) {
+        canvasRef.current.style.setProperty("--subpage-canvas-margin", `${currentMargin.toFixed(1)}px`);
+        canvasRef.current.style.setProperty("--subpage-canvas-radius", `${currentRadius.toFixed(1)}px`);
+      }
+      if (sectionRef.current) {
+        sectionRef.current.style.paddingTop = `${currentPt.toFixed(1)}px`;
+      }
+
+      ticking = false;
+    };
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateScrollState);
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll, { passive: true });
+    updateScrollState();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, []);
+
   return (
-    <section className="relative w-full pt-2 md:pt-3">
-      {/* Framed Canvas matching Homepage Hero Aesthetics */}
-      <div className="subpage-frame-canvas relative flex flex-col justify-between text-white shadow-2xl bg-[#0e2219]">
+    <section ref={sectionRef} className="relative w-full pt-2 md:pt-3 transition-[padding] duration-200">
+      {/* Framed Canvas matching Homepage Hero Aesthetics with scroll expansion */}
+      <div
+        ref={canvasRef}
+        className="subpage-frame-canvas relative flex flex-col justify-between text-white shadow-2xl bg-[#0e2219]"
+      >
         {/* Background Image / Ambient Gradients */}
         {imageSrc ? (
           <div className="absolute inset-0 z-0 overflow-hidden">
@@ -53,10 +106,7 @@ export default function SubpageHero({
             />
             {/* Dark nature-tech forest overlay with warm terracotta spotlight */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#0e2219]/95 via-[#0e2219]/75 to-[#0e2219]/55" />
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(224,100,37,0.28),_transparent_65%)]" />
-            {/* Animated glowing floating backdrops */}
-            <div className="absolute -top-24 -right-24 w-[420px] h-[420px] rounded-full bg-[#ea6e2d]/25 blur-3xl pointer-events-none animate-float-1" />
-            <div className="absolute -bottom-24 -left-24 w-[420px] h-[420px] rounded-full bg-[#2d7a54]/30 blur-3xl pointer-events-none animate-float-2" />
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(224,100,37,0.22),_transparent_65%)]" />
           </div>
         ) : (
           <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">

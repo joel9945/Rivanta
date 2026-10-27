@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     siteName: "Rivanta Green Innovative Venture",
     images: [
       {
-        url: "/images/hero-facility.jpg",
+        url: "/images/hero-facility.png",
         width: 1200,
         height: 630,
         alt: "Rivanta Clean Energy Infrastructure Facility",
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
     title: "RIVANTA — Green Innovative Venture Private Limited",
     description:
       "Engineering the future of clean innovation. Flagship Green Silicon For Chips (9N purity), compressed biogas, and sustainable aviation fuel pathways.",
-    images: ["/images/hero-facility.jpg"],
+    images: ["/images/hero-facility.png"],
   },
   icons: {
     icon: [

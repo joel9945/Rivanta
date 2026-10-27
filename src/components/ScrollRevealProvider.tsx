@@ -34,8 +34,10 @@ export default function ScrollRevealProvider({
       });
     };
 
-    // Run immediately
-    checkVisible();
+    // Defer initial check to requestAnimationFrame so React hydration pass finishes cleanly first
+    const rafId = requestAnimationFrame(() => {
+      checkVisible();
+    });
 
     if (!("IntersectionObserver" in window)) {
       // Fallback: reveal all if IntersectionObserver unsupported
@@ -93,6 +95,7 @@ export default function ScrollRevealProvider({
       observer.disconnect();
       mutationObserver.disconnect();
       clearTimeout(safetyTimer);
+      cancelAnimationFrame(rafId);
     };
   }, []);
 

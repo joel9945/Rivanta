@@ -249,6 +249,7 @@ export default function AboutPage() {
                   src="/images/company-innovation.jpg"
                   alt="Rivanta Research & Engineering Center"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
                   className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#13271e]/60 via-transparent to-transparent opacity-60" />

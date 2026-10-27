@@ -209,13 +209,14 @@ export default async function Footer() {
         {/* Corporate Identity & Watermark Row */}
         <div className="pt-12 pb-6 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
-            <div className="w-7 h-7 relative flex-shrink-0 drop-shadow-[0_0_8px_rgba(224,100,37,0.5)]">
+            <div className="w-8 h-8 relative flex-shrink-0 flex items-center">
               <Image
-                src="/logo/logo-orange-transparent.svg"
-                alt="Rivanta Phoenix"
-                width={28}
-                height={28}
-                className="w-full h-full object-contain"
+                src="/logo/logo-icon.svg"
+                alt="Rivanta Phoenix Bird Emblem"
+                width={32}
+                height={32}
+                style={{ width: "auto", height: "100%" }}
+                className="object-contain"
               />
             </div>
             <span className="font-sans font-medium text-sm tracking-wide text-white/90">

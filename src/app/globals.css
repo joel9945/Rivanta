@@ -58,6 +58,22 @@ html, body {
   color: var(--base--text-color);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  -ms-overflow-style: none !important; /* IE and Edge */
+  scrollbar-width: none !important;    /* Firefox */
+}
+
+/* Hide scrollbar completely across all browsers while retaining full smooth scrolling */
+* {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
 }
 
 /* Page Frame and Content Wrapper */
@@ -340,72 +356,39 @@ main.page-main > .page-content {
   100% { transform: translateX(-50%); }
 }
 
-/* =========================================================
-   USER'S SPECIAL RULE: ORANGE TRANSPARENT LOGO EFFECT
-   ========================================================= */
-
-.logo-orange-glass-capsule {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(224, 100, 37, 0.28);
-  border-radius: 12px;
-  padding: 6px 14px 6px 10px;
-  box-shadow: 0 4px 20px -2px rgba(224, 100, 37, 0.12),
-              inset 0 1px 1px 0 rgba(255, 255, 255, 0.9);
-  transition: all 0.4s var(--transition-ease--1);
-  position: relative;
-  overflow: visible;
-}
-
-.logo-orange-glass-capsule:hover {
-  background: rgba(255, 255, 255, 0.9);
-  border-color: rgba(224, 100, 37, 0.5);
-  box-shadow: 0 8px 30px -4px rgba(224, 100, 37, 0.22),
-              inset 0 1px 1px 0 rgba(255, 255, 255, 1);
-  transform: translateY(-1px);
-}
-
-.logo-orange-glass-capsule:before {
-  content: "";
-  position: absolute;
-  inset: -2px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, rgba(224, 100, 37, 0.2), transparent 60%);
-  z-index: -1;
-  opacity: 0.6;
-  filter: blur(4px);
-}
-
-/* Hero Framed Canvas */
+/* Hero Framed Canvas with Smooth Scroll Expansion */
 .hero-frame-canvas {
   position: relative;
-  margin: 12px;
-  border-radius: 24px;
+  margin: var(--hero-canvas-margin, 12px);
+  border-radius: var(--hero-canvas-radius, 24px);
   overflow: hidden;
-  height: calc(100vh - 24px);
+  height: calc(100vh - (var(--hero-canvas-margin, 12px) * 2));
   min-height: 640px;
+  transition: margin 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              border-radius 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              height 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: margin, border-radius;
 }
 
 @media (max-width: 1024px) {
   .hero-frame-canvas {
-    margin: 8px;
-    border-radius: 18px;
-    height: calc(100vh - 16px);
+    margin: var(--hero-canvas-margin, 8px);
+    border-radius: var(--hero-canvas-radius, 18px);
+    height: calc(100vh - (var(--hero-canvas-margin, 8px) * 2));
   }
 }
 
 /* Subpage Framed Canvas matching Homepage Aesthetics */
 .subpage-frame-canvas {
   position: relative;
-  margin: 12px;
-  border-radius: 24px;
+  margin: var(--subpage-canvas-margin, 12px);
+  border-radius: var(--subpage-canvas-radius, 24px);
   overflow: hidden;
   min-height: 520px;
   box-shadow: 0 20px 50px -15px rgba(14, 34, 25, 0.5);
+  transition: margin 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              border-radius 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: margin, border-radius;
 }
 
 @media (min-width: 768px) {
@@ -416,15 +399,15 @@ main.page-main > .page-content {
 
 @media (min-width: 1025px) {
   .subpage-frame-canvas {
-    border-radius: 28px;
+    border-radius: var(--subpage-canvas-radius, 28px);
     min-height: 620px;
   }
 }
 
 @media (max-width: 1024px) {
   .subpage-frame-canvas {
-    margin: 8px;
-    border-radius: 18px;
+    margin: var(--subpage-canvas-margin, 8px);
+    border-radius: var(--subpage-canvas-radius, 18px);
   }
 }
 
