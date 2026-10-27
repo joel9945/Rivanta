@@ -72,18 +72,18 @@ export default function Hero({ onExploreVentures }: HeroProps = {}) {
       const isMobile = window.innerWidth <= 1024;
       const initialMargin = isMobile ? 8 : 12;
       const initialRadius = isMobile ? 18 : 24;
-      const initialPt = isMobile ? 8 : 12;
+      const initialPt = 0;
 
       const currentMargin = Math.max(0, initialMargin * (1 - progress));
       const currentRadius = Math.max(0, initialRadius * (1 - progress));
-      const currentPt = Math.max(0, initialPt * (1 - progress));
+      const currentPt = 0;
 
       if (heroRef.current) {
         heroRef.current.style.setProperty("--hero-canvas-margin", `${currentMargin.toFixed(1)}px`);
         heroRef.current.style.setProperty("--hero-canvas-radius", `${currentRadius.toFixed(1)}px`);
       }
       if (sectionRef.current) {
-        sectionRef.current.style.paddingTop = `${currentPt.toFixed(1)}px`;
+        sectionRef.current.style.paddingTop = "0px";
       }
 
       ticking = false;
@@ -107,7 +107,7 @@ export default function Hero({ onExploreVentures }: HeroProps = {}) {
   }, []);
 
   return (
-    <section id="hero" ref={sectionRef} className="relative w-full pt-2 md:pt-3 transition-[padding] duration-200">
+    <section id="hero" ref={sectionRef} className="relative w-full pt-0 transition-[padding] duration-200">
       {/* 100vh Framed Canvas that expands to touch screen edges on scroll */}
       <div
         ref={heroRef}

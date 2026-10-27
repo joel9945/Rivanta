@@ -53,18 +53,18 @@ export default function SubpageHero({
       const isMobile = window.innerWidth <= 1024;
       const initialMargin = isMobile ? 8 : 12;
       const initialRadius = isMobile ? 18 : 28;
-      const initialPt = isMobile ? 8 : 12;
+      const initialPt = 0;
 
       const currentMargin = Math.max(0, initialMargin * (1 - progress));
       const currentRadius = Math.max(0, initialRadius * (1 - progress));
-      const currentPt = Math.max(0, initialPt * (1 - progress));
+      const currentPt = 0;
 
       if (canvasRef.current) {
         canvasRef.current.style.setProperty("--subpage-canvas-margin", `${currentMargin.toFixed(1)}px`);
         canvasRef.current.style.setProperty("--subpage-canvas-radius", `${currentRadius.toFixed(1)}px`);
       }
       if (sectionRef.current) {
-        sectionRef.current.style.paddingTop = `${currentPt.toFixed(1)}px`;
+        sectionRef.current.style.paddingTop = "0px";
       }
 
       ticking = false;
@@ -88,7 +88,7 @@ export default function SubpageHero({
   }, []);
 
   return (
-    <section id="subpage-hero" ref={sectionRef} className="relative w-full pt-2 md:pt-3 transition-[padding] duration-200">
+    <section id="subpage-hero" ref={sectionRef} className="relative w-full pt-0 transition-[padding] duration-200">
       {/* Framed Canvas matching Homepage Hero Aesthetics with scroll expansion */}
       <div
         ref={canvasRef}

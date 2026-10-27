@@ -359,10 +359,16 @@ main.page-main > .page-content {
 /* Hero Framed Canvas with Smooth Scroll Expansion */
 .hero-frame-canvas {
   position: relative;
-  margin: var(--hero-canvas-margin, 12px);
-  border-radius: var(--hero-canvas-radius, 24px);
+  margin-top: 0;
+  margin-bottom: var(--hero-canvas-margin, 12px);
+  margin-left: var(--hero-canvas-margin, 12px);
+  margin-right: var(--hero-canvas-margin, 12px);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: var(--hero-canvas-radius, 24px);
+  border-bottom-right-radius: var(--hero-canvas-radius, 24px);
   overflow: hidden;
-  height: calc(100vh - (var(--hero-canvas-margin, 12px) * 2));
+  height: calc(100vh - var(--hero-canvas-margin, 12px));
   min-height: 640px;
   transition: margin 0.2s cubic-bezier(0.16, 1, 0.3, 1),
               border-radius 0.2s cubic-bezier(0.16, 1, 0.3, 1),
@@ -372,17 +378,29 @@ main.page-main > .page-content {
 
 @media (max-width: 1024px) {
   .hero-frame-canvas {
-    margin: var(--hero-canvas-margin, 8px);
-    border-radius: var(--hero-canvas-radius, 18px);
-    height: calc(100vh - (var(--hero-canvas-margin, 8px) * 2));
+    margin-top: 0;
+    margin-bottom: var(--hero-canvas-margin, 8px);
+    margin-left: var(--hero-canvas-margin, 8px);
+    margin-right: var(--hero-canvas-margin, 8px);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: var(--hero-canvas-radius, 18px);
+    border-bottom-right-radius: var(--hero-canvas-radius, 18px);
+    height: calc(100vh - var(--hero-canvas-margin, 8px));
   }
 }
 
 /* Subpage Framed Canvas matching Homepage Aesthetics */
 .subpage-frame-canvas {
   position: relative;
-  margin: var(--subpage-canvas-margin, 12px);
-  border-radius: var(--subpage-canvas-radius, 24px);
+  margin-top: 0;
+  margin-bottom: var(--subpage-canvas-margin, 12px);
+  margin-left: var(--subpage-canvas-margin, 12px);
+  margin-right: var(--subpage-canvas-margin, 12px);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: var(--subpage-canvas-radius, 24px);
+  border-bottom-right-radius: var(--subpage-canvas-radius, 24px);
   overflow: hidden;
   min-height: 520px;
   box-shadow: 0 20px 50px -15px rgba(14, 34, 25, 0.5);
@@ -399,7 +417,8 @@ main.page-main > .page-content {
 
 @media (min-width: 1025px) {
   .subpage-frame-canvas {
-    border-radius: var(--subpage-canvas-radius, 28px);
+    border-bottom-left-radius: var(--subpage-canvas-radius, 28px);
+    border-bottom-right-radius: var(--subpage-canvas-radius, 28px);
     min-height: 620px;
   }
 }
