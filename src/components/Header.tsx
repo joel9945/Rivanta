@@ -105,13 +105,13 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
             : "bg-white/95 backdrop-blur-2xl shadow-[0_4px_24px_rgba(19,39,30,0.07)] py-3 sm:py-3.5"
         }`}
       >
-        <div className="max-w-[1520px] mx-auto px-5 sm:px-8 md:px-10 flex items-center justify-between">
+        <div className="max-w-[1520px] mx-auto px-6 sm:px-10 md:px-12 lg:px-16 flex items-center justify-between">
           {/* Left Cluster: Brand Lockup + Seamless Desktop Navigation */}
           <div className="flex items-center gap-7 xl:gap-9">
             {/* Precision-Aligned Brand Lockup (Phoenix Emblem + Official RIVANTA Wordmark) */}
             <Link
               href="/"
-              className="group flex items-center transition-all duration-300 flex-shrink-0 select-none"
+              className="group flex items-center transition-all duration-300 flex-shrink-0 select-none ml-2 sm:ml-4 md:ml-6"
               aria-label="RIVANTA - Green Innovative Venture Private Limited"
             >
                 <div className="relative h-11.5 sm:h-12 md:h-12.5 w-auto flex-shrink-0 flex items-center">
