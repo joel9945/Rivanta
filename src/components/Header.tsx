@@ -81,25 +81,21 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
     <>
       <header
         role="banner"
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 pointer-events-none px-3 sm:px-6 md:px-8 ${
-          scrolled ? "pt-2.5 md:pt-3" : "pt-5 sm:pt-6 md:pt-7"
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-0 outline-none ${
+          scrolled
+            ? "bg-white/94 backdrop-blur-2xl shadow-[0_4px_24px_rgba(19,39,30,0.06)] py-3 sm:py-3.5"
+            : "bg-white/60 backdrop-blur-xl py-4 sm:py-4.5"
         }`}
       >
-        <div className="max-w-[1300px] mx-auto pointer-events-auto">
-          {/* Architectural Borderless Floating Island */}
-          <div
-            className={`w-full flex items-center justify-between px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 rounded-full border-0 outline-none ring-0 glass-nav-pill ${
-              scrolled ? "scrolled" : ""
-            }`}
-          >
-            {/* Left Cluster: Brand Lockup + Seamless Desktop Navigation */}
-            <div className="flex items-center gap-6 xl:gap-8">
-              {/* Precision-Aligned Brand Lockup (Phoenix Emblem + Official RIVANTA Wordmark) */}
-              <Link
-                href="/"
-                className="group flex items-center transition-all duration-300 flex-shrink-0 select-none"
-                aria-label="RIVANTA - Green Innovative Venture Private Limited"
-              >
+        <div className="max-w-[1520px] mx-auto px-5 sm:px-8 md:px-10 flex items-center justify-between">
+          {/* Left Cluster: Brand Lockup + Seamless Desktop Navigation */}
+          <div className="flex items-center gap-7 xl:gap-9">
+            {/* Precision-Aligned Brand Lockup (Phoenix Emblem + Official RIVANTA Wordmark) */}
+            <Link
+              href="/"
+              className="group flex items-center transition-all duration-300 flex-shrink-0 select-none"
+              aria-label="RIVANTA - Green Innovative Venture Private Limited"
+            >
                 <div className="relative h-11.5 sm:h-12 md:h-12.5 w-auto flex-shrink-0 flex items-center">
                   <Image
                     src="/logo/logo-brand-lockup.svg"
@@ -426,7 +422,6 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
               </button>
             </div>
           </div>
-        </div>
       </header>
 
       {/* Fullscreen Mobile Menu Drawer (Zero Borders) */}
