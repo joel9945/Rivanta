@@ -58,7 +58,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "RIVANTA — Green Innovative Venture Private Limited",
     description:
-      "Engineering the future of clean innovation. Developing high-value Green Silicon For Chips (9N purity), compressed biogas (CBG), and sustainable aviation fuel (SAF).",
+      "Engineering the future for clean innovation. Developing high-value Green Silicon For Chips (9N purity), compressed biogas (CBG), and sustainable aviation fuel (SAF).",
     url: siteUrl,
     siteName: "Rivanta Green Innovative Venture",
     images: [
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "RIVANTA — Green Innovative Venture Private Limited",
     description:
-      "Engineering the future of clean innovation. Flagship Green Silicon For Chips (9N purity), compressed biogas, and sustainable aviation fuel pathways.",
+      "Engineering the future for clean innovation. Flagship Green Silicon For Chips (9N purity), compressed biogas, and sustainable aviation fuel pathways.",
     images: ["/images/hero-facility.png"],
   },
   icons: {

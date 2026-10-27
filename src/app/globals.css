@@ -586,11 +586,15 @@ main.page-main > .page-content {
 }
 
 .shimmer-headline {
-  background: linear-gradient(90deg, #ffffff 0%, #fae9dc 20%, #ff833b 45%, #ffd4b8 60%, #ffffff 85%);
-  background-size: 240% auto;
+  display: inline-block;
+  padding-top: 0.08em;
+  padding-bottom: 0.08em;
+  padding-right: 0.15em;
+  line-height: 1.15;
+  color: #f9a65c;
+  background: linear-gradient(135deg, #ffffff 0%, #ffd4b8 35%, #f9a65c 75%, #ea6e2d 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: text-shimmer-pan 4s linear infinite;
 }
 
 /* Hero Slow Cinematic Ken Burns Background */

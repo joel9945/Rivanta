@@ -11,7 +11,7 @@ const PILLARS = [
     tag: "Semiconductor & Clean Tech",
     title: "Green Silicon For Chips",
     badge: "9N Purity",
-    headlinePrefix: "Engineering the future of",
+    headlinePrefix: "Engineering the future for",
     headlineHighlight: "clean innovation.",
     description:
       "RIVANTA pioneers ultra-pure 9N (99.9999999%) green silicon from circular agricultural biomass, delivering domestic strategic feedstock for semiconductor chips, microelectronics, and advanced photovoltaics.",
@@ -154,14 +154,14 @@ export default function Hero({ onExploreVentures }: HeroProps = {}) {
             </div>
           </div>
 
-          {/* Main Display Typography (Dynamic per Pillar with Smooth Transition) */}
+          {/* Main Display Typography (Dynamic per Pillar with Smooth Transition, No Letter Clipping) */}
           <div className="my-auto py-8 animate-hero-2 min-h-[14rem] sm:min-h-[18rem] md:min-h-[22rem] flex items-center">
             <h1
               key={`headline-${activePillar}`}
-              className="font-sans font-light tracking-[-0.035em] text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.25rem] leading-[0.98] text-white max-w-[1100px] animate-in fade-in duration-700"
+              className="font-sans font-light tracking-[-0.02em] text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.25rem] leading-[1.08] sm:leading-[1.06] text-white max-w-[1100px] animate-in fade-in duration-700"
             >
               {PILLARS[activePillar].headlinePrefix}{" "}
-              <span className="font-normal italic text-transparent bg-clip-text bg-gradient-to-r from-white via-white/90 to-[#f9a65c] shimmer-headline">
+              <span className="font-normal italic text-[#f9a65c] inline-block pr-2 py-0.5">
                 {PILLARS[activePillar].headlineHighlight}
               </span>
             </h1>
