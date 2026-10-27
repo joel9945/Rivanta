@@ -8,13 +8,6 @@ import {
   ArrowUpRight,
   ChevronDown,
   X,
-  Sparkles,
-  Fuel,
-  Flame,
-  Cpu,
-  Building2,
-  TrendingUp,
-  Newspaper,
 } from "lucide-react";
 import { useModal } from "@/context/ModalContext";
 
@@ -34,18 +27,8 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
 
   useEffect(() => {
     const handleScroll = () => {
-      const heroEl =
-        document.getElementById("hero") ||
-        document.getElementById("subpage-hero");
-
-      if (heroEl) {
-        const rect = heroEl.getBoundingClientRect();
-        // The navbar remains transparent while the hero image is visible.
-        // It only transitions to the solid stuck state once the hero scrolls past the header (~85px).
-        setScrolled(rect.bottom <= 85);
-      } else {
-        setScrolled(window.scrollY > 350);
-      }
+      // Clean, immediate transition: transparent at top, frosted glass on scroll
+      setScrolled(window.scrollY > 25);
     };
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -105,12 +88,12 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
             : "bg-white/95 backdrop-blur-2xl shadow-[0_4px_24px_rgba(19,39,30,0.07)] py-3 sm:py-3.5"
         }`}
       >
-        <div className="w-full px-6 sm:px-8 md:px-10 lg:px-12 xl:px-14 flex items-center justify-between">
-          {/* 1. Left Zone: Brand Lockup (All the way to the Left) */}
+        <div className="w-full px-6 sm:px-8 md:px-10 lg:px-14 xl:px-16 flex items-center justify-between">
+          {/* 1. Left Zone: Brand Lockup (Shifted comfortably inward to the right) */}
           <div className="flex-1 flex items-center justify-start min-w-0">
             <Link
               href="/"
-              className="group flex items-center transition-all duration-300 flex-shrink-0 select-none"
+              className="group flex items-center transition-all duration-300 flex-shrink-0 select-none ml-2 sm:ml-4 md:ml-6 lg:ml-8"
               aria-label="RIVANTA - Green Innovative Venture Private Limited"
             >
               <div className="relative h-11.5 sm:h-12 md:h-12.5 w-auto flex-shrink-0 flex items-center">
@@ -162,92 +145,70 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
                   />
                 </button>
 
-                {/* Dropdown Menu Panel (Frosted Floating Console, Zero Borders) */}
+                {/* Sleek Minimalist Dropdown Panel (No AI-template clutter, zero borders) */}
                 {activeDropdown === "manufacturing" && (
-                  <div className="absolute top-full left-0 mt-2.5 w-84 rounded-3xl p-3.5 animate-in fade-in slide-in-from-top-2 duration-200 z-50 text-left border-0 glass-dropdown-panel">
-                    <Link
-                      href="/green-silicon"
-                      onClick={() => setActiveDropdown(null)}
-                      className={`group flex items-start gap-3.5 p-3 rounded-2xl transition-all duration-200 ${
-                        pathname === "/green-silicon"
-                          ? "bg-[#fae9dc]/60"
-                          : "hover:bg-[#13271e]/[0.04]"
-                      }`}
-                    >
-                      <div className="w-8 h-8 rounded-xl bg-[#fae9dc] text-[#e06425] flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <Sparkles className="w-4 h-4" />
-                      </div>
-                      <div>
-                        <div className="font-sans font-medium text-xs text-[#13271e] group-hover:text-[#e06425] transition-colors flex items-center gap-1.5">
-                          <span>Green Silicon For Chips</span>
-                          <span className="font-mono text-[9px] uppercase px-1.5 py-0.5 rounded bg-[#e06425]/10 text-[#e06425] font-semibold">
-                            9N Purity
-                          </span>
-                        </div>
-                        <p className="font-sans text-[11px] text-[#13271e]/60 font-light mt-0.5 leading-tight">
-                          Ultra-high purity (99.9999999%) green silicon for semiconductor chips.
-                        </p>
-                      </div>
-                    </Link>
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-68 rounded-2xl p-1.5 animate-in fade-in slide-in-from-top-1 duration-150 z-50 text-left bg-white/95 backdrop-blur-2xl shadow-[0_12px_36px_rgba(19,39,30,0.12)] border-0">
+                    <div className="flex flex-col gap-0.5">
+                      <Link
+                        href="/green-silicon"
+                        onClick={() => setActiveDropdown(null)}
+                        className={`group flex items-center justify-between px-3.5 py-2.5 rounded-xl transition-all duration-150 ${
+                          pathname === "/green-silicon"
+                            ? "bg-[#fae9dc]/70 text-[#e06425]"
+                            : "text-[#13271e] hover:bg-[#13271e]/[0.04] hover:text-[#e06425]"
+                        }`}
+                      >
+                        <span className="font-sans text-[13px] font-medium tracking-tight">
+                          Green Silicon For Chips
+                        </span>
+                        <ArrowUpRight className="w-3.5 h-3.5 opacity-30 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all text-[#e06425]" />
+                      </Link>
 
-                    <Link
-                      href="/cbg"
-                      onClick={() => setActiveDropdown(null)}
-                      className={`group flex items-start gap-3.5 p-3 rounded-2xl transition-all duration-200 ${
-                        pathname === "/cbg"
-                          ? "bg-[#d6e8dc]/60"
-                          : "hover:bg-[#13271e]/[0.04]"
-                      }`}
-                    >
-                      <div className="w-8 h-8 rounded-xl bg-[#d6e8dc] text-[#2d7a54] flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <Flame className="w-4 h-4" />
-                      </div>
-                      <div>
-                        <div className="font-sans font-medium text-xs text-[#13271e] group-hover:text-[#e06425] transition-colors flex items-center gap-1.5">
-                          <span>Compressed Biogas (CBG)</span>
-                          <span className="font-mono text-[9px] uppercase px-1.5 py-0.5 rounded bg-[#2d7a54]/10 text-[#2d7a54] font-semibold">
-                            Clean Fuel
-                          </span>
-                        </div>
-                        <p className="font-sans text-[11px] text-[#13271e]/60 font-light mt-0.5 leading-tight">
-                          Anaerobic biomethane enrichment for clean mobility and grid.
-                        </p>
-                      </div>
-                    </Link>
+                      <Link
+                        href="/cbg"
+                        onClick={() => setActiveDropdown(null)}
+                        className={`group flex items-center justify-between px-3.5 py-2.5 rounded-xl transition-all duration-150 ${
+                          pathname === "/cbg"
+                            ? "bg-[#d6e8dc]/70 text-[#2d7a54]"
+                            : "text-[#13271e] hover:bg-[#13271e]/[0.04] hover:text-[#e06425]"
+                        }`}
+                      >
+                        <span className="font-sans text-[13px] font-medium tracking-tight">
+                          Compressed Biogas (CBG)
+                        </span>
+                        <ArrowUpRight className="w-3.5 h-3.5 opacity-30 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all text-[#e06425]" />
+                      </Link>
 
-                    <Link
-                      href="/saf"
-                      onClick={() => setActiveDropdown(null)}
-                      className={`group flex items-start gap-3.5 p-3 rounded-2xl transition-all duration-200 ${
-                        pathname === "/saf"
-                          ? "bg-[#e1e4de]/60"
-                          : "hover:bg-[#13271e]/[0.04]"
-                      }`}
-                    >
-                      <div className="w-8 h-8 rounded-xl bg-[#e1e4de] text-[#13271e] flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <Fuel className="w-4 h-4" />
-                      </div>
-                      <div>
-                        <div className="font-sans font-medium text-xs text-[#13271e] group-hover:text-[#e06425] transition-colors flex items-center gap-1.5">
-                          <span>Sustainable Aviation Fuel (SAF)</span>
-                          <span className="font-mono text-[9px] uppercase px-1.5 py-0.5 rounded bg-[#13271e]/10 text-[#13271e] font-semibold">
-                            Drop-in
-                          </span>
-                        </div>
-                        <p className="font-sans text-[11px] text-[#13271e]/60 font-light mt-0.5 leading-tight">
-                          Synthetic drop-in hydrocarbons for aviation decarbonization.
-                        </p>
-                      </div>
-                    </Link>
+                      <Link
+                        href="/saf"
+                        onClick={() => setActiveDropdown(null)}
+                        className={`group flex items-center justify-between px-3.5 py-2.5 rounded-xl transition-all duration-150 ${
+                          pathname === "/saf"
+                            ? "bg-[#e1e4de]/70 text-[#13271e]"
+                            : "text-[#13271e] hover:bg-[#13271e]/[0.04] hover:text-[#e06425]"
+                        }`}
+                      >
+                        <span className="font-sans text-[13px] font-medium tracking-tight">
+                          Sustainable Aviation Fuel (SAF)
+                        </span>
+                        <ArrowUpRight className="w-3.5 h-3.5 opacity-30 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all text-[#e06425]" />
+                      </Link>
 
-                    <div className="mt-1 pt-1.5 bg-[#13271e]/[0.03] rounded-xl p-2.5">
+                      <div className="my-1 h-[1px] bg-[#13271e]/[0.06]" />
+
                       <Link
                         href="/technology"
                         onClick={() => setActiveDropdown(null)}
-                        className="group flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-[#13271e]/80 hover:text-[#e06425] transition-colors"
+                        className={`group flex items-center justify-between px-3.5 py-2 rounded-xl transition-all duration-150 ${
+                          pathname === "/technology"
+                            ? "bg-[#fae9dc]/70 text-[#e06425]"
+                            : "text-[#13271e]/75 hover:bg-[#13271e]/[0.04] hover:text-[#e06425]"
+                        }`}
                       >
-                        <Cpu className="w-3.5 h-3.5 text-[#e06425]" />
-                        <span>Process Technology Flow</span>
+                        <span className="font-sans text-[12px] font-normal tracking-normal">
+                          Process Technology Flow
+                        </span>
+                        <ArrowUpRight className="w-3.5 h-3.5 opacity-40 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all text-[#e06425]" />
                       </Link>
                     </div>
                   </div>
@@ -329,82 +290,63 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
                   />
                 </button>
 
-                {/* Dropdown Menu Panel (Frosted Floating Console, Zero Borders) */}
+                {/* Sleek Minimalist Dropdown Panel (No AI-template clutter, zero borders) */}
                 {activeDropdown === "company" && (
-                  <div className="absolute top-full left-0 mt-2.5 w-80 rounded-3xl p-3.5 animate-in fade-in slide-in-from-top-2 duration-200 z-50 text-left border-0 glass-dropdown-panel">
-                    <Link
-                      href="/about"
-                      onClick={() => setActiveDropdown(null)}
-                      className={`group flex items-start gap-3.5 p-3 rounded-2xl transition-all duration-200 ${
-                        pathname === "/about"
-                          ? "bg-[#fae9dc]/60"
-                          : "hover:bg-[#13271e]/[0.04]"
-                      }`}
-                    >
-                      <div className="w-8 h-8 rounded-xl bg-[#fae9dc] text-[#e06425] flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <Building2 className="w-4 h-4" />
-                      </div>
-                      <div>
-                        <div className="font-sans font-medium text-xs text-[#13271e] group-hover:text-[#e06425] transition-colors">
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 rounded-2xl p-1.5 animate-in fade-in slide-in-from-top-1 duration-150 z-50 text-left bg-white/95 backdrop-blur-2xl shadow-[0_12px_36px_rgba(19,39,30,0.12)] border-0">
+                    <div className="flex flex-col gap-0.5">
+                      <Link
+                        href="/about"
+                        onClick={() => setActiveDropdown(null)}
+                        className={`group flex items-center justify-between px-3.5 py-2.5 rounded-xl transition-all duration-150 ${
+                          pathname === "/about"
+                            ? "bg-[#fae9dc]/70 text-[#e06425]"
+                            : "text-[#13271e] hover:bg-[#13271e]/[0.04] hover:text-[#e06425]"
+                        }`}
+                      >
+                        <span className="font-sans text-[13px] font-medium tracking-tight">
                           About Rivanta
-                        </div>
-                        <p className="font-sans text-[11px] text-[#13271e]/60 font-light mt-0.5 leading-tight">
-                          Vision, leadership, and clean venture engineering philosophy.
-                        </p>
-                      </div>
-                    </Link>
+                        </span>
+                        <ArrowUpRight className="w-3.5 h-3.5 opacity-30 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all text-[#e06425]" />
+                      </Link>
 
-                    <Link
-                      href="/investors"
-                      onClick={() => setActiveDropdown(null)}
-                      className={`group flex items-start gap-3.5 p-3 rounded-2xl transition-all duration-200 ${
-                        pathname === "/investors"
-                          ? "bg-[#d6e8dc]/60"
-                          : "hover:bg-[#13271e]/[0.04]"
-                      }`}
-                    >
-                      <div className="w-8 h-8 rounded-xl bg-[#d6e8dc] text-[#2d7a54] flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <TrendingUp className="w-4 h-4" />
-                      </div>
-                      <div>
-                        <div className="font-sans font-medium text-xs text-[#13271e] group-hover:text-[#e06425] transition-colors">
+                      <Link
+                        href="/investors"
+                        onClick={() => setActiveDropdown(null)}
+                        className={`group flex items-center justify-between px-3.5 py-2.5 rounded-xl transition-all duration-150 ${
+                          pathname === "/investors"
+                            ? "bg-[#d6e8dc]/70 text-[#2d7a54]"
+                            : "text-[#13271e] hover:bg-[#13271e]/[0.04] hover:text-[#e06425]"
+                        }`}
+                      >
+                        <span className="font-sans text-[13px] font-medium tracking-tight">
                           Investors & Capital
-                        </div>
-                        <p className="font-sans text-[11px] text-[#13271e]/60 font-light mt-0.5 leading-tight">
-                          Institutional capital deployment, governance, and metrics.
-                        </p>
-                      </div>
-                    </Link>
+                        </span>
+                        <ArrowUpRight className="w-3.5 h-3.5 opacity-30 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all text-[#e06425]" />
+                      </Link>
 
-                    <Link
-                      href="/newsroom"
-                      onClick={() => setActiveDropdown(null)}
-                      className={`group flex items-start gap-3.5 p-3 rounded-2xl transition-all duration-200 ${
-                        pathname === "/newsroom"
-                          ? "bg-[#e1e4de]/60"
-                          : "hover:bg-[#13271e]/[0.04]"
-                      }`}
-                    >
-                      <div className="w-8 h-8 rounded-xl bg-[#e1e4de] text-[#13271e] flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <Newspaper className="w-4 h-4" />
-                      </div>
-                      <div>
-                        <div className="font-sans font-medium text-xs text-[#13271e] group-hover:text-[#e06425] transition-colors">
+                      <Link
+                        href="/newsroom"
+                        onClick={() => setActiveDropdown(null)}
+                        className={`group flex items-center justify-between px-3.5 py-2.5 rounded-xl transition-all duration-150 ${
+                          pathname === "/newsroom"
+                            ? "bg-[#e1e4de]/70 text-[#13271e]"
+                            : "text-[#13271e] hover:bg-[#13271e]/[0.04] hover:text-[#e06425]"
+                        }`}
+                      >
+                        <span className="font-sans text-[13px] font-medium tracking-tight">
                           News & Media
-                        </div>
-                        <p className="font-sans text-[11px] text-[#13271e]/60 font-light mt-0.5 leading-tight">
-                          Press releases, quarterly breakthroughs, and announcements.
-                        </p>
-                      </div>
-                    </Link>
+                        </span>
+                        <ArrowUpRight className="w-3.5 h-3.5 opacity-30 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all text-[#e06425]" />
+                      </Link>
+                    </div>
                   </div>
                 )}
               </div>
             </nav>
           </div>
 
-          {/* 3. Right Zone: Contact Us Action Button & Mobile Drawer Toggle (All the way to the Right) */}
-          <div className="flex-1 flex items-center justify-end gap-3 min-w-0">
+          {/* 3. Right Zone: Contact Us Action Button & Mobile Drawer Toggle (Shifted comfortably inward to the left) */}
+          <div className="flex-1 flex items-center justify-end gap-3 min-w-0 mr-2 sm:mr-4 md:mr-6 lg:mr-8">
             {onOpenPartnerModal ? (
               <button
                 type="button"
