@@ -88,7 +88,7 @@ export default function SubpageHero({
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative w-full pt-2 md:pt-3 transition-[padding] duration-200">
+    <section id="subpage-hero" ref={sectionRef} className="relative w-full pt-2 md:pt-3 transition-[padding] duration-200">
       {/* Framed Canvas matching Homepage Hero Aesthetics with scroll expansion */}
       <div
         ref={canvasRef}

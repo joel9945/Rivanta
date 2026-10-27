@@ -34,12 +34,27 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      const heroEl =
+        document.getElementById("hero") ||
+        document.getElementById("subpage-hero");
+
+      if (heroEl) {
+        const rect = heroEl.getBoundingClientRect();
+        // The navbar remains transparent while the hero image is visible.
+        // It only transitions to the solid stuck state once the hero scrolls past the header (~85px).
+        setScrolled(rect.bottom <= 85);
+      } else {
+        setScrolled(window.scrollY > 350);
+      }
     };
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    window.addEventListener("resize", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, [pathname]);
 
   // Close dropdown on click outside or Escape key
   useEffect(() => {

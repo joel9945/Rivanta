@@ -107,7 +107,7 @@ export default function Hero({ onExploreVentures }: HeroProps = {}) {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative w-full pt-2 md:pt-3 transition-[padding] duration-200">
+    <section id="hero" ref={sectionRef} className="relative w-full pt-2 md:pt-3 transition-[padding] duration-200">
       {/* 100vh Framed Canvas that expands to touch screen edges on scroll */}
       <div
         ref={heroRef}
