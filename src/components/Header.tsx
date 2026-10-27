@@ -88,7 +88,7 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
         <div className="max-w-[1300px] mx-auto pointer-events-auto">
           {/* Architectural Borderless Floating Island */}
           <div
-            className={`w-full flex items-center justify-between px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 rounded-full border-0 glass-nav-pill ${
+            className={`w-full flex items-center justify-between px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 rounded-full border-0 outline-none ring-0 glass-nav-pill ${
               scrolled ? "scrolled" : ""
             }`}
           >
