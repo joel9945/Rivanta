@@ -4,7 +4,18 @@ import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { ArrowUpRight, ChevronDown, X, Sparkles, Fuel, Flame, Cpu } from "lucide-react";
+import {
+  ArrowUpRight,
+  ChevronDown,
+  X,
+  Sparkles,
+  Fuel,
+  Flame,
+  Cpu,
+  Building2,
+  TrendingUp,
+  Newspaper,
+} from "lucide-react";
 import { useModal } from "@/context/ModalContext";
 
 interface HeaderProps {
@@ -18,61 +29,84 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
 
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [solutionsDropdownOpen, setSolutionsDropdownOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  const [activeDropdown, setActiveDropdown] = useState<"manufacturing" | "company" | null>(null);
+  const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 24);
+      setScrolled(window.scrollY > 20);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close dropdown when clicking outside
+  // Close dropdown on click outside or Escape key
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setSolutionsDropdownOpen(false);
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        setActiveDropdown(null);
+      }
+    };
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setActiveDropdown(null);
+        setMobileMenuOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
   }, []);
+
+  // Close dropdown and drawer upon route transition
+  useEffect(() => {
+    setActiveDropdown(null);
+    setMobileMenuOpen(false);
+  }, [pathname]);
 
   const isManufacturingActive =
     pathname?.startsWith("/green-silicon") ||
     pathname?.startsWith("/cbg") ||
-    pathname?.startsWith("/saf");
+    pathname?.startsWith("/saf") ||
+    pathname?.startsWith("/technology");
+
+  const isCompanyActive =
+    pathname === "/about" ||
+    pathname?.startsWith("/investors") ||
+    pathname?.startsWith("/newsroom");
 
   return (
     <>
       <header
+        role="banner"
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 pointer-events-none px-3 sm:px-6 md:px-8 ${
-          scrolled ? "pt-2 md:pt-3" : "pt-3.5 md:pt-5"
+          scrolled ? "pt-2 md:pt-2.5" : "pt-3 md:pt-4"
         }`}
       >
-        <div className="max-w-[1520px] mx-auto pointer-events-auto">
+        <div className="max-w-[1300px] mx-auto pointer-events-auto">
           {/* Architectural Borderless Floating Island */}
           <div
-            className={`w-full flex items-center justify-between px-4 sm:px-6 md:px-7 py-2.5 sm:py-3 rounded-full transition-all duration-300 border-0 ${
+            className={`w-full flex items-center justify-between px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 rounded-full transition-all duration-300 border-0 ${
               scrolled
-                ? "bg-white/92 backdrop-blur-2xl shadow-[0_20px_50px_-15px_rgba(19,39,30,0.13),0_4px_16px_rgba(19,39,30,0.04)]"
-                : "bg-white/85 backdrop-blur-xl shadow-[0_12px_36px_-10px_rgba(19,39,30,0.08),0_2px_10px_rgba(19,39,30,0.03)]"
+                ? "bg-white/94 backdrop-blur-2xl shadow-[0_16px_40px_-12px_rgba(19,39,30,0.12),0_2px_8px_rgba(19,39,30,0.04)]"
+                : "bg-white/75 backdrop-blur-xl shadow-[0_4px_24px_-4px_rgba(19,39,30,0.06),0_1px_3px_rgba(19,39,30,0.02)]"
             }`}
           >
             {/* Precision-Aligned Brand Lockup (Phoenix Emblem + Official RIVANTA Wordmark) */}
             <Link
               href="/"
-              className="group flex items-center transition-all duration-300 flex-shrink-0 select-none"
+              className="group flex items-center transition-all duration-300 flex-shrink-0 select-none mr-4"
               aria-label="RIVANTA - Green Innovative Venture Private Limited"
             >
-              <div className="relative h-10 sm:h-11 md:h-12 w-auto flex-shrink-0 flex items-center">
+              <div className="relative h-11 sm:h-11.5 md:h-12 w-auto flex-shrink-0 flex items-center">
                 <Image
                   src="/logo/logo-brand-lockup.svg"
                   alt="RIVANTA - Green Innovative Venture Private Limited"
-                  width={190}
-                  height={50}
+                  width={210}
+                  height={48}
                   style={{ width: "auto", height: "100%" }}
                   className="object-contain transition-transform duration-300 group-hover:scale-[1.02]"
                   priority
@@ -81,48 +115,46 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
             </Link>
 
             {/* Desktop Navigation Links (Zero Borders, Tactile Pills, Active Indicators) */}
-            <nav className="hidden xl:flex items-center gap-1">
-              <Link
-                href="/about"
-                className={`px-3.5 py-1.5 rounded-full font-mono text-[11.5px] uppercase tracking-[0.1em] font-medium transition-all duration-200 ${
-                  pathname === "/about"
-                    ? "text-[#13271e] bg-[#13271e]/[0.08] font-semibold"
-                    : "text-[#13271e]/75 hover:text-[#13271e] hover:bg-[#13271e]/[0.04]"
-                }`}
+            <nav
+              ref={navRef}
+              className="hidden lg:flex items-center gap-1 xl:gap-1.5"
+              aria-label="Main Navigation"
+            >
+              {/* 1. Manufacturing Dropdown Console */}
+              <div
+                className="relative"
+                onMouseEnter={() => setActiveDropdown("manufacturing")}
+                onMouseLeave={() => setActiveDropdown(null)}
               >
-                About
-              </Link>
-
-              {/* Manufacturing Dropdown Console */}
-              <div className="relative" ref={dropdownRef}>
                 <button
                   type="button"
-                  onClick={() => setSolutionsDropdownOpen((prev) => !prev)}
-                  onMouseEnter={() => setSolutionsDropdownOpen(true)}
-                  className={`px-3.5 py-1.5 rounded-full font-mono text-[11.5px] uppercase tracking-[0.1em] font-medium flex items-center gap-1.5 transition-all duration-200 cursor-pointer border-0 ${
-                    solutionsDropdownOpen || isManufacturingActive
+                  onClick={() =>
+                    setActiveDropdown((prev) =>
+                      prev === "manufacturing" ? null : "manufacturing"
+                    )
+                  }
+                  className={`px-3.5 py-1.5 rounded-full font-sans text-[13.5px] font-medium tracking-[-0.01em] flex items-center gap-1.5 transition-all duration-200 cursor-pointer border-0 ${
+                    activeDropdown === "manufacturing" || isManufacturingActive
                       ? "text-[#e06425] bg-[#e06425]/10 font-semibold"
                       : "text-[#13271e]/75 hover:text-[#13271e] hover:bg-[#13271e]/[0.04]"
                   }`}
-                  aria-expanded={solutionsDropdownOpen}
+                  aria-expanded={activeDropdown === "manufacturing"}
+                  aria-haspopup="true"
                 >
                   <span>Manufacturing</span>
                   <ChevronDown
                     className={`w-3.5 h-3.5 transition-transform duration-300 ${
-                      solutionsDropdownOpen ? "rotate-180 text-[#e06425]" : ""
+                      activeDropdown === "manufacturing" ? "rotate-180 text-[#e06425]" : ""
                     }`}
                   />
                 </button>
 
                 {/* Dropdown Menu Panel (Frosted Floating Console, Zero Borders) */}
-                {solutionsDropdownOpen && (
-                  <div
-                    onMouseLeave={() => setSolutionsDropdownOpen(false)}
-                    className="absolute top-full left-0 mt-3.5 w-84 bg-white/95 backdrop-blur-2xl rounded-3xl shadow-[0_24px_60px_-12px_rgba(19,39,30,0.22),0_8px_24px_rgba(19,39,30,0.06)] p-3.5 animate-in fade-in slide-in-from-top-2 duration-200 z-50 text-left border-0"
-                  >
+                {activeDropdown === "manufacturing" && (
+                  <div className="absolute top-full left-0 mt-2.5 w-84 bg-white/95 backdrop-blur-2xl rounded-3xl shadow-[0_24px_60px_-12px_rgba(19,39,30,0.22),0_8px_24px_rgba(19,39,30,0.06)] p-3.5 animate-in fade-in slide-in-from-top-2 duration-200 z-50 text-left border-0">
                     <Link
                       href="/green-silicon"
-                      onClick={() => setSolutionsDropdownOpen(false)}
+                      onClick={() => setActiveDropdown(null)}
                       className={`group flex items-start gap-3.5 p-3 rounded-2xl transition-all duration-200 ${
                         pathname === "/green-silicon"
                           ? "bg-[#fae9dc]/60"
@@ -147,7 +179,7 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
 
                     <Link
                       href="/cbg"
-                      onClick={() => setSolutionsDropdownOpen(false)}
+                      onClick={() => setActiveDropdown(null)}
                       className={`group flex items-start gap-3.5 p-3 rounded-2xl transition-all duration-200 ${
                         pathname === "/cbg"
                           ? "bg-[#d6e8dc]/60"
@@ -172,7 +204,7 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
 
                     <Link
                       href="/saf"
-                      onClick={() => setSolutionsDropdownOpen(false)}
+                      onClick={() => setActiveDropdown(null)}
                       className={`group flex items-start gap-3.5 p-3 rounded-2xl transition-all duration-200 ${
                         pathname === "/saf"
                           ? "bg-[#e1e4de]/60"
@@ -198,7 +230,7 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
                     <div className="mt-1 pt-1.5 bg-[#13271e]/[0.03] rounded-xl p-2.5">
                       <Link
                         href="/technology"
-                        onClick={() => setSolutionsDropdownOpen(false)}
+                        onClick={() => setActiveDropdown(null)}
                         className="group flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-[#13271e]/80 hover:text-[#e06425] transition-colors"
                       >
                         <Cpu className="w-3.5 h-3.5 text-[#e06425]" />
@@ -209,19 +241,10 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
                 )}
               </div>
 
-              <Link
-                href="/technology"
-                className={`px-3.5 py-1.5 rounded-full font-mono text-[11.5px] uppercase tracking-[0.1em] font-medium transition-all duration-200 ${
-                  pathname === "/technology"
-                    ? "text-[#13271e] bg-[#13271e]/[0.08] font-semibold"
-                    : "text-[#13271e]/75 hover:text-[#13271e] hover:bg-[#13271e]/[0.04]"
-                }`}
-              >
-                Technology
-              </Link>
+              {/* 2. Feedstock */}
               <Link
                 href="/feedstock"
-                className={`px-3.5 py-1.5 rounded-full font-mono text-[11.5px] uppercase tracking-[0.1em] font-medium transition-all duration-200 ${
+                className={`px-3.5 py-1.5 rounded-full font-sans text-[13.5px] font-medium tracking-[-0.01em] transition-all duration-200 ${
                   pathname === "/feedstock"
                     ? "text-[#13271e] bg-[#13271e]/[0.08] font-semibold"
                     : "text-[#13271e]/75 hover:text-[#13271e] hover:bg-[#13271e]/[0.04]"
@@ -229,9 +252,11 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
               >
                 Feedstock
               </Link>
+
+              {/* 3. Sustainability */}
               <Link
                 href="/sustainability"
-                className={`px-3.5 py-1.5 rounded-full font-mono text-[11.5px] uppercase tracking-[0.1em] font-medium transition-all duration-200 ${
+                className={`px-3.5 py-1.5 rounded-full font-sans text-[13.5px] font-medium tracking-[-0.01em] transition-all duration-200 ${
                   pathname === "/sustainability"
                     ? "text-[#13271e] bg-[#13271e]/[0.08] font-semibold"
                     : "text-[#13271e]/75 hover:text-[#13271e] hover:bg-[#13271e]/[0.04]"
@@ -239,9 +264,11 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
               >
                 Sustainability
               </Link>
+
+              {/* 4. Projects */}
               <Link
                 href="/projects"
-                className={`px-3.5 py-1.5 rounded-full font-mono text-[11.5px] uppercase tracking-[0.1em] font-medium transition-all duration-200 ${
+                className={`px-3.5 py-1.5 rounded-full font-sans text-[13.5px] font-medium tracking-[-0.01em] transition-all duration-200 ${
                   pathname === "/projects"
                     ? "text-[#13271e] bg-[#13271e]/[0.08] font-semibold"
                     : "text-[#13271e]/75 hover:text-[#13271e] hover:bg-[#13271e]/[0.04]"
@@ -249,29 +276,110 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
               >
                 Projects
               </Link>
-              <Link
-                href="/investors"
-                className={`px-3.5 py-1.5 rounded-full font-mono text-[11.5px] uppercase tracking-[0.1em] font-medium transition-all duration-200 ${
-                  pathname === "/investors"
-                    ? "text-[#13271e] bg-[#13271e]/[0.08] font-semibold"
-                    : "text-[#13271e]/75 hover:text-[#13271e] hover:bg-[#13271e]/[0.04]"
-                }`}
+
+              {/* 5. Company Dropdown Console */}
+              <div
+                className="relative"
+                onMouseEnter={() => setActiveDropdown("company")}
+                onMouseLeave={() => setActiveDropdown(null)}
               >
-                Investors
-              </Link>
-              <Link
-                href="/newsroom"
-                className={`px-3.5 py-1.5 rounded-full font-mono text-[11.5px] uppercase tracking-[0.1em] font-medium transition-all duration-200 ${
-                  pathname === "/newsroom"
-                    ? "text-[#13271e] bg-[#13271e]/[0.08] font-semibold"
-                    : "text-[#13271e]/75 hover:text-[#13271e] hover:bg-[#13271e]/[0.04]"
-                }`}
-              >
-                News
-              </Link>
+                <button
+                  type="button"
+                  onClick={() =>
+                    setActiveDropdown((prev) => (prev === "company" ? null : "company"))
+                  }
+                  className={`px-3.5 py-1.5 rounded-full font-sans text-[13.5px] font-medium tracking-[-0.01em] flex items-center gap-1.5 transition-all duration-200 cursor-pointer border-0 ${
+                    activeDropdown === "company" || isCompanyActive
+                      ? "text-[#e06425] bg-[#e06425]/10 font-semibold"
+                      : "text-[#13271e]/75 hover:text-[#13271e] hover:bg-[#13271e]/[0.04]"
+                  }`}
+                  aria-expanded={activeDropdown === "company"}
+                  aria-haspopup="true"
+                >
+                  <span>Company</span>
+                  <ChevronDown
+                    className={`w-3.5 h-3.5 transition-transform duration-300 ${
+                      activeDropdown === "company" ? "rotate-180 text-[#e06425]" : ""
+                    }`}
+                  />
+                </button>
+
+                {/* Dropdown Menu Panel (Frosted Floating Console, Zero Borders) */}
+                {activeDropdown === "company" && (
+                  <div className="absolute top-full left-0 mt-2.5 w-80 bg-white/95 backdrop-blur-2xl rounded-3xl shadow-[0_24px_60px_-12px_rgba(19,39,30,0.22),0_8px_24px_rgba(19,39,30,0.06)] p-3.5 animate-in fade-in slide-in-from-top-2 duration-200 z-50 text-left border-0">
+                    <Link
+                      href="/about"
+                      onClick={() => setActiveDropdown(null)}
+                      className={`group flex items-start gap-3.5 p-3 rounded-2xl transition-all duration-200 ${
+                        pathname === "/about"
+                          ? "bg-[#fae9dc]/60"
+                          : "hover:bg-[#13271e]/[0.04]"
+                      }`}
+                    >
+                      <div className="w-8 h-8 rounded-xl bg-[#fae9dc] text-[#e06425] flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <Building2 className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <div className="font-sans font-medium text-xs text-[#13271e] group-hover:text-[#e06425] transition-colors">
+                          About Rivanta
+                        </div>
+                        <p className="font-sans text-[11px] text-[#13271e]/60 font-light mt-0.5 leading-tight">
+                          Vision, leadership, and clean venture engineering philosophy.
+                        </p>
+                      </div>
+                    </Link>
+
+                    <Link
+                      href="/investors"
+                      onClick={() => setActiveDropdown(null)}
+                      className={`group flex items-start gap-3.5 p-3 rounded-2xl transition-all duration-200 ${
+                        pathname === "/investors"
+                          ? "bg-[#d6e8dc]/60"
+                          : "hover:bg-[#13271e]/[0.04]"
+                      }`}
+                    >
+                      <div className="w-8 h-8 rounded-xl bg-[#d6e8dc] text-[#2d7a54] flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <TrendingUp className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <div className="font-sans font-medium text-xs text-[#13271e] group-hover:text-[#e06425] transition-colors">
+                          Investors & Capital
+                        </div>
+                        <p className="font-sans text-[11px] text-[#13271e]/60 font-light mt-0.5 leading-tight">
+                          Institutional capital deployment, governance, and metrics.
+                        </p>
+                      </div>
+                    </Link>
+
+                    <Link
+                      href="/newsroom"
+                      onClick={() => setActiveDropdown(null)}
+                      className={`group flex items-start gap-3.5 p-3 rounded-2xl transition-all duration-200 ${
+                        pathname === "/newsroom"
+                          ? "bg-[#e1e4de]/60"
+                          : "hover:bg-[#13271e]/[0.04]"
+                      }`}
+                    >
+                      <div className="w-8 h-8 rounded-xl bg-[#e1e4de] text-[#13271e] flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <Newspaper className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <div className="font-sans font-medium text-xs text-[#13271e] group-hover:text-[#e06425] transition-colors">
+                          News & Media
+                        </div>
+                        <p className="font-sans text-[11px] text-[#13271e]/60 font-light mt-0.5 leading-tight">
+                          Press releases, quarterly breakthroughs, and announcements.
+                        </p>
+                      </div>
+                    </Link>
+                  </div>
+                )}
+              </div>
+
+              {/* 6. Contact */}
               <Link
                 href="/contact"
-                className={`px-3.5 py-1.5 rounded-full font-mono text-[11.5px] uppercase tracking-[0.1em] font-medium transition-all duration-200 ${
+                className={`px-3.5 py-1.5 rounded-full font-sans text-[13.5px] font-medium tracking-[-0.01em] transition-all duration-200 ${
                   pathname === "/contact"
                     ? "text-[#13271e] bg-[#13271e]/[0.08] font-semibold"
                     : "text-[#13271e]/75 hover:text-[#13271e] hover:bg-[#13271e]/[0.04]"
@@ -281,23 +389,23 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
               </Link>
             </nav>
 
-            {/* Right Action Buttons (Zero Borders) */}
+            {/* Right Action Buttons (Zero Borders, Harmonized Rhythm) */}
             <div className="flex items-center gap-3">
               <button
                 type="button"
                 onClick={handleOpenPartner}
-                className="group hidden sm:inline-flex items-center gap-2 bg-[#13271e] hover:bg-[#e06425] text-white px-5 sm:px-6 py-2.5 rounded-full font-mono text-[11.5px] uppercase tracking-[0.1em] font-semibold transition-all duration-300 shadow-[0_4px_16px_rgba(19,39,30,0.16)] hover:shadow-[0_8px_24px_rgba(224,100,37,0.32)] hover:-translate-y-0.5 active:translate-y-0 cursor-pointer border-0"
+                className="group hidden sm:inline-flex items-center gap-2 bg-[#13271e] hover:bg-[#e06425] text-white px-4.5 sm:px-5 py-2 sm:py-2.5 rounded-full font-sans text-[13px] font-semibold tracking-[-0.01em] transition-all duration-300 shadow-[0_2px_10px_rgba(19,39,30,0.1)] hover:shadow-[0_6px_20px_rgba(224,100,37,0.28)] hover:-translate-y-0.5 active:translate-y-0 cursor-pointer border-0"
                 aria-label="Work with us - Open project inquiry"
               >
                 <span>Work with us</span>
-                <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <ArrowUpRight className="w-3.5 h-3.5 text-[#e06425] group-hover:text-white transition-colors duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </button>
 
               {/* Mobile Menu Hamburger (Zero Borders) */}
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(true)}
-                className="xl:hidden flex items-center justify-center w-10 h-10 rounded-full bg-[#13271e]/5 hover:bg-[#13271e]/10 text-[#13271e] transition-colors cursor-pointer border-0"
+                className="lg:hidden flex items-center justify-center w-10 h-10 rounded-full bg-[#13271e]/5 hover:bg-[#13271e]/10 text-[#13271e] transition-colors cursor-pointer border-0"
                 aria-label="Open mobile navigation menu"
               >
                 <div className="flex flex-col gap-1.5 items-center justify-center">
@@ -330,8 +438,8 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
                 <Image
                   src="/logo/logo-brand-lockup-light.svg"
                   alt="RIVANTA - Green Innovative Venture Private Limited"
-                  width={190}
-                  height={50}
+                  width={210}
+                  height={48}
                   style={{ width: "auto", height: "100%" }}
                   className="object-contain"
                   priority
@@ -353,7 +461,7 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
             {/* Group 1: Strategic Manufacturing */}
             <div>
               <span className="font-mono text-xs uppercase tracking-wider text-[#e06425] font-semibold block mb-3">
-                Flagship & Energy Manufacturing
+                Strategic Manufacturing
               </span>
               <div className="grid grid-cols-1 gap-2.5 text-left">
                 <Link
@@ -393,7 +501,7 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
             {/* Group 2: Operations & Impact */}
             <div>
               <span className="font-mono text-xs uppercase tracking-wider text-[#e06425] font-semibold block mb-3">
-                Operations & Sustainability
+                Operations & Impact
               </span>
               <div className="grid grid-cols-1 gap-2.5 text-left">
                 <Link
@@ -408,7 +516,7 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
                   onClick={() => setMobileMenuOpen(false)}
                   className="font-sans text-lg font-light text-white/90 hover:text-[#ea6e2d] transition-colors"
                 >
-                  Sustainability & Impact
+                  Sustainability & Carbon LCA
                 </Link>
                 <Link
                   href="/projects"
@@ -423,7 +531,7 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
             {/* Group 3: Corporate & Engagement */}
             <div>
               <span className="font-mono text-xs uppercase tracking-wider text-[#e06425] font-semibold block mb-3">
-                Corporate Governance & Enquiries
+                Company & Governance
               </span>
               <div className="grid grid-cols-2 gap-2.5 text-left">
                 <Link
@@ -438,14 +546,14 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
                   onClick={() => setMobileMenuOpen(false)}
                   className="font-sans text-base font-light text-white/80 hover:text-[#ea6e2d] transition-colors"
                 >
-                  Investors
+                  Investors & Capital
                 </Link>
                 <Link
                   href="/newsroom"
                   onClick={() => setMobileMenuOpen(false)}
                   className="font-sans text-base font-light text-white/80 hover:text-[#ea6e2d] transition-colors"
                 >
-                  News & Insights
+                  News & Media
                 </Link>
                 <Link
                   href="/contact"
@@ -466,7 +574,7 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
                 setMobileMenuOpen(false);
                 handleOpenPartner();
               }}
-              className="w-full py-4 rounded-full bg-[#e06425] hover:bg-[#ea6e2d] text-white font-mono uppercase tracking-wider text-sm font-medium flex items-center justify-center gap-2 cursor-pointer transition-colors border-0"
+              className="w-full py-4 rounded-full bg-[#e06425] hover:bg-[#ea6e2d] text-white font-sans text-sm font-semibold flex items-center justify-center gap-2 cursor-pointer transition-colors border-0"
             >
               <span>Work with us</span>
               <ArrowUpRight className="w-4 h-4" />
