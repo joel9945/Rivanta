@@ -1,10 +1,17 @@
 "use client";
 
-import React, { useState } from "react";
-import Link from "next/link";
-import SubpageHero from "@/components/SubpageHero";
 import MarqueeText from "@/components/MarqueeText";
-import { ArrowRight, FileCheck, Cpu, Zap, Layers, Sparkles } from "lucide-react";
+import SubpageHero from "@/components/SubpageHero";
+import {
+  ArrowRight,
+  Cpu,
+  FileCheck,
+  Layers,
+  Sparkles,
+  Zap,
+} from "lucide-react";
+import Link from "next/link";
+import { useState } from "react";
 
 const COMPARISON_ROWS = [
   {
@@ -22,25 +29,30 @@ const COMPARISON_ROWS = [
   {
     parameter: "Silicon Purity Grade",
     greenSilicon: "9N Purity (99.9999999% Electronic-Grade Silicon EG-Si)",
-    minedSilicon: "Standard Metallurgical Grade (MG-Si 98-99%) before chlorosilanes",
+    minedSilicon:
+      "Standard Metallurgical Grade (MG-Si 98-99%) before chlorosilanes",
     advantage: "Direct Electronic 9N Purity",
   },
   {
     parameter: "Embodied Carbon Footprint",
-    greenSilicon: "-65% Cradle-to-Gate CO2e (Displaces fossil carbon reductants)",
+    greenSilicon:
+      "-65% Cradle-to-Gate CO2e (Displaces fossil carbon reductants)",
     minedSilicon: "Extreme Scope 1 & 2 emissions from coal and petroleum coke",
     advantage: "-65% Scope 3 Carbon Displacement",
   },
   {
     parameter: "Hazardous Chemical Refining",
-    greenSilicon: "Closed-loop hydrometallurgical purification (Zero toxic chlorosilanes)",
-    minedSilicon: "Hazardous trichlorosilane (TCS) and toxic SiCl4 distillation",
+    greenSilicon:
+      "Closed-loop hydrometallurgical purification (Zero toxic chlorosilanes)",
+    minedSilicon:
+      "Hazardous trichlorosilane (TCS) and toxic SiCl4 distillation",
     advantage: "Non-Toxic Closed Loop Process",
   },
   {
     parameter: "Trace Critical Impurities (B, P)",
     greenSilicon: "<0.1 ppb Boron & Phosphorus (Semiconductor Grade)",
-    minedSilicon: "High trace boron and phosphorus requiring multiple chemical passes",
+    minedSilicon:
+      "High trace boron and phosphorus requiring multiple chemical passes",
     advantage: "Sub-ppb Precision Specification",
   },
 ];
@@ -51,7 +63,8 @@ const APPLICATION_TABS = [
     title: "Semiconductor Chips & ICs",
     role: "Electronic-Grade Silicon (9N)",
     icon: Cpu,
-    headline: "Ultra-pure 9N silicon for microprocessors, logic devices, and AI accelerators.",
+    headline:
+      "Ultra-pure 9N silicon for microprocessors, logic devices, and AI accelerators.",
     description:
       "Engineered specifically for semiconductor wafer foundries. Our 9N purity (99.9999999%) Green Silicon For Chips meets the stringent requirements for Czochralski (CZ) crystal pulling, epitaxial wafer growth, and microelectronic chip fabrication with minimal crystal lattice defect densities.",
     specs: [
@@ -66,7 +79,8 @@ const APPLICATION_TABS = [
     title: "Photovoltaic Wafers",
     role: "High-Efficiency Solar Grade",
     icon: Zap,
-    headline: "Ultra-low carbon silicon for next-generation TOPCon and HJT solar cells.",
+    headline:
+      "Ultra-low carbon silicon for next-generation TOPCon and HJT solar cells.",
     description:
       "Displacing coal-fired polysilicon production, our Green Silicon enables tier-1 solar manufacturers to produce ultra-high efficiency solar wafers with a 65% lower embodied carbon score, accelerating the global transition to true net-zero clean energy.",
     specs: [
@@ -81,7 +95,8 @@ const APPLICATION_TABS = [
     title: "Power Electronics & MEMS",
     role: "Discrete Devices & Sensors",
     icon: Layers,
-    headline: "High dielectric strength and thermal conductivity for automotive and grid power chips.",
+    headline:
+      "High dielectric strength and thermal conductivity for automotive and grid power chips.",
     description:
       "Tailored for high-voltage power management ICs, IGBT substrates, and precision MEMS micro-sensors, our green silicon delivers optimal thermal dissipation and switching reliability across electric vehicle and industrial robotics architectures.",
     specs: [
@@ -96,7 +111,8 @@ const APPLICATION_TABS = [
     title: "Advanced Silicon Anodes",
     role: "High-Density Energy Storage",
     icon: Sparkles,
-    headline: "Engineered nano-silicon for next-generation high-energy EV batteries.",
+    headline:
+      "Engineered nano-silicon for next-generation high-energy EV batteries.",
     description:
       "Produced with calibrated particle morphology to serve as high-capacity active material for advanced lithium-ion and solid-state battery anodes, offering up to 10x higher specific theoretical capacity compared to legacy graphite.",
     specs: [
@@ -120,7 +136,10 @@ export default function GreenSiliconPage() {
         highlightedText="Green Silicon For Chips."
         description="Developing advanced, low-carbon circular refining infrastructure to synthesize ultra-high purity Green Silicon with verified 9N purity (99.9999999%) for advanced semiconductor chips, microelectronics, and clean technology."
         imageSrc="/images/bio-silica-lab.jpg"
-        breadcrumbs={[{ label: "Ventures", href: "/#ventures" }, { label: "Green Silicon For Chips (9N)" }]}
+        breadcrumbs={[
+          { label: "Ventures", href: "/#ventures" },
+          { label: "Green Silicon For Chips (9N)" },
+        ]}
         primaryCtaText="Request 9N Technical Lot"
         primaryCtaHref="/contact"
         secondaryCtaText="Compare Mined vs Green Silicon"
@@ -146,7 +165,11 @@ export default function GreenSiliconPage() {
               Why Green Silicon out-engineers mined quartz smelting.
             </h2>
             <p className="font-sans text-base md:text-lg text-[#13271e]/80 font-light mt-4 leading-relaxed reveal-up delay-200">
-              Conventional electronic silicon relies on carbon-heavy coal smelting of mined quartz at 1900°C followed by toxic chlorosilane distillation. Rivanta transforms sustainable agricultural residues into ultra-pure 9N silicon with zero coal usage and an audited 65% reduction in cradle-to-gate carbon emissions.
+              Conventional electronic silicon relies on carbon-heavy coal
+              smelting of mined quartz at 1900°C followed by toxic chlorosilane
+              distillation. Rivanta transforms sustainable agricultural residues
+              into ultra-pure 9N silicon with zero coal usage and an audited 65%
+              reduction in cradle-to-gate carbon emissions.
             </p>
           </div>
 
@@ -156,14 +179,21 @@ export default function GreenSiliconPage() {
               <thead>
                 <tr className="border-b border-[#13271e]/10 bg-[#f0f4f1] text-[#13271e] font-mono text-xs uppercase tracking-wider">
                   <th className="p-6">Technical Metric</th>
-                  <th className="p-6 text-[#e06425] font-semibold">Rivanta Green Silicon (9N)</th>
-                  <th className="p-6 text-[#13271e]/70">Conventional Mined Silicon</th>
+                  <th className="p-6 text-[#e06425] font-semibold">
+                    Rivanta Green Silicon (9N)
+                  </th>
+                  <th className="p-6 text-[#13271e]/70">
+                    Conventional Mined Silicon
+                  </th>
                   <th className="p-6 text-[#2d7a54]">Engineered Advantage</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-[#13271e]/8 font-sans text-sm">
                 {COMPARISON_ROWS.map((row, idx) => (
-                  <tr key={idx} className="hover:bg-[#f6f8f6] transition-colors">
+                  <tr
+                    key={idx}
+                    className="hover:bg-[#f6f8f6] transition-colors"
+                  >
                     <td className="p-6 font-medium text-[#13271e] font-mono text-xs uppercase tracking-wider">
                       {row.parameter}
                     </td>
@@ -285,14 +315,18 @@ export default function GreenSiliconPage() {
               </div>
               <ul className="space-y-3 font-mono text-xs text-[#13271e]/85">
                 {APPLICATION_TABS[activeTab].specs.map((spec, sIdx) => (
-                  <li key={sIdx} className="flex items-center gap-2.5 p-2.5 rounded-lg bg-white border border-[#13271e]/6">
+                  <li
+                    key={sIdx}
+                    className="flex items-center gap-2.5 p-2.5 rounded-lg bg-white border border-[#13271e]/6"
+                  >
                     <span className="w-2 h-2 rounded-full bg-[#e06425]" />
                     <span>{spec}</span>
                   </li>
                 ))}
               </ul>
               <div className="pt-2 text-[11px] font-sans text-[#13271e]/60 font-light">
-                *Customized electronic-grade silicon specifications, ingot sizing, and wafer testing lots available on formal inquiry.
+                *Customized electronic-grade silicon specifications, ingot
+                sizing, and wafer testing lots available on formal inquiry.
               </div>
             </div>
           </div>
