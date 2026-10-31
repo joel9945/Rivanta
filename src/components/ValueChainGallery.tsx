@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from "react";
-import Link from "next/link";
-import Image from "next/image";
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { useCallback, useEffect, useState } from "react";
 
 interface GallerySlide {
   id: string;
@@ -118,7 +118,9 @@ export default function ValueChainGallery() {
             </h2>
           </div>
           <p className="font-sans text-sm md:text-base text-[#687168] leading-relaxed max-w-sm font-light">
-            An overview of the advanced processes, refining streams, and high-value materials engineered across Rivanta&apos;s bio-manufacturing ecosystem.
+            An overview of the advanced processes, refining streams, and
+            high-value materials engineered across Rivanta&apos;s
+            bio-manufacturing ecosystem.
           </p>
         </div>
 
@@ -129,7 +131,9 @@ export default function ValueChainGallery() {
             <div
               key={slide.id}
               className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${
-                idx === current ? "opacity-100 z-0" : "opacity-0 pointer-events-none"
+                idx === current
+                  ? "opacity-100 z-0"
+                  : "opacity-0 pointer-events-none"
               }`}
             >
               <Image
