@@ -153,11 +153,11 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
                 <Image
                   src={isTransparent ? "/logo/logo-brand-lockup-light.svg" : "/logo/logo-brand-lockup.svg"}
                   alt="RIVANTA - Green Innovative Venture Private Limited"
-                  width={360}
-                  height={68}
+                  width={300}
+                  height={72}
                   className={`w-auto object-contain transition-all duration-300 group-hover:scale-[1.02] ${
                     isTransparent
-                      ? "h-13 sm:h-15 md:h-17 lg:h-19 filter drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)] drop-shadow-[0_4px_24px_rgba(0,0,0,0.7)]"
+                      ? "h-13 sm:h-15 md:h-17 lg:h-18 filter drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)] drop-shadow-[0_4px_24px_rgba(0,0,0,0.7)]"
                       : "h-9.5 sm:h-10.5 md:h-11.5 lg:h-12"
                   }`}
                   priority
