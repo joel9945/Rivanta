@@ -18,27 +18,28 @@ export default function CompanySpotlight() {
         </div>
 
         {/* 2-Column Balanced Editorial Layout (Zero Card Clutter) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          {/* Left Column (5 cols): Clean Media Showcase */}
-          <div className="lg:col-span-5 relative">
-            <div className="relative aspect-[4/3] lg:aspect-[4/5] w-full rounded-2xl md:rounded-3xl overflow-hidden shadow-lg border border-[#13271e]/8 group">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+          {/* Left Column (6 cols): Clean Media Showcase */}
+          <div className="lg:col-span-6 relative">
+            <div className="relative aspect-[3/2] sm:aspect-[4/3] lg:aspect-[3/2] w-full rounded-2xl md:rounded-3xl overflow-hidden shadow-lg border border-[#13271e]/8 group">
               <Image
-                src="/images/company-innovation.jpg"
-                alt="Rivanta Research & Engineering Center"
+                src="/images/company-facility-overview.jpg"
+                alt="Rivanta Integrated Bio-Industrial Refinery and Engineering Facility"
                 fill
-                sizes="(max-width: 1024px) 100vw, 42vw"
-                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0e2219]/60 via-transparent to-transparent opacity-60" />
             </div>
             <div className="pt-3 flex items-center justify-between font-mono text-[11px] text-[#13271e]/50 uppercase tracking-wider">
-              <span>Integrated Engineering Facility — Unit 04</span>
+              <span>Integrated Bio-Industrial Complex — Facility 04</span>
               <span>Active Operation</span>
             </div>
           </div>
 
-          {/* Right Column (7 cols): Editorial Narrative & Inline Benchmarks */}
-          <div className="lg:col-span-7 flex flex-col space-y-8">
+          {/* Right Column (6 cols): Editorial Narrative & Inline Benchmarks */}
+          <div className="lg:col-span-6 flex flex-col space-y-7">
             <h2 className="font-sans font-light text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] tracking-[-0.02em] leading-[1.14] text-[#13271e]">
               Bold Ventures To Unlock Clean Technology{" "}
               <span className="font-normal italic text-[#e06425]">
