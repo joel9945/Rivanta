@@ -208,18 +208,18 @@ export default async function Footer() {
 
         {/* Corporate Identity & Watermark Row */}
         <div className="pt-12 pb-6 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 relative flex-shrink-0 flex items-center">
+          <div className="flex items-center gap-3.5">
+            <div className="w-11 h-11 md:w-12 md:h-12 relative flex-shrink-0 flex items-center">
               <Image
                 src="/logo/logo-icon.svg"
                 alt="Rivanta Eagle Emblem"
-                width={32}
-                height={32}
+                width={48}
+                height={48}
                 style={{ width: "auto", height: "100%" }}
-                className="object-contain"
+                className="object-contain filter drop-shadow-[0_2px_8px_rgba(242,178,36,0.35)]"
               />
             </div>
-            <span className="font-sans font-medium text-sm tracking-wide text-white/90">
+            <span className="font-sans font-semibold text-sm md:text-base tracking-wide text-white/95">
               RIVANTA Green Innovative Venture Private Limited
             </span>
           </div>

@@ -9,16 +9,16 @@ export default function NotFound() {
       {/* Top Header */}
       <div className="flex items-center gap-3">
         <Link href="/" className="flex items-center gap-3">
-          <div className="w-8 h-8 relative flex-shrink-0 drop-shadow-[0_2px_8px_rgba(197,155,39,0.35)]">
+          <div className="w-10 h-10 relative flex-shrink-0 drop-shadow-[0_2px_10px_rgba(242,178,36,0.45)]">
             <Image
               src="/logo/logo-icon.svg"
               alt="Rivanta Eagle Emblem"
-              width={32}
-              height={32}
+              width={40}
+              height={40}
               className="w-full h-full object-contain"
             />
           </div>
-          <span className="font-sans font-bold tracking-tight text-lg text-white">
+          <span className="font-sans font-bold tracking-tight text-xl text-white">
             RIVANTA
           </span>
         </Link>

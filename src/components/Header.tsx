@@ -131,25 +131,35 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
         role="banner"
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-0 outline-none ${
           isTransparent
-            ? "bg-transparent backdrop-blur-none shadow-none py-5 sm:py-6"
-            : "bg-white/95 backdrop-blur-2xl shadow-[0_4px_24px_rgba(19,39,30,0.07)] py-3 sm:py-3.5"
+            ? "bg-gradient-to-b from-black/80 via-black/45 to-transparent backdrop-blur-none shadow-none py-4 sm:py-5 lg:py-6"
+            : "bg-white/95 backdrop-blur-2xl shadow-[0_4px_24px_rgba(19,39,30,0.07)] py-2.5 sm:py-3"
         }`}
       >
-        <div className="w-full px-6 sm:px-8 md:px-10 lg:px-14 xl:px-16 flex items-center justify-between">
-          {/* 1. Left Zone: Brand Lockup (Shifted comfortably inward to the right) */}
+        <div className="w-full px-6 sm:px-8 md:px-10 lg:px-12 xl:px-16 flex items-center justify-between">
+          {/* 1. Left Zone: Brand Lockup */}
           <div className="flex-1 flex items-center justify-start min-w-0">
             <Link
               href="/"
-              className="group flex items-center transition-all duration-300 flex-shrink-0 select-none ml-2 sm:ml-4 md:ml-6 lg:ml-8"
+              className="group flex items-center transition-all duration-300 flex-shrink-0 select-none ml-1 sm:ml-2 md:ml-4"
               aria-label="RIVANTA - Green Innovative Venture Private Limited"
             >
-              <div className="relative h-11.5 sm:h-12 md:h-12.5 w-auto flex-shrink-0 flex items-center">
+              <div
+                className={`relative w-auto flex-shrink-0 flex items-center transition-all duration-300 ${
+                  isTransparent
+                    ? "h-14 sm:h-16 md:h-18 lg:h-20"
+                    : "h-10 sm:h-11 md:h-12 lg:h-12.5"
+                }`}
+              >
                 <Image
                   src={isTransparent ? "/logo/logo-brand-lockup-light.svg" : "/logo/logo-brand-lockup.svg"}
                   alt="RIVANTA - Green Innovative Venture Private Limited"
-                  width={230}
-                  height={48}
-                  className="h-10 sm:h-11 md:h-11.5 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+                  width={360}
+                  height={68}
+                  className={`w-auto object-contain transition-all duration-300 group-hover:scale-[1.02] ${
+                    isTransparent
+                      ? "h-13 sm:h-15 md:h-17 lg:h-19 filter drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)] drop-shadow-[0_4px_24px_rgba(0,0,0,0.7)]"
+                      : "h-9.5 sm:h-10.5 md:h-11.5 lg:h-12"
+                  }`}
                   priority
                 />
               </div>
@@ -457,13 +467,13 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
               className="flex items-center"
               aria-label="RIVANTA Home"
             >
-              <div className="relative h-11.5 sm:h-12 w-auto flex-shrink-0 flex items-center">
+              <div className="relative h-13 sm:h-15 w-auto flex-shrink-0 flex items-center">
                 <Image
                   src="/logo/logo-brand-lockup-light.svg"
                   alt="RIVANTA - Green Innovative Venture Private Limited"
-                  width={230}
-                  height={48}
-                  className="h-10 sm:h-11 w-auto object-contain"
+                  width={340}
+                  height={64}
+                  className="h-12 sm:h-14 w-auto object-contain filter drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]"
                   priority
                 />
               </div>
