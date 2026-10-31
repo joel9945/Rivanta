@@ -82,8 +82,8 @@ export default function CompanySpotlight() {
           </div>
         </div>
 
-        {/* 3. The Panoramic Facility Showcase: Expansive, Crisp, Zero Blur */}
-        <div className="relative w-full aspect-[16/9] sm:aspect-[2/1] lg:aspect-[2.35/1] rounded-[24px] lg:rounded-[32px] overflow-hidden shadow-2xl mb-16 md:mb-20 group">
+        {/* 3. The Panoramic Facility Showcase: Pure, Untagged, Authentic */}
+        <div className="relative w-full aspect-[16/9] sm:aspect-[2/1] lg:aspect-[2.35/1] rounded-[24px] lg:rounded-[32px] overflow-hidden shadow-2xl mb-16 md:mb-20 group select-none">
           <Image
             src="/images/company-facility-overview.jpg"
             alt="Rivanta Integrated Bio-Industrial Refinery and Engineering Facility"
@@ -92,32 +92,6 @@ export default function CompanySpotlight() {
             className="object-cover object-center transition-transform duration-1000 ease-out group-hover:scale-[1.02]"
             priority
           />
-          {/* Subtle industrial lighting overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0e2219]/90 via-[#0e2219]/20 to-transparent pointer-events-none" />
-
-          {/* Floating Live Facility Telemetry Overlays */}
-          <div className="absolute top-6 left-6 right-6 flex items-center justify-between pointer-events-none">
-            <span className="px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md text-[11px] font-mono uppercase tracking-wider text-[#13271e] font-semibold shadow-sm">
-              Integrated Facility Overlook — Unit 04
-            </span>
-            <span className="px-3 py-1 rounded-full bg-[#e06425] text-white text-[10px] font-mono uppercase tracking-wider font-semibold shadow-sm">
-              Operational Scale
-            </span>
-          </div>
-
-          <div className="absolute bottom-6 left-6 right-6 flex flex-col sm:flex-row sm:items-end justify-between gap-4 pointer-events-none text-white">
-            <div className="max-w-xl">
-              <span className="font-mono text-xs uppercase tracking-widest text-[#f9a65c] block mb-1">
-                Engineering Architecture
-              </span>
-              <p className="font-sans text-sm sm:text-base text-white/90 font-light leading-relaxed">
-                Continuous bio-methanation columns, anaerobic enrichment domes, and ultra-pure 9N Green Silicon refining infrastructure co-located for maximum thermodynamic efficiency.
-              </p>
-            </div>
-            <div className="font-mono text-xs text-white/70 tracking-wider uppercase text-right">
-              ISO 14064 Lifecycle Audited
-            </div>
-          </div>
         </div>
 
         {/* 4. Three Structural Foundation Pillars (Clean Architectural Grid, No Floating Card Boxes) */}
