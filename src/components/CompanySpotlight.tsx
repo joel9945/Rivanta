@@ -24,20 +24,20 @@ export default function CompanySpotlight() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start mb-14 md:mb-20">
           <div className="lg:col-span-7">
             <h2 className="font-sans font-light text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] tracking-[-0.025em] leading-[1.12] text-[#13271e]">
-              Bold Ventures To Unlock Clean Technology{" "}
+              Transforming Agricultural Resources{" "}
               <span className="font-normal italic text-[#e06425]">
-                For Planetary Health And Resilient Prosperity.
+                Into Industrial Possibilities.
               </span>
             </h2>
           </div>
           <div className="lg:col-span-5 flex flex-col justify-between space-y-6 pt-1 sm:pt-2">
             <p className="font-sans text-base sm:text-lg text-[#13271e]/80 font-light leading-relaxed">
-              Rivanta Green Innovative Venture is developing an integrated, commercial-scale bio-manufacturing ecosystem that converts agricultural residues into strategic industrial feedstocks — displacing fossil hydrocarbons and high-emission minerals.
+              Rivanta Green is developing an integrated bio-manufacturing ecosystem that brings agriculture, advanced processing and clean energy together. From agricultural residues to sustainable fuels, bio-silica and valuable industrial materials, we aim to build a new foundation for resource-efficient manufacturing in India.
             </p>
             <div className="flex items-center gap-5 pt-2">
-              <Link href="/about" className="u-btn--1" aria-label="Learn more about Rivanta">
+              <Link href="/about" className="u-btn--1" aria-label="Discover Rivanta">
                 <span className="btn_label">
-                  Discover Our Story
+                  Discover Rivanta
                   <div className="label_corner">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -74,7 +74,7 @@ export default function CompanySpotlight() {
                 className="group inline-flex items-center gap-1.5 font-sans text-sm font-medium text-[#13271e] hover:text-[#e06425] transition-colors"
               >
                 <span className="border-b border-[#13271e]/25 group-hover:border-[#e06425] pb-0.5 transition-colors">
-                  View Projects
+                  Explore Our Projects
                 </span>
                 <ArrowUpRight className="w-4 h-4 text-[#e06425] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
