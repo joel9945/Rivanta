@@ -32,10 +32,6 @@ export default function CompanySpotlight() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0e2219]/60 via-transparent to-transparent opacity-60" />
             </div>
-            <div className="pt-3 flex items-center justify-between font-mono text-[11px] text-[#13271e]/50 uppercase tracking-wider">
-              <span>Integrated Bio-Industrial Complex — Facility 04</span>
-              <span>Active Operation</span>
-            </div>
           </div>
 
           {/* Right Column (6 cols): Editorial Narrative & Inline Benchmarks */}
