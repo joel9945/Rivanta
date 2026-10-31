@@ -8,20 +8,34 @@ import { ArrowRight } from "lucide-react";
 const PILLARS = [
   {
     index: "01",
-    tag: "Semiconductor & Clean Tech",
-    title: "Green Silicon For Chips",
-    badge: "9N Purity",
+    tag: "Circular Bio-Economy",
+    title: "Clean Innovation",
+    badge: "Net-Zero Ecosystem",
     line1: "Engineering The Future",
     line2Prefix: "For ",
     line2Highlight: "Clean Innovation.",
     fontSizeClass: "text-4xl sm:text-6xl md:text-7xl lg:text-[5.25rem] xl:text-[5.75rem]",
     description:
-      "RIVANTA pioneers ultra-pure 9N (99.9999999%) green silicon from circular agricultural biomass, delivering domestic strategic feedstock for semiconductor chips, microelectronics, and advanced photovoltaics.",
+      "RIVANTA pioneers multi-stream agricultural biomass valorization, transforming non-food residues into ultra-pure green silicon, commercial compressed biogas, and drop-in sustainable aviation fuels.",
     image: "/images/hero-facility.png",
-    alt: "RIVANTA Green Silicon & Advanced Clean Energy Infrastructure Facility",
+    alt: "RIVANTA Integrated Clean Innovation & Advanced Bio-Industrial Facility",
   },
   {
     index: "02",
+    tag: "Semiconductor & Clean Tech",
+    title: "Green Silicon For Chips",
+    badge: "9N Purity",
+    line1: "Pioneering Green Silicon",
+    line2Prefix: "For ",
+    line2Highlight: "Semiconductor Chips.",
+    fontSizeClass: "text-4xl sm:text-6xl md:text-7xl lg:text-[5.25rem] xl:text-[5.75rem]",
+    description:
+      "RIVANTA pioneers ultra-pure 9N (99.9999999%) green silicon from circular agricultural biomass, delivering domestic strategic feedstock for semiconductor chips, microelectronics, and advanced photovoltaics.",
+    image: "/images/green-silicon-refinery.jpg",
+    alt: "RIVANTA Ultra-Pure Green Silicon Refining Plant & Processing Infrastructure",
+  },
+  {
+    index: "03",
     tag: "Bio-Energy & Mobility",
     title: "Compressed Biogas (CBG)",
     badge: "Industrial Biomethane",
@@ -35,7 +49,7 @@ const PILLARS = [
     alt: "RIVANTA Biogas Industrial Refinery Plant at Golden Hour",
   },
   {
-    index: "03",
+    index: "04",
     tag: "Aviation Decarbonization",
     title: "Sustainable Aviation Fuel (SAF)",
     badge: "Drop-In Bio-Fuel",
@@ -151,7 +165,7 @@ export default function Hero({ onExploreVentures }: HeroProps = {}) {
                 {PILLARS[activePillar].index}
               </span>
               <span className="w-8 h-[1px] bg-white/30"></span>
-              <span>03</span>
+              <span>{String(PILLARS.length).padStart(2, "0")}</span>
             </div>
           </div>
 
