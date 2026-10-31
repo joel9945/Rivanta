@@ -16,7 +16,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/sustainability", priority: 0.85, changeFrequency: "monthly" as const },
     { path: "/projects", priority: 0.85, changeFrequency: "monthly" as const },
     { path: "/investors", priority: 0.8, changeFrequency: "monthly" as const },
-    { path: "/newsroom", priority: 0.85, changeFrequency: "weekly" as const },
     { path: "/contact", priority: 0.8, changeFrequency: "monthly" as const },
   ];
 

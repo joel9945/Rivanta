@@ -100,7 +100,7 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
 
   const isCompanyActive =
     pathname === "/about" ||
-    pathname?.startsWith("/newsroom");
+    pathname === "/investors";
 
   const isTransparent = !scrolled;
 
@@ -375,16 +375,16 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
                       </Link>
 
                       <Link
-                        href="/newsroom"
+                        href="/contact"
                         onClick={() => setActiveDropdown(null)}
                         className={`group flex items-center justify-between px-3.5 py-2.5 rounded-xl transition-all duration-150 ${
-                          pathname === "/newsroom"
+                          pathname === "/contact"
                             ? "bg-[#e1e4de]/70 text-[#13271e]"
                             : "text-[#13271e] hover:bg-[#13271e]/[0.04] hover:text-[#e06425]"
                         }`}
                       >
                         <span className="font-sans text-[13px] font-medium tracking-tight">
-                          News & Media
+                          Corporate Desk
                         </span>
                         <ArrowUpRight className="w-3.5 h-3.5 opacity-30 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all text-[#e06425]" />
                       </Link>
@@ -580,13 +580,6 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
                   className="font-sans text-base font-light text-white/80 hover:text-[#ea6e2d] transition-colors"
                 >
                   Investors & Capital
-                </Link>
-                <Link
-                  href="/newsroom"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="font-sans text-base font-light text-white/80 hover:text-[#ea6e2d] transition-colors"
-                >
-                  News & Media
                 </Link>
                 <Link
                   href="/contact"

@@ -4,7 +4,7 @@ import PlatformHgroup from "@/components/PlatformHgroup";
 import UspCards from "@/components/UspCards";
 import MarqueeText from "@/components/MarqueeText";
 import CompanySpotlight from "@/components/CompanySpotlight";
-import PostsGrid from "@/components/PostsGrid";
+import CorporateFoundations from "@/components/CorporateFoundations";
 
 export default function Home() {
   return (
@@ -24,8 +24,8 @@ export default function Home() {
       {/* Editorial Company Narrative */}
       <CompanySpotlight />
 
-      {/* Dispatches & Newsroom */}
-      <PostsGrid />
+      {/* Corporate Purpose, Vision, Mission & Foundations */}
+      <CorporateFoundations />
     </>
   );
 }

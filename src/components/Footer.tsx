@@ -146,18 +146,10 @@ export default async function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/newsroom"
-                    className="hover:text-[#ea6e2d] transition-colors"
-                  >
-                    News & Dispatches
-                  </Link>
-                </li>
-                <li>
-                  <Link
                     href="/contact"
                     className="hover:text-[#ea6e2d] transition-colors"
                   >
-                    Contact Desk
+                    Contact & Off-Take Desk
                   </Link>
                 </li>
               </ul>
