@@ -17,19 +17,11 @@ export default function CompanySpotlight() {
           </div>
         </div>
 
-        {/* 2-Column Balanced Editorial Layout (Soft Edge Blend-In) */}
+        {/* 2-Column Balanced Editorial Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-          {/* Left Column (6 cols): Media with Seamless Background Blend Effect */}
+          {/* Left Column (6 cols): Clean Media Showcase */}
           <div className="lg:col-span-6 relative">
-            <div
-              className="relative aspect-[3/2] sm:aspect-[4/3] lg:aspect-[3/2] w-full overflow-hidden group select-none"
-              style={{
-                maskImage:
-                  "radial-gradient(ellipse 90% 85% at center, rgba(0,0,0,1) 45%, rgba(0,0,0,0) 98%)",
-                WebkitMaskImage:
-                  "radial-gradient(ellipse 90% 85% at center, rgba(0,0,0,1) 45%, rgba(0,0,0,0) 98%)",
-              }}
-            >
+            <div className="relative aspect-[3/2] sm:aspect-[4/3] lg:aspect-[3/2] w-full rounded-[24px] lg:rounded-[28px] overflow-hidden shadow-[0_20px_50px_-10px_rgba(19,39,30,0.08)] group select-none">
               <Image
                 src="/images/company-facility-overview.jpg"
                 alt="Rivanta Integrated Bio-Industrial Refinery and Engineering Facility"
@@ -38,13 +30,7 @@ export default function CompanySpotlight() {
                 className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                 priority
               />
-
-              {/* Seamless feathering into white on all perimeter edges */}
-              <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,_transparent_45%,_rgba(255,255,255,0.85)_95%,_#ffffff_100%)]" />
-              <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white via-white/50 to-transparent pointer-events-none" />
-              <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white via-white/40 to-transparent pointer-events-none" />
-              <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-white via-white/60 to-transparent pointer-events-none" />
-              <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-white via-white/50 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0e2219]/35 via-transparent to-transparent opacity-60 pointer-events-none" />
             </div>
           </div>
 
