@@ -4,7 +4,6 @@ import PlatformHgroup from "@/components/PlatformHgroup";
 import UspCards from "@/components/UspCards";
 import MarqueeText from "@/components/MarqueeText";
 import CompanySpotlight from "@/components/CompanySpotlight";
-import TelemetrySection from "@/components/TelemetrySection";
 import PostsGrid from "@/components/PostsGrid";
 
 export default function Home() {
@@ -24,9 +23,6 @@ export default function Home() {
 
       {/* Editorial Company Narrative */}
       <CompanySpotlight />
-
-      {/* Impact Telemetry & Metrics */}
-      <TelemetrySection />
 
       {/* Dispatches & Newsroom */}
       <PostsGrid />
