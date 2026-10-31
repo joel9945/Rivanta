@@ -100,9 +100,9 @@ export default function ValueChainGallery() {
       className="py-20 md:py-32 bg-[#f7f7f3] border-t border-[#13271e]/10 relative z-10"
       aria-label="Integrated Bio-Value Chain"
     >
-      <div className="u-container u-container--1 u-container--pad">
+      <div className="w-full max-w-[1680px] mx-auto px-4 sm:px-6 md:px-10 lg:px-14">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 mb-10 md:mb-12 border-t border-[#13271e]/15 pt-7">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 mb-8 md:mb-10 border-t border-[#13271e]/15 pt-7">
           <div>
             <div className="flex items-center gap-2 mb-3">
               <span className="w-2.5 h-2.5 rounded-full bg-[#e06425] animate-pulse" />
@@ -122,8 +122,8 @@ export default function ValueChainGallery() {
           </p>
         </div>
 
-        {/* Interactive Main Stage */}
-        <div className="relative h-[480px] sm:h-[520px] md:h-[560px] lg:h-[580px] rounded-2xl md:rounded-3xl overflow-hidden bg-[#25352e] shadow-xl">
+        {/* Interactive Main Stage (Expansive Cinematic Dimension) */}
+        <div className="relative h-[600px] sm:h-[680px] md:h-[760px] lg:h-[820px] xl:h-[860px] rounded-2xl md:rounded-[32px] overflow-hidden bg-[#25352e] shadow-2xl">
           {/* Layered Crossfading Photos */}
           {SLIDES.map((slide, idx) => (
             <div
@@ -137,37 +137,37 @@ export default function ValueChainGallery() {
                 alt={slide.title}
                 fill
                 priority={idx === 0}
-                className="object-cover object-center"
-                sizes="(max-width: 1280px) 100vw, 1350px"
+                className="object-cover object-center scale-[1.02] transition-transform duration-1000 ease-out"
+                sizes="(max-width: 1680px) 100vw, 1680px"
               />
             </div>
           ))}
 
-          {/* Cinematic Dark Gradient Shade */}
-          <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#081512]/95 via-[#081512]/40 to-[#081512]/15 pointer-events-none" />
+          {/* Cinematic Dark Gradient Shade — concentrated only at the base so top 60% of image is completely clear */}
+          <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#081512]/95 via-[#081512]/35 via-45% to-transparent pointer-events-none" />
 
           {/* Top Info Bar */}
-          <div className="absolute left-6 right-6 sm:left-10 sm:right-10 top-6 sm:top-8 z-20 flex justify-between items-center text-[#f4f3eb] font-mono text-[11px] font-semibold uppercase tracking-[0.15em]">
-            <span>Rivanta Green / Industrial Ecosystem</span>
-            <span className="px-2.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15">
+          <div className="absolute left-6 right-6 sm:left-10 sm:right-10 md:left-12 md:right-12 top-6 sm:top-8 md:top-10 z-20 flex justify-between items-center text-[#f4f3eb] font-mono text-[11px] sm:text-xs font-semibold uppercase tracking-[0.16em]">
+            <span className="drop-shadow-md">Rivanta Green / Industrial Ecosystem</span>
+            <span className="px-3 py-1.5 rounded-full bg-black/30 backdrop-blur-md border border-white/20 shadow-md">
               {String(current + 1).padStart(2, "0")} / 06
             </span>
           </div>
 
           {/* Bottom Active Information & Navigation Controls */}
-          <div className="absolute left-6 right-6 sm:left-10 sm:right-10 bottom-6 sm:bottom-10 z-20 flex flex-col sm:flex-row sm:items-end justify-between gap-6 sm:gap-10">
+          <div className="absolute left-6 right-6 sm:left-10 sm:right-10 md:left-12 md:right-12 bottom-6 sm:bottom-10 md:bottom-12 z-20 flex flex-col sm:flex-row sm:items-end justify-between gap-6 sm:gap-10">
             {/* Active Workstream Text Callout */}
             <div className="flex-1 max-w-2xl text-white">
               <span className="font-mono text-xs uppercase tracking-[0.18em] text-[#d6b97a] font-bold block mb-2">
                 {activeSlide.category}
               </span>
-              <h3 className="font-sans text-2xl sm:text-3xl md:text-4xl lg:text-[2.65rem] font-normal leading-[1.12] tracking-[-0.03em] mb-2 sm:mb-3">
+              <h3 className="font-sans text-2xl sm:text-3xl md:text-4xl lg:text-[2.85rem] font-normal leading-[1.12] tracking-[-0.03em] mb-2 sm:mb-3 drop-shadow-md">
                 {activeSlide.title}
               </h3>
-              <p className="font-sans text-sm sm:text-base text-[#e9e9e5] font-light leading-relaxed max-w-xl">
+              <p className="font-sans text-sm sm:text-base md:text-lg text-[#e9e9e5] font-light leading-relaxed max-w-xl">
                 {activeSlide.desc}
               </p>
-              <div className="mt-4 sm:mt-5">
+              <div className="mt-5 sm:mt-6">
                 <Link
                   href={activeSlide.href}
                   className="group inline-flex items-center gap-1.5 font-sans text-xs sm:text-sm text-white font-medium border-b border-[#a5b3aa] pb-0.5 hover:border-[#d6b97a] hover:text-[#d6b97a] transition-all"
@@ -179,29 +179,29 @@ export default function ValueChainGallery() {
             </div>
 
             {/* Stage Left/Right Tactile Controls */}
-            <div className="flex items-center gap-2.5 self-end sm:self-auto shrink-0">
+            <div className="flex items-center gap-3 self-end sm:self-auto shrink-0">
               <button
                 type="button"
                 onClick={prevSlide}
                 aria-label="Previous workstream"
-                className="w-11 h-11 rounded-xl border border-white/40 hover:border-white bg-white/5 hover:bg-white text-white hover:text-[#18251f] flex items-center justify-center transition-all duration-300 cursor-pointer active:scale-95"
+                className="w-12 h-12 rounded-2xl border border-white/40 hover:border-white bg-black/30 hover:bg-white text-white hover:text-[#18251f] backdrop-blur-md flex items-center justify-center transition-all duration-300 cursor-pointer active:scale-95 shadow-md"
               >
-                <ArrowLeft className="w-4 h-4" />
+                <ArrowLeft className="w-5 h-5" />
               </button>
               <button
                 type="button"
                 onClick={nextSlide}
                 aria-label="Next workstream"
-                className="w-11 h-11 rounded-xl border border-white/40 hover:border-white bg-white/5 hover:bg-white text-white hover:text-[#18251f] flex items-center justify-center transition-all duration-300 cursor-pointer active:scale-95"
+                className="w-12 h-12 rounded-2xl border border-white/40 hover:border-white bg-black/30 hover:bg-white text-white hover:text-[#18251f] backdrop-blur-md flex items-center justify-center transition-all duration-300 cursor-pointer active:scale-95 shadow-md"
               >
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-5 h-5" />
               </button>
             </div>
           </div>
         </div>
 
         {/* Thumbnail Track / Rail (6 Workstream Cards) */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 mt-4 sm:mt-5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 lg:gap-5 mt-5 sm:mt-6">
           {SLIDES.map((slide, idx) => {
             const isActive = idx === current;
             return (
@@ -216,10 +216,10 @@ export default function ValueChainGallery() {
               >
                 {/* Thumbnail Image Box */}
                 <div
-                  className={`relative h-20 sm:h-24 md:h-26 rounded-xl overflow-hidden bg-[#78877e] transition-all duration-300 ${
+                  className={`relative h-28 sm:h-32 md:h-36 rounded-2xl overflow-hidden bg-[#78877e] transition-all duration-300 ${
                     isActive
-                      ? "ring-2 ring-[#bca16b] shadow-md ring-offset-2 ring-offset-[#f7f7f3]"
-                      : "group-hover:scale-[1.02]"
+                      ? "ring-2 ring-[#bca16b] shadow-xl ring-offset-2 ring-offset-[#f7f7f3] scale-[1.02]"
+                      : "group-hover:scale-[1.02] shadow-sm"
                   }`}
                 >
                   <Image
@@ -235,8 +235,8 @@ export default function ValueChainGallery() {
                 </div>
 
                 {/* Number & Short Label */}
-                <div className="flex items-baseline gap-2 mt-2.5">
-                  <span className="font-mono text-[11px] text-[#9aa096] font-semibold">
+                <div className="flex items-baseline gap-2 mt-3">
+                  <span className="font-mono text-xs text-[#9aa096] font-semibold">
                     {slide.id}
                   </span>
                   <span
