@@ -95,8 +95,7 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
   const isManufacturingActive =
     pathname?.startsWith("/green-silicon") ||
     pathname?.startsWith("/cbg") ||
-    pathname?.startsWith("/saf") ||
-    pathname?.startsWith("/technology");
+    pathname?.startsWith("/saf");
 
   const isCompanyActive =
     pathname === "/about" ||
@@ -254,23 +253,6 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
                           Sustainable Aviation Fuel (SAF)
                         </span>
                         <ArrowUpRight className="w-3.5 h-3.5 opacity-30 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all text-[#e06425]" />
-                      </Link>
-
-                      <div className="my-1 h-[1px] bg-[#13271e]/[0.06]" />
-
-                      <Link
-                        href="/technology"
-                        onClick={() => setActiveDropdown(null)}
-                        className={`group flex items-center justify-between px-3.5 py-2 rounded-xl transition-all duration-150 ${
-                          pathname === "/technology"
-                            ? "bg-[#fae9dc]/70 text-[#e06425]"
-                            : "text-[#13271e]/75 hover:bg-[#13271e]/[0.04] hover:text-[#e06425]"
-                        }`}
-                      >
-                        <span className="font-sans text-[12px] font-normal tracking-normal">
-                          Process Technology Flow
-                        </span>
-                        <ArrowUpRight className="w-3.5 h-3.5 opacity-40 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all text-[#e06425]" />
                       </Link>
                     </div>
                   </div>
@@ -520,13 +502,6 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
                   className="font-sans text-xl font-light hover:text-[#ea6e2d] transition-colors py-1"
                 >
                   Sustainable Aviation Fuel (SAF)
-                </Link>
-                <Link
-                  href="/technology"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="font-sans text-xl font-light hover:text-[#ea6e2d] transition-colors py-1"
-                >
-                  Technology & Process Flow
                 </Link>
               </div>
             </div>

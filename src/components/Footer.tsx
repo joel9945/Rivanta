@@ -59,7 +59,7 @@ export default async function Footer() {
                     href="/green-silicon"
                     className="hover:text-[#ea6e2d] transition-colors"
                   >
-                    Green Silicon (6N)
+                    Green Silicon (9N)
                   </Link>
                 </li>
                 <li>
@@ -76,14 +76,6 @@ export default async function Footer() {
                     className="hover:text-[#ea6e2d] transition-colors"
                   >
                     Aviation Fuel (SAF)
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/technology"
-                    className="hover:text-[#ea6e2d] transition-colors"
-                  >
-                    Process Flow
                   </Link>
                 </li>
               </ul>

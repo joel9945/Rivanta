@@ -298,11 +298,11 @@ export default function GreenSiliconPage() {
                 </Link>
 
                 <Link
-                  href="/technology"
+                  href="/projects"
                   className="u-btn--3"
-                  data-label="Inspect Refining Process"
+                  data-label="View Infrastructure Projects"
                 >
-                  <span className="btn_label">Inspect Refining Process</span>
+                  <span className="btn_label">View Infrastructure Projects</span>
                 </Link>
               </div>
             </div>

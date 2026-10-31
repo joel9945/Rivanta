@@ -30,7 +30,7 @@ export default function PlatformHgroup() {
 
             <div className="pt-6 md:pt-8">
               <Link
-                href="/technology"
+                href="/projects"
                 className="group inline-flex items-center gap-2 font-sans text-sm md:text-base font-medium text-[#13271e] hover:text-[#e06425] transition-colors duration-200"
               >
                 <span className="border-b border-[#13271e]/25 group-hover:border-[#e06425] pb-0.5 transition-colors duration-200">

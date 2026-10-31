@@ -117,8 +117,8 @@ export default function SafPage() {
         ]}
         primaryCtaText="Inquire on Technology Dialogue"
         primaryCtaHref="/contact"
-        secondaryCtaText="Explore Process Engineering"
-        secondaryCtaHref="/technology"
+        secondaryCtaText="View Infrastructure Projects"
+        secondaryCtaHref="/projects"
         telemetryTag="ASTM D7566 Standards • CORSIA Compliant"
       />
 
@@ -439,11 +439,11 @@ export default function SafPage() {
                 </Link>
 
                 <Link
-                  href="/technology"
+                  href="/projects"
                   className="u-btn--3"
-                  data-label="Explore Process Engineering"
+                  data-label="View Infrastructure Projects"
                 >
-                  <span className="btn_label">Explore Process Engineering</span>
+                  <span className="btn_label">View Infrastructure Projects</span>
                 </Link>
               </div>
             </div>

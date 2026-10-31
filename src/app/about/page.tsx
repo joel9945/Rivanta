@@ -87,8 +87,8 @@ export default function AboutPage() {
         description="Rivanta Green Innovative Venture Private Limited is developing an integrated biomass-to-value manufacturing ecosystem, unlocking the industrial potential of rice husk and agricultural residues."
         imageSrc="/images/company-innovation.jpg"
         breadcrumbs={[{ label: "About" }]}
-        primaryCtaText="Explore Our Technology"
-        primaryCtaHref="/technology"
+        primaryCtaText="Explore Infrastructure Projects"
+        primaryCtaHref="/projects"
         secondaryCtaText="Contact Corporate Desk"
         secondaryCtaHref="/contact"
         telemetryTag="Incorporated Venture • Industrial Manufacturing"
