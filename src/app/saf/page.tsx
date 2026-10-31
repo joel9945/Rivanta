@@ -1,46 +1,50 @@
 "use client";
 
-import React, { useState } from "react";
-import Link from "next/link";
-import SubpageHero from "@/components/SubpageHero";
 import MarqueeText from "@/components/MarqueeText";
+import SubpageHero from "@/components/SubpageHero";
 import {
-  Fuel,
-  Flame,
-  ArrowRight,
-  ArrowUpRight,
-  Activity,
-  AlertCircle,
-  Plane,
+    Activity,
+    AlertCircle,
+    ArrowRight,
+    ArrowUpRight,
+    Flame,
+    Fuel,
+    Plane,
 } from "lucide-react";
+import Link from "next/link";
+import { useState } from "react";
 
 const SPEC_METRICS = [
   {
     id: "drop-in",
     value: "100%",
     label: "Drop-In Parity",
-    detail: "Identical freezing point (-47°C), flash point, and density to conventional Jet A-1 kerosene.",
+    detail:
+      "Identical freezing point (-47°C), flash point, and density to conventional Jet A-1 kerosene.",
     trend: "ASTM D7566 Annex",
   },
   {
     id: "emissions",
     value: "Up to -80%",
     label: "Lifecycle GHG Reduction",
-    detail: "Cradle-to-wake greenhouse gas displacement assessed under ICAO CORSIA baseline standards.",
+    detail:
+      "Cradle-to-wake greenhouse gas displacement assessed under ICAO CORSIA baseline standards.",
     trend: "CORSIA Audited",
   },
   {
     id: "feedstock-class",
     value: "Non-Food",
     label: "Feedstock Integrity",
-    detail: "Strictly non-competing second-generation lignocellulosic residues and non-edible lipid fractions.",
+    detail:
+      "Strictly non-competing second-generation lignocellulosic residues and non-edible lipid fractions.",
     trend: "Zero Land-Use Conflict",
   },
   {
     id: "aromatics",
     value: "Low Aromatic",
     label: "Soot & Particulate Abatement",
-    detail: "Near-zero sulfur and low aromatic content dramatically lowers contrail formation in upper atmospheres.",
+    detail:
+      "Near-zero sulfur and low aromatic content dramatically lowers contrail formation in upper atmospheres.",
     trend: "Cleaner Combustion",
   },
 ];
@@ -85,17 +89,20 @@ const CRITERIA_STEPS = [
   {
     step: "01",
     title: "Zero Infrastructure Retooling Required",
-    detail: "Synthesized drop-in SAF flows through existing airport hydrant pipelines, storage terminals, and standard commercial jet engine architectures without modification.",
+    detail:
+      "Synthesized drop-in SAF flows through existing airport hydrant pipelines, storage terminals, and standard commercial jet engine architectures without modification.",
   },
   {
     step: "02",
     title: "Strict Food-vs-Fuel Ringfencing",
-    detail: "Feedstock aggregation strictly excludes arable food crops, utilizing exclusively regional agricultural residues and second-generation non-edible materials.",
+    detail:
+      "Feedstock aggregation strictly excludes arable food crops, utilizing exclusively regional agricultural residues and second-generation non-edible materials.",
   },
   {
     step: "03",
     title: "Transparent Technological Disclosure",
-    detail: "Our SAF pathway remains in technological feasibility and technology-licensing screening, with disciplined evaluation of front-end engineering design (FEED).",
+    detail:
+      "Our SAF pathway remains in technological feasibility and technology-licensing screening, with disciplined evaluation of front-end engineering design (FEED).",
   },
 ];
 
@@ -142,15 +149,24 @@ export default function SafPage() {
             <div className="lg:col-span-8 flex flex-col space-y-8 md:space-y-10">
               <h2 className="font-sans font-normal text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.12] text-[#13271e] reveal-up delay-100">
                 Aviation cannot decarbonize with batteries alone.{" "}
-                <span className="text-[#a0b0a5]">Drop-in synthetic fuels are vital.</span>
+                <span className="text-[#a0b0a5]">
+                  Drop-in synthetic fuels are vital.
+                </span>
               </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-[#13271e]/80 text-base md:text-lg font-light leading-relaxed reveal-up delay-200">
                 <p>
-                  Long-haul commercial aviation requires immense volumetric and gravimetric energy density. Battery and hydrogen technologies cannot bridge transcontinental flights without heavy payload compromises. Drop-in synthetic paraffinic kerosene is the essential near-term solution.
+                  Long-haul commercial aviation requires immense volumetric and
+                  gravimetric energy density. Battery and hydrogen technologies
+                  cannot bridge transcontinental flights without heavy payload
+                  compromises. Drop-in synthetic paraffinic kerosene is the
+                  essential near-term solution.
                 </p>
                 <p>
-                  Rivanta Green is actively evaluating licensed conversion technologies that transform regional agricultural residues into certified drop-in fuels matching every physical criterion of Jet A-1 kerosene.
+                  Rivanta Green is actively evaluating licensed conversion
+                  technologies that transform regional agricultural residues
+                  into certified drop-in fuels matching every physical criterion
+                  of Jet A-1 kerosene.
                 </p>
               </div>
 
@@ -162,7 +178,11 @@ export default function SafPage() {
                     Development Status Disclosure
                   </h3>
                   <p className="font-sans text-xs sm:text-sm text-[#13271e]/75 font-light leading-relaxed">
-                    Our SAF initiative is in the technological assessment and feasibility phase. We are screening licensed conversion technologies, conducting preliminary feedstock logistics modeling, and structuring dialogue with regional refining and airline partners.
+                    Our SAF initiative is in the technological assessment and
+                    feasibility phase. We are screening licensed conversion
+                    technologies, conducting preliminary feedstock logistics
+                    modeling, and structuring dialogue with regional refining
+                    and airline partners.
                   </p>
                 </div>
               </div>
@@ -251,7 +271,9 @@ export default function SafPage() {
                       </h3>
                       <div
                         className={`card-arrow-circle w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
-                          isDark ? "bg-white/10 text-white" : "bg-black/5 text-[#13271e]"
+                          isDark
+                            ? "bg-white/10 text-white"
+                            : "bg-black/5 text-[#13271e]"
                         }`}
                       >
                         <ArrowUpRight className="w-4 h-4" />
@@ -264,7 +286,10 @@ export default function SafPage() {
                     >
                       {card.text}
                     </p>
-                    <div className="pt-2 font-mono text-xs uppercase tracking-wider font-medium" style={{ color: card.accent }}>
+                    <div
+                      className="pt-2 font-mono text-xs uppercase tracking-wider font-medium"
+                      style={{ color: card.accent }}
+                    >
                       {card.stat}
                     </div>
                   </div>
@@ -318,14 +343,18 @@ export default function SafPage() {
                   <div className="flex items-center justify-between mb-6">
                     <div
                       className={`w-12 h-12 rounded-xl flex items-center justify-center ${
-                        isSelected ? "bg-white/10 text-[#ea6e2d]" : "bg-[#f6f8f6] text-[#13271e]"
+                        isSelected
+                          ? "bg-white/10 text-[#ea6e2d]"
+                          : "bg-[#f6f8f6] text-[#13271e]"
                       }`}
                     >
                       <Fuel className="w-6 h-6" />
                     </div>
                     <span
                       className={`font-mono text-xs uppercase tracking-wider px-2.5 py-1 rounded-full ${
-                        isSelected ? "bg-[#ea6e2d] text-white" : "bg-[#f0f4f1] text-[#2d7a54]"
+                        isSelected
+                          ? "bg-[#ea6e2d] text-white"
+                          : "bg-[#f0f4f1] text-[#2d7a54]"
                       }`}
                     >
                       {metric.trend}
@@ -378,7 +407,9 @@ export default function SafPage() {
                 Evaluating commercial off-take and technology licensors.
               </h2>
               <p className="font-sans text-base md:text-lg text-[#13271e]/80 font-light max-w-2xl reveal-up delay-200">
-                To guarantee zero fuel incompatibility and full certification, our technical review aligns with global airline consortia and the International Civil Aviation Organization (ICAO).
+                To guarantee zero fuel incompatibility and full certification,
+                our technical review aligns with global airline consortia and
+                the International Civil Aviation Organization (ICAO).
               </p>
 
               <div className="space-y-4 pt-4">

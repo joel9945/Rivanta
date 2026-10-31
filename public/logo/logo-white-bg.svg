@@ -3,13 +3,14 @@
   <rect width="100%" height="100%" fill="#ffffff" />
 
   <defs>
-    <!-- Luxury Metallic Gold Gradient -->
+    <!-- High-Contrast Luxury Metallic Gold Gradient -->
     <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#C59B27" />
-      <stop offset="25%" stop-color="#F3E19E" />
-      <stop offset="50%" stop-color="#DFBA5A" />
-      <stop offset="75%" stop-color="#FFE8A3" />
-      <stop offset="100%" stop-color="#B88E2D" />
+      <stop offset="0%" stop-color="#9E6C11" />
+      <stop offset="20%" stop-color="#E2A528" />
+      <stop offset="40%" stop-color="#BA7F15" />
+      <stop offset="60%" stop-color="#F2B835" />
+      <stop offset="80%" stop-color="#C78A1A" />
+      <stop offset="100%" stop-color="#885507" />
     </linearGradient>
 
     <!-- Vibrant Emerald Green Gradient for Double Underlines -->
