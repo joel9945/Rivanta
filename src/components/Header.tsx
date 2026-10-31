@@ -9,21 +9,26 @@ import {
   ChevronDown,
   X,
 } from "lucide-react";
-import { useModal } from "@/context/ModalContext";
 
 interface HeaderProps {
   onOpenPartnerModal?: () => void;
 }
 
 export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
-  const modalContext = useModal();
-  const handleOpenPartner = onOpenPartnerModal || modalContext.openPartnerModal;
   const pathname = usePathname();
 
+  const [prevPathname, setPrevPathname] = useState(pathname);
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<"manufacturing" | "company" | null>(null);
   const navRef = useRef<HTMLElement>(null);
+
+  // Close dropdown and drawer upon route transition
+  if (prevPathname !== pathname) {
+    setPrevPathname(pathname);
+    setActiveDropdown(null);
+    setMobileMenuOpen(false);
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -85,11 +90,7 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
     };
   }, []);
 
-  // Close dropdown and drawer upon route transition
-  useEffect(() => {
-    setActiveDropdown(null);
-    setMobileMenuOpen(false);
-  }, [pathname]);
+
 
   const isManufacturingActive =
     pathname?.startsWith("/green-silicon") ||
