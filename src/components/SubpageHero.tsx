@@ -47,24 +47,18 @@ export default function SubpageHero({
 
     const updateScrollState = () => {
       const scrollY = window.scrollY;
-      const threshold = 160;
+      const threshold = 180;
       const progress = Math.min(1, Math.max(0, scrollY / threshold));
 
       const isMobile = window.innerWidth <= 1024;
-      const initialMargin = isMobile ? 8 : 12;
-      const initialRadius = isMobile ? 18 : 28;
-      const initialPt = 0;
+      const initialMargin = isMobile ? 10 : 14;
+      const baseRadius = isMobile ? 20 : 28;
 
       const currentMargin = Math.max(0, initialMargin * (1 - progress));
-      const currentRadius = Math.max(0, initialRadius * (1 - progress));
-      const currentPt = 0;
 
       if (canvasRef.current) {
         canvasRef.current.style.setProperty("--subpage-canvas-margin", `${currentMargin.toFixed(1)}px`);
-        canvasRef.current.style.setProperty("--subpage-canvas-radius", `${currentRadius.toFixed(1)}px`);
-      }
-      if (sectionRef.current) {
-        sectionRef.current.style.paddingTop = "0px";
+        canvasRef.current.style.setProperty("--subpage-canvas-radius", `${baseRadius}px`);
       }
 
       ticking = false;
@@ -88,20 +82,20 @@ export default function SubpageHero({
   }, []);
 
   return (
-    <section id="subpage-hero" ref={sectionRef} className="relative w-full pt-0 transition-[padding] duration-200">
-      {/* Framed Canvas matching Homepage Hero Aesthetics with scroll expansion */}
+    <section id="subpage-hero" ref={sectionRef} className="relative w-full p-0">
+      {/* Framed Canvas matching Homepage Hero Aesthetics with Permanent Rounded Corners */}
       <div
         ref={canvasRef}
-        className="subpage-frame-canvas relative flex flex-col justify-between text-white shadow-2xl bg-[#0e2219]"
+        className="subpage-frame-canvas relative flex flex-col justify-between text-white shadow-2xl bg-[#0e2219] rounded-[20px] lg:rounded-[28px] overflow-hidden"
       >
         {/* Background Image / Ambient Gradients */}
         {imageSrc ? (
-          <div className="absolute inset-0 z-0 overflow-hidden">
+          <div className="absolute inset-0 z-0 overflow-hidden rounded-[inherit]">
             <Image
               src={imageSrc}
               alt={imageAlt}
               fill
-              className="object-cover scale-105 transition-transform duration-1000 ease-out animate-ken-burns"
+              className="object-cover rounded-[inherit] scale-105 transition-transform duration-1000 ease-out animate-ken-burns"
               priority
             />
             {/* Dark nature-tech forest overlay with warm terracotta spotlight */}

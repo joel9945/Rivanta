@@ -51,23 +51,28 @@ export default function UspCards() {
               <Link
                 key={card.index}
                 href={card.href}
+                suppressHydrationWarning
                 style={{ backgroundColor: card.bg, color: card.textColor }}
-                className={`group relative min-h-[380px] md:min-h-[440px] lg:min-h-[480px] p-8 md:p-12 flex flex-col justify-between transition-all duration-500 overflow-hidden text-left card-interactive reveal-up delay-${(idx + 1) * 100}`}
+                className={`group relative min-h-[420px] sm:min-h-[460px] lg:min-h-[500px] p-8 sm:p-10 md:p-12 flex flex-col justify-between transition-all duration-500 overflow-hidden text-left card-interactive reveal-up delay-${(idx + 1) * 100}`}
               >
-                {/* Index & Badge in Top Right */}
-                <div className="flex items-center justify-between w-full opacity-70">
-                  <span className="font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 rounded bg-black/5 font-medium">
+                {/* Index & Badge in Top Row */}
+                <div className="flex items-center justify-between w-full opacity-75 z-10">
+                  <span
+                    className={`font-mono text-[10.5px] uppercase tracking-wider px-2.5 py-1 rounded font-medium ${
+                      isDark ? "bg-white/10 text-white" : "bg-black/5 text-[#13271e]"
+                    }`}
+                  >
                     {card.badge}
                   </span>
-                  <span className="font-mono text-xs md:text-sm tracking-wider uppercase">
+                  <span className="font-mono text-xs md:text-sm tracking-wider uppercase font-medium">
                     {card.index}
                   </span>
                 </div>
 
-                {/* Card Icon */}
-                <div className="my-auto py-6">
+                {/* Tactile Icon in Middle */}
+                <div className="my-auto py-8 z-10">
                   <div
-                    className={`w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center transition-transform duration-500 group-hover:scale-110 ${
+                    className={`w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center transition-transform duration-500 group-hover:scale-110 shadow-sm ${
                       isDark ? "bg-white/10" : "bg-black/5"
                     }`}
                   >
@@ -80,16 +85,16 @@ export default function UspCards() {
 
                 {/* Card Content at bottom */}
                 <div className="flex flex-col space-y-3 z-10">
-                  <div className="flex items-center justify-between">
-                    <h3 className="font-sans font-medium text-2xl md:text-3xl tracking-tight leading-tight group-hover:text-[#e06425] transition-colors">
+                  <div className="flex items-center justify-between gap-4">
+                    <h3 className="font-sans font-medium text-2xl md:text-3xl tracking-tight leading-tight group-hover:text-[#e06425] transition-colors duration-200">
                       {card.title}
                     </h3>
                     <div
-                      className={`card-arrow-circle w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
+                      className={`card-arrow-circle w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center transition-all duration-300 ${
                         isDark ? "bg-white/10 text-white" : "bg-black/5 text-[#13271e]"
-                      }`}
+                      } group-hover:bg-[#e06425] group-hover:text-white`}
                     >
-                      <ArrowUpRight className="w-4 h-4" />
+                      <ArrowUpRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </div>
                   </div>
                   <p

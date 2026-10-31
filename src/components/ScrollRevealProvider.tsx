@@ -17,74 +17,82 @@ export default function ScrollRevealProvider({
   useEffect(() => {
     if (typeof window === "undefined") return;
 
+    let isDestroyed = false;
+    let observer: IntersectionObserver | null = null;
+    let mutationObserver: MutationObserver | null = null;
+
     const revealSelector =
       ".reveal, .reveal-up, .reveal-left, .reveal-right, .reveal-fade, .reveal-scale, .reveal-stagger";
 
-    // Immediate check for elements currently visible in viewport
+    // Check for elements currently visible in viewport
     const checkVisible = () => {
+      if (isDestroyed) return;
       const targets = document.querySelectorAll(revealSelector);
       const windowHeight = window.innerHeight;
 
       targets.forEach((el) => {
         const rect = el.getBoundingClientRect();
-        // If element is already in viewport or near viewport top
         if (rect.top <= windowHeight * 0.95 && rect.bottom >= 0) {
           el.classList.add("is-revealed");
         }
       });
     };
 
-    // Defer initial check to requestAnimationFrame so React hydration pass finishes cleanly first
-    const rafId = requestAnimationFrame(() => {
-      checkVisible();
-    });
+    const initEngine = () => {
+      if (isDestroyed) return;
 
-    if (!("IntersectionObserver" in window)) {
-      // Fallback: reveal all if IntersectionObserver unsupported
-      document.querySelectorAll(revealSelector).forEach((el) => {
-        el.classList.add("is-revealed");
-      });
-      return;
-    }
+      if (!("IntersectionObserver" in window)) {
+        document.querySelectorAll(revealSelector).forEach((el) => {
+          el.classList.add("is-revealed");
+        });
+        return;
+      }
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-revealed");
-            observer.unobserve(entry.target);
+      observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-revealed");
+              observer?.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.05,
+          rootMargin: "0px 0px -20px 0px",
+        }
+      );
+
+      const observeElements = () => {
+        if (isDestroyed || !observer) return;
+        const targets = document.querySelectorAll(revealSelector);
+        targets.forEach((el) => {
+          if (!el.classList.contains("is-revealed")) {
+            observer?.observe(el);
           }
         });
-      },
-      {
-        threshold: 0.05,
-        rootMargin: "0px 0px -20px 0px",
-      }
-    );
+      };
 
-    const observeElements = () => {
-      const targets = document.querySelectorAll(revealSelector);
-      targets.forEach((el) => {
-        if (!el.classList.contains("is-revealed")) {
-          observer.observe(el);
-        }
+      // Perform initial check and start observing
+      checkVisible();
+      observeElements();
+
+      // Observe future route transitions/mutations only after initial hydration has settled
+      mutationObserver = new MutationObserver(() => {
+        checkVisible();
+        observeElements();
+      });
+
+      mutationObserver.observe(document.body, {
+        childList: true,
+        subtree: true,
       });
     };
 
-    observeElements();
+    // Wait until React hydration has completely settled before attaching DOM observers
+    const initTimer = setTimeout(initEngine, 100);
 
-    // Re-check on dynamic mutations (e.g. Next.js page transitions)
-    const mutationObserver = new MutationObserver(() => {
-      checkVisible();
-      observeElements();
-    });
-
-    mutationObserver.observe(document.body, {
-      childList: true,
-      subtree: true,
-    });
-
-    // Safety fallback: after 1.8s ensure everything is visible
+    // Safety fallback: ensure everything is visible
     const safetyTimer = setTimeout(() => {
       document.querySelectorAll(revealSelector).forEach((el) => {
         el.classList.add("is-revealed");
@@ -92,10 +100,11 @@ export default function ScrollRevealProvider({
     }, 1800);
 
     return () => {
-      observer.disconnect();
-      mutationObserver.disconnect();
+      isDestroyed = true;
+      clearTimeout(initTimer);
       clearTimeout(safetyTimer);
-      cancelAnimationFrame(rafId);
+      observer?.disconnect();
+      mutationObserver?.disconnect();
     };
   }, []);
 

@@ -27,15 +27,40 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Clean, immediate transition: transparent at top, frosted glass on scroll
-      setScrolled(window.scrollY > 25);
+      const heroEl =
+        document.getElementById("hero") ||
+        document.getElementById("subpage-hero");
+
+      if (heroEl) {
+        const rect = heroEl.getBoundingClientRect();
+        // The navbar remains transparent while the hero image/section is visible.
+        // It only transitions to the solid white frosted state once the hero scrolls completely past the header (~85px).
+        setScrolled(rect.bottom <= 85);
+      } else {
+        setScrolled(window.scrollY > 85);
+      }
     };
+
     handleScroll();
+    const rafId = requestAnimationFrame(handleScroll);
+
     window.addEventListener("scroll", handleScroll, { passive: true });
     window.addEventListener("resize", handleScroll, { passive: true });
+
+    // Also sync with smooth-scroll (Lenis) if available
+    const win = typeof window !== "undefined" ? (window as unknown as { lenis?: { on?: (event: string, cb: () => void) => void; off?: (event: string, cb: () => void) => void } }) : null;
+    const lenis = win?.lenis;
+    if (lenis && typeof lenis.on === "function") {
+      lenis.on("scroll", handleScroll);
+    }
+
     return () => {
+      cancelAnimationFrame(rafId);
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleScroll);
+      if (lenis && typeof lenis.off === "function") {
+        lenis.off("scroll", handleScroll);
+      }
     };
   }, [pathname]);
 
@@ -78,6 +103,28 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
 
   const isTransparent = !scrolled;
 
+  const getNavLinkClass = (isActive: boolean) =>
+    `px-3 xl:px-3.5 py-1.5 rounded-full font-sans text-[13px] xl:text-[13.5px] tracking-[-0.01em] transition-all duration-200 ${
+      isActive
+        ? isTransparent
+          ? "text-[#f9a65c] bg-white/15 font-semibold"
+          : "text-[#13271e] bg-[#13271e]/[0.08] font-semibold"
+        : isTransparent
+        ? "text-white/90 hover:text-white hover:bg-white/10 font-medium"
+        : "text-[#13271e]/75 hover:text-[#13271e] hover:bg-[#13271e]/[0.04] font-medium"
+    }`;
+
+  const getDropdownTriggerClass = (isOpenOrActive: boolean) =>
+    `px-3 xl:px-3.5 py-1.5 rounded-full font-sans text-[13px] xl:text-[13.5px] tracking-[-0.01em] flex items-center gap-1.5 transition-all duration-200 cursor-pointer border-0 ${
+      isOpenOrActive
+        ? isTransparent
+          ? "text-[#f9a65c] bg-white/15 font-semibold"
+          : "text-[#e06425] bg-[#e06425]/10 font-semibold"
+        : isTransparent
+        ? "text-white/90 hover:text-white hover:bg-white/10 font-medium"
+        : "text-[#13271e]/75 hover:text-[#13271e] hover:bg-[#13271e]/[0.04] font-medium"
+    }`;
+
   return (
     <>
       <header
@@ -98,7 +145,7 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
             >
               <div className="relative h-11.5 sm:h-12 md:h-12.5 w-auto flex-shrink-0 flex items-center">
                 <Image
-                  src="/logo/logo-brand-lockup.svg"
+                  src={isTransparent ? "/logo/logo-brand-lockup-light.svg" : "/logo/logo-brand-lockup.svg"}
                   alt="RIVANTA - Green Innovative Venture Private Limited"
                   width={230}
                   height={48}
@@ -129,18 +176,22 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
                       prev === "manufacturing" ? null : "manufacturing"
                     )
                   }
-                  className={`px-3 xl:px-3.5 py-1.5 rounded-full font-sans text-[13px] xl:text-[13.5px] font-medium tracking-[-0.01em] flex items-center gap-1.5 transition-all duration-200 cursor-pointer border-0 ${
+                  className={getDropdownTriggerClass(
                     activeDropdown === "manufacturing" || isManufacturingActive
-                      ? "text-[#e06425] bg-[#e06425]/10 font-semibold"
-                      : "text-[#13271e]/75 hover:text-[#13271e] hover:bg-[#13271e]/[0.04]"
-                  }`}
+                  )}
                   aria-expanded={activeDropdown === "manufacturing"}
                   aria-haspopup="true"
                 >
                   <span>Manufacturing</span>
                   <ChevronDown
                     className={`w-3.5 h-3.5 transition-transform duration-300 ${
-                      activeDropdown === "manufacturing" ? "rotate-180 text-[#e06425]" : ""
+                      activeDropdown === "manufacturing"
+                        ? isTransparent
+                          ? "rotate-180 text-[#f9a65c]"
+                          : "rotate-180 text-[#e06425]"
+                        : isTransparent
+                        ? "text-white/70"
+                        : "text-[#13271e]/60"
                     }`}
                   />
                 </button>
@@ -218,11 +269,7 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
               {/* 2. Feedstock */}
               <Link
                 href="/feedstock"
-                className={`px-3 xl:px-3.5 py-1.5 rounded-full font-sans text-[13px] xl:text-[13.5px] font-medium tracking-[-0.01em] transition-all duration-200 ${
-                  pathname === "/feedstock"
-                    ? "text-[#13271e] bg-[#13271e]/[0.08] font-semibold"
-                    : "text-[#13271e]/75 hover:text-[#13271e] hover:bg-[#13271e]/[0.04]"
-                }`}
+                className={getNavLinkClass(pathname === "/feedstock")}
               >
                 Feedstock
               </Link>
@@ -230,11 +277,7 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
               {/* 3. Sustainability */}
               <Link
                 href="/sustainability"
-                className={`px-3 xl:px-3.5 py-1.5 rounded-full font-sans text-[13px] xl:text-[13.5px] font-medium tracking-[-0.01em] transition-all duration-200 ${
-                  pathname === "/sustainability"
-                    ? "text-[#13271e] bg-[#13271e]/[0.08] font-semibold"
-                    : "text-[#13271e]/75 hover:text-[#13271e] hover:bg-[#13271e]/[0.04]"
-                }`}
+                className={getNavLinkClass(pathname === "/sustainability")}
               >
                 Sustainability
               </Link>
@@ -242,11 +285,7 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
               {/* 4. Projects */}
               <Link
                 href="/projects"
-                className={`px-3 xl:px-3.5 py-1.5 rounded-full font-sans text-[13px] xl:text-[13.5px] font-medium tracking-[-0.01em] transition-all duration-200 ${
-                  pathname === "/projects"
-                    ? "text-[#13271e] bg-[#13271e]/[0.08] font-semibold"
-                    : "text-[#13271e]/75 hover:text-[#13271e] hover:bg-[#13271e]/[0.04]"
-                }`}
+                className={getNavLinkClass(pathname === "/projects")}
               >
                 Projects
               </Link>
@@ -254,11 +293,7 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
               {/* 5. Investors (Dedicated Direct Link) */}
               <Link
                 href="/investors"
-                className={`px-3 xl:px-3.5 py-1.5 rounded-full font-sans text-[13px] xl:text-[13.5px] font-medium tracking-[-0.01em] transition-all duration-200 ${
-                  pathname === "/investors"
-                    ? "text-[#13271e] bg-[#13271e]/[0.08] font-semibold"
-                    : "text-[#13271e]/75 hover:text-[#13271e] hover:bg-[#13271e]/[0.04]"
-                }`}
+                className={getNavLinkClass(pathname === "/investors")}
               >
                 Investors
               </Link>
@@ -274,18 +309,22 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
                   onClick={() =>
                     setActiveDropdown((prev) => (prev === "company" ? null : "company"))
                   }
-                  className={`px-3 xl:px-3.5 py-1.5 rounded-full font-sans text-[13px] xl:text-[13.5px] font-medium tracking-[-0.01em] flex items-center gap-1.5 transition-all duration-200 cursor-pointer border-0 ${
+                  className={getDropdownTriggerClass(
                     activeDropdown === "company" || isCompanyActive
-                      ? "text-[#e06425] bg-[#e06425]/10 font-semibold"
-                      : "text-[#13271e]/75 hover:text-[#13271e] hover:bg-[#13271e]/[0.04]"
-                  }`}
+                  )}
                   aria-expanded={activeDropdown === "company"}
                   aria-haspopup="true"
                 >
                   <span>Company</span>
                   <ChevronDown
                     className={`w-3.5 h-3.5 transition-transform duration-300 ${
-                      activeDropdown === "company" ? "rotate-180 text-[#e06425]" : ""
+                      activeDropdown === "company"
+                        ? isTransparent
+                          ? "rotate-180 text-[#f9a65c]"
+                          : "rotate-180 text-[#e06425]"
+                        : isTransparent
+                        ? "text-white/70"
+                        : "text-[#13271e]/60"
                     }`}
                   />
                 </button>
@@ -351,7 +390,11 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
               <button
                 type="button"
                 onClick={onOpenPartnerModal}
-                className="group hidden sm:inline-flex items-center gap-2 bg-[#13271e] hover:bg-[#e06425] text-white px-5 sm:px-5.5 py-2 sm:py-2.5 rounded-full font-sans text-[13px] font-semibold tracking-[-0.01em] transition-all duration-300 shadow-[0_2px_10px_rgba(19,39,30,0.1)] hover:shadow-[0_6px_20px_rgba(224,100,37,0.28)] hover:-translate-y-0.5 active:translate-y-0 cursor-pointer border-0"
+                className={`group hidden sm:inline-flex items-center gap-2 px-5 sm:px-5.5 py-2 sm:py-2.5 rounded-full font-sans text-[13px] font-semibold tracking-[-0.01em] transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer border-0 ${
+                  isTransparent
+                    ? "bg-white text-[#13271e] hover:bg-[#e06425] hover:text-white shadow-[0_4px_16px_rgba(0,0,0,0.18)]"
+                    : "bg-[#13271e] hover:bg-[#e06425] text-white shadow-[0_2px_10px_rgba(19,39,30,0.1)] hover:shadow-[0_6px_20px_rgba(224,100,37,0.28)]"
+                }`}
                 aria-label="Contact Us"
               >
                 <span>Contact Us</span>
@@ -360,10 +403,12 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
             ) : (
               <Link
                 href="/contact"
-                className={`group hidden sm:inline-flex items-center gap-2 px-5 sm:px-5.5 py-2 sm:py-2.5 rounded-full font-sans text-[13px] font-semibold tracking-[-0.01em] transition-all duration-300 shadow-[0_2px_10px_rgba(19,39,30,0.1)] hover:shadow-[0_6px_20px_rgba(224,100,37,0.28)] hover:-translate-y-0.5 active:translate-y-0 cursor-pointer border-0 ${
+                className={`group hidden sm:inline-flex items-center gap-2 px-5 sm:px-5.5 py-2 sm:py-2.5 rounded-full font-sans text-[13px] font-semibold tracking-[-0.01em] transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer border-0 ${
                   pathname === "/contact"
                     ? "bg-[#e06425] text-white shadow-[0_4px_16px_rgba(224,100,37,0.3)]"
-                    : "bg-[#13271e] hover:bg-[#e06425] text-white"
+                    : isTransparent
+                    ? "bg-white text-[#13271e] hover:bg-[#e06425] hover:text-white shadow-[0_4px_16px_rgba(0,0,0,0.18)]"
+                    : "bg-[#13271e] hover:bg-[#e06425] text-white shadow-[0_2px_10px_rgba(19,39,30,0.1)] hover:shadow-[0_6px_20px_rgba(224,100,37,0.28)]"
                 }`}
                 aria-label="Contact Us"
               >
@@ -380,12 +425,16 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(true)}
-              className="lg:hidden flex items-center justify-center w-10 h-10 rounded-full bg-[#13271e]/5 hover:bg-[#13271e]/10 text-[#13271e] transition-colors cursor-pointer border-0"
+              className={`lg:hidden flex items-center justify-center w-10 h-10 rounded-full transition-colors cursor-pointer border-0 ${
+                isTransparent
+                  ? "bg-white/10 hover:bg-white/20 text-white"
+                  : "bg-[#13271e]/5 hover:bg-[#13271e]/10 text-[#13271e]"
+              }`}
               aria-label="Open mobile navigation menu"
             >
               <div className="flex flex-col gap-1.5 items-center justify-center">
-                <span className="w-5 h-[2px] bg-[#13271e] rounded-full"></span>
-                <span className="w-5 h-[2px] bg-[#13271e] rounded-full"></span>
+                <span className={`w-5 h-[2px] rounded-full transition-colors ${isTransparent ? "bg-white" : "bg-[#13271e]"}`}></span>
+                <span className={`w-5 h-[2px] rounded-full transition-colors ${isTransparent ? "bg-white" : "bg-[#13271e]"}`}></span>
               </div>
             </button>
           </div>

@@ -212,7 +212,7 @@ export default async function Footer() {
             <div className="w-8 h-8 relative flex-shrink-0 flex items-center">
               <Image
                 src="/logo/logo-icon.svg"
-                alt="Rivanta Phoenix Bird Emblem"
+                alt="Rivanta Eagle Emblem"
                 width={32}
                 height={32}
                 style={{ width: "auto", height: "100%" }}

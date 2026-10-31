@@ -11,8 +11,10 @@ const PILLARS = [
     tag: "Semiconductor & Clean Tech",
     title: "Green Silicon For Chips",
     badge: "9N Purity",
-    headlinePrefix: "Engineering the future for",
-    headlineHighlight: "clean innovation.",
+    line1: "Engineering the future",
+    line2Prefix: "for ",
+    line2Highlight: "clean innovation.",
+    fontSizeClass: "text-4xl sm:text-6xl md:text-7xl lg:text-[5.25rem] xl:text-[5.75rem]",
     description:
       "RIVANTA pioneers ultra-pure 9N (99.9999999%) green silicon from circular agricultural biomass, delivering domestic strategic feedstock for semiconductor chips, microelectronics, and advanced photovoltaics.",
     image: "/images/hero-facility.png",
@@ -23,8 +25,10 @@ const PILLARS = [
     tag: "Bio-Energy & Mobility",
     title: "Compressed Biogas (CBG)",
     badge: "Industrial Biomethane",
-    headlinePrefix: "Powering green mobility with",
-    headlineHighlight: "compressed biogas.",
+    line1: "Powering green mobility",
+    line2Prefix: "with ",
+    line2Highlight: "compressed biogas.",
+    fontSizeClass: "text-4xl sm:text-6xl md:text-7xl lg:text-[5.25rem] xl:text-[5.75rem]",
     description:
       "RIVANTA powers industrial-scale anaerobic digestion and biomethane enrichment, transforming agricultural residues into premium commercial CBG to decarbonize heavy transport, city gas distribution, and industrial power grids.",
     image: "/images/biogas-plant-golden-hour.png",
@@ -35,8 +39,10 @@ const PILLARS = [
     tag: "Aviation Decarbonization",
     title: "Sustainable Aviation Fuel (SAF)",
     badge: "Drop-in Bio-Fuel",
-    headlinePrefix: "Decarbonizing global aviation with",
-    headlineHighlight: "sustainable aviation fuel.",
+    line1: "Decarbonizing global aviation",
+    line2Prefix: "with ",
+    line2Highlight: "sustainable aviation fuel.",
+    fontSizeClass: "text-3xl sm:text-5xl md:text-[3.5rem] lg:text-[4.15rem] xl:text-[4.65rem]",
     description:
       "RIVANTA refines next-generation synthetic drop-in SAF from renewable agricultural feedstocks, engineered to ASTM standards to slash lifecycle flight emissions by up to 80% across commercial aviation corridors.",
     image: "/images/golden-hour-saf-refinery.png",
@@ -66,24 +72,18 @@ export default function Hero({ onExploreVentures }: HeroProps = {}) {
 
     const updateScrollState = () => {
       const scrollY = window.scrollY;
-      const threshold = 160; // Complete edge touch within 160px of scroll
+      const threshold = 180;
       const progress = Math.min(1, Math.max(0, scrollY / threshold));
 
       const isMobile = window.innerWidth <= 1024;
-      const initialMargin = isMobile ? 8 : 12;
-      const initialRadius = isMobile ? 18 : 24;
-      const initialPt = 0;
+      const initialMargin = isMobile ? 10 : 14;
+      const baseRadius = isMobile ? 20 : 28;
 
       const currentMargin = Math.max(0, initialMargin * (1 - progress));
-      const currentRadius = Math.max(0, initialRadius * (1 - progress));
-      const currentPt = 0;
 
       if (heroRef.current) {
         heroRef.current.style.setProperty("--hero-canvas-margin", `${currentMargin.toFixed(1)}px`);
-        heroRef.current.style.setProperty("--hero-canvas-radius", `${currentRadius.toFixed(1)}px`);
-      }
-      if (sectionRef.current) {
-        sectionRef.current.style.paddingTop = "0px";
+        heroRef.current.style.setProperty("--hero-canvas-radius", `${baseRadius}px`);
       }
 
       ticking = false;
@@ -107,18 +107,18 @@ export default function Hero({ onExploreVentures }: HeroProps = {}) {
   }, []);
 
   return (
-    <section id="hero" ref={sectionRef} className="relative w-full pt-0 transition-[padding] duration-200">
-      {/* 100vh Framed Canvas that expands to touch screen edges on scroll */}
+    <section id="hero" ref={sectionRef} className="relative w-full p-0">
+      {/* 100vh Framed Canvas with Permanent Rounded Corners on Top and Bottom */}
       <div
         ref={heroRef}
-        className="hero-frame-canvas relative flex flex-col justify-between text-white shadow-2xl"
+        className="hero-frame-canvas relative flex flex-col justify-between text-white shadow-2xl rounded-[20px] lg:rounded-[28px] overflow-hidden"
       >
         {/* Background Image Carousel with Smooth Cross-Fade Across All 3 Pillars */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
+        <div className="absolute inset-0 z-0 overflow-hidden rounded-[inherit]">
           {PILLARS.map((p, idx) => (
             <div
               key={p.index}
-              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              className={`absolute inset-0 rounded-[inherit] overflow-hidden transition-opacity duration-1000 ease-in-out ${
                 activePillar === idx ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
               }`}
             >
@@ -127,7 +127,7 @@ export default function Hero({ onExploreVentures }: HeroProps = {}) {
                 alt={p.alt}
                 fill
                 sizes="100vw"
-                className={`object-cover transition-transform duration-[12000ms] ease-out ${
+                className={`object-cover rounded-[inherit] transition-transform duration-[12000ms] ease-out ${
                   activePillar === idx ? "scale-110" : "scale-105"
                 }`}
                 priority
@@ -159,11 +159,16 @@ export default function Hero({ onExploreVentures }: HeroProps = {}) {
           <div className="my-auto py-8 animate-hero-2 min-h-[14rem] sm:min-h-[18rem] md:min-h-[22rem] flex items-center">
             <h1
               key={`headline-${activePillar}`}
-              className="font-sans font-light tracking-[-0.02em] text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.25rem] leading-[1.08] sm:leading-[1.06] text-white max-w-[1100px] animate-in fade-in duration-700"
+              className={`font-sans font-light tracking-[-0.02em] leading-[1.08] sm:leading-[1.06] text-white max-w-[1360px] w-full animate-in fade-in duration-700 ${PILLARS[activePillar].fontSizeClass}`}
             >
-              {PILLARS[activePillar].headlinePrefix}{" "}
-              <span className="font-normal italic text-[#f9a65c] inline-block pr-2 py-0.5">
-                {PILLARS[activePillar].headlineHighlight}
+              <span className="block">
+                {PILLARS[activePillar].line1}
+              </span>
+              <span className="block">
+                {PILLARS[activePillar].line2Prefix}
+                <span className="font-normal italic text-[#f9a65c] inline pr-2 py-0.5">
+                  {PILLARS[activePillar].line2Highlight}
+                </span>
               </span>
             </h1>
           </div>

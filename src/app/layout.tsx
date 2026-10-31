@@ -81,10 +81,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/logo/logo-orange-transparent.svg", type: "image/svg+xml" },
+      { url: "/logo/logo-icon.svg", type: "image/svg+xml" },
     ],
     apple: [
-      { url: "/logo/logo-orange-transparent.svg", type: "image/svg+xml" },
+      { url: "/logo/logo-icon.svg", type: "image/svg+xml" },
     ],
   },
 };
@@ -95,7 +95,7 @@ const structuredData = {
   name: "Rivanta Green Innovative Venture Private Limited",
   alternateName: "Rivanta Green",
   url: siteUrl,
-  logo: `${siteUrl}/logo/logo-orange-transparent.svg`,
+  logo: `${siteUrl}/logo/logo-icon.svg`,
   description:
     "Industrial manufacturing venture operating in agricultural biomass valorization, Green Silicon For Chips (9N purity), compressed biogas, and sustainable aviation fuel pathways.",
   email: "contact@rivantagreen.com",

@@ -24,10 +24,10 @@ export default function ErrorBoundary({ error, reset }: ErrorProps) {
       {/* Top Header */}
       <div className="flex items-center gap-3">
         <Link href="/" className="flex items-center gap-3">
-          <div className="w-8 h-8 relative flex-shrink-0 drop-shadow-[0_2px_8px_rgba(224,100,37,0.4)]">
+          <div className="w-8 h-8 relative flex-shrink-0 drop-shadow-[0_2px_8px_rgba(197,155,39,0.35)]">
             <Image
-              src="/logo/logo-orange-transparent.svg"
-              alt="Rivanta Phoenix"
+              src="/logo/logo-icon.svg"
+              alt="Rivanta Eagle Emblem"
               width={32}
               height={32}
               className="w-full h-full object-contain"

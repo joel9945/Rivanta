@@ -356,56 +356,46 @@ main.page-main > .page-content {
   100% { transform: translateX(-50%); }
 }
 
-/* Hero Framed Canvas with Smooth Scroll Expansion */
+/* Hero Framed Canvas with Elegant Permanent Rounded Corners */
 .hero-frame-canvas {
   position: relative;
-  margin-top: 0;
-  margin-bottom: var(--hero-canvas-margin, 12px);
-  margin-left: var(--hero-canvas-margin, 12px);
-  margin-right: var(--hero-canvas-margin, 12px);
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border-bottom-left-radius: var(--hero-canvas-radius, 24px);
-  border-bottom-right-radius: var(--hero-canvas-radius, 24px);
+  margin: var(--hero-canvas-margin, 14px);
+  border-radius: var(--hero-canvas-radius, 28px);
   overflow: hidden;
-  height: calc(100vh - var(--hero-canvas-margin, 12px));
+  isolation: isolate;
+  transform: translateZ(0);
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  height: calc(100vh - (var(--hero-canvas-margin, 14px) * 2));
   min-height: 640px;
-  transition: margin 0.2s cubic-bezier(0.16, 1, 0.3, 1),
-              border-radius 0.2s cubic-bezier(0.16, 1, 0.3, 1),
-              height 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 20px 50px -15px rgba(14, 34, 25, 0.25);
+  transition: margin 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              border-radius 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              height 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: margin, border-radius;
 }
 
 @media (max-width: 1024px) {
   .hero-frame-canvas {
-    margin-top: 0;
-    margin-bottom: var(--hero-canvas-margin, 8px);
-    margin-left: var(--hero-canvas-margin, 8px);
-    margin-right: var(--hero-canvas-margin, 8px);
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    border-bottom-left-radius: var(--hero-canvas-radius, 18px);
-    border-bottom-right-radius: var(--hero-canvas-radius, 18px);
-    height: calc(100vh - var(--hero-canvas-margin, 8px));
+    margin: var(--hero-canvas-margin, 10px);
+    border-radius: var(--hero-canvas-radius, 20px);
+    height: calc(100vh - (var(--hero-canvas-margin, 10px) * 2));
+    min-height: 580px;
   }
 }
 
-/* Subpage Framed Canvas matching Homepage Aesthetics */
+/* Subpage Framed Canvas matching Homepage Aesthetics with Permanent Rounded Corners */
 .subpage-frame-canvas {
   position: relative;
-  margin-top: 0;
-  margin-bottom: var(--subpage-canvas-margin, 12px);
-  margin-left: var(--subpage-canvas-margin, 12px);
-  margin-right: var(--subpage-canvas-margin, 12px);
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border-bottom-left-radius: var(--subpage-canvas-radius, 24px);
-  border-bottom-right-radius: var(--subpage-canvas-radius, 24px);
+  margin: var(--subpage-canvas-margin, 14px);
+  border-radius: var(--subpage-canvas-radius, 28px);
   overflow: hidden;
+  isolation: isolate;
+  transform: translateZ(0);
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
   min-height: 520px;
-  box-shadow: 0 20px 50px -15px rgba(14, 34, 25, 0.5);
-  transition: margin 0.2s cubic-bezier(0.16, 1, 0.3, 1),
-              border-radius 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 20px 50px -15px rgba(14, 34, 25, 0.25);
+  transition: margin 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              border-radius 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: margin, border-radius;
 }
 
@@ -417,16 +407,15 @@ main.page-main > .page-content {
 
 @media (min-width: 1025px) {
   .subpage-frame-canvas {
-    border-bottom-left-radius: var(--subpage-canvas-radius, 28px);
-    border-bottom-right-radius: var(--subpage-canvas-radius, 28px);
+    border-radius: var(--subpage-canvas-radius, 28px);
     min-height: 620px;
   }
 }
 
 @media (max-width: 1024px) {
   .subpage-frame-canvas {
-    margin: var(--subpage-canvas-margin, 8px);
-    border-radius: var(--subpage-canvas-radius, 18px);
+    margin: var(--subpage-canvas-margin, 10px);
+    border-radius: var(--subpage-canvas-radius, 20px);
   }
 }
 
