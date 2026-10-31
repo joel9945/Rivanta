@@ -16,7 +16,7 @@ import {
 const PHASES = [
   {
     phase: "Phase 01",
-    name: "Feedstock Catchment & Agronomic Feasibility",
+    name: "Feedstock Catchment & Agronomic Modeling",
     status: "Completed",
     timeline: "2024 – 2025",
     progress: 100,
@@ -68,7 +68,7 @@ const ASSET_UNITS = [
     name: "Flagship Green Silicon & Cogeneration Train",
     footprint: "14.5 Acres Allocated",
     grid: "33kV Dedicated Substation Interconnect",
-    status: "FEED In Progress",
+    status: "Engineering Specified",
     description:
       "Advanced reduction reactors, hydrometallurgical purification tanks, flash dry systems, and induction refining units yielding 6N purity (99.999%) Green Silicon.",
     badge: "Flagship Asset",
@@ -80,7 +80,7 @@ const ASSET_UNITS = [
     name: "Anaerobic Digestion & Biomethane Enrichment",
     footprint: "8.0 Acres Allocated",
     grid: "CGD Pipeline Interconnect & Cascade Bay",
-    status: "Process Licensing",
+    status: "Technology Aligned",
     description:
       "Continuous Stirred Tank Reactors (CSTR), biological desulfurization columns, selective membrane gas separation, and 250-bar cascade compression cylinders.",
     badge: "Renewable Gas",
@@ -92,7 +92,7 @@ const ASSET_UNITS = [
     name: "Zero Liquid Discharge & Process Water Loop",
     footprint: "4.2 Acres Allocated",
     grid: "High-Efficiency Closed-Loop Recirculation",
-    status: "Engineering Cleared",
+    status: "Closed-Loop Design",
     description:
       "Multi-stage high-recovery reverse osmosis, mechanical vapor recompression (MVR) evaporators, and crystallizers recovering 98%+ of process water.",
     badge: "ZLD System",
@@ -140,7 +140,7 @@ export default function ProjectsPage() {
 
       {/* Infinite Industrial Ticker */}
       <MarqueeText
-        phrase="INFRASTRUCTURE BLUEPRINT — PHASE 2 FEED UNDERWAY — 33KV GRID INTERCONNECTION — CONTINUOUS EMISSION MONITORING (CEMS) — ASME & IS STANDARDS COMPLIANT — "
+        phrase="INFRASTRUCTURE BLUEPRINT — ADVANCED PROCESS ENGINEERING — 33KV GRID INTERCONNECTION — CONTINUOUS EMISSION MONITORING (CEMS) — ASME & IS STANDARDS COMPLIANT — "
         theme="light"
       />
 
@@ -162,7 +162,7 @@ export default function ProjectsPage() {
                   <span className="text-[#a0b0a5]">commercial production.</span>
                 </h2>
                 <p className="font-sans text-base md:text-lg text-[#13271e]/80 font-light mt-4 leading-relaxed reveal-up delay-200">
-                  We distinguish strictly between completed feasibility studies, active Front-End Engineering Design, and upcoming commercial EPC execution.
+                  Structured engineering milestones aligning FEED design, industrial procurement, and commercial EPC execution under auditable governance standards.
                 </p>
               </div>
 

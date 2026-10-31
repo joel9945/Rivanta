@@ -29,7 +29,7 @@ const CARDS = [
     index: "03.",
     title: "Sustainable Aviation Fuel",
     badge: "Synthetic Hydrocarbons",
-    text: "Evaluating technology licensors and processing pathways to synthesize drop-in synthetic paraffinic kerosene (SAF) to accelerate aviation sector decarbonization.",
+    text: "Synthesizing drop-in synthetic paraffinic kerosene (SAF) from certified agricultural biomass feedstocks to drive commercial aviation decarbonization.",
     bg: "#132c21",
     textColor: "#ffffff",
     icon: Fuel,

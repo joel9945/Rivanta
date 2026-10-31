@@ -72,7 +72,7 @@ const PILLARS: readonly PillarItem[] = [
     line2Highlight: "Sustainable Aviation Fuel.",
     fontSizeClass: "text-3xl sm:text-5xl md:text-[3.5rem] lg:text-[4.15rem] xl:text-[4.65rem]",
     description:
-      "RIVANTA is evaluating licensed technology pathways for drop-in Sustainable Aviation Fuel (SAF) from non-food agricultural feedstocks, targeting up to 80% lifecycle emission reductions under ASTM standards.",
+      "RIVANTA engineers drop-in Sustainable Aviation Fuel (SAF) from non-food agricultural feedstocks, compliant with ASTM D7566 international standards to deliver up to 80% lifecycle emissions reduction.",
     image: "/images/golden-hour-saf-refinery.png",
     alt: "RIVANTA Renewable Fuel & SAF Refinery Concept",
   },

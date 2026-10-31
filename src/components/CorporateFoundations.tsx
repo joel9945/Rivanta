@@ -1,6 +1,11 @@
-import React from "react";
+import {
+    ArrowRight,
+    ArrowUpRight,
+    Compass,
+    ShieldCheck,
+    Target,
+} from "lucide-react";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Compass, ShieldCheck, Target } from "lucide-react";
 
 export default function CorporateFoundations() {
   return (
@@ -37,7 +42,11 @@ export default function CorporateFoundations() {
               Rivanta Green was incorporated to engineer a market-driven, capital-efficient countermeasure to biomass waste: developing modern bio-manufacturing facilities to produce high-purity 6N Green Silicon (99.999%), commercial Compressed Biogas (CBG), and drop-in Sustainable Aviation Fuel (SAF).
             </p>
             <div className="flex items-center gap-5 pt-2">
-              <Link href="/about" className="u-btn--1" aria-label="Explore About Rivanta">
+              <Link
+                href="/about"
+                className="u-btn--1"
+                aria-label="Explore About Rivanta"
+              >
                 <span className="btn_label">
                   About Rivanta
                   <div className="label_corner">
@@ -101,7 +110,10 @@ export default function CorporateFoundations() {
                 Decarbonizing Heavy Industry Through Circular Bio-Materials.
               </h3>
               <p className="font-sans text-sm sm:text-base text-[#13271e]/75 font-light leading-relaxed">
-                To be India’s premier bio-industrial manufacturer, providing conflict-free 6N green silicon (99.999%), clean biomethane for municipal grids, and drop-in SAF to transform aviation corridors.
+                To be India’s premier bio-industrial manufacturer, providing
+                conflict-free 6N green silicon (99.999%), clean biomethane for
+                municipal grids, and drop-in SAF to transform aviation
+                corridors.
               </p>
             </div>
             <div className="pt-4 border-t border-[#13271e]/8 font-mono text-xs text-[#e06425] font-medium">
@@ -144,7 +156,8 @@ export default function CorporateFoundations() {
                 Engineering Rigor
               </h4>
               <p className="font-sans text-xs sm:text-sm text-[#13271e]/75 font-light leading-relaxed">
-                Modeled on thermodynamic mass and energy balances, ASME pressure standards, and automated in-line process control.
+                Modeled on thermodynamic mass and energy balances, ASME pressure
+                standards, and automated in-line process control.
               </p>
             </div>
           </div>
@@ -158,7 +171,8 @@ export default function CorporateFoundations() {
                 Resource Efficiency
               </h4>
               <p className="font-sans text-xs sm:text-sm text-[#13271e]/75 font-light leading-relaxed">
-                Zero-waste flowsheet recycling 98%+ of process water, capturing waste heat steam, and returning nutrient humus to farmland.
+                Zero-waste flowsheet recycling 98%+ of process water, capturing
+                waste heat steam, and returning nutrient humus to farmland.
               </p>
             </div>
           </div>

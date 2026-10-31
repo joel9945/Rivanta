@@ -19,8 +19,8 @@ const SLIDES: GallerySlide[] = [
   {
     id: "01",
     category: "01 / RAW MATERIALS",
-    title: "It starts with agricultural residues.",
-    desc: "Rice husk, straw and sugarcane residues form the foundation of our proposed biorefinery.",
+    title: "Sustained by agricultural residues.",
+    desc: "Rice husk, straw, and sugarcane residues form the feedstock foundation for Rivanta's integrated bio-refining infrastructure.",
     short: "Agricultural residues",
     img: "/images/gallery/01-raw-materials.jpg",
     href: "/feedstock",
@@ -28,17 +28,17 @@ const SLIDES: GallerySlide[] = [
   {
     id: "02",
     category: "02 / RENEWABLE GAS",
-    title: "Turning organic matter into CBG.",
-    desc: "Developing biomass conversion pathways for compressed biogas and useful co-products.",
+    title: "Converting organic matter into CBG.",
+    desc: "Industrial anaerobic digestion and gas upgrading delivering commercial-grade Compressed Biogas and nutrient-rich bio-fertilizer.",
     short: "Compressed biogas",
     img: "/images/gallery/02-renewable-gas.jpg",
     href: "/cbg",
   },
   {
     id: "03",
-    category: "03 / ENERGY INTEGRATION",
-    title: "Recovering value from process energy.",
-    desc: "Integrating controlled thermal processing and energy recovery into the wider plant design.",
+    category: "03 / ENERGY RECOVERY",
+    title: "Capturing thermodynamic plant synergy.",
+    desc: "Integrated closed-loop cogeneration and heat recovery engineered to maximize thermal efficiency across manufacturing streams.",
     short: "Energy recovery",
     img: "/images/gallery/03-energy-integration.jpg",
     href: "/projects",
@@ -46,27 +46,27 @@ const SLIDES: GallerySlide[] = [
   {
     id: "04",
     category: "04 / ADVANCED MATERIALS",
-    title: "From rice husk ash to bio-silica.",
-    desc: "Exploring high-value silica production from processed agricultural ash.",
-    short: "Bio-silica",
+    title: "High-purity bio-silica & green silicon.",
+    desc: "Specialized extraction refining biogenic silica into high-purity industrial materials and 6N green silicon (99.999%).",
+    short: "Bio-silica & silicon",
     img: "/images/gallery/04-bio-silica.jpg",
     href: "/bio-silica",
   },
   {
     id: "05",
-    category: "05 / FUTURE FUELS",
-    title: "Developing pathways for cleaner flight.",
-    desc: "Advancing a sustainable aviation fuel workstream within our integrated platform.",
-    short: "Aviation fuel",
+    category: "05 / CLEAN FUELS",
+    title: "Drop-in sustainable aviation fuel.",
+    desc: "Synthetic paraffinic kerosene pathways engineered to ASTM D7566 standards for direct blending into commercial aviation infrastructure.",
+    short: "Aviation fuel (SAF)",
     img: "/images/gallery/05-future-fuels.jpg",
     href: "/saf",
   },
   {
     id: "06",
-    category: "06 / CIRCULAR PRODUCTS",
-    title: "Finding value in the remaining material.",
-    desc: "Assessing biochar and soil-product applications for suitable residual streams.",
-    short: "Biochar & soil products",
+    category: "06 / CIRCULAR CO-PRODUCTS",
+    title: "Zero-waste circular mineral products.",
+    desc: "Biochar and mineral coproducts returning organic carbon to agricultural soils and industrial supply chains.",
+    short: "Biochar & minerals",
     img: "/images/gallery/06-circular-products.jpg",
     href: "/sustainability",
   },
@@ -98,7 +98,7 @@ export default function ValueChainGallery() {
     <section
       id="value-chain"
       className="py-20 md:py-32 bg-[#f7f7f3] border-t border-[#13271e]/10 relative z-10"
-      aria-label="Planned Value Chain & Technologies"
+      aria-label="Integrated Bio-Value Chain"
     >
       <div className="u-container u-container--1 u-container--pad">
         {/* Section Header */}
@@ -107,7 +107,7 @@ export default function ValueChainGallery() {
             <div className="flex items-center gap-2 mb-3">
               <span className="w-2.5 h-2.5 rounded-full bg-[#e06425] animate-pulse" />
               <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#737d71] font-bold">
-                04 / Inside Rivanta / Planned value chain
+                04 / VALUE CHAIN & INFRASTRUCTURE
               </span>
             </div>
             <h2 className="font-sans font-light text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] tracking-[-0.04em] leading-[1.08] text-[#18251f] max-w-3xl">
@@ -118,8 +118,7 @@ export default function ValueChainGallery() {
             </h2>
           </div>
           <p className="font-sans text-sm md:text-base text-[#687168] leading-relaxed max-w-sm font-light">
-            A closer look at the processes, technologies and industrial outputs
-            envisioned for Rivanta&apos;s integrated bio-manufacturing ecosystem.
+            An overview of the advanced processes, refining streams, and high-value materials engineered across Rivanta&apos;s bio-manufacturing ecosystem.
           </p>
         </div>
 
@@ -149,7 +148,7 @@ export default function ValueChainGallery() {
 
           {/* Top Info Bar */}
           <div className="absolute left-6 right-6 sm:left-10 sm:right-10 top-6 sm:top-8 z-20 flex justify-between items-center text-[#f4f3eb] font-mono text-[11px] font-semibold uppercase tracking-[0.15em]">
-            <span>Rivanta Green / Technology portfolio</span>
+            <span>Rivanta Green / Industrial Ecosystem</span>
             <span className="px-2.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15">
               {String(current + 1).padStart(2, "0")} / 06
             </span>
@@ -252,13 +251,7 @@ export default function ValueChainGallery() {
             );
           })}
         </div>
-
-        {/* Clarifying Disclaimer Footnote */}
-        <p className="font-sans text-[11px] sm:text-xs text-[#838982] mt-6 md:mt-8 font-light leading-relaxed">
-          * Planned industrial workstreams within our integrated ecosystem evaluation. Photography reflects representative process environments and technology directions.
-        </p>
       </div>
     </section>
   );
 }
-

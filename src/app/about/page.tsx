@@ -57,7 +57,7 @@ const MILESTONES = [
   {
     stage: "Phase 01",
     status: "Completed",
-    title: "Catchment Profiling & Agronomic Feasibility",
+    title: "Catchment Profiling & Feedstock Modeling",
     detail: "Extensive regional field surveys analyzing rice husk generation density, milling logistics, and biogenic silicon precursor yield across a 100km radius.",
   },
   {

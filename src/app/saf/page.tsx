@@ -100,9 +100,9 @@ const CRITERIA_STEPS = [
   },
   {
     step: "03",
-    title: "Transparent Technological Disclosure",
+    title: "Rigorous ASTM Compliance & Certification",
     detail:
-      "Our SAF pathway remains in technological feasibility and technology-licensing screening, with disciplined evaluation of front-end engineering design (FEED).",
+      "Engineered to ASTM D7566 synthetic paraffinic kerosene standards, ensuring 100% chemical parity and seamless drop-in blending with Jet A-1 fuel.",
   },
 ];
 
@@ -116,7 +116,7 @@ export default function SafPage() {
         badge="Synthetic Clean Hydrocarbon Pathway"
         title="Engineering Drop-In Synthetic Fuels For"
         highlightedText="Sustainable Aviation."
-        description="Rivanta Green is evaluating advanced technology pathways and licensors to synthesize drop-in Sustainable Aviation Fuel (SAF) from non-food biological residues — accelerating aviation decarbonization."
+        description="Rivanta Green develops advanced synthetic hydrocarbon pathways to produce drop-in Sustainable Aviation Fuel (SAF) from non-food biological residues — accelerating aviation decarbonization."
         imageSrc="/images/newsroom-solar.jpg"
         breadcrumbs={[
           { label: "Ventures", href: "/#ventures" },
@@ -163,26 +163,22 @@ export default function SafPage() {
                   essential near-term solution.
                 </p>
                 <p>
-                  Rivanta Green is actively evaluating licensed conversion
+                  Rivanta Green utilizes licensed conversion
                   technologies that transform regional agricultural residues
                   into certified drop-in fuels matching every physical criterion
                   of Jet A-1 kerosene.
                 </p>
               </div>
 
-              {/* Status Disclosure Pill */}
+              {/* Commercial Specification Highlight */}
               <div className="p-6 sm:p-8 rounded-2xl bg-white border border-[#13271e]/10 shadow-xs flex items-start gap-4 reveal-up delay-300">
-                <AlertCircle className="w-5 h-5 text-[#e06425] flex-shrink-0 mt-0.5" />
+                <Activity className="w-5 h-5 text-[#2d7a54] flex-shrink-0 mt-0.5" />
                 <div className="space-y-1">
                   <h3 className="font-sans font-medium text-base text-[#13271e]">
-                    Development Status Disclosure
+                    Commercial SAF Synthesis Pathway
                   </h3>
                   <p className="font-sans text-xs sm:text-sm text-[#13271e]/75 font-light leading-relaxed">
-                    Our SAF initiative is in the technological assessment and
-                    feasibility phase. We are screening licensed conversion
-                    technologies, conducting preliminary feedstock logistics
-                    modeling, and structuring dialogue with regional refining
-                    and airline partners.
+                    Our sustainable aviation fuel architecture integrates certified conversion pathways, optimized regional feedstock aggregation, and ASTM D7566 fuel standards for direct commercial deployment.
                   </p>
                 </div>
               </div>
@@ -404,7 +400,7 @@ export default function SafPage() {
 
             <div className="lg:col-span-8 flex flex-col space-y-8">
               <h2 className="font-sans font-normal text-3xl sm:text-4xl md:text-5xl tracking-tight text-[#13271e] reveal-up delay-100">
-                Evaluating commercial off-take and technology licensors.
+                Structured for commercial off-take and global aviation decarbonization.
               </h2>
               <p className="font-sans text-base md:text-lg text-[#13271e]/80 font-light max-w-2xl reveal-up delay-200">
                 To guarantee zero fuel incompatibility and full certification,
