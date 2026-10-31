@@ -107,8 +107,8 @@ export default function SafPage() {
       {/* Framed Canvas Hero */}
       <SubpageHero
         badge="Synthetic Clean Hydrocarbon Pathway"
-        title="Engineering drop-in synthetic fuels for"
-        highlightedText="sustainable aviation."
+        title="Engineering Drop-In Synthetic Fuels For"
+        highlightedText="Sustainable Aviation."
         description="Rivanta Green is evaluating advanced technology pathways and licensors to synthesize drop-in Sustainable Aviation Fuel (SAF) from non-food biological residues — accelerating aviation decarbonization."
         imageSrc="/images/newsroom-solar.jpg"
         breadcrumbs={[

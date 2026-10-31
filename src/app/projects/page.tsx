@@ -126,8 +126,8 @@ export default function ProjectsPage() {
       {/* Framed Canvas Hero */}
       <SubpageHero
         badge="Capital Infrastructure"
-        title="Engineering modern infrastructure for"
-        highlightedText="operational permanence."
+        title="Engineering Modern Infrastructure For"
+        highlightedText="Operational Permanence."
         description="Our manufacturing assets are engineered to institutional standards — combining robust civil engineering, automated SCADA process control, and transparent implementation milestones."
         imageSrc="/images/hero-facility.jpg"
         breadcrumbs={[{ label: "Infrastructure" }, { label: "Projects & Engineering" }]}

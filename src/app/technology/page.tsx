@@ -99,8 +99,8 @@ export default function TechnologyPage() {
       {/* Framed Canvas Hero */}
       <SubpageHero
         badge="Engineering Architecture"
-        title="Integrated systems engineering and"
-        highlightedText="manufacturing flowsheet."
+        title="Integrated Systems Engineering And"
+        highlightedText="Manufacturing Flowsheet."
         description="Our manufacturing architecture integrates thermal conversion, precision Green Silicon For Chips refining (9N purity), anaerobic digestion, and waste-heat recovery into an interconnected, energy-efficient industrial ecosystem."
         imageSrc="/images/company-innovation.jpg"
         breadcrumbs={[{ label: "Technology" }]}

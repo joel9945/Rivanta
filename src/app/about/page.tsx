@@ -82,8 +82,8 @@ export default function AboutPage() {
       {/* Framed Canvas Hero */}
       <SubpageHero
         badge="Corporate Profile"
-        title="Engineering sustainable value from"
-        highlightedText="agricultural biomass."
+        title="Engineering Sustainable Value From"
+        highlightedText="Agricultural Biomass."
         description="Rivanta Green Innovative Venture Private Limited is developing an integrated biomass-to-value manufacturing ecosystem, unlocking the industrial potential of rice husk and agricultural residues."
         imageSrc="/images/company-innovation.jpg"
         breadcrumbs={[{ label: "About" }]}

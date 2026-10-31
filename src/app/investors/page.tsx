@@ -70,8 +70,8 @@ export default function InvestorsPage() {
       {/* Framed Canvas Hero */}
       <SubpageHero
         badge="Commercial Engagement"
-        title="Institutional capital & commercial off-take for"
-        highlightedText="sustainable industrial assets."
+        title="Institutional Capital & Commercial Off-Take For"
+        highlightedText="Sustainable Industrial Assets."
         description="We structure disciplined commercial partnerships across industrial off-take, project capital, and feedstock joint ventures — delivering bankable green manufacturing assets with verified unit economics."
         imageSrc="/images/company-innovation.jpg"
         breadcrumbs={[{ label: "Commercial" }, { label: "Investors & Off-Take" }]}

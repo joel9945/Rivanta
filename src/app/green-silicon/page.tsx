@@ -116,7 +116,7 @@ export default function GreenSiliconPage() {
       {/* Framed Canvas Hero */}
       <SubpageHero
         badge="Flagship Semiconductor Material"
-        title="Engineering sustainable deep-tech with"
+        title="Engineering Sustainable Deep-Tech With"
         highlightedText="Green Silicon For Chips."
         description="Developing advanced, low-carbon circular refining infrastructure to synthesize ultra-high purity Green Silicon with verified 9N purity (99.9999999%) for advanced semiconductor chips, microelectronics, and clean technology."
         imageSrc="/images/bio-silica-lab.jpg"

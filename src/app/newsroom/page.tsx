@@ -80,8 +80,8 @@ export default function NewsroomPage() {
       {/* Framed Canvas Hero */}
       <SubpageHero
         badge="Dispatches & Intelligence"
-        title="Technical insight on biomass valorization and"
-        highlightedText="industrial engineering."
+        title="Technical Insight On Biomass Valorization And"
+        highlightedText="Industrial Engineering."
         description="Explore our technical whitepapers, engineering analyses, and regulatory briefs on Green Silicon For Chips (9N purity), compressed biogas, and sustainable energy transitions."
         imageSrc="/images/newsroom-solar.jpg"
         breadcrumbs={[{ label: "News & Insights" }]}

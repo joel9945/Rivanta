@@ -117,8 +117,8 @@ export default function SustainabilityPage() {
       {/* Framed Canvas Hero */}
       <SubpageHero
         badge="Evidence-Based Impact"
-        title="Responsible engineering for"
-        highlightedText="measurable ecological value."
+        title="Responsible Engineering For"
+        highlightedText="Measurable Ecological Value."
         description="Our environmental framework is built on transparent lifecycle accounting, resource efficiency, and verified operational benchmarks — strictly grounded in engineering reality, not speculative marketing."
         imageSrc="/images/hero-facility.jpg"
         breadcrumbs={[{ label: "Sustainability & Ecological Impact" }]}

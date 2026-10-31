@@ -11,9 +11,9 @@ const PILLARS = [
     tag: "Semiconductor & Clean Tech",
     title: "Green Silicon For Chips",
     badge: "9N Purity",
-    line1: "Engineering the future",
-    line2Prefix: "for ",
-    line2Highlight: "clean innovation.",
+    line1: "Engineering The Future",
+    line2Prefix: "For ",
+    line2Highlight: "Clean Innovation.",
     fontSizeClass: "text-4xl sm:text-6xl md:text-7xl lg:text-[5.25rem] xl:text-[5.75rem]",
     description:
       "RIVANTA pioneers ultra-pure 9N (99.9999999%) green silicon from circular agricultural biomass, delivering domestic strategic feedstock for semiconductor chips, microelectronics, and advanced photovoltaics.",
@@ -25,9 +25,9 @@ const PILLARS = [
     tag: "Bio-Energy & Mobility",
     title: "Compressed Biogas (CBG)",
     badge: "Industrial Biomethane",
-    line1: "Powering green mobility",
-    line2Prefix: "with ",
-    line2Highlight: "compressed biogas.",
+    line1: "Powering Green Mobility",
+    line2Prefix: "With ",
+    line2Highlight: "Compressed Biogas.",
     fontSizeClass: "text-4xl sm:text-6xl md:text-7xl lg:text-[5.25rem] xl:text-[5.75rem]",
     description:
       "RIVANTA powers industrial-scale anaerobic digestion and biomethane enrichment, transforming agricultural residues into premium commercial CBG to decarbonize heavy transport, city gas distribution, and industrial power grids.",
@@ -38,10 +38,10 @@ const PILLARS = [
     index: "03",
     tag: "Aviation Decarbonization",
     title: "Sustainable Aviation Fuel (SAF)",
-    badge: "Drop-in Bio-Fuel",
-    line1: "Decarbonizing global aviation",
-    line2Prefix: "with ",
-    line2Highlight: "sustainable aviation fuel.",
+    badge: "Drop-In Bio-Fuel",
+    line1: "Decarbonizing Global Aviation",
+    line2Prefix: "With ",
+    line2Highlight: "Sustainable Aviation Fuel.",
     fontSizeClass: "text-3xl sm:text-5xl md:text-[3.5rem] lg:text-[4.15rem] xl:text-[4.65rem]",
     description:
       "RIVANTA refines next-generation synthetic drop-in SAF from renewable agricultural feedstocks, engineered to ASTM standards to slash lifecycle flight emissions by up to 80% across commercial aviation corridors.",
@@ -224,7 +224,7 @@ export default function Hero({ onExploreVentures }: HeroProps = {}) {
                 aria-label="Discover our ventures"
               >
                 <span className="btn_label">
-                  Discover our ventures
+                  Discover Our Ventures
                   <div className="label_corner">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

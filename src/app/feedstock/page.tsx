@@ -88,8 +88,8 @@ export default function FeedstockPage() {
       {/* Framed Canvas Hero */}
       <SubpageHero
         badge="Supply Chain & Circularity"
-        title="Building resilient supply chains for"
-        highlightedText="agricultural biomass."
+        title="Building Resilient Supply Chains For"
+        highlightedText="Agricultural Biomass."
         description="Our feedstock architecture combines regional aggregation logistics, automated quality testing, and multi-year miller partnerships to secure continuous biomass supplies without competing with food security."
         imageSrc="/images/feedstock-aggregation.jpg"
         breadcrumbs={[

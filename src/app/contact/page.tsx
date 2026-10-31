@@ -62,8 +62,8 @@ export default function ContactPage() {
       {/* Framed Canvas Hero */}
       <SubpageHero
         badge="Official Corporate Desk"
-        title="Direct channels for commercial and"
-        highlightedText="technical engagement."
+        title="Direct Channels For Commercial And"
+        highlightedText="Technical Engagement."
         description="Connect directly with our engineering, feedstock logistics, and commercial off-take desks to discuss project parameters, Green Silicon (9N) testing lots, or strategic joint ventures."
         breadcrumbs={[{ label: "Contact & Corporate Desk" }]}
         primaryCtaText="Submit Formal Inquiry"

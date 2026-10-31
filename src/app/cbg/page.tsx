@@ -106,8 +106,8 @@ export default function CbgPage() {
       {/* Framed Canvas Hero */}
       <SubpageHero
         badge="Renewable Clean Gas Pathway"
-        title="Biomethane enrichment from"
-        highlightedText="agricultural biomass residues."
+        title="Biomethane Enrichment From"
+        highlightedText="Agricultural Biomass Residues."
         description="Developing utility-scale Compressed Biogas (CBG) facilities to convert regional biomass streams into high-purity renewable methane, displacing fossil natural gas in transport and industrial thermal networks."
         imageSrc="/images/cbg-plant.jpg"
         breadcrumbs={[
