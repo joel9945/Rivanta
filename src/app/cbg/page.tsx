@@ -268,7 +268,7 @@ export default function CbgPage() {
         </div>
       </section>
 
-      {/* Interactive Specifications Deck (Matching Homepage TelemetrySection) */}
+      {/* Interactive Specifications Deck */}
       <section className="py-20 md:py-28 bg-[#eceee9] border-t border-[#13271e]/8">
         <div className="u-container u-container--1 u-container--pad">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 gap-6">

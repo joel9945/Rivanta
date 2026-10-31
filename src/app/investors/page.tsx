@@ -57,8 +57,8 @@ const RISK_PILLARS = [
   },
   {
     category: "Environmental & Regulatory",
-    mitigation: "Zero Liquid Discharge (ZLD) closed-loop engineering and ISO 14064 verified carbon avoidance eliminating compliance penalties.",
-    rating: "Audit: Accredited Third-Party Verification",
+    mitigation: "Zero Liquid Discharge (ZLD) closed-loop engineering and ISO 14064 aligned carbon accounting eliminating regulatory exposure.",
+    rating: "Standards: ISO 14064 Compliance Framework",
   },
 ];
 
@@ -72,7 +72,7 @@ export default function InvestorsPage() {
         badge="Commercial Engagement"
         title="Institutional Capital & Commercial Off-Take For"
         highlightedText="Sustainable Industrial Assets."
-        description="We structure disciplined commercial partnerships across industrial off-take, project capital, and feedstock joint ventures — delivering bankable green manufacturing assets with verified unit economics."
+        description="We structure disciplined commercial partnerships across industrial off-take, project capital, and feedstock joint ventures — delivering bankable green manufacturing assets with disciplined unit economics."
         imageSrc="/images/company-innovation.jpg"
         breadcrumbs={[{ label: "Commercial" }, { label: "Investors & Off-Take" }]}
         primaryCtaText="Engage on Commercial Off-Take"

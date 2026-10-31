@@ -328,13 +328,13 @@ export default function SustainabilityPage() {
             <div className="max-w-2xl space-y-3">
               <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-[#ea6e2d]">
                 <ShieldCheck className="w-4 h-4" />
-                <span>Audited Governance Standards</span>
+                <span>Governance & Verification Framework</span>
               </div>
               <h3 className="font-sans font-medium text-2xl sm:text-3xl md:text-4xl">
-                Accredited third-party verification under ISO 14040/14044 & ISO 14064.
+                Structured for third-party verification under ISO 14040/14044 & ISO 14064.
               </h3>
               <p className="font-sans text-sm md:text-base text-white/75 font-light leading-relaxed">
-                We clearly separate operational empirical data from predictive development models. All emission offsets, water recoveries, and carbon displacement figures are audited annually by accredited environmental verification bodies.
+                We strictly distinguish project engineering models from empirical operational baselines. Lifecycle assessments, circular resource yields, and carbon displacement figures are modeled under ISO 14040/14044 frameworks and structured for accredited third-party verification.
               </p>
             </div>
 

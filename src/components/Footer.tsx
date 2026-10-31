@@ -59,7 +59,7 @@ export default async function Footer() {
                     href="/green-silicon"
                     className="hover:text-[#ea6e2d] transition-colors"
                   >
-                    Green Silicon (9N)
+                    Green Silicon (6N / 99.999%)
                   </Link>
                 </li>
                 <li>

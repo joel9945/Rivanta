@@ -24,29 +24,29 @@ const PILLARS: readonly PillarItem[] = [
     index: "01",
     tag: "Circular Bio-Economy",
     title: "Clean Innovation",
-    badge: "Net-Zero Ecosystem",
+    badge: "Bio-Industrial Platform",
     line1: "Engineering The Future",
     line2Prefix: "For ",
     line2Highlight: "Clean Innovation.",
     fontSizeClass: "text-4xl sm:text-6xl md:text-7xl lg:text-[5.25rem] xl:text-[5.75rem]",
     description:
-      "RIVANTA pioneers multi-stream agricultural biomass valorization, transforming non-food residues into ultra-pure green silicon, commercial compressed biogas, and drop-in sustainable aviation fuels.",
+      "RIVANTA is developing an integrated bio-manufacturing ecosystem to convert non-food agricultural residues into high-purity green silicon (6N / 99.999%), commercial compressed biogas, and drop-in sustainable aviation fuels.",
     image: "/images/hero-facility.png",
-    alt: "RIVANTA Integrated Clean Innovation & Advanced Bio-Industrial Facility",
+    alt: "RIVANTA Integrated Clean Innovation & Advanced Bio-Industrial Platform",
   },
   {
     index: "02",
     tag: "Advanced Clean Technology",
     title: "Green Silicon (6N)",
-    badge: "6N Purity",
+    badge: "6N Target Purity",
     line1: "Pioneering Green Silicon",
     line2Prefix: "For ",
     line2Highlight: "Clean Technologies.",
     fontSizeClass: "text-4xl sm:text-6xl md:text-7xl lg:text-[5.25rem] xl:text-[5.75rem]",
     description:
-      "RIVANTA pioneers high-purity 6N (99.999%) green silicon from circular agricultural biomass, delivering domestic strategic feedstock for solar photovoltaics, advanced electronics, and energy storage.",
+      "RIVANTA is engineering a circular bio-manufacturing pathway targeting 6N (99.999%) green silicon from agricultural biomass, designed as strategic industrial feedstock for photovoltaic wafers and energy storage.",
     image: "/images/green-silicon-refinery.jpg",
-    alt: "RIVANTA High-Purity Green Silicon Refining Plant & Processing Infrastructure",
+    alt: "RIVANTA High-Purity Green Silicon Refining Platform & Infrastructure",
   },
   {
     index: "03",
@@ -58,9 +58,9 @@ const PILLARS: readonly PillarItem[] = [
     line2Highlight: "Compressed Biogas.",
     fontSizeClass: "text-4xl sm:text-6xl md:text-7xl lg:text-[5.25rem] xl:text-[5.75rem]",
     description:
-      "RIVANTA powers industrial-scale anaerobic digestion and biomethane enrichment, transforming agricultural residues into premium commercial CBG to decarbonize heavy transport, city gas distribution, and industrial power grids.",
+      "RIVANTA is developing commercial anaerobic digestion and biomethane enrichment facilities to convert agricultural residues into Compressed Biogas (CBG) for clean transport and regional off-take.",
     image: "/images/biogas-plant-golden-hour.png",
-    alt: "RIVANTA Biogas Industrial Refinery Plant at Golden Hour",
+    alt: "RIVANTA Biogas Industrial Refinery Architecture",
   },
   {
     index: "04",
@@ -72,9 +72,9 @@ const PILLARS: readonly PillarItem[] = [
     line2Highlight: "Sustainable Aviation Fuel.",
     fontSizeClass: "text-3xl sm:text-5xl md:text-[3.5rem] lg:text-[4.15rem] xl:text-[4.65rem]",
     description:
-      "RIVANTA refines next-generation synthetic drop-in SAF from renewable agricultural feedstocks, engineered to ASTM standards to slash lifecycle flight emissions by up to 80% across commercial aviation corridors.",
+      "RIVANTA is evaluating licensed technology pathways for drop-in Sustainable Aviation Fuel (SAF) from non-food agricultural feedstocks, targeting up to 80% lifecycle emission reductions under ASTM standards.",
     image: "/images/golden-hour-saf-refinery.png",
-    alt: "RIVANTA Golden Hour Renewable Fuel & SAF Refinery",
+    alt: "RIVANTA Renewable Fuel & SAF Refinery Concept",
   },
 ];
 

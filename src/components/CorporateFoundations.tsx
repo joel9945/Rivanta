@@ -34,7 +34,7 @@ export default function CorporateFoundations() {
           </div>
           <div className="lg:col-span-5 flex flex-col justify-between space-y-6 pt-1 sm:pt-2">
             <p className="font-sans text-base sm:text-lg text-[#13271e]/80 font-light leading-relaxed">
-              Rivanta Green was incorporated to engineer a market-driven, capital-efficient countermeasure to biomass waste: establishing modern manufacturing units that synthesize high-purity 6N Green Silicon (99.999%), commercial Compressed Biogas (CBG), and drop-in Sustainable Aviation Fuel (SAF).
+              Rivanta Green was incorporated to engineer a market-driven, capital-efficient countermeasure to biomass waste: developing modern bio-manufacturing facilities to produce high-purity 6N Green Silicon (99.999%), commercial Compressed Biogas (CBG), and drop-in Sustainable Aviation Fuel (SAF).
             </p>
             <div className="flex items-center gap-5 pt-2">
               <Link href="/about" className="u-btn--1" aria-label="Explore About Rivanta">
@@ -124,11 +124,11 @@ export default function CorporateFoundations() {
                 Engineering Value With Rigorous Capital & Ecological Efficiency.
               </h3>
               <p className="font-sans text-sm sm:text-base text-white/80 font-light leading-relaxed">
-                To engineer and commission integrated manufacturing plants that extract maximum thermodynamic value from agrarian residues, operating with Zero Liquid Discharge (ZLD) and auditable governance under ISO 14064.
+                To engineer and deploy integrated manufacturing facilities that extract maximum thermodynamic value from agrarian residues, designed for Zero Liquid Discharge (ZLD) and auditable governance under ISO 14064.
               </p>
             </div>
             <div className="pt-4 border-t border-white/10 font-mono text-xs text-[#f9a65c] font-medium">
-              Audited Under Global Environmental Standards
+              Designed to Global Environmental Standards (ISO 14064)
             </div>
           </div>
         </div>
@@ -172,7 +172,7 @@ export default function CorporateFoundations() {
                 Auditable Governance
               </h4>
               <p className="font-sans text-xs sm:text-sm text-[#13271e]/75 font-light leading-relaxed">
-                Institutional transparency with lifecycle carbon accounting verified by independent bodies under ISO 14064 benchmarks.
+                Institutional transparency with lifecycle carbon accounting structured for third-party verification under ISO 14064 benchmarks.
               </p>
             </div>
           </div>
