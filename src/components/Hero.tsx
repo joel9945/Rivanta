@@ -5,7 +5,21 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-const PILLARS = [
+interface PillarItem {
+  readonly index: string;
+  readonly tag: string;
+  readonly title: string;
+  readonly badge: string;
+  readonly line1: string;
+  readonly line2Prefix: string;
+  readonly line2Highlight: string;
+  readonly fontSizeClass: string;
+  readonly description: string;
+  readonly image: string;
+  readonly alt: string;
+}
+
+const PILLARS: readonly PillarItem[] = [
   {
     index: "01",
     tag: "Circular Bio-Economy",
