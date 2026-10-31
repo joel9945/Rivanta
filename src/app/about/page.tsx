@@ -32,7 +32,7 @@ const VALUES = [
     title: "Resource Efficiency",
     badge: "Zero-Waste Circularity",
     description:
-      "We treat agricultural residues as valuable material feeds, producing Green Silicon For Chips (9N purity), combustible biomethane, and organic humus to eliminate waste.",
+      "We treat agricultural residues as valuable material feeds, producing Green Silicon (6N purity / 99.999%), combustible biomethane, and organic humus to eliminate waste.",
     bg: "#d6e8dc",
     textColor: "#13271e",
     accent: "#2d7a54",
@@ -64,13 +64,13 @@ const MILESTONES = [
     stage: "Phase 02",
     status: "Underway",
     title: "Front-End Engineering Design (FEED) & Permitting",
-    detail: "Detailed process engineering for the flagship Green Silicon For Chips refining plant (9N purity), biomethane upgrading columns, and statutory environmental clearances.",
+    detail: "Detailed process engineering for the flagship Green Silicon refining plant (6N purity / 99.999%), biomethane upgrading columns, and statutory environmental clearances.",
   },
   {
     stage: "Phase 03",
     status: "Planned",
     title: "Commercial Commissioning & Industrial Off-Take",
-    detail: "Turnkey equipment installation, grid synchronization, and commercial supply of 9N purity (99.9999999%) Green Silicon to semiconductor and electronics partners.",
+    detail: "Turnkey equipment installation, grid synchronization, and commercial supply of 6N purity (99.999%) Green Silicon to advanced technology and clean energy partners.",
   },
 ];
 
@@ -96,7 +96,7 @@ export default function AboutPage() {
 
       {/* Infinite Industrial Ticker */}
       <MarqueeText
-        phrase="CIRCULAR BIO-MANUFACTURING — GREEN SILICON FOR CHIPS (9N PURITY) — COMPRESSED BIOGAS (CBG) — ZERO-WASTE AGRICULTURAL VALORIZATION — AUDITABLE ESG GOVERNANCE — "
+        phrase="CIRCULAR BIO-MANUFACTURING — GREEN SILICON (6N PURITY / 99.999%) — COMPRESSED BIOGAS (CBG) — ZERO-WASTE AGRICULTURAL VALORIZATION — AUDITABLE ESG GOVERNANCE — "
         theme="light"
       />
 
@@ -122,7 +122,7 @@ export default function AboutPage() {
                   Across key agrarian belts, millions of metric tons of crop residues are burned or dumped, triggering seasonal smog and wasting high-energy biomaterials.
                 </p>
                 <p>
-                  Rivanta Green was incorporated to engineer a market-driven, capital-efficient countermeasure: establishing modern processing units that synthesize ultra-pure Green Silicon For Chips (9N purity / 99.9999999%), alongside clean biomethane and organic soil nourishment.
+                  Rivanta Green was incorporated to engineer a market-driven, capital-efficient countermeasure: establishing modern processing units that synthesize ultra-pure Green Silicon (6N purity / 99.999%), alongside clean biomethane and organic soil nourishment.
                 </p>
               </div>
 

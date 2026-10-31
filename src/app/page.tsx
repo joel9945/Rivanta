@@ -15,7 +15,7 @@ export default function Home() {
       {/* Platform Overview */}
       <PlatformHgroup />
 
-      {/* 3-Cards Venture Portfolio: Green Silicon For Chips (9N Purity), CBG, SAF */}
+      {/* 3-Cards Venture Portfolio: Green Silicon (6N Purity), CBG, SAF */}
       <UspCards />
 
       {/* Infinite Industrial Intelligence Ticker */}

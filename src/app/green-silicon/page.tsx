@@ -28,10 +28,10 @@ const COMPARISON_ROWS = [
   },
   {
     parameter: "Silicon Purity Grade",
-    greenSilicon: "9N Purity (99.9999999% Electronic-Grade Silicon EG-Si)",
+    greenSilicon: "6N Purity (99.999% High-Purity Silicon)",
     minedSilicon:
       "Standard Metallurgical Grade (MG-Si 98-99%) before chlorosilanes",
-    advantage: "Direct Electronic 9N Purity",
+    advantage: "Direct 6N High Purity",
   },
   {
     parameter: "Embodied Carbon Footprint",
@@ -50,27 +50,27 @@ const COMPARISON_ROWS = [
   },
   {
     parameter: "Trace Critical Impurities (B, P)",
-    greenSilicon: "<0.1 ppb Boron & Phosphorus (Semiconductor Grade)",
+    greenSilicon: "<1 ppm Boron & Phosphorus (High-Purity Grade)",
     minedSilicon:
       "High trace boron and phosphorus requiring multiple chemical passes",
-    advantage: "Sub-ppb Precision Specification",
+    advantage: "Precision Low-Impurity Specification",
   },
 ];
 
 const APPLICATION_TABS = [
   {
-    id: "chips",
-    title: "Semiconductor Chips & ICs",
-    role: "Electronic-Grade Silicon (9N)",
+    id: "electronics",
+    title: "Advanced Electronics & Wafers",
+    role: "High-Purity Silicon (6N / 99.999%)",
     icon: Cpu,
     headline:
-      "Ultra-pure 9N silicon for microprocessors, logic devices, and AI accelerators.",
+      "Ultra-pure 6N silicon (99.999%) for advanced electronics and clean technology.",
     description:
-      "Engineered specifically for semiconductor wafer foundries. Our 9N purity (99.9999999%) Green Silicon For Chips meets the stringent requirements for Czochralski (CZ) crystal pulling, epitaxial wafer growth, and microelectronic chip fabrication with minimal crystal lattice defect densities.",
+      "Engineered specifically for high-spec silicon applications. Our 6N purity (99.999%) Green Silicon meets the stringent requirements for crystal pulling, advanced substrate production, and precision electronic fabrication with minimal crystal lattice defect densities.",
     specs: [
-      "Silicon Purity: ≥ 99.9999999% (9N Purity)",
-      "Boron (B) Impurity: ≤ 0.1 ppb",
-      "Phosphorus (P) Impurity: ≤ 0.1 ppb",
+      "Silicon Purity: ≥ 99.999% (6N Purity)",
+      "Boron (B) Impurity: ≤ 0.5 ppm",
+      "Phosphorus (P) Impurity: ≤ 0.5 ppm",
       "Total Carbon & Oxygen: ≤ 0.5 ppma",
     ],
   },
@@ -84,7 +84,7 @@ const APPLICATION_TABS = [
     description:
       "Displacing coal-fired polysilicon production, our Green Silicon enables tier-1 solar manufacturers to produce ultra-high efficiency solar wafers with a 65% lower embodied carbon score, accelerating the global transition to true net-zero clean energy.",
     specs: [
-      "Purity Rating: ≥ 9N Grade Precursor",
+      "Purity Rating: ≥ 6N Grade Specification (99.999%)",
       "Minority Carrier Lifetime: > 1,200 µs",
       "Resistivity Range: 0.5 – 3.0 Ω·cm",
       "Embodied Carbon Footprint: -65% vs Mined Quartz",
@@ -96,14 +96,14 @@ const APPLICATION_TABS = [
     role: "Discrete Devices & Sensors",
     icon: Layers,
     headline:
-      "High dielectric strength and thermal conductivity for automotive and grid power chips.",
+      "High dielectric strength and thermal conductivity for automotive and industrial power devices.",
     description:
       "Tailored for high-voltage power management ICs, IGBT substrates, and precision MEMS micro-sensors, our green silicon delivers optimal thermal dissipation and switching reliability across electric vehicle and industrial robotics architectures.",
     specs: [
       "Thermal Conductivity: 148 W/(m·K)",
       "Dislocation Etch Pit Density (EPD): < 100 cm⁻²",
       "Surface Defect Free: Class 10 Cleanroom Handled",
-      "Heavy Metals: < 1 ppb Total",
+      "Heavy Metals: < 1 ppm Total",
     ],
   },
   {
@@ -117,7 +117,7 @@ const APPLICATION_TABS = [
       "Produced with calibrated particle morphology to serve as high-capacity active material for advanced lithium-ion and solid-state battery anodes, offering up to 10x higher specific theoretical capacity compared to legacy graphite.",
     specs: [
       "Theoretical Specific Capacity: ~3,500 mAh/g",
-      "Precursor Silicon Purity: ≥ 9N Specification",
+      "Precursor Silicon Purity: ≥ 6N Specification (99.999%)",
       "Sub-Micron d50 Classification: 80 – 150 nm",
       "First Cycle Coulombic Efficiency: ≥ 88%",
     ],
@@ -131,25 +131,25 @@ export default function GreenSiliconPage() {
     <>
       {/* Framed Canvas Hero */}
       <SubpageHero
-        badge="Flagship Semiconductor Material"
+        badge="High-Purity Advanced Material"
         title="Engineering Sustainable Deep-Tech With"
-        highlightedText="Green Silicon For Chips."
-        description="Developing advanced, low-carbon circular refining infrastructure to synthesize ultra-high purity Green Silicon with verified 9N purity (99.9999999%) for advanced semiconductor chips, microelectronics, and clean technology."
+        highlightedText="Green Silicon (6N)."
+        description="Developing advanced, low-carbon circular refining infrastructure to synthesize ultra-high purity Green Silicon with verified 6N purity (99.999%) for clean technology, solar photovoltaics, and advanced electronics."
         imageSrc="/images/bio-silica-lab.jpg"
         breadcrumbs={[
           { label: "Ventures", href: "/#ventures" },
-          { label: "Green Silicon For Chips (9N)" },
+          { label: "Green Silicon (6N)" },
         ]}
-        primaryCtaText="Request 9N Technical Lot"
+        primaryCtaText="Request 6N Technical Lot"
         primaryCtaHref="/contact"
         secondaryCtaText="Compare Mined vs Green Silicon"
         secondaryCtaHref="#comparison"
-        telemetryTag="Green Silicon Purity 9N (99.9999999%) • Semiconductor Grade"
+        telemetryTag="Green Silicon Purity 6N (99.999%) • Advanced Grade"
       />
 
       {/* Infinite Industrial Ticker */}
       <MarqueeText
-        phrase="GREEN SILICON FOR CHIPS (9N PURITY) — 99.9999999% PURITY — SEMICONDUCTOR & SOLAR GRADE — 65% EMBODIED CARBON REDUCTION — ZERO COAL SMELTING — ADVANCED CIRCULAR DEEP-TECH — "
+        phrase="GREEN SILICON (6N PURITY / 99.999%) — SOLAR & ELECTRONICS GRADE — 65% EMBODIED CARBON REDUCTION — ZERO COAL SMELTING — ADVANCED CIRCULAR DEEP-TECH — "
         theme="light"
       />
 
@@ -168,7 +168,7 @@ export default function GreenSiliconPage() {
               Conventional electronic silicon relies on carbon-heavy coal
               smelting of mined quartz at 1900°C followed by toxic chlorosilane
               distillation. Rivanta transforms sustainable agricultural residues
-              into ultra-pure 9N silicon with zero coal usage and an audited 65%
+              into ultra-pure 6N silicon (99.999%) with zero coal usage and an audited 65%
               reduction in cradle-to-gate carbon emissions.
             </p>
           </div>
@@ -180,7 +180,7 @@ export default function GreenSiliconPage() {
                 <tr className="border-b border-[#13271e]/10 bg-[#f0f4f1] text-[#13271e] font-mono text-xs uppercase tracking-wider">
                   <th className="p-6">Technical Metric</th>
                   <th className="p-6 text-[#e06425] font-semibold">
-                    Rivanta Green Silicon (9N)
+                    Rivanta Green Silicon (6N)
                   </th>
                   <th className="p-6 text-[#13271e]/70">
                     Conventional Mined Silicon
@@ -221,10 +221,10 @@ export default function GreenSiliconPage() {
             <div>
               <div className="u-ts--1 mb-4 reveal-up">
                 <span className="indicator-dot"></span>
-                <span>Semiconductor & Deep-Tech Applications</span>
+                <span>Advanced Material Applications</span>
               </div>
               <h2 className="font-sans font-normal text-3xl sm:text-4xl md:text-5xl tracking-tight text-[#13271e] reveal-up delay-100">
-                Calibrated specifications for semiconductor foundries.
+                Calibrated specifications for high-purity industrial applications.
               </h2>
             </div>
 
@@ -264,7 +264,7 @@ export default function GreenSiliconPage() {
               <div className="pt-4 flex items-center gap-4 flex-wrap">
                 <Link href="/contact" className="u-btn--1">
                   <span className="btn_label">
-                    Request 9N Foundry Testing Lot
+                    Request 6N Technical Testing Lot
                     <div className="label_corner">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -311,7 +311,7 @@ export default function GreenSiliconPage() {
             <div className="lg:col-span-5 p-6 rounded-2xl bg-[#f6f8f6] border border-[#13271e]/8 space-y-4">
               <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-[#13271e] font-semibold border-b border-[#13271e]/10 pb-3">
                 <FileCheck className="w-4 h-4 text-[#2d7a54]" />
-                <span>9N Target Specification Sheet</span>
+                <span>6N Target Specification Sheet</span>
               </div>
               <ul className="space-y-3 font-mono text-xs text-[#13271e]/85">
                 {APPLICATION_TABS[activeTab].specs.map((spec, sIdx) => (
@@ -325,8 +325,8 @@ export default function GreenSiliconPage() {
                 ))}
               </ul>
               <div className="pt-2 text-[11px] font-sans text-[#13271e]/60 font-light">
-                *Customized electronic-grade silicon specifications, ingot
-                sizing, and wafer testing lots available on formal inquiry.
+                *Customized high-purity green silicon specifications, ingot
+                sizing, and testing lots available on formal inquiry.
               </div>
             </div>
           </div>

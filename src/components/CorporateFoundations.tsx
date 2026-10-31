@@ -34,7 +34,7 @@ export default function CorporateFoundations() {
           </div>
           <div className="lg:col-span-5 flex flex-col justify-between space-y-6 pt-1 sm:pt-2">
             <p className="font-sans text-base sm:text-lg text-[#13271e]/80 font-light leading-relaxed">
-              Rivanta Green was incorporated to engineer a market-driven, capital-efficient countermeasure to biomass waste: establishing modern manufacturing units that synthesize ultra-pure 9N Green Silicon, commercial Compressed Biogas (CBG), and drop-in Sustainable Aviation Fuel (SAF).
+              Rivanta Green was incorporated to engineer a market-driven, capital-efficient countermeasure to biomass waste: establishing modern manufacturing units that synthesize high-purity 6N Green Silicon (99.999%), commercial Compressed Biogas (CBG), and drop-in Sustainable Aviation Fuel (SAF).
             </p>
             <div className="flex items-center gap-5 pt-2">
               <Link href="/about" className="u-btn--1" aria-label="Explore About Rivanta">
@@ -101,7 +101,7 @@ export default function CorporateFoundations() {
                 Decarbonizing Heavy Industry Through Circular Bio-Materials.
               </h3>
               <p className="font-sans text-sm sm:text-base text-[#13271e]/75 font-light leading-relaxed">
-                To be India’s premier bio-industrial manufacturer, providing conflict-free 9N green silicon for semiconductor chips, clean biomethane for municipal grids, and drop-in SAF to transform aviation corridors.
+                To be India’s premier bio-industrial manufacturer, providing conflict-free 6N green silicon (99.999%), clean biomethane for municipal grids, and drop-in SAF to transform aviation corridors.
               </p>
             </div>
             <div className="pt-4 border-t border-[#13271e]/8 font-mono text-xs text-[#e06425] font-medium">

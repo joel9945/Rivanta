@@ -30,13 +30,13 @@ export const metadata: Metadata = {
     template: "%s | Rivanta Green",
   },
   description:
-    "Rivanta Green Innovative Venture Private Limited engineers utility-scale renewable energy infrastructure, industrial decarbonization, flagship Green Silicon For Chips (9N purity), and circular bio-ventures.",
+    "Rivanta Green Innovative Venture Private Limited engineers utility-scale renewable energy infrastructure, industrial decarbonization, flagship Green Silicon (6N purity / 99.999%), and circular bio-ventures.",
   keywords: [
     "Rivanta Green",
     "Rivanta Green Innovative Venture",
-    "Green Silicon For Chips",
-    "Green Silicon Purity 9N",
-    "Semiconductor Silicon 9N",
+    "Green Silicon",
+    "Green Silicon 6N",
+    "High Purity Silicon 99.999%",
     "Compressed Biogas",
     "CBG",
     "Sustainable Aviation Fuel",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "RIVANTA — Green Innovative Venture Private Limited",
     description:
-      "Engineering the future for clean innovation. Developing high-value Green Silicon For Chips (9N purity), compressed biogas (CBG), and sustainable aviation fuel (SAF).",
+      "Engineering the future for clean innovation. Developing high-value Green Silicon (6N purity / 99.999%), compressed biogas (CBG), and sustainable aviation fuel (SAF).",
     url: siteUrl,
     siteName: "Rivanta Green Innovative Venture",
     images: [
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "RIVANTA — Green Innovative Venture Private Limited",
     description:
-      "Engineering the future for clean innovation. Flagship Green Silicon For Chips (9N purity), compressed biogas, and sustainable aviation fuel pathways.",
+      "Engineering the future for clean innovation. Flagship Green Silicon (6N purity / 99.999%), compressed biogas, and sustainable aviation fuel pathways.",
     images: ["/images/hero-facility.png"],
   },
   icons: {
@@ -97,7 +97,7 @@ const structuredData = {
   url: siteUrl,
   logo: `${siteUrl}/logo/logo-icon.svg`,
   description:
-    "Industrial manufacturing venture operating in agricultural biomass valorization, Green Silicon For Chips (9N purity), compressed biogas, and sustainable aviation fuel pathways.",
+    "Industrial manufacturing venture operating in agricultural biomass valorization, Green Silicon (6N purity / 99.999%), compressed biogas, and sustainable aviation fuel pathways.",
   email: "contact@rivantagreen.com",
   sameAs: ["https://linkedin.com", "https://x.com"],
 };

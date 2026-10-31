@@ -16,8 +16,8 @@ const COMMERCIAL_TRACKS = [
   {
     id: "offtake",
     title: "Multi-Year Industrial Off-Take",
-    subtitle: "Green Silicon (9N) & CBG Supply Agreements",
-    detail: "Structuring 5 to 10 year off-take agreements with semiconductor chip foundries, solar wafer producers, and regional City Gas Distribution (CGD) entities.",
+    subtitle: "Green Silicon (6N) & CBG Supply Agreements",
+    detail: "Structuring 5 to 10 year off-take agreements with advanced materials users, solar wafer producers, and regional City Gas Distribution (CGD) entities.",
     terms: "Long-Term Take-or-Pay • Price Indexing Mechanisms",
     icon: TrendingUp,
   },
@@ -52,7 +52,7 @@ const RISK_PILLARS = [
   },
   {
     category: "Market Off-Take Risk",
-    mitigation: "Dual revenue model pairing high-margin electronic materials (Green Silicon For Chips with 9N purity) with regulated, government-backed clean mobility fuel programs (SATAT).",
+    mitigation: "Dual revenue model pairing high-value clean technology materials (Green Silicon with 6N purity / 99.999%) with regulated, government-backed clean mobility fuel programs (SATAT).",
     rating: "Off-Take: Multi-Sector Diversification",
   },
   {

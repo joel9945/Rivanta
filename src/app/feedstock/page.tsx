@@ -62,7 +62,7 @@ const SIGNATURE_VENTURE_CARDS = [
     index: "02.",
     title: "Industrial Refining",
     badge: "Dual-Stream Processing",
-    text: "Biomass is thermally calcined and refined to synthesize ultra-pure Green Silicon For Chips (9N purity / 99.9999999%), while organic residues generate biomethane and process steam.",
+    text: "Biomass is thermally calcined and refined to synthesize ultra-pure Green Silicon (6N purity / 99.999%), while organic residues generate biomethane and process steam.",
     bg: "#d6e8dc",
     textColor: "#13271e",
     accent: "#2d7a54",
@@ -98,7 +98,7 @@ export default function FeedstockPage() {
         ]}
         primaryCtaText="Partner as Feedstock Supplier"
         primaryCtaHref="/contact"
-        secondaryCtaText="Explore Green Silicon (9N)"
+        secondaryCtaText="Explore Green Silicon (6N)"
         secondaryCtaHref="/green-silicon"
         telemetryTag="NIR Sensor Testing • 100km Catchment"
       />

@@ -5,9 +5,9 @@ import { Sparkles, Flame, Fuel, ArrowUpRight } from "lucide-react";
 const CARDS = [
   {
     index: "01.",
-    title: "Green Silicon For Chips",
-    badge: "9N Purity Flagship",
-    text: "Synthesizing ultra-high purity Green Silicon (purity 9N / 99.9999999%) from circular sustainable feedstocks to supply semiconductor chip foundries, photovoltaic wafers, and advanced microelectronics.",
+    title: "Green Silicon",
+    badge: "6N Purity (99.999%)",
+    text: "Synthesizing high-purity Green Silicon (6N / 99.999%) from circular sustainable feedstocks to supply advanced photovoltaic wafers, clean electronics, and energy storage.",
     bg: "#fae9dc",
     textColor: "#13271e",
     icon: Sparkles,

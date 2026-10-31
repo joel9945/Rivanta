@@ -112,13 +112,13 @@ export default function CompanySpotlight() {
           {/* Pillar 02 */}
           <div className="flex flex-col space-y-3 border-l-2 border-[#2d7a54] pl-6 py-1">
             <span className="font-mono text-2xl sm:text-3xl font-light text-[#e06425] tracking-tight">
-              9N Purity
+              6N (99.999%)
             </span>
             <h3 className="font-sans text-lg font-semibold text-[#13271e] tracking-tight">
-              Semiconductor Green Silicon
+              High-Purity Green Silicon
             </h3>
             <p className="font-sans text-sm text-[#13271e]/75 font-light leading-relaxed">
-              Synthesizing ultra-pure electronic-grade silicon (99.9999999%) directly from biogenic silica without high-carbon quartz smelting or toxic chlorosilanes.
+              Synthesizing high-purity silicon (99.999% / 6N) directly from biogenic silica without high-carbon quartz smelting or toxic chlorosilanes.
             </p>
           </div>
 

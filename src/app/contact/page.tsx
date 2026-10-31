@@ -16,7 +16,7 @@ const DEPARTMENTS = [
   {
     role: "Commercial Off-Take Desk",
     email: "commercial@rivantagreen.com",
-    focus: "Green Silicon (9N purity) product specifications, semiconductor lot trials, sample requests, and multi-year supply contracts.",
+    focus: "Green Silicon (6N purity / 99.999%) product specifications, material trials, sample requests, and multi-year supply contracts.",
   },
   {
     role: "Feedstock Sourcing & Logistics",
@@ -37,8 +37,8 @@ const DEPARTMENTS = [
 
 const FAQS = [
   {
-    q: "How can industrial clients request testing samples of Green Silicon For Chips?",
-    a: "Qualified semiconductor foundries and clean-tech procurement teams can request certified 9N purity (99.9999999%) testing lots. Submit your inquiry selecting 'Green Silicon For Chips (9N Purity)' with your target wafer or crystal specifications.",
+    q: "How can industrial clients request testing samples of Green Silicon?",
+    a: "Qualified technology, solar wafer, and electronics procurement teams can request certified 6N purity (99.999%) testing lots. Submit your inquiry selecting 'Green Silicon (6N Purity / 99.999%)' with your target material or crystal specifications.",
   },
   {
     q: "What is the typical commercial off-take agreement structure for Compressed Biogas (CBG)?",
@@ -64,7 +64,7 @@ export default function ContactPage() {
         badge="Official Corporate Desk"
         title="Direct Channels For Commercial And"
         highlightedText="Technical Engagement."
-        description="Connect directly with our engineering, feedstock logistics, and commercial off-take desks to discuss project parameters, Green Silicon (9N) testing lots, or strategic joint ventures."
+        description="Connect directly with our engineering, feedstock logistics, and commercial off-take desks to discuss project parameters, Green Silicon (6N) testing lots, or strategic joint ventures."
         breadcrumbs={[{ label: "Contact & Corporate Desk" }]}
         primaryCtaText="Submit Formal Inquiry"
         primaryCtaHref="#inquiry-form"
@@ -134,7 +134,7 @@ export default function ContactPage() {
                   RIVANTA Green Innovative Venture Private Limited
                 </div>
                 <p className="font-sans text-xs text-[#13271e]/80 font-light leading-relaxed">
-                  Incorporated as an industrial green manufacturing venture operating in biomass valorization, Green Silicon For Chips (9N purity), and renewable energy infrastructure.
+                  Incorporated as an industrial green manufacturing venture operating in biomass valorization, Green Silicon (6N purity / 99.999%), and renewable energy infrastructure.
                 </p>
                 <div className="pt-2 border-t border-[#13271e]/10 flex items-center gap-2 font-mono text-xs text-[#13271e]/70">
                   <Clock className="w-3.5 h-3.5" />

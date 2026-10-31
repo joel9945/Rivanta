@@ -16,7 +16,7 @@ export interface InquiryResult {
 }
 
 const ALLOWED_SECTORS = [
-  "Green Silicon For Chips (9N Purity)",
+  "Green Silicon (6N Purity / 99.999%)",
   "Bio-Silica Manufacturing (Flagship)",
   "Compressed Biogas (CBG)",
   "Sustainable Aviation Fuel (SAF)",

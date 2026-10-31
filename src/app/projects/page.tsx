@@ -24,7 +24,7 @@ const PHASES = [
       "Comprehensive biomass availability studies, regional rice mill mapping, sample chemical characterization of rice husk ash, and initial thermodynamic mass balance modeling.",
     deliverables: [
       "Feedstock aggregation logistics model across 100km radius",
-      "Laboratory chemical characterization of Green Silicon (9N) yield",
+      "Laboratory chemical characterization of Green Silicon (6N / 99.999%) yield",
       "Initial geotechnical and statutory site suitability screening",
       "Agronomic Farmer Producer Organization (FPO) off-take framework",
     ],
@@ -39,7 +39,7 @@ const PHASES = [
       "Detailed process engineering, equipment sizing, vendor qualification, Environmental Impact Assessment (EIA) baseline monitoring, and off-take specification alignment.",
     deliverables: [
       "Process Flow Diagrams (PFD) and Piping & Instrumentation Diagrams (P&ID)",
-      "Licensor selection for 9N green silicon purification and gas upgrading",
+      "Licensor selection for 6N green silicon purification and gas upgrading",
       "Statutory environmental clearances and land acquisition closure",
       "Grid interconnection study with state transmission utility",
     ],
@@ -54,9 +54,9 @@ const PHASES = [
       "Civil works construction, equipment procurement and erection, utility interconnection (substation, water treatment, boiler plant), commissioning, and ramp-up.",
     deliverables: [
       "Turnkey manufacturing facility construction & erection",
-      "Cold & hot commissioning of flagship green silicon (9N) production train",
+      "Cold & hot commissioning of flagship green silicon (6N) production train",
       "Biomethane grid compression and cascade filling commissioning",
-      "Commercial off-take delivery to semiconductor and electronics partners",
+      "Commercial off-take delivery to advanced clean technology and electronics partners",
     ],
   },
 ];
@@ -65,12 +65,12 @@ const ASSET_UNITS = [
   {
     id: "unit-01",
     unitCode: "UNIT 01",
-    name: "Flagship Green Silicon For Chips & Cogeneration Train",
+    name: "Flagship Green Silicon & Cogeneration Train",
     footprint: "14.5 Acres Allocated",
     grid: "33kV Dedicated Substation Interconnect",
     status: "FEED In Progress",
     description:
-      "Advanced reduction reactors, hydrometallurgical purification tanks, flash dry systems, and induction refining units yielding 9N purity (99.9999999%) Green Silicon For Chips.",
+      "Advanced reduction reactors, hydrometallurgical purification tanks, flash dry systems, and induction refining units yielding 6N purity (99.999%) Green Silicon.",
     badge: "Flagship Asset",
     color: "#e06425",
   },

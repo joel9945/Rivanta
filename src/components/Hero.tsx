@@ -36,17 +36,17 @@ const PILLARS: readonly PillarItem[] = [
   },
   {
     index: "02",
-    tag: "Semiconductor & Clean Tech",
-    title: "Green Silicon For Chips",
-    badge: "9N Purity",
+    tag: "Advanced Clean Technology",
+    title: "Green Silicon (6N)",
+    badge: "6N Purity",
     line1: "Pioneering Green Silicon",
     line2Prefix: "For ",
-    line2Highlight: "Semiconductor Chips.",
+    line2Highlight: "Clean Technologies.",
     fontSizeClass: "text-4xl sm:text-6xl md:text-7xl lg:text-[5.25rem] xl:text-[5.75rem]",
     description:
-      "RIVANTA pioneers ultra-pure 9N (99.9999999%) green silicon from circular agricultural biomass, delivering domestic strategic feedstock for semiconductor chips, microelectronics, and advanced photovoltaics.",
+      "RIVANTA pioneers high-purity 6N (99.999%) green silicon from circular agricultural biomass, delivering domestic strategic feedstock for solar photovoltaics, advanced electronics, and energy storage.",
     image: "/images/green-silicon-refinery.jpg",
-    alt: "RIVANTA Ultra-Pure Green Silicon Refining Plant & Processing Infrastructure",
+    alt: "RIVANTA High-Purity Green Silicon Refining Plant & Processing Infrastructure",
   },
   {
     index: "03",

@@ -53,7 +53,7 @@ const LCA_STAGES = [
     metric: "-65% Embodied CO2e vs Mined Quartz",
     delta: "Direct Supply Chain Decarbonization",
     description:
-      "When integrated into semiconductor manufacturing and clean technologies, Green Silicon For Chips (with 9N purity / 99.9999999%) displaces virgin fossil-melted quartz and carbon-intensive electric-arc smelting at scale.",
+      "When integrated into clean technologies and solar photovoltaic systems, Green Silicon (with 6N purity / 99.999%) displaces virgin fossil-melted quartz and carbon-intensive electric-arc smelting at scale.",
     deliverable: "Audited cradle-to-gate LCA displacement under ISO 14044",
   },
 ];
@@ -79,7 +79,7 @@ const IMPACT_PILLARS = [
     metricLabel: "Carbon Intensity Delta",
     progressPct: 65,
     description:
-      "Traditional electronic-grade silicon requires smelting mined quartz sand at over 1900°C with heavy fossil carbon reductants. Rivanta's Green Silicon For Chips achieves 9N purity (99.9999999%) through clean circular processing at a fraction of that thermal energy, yielding a verified 65% cradle-to-gate carbon abatement.",
+      "Traditional high-purity silicon requires smelting mined quartz sand at over 1900°C with heavy fossil carbon reductants. Rivanta's Green Silicon achieves 6N purity (99.999%) through clean circular processing at a fraction of that thermal energy, yielding a verified 65% cradle-to-gate carbon abatement.",
     icon: BarChart3,
     color: "#2d7a54",
   },

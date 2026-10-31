@@ -221,7 +221,7 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
                         }`}
                       >
                         <span className="font-sans text-[13px] font-medium tracking-tight">
-                          Green Silicon For Chips
+                          Green Silicon
                         </span>
                         <ArrowUpRight className="w-3.5 h-3.5 opacity-30 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all text-[#e06425]" />
                       </Link>
@@ -502,9 +502,9 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
                   onClick={() => setMobileMenuOpen(false)}
                   className="font-sans text-xl font-light hover:text-[#ea6e2d] transition-colors flex items-center justify-between py-1"
                 >
-                  <span>Green Silicon For Chips</span>
+                  <span>Green Silicon</span>
                   <span className="font-mono text-[10px] uppercase px-2 py-0.5 rounded bg-[#e06425] text-white">
-                    9N Purity
+                    6N Purity
                   </span>
                 </Link>
                 <Link

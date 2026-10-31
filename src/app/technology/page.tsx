@@ -34,7 +34,7 @@ const STAGES = [
     name: "Thermo-Chemical Digestion & Precursor Refining",
     system: "Reaction Crystallization",
     description:
-      "Ash is digested with mild alkaline liquor to extract high-purity silicon precursors, followed by advanced hydrometallurgical reduction and multi-stage zone refining to synthesize Green Silicon For Chips with 9N purity (99.9999999%).",
+      "Ash is digested with mild alkaline liquor to extract high-purity silicon precursors, followed by advanced hydrometallurgical reduction and multi-stage zone refining to synthesize Green Silicon with 6N purity (99.999%).",
     controls: "High-precision digital pH loop controllers, automated reagent metering, variable agitator speeds",
   },
   {
@@ -47,10 +47,10 @@ const STAGES = [
   },
   {
     step: "05",
-    name: "Electronic-Grade Induction & 9N Classification",
+    name: "High-Purity Induction & 6N Classification",
     system: "Advanced Refining & Sealed Handling",
     description:
-      "Purified green silicon is processed under inert argon atmospheres into semiconductor-grade polycrystalline and epitaxial feedstock, achieving 9N purity (99.9999999%) calibrated for chip foundries and solar wafer manufacturing.",
+      "Purified green silicon is processed under inert argon atmospheres into high-purity polycrystalline feedstock, achieving 6N purity (99.999%) calibrated for solar photovoltaics and advanced electronics manufacturing.",
     controls: "In-line mass spectrometry, laser diffraction particle sizers, Class 10 cleanroom packaging",
   },
 ];
@@ -101,7 +101,7 @@ export default function TechnologyPage() {
         badge="Engineering Architecture"
         title="Integrated Systems Engineering And"
         highlightedText="Manufacturing Flowsheet."
-        description="Our manufacturing architecture integrates thermal conversion, precision Green Silicon For Chips refining (9N purity), anaerobic digestion, and waste-heat recovery into an interconnected, energy-efficient industrial ecosystem."
+        description="Our manufacturing architecture integrates thermal conversion, precision Green Silicon refining (6N purity / 99.999%), anaerobic digestion, and waste-heat recovery into an interconnected, energy-efficient industrial ecosystem."
         imageSrc="/images/company-innovation.jpg"
         breadcrumbs={[{ label: "Technology" }]}
         primaryCtaText="Review Process Flowsheet"
@@ -131,7 +131,7 @@ export default function TechnologyPage() {
             <div className="lg:col-span-8 flex flex-col space-y-8 md:space-y-10">
               <h2 className="font-sans font-normal text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.12] text-[#13271e] reveal-up delay-100">
                 Step-by-step conversion from raw husk to{" "}
-                <span className="text-[#a0b0a5]">Green Silicon For Chips (9N).</span>
+                <span className="text-[#a0b0a5]">Green Silicon (6N).</span>
               </h2>
 
               <p className="text-[#13271e]/80 text-base md:text-lg font-light leading-relaxed max-w-2xl reveal-up delay-200">

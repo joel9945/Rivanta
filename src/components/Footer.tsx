@@ -38,7 +38,7 @@ export default async function Footer() {
             </h3>
 
             <p className="font-sans text-sm md:text-base text-white/70 font-light max-w-md leading-relaxed">
-              Rivanta Green Innovative Venture Private Limited is developing an integrated biomass manufacturing ecosystem: flagship Green Silicon For Chips (9N purity), compressed biogas, and sustainable aviation fuel pathways.
+              Rivanta Green Innovative Venture Private Limited is developing an integrated biomass manufacturing ecosystem: flagship Green Silicon (6N purity / 99.999%), compressed biogas, and sustainable aviation fuel pathways.
             </p>
 
             <div>
@@ -59,7 +59,7 @@ export default async function Footer() {
                     href="/green-silicon"
                     className="hover:text-[#ea6e2d] transition-colors"
                   >
-                    Green Silicon (9N)
+                    Green Silicon (6N)
                   </Link>
                 </li>
                 <li>

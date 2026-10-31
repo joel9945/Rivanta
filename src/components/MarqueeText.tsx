@@ -6,7 +6,7 @@ interface MarqueeTextProps {
 }
 
 export default function MarqueeText({
-  phrase = "Green Silicon For Chips (9N Purity) — Compressed Biogas & Bio-CNG — Sustainable Aviation Fuel (SAF) — Circular Economy & Scope 3 Abatement — ",
+  phrase = "Green Silicon (6N Purity / 99.999%) — Compressed Biogas & Bio-CNG — Sustainable Aviation Fuel (SAF) — Circular Economy & Scope 3 Abatement — ",
   theme = "light",
 }: MarqueeTextProps) {
   const bgClass =
