@@ -5,6 +5,7 @@ import UspCards from "@/components/UspCards";
 import MarqueeText from "@/components/MarqueeText";
 import CompanySpotlight from "@/components/CompanySpotlight";
 import CorporateFoundations from "@/components/CorporateFoundations";
+import ValueChainGallery from "@/components/ValueChainGallery";
 
 export default function Home() {
   return (
@@ -26,6 +27,9 @@ export default function Home() {
 
       {/* Corporate Purpose, Vision, Mission & Foundations */}
       <CorporateFoundations />
+
+      {/* Value Chain & Workstreams Gallery */}
+      <ValueChainGallery />
     </>
   );
 }
