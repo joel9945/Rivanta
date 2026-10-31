@@ -5,86 +5,39 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 export default function CompanySpotlight() {
   return (
-    <section id="company" className="py-20 md:py-32 bg-white border-t border-[#13271e]/8">
+    <section id="company" className="py-24 md:py-36 bg-[#fcfdfc] border-t border-[#13271e]/8">
       <div className="u-container u-container--1 u-container--pad">
-        {/* Top Minimal Section Identifier */}
-        <div className="flex items-center pb-5 md:pb-6 border-b border-[#13271e]/10 mb-10 md:mb-16">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#e06425]" />
-            <span className="font-mono text-xs uppercase tracking-[0.16em] text-[#13271e]/70 font-medium">
-              02 / OUR COMPANY
+        {/* 1. Top Section Identifier */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 mb-12 md:mb-16 border-b border-[#13271e]/10 gap-4">
+          <div className="flex items-center gap-2.5">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#e06425]" />
+            <span className="font-mono text-xs uppercase tracking-[0.18em] text-[#13271e]/75 font-semibold">
+              02 / OUR COMPANY & INFRASTRUCTURE
             </span>
           </div>
+          <span className="font-mono text-xs text-[#13271e]/50 uppercase tracking-wider">
+            Industrial Bio-Manufacturing Ecosystem
+          </span>
         </div>
 
-        {/* 2-Column Balanced Editorial Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-          {/* Left Column (6 cols): Clean Media Showcase */}
-          <div className="lg:col-span-6 relative">
-            <div className="relative aspect-[3/2] sm:aspect-[4/3] lg:aspect-[3/2] w-full rounded-[24px] lg:rounded-[28px] overflow-hidden shadow-[0_20px_50px_-10px_rgba(19,39,30,0.08)] group select-none">
-              <Image
-                src="/images/company-facility-overview.jpg"
-                alt="Rivanta Integrated Bio-Industrial Refinery and Engineering Facility"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0e2219]/35 via-transparent to-transparent opacity-60 pointer-events-none" />
-            </div>
-          </div>
-
-          {/* Right Column (6 cols): Editorial Narrative & Inline Benchmarks */}
-          <div className="lg:col-span-6 flex flex-col space-y-7">
-            <h2 className="font-sans font-light text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] tracking-[-0.02em] leading-[1.14] text-[#13271e]">
+        {/* 2. Executive Statement: Asymmetric Editorial Split */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start mb-14 md:mb-20">
+          <div className="lg:col-span-7">
+            <h2 className="font-sans font-light text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] tracking-[-0.025em] leading-[1.12] text-[#13271e]">
               Bold Ventures To Unlock Clean Technology{" "}
               <span className="font-normal italic text-[#e06425]">
                 For Planetary Health And Resilient Prosperity.
               </span>
             </h2>
-
-            <div className="space-y-5 text-[#13271e]/80 text-base md:text-lg font-light leading-relaxed">
-              <p>
-                We are advancing a commercial pipeline of transformative clean technologies using multimodal renewable infrastructure and circular materials engineering.
-              </p>
-              <p>
-                Built on rigorous systems engineering and led by pioneering scientists and infrastructure developers, Rivanta pushes the boundaries of how human industry operates in equilibrium with nature — synthesizing 9N purity Green Silicon for semiconductor microchips while refining commercial Compressed Biogas (CBG) and Sustainable Aviation Fuel (SAF).
-              </p>
-            </div>
-
-            {/* Clean Minimalist Key Benchmarks (No Boxes, Pure Typography) */}
-            <div className="grid grid-cols-3 gap-6 pt-6 pb-2 border-t border-b border-[#13271e]/10">
-              <div>
-                <span className="font-mono text-2xl sm:text-3xl font-light text-[#13271e] block">
-                  100%
-                </span>
-                <span className="font-sans text-xs sm:text-sm text-[#13271e]/65 block mt-1">
-                  Circular Agro Biomass
-                </span>
-              </div>
-              <div>
-                <span className="font-mono text-2xl sm:text-3xl font-light text-[#e06425] block">
-                  9N Purity
-                </span>
-                <span className="font-sans text-xs sm:text-sm text-[#13271e]/65 block mt-1">
-                  Semiconductor Silicon
-                </span>
-              </div>
-              <div>
-                <span className="font-mono text-2xl sm:text-3xl font-light text-[#13271e] block">
-                  Zero
-                </span>
-                <span className="font-sans text-xs sm:text-sm text-[#13271e]/65 block mt-1">
-                  Fossil Quartz Inputs
-                </span>
-              </div>
-            </div>
-
-            {/* Action Buttons (Aligned & Uncluttered) */}
-            <div className="pt-2 flex flex-wrap items-center gap-6">
+          </div>
+          <div className="lg:col-span-5 flex flex-col justify-between space-y-6 pt-1 sm:pt-2">
+            <p className="font-sans text-base sm:text-lg text-[#13271e]/80 font-light leading-relaxed">
+              Rivanta Green Innovative Venture is developing an integrated, commercial-scale bio-manufacturing ecosystem that converts agricultural residues into strategic industrial feedstocks — displacing fossil hydrocarbons and high-emission minerals.
+            </p>
+            <div className="flex items-center gap-5 pt-2">
               <Link href="/about" className="u-btn--1" aria-label="Learn more about Rivanta">
                 <span className="btn_label">
-                  Learn More About Us
+                  Discover Our Story
                   <div className="label_corner">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -116,17 +69,96 @@ export default function CompanySpotlight() {
                   <ArrowRight className="w-4 h-4 btn_icon_arrow" />
                 </i>
               </Link>
-
               <Link
                 href="/projects"
                 className="group inline-flex items-center gap-1.5 font-sans text-sm font-medium text-[#13271e] hover:text-[#e06425] transition-colors"
               >
                 <span className="border-b border-[#13271e]/25 group-hover:border-[#e06425] pb-0.5 transition-colors">
-                  View Infrastructure Projects
+                  View Projects
                 </span>
                 <ArrowUpRight className="w-4 h-4 text-[#e06425] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
             </div>
+          </div>
+        </div>
+
+        {/* 3. The Panoramic Facility Showcase: Expansive, Crisp, Zero Blur */}
+        <div className="relative w-full aspect-[16/9] sm:aspect-[2/1] lg:aspect-[2.35/1] rounded-[24px] lg:rounded-[32px] overflow-hidden shadow-2xl mb-16 md:mb-20 group">
+          <Image
+            src="/images/company-facility-overview.jpg"
+            alt="Rivanta Integrated Bio-Industrial Refinery and Engineering Facility"
+            fill
+            sizes="100vw"
+            className="object-cover object-center transition-transform duration-1000 ease-out group-hover:scale-[1.02]"
+            priority
+          />
+          {/* Subtle industrial lighting overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0e2219]/90 via-[#0e2219]/20 to-transparent pointer-events-none" />
+
+          {/* Floating Live Facility Telemetry Overlays */}
+          <div className="absolute top-6 left-6 right-6 flex items-center justify-between pointer-events-none">
+            <span className="px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md text-[11px] font-mono uppercase tracking-wider text-[#13271e] font-semibold shadow-sm">
+              Integrated Facility Overlook — Unit 04
+            </span>
+            <span className="px-3 py-1 rounded-full bg-[#e06425] text-white text-[10px] font-mono uppercase tracking-wider font-semibold shadow-sm">
+              Operational Scale
+            </span>
+          </div>
+
+          <div className="absolute bottom-6 left-6 right-6 flex flex-col sm:flex-row sm:items-end justify-between gap-4 pointer-events-none text-white">
+            <div className="max-w-xl">
+              <span className="font-mono text-xs uppercase tracking-widest text-[#f9a65c] block mb-1">
+                Engineering Architecture
+              </span>
+              <p className="font-sans text-sm sm:text-base text-white/90 font-light leading-relaxed">
+                Continuous bio-methanation columns, anaerobic enrichment domes, and ultra-pure 9N Green Silicon refining infrastructure co-located for maximum thermodynamic efficiency.
+              </p>
+            </div>
+            <div className="font-mono text-xs text-white/70 tracking-wider uppercase text-right">
+              ISO 14064 Lifecycle Audited
+            </div>
+          </div>
+        </div>
+
+        {/* 4. Three Structural Foundation Pillars (Clean Architectural Grid, No Floating Card Boxes) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 pt-4">
+          {/* Pillar 01 */}
+          <div className="flex flex-col space-y-3 border-l-2 border-[#e06425] pl-6 py-1">
+            <span className="font-mono text-2xl sm:text-3xl font-light text-[#13271e] tracking-tight">
+              100%
+            </span>
+            <h3 className="font-sans text-lg font-semibold text-[#13271e] tracking-tight">
+              Circular Feedstock Logistics
+            </h3>
+            <p className="font-sans text-sm text-[#13271e]/75 font-light leading-relaxed">
+              Aggregating non-food agricultural biomass residues from regional farmers and rice mills, creating resilient rural value loops with zero competition against food security.
+            </p>
+          </div>
+
+          {/* Pillar 02 */}
+          <div className="flex flex-col space-y-3 border-l-2 border-[#2d7a54] pl-6 py-1">
+            <span className="font-mono text-2xl sm:text-3xl font-light text-[#e06425] tracking-tight">
+              9N Purity
+            </span>
+            <h3 className="font-sans text-lg font-semibold text-[#13271e] tracking-tight">
+              Semiconductor Green Silicon
+            </h3>
+            <p className="font-sans text-sm text-[#13271e]/75 font-light leading-relaxed">
+              Synthesizing ultra-pure electronic-grade silicon (99.9999999%) directly from biogenic silica without high-carbon quartz smelting or toxic chlorosilanes.
+            </p>
+          </div>
+
+          {/* Pillar 03 */}
+          <div className="flex flex-col space-y-3 border-l-2 border-[#13271e]/30 pl-6 py-1">
+            <span className="font-mono text-2xl sm:text-3xl font-light text-[#13271e] tracking-tight">
+              Zero Fossil
+            </span>
+            <h3 className="font-sans text-lg font-semibold text-[#13271e] tracking-tight">
+              Multimodal Energy Vectors
+            </h3>
+            <p className="font-sans text-sm text-[#13271e]/75 font-light leading-relaxed">
+              Commercial Compressed Biogas (CBG) for city gas grids and synthetic drop-in SAF for aviation, slashing lifecycle emissions by up to 80% under verified standards.
+            </p>
           </div>
         </div>
       </div>
