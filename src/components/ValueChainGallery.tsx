@@ -115,77 +115,80 @@ export default function ValueChainGallery() {
         </div>
 
         {/* Gallery Hero Viewer */}
-        <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] lg:aspect-[2.2/1] rounded-[24px] lg:rounded-[36px] overflow-hidden shadow-2xl bg-[#13271e] text-white group select-none">
+        <div className="relative w-full min-h-[540px] sm:min-h-[480px] md:min-h-[460px] lg:min-h-[500px] xl:min-h-[520px] rounded-[24px] lg:rounded-[36px] overflow-hidden shadow-2xl bg-[#13271e] text-white group select-none flex flex-col">
           {/* Main Background Image */}
-          <div className="absolute inset-0">
+          <div className="absolute inset-0 z-0">
             <Image
               src={active.img}
               alt={active.title}
               fill
-              sizes="100vw"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
               priority
               className="object-cover object-center transition-all duration-700 ease-out group-hover:scale-[1.02]"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/20" />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/20 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/30" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/30 to-transparent" />
           </div>
 
-          {/* Top Overlays */}
-          <div className="absolute top-6 left-6 sm:top-8 sm:left-8 right-6 sm:right-8 flex items-center justify-between z-10">
-            <div className="flex items-center gap-2">
-              <span className="font-mono text-[11px] sm:text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-white/15 backdrop-blur-md text-white/90 font-medium">
-                RIVANTA GREEN / INDUSTRIAL PORTFOLIO
-              </span>
-              <span className="hidden sm:inline-block font-mono text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-md text-white/60 border border-white/10">
-                Planning Visualization
-              </span>
-            </div>
-            <span className="font-mono text-xs sm:text-sm font-semibold tracking-wider text-white/80 bg-black/40 backdrop-blur-md px-3 py-1 rounded-full">
-              {active.id} / 0{SLIDES.length}
-            </span>
-          </div>
-
-          {/* Bottom Narrative Overlay */}
-          <div className="absolute bottom-6 left-6 sm:bottom-10 sm:left-10 right-6 sm:right-10 flex flex-col md:flex-row md:items-end justify-between gap-6 z-10">
-            <div className="max-w-xl">
-              <span className="font-mono text-xs text-[#f9a65c] uppercase tracking-widest block mb-2 font-medium">
-                {active.category}
-              </span>
-              <h3 className="font-sans font-light text-2xl sm:text-3xl md:text-4xl text-white tracking-tight mb-3 leading-snug">
-                {active.title}
-              </h3>
-              <p className="font-sans text-xs sm:text-sm md:text-base text-white/80 font-light leading-relaxed mb-4 line-clamp-3 md:line-clamp-none">
-                {active.desc}
-              </p>
-              <Link
-                href={active.href}
-                className="inline-flex items-center gap-2 font-sans text-xs sm:text-sm font-medium text-white hover:text-[#f9a65c] transition-colors group/link"
-              >
-                <span className="border-b border-white/40 group-hover/link:border-[#f9a65c] pb-0.5">
-                  Explore this workstream
+          {/* Structured Content Container (Flex column prevents any overlay collision or text scrambling) */}
+          <div className="relative z-10 p-6 sm:p-8 md:p-10 flex flex-col justify-between flex-1 min-h-[540px] sm:min-h-[480px] md:min-h-[460px] lg:min-h-[500px]">
+            {/* Top Bar Row */}
+            <div className="flex items-center justify-between gap-3 mb-6 sm:mb-8">
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className="font-mono text-[10.5px] sm:text-xs uppercase tracking-widest px-3 py-1.5 rounded-full bg-white/15 backdrop-blur-md text-white/90 font-medium">
+                  RIVANTA GREEN / INDUSTRIAL PORTFOLIO
                 </span>
-                <ArrowUpRight className="w-3.5 h-3.5 text-[#f9a65c] transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
-              </Link>
+                <span className="hidden sm:inline-block font-mono text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-md text-white/60 border border-white/10">
+                  Planning Visualization
+                </span>
+              </div>
+              <span className="font-mono text-xs sm:text-sm font-semibold tracking-wider text-white/80 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full flex-shrink-0">
+                {active.id} / 0{SLIDES.length}
+              </span>
             </div>
 
-            {/* Slide Navigation Buttons */}
-            <div className="flex items-center gap-2 self-end md:self-auto">
-              <button
-                type="button"
-                onClick={prevSlide}
-                className="w-11 h-11 rounded-full bg-white/15 hover:bg-white/30 backdrop-blur-md flex items-center justify-center text-white transition-all cursor-pointer border-0"
-                aria-label="Previous workstream"
-              >
-                <ArrowLeft className="w-5 h-5" />
-              </button>
-              <button
-                type="button"
-                onClick={nextSlide}
-                className="w-11 h-11 rounded-full bg-white/15 hover:bg-white/30 backdrop-blur-md flex items-center justify-center text-white transition-all cursor-pointer border-0"
-                aria-label="Next workstream"
-              >
-                <ArrowRight className="w-5 h-5" />
-              </button>
+            {/* Bottom Narrative Row */}
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mt-auto pt-6">
+              <div className="max-w-xl">
+                <span className="font-mono text-xs text-[#f9a65c] uppercase tracking-widest block mb-2 font-medium">
+                  {active.category}
+                </span>
+                <h3 className="font-sans font-light text-2xl sm:text-3xl md:text-4xl text-white tracking-tight mb-3 leading-snug">
+                  {active.title}
+                </h3>
+                <p className="font-sans text-xs sm:text-sm md:text-base text-white/80 font-light leading-relaxed mb-4">
+                  {active.desc}
+                </p>
+                <Link
+                  href={active.href}
+                  className="inline-flex items-center gap-2 font-sans text-xs sm:text-sm font-medium text-white hover:text-[#f9a65c] transition-colors group/link"
+                >
+                  <span className="border-b border-white/40 group-hover:link:border-[#f9a65c] pb-0.5">
+                    Explore this workstream
+                  </span>
+                  <ArrowUpRight className="w-3.5 h-3.5 text-[#f9a65c] transition-transform group-hover:link:translate-x-0.5 group-hover:link:-translate-y-0.5" />
+                </Link>
+              </div>
+
+              {/* Slide Navigation Buttons */}
+              <div className="flex items-center gap-2 self-end md:self-auto flex-shrink-0">
+                <button
+                  type="button"
+                  onClick={prevSlide}
+                  className="w-11 h-11 rounded-full bg-white/15 hover:bg-white/30 backdrop-blur-md flex items-center justify-center text-white transition-all cursor-pointer border-0"
+                  aria-label="Previous workstream"
+                >
+                  <ArrowLeft className="w-5 h-5" />
+                </button>
+                <button
+                  type="button"
+                  onClick={nextSlide}
+                  className="w-11 h-11 rounded-full bg-white/15 hover:bg-white/30 backdrop-blur-md flex items-center justify-center text-white transition-all cursor-pointer border-0"
+                  aria-label="Next workstream"
+                >
+                  <ArrowRight className="w-5 h-5" />
+                </button>
+              </div>
             </div>
           </div>
         </div>

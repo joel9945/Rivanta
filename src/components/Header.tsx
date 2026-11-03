@@ -22,6 +22,32 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<"businesses" | "company" | null>(null);
   const navRef = useRef<HTMLElement>(null);
+  const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const openDropdownMenu = (name: "businesses" | "company") => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+    setActiveDropdown(name);
+  };
+
+  const scheduleCloseDropdown = () => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+    }
+    closeTimeoutRef.current = setTimeout(() => {
+      setActiveDropdown(null);
+    }, 250);
+  };
+
+  const toggleDropdown = (name: "businesses" | "company") => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+    setActiveDropdown((prev) => (prev === name ? null : name));
+  };
 
   // Close dropdown and drawer upon route transition
   if (prevPathname !== pathname) {
@@ -31,6 +57,11 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
   }
 
   useEffect(() => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+
     const handleScroll = () => {
       const heroEl =
         document.getElementById("hero") ||
@@ -73,11 +104,19 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        if (closeTimeoutRef.current) {
+          clearTimeout(closeTimeoutRef.current);
+          closeTimeoutRef.current = null;
+        }
         setActiveDropdown(null);
       }
     };
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
+        if (closeTimeoutRef.current) {
+          clearTimeout(closeTimeoutRef.current);
+          closeTimeoutRef.current = null;
+        }
         setActiveDropdown(null);
         setMobileMenuOpen(false);
       }
@@ -85,6 +124,9 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
     document.addEventListener("mousedown", handleClickOutside);
     document.addEventListener("keydown", handleKeyDown);
     return () => {
+      if (closeTimeoutRef.current) {
+        clearTimeout(closeTimeoutRef.current);
+      }
       document.removeEventListener("mousedown", handleClickOutside);
       document.removeEventListener("keydown", handleKeyDown);
     };
@@ -136,7 +178,7 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
             : "bg-white/95 backdrop-blur-2xl shadow-[0_4px_24px_rgba(19,39,30,0.07)] py-2.5 sm:py-3"
         }`}
       >
-        <div className="w-full px-6 sm:px-8 md:px-10 lg:px-12 xl:px-16 flex items-center justify-between">
+        <div className="w-full px-6 sm:px-8 md:px-10 lg:px-8 xl:px-14 flex items-center justify-between">
           {/* 1. Left Zone: Brand Lockup */}
           <div className="flex-1 flex items-center justify-start min-w-0">
             <Link
@@ -177,16 +219,12 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
               {/* 1. Our Businesses Dropdown Console */}
               <div
                 className="relative"
-                onMouseEnter={() => setActiveDropdown("businesses")}
-                onMouseLeave={() => setActiveDropdown(null)}
+                onMouseEnter={() => openDropdownMenu("businesses")}
+                onMouseLeave={scheduleCloseDropdown}
               >
                 <button
                   type="button"
-                  onClick={() =>
-                    setActiveDropdown((prev) =>
-                      prev === "businesses" ? null : "businesses"
-                    )
-                  }
+                  onClick={() => toggleDropdown("businesses")}
                   className={getDropdownTriggerClass(
                     activeDropdown === "businesses" || isBusinessesActive
                   )}
@@ -207,9 +245,14 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
                   />
                 </button>
 
-                {/* Sleek Minimalist Dropdown Panel */}
+                {/* Sleek Minimalist Dropdown Panel (One-click stable with zero dead-zone gap) */}
                 {activeDropdown === "businesses" && (
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-72 rounded-2xl p-1.5 animate-in fade-in slide-in-from-top-1 duration-150 z-50 text-left bg-white/95 backdrop-blur-2xl shadow-[0_12px_36px_rgba(19,39,30,0.12)] border-0">
+                  <div
+                    className="absolute top-full left-1/2 -translate-x-1/2 pt-2.5 z-50 text-left"
+                    onMouseEnter={() => openDropdownMenu("businesses")}
+                    onMouseLeave={scheduleCloseDropdown}
+                  >
+                    <div className="w-72 rounded-2xl p-1.5 animate-in fade-in slide-in-from-top-1 duration-150 bg-white/95 backdrop-blur-2xl shadow-[0_12px_36px_rgba(19,39,30,0.12)] border border-[#13271e]/5">
                     <div className="flex flex-col gap-0.5">
                       <Link
                         href="/bio-silica"
@@ -272,8 +315,9 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
                       </Link>
                     </div>
                   </div>
-                )}
-              </div>
+                </div>
+              )}
+            </div>
 
               {/* 2. Feedstock */}
               <Link
@@ -310,14 +354,12 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
               {/* 6. Company Dropdown Console */}
               <div
                 className="relative"
-                onMouseEnter={() => setActiveDropdown("company")}
-                onMouseLeave={() => setActiveDropdown(null)}
+                onMouseEnter={() => openDropdownMenu("company")}
+                onMouseLeave={scheduleCloseDropdown}
               >
                 <button
                   type="button"
-                  onClick={() =>
-                    setActiveDropdown((prev) => (prev === "company" ? null : "company"))
-                  }
+                  onClick={() => toggleDropdown("company")}
                   className={getDropdownTriggerClass(
                     activeDropdown === "company" || isCompanyActive
                   )}
@@ -338,9 +380,14 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
                   />
                 </button>
 
-                {/* Sleek Minimalist Dropdown Panel (No AI-template clutter, zero borders) */}
+                {/* Sleek Minimalist Dropdown Panel (One-click stable with zero dead-zone gap) */}
                 {activeDropdown === "company" && (
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 rounded-2xl p-1.5 animate-in fade-in slide-in-from-top-1 duration-150 z-50 text-left bg-white/95 backdrop-blur-2xl shadow-[0_12px_36px_rgba(19,39,30,0.12)] border-0">
+                  <div
+                    className="absolute top-full left-1/2 -translate-x-1/2 pt-2.5 z-50 text-left"
+                    onMouseEnter={() => openDropdownMenu("company")}
+                    onMouseLeave={scheduleCloseDropdown}
+                  >
+                    <div className="w-56 rounded-2xl p-1.5 animate-in fade-in slide-in-from-top-1 duration-150 bg-white/95 backdrop-blur-2xl shadow-[0_12px_36px_rgba(19,39,30,0.12)] border border-[#13271e]/5">
                     <div className="flex flex-col gap-0.5">
                       <Link
                         href="/about"
@@ -388,8 +435,9 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
                       </Link>
                     </div>
                   </div>
-                )}
-              </div>
+                </div>
+              )}
+            </div>
             </nav>
           </div>
 
