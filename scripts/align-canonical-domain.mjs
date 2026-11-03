@@ -32,3 +32,4 @@ for (const relPath of targetFiles) {
     }
   }
 }
+
