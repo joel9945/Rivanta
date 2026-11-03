@@ -155,7 +155,7 @@ export default function VisionPage() {
       />
 
       {/* Guiding Philosophy Editorial */}
-      <section className="py-20 md:py-32 bg-[#f6f8f6]">
+      <section className="py-12 sm:py-16 md:py-28 lg:py-32 bg-[#f6f8f6]">
         <div className="u-container u-container--1 u-container--pad">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
             <div className="lg:col-span-4">
@@ -198,7 +198,7 @@ export default function VisionPage() {
       </section>
 
       {/* Five Critical Issues Matrix */}
-      <section id="core-challenges" className="py-20 md:py-32 bg-[#eceee9] border-t border-[#13271e]/8">
+      <section id="core-challenges" className="py-12 sm:py-16 md:py-28 lg:py-32 bg-[#eceee9] border-t border-[#13271e]/8">
         <div className="u-container u-container--1 u-container--pad">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
             <div>
@@ -438,7 +438,7 @@ export default function VisionPage() {
       </section>
 
       {/* Institutional Callout Banner */}
-      <section className="py-20 md:py-32 bg-[#f6f8f6]">
+      <section className="py-12 sm:py-16 md:py-28 lg:py-32 bg-[#f6f8f6]">
         <div className="u-container u-container--1 u-container--pad">
           <div className="p-8 sm:p-12 rounded-3xl bg-[#132c21] text-white flex flex-col md:flex-row items-center justify-between gap-8 card-interactive reveal-up">
             <div className="max-w-2xl space-y-3">

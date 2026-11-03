@@ -11,14 +11,14 @@ export default async function Footer() {
   const currentYear = await getCopyrightYear();
 
   return (
-    <footer className="relative bg-[#0e2219] text-white pt-20 md:pt-32 pb-12 overflow-hidden border-t border-white/10">
+    <footer className="relative bg-[#0e2219] text-white pt-12 sm:pt-16 md:pt-28 lg:pt-32 pb-10 sm:pb-12 overflow-hidden border-t border-white/10">
       {/* Ambient Green & Terracotta Orange Glows */}
       <div className="absolute top-0 right-1/4 w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,_rgba(45,122,84,0.18),_transparent_70%)] pointer-events-none" />
       <div className="absolute bottom-10 left-10 w-[450px] h-[450px] rounded-full bg-[radial-gradient(circle,_rgba(224,100,37,0.12),_transparent_70%)] pointer-events-none" />
 
       <div className="u-container u-container--1 u-container--pad relative z-10">
         {/* Main Upper Area */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 pb-16 md:pb-24 border-b border-white/10 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 pb-10 sm:pb-14 md:pb-24 border-b border-white/10 items-start">
           {/* Left Callout */}
           <div className="lg:col-span-5 flex flex-col space-y-8">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-md w-fit font-mono text-xs uppercase tracking-wider text-white/80">
@@ -214,7 +214,7 @@ export default async function Footer() {
         </div>
 
         {/* Registered Office & Coordinates Bar */}
-        <div className="py-10 border-b border-white/10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-xs text-white/70">
+        <div className="py-8 sm:py-10 border-b border-white/10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-xs text-white/70">
           {/* Corporate & Operations Office */}
           <div className="space-y-2">
             <div className="font-mono uppercase tracking-wider text-[#f9a65c] font-semibold text-[11px]">
@@ -288,7 +288,7 @@ export default async function Footer() {
         </div>
 
         {/* Corporate Identity & Copyright Row */}
-        <div className="pt-10 pb-4 flex flex-col md:flex-row items-center justify-between gap-6 border-t border-white/10">
+        <div className="pt-8 sm:pt-10 pb-4 flex flex-col md:flex-row items-center justify-between gap-6 border-t border-white/10">
           <div className="flex items-center gap-4">
             <Link href="/" className="inline-block group" aria-label="Rivanta Green Home">
               <Image

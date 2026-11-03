@@ -98,11 +98,11 @@ export default function ValueChainGallery() {
     <section
       id="businesses"
       aria-label="Integrated Industrial Workstreams"
-      className="w-full bg-[#f6f8f6] py-20 md:py-32 border-t border-[#13271e]/8"
+      className="w-full bg-[#f6f8f6] py-12 sm:py-16 md:py-28 lg:py-32 border-t border-[#13271e]/8"
     >
       <div className="u-container u-container--1 u-container--pad">
         {/* Section Identifier */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 mb-10 md:mb-14 border-b border-[#13271e]/10 gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 sm:pb-6 mb-6 sm:mb-10 md:mb-14 border-b border-[#13271e]/10 gap-4">
           <div className="flex items-center gap-2.5">
             <span className="w-2.5 h-2.5 rounded-full bg-[#e06425]" />
             <h2 className="font-mono text-xs uppercase tracking-[0.18em] text-[#13271e]/75 font-semibold">
@@ -115,7 +115,7 @@ export default function ValueChainGallery() {
         </div>
 
         {/* Gallery Hero Viewer */}
-        <div className="relative w-full min-h-[540px] sm:min-h-[480px] md:min-h-[460px] lg:min-h-[500px] xl:min-h-[520px] rounded-[24px] lg:rounded-[36px] overflow-hidden shadow-2xl bg-[#13271e] text-white group select-none flex flex-col">
+        <div className="relative w-full min-h-[480px] sm:min-h-[460px] md:min-h-[460px] lg:min-h-[500px] xl:min-h-[520px] rounded-[24px] lg:rounded-[36px] overflow-hidden shadow-2xl bg-[#13271e] text-white group select-none flex flex-col">
           {/* Main Background Image */}
           <div className="absolute inset-0 z-0">
             <Image
@@ -131,7 +131,7 @@ export default function ValueChainGallery() {
           </div>
 
           {/* Structured Content Container (Flex column prevents any overlay collision or text scrambling) */}
-          <div className="relative z-10 p-6 sm:p-8 md:p-10 flex flex-col justify-between flex-1 min-h-[540px] sm:min-h-[480px] md:min-h-[460px] lg:min-h-[500px]">
+          <div className="relative z-10 p-5 sm:p-8 md:p-10 flex flex-col justify-between flex-1 min-h-[480px] sm:min-h-[460px] md:min-h-[460px] lg:min-h-[500px]">
             {/* Top Bar Row */}
             <div className="flex items-center justify-between gap-3 mb-6 sm:mb-8">
               <div className="flex items-center gap-2 flex-wrap">
@@ -194,7 +194,7 @@ export default function ValueChainGallery() {
         </div>
 
         {/* Thumbnail Selector Strip */}
-        <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+        <div className="mt-6 sm:mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 sm:gap-3">
           {SLIDES.map((slide, idx) => {
             const isSelected = idx === current;
             return (
@@ -202,7 +202,7 @@ export default function ValueChainGallery() {
                 type="button"
                 key={slide.id}
                 onClick={() => setCurrent(idx)}
-                className={`relative text-left p-3 rounded-2xl transition-all duration-300 cursor-pointer overflow-hidden border-0 ${
+                className={`relative text-left p-2.5 sm:p-3 rounded-2xl transition-all duration-300 cursor-pointer overflow-hidden border-0 ${
                   isSelected
                     ? "bg-[#13271e] text-white ring-2 ring-[#e06425] shadow-lg -translate-y-1"
                     : "bg-white text-[#13271e]/75 hover:bg-[#13271e]/5"
@@ -225,7 +225,7 @@ export default function ValueChainGallery() {
                 <span className="font-mono text-[10px] block opacity-60 uppercase mb-0.5">
                   {slide.id}
                 </span>
-                <span className="font-sans text-xs font-medium tracking-tight block truncate">
+                <span className="font-sans text-[11px] sm:text-xs font-medium tracking-tight block truncate">
                   {slide.short}
                 </span>
               </button>

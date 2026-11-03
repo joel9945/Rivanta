@@ -28,7 +28,7 @@ const PILLARS: readonly PillarItem[] = [
     line1: "Building Industrial Value",
     line2Prefix: "From ",
     line2Highlight: "India's Resources.",
-    fontSizeClass: "text-4xl sm:text-6xl md:text-7xl lg:text-[5.25rem] xl:text-[5.75rem]",
+    fontSizeClass: "text-[1.85rem] xs:text-[2.25rem] sm:text-5xl md:text-6xl lg:text-[5.25rem] xl:text-[5.75rem]",
     description:
       "Developing integrated industrial initiatives across bio-silica, compressed biogas, sustainable aviation fuel and biomass valorisation in India.",
     image: "/images/hero-facility.png",
@@ -42,7 +42,7 @@ const PILLARS: readonly PillarItem[] = [
     line1: "Engineering Bio-Silica &",
     line2Prefix: "Green ",
     line2Highlight: "Silicon.",
-    fontSizeClass: "text-4xl sm:text-6xl md:text-7xl lg:text-[5.25rem] xl:text-[5.75rem]",
+    fontSizeClass: "text-[1.85rem] xs:text-[2.25rem] sm:text-5xl md:text-6xl lg:text-[5.25rem] xl:text-[5.75rem]",
     description:
       "Developing high-purity biogenic silica and evaluating downstream green silicon materials to strengthen domestic manufacturing and clean technology supply chains.",
     image: "/images/green-silicon-refinery.jpg",
@@ -56,7 +56,7 @@ const PILLARS: readonly PillarItem[] = [
     line1: "Powering Green Mobility",
     line2Prefix: "With ",
     line2Highlight: "Compressed Biogas.",
-    fontSizeClass: "text-4xl sm:text-6xl md:text-7xl lg:text-[5.25rem] xl:text-[5.75rem]",
+    fontSizeClass: "text-[1.85rem] xs:text-[2.25rem] sm:text-5xl md:text-6xl lg:text-[5.25rem] xl:text-[5.75rem]",
     description:
       "Developing commercial anaerobic digestion and biomethane enrichment facilities to convert agricultural residues into clean Compressed Biogas for transportation and industrial grids.",
     image: "/images/biogas-plant-golden-hour.png",
@@ -70,7 +70,7 @@ const PILLARS: readonly PillarItem[] = [
     line1: "Exploring The Future Of",
     line2Prefix: "Clean ",
     line2Highlight: "Aviation Fuels.",
-    fontSizeClass: "text-3xl sm:text-5xl md:text-[3.5rem] lg:text-[4.15rem] xl:text-[4.65rem]",
+    fontSizeClass: "text-[1.65rem] xs:text-[1.95rem] sm:text-4xl md:text-[3.25rem] lg:text-[4.15rem] xl:text-[4.65rem]",
     description:
       "Evaluating sustainable aviation fuel pathways from agricultural residues to support long-term decarbonization across domestic and international aviation corridors.",
     image: "/images/golden-hour-saf-refinery.png",
@@ -170,9 +170,9 @@ export default function Hero({ onExploreVentures }: HeroProps = {}) {
         </div>
 
         {/* Content Inner Container */}
-        <div className="relative z-10 w-full h-full flex flex-col justify-between p-6 md:p-12 lg:p-16 max-w-[1524px] mx-auto">
+        <div className="relative z-10 w-full h-full flex flex-col justify-between p-5 sm:p-8 md:p-12 lg:p-16 max-w-[1524px] mx-auto">
           {/* Top Spacing to clear floating header */}
-          <div className="pt-20 md:pt-24 flex items-center justify-between animate-hero-1">
+          <div className="pt-16 sm:pt-20 md:pt-24 flex items-center justify-between animate-hero-1">
             <span className="font-mono text-[10px] tracking-wider uppercase text-white/60 bg-black/40 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
               Conceptual Industrial Visualization
             </span>
@@ -187,7 +187,7 @@ export default function Hero({ onExploreVentures }: HeroProps = {}) {
           </div>
 
           {/* Main Display Typography (Dynamic per Pillar with Smooth Transition, No Letter Clipping) */}
-          <div className="my-auto py-8 animate-hero-2 min-h-[14rem] sm:min-h-[18rem] md:min-h-[22rem] flex items-center">
+          <div className="my-auto py-4 sm:py-8 animate-hero-2 min-h-[9.5rem] sm:min-h-[14rem] md:min-h-[20rem] flex items-center">
             <h1
               key={`headline-${activePillar}`}
               className={`font-sans font-light tracking-[-0.02em] leading-[1.08] sm:leading-[1.06] text-white max-w-[1360px] w-full animate-in fade-in duration-700 ${PILLARS[activePillar].fontSizeClass}`}
@@ -205,7 +205,7 @@ export default function Hero({ onExploreVentures }: HeroProps = {}) {
           </div>
 
           {/* Bottom Area: Dynamic Pillar Description + Signature Integrated Bio Notched Button */}
-          <div className="pt-6 border-t border-white/15 flex flex-col lg:flex-row items-start lg:items-end justify-between gap-8">
+          <div className="pt-5 sm:pt-6 border-t border-white/15 flex flex-col lg:flex-row items-start lg:items-end justify-between gap-6 lg:gap-8">
             <div className="max-w-xl animate-hero-3">
               {/* Category Tag & Badge */}
               <div className="flex items-center gap-2 mb-2 font-mono text-[11px] uppercase tracking-wider text-[#f9a65c]">
@@ -217,7 +217,7 @@ export default function Hero({ onExploreVentures }: HeroProps = {}) {
               {/* Dynamic Description with smooth transition */}
               <p
                 key={`desc-${activePillar}`}
-                className="font-sans text-base md:text-lg text-white/90 leading-relaxed font-light min-h-[4.5rem] animate-in fade-in duration-500"
+                className="font-sans text-sm sm:text-base md:text-lg text-white/90 leading-relaxed font-light min-h-[3.75rem] sm:min-h-[4.5rem] animate-in fade-in duration-500"
               >
                 {PILLARS[activePillar].description}
               </p>

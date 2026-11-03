@@ -135,7 +135,7 @@ export default function SafPage() {
       />
 
       {/* Strategic Overview */}
-      <section className="py-20 md:py-32 bg-[#f6f8f6]">
+      <section className="py-12 sm:py-16 md:py-28 lg:py-32 bg-[#f6f8f6]">
         <div className="u-container u-container--1 u-container--pad">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
             <div className="lg:col-span-4">
@@ -288,7 +288,7 @@ export default function SafPage() {
       </section>
 
       {/* Evaluation Parameters Deck */}
-      <section className="py-20 md:py-28 bg-[#eceee9] border-t border-[#13271e]/8">
+      <section className="py-12 sm:py-16 md:py-24 lg:py-28 bg-[#eceee9] border-t border-[#13271e]/8">
         <div className="u-container u-container--1 u-container--pad">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 gap-6">
             <div>
@@ -372,7 +372,7 @@ export default function SafPage() {
       </section>
 
       {/* Structured Feasibility Phasing */}
-      <section className="py-20 md:py-32 bg-[#f6f8f6]">
+      <section className="py-12 sm:py-16 md:py-28 lg:py-32 bg-[#f6f8f6]">
         <div className="u-container u-container--1 u-container--pad">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             <div className="lg:col-span-4">

@@ -54,11 +54,11 @@ export default function IndustrialOpportunity() {
     <section
       id="industrial-opportunity"
       aria-label="India's Industrial Opportunity"
-      className="py-20 md:py-32 bg-[#ffffff] border-t border-[#13271e]/8 relative overflow-hidden"
+      className="py-12 sm:py-16 md:py-28 lg:py-32 bg-[#ffffff] border-t border-[#13271e]/8 relative overflow-hidden"
     >
       <div className="u-container u-container--1 u-container--pad">
         {/* Section Identifier */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 mb-12 md:mb-16 border-b border-[#13271e]/10 gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 sm:pb-6 mb-8 sm:mb-12 md:mb-16 border-b border-[#13271e]/10 gap-4">
           <div className="flex items-center gap-2.5">
             <span className="w-2.5 h-2.5 rounded-full bg-[#e06425]" />
             <span className="font-mono text-xs uppercase tracking-[0.18em] text-[#13271e]/75 font-semibold">
@@ -71,7 +71,7 @@ export default function IndustrialOpportunity() {
         </div>
 
         {/* Section Headline & Editorial Perspective */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start mb-16 md:mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start mb-10 sm:mb-14 md:mb-20">
           <div className="lg:col-span-7">
             <span className="font-mono text-xs uppercase tracking-widest text-[#e06425] font-semibold block mb-3">
               India&apos;s Industrial Opportunity
@@ -105,7 +105,7 @@ export default function IndustrialOpportunity() {
             return (
               <div
                 key={pillar.title}
-                className="p-8 rounded-2xl bg-[#f8faf8] border border-[#13271e]/8 hover:border-[#13271e]/20 transition-all duration-300 flex flex-col justify-between group"
+                className="p-6 sm:p-8 rounded-2xl bg-[#f8faf8] border border-[#13271e]/8 hover:border-[#13271e]/20 transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">

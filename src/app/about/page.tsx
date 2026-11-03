@@ -134,7 +134,7 @@ export default function AboutPage() {
       />
 
       {/* Corporate Overview & Purpose */}
-      <section className="py-20 md:py-32 bg-[#f6f8f6]">
+      <section className="py-12 sm:py-16 md:py-28 lg:py-32 bg-[#f6f8f6]">
         <div className="u-container u-container--1 u-container--pad">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
             <div className="lg:col-span-4">
@@ -191,7 +191,7 @@ export default function AboutPage() {
       </section>
 
       {/* Strategic Priorities */}
-      <section className="py-20 md:py-28 bg-white border-t border-[#13271e]/8">
+      <section className="py-12 sm:py-16 md:py-24 lg:py-28 bg-white border-t border-[#13271e]/8">
         <div className="u-container u-container--1 u-container--pad">
           <div className="max-w-3xl mb-12 md:mb-16">
             <div className="u-ts--1 mb-4 reveal-up">
@@ -308,7 +308,7 @@ export default function AboutPage() {
       </section>
 
       {/* Industrial Development Phasing & Outlook */}
-      <section className="py-20 md:py-32 bg-[#eceee9] border-t border-[#13271e]/8">
+      <section className="py-12 sm:py-16 md:py-28 lg:py-32 bg-[#eceee9] border-t border-[#13271e]/8">
         <div className="u-container u-container--1 u-container--pad">
           <div className="mb-10 md:mb-16">
             <div className="u-ts--1 reveal-up">

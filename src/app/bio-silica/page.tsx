@@ -131,7 +131,7 @@ export default function BioSilicaPage() {
       />
 
       {/* Material Benchmark Comparison */}
-      <section className="py-20 md:py-32 bg-[#f6f8f6]">
+      <section className="py-12 sm:py-16 md:py-28 lg:py-32 bg-[#f6f8f6]">
         <div className="u-container u-container--1 u-container--pad">
           <div className="max-w-3xl mb-12 md:mb-16">
             <div className="u-ts--1 mb-4 reveal-up">
@@ -185,7 +185,7 @@ export default function BioSilicaPage() {
       </section>
 
       {/* Applications Showcase */}
-      <section id="applications" className="py-20 md:py-28 bg-[#eceee9] border-t border-[#13271e]/8">
+      <section id="applications" className="py-12 sm:py-16 md:py-24 lg:py-28 bg-[#eceee9] border-t border-[#13271e]/8">
         <div className="u-container u-container--1 u-container--pad">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
             <div>

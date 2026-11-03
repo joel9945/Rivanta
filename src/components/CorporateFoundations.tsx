@@ -46,11 +46,11 @@ export default function CorporateFoundations() {
     <section
       id="environmental-stewardship"
       aria-label="Environmental Stewardship"
-      className="py-20 md:py-32 bg-[#eeeeee] rounded-t-[32px] md:rounded-t-[48px] -mt-6 relative z-10 border-t border-[#13271e]/8"
+      className="py-12 sm:py-16 md:py-28 lg:py-32 bg-[#eeeeee] rounded-t-[32px] md:rounded-t-[48px] -mt-4 sm:-mt-6 relative z-10 border-t border-[#13271e]/8"
     >
       <div className="u-container u-container--1 u-container--pad">
         {/* Section Identifier */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 mb-12 md:mb-16 border-b border-[#13271e]/10 gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 sm:pb-6 mb-8 sm:mb-12 md:mb-16 border-b border-[#13271e]/10 gap-4">
           <div className="flex items-center gap-2.5">
             <span className="w-2.5 h-2.5 rounded-full bg-[#2d7a54]" />
             <span className="font-mono text-xs uppercase tracking-[0.18em] text-[#13271e]/75 font-semibold">
@@ -63,7 +63,7 @@ export default function CorporateFoundations() {
         </div>
 
         {/* Section Headline & Description */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start mb-14 md:mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start mb-8 sm:mb-12 md:mb-20">
           <div className="lg:col-span-7">
             <h2 className="font-sans font-light text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] tracking-[-0.02em] leading-[1.14] text-[#13271e]">
               Responsibility Across{" "}
@@ -111,13 +111,13 @@ export default function CorporateFoundations() {
         </div>
 
         {/* 4 Pillars Grid (Clean, mature institutional design) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-8 sm:mb-12 md:mb-14">
           {STEWARDSHIP_PILLARS.map((pillar) => {
             const Icon = pillar.icon;
             return (
               <div
                 key={pillar.id}
-                className="p-8 sm:p-10 rounded-3xl bg-white border border-[#13271e]/8 shadow-sm flex flex-col justify-between space-y-5"
+                className="p-6 sm:p-8 md:p-10 rounded-3xl bg-white border border-[#13271e]/8 shadow-sm flex flex-col justify-between space-y-5"
               >
                 <div className="flex items-center justify-between">
                   <span className="font-mono text-xs uppercase tracking-wider px-3 py-1 rounded-full bg-[#f3f5f3] text-[#13271e]/80 font-medium border border-[#13271e]/10">
@@ -145,8 +145,8 @@ export default function CorporateFoundations() {
         </div>
 
         {/* Three Core Governance Benchmarks */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 border-t border-[#13271e]/10">
-          <div className="flex items-start gap-4 p-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 pt-6 border-t border-[#13271e]/10">
+          <div className="flex items-start gap-3.5 sm:gap-4 p-3.5 sm:p-4 rounded-2xl bg-white/60 sm:bg-transparent">
             <div className="w-10 h-10 rounded-xl bg-white text-[#2d7a54] flex items-center justify-center flex-shrink-0 shadow-xs border border-[#13271e]/8">
               <ShieldCheck className="w-5 h-5" />
             </div>
@@ -160,7 +160,7 @@ export default function CorporateFoundations() {
             </div>
           </div>
 
-          <div className="flex items-start gap-4 p-4">
+          <div className="flex items-start gap-3.5 sm:gap-4 p-3.5 sm:p-4 rounded-2xl bg-white/60 sm:bg-transparent">
             <div className="w-10 h-10 rounded-xl bg-white text-[#e06425] flex items-center justify-center flex-shrink-0 shadow-xs border border-[#13271e]/8">
               <Droplet className="w-5 h-5" />
             </div>
@@ -174,7 +174,7 @@ export default function CorporateFoundations() {
             </div>
           </div>
 
-          <div className="flex items-start gap-4 p-4">
+          <div className="flex items-start gap-3.5 sm:gap-4 p-3.5 sm:p-4 rounded-2xl bg-white/60 sm:bg-transparent">
             <div className="w-10 h-10 rounded-xl bg-white text-[#13271e] flex items-center justify-center flex-shrink-0 shadow-xs border border-[#13271e]/8">
               <RefreshCw className="w-5 h-5" />
             </div>

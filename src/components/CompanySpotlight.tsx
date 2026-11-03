@@ -56,10 +56,10 @@ const STRATEGIC_THEMES = [
 
 export default function CompanySpotlight() {
   return (
-    <section id="strategic-focus" aria-label="Strategic Focus" className="py-20 md:py-32 bg-[#fcfdfc] border-b border-[#13271e]/8">
+    <section id="strategic-focus" aria-label="Strategic Focus" className="py-12 sm:py-16 md:py-28 lg:py-32 bg-[#fcfdfc] border-b border-[#13271e]/8">
       <div className="u-container u-container--1 u-container--pad">
         {/* Section Identifier */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 mb-12 md:mb-16 border-b border-[#13271e]/10 gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 sm:pb-6 mb-8 sm:mb-12 md:mb-16 border-b border-[#13271e]/10 gap-4">
           <div className="flex items-center gap-2.5">
             <span className="w-2.5 h-2.5 rounded-full bg-[#e06425]" />
             <span className="font-mono text-xs uppercase tracking-[0.18em] text-[#13271e]/75 font-semibold">
@@ -72,7 +72,7 @@ export default function CompanySpotlight() {
         </div>
 
         {/* Executive Headline & Perspective */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start mb-14 md:mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start mb-8 sm:mb-12 md:mb-20">
           <div className="lg:col-span-7">
             <h2 className="font-sans font-light text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] tracking-[-0.025em] leading-[1.14] text-[#13271e]">
               Connecting Domestic Resources With{" "}
@@ -116,7 +116,7 @@ export default function CompanySpotlight() {
         </div>
 
         {/* Panoramic Facility Overview Image */}
-        <div className="relative w-full aspect-[16/9] sm:aspect-[2/1] lg:aspect-[2.35/1] rounded-[24px] lg:rounded-[32px] overflow-hidden shadow-xl mb-16 md:mb-20 group select-none">
+        <div className="relative w-full aspect-[16/10] sm:aspect-[2/1] lg:aspect-[2.35/1] min-h-[220px] rounded-[24px] lg:rounded-[32px] overflow-hidden shadow-xl mb-10 sm:mb-14 md:mb-20 group select-none">
           <Image
             src="/images/company-facility-overview.jpg"
             alt="Rivanta Proposed Bio-Industrial Manufacturing Facility Concept"

@@ -19,7 +19,7 @@ export default function MarqueeText({
   const dotColor = theme === "dark" ? "text-[#ea6e2d]" : "text-[#e06425]";
 
   return (
-    <section className={`w-full py-7 md:py-9 border-y overflow-hidden select-none ${bgClass}`}>
+    <section className={`w-full py-5 sm:py-7 md:py-9 border-y overflow-hidden select-none ${bgClass}`}>
       <div className="marquee">
         <div className="marquee_scroll">
           <div className="marquee_collection">

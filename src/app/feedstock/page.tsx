@@ -110,7 +110,7 @@ export default function FeedstockPage() {
       />
 
       {/* Sourcing Strategy Editorial */}
-      <section className="py-20 md:py-32 bg-[#f6f8f6]">
+      <section className="py-12 sm:py-16 md:py-28 lg:py-32 bg-[#f6f8f6]">
         <div className="u-container u-container--1 u-container--pad">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
             <div className="lg:col-span-4">

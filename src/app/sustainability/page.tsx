@@ -130,7 +130,7 @@ export default function SustainabilityPage() {
       />
 
       {/* 4 Core Stewardship Pillars */}
-      <section id="pillars" className="py-20 md:py-32 bg-[#f6f8f6]">
+      <section id="pillars" className="py-12 sm:py-16 md:py-28 lg:py-32 bg-[#f6f8f6]">
         <div className="u-container u-container--1 u-container--pad">
           <div className="max-w-3xl mb-12 md:mb-16">
             <div className="u-ts--1 mb-4 reveal-up">
@@ -206,7 +206,7 @@ export default function SustainabilityPage() {
       </section>
 
       {/* Operational Environmental Management Framework */}
-      <section className="py-20 md:py-28 bg-[#eceee9] border-t border-[#13271e]/8">
+      <section className="py-12 sm:py-16 md:py-24 lg:py-28 bg-[#eceee9] border-t border-[#13271e]/8">
         <div className="u-container u-container--1 u-container--pad">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
             <div>
@@ -329,7 +329,7 @@ export default function SustainabilityPage() {
       </section>
 
       {/* Governance & Verification Callout */}
-      <section className="py-20 md:py-32 bg-[#f6f8f6]">
+      <section className="py-12 sm:py-16 md:py-28 lg:py-32 bg-[#f6f8f6]">
         <div className="u-container u-container--1 u-container--pad">
           <div className="p-8 sm:p-12 rounded-3xl bg-[#132c21] text-white flex flex-col md:flex-row items-center justify-between gap-8 card-interactive reveal-up">
             <div className="max-w-2xl space-y-3">

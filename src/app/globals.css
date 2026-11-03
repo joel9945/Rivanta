@@ -32,7 +32,7 @@
   --container-max-width-1: 1524px;
   --gap: 20px;
   --container-padding-lg: 48px;
-  --container-padding-sm: 24px;
+  --container-padding-sm: 20px;
   --container-padding: var(--container-padding-sm);
 
   --base--background-color: #f6f8f6;
@@ -40,6 +40,13 @@
   --base--font-size: 16px;
   --base--font-weight: 400;
   --base--line-height: 1.4;
+}
+
+@media (max-width: 480px) {
+  :root {
+    --container-padding-sm: 16px;
+    --container-padding: 16px;
+  }
 }
 
 @media (min-width: 1025px) {
@@ -161,6 +168,7 @@ main.page-main > .page-content {
   border-radius: 0;
   height: 48px;
   width: fit-content;
+  max-width: 100%;
   position: relative;
   text-decoration: none;
   user-select: none;
@@ -173,13 +181,13 @@ main.page-main > .page-content {
   color: #fff;
   display: inline-flex;
   font-family: var(--font-mono, monospace);
-  font-size: clamp(0.75rem, 0.72rem + 0.2vw, 0.875rem);
+  font-size: clamp(0.72rem, 0.68rem + 0.2vw, 0.875rem);
   justify-content: flex-start;
   letter-spacing: 0.04em;
   line-height: 1;
   margin-right: 16px;
   overflow: visible;
-  padding: 8px 8px 8px 20px;
+  padding: 8px 8px 8px 16px;
   position: relative;
   text-transform: uppercase;
   transition: background-color 0.6s var(--transition-ease--2),
@@ -378,8 +386,8 @@ main.page-main > .page-content {
   .hero-frame-canvas {
     margin: var(--hero-canvas-margin, 10px);
     border-radius: var(--hero-canvas-radius, 20px);
-    height: calc(100vh - (var(--hero-canvas-margin, 10px) * 2));
-    min-height: 580px;
+    height: auto;
+    min-height: calc(100dvh - (var(--hero-canvas-margin, 10px) * 2));
   }
 }
 
@@ -392,7 +400,7 @@ main.page-main > .page-content {
   isolation: isolate;
   transform: translateZ(0);
   -webkit-mask-image: -webkit-radial-gradient(white, black);
-  min-height: 520px;
+  min-height: 480px;
   box-shadow: 0 20px 50px -15px rgba(14, 34, 25, 0.25);
   transition: margin 0.25s cubic-bezier(0.16, 1, 0.3, 1),
               border-radius 0.25s cubic-bezier(0.16, 1, 0.3, 1);
@@ -401,7 +409,7 @@ main.page-main > .page-content {
 
 @media (min-width: 768px) {
   .subpage-frame-canvas {
-    min-height: 580px;
+    min-height: 560px;
   }
 }
 
@@ -416,6 +424,7 @@ main.page-main > .page-content {
   .subpage-frame-canvas {
     margin: var(--subpage-canvas-margin, 10px);
     border-radius: var(--subpage-canvas-radius, 20px);
+    min-height: 480px;
   }
 }
 

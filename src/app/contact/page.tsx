@@ -194,7 +194,7 @@ export default function ContactPage() {
       </section>
 
       {/* Main Two-Column Contact Section */}
-      <section id="inquiry-form" className="py-20 md:py-32 bg-[#f6f8f6]">
+      <section id="inquiry-form" className="py-12 sm:py-16 md:py-28 lg:py-32 bg-[#f6f8f6]">
         <div className="u-container u-container--1 u-container--pad">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             {/* Left Column: Offices & Department Desks */}
@@ -339,7 +339,7 @@ export default function ContactPage() {
       </section>
 
       {/* Commercial FAQ Accordion Section */}
-      <section className="py-20 md:py-28 bg-[#eceee9] border-t border-[#13271e]/8">
+      <section className="py-12 sm:py-16 md:py-24 lg:py-28 bg-[#eceee9] border-t border-[#13271e]/8">
         <div className="u-container u-container--1 u-container--pad">
           <div className="max-w-2xl mb-12">
             <div className="u-ts--1 mb-4 reveal-up">

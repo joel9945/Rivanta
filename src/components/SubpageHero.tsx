@@ -111,7 +111,7 @@ export default function SubpageHero({
         )}
 
         {/* Content Container */}
-        <div className="relative z-10 w-full h-full flex flex-col justify-between p-6 sm:p-10 md:p-14 lg:p-16 max-w-[1524px] mx-auto">
+        <div className="relative z-10 w-full h-full flex flex-col justify-between p-5 sm:p-8 md:p-12 lg:p-16 max-w-[1524px] mx-auto">
           {/* Top Row: Breadcrumb Navigation & Real-Time Badge */}
           <div className="pt-16 sm:pt-20 md:pt-24 flex flex-col sm:flex-row sm:items-center justify-between gap-4 animate-hero-1">
             <nav
@@ -151,9 +151,9 @@ export default function SubpageHero({
           </div>
 
           {/* Main Headline Area */}
-          <div className="my-auto py-8 md:py-12 animate-hero-2">
+          <div className="my-auto py-6 sm:py-8 md:py-12 animate-hero-2">
             {/* Category Badge Pill */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-md font-mono text-xs uppercase tracking-wider text-white/90 mb-6">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-md font-mono text-xs uppercase tracking-wider text-white/90 mb-4 sm:mb-6">
               <span className="w-2 h-2 rounded-full bg-[#ea6e2d] radar-dot" />
               <span>{badge}</span>
             </div>
@@ -170,7 +170,7 @@ export default function SubpageHero({
           </div>
 
           {/* Bottom Area: Subtitle & Signature Buttons */}
-          <div className="pt-8 border-t border-white/15 flex flex-col lg:flex-row items-start lg:items-end justify-between gap-8">
+          <div className="pt-6 sm:pt-8 border-t border-white/15 flex flex-col lg:flex-row items-start lg:items-end justify-between gap-6 lg:gap-8">
             <div className="max-w-2xl animate-hero-3">
               <p className="font-sans text-sm sm:text-base md:text-lg text-white/85 leading-relaxed font-light">
                 {description}

@@ -4,17 +4,17 @@ import { ArrowUpRight } from "lucide-react";
 
 export default function PlatformHgroup() {
   return (
-    <section id="platform" aria-label="Corporate Introduction" className="bg-[#f6f8f6] pt-14 md:pt-20 lg:pt-24 pb-12 md:pb-16 lg:pb-20">
+    <section id="platform" aria-label="Corporate Introduction" className="bg-[#f6f8f6] pt-10 sm:pt-14 md:pt-20 lg:pt-24 pb-8 sm:pb-12 md:pb-16 lg:pb-20">
       <div className="u-container u-container--1 u-container--pad">
         {/* Top: Understated Section Identifier */}
-        <div className="flex items-center pb-5 md:pb-6 border-b border-[#13271e]/10 reveal-up" suppressHydrationWarning>
+        <div className="flex items-center pb-4 sm:pb-6 border-b border-[#13271e]/10 reveal-up" suppressHydrationWarning>
           <span className="font-mono text-xs uppercase tracking-[0.16em] text-[#13271e]/60 font-medium">
             01 / CORPORATE OVERVIEW
           </span>
         </div>
 
         {/* Main Two-Column Content */}
-        <div className="pt-8 md:pt-12 lg:pt-14 pb-8 md:pb-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+        <div className="pt-6 sm:pt-8 md:pt-12 lg:pt-14 pb-6 sm:pb-8 md:pb-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
           {/* Left Column: Direct Institutional Headline */}
           <div className="lg:col-span-7 reveal-up delay-100" suppressHydrationWarning>
             <h2 className="font-sans font-light text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-[3.5rem] tracking-[-0.02em] leading-[1.14] text-[#13271e]">
