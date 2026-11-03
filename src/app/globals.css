@@ -85,7 +85,7 @@ html, body {
 
 /* Explicit visible smooth custom scrollbar for navigation containers */
 .nav-scroller {
-  overflow-y: auto !important;
+  overflow-y: scroll !important;
   overflow-x: hidden !important;
   -webkit-overflow-scrolling: touch !important;
   scrollbar-width: thin !important;

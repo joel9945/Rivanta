@@ -98,7 +98,7 @@ export default function ValueChainGallery() {
     <section
       id="businesses"
       aria-label="Integrated Industrial Workstreams"
-      className="w-full bg-[#f6f8f6] py-12 sm:py-16 md:py-28 lg:py-32 border-t border-[#13271e]/8"
+      className="w-full bg-[#f6f8f6] py-8 sm:py-14 md:py-20 lg:py-28 border-t border-[#13271e]/8"
     >
       <div className="u-container u-container--1 u-container--pad">
         {/* Section Identifier */}

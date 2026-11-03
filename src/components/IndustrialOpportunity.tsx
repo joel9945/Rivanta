@@ -98,19 +98,19 @@ export default function IndustrialOpportunity() {
           </div>
         </div>
 
-        {/* 4 Pillars Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        {/* 4 Pillars Grid: 2 columns on tablet / small desktop (including 1127x866) to prevent word scrambling */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 sm:gap-6 lg:gap-7">
           {pillars.map((pillar) => {
             const Icon = pillar.icon;
             return (
               <div
                 key={pillar.title}
-                className="p-6 sm:p-8 rounded-2xl bg-[#f8faf8] border border-[#13271e]/8 hover:border-[#13271e]/20 transition-all duration-300 flex flex-col justify-between group"
+                className="p-5 sm:p-6 lg:p-7 rounded-2xl bg-[#f8faf8] border border-[#13271e]/8 hover:border-[#13271e]/20 transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-6">
+                  <div className="flex flex-wrap items-center justify-between gap-2 mb-4 sm:mb-6">
                     <div
-                      className="w-11 h-11 rounded-xl flex items-center justify-center transition-colors shadow-xs"
+                      className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl flex items-center justify-center transition-colors shadow-xs flex-shrink-0"
                       style={{
                         backgroundColor: `${pillar.color}15`,
                         color: pillar.color,
@@ -118,16 +118,16 @@ export default function IndustrialOpportunity() {
                     >
                       <Icon className="w-5 h-5" />
                     </div>
-                    <span className="font-mono text-[10px] uppercase tracking-wider text-[#13271e]/50 font-semibold bg-white px-2.5 py-1 rounded border border-[#13271e]/8">
+                    <span className="font-mono text-[10px] uppercase tracking-wider text-[#13271e]/60 font-semibold bg-white px-2.5 py-1 rounded border border-[#13271e]/8 whitespace-nowrap">
                       {pillar.badge}
                     </span>
                   </div>
 
-                  <h3 className="font-sans text-xl font-medium text-[#13271e] tracking-tight mb-2">
+                  <h3 className="font-sans text-lg sm:text-xl font-medium text-[#13271e] tracking-tight mb-2">
                     {pillar.title}
                   </h3>
                   <div
-                    className="font-sans text-sm font-semibold mb-3"
+                    className="font-sans text-xs sm:text-sm font-semibold mb-3"
                     style={{ color: pillar.color }}
                   >
                     {pillar.description}
@@ -137,7 +137,7 @@ export default function IndustrialOpportunity() {
                   </p>
                 </div>
 
-                <div className="pt-6 mt-6 border-t border-[#13271e]/8">
+                <div className="pt-5 mt-5 sm:pt-6 sm:mt-6 border-t border-[#13271e]/8">
                   <Link
                     href={pillar.href}
                     className="inline-flex items-center gap-1.5 font-sans text-xs font-semibold text-[#13271e] group-hover:text-[#e06425] transition-colors"

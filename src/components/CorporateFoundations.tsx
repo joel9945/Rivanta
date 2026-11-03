@@ -46,7 +46,7 @@ export default function CorporateFoundations() {
     <section
       id="environmental-stewardship"
       aria-label="Environmental Stewardship"
-      className="py-12 sm:py-16 md:py-28 lg:py-32 bg-[#eeeeee] rounded-t-[32px] md:rounded-t-[48px] -mt-4 sm:-mt-6 relative z-10 border-t border-[#13271e]/8"
+      className="py-8 sm:py-14 md:py-20 lg:py-28 bg-[#eeeeee] rounded-t-[28px] sm:rounded-t-[36px] md:rounded-t-[48px] -mt-3 sm:-mt-5 relative z-10 border-t border-[#13271e]/8"
     >
       <div className="u-container u-container--1 u-container--pad">
         {/* Section Identifier */}

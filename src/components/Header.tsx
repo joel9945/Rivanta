@@ -23,6 +23,7 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<"businesses" | "company" | null>(null);
+  const [clickedDropdown, setClickedDropdown] = useState<"businesses" | "company" | null>(null);
   const navRef = useRef<HTMLElement>(null);
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -35,12 +36,13 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
   };
 
   const scheduleCloseDropdown = () => {
+    if (clickedDropdown) return; // Keep open if explicitly clicked
     if (closeTimeoutRef.current) {
       clearTimeout(closeTimeoutRef.current);
     }
     closeTimeoutRef.current = setTimeout(() => {
       setActiveDropdown(null);
-    }, 250);
+    }, 350);
   };
 
   const toggleDropdown = (name: "businesses" | "company") => {
@@ -48,13 +50,20 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
       clearTimeout(closeTimeoutRef.current);
       closeTimeoutRef.current = null;
     }
-    setActiveDropdown((prev) => (prev === name ? null : name));
+    if (activeDropdown === name && clickedDropdown === name) {
+      setActiveDropdown(null);
+      setClickedDropdown(null);
+    } else {
+      setActiveDropdown(name);
+      setClickedDropdown(name);
+    }
   };
 
   // Close dropdown and drawer upon route transition
   if (prevPathname !== pathname) {
     setPrevPathname(pathname);
     setActiveDropdown(null);
+    setClickedDropdown(null);
     setMobileMenuOpen(false);
   }
 
@@ -65,18 +74,10 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
     }
 
     const handleScroll = () => {
-      const heroEl =
-        document.getElementById("hero") ||
-        document.getElementById("subpage-hero");
-
-      if (heroEl) {
-        const rect = heroEl.getBoundingClientRect();
-        // The navbar remains transparent while the hero image/section is visible.
-        // It only transitions to the solid white frosted state once the hero scrolls completely past the header (~85px).
-        setScrolled(rect.bottom <= 85);
-      } else {
-        setScrolled(window.scrollY > 85);
-      }
+      // Transition to frosted solid header as soon as user scrolls past 30px.
+      // This prevents content beneath the header from bleeding through and overlapping menu text.
+      const scrollY = window.scrollY;
+      setScrolled(scrollY > 30);
     };
 
     handleScroll();
@@ -111,6 +112,7 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
           closeTimeoutRef.current = null;
         }
         setActiveDropdown(null);
+        setClickedDropdown(null);
       }
     };
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -120,6 +122,7 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
           closeTimeoutRef.current = null;
         }
         setActiveDropdown(null);
+        setClickedDropdown(null);
         setMobileMenuOpen(false);
       }
     };
@@ -134,7 +137,16 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
     };
   }, []);
 
-
+  const hasDarkHero =
+    pathname === "/" ||
+    pathname === "/about" ||
+    pathname === "/bio-silica" ||
+    pathname === "/cbg" ||
+    pathname === "/feedstock" ||
+    pathname === "/projects" ||
+    pathname === "/saf" ||
+    pathname === "/sustainability" ||
+    pathname === "/vision";
 
   const isBusinessesActive =
     pathname?.startsWith("/bio-silica") ||
@@ -146,7 +158,8 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
     pathname === "/about" ||
     pathname === "/vision";
 
-  const isTransparent = !scrolled;
+  // Only transparent when on a dark-hero page AND scrolled to the very top
+  const isTransparent = hasDarkHero && !scrolled;
 
   const getNavLinkClass = (isActive: boolean) =>
     `px-3 xl:px-3.5 py-1.5 rounded-full font-sans text-[13px] xl:text-[13.5px] tracking-[-0.01em] transition-all duration-200 ${
@@ -250,7 +263,7 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
                 {/* Sleek Minimalist Dropdown Panel (One-click stable with zero dead-zone gap) */}
                 {activeDropdown === "businesses" && (
                   <div
-                    className="absolute top-full left-1/2 -translate-x-1/2 pt-2.5 z-50 text-left"
+                    className="absolute top-full left-1/2 -translate-x-1/2 pt-2.5 z-50 text-left before:absolute before:-top-3 before:left-0 before:right-0 before:h-4 before:content-['']"
                     onMouseEnter={() => openDropdownMenu("businesses")}
                     onMouseLeave={scheduleCloseDropdown}
                   >
@@ -385,7 +398,7 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
                 {/* Sleek Minimalist Dropdown Panel (One-click stable with zero dead-zone gap) */}
                 {activeDropdown === "company" && (
                   <div
-                    className="absolute top-full left-1/2 -translate-x-1/2 pt-2.5 z-50 text-left"
+                    className="absolute top-full left-1/2 -translate-x-1/2 pt-2.5 z-50 text-left before:absolute before:-top-3 before:left-0 before:right-0 before:h-4 before:content-['']"
                     onMouseEnter={() => openDropdownMenu("company")}
                     onMouseLeave={scheduleCloseDropdown}
                   >
