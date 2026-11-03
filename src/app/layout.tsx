@@ -26,23 +26,24 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://rivantagreen.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "RIVANTA — Green Innovative Venture Private Limited",
+    default: "Rivanta Green — Building Industrial Value From India's Resources",
     template: "%s | Rivanta Green",
   },
   description:
-    "Rivanta Green Innovative Venture Private Limited engineers utility-scale renewable energy infrastructure, industrial decarbonization, flagship Green Silicon (6N purity / 99.999%), and circular bio-ventures.",
+    "Rivanta Green Innovative Venture Private Limited is an emerging Indian industrial enterprise developing an integrated portfolio across renewable energy, advanced materials, sustainable fuels, and circular manufacturing.",
   keywords: [
     "Rivanta Green",
-    "Rivanta Green Innovative Venture",
-    "Green Silicon",
-    "Green Silicon 6N",
-    "High Purity Silicon 99.999%",
+    "Rivanta Green Innovative Venture Private Limited",
+    "Indian Industrial Enterprise",
+    "Advanced Materials",
+    "Biogenic Silica",
     "Compressed Biogas",
-    "CBG",
-    "Sustainable Aviation Fuel",
+    "CBG India",
+    "Sustainable Aviation Fuels",
     "SAF",
-    "Biomass Circular Economy",
-    "Industrial Decarbonization",
+    "Agricultural Residue Utilization",
+    "Circular Economy",
+    "Industrial Infrastructure India",
   ],
   authors: [{ name: "Rivanta Green Innovative Venture Pvt. Ltd." }],
   creator: "Rivanta Green Innovative Venture Pvt. Ltd.",
@@ -56,9 +57,9 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "RIVANTA — Green Innovative Venture Private Limited",
+    title: "Rivanta Green — Building Industrial Value From India's Resources",
     description:
-      "Engineering the future for clean innovation. Developing high-value Green Silicon (6N purity / 99.999%), compressed biogas (CBG), and sustainable aviation fuel (SAF).",
+      "Rivanta Green Innovative Venture Private Limited is an emerging Indian industrial enterprise developing an integrated portfolio across renewable energy, advanced materials, sustainable fuels, and circular manufacturing.",
     url: siteUrl,
     siteName: "Rivanta Green Innovative Venture",
     images: [
@@ -66,7 +67,7 @@ export const metadata: Metadata = {
         url: "/images/hero-facility.png",
         width: 1200,
         height: 630,
-        alt: "Rivanta Clean Energy Infrastructure Facility",
+        alt: "Rivanta Green Industrial Development Facility",
       },
     ],
     locale: "en_US",
@@ -74,9 +75,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "RIVANTA — Green Innovative Venture Private Limited",
+    title: "Rivanta Green — Building Industrial Value From India's Resources",
     description:
-      "Engineering the future for clean innovation. Flagship Green Silicon (6N purity / 99.999%), compressed biogas, and sustainable aviation fuel pathways.",
+      "Emerging Indian industrial enterprise developing an integrated portfolio across renewable energy, advanced materials, sustainable fuels, and circular manufacturing.",
     images: ["/images/hero-facility.png"],
   },
   icons: {
@@ -97,7 +98,7 @@ const structuredData = {
   url: siteUrl,
   logo: `${siteUrl}/logo/logo-icon.svg`,
   description:
-    "Industrial manufacturing venture operating in agricultural biomass valorization, Green Silicon (6N purity / 99.999%), compressed biogas, and sustainable aviation fuel pathways.",
+    "Diversified Indian industrial enterprise developing an integrated portfolio across renewable energy, advanced materials, sustainable fuels, and resource-efficient manufacturing.",
   email: "info@rivantagreen.com",
   telephone: "+91 98930 25375",
   address: {

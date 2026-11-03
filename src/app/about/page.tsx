@@ -12,65 +12,99 @@ import {
   ArrowRight,
   ArrowUpRight,
   CheckCircle2,
+  Building2,
+  TrendingUp,
+  Cpu,
+  Factory,
 } from "lucide-react";
 
-const VALUES = [
+const STRATEGIC_VALUES = [
   {
     index: "01.",
-    title: "Engineering Rigor",
-    badge: "Process Discipline",
+    title: "Industrial Ambition",
+    badge: "Long-Term Vision",
     description:
-      "Every processing pathway—from thermal ash calcination to catalytic desulfurization—is modeled on verified thermodynamic balances, ASME pressure piping, and institutional safety codes.",
+      "Developing scalable manufacturing infrastructure that converts underutilized domestic resources into high-value industrial inputs for key manufacturing sectors.",
     bg: "#fae9dc",
     textColor: "#13271e",
     accent: "#e06425",
     icon: Target,
-    stat: "Verified Mass & Energy Balances",
+    stat: "Integrated Industrial Development",
   },
   {
     index: "02.",
     title: "Resource Efficiency",
-    badge: "Zero-Waste Circularity",
+    badge: "Circular Stewardship",
     description:
-      "We treat agricultural residues as valuable material feeds, producing Green Silicon (6N purity / 99.999%), combustible biomethane, and organic humus to eliminate waste.",
+      "Integrating zero-waste engineering and closed-loop process utility design to maximize material recovery while minimizing primary resource consumption.",
     bg: "#d6e8dc",
     textColor: "#13271e",
     accent: "#2d7a54",
     icon: Compass,
-    stat: "Zero-Liquid-Discharge (ZLD)",
+    stat: "Zero Liquid Discharge (ZLD) Design",
   },
   {
     index: "03.",
     title: "Auditable Governance",
     badge: "Institutional Integrity",
     description:
-      "Our environmental reporting and lifecycle assessments are audited by independent accredited bodies under ISO 14064, guaranteeing transparent stakeholder accountability.",
+      "Upholding transparent corporate governance, rigorous regulatory compliance, and internationally recognized lifecycle environmental accounting benchmarks.",
     bg: "#132c21",
     textColor: "#ffffff",
     accent: "#ea6e2d",
     icon: ShieldCheck,
-    stat: "ISO 14064 & 14044 Compliance",
+    stat: "Standardized Governance Frameworks",
   },
 ];
 
-const MILESTONES = [
+const DEVELOPMENT_MILESTONES = [
   {
-    stage: "Phase 01",
-    status: "Completed",
-    title: "Catchment Profiling & Feedstock Modeling",
-    detail: "Extensive regional field surveys analyzing rice husk generation density, milling logistics, and biogenic silicon precursor yield across a 100km radius.",
+    stage: "Current Activities",
+    status: "Operational Sourcing",
+    title: "Feedstock Sourcing & Supply Chain Organization",
+    detail:
+      "Establishing structured agricultural residue collection agreements, regional milling partnerships, and preliminary quality verification networks.",
   },
   {
-    stage: "Phase 02",
-    status: "Underway",
-    title: "Front-End Engineering Design (FEED) & Permitting",
-    detail: "Detailed process engineering for the flagship Green Silicon refining plant (6N purity / 99.999%), biomethane upgrading columns, and statutory environmental clearances.",
+    stage: "Under Development",
+    status: "Engineering & Clearances",
+    title: "Facility Planning & Front-End Engineering",
+    detail:
+      "Conducting comprehensive process engineering, statutory clearance applications, and utility integration planning for proposed manufacturing hubs.",
   },
   {
-    stage: "Phase 03",
-    status: "Planned",
-    title: "Commercial Commissioning & Industrial Off-Take",
-    detail: "Turnkey equipment installation, grid synchronization, and commercial supply of 6N purity (99.999%) Green Silicon to advanced technology and clean energy partners.",
+    stage: "Strategic Evaluation",
+    status: "Long-Term Pipeline",
+    title: "Downstream Materials & Advanced Fuel Partnerships",
+    detail:
+      "Evaluating commercial off-take partnerships, technology qualification protocols, and downstream advanced materials manufacturing opportunities.",
+  },
+];
+
+const STRATEGIC_PRIORITIES = [
+  {
+    title: "Domestic Supply Chain Resilience",
+    description:
+      "Strengthening domestic availability of biogenic silica and essential clean energy vectors to support Indian manufacturing competitiveness.",
+    icon: Factory,
+  },
+  {
+    title: "Rural Value Creation",
+    description:
+      "Generating secondary economic value for farming communities and rural logistics operators through organized biomass procurement.",
+    icon: TrendingUp,
+  },
+  {
+    title: "Energy & Materials Diversification",
+    description:
+      "Building commercial-scale capacity across Compressed Biogas (CBG) and evaluating Sustainable Aviation Fuel (SAF) production pathways.",
+    icon: Cpu,
+  },
+  {
+    title: "Environmental Stewardship",
+    description:
+      "Designing manufacturing facilities with continuous emissions controls, water recycling systems, and waste-heat recovery loops.",
+    icon: ShieldCheck,
   },
 ];
 
@@ -82,25 +116,25 @@ export default function AboutPage() {
       {/* Framed Canvas Hero */}
       <SubpageHero
         badge="Corporate Profile"
-        title="Engineering Sustainable Value From"
-        highlightedText="Agricultural Biomass."
-        description="Rivanta Green Innovative Venture Private Limited is developing an integrated biomass-to-value manufacturing ecosystem, unlocking the industrial potential of rice husk and agricultural residues."
+        title="Building Industrial Value From"
+        highlightedText="India's Resources."
+        description="Rivanta Green Innovative Venture Private Limited is an emerging Indian industrial enterprise developing an integrated portfolio across renewable energy, advanced materials, sustainable fuels, and circular manufacturing."
         imageSrc="/images/company-innovation.jpg"
-        breadcrumbs={[{ label: "About" }]}
-        primaryCtaText="Explore Infrastructure Projects"
+        breadcrumbs={[{ label: "About Us" }]}
+        primaryCtaText="Explore Projects"
         primaryCtaHref="/projects"
         secondaryCtaText="Contact Corporate Desk"
         secondaryCtaHref="/contact"
-        telemetryTag="Incorporated Venture • Industrial Manufacturing"
+        telemetryTag="Emerging Industrial Enterprise • Bhopal, India"
       />
 
       {/* Infinite Industrial Ticker */}
       <MarqueeText
-        phrase="CIRCULAR BIO-MANUFACTURING — GREEN SILICON (6N PURITY / 99.999%) — COMPRESSED BIOGAS (CBG) — ZERO-WASTE AGRICULTURAL VALORIZATION — AUDITABLE ESG GOVERNANCE — "
+        phrase="ADVANCED MATERIALS — SUSTAINABLE FUELS — RENEWABLE ENERGY — RESOURCE RECOVERY — INDUSTRIAL INFRASTRUCTURE — BUILDING INDUSTRIAL VALUE FROM INDIA'S RESOURCES — "
         theme="light"
       />
 
-      {/* Corporate Purpose Editorial Layout (Matching Homepage PlatformHgroup) */}
+      {/* Corporate Overview & Purpose */}
       <section className="py-20 md:py-32 bg-[#f6f8f6]">
         <div className="u-container u-container--1 u-container--pad">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
@@ -113,30 +147,30 @@ export default function AboutPage() {
 
             <div className="lg:col-span-8 flex flex-col space-y-8 md:space-y-10">
               <h2 className="font-sans font-normal text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.12] text-[#13271e] reveal-up delay-100">
-                Transforming agricultural residues into{" "}
-                <span className="text-[#a0b0a5]">high-performance industrial materials.</span>
+                Industrial development built on{" "}
+                <span className="text-[#a0b0a5]">responsible resource use.</span>
               </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-[#13271e]/80 text-base md:text-lg font-light leading-relaxed reveal-up delay-200">
                 <p>
-                  Across key agrarian belts, millions of metric tons of crop residues are burned or dumped, triggering seasonal smog and wasting high-energy biomaterials.
+                  India generates substantial volumes of agricultural residues every harvest season. Without structured industrial demand and organized collection logistics, valuable economic potential remains unutilized.
                 </p>
                 <p>
-                  Rivanta Green was incorporated to engineer a market-driven, capital-efficient countermeasure: establishing modern processing units that synthesize ultra-pure Green Silicon (6N purity / 99.999%), alongside clean biomethane and organic soil nourishment.
+                  Rivanta Green was incorporated to convert these renewable resources into high-value industrial inputs: biogenic silica, clean biomethane, and circular materials that strengthen domestic manufacturing.
                 </p>
               </div>
 
-              {/* Vision & Mission Highlight Cards */}
+              {/* Vision & Mission Cards */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4 reveal-up delay-300">
                 <div className="p-8 rounded-2xl bg-white border border-[#13271e]/10 shadow-xs space-y-3 card-interactive">
                   <div className="w-10 h-10 rounded-xl bg-[#fae9dc] text-[#e06425] flex items-center justify-center font-mono text-sm font-semibold">
                     01
                   </div>
                   <h3 className="font-sans font-medium text-xl text-[#13271e]">
-                    Our Vision
+                    Strategic Vision
                   </h3>
                   <p className="font-sans text-sm text-[#13271e]/75 font-light leading-relaxed">
-                    To be the leading industrial producer of sustainable bio-materials and clean energy vectors, setting circular benchmarks that accelerate industrial decarbonization.
+                    To build a competitive Indian industrial enterprise that creates sustainable economic value from domestic agricultural resources while advancing national manufacturing resilience.
                   </p>
                 </div>
 
@@ -145,10 +179,10 @@ export default function AboutPage() {
                     02
                   </div>
                   <h3 className="font-sans font-medium text-xl text-[#13271e]">
-                    Our Mission
+                    Operational Mission
                   </h3>
                   <p className="font-sans text-sm text-[#13271e]/85 font-light leading-relaxed">
-                    To engineer and operate energy-integrated manufacturing units that recover maximum value from agricultural residues with transparent governance and zero ecological compromise.
+                    To engineer, finance, and operate modern industrial manufacturing facilities that combine high-efficiency processing, environmental responsibility, and value for regional communities.
                   </p>
                 </div>
               </div>
@@ -157,11 +191,51 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Signature 3-Color Card Trio (Matching Homepage UspCards) */}
+      {/* Strategic Priorities */}
+      <section className="py-20 md:py-28 bg-white border-t border-[#13271e]/8">
+        <div className="u-container u-container--1 u-container--pad">
+          <div className="max-w-3xl mb-12 md:mb-16">
+            <div className="u-ts--1 mb-4 reveal-up">
+              <span className="indicator-dot"></span>
+              <span>Focus Areas</span>
+            </div>
+            <h2 className="font-sans font-normal text-3xl sm:text-4xl md:text-5xl tracking-tight leading-[1.15] text-[#13271e] reveal-up delay-100">
+              Four strategic priorities guiding our development.
+            </h2>
+            <p className="font-sans text-base md:text-lg text-[#13271e]/70 font-light mt-4 reveal-up delay-200">
+              Each priority aligns commercial growth with national industrial objectives and measurable regional impact.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {STRATEGIC_PRIORITIES.map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <div
+                  key={idx}
+                  className="p-8 rounded-2xl bg-[#f6f8f6] border border-[#13271e]/8 hover:border-[#e06425]/30 transition-all duration-300 card-interactive"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-[#13271e]/5 text-[#13271e] flex items-center justify-center mb-6">
+                    <Icon className="w-6 h-6 text-[#2d7a54]" />
+                  </div>
+                  <h3 className="font-sans font-medium text-lg text-[#13271e] mb-3">
+                    {item.title}
+                  </h3>
+                  <p className="font-sans text-sm text-[#13271e]/70 font-light leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Signature 3-Color Card Trio */}
       <section className="w-full bg-transparent reveal-fade">
         <div className="w-full">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-0">
-            {VALUES.map((val, idx) => {
+            {STRATEGIC_VALUES.map((val, idx) => {
               const Icon = val.icon;
               const isDark = val.textColor === "#ffffff";
 
@@ -213,7 +287,10 @@ export default function AboutPage() {
                     >
                       {val.description}
                     </p>
-                    <div className="pt-2 font-mono text-xs uppercase tracking-wider font-medium" style={{ color: val.accent }}>
+                    <div
+                      className="pt-2 font-mono text-xs uppercase tracking-wider font-medium"
+                      style={{ color: val.accent }}
+                    >
                       {val.stat}
                     </div>
                   </div>
@@ -231,23 +308,23 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Editorial Spotlight Media Section (Matching Homepage CompanySpotlight) */}
+      {/* Industrial Development Phasing & Outlook */}
       <section className="py-20 md:py-32 bg-[#eceee9] border-t border-[#13271e]/8">
         <div className="u-container u-container--1 u-container--pad">
           <div className="mb-10 md:mb-16">
             <div className="u-ts--1 reveal-up">
               <span className="indicator-dot"></span>
-              <span>Engineering Facility</span>
+              <span>Development Outlook</span>
             </div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-            {/* Left Media Image */}
+            {/* Left Image */}
             <div className="lg:col-span-5 relative group reveal-up delay-100">
               <div className="relative aspect-[4/3] lg:aspect-[3/4] w-full rounded-2xl md:rounded-3xl overflow-hidden shadow-lg border border-[#13271e]/8">
                 <Image
                   src="/images/company-innovation.jpg"
-                  alt="Rivanta Research & Engineering Center"
+                  alt="Rivanta Industrial Engineering Development"
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"
                   className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
@@ -255,23 +332,23 @@ export default function AboutPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#13271e]/60 via-transparent to-transparent opacity-60" />
 
                 <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-white/80 backdrop-blur-md border border-white/40 text-xs font-mono uppercase tracking-wider text-[#13271e]">
-                  <span>Demonstration & Materials Lab — Unit 01</span>
+                  <span>Industrial Planning & Engineering Desk — Bhopal</span>
                 </div>
               </div>
             </div>
 
-            {/* Right Editorial Copy */}
+            {/* Right Copy */}
             <div className="lg:col-span-7 flex flex-col space-y-6 md:space-y-8 reveal-up delay-200">
               <h2 className="font-sans font-normal text-3xl sm:text-4xl md:text-5xl tracking-tight leading-[1.12] text-[#13271e]">
-                Science-backed innovation with disciplined capital stewardship.
+                A disciplined approach to long-term industrial capability.
               </h2>
 
               <p className="font-sans text-base md:text-lg text-[#13271e]/80 font-light leading-relaxed">
-                Rivanta Green bridges the gap between academic chemical innovation and commercial manufacturing. We de-risk complex thermo-chemical processes through phased engineering, pilot verification, and modular scaling.
+                Industrial development requires disciplined execution, verified engineering standards, and reliable feedstock networks. We evaluate every initiative against stringent commercial and operational benchmarks.
               </p>
 
               <div className="space-y-4 pt-2">
-                {MILESTONES.map((m, idx) => (
+                {DEVELOPMENT_MILESTONES.map((m, idx) => (
                   <div
                     key={idx}
                     onClick={() => setActiveMilestone(idx)}
@@ -283,7 +360,12 @@ export default function AboutPage() {
                   >
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center gap-3">
-                        <span className="font-mono text-xs uppercase tracking-wider font-semibold" style={{ color: activeMilestone === idx ? "#ea6e2d" : "#e06425" }}>
+                        <span
+                          className="font-mono text-xs uppercase tracking-wider font-semibold"
+                          style={{
+                            color: activeMilestone === idx ? "#ea6e2d" : "#e06425",
+                          }}
+                        >
                           {m.stage}
                         </span>
                         <span
@@ -301,7 +383,13 @@ export default function AboutPage() {
                     <h4 className="font-sans font-medium text-lg mb-1">
                       {m.title}
                     </h4>
-                    <p className={`font-sans text-xs sm:text-sm font-light leading-relaxed ${activeMilestone === idx ? "text-white/75" : "text-[#13271e]/70"}`}>
+                    <p
+                      className={`font-sans text-xs sm:text-sm font-light leading-relaxed ${
+                        activeMilestone === idx
+                          ? "text-white/75"
+                          : "text-[#13271e]/70"
+                      }`}
+                    >
                       {m.detail}
                     </p>
                   </div>
@@ -311,7 +399,7 @@ export default function AboutPage() {
               <div className="pt-4 flex items-center gap-4 flex-wrap">
                 <Link href="/projects" className="u-btn--1">
                   <span className="btn_label">
-                    Explore Project Pipeline
+                    View Project Initiatives
                     <div className="label_corner">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"

@@ -1,125 +1,109 @@
 "use client";
 
-import MarqueeText from "@/components/MarqueeText";
+import React, { useState } from "react";
+import Link from "next/link";
 import SubpageHero from "@/components/SubpageHero";
+import MarqueeText from "@/components/MarqueeText";
 import {
-  ArrowRight,
-  Cpu,
-  FileCheck,
   Layers,
   Sparkles,
-  Zap,
+  ArrowRight,
+  ShieldCheck,
+  Factory,
+  CheckCircle2,
+  Cpu,
+  Building2,
+  FileCheck,
 } from "lucide-react";
-import Link from "next/link";
-import { useState } from "react";
 
-const COMPARISON_ROWS = [
+const MATERIAL_COMPARISONS = [
   {
-    parameter: "Feedstock & Extraction Origin",
-    greenSilicon: "Sustainable Circular Precursor (Renewable Biogenic Residue)",
-    minedSilicon: "Mined Quartz Sand & Coal/Coke Smelting (Fossil Minerals)",
-    advantage: "100% Fossil-Free Circular Origin",
+    parameter: "Raw Material Source",
+    biogenicSilica: "Sustainable agricultural residues (rice husk)",
+    traditionalSilica: "Mined quartz sand and energy-intensive extraction",
+    advantage: "Renewable Domestic Origin",
   },
   {
-    parameter: "Thermal Synthesis Threshold",
-    greenSilicon: "<900°C Low-Emission Induction & Catalytic Reduction",
-    minedSilicon: ">1900°C Carbon-Intensive Submerged Electric Arc Smelting",
-    advantage: ">55% Process Thermal Energy Savings",
+    parameter: "Thermal Processing Profile",
+    biogenicSilica: "Controlled low-temperature thermal calcination",
+    traditionalSilica: "High-temperature electric arc furnaces (>1900°C)",
+    advantage: "Significantly Lower Thermal Intensity",
   },
   {
-    parameter: "Silicon Purity Grade",
-    greenSilicon: "6N Purity (99.999% High-Purity Silicon)",
-    minedSilicon:
-      "Standard Metallurgical Grade (MG-Si 98-99%) before chlorosilanes",
-    advantage: "Direct 6N High Purity",
+    parameter: "Material Consistency & Reactivity",
+    biogenicSilica: "High specific surface area and uniform amorphous phase",
+    traditionalSilica: "Crystalline quartz requiring extensive mechanical milling",
+    advantage: "Superior Dispersibility & Reactivity",
   },
   {
-    parameter: "Embodied Carbon Footprint",
-    greenSilicon:
-      "-65% Cradle-to-Gate CO2e (Displaces fossil carbon reductants)",
-    minedSilicon: "Extreme Scope 1 & 2 emissions from coal and petroleum coke",
-    advantage: "-65% Scope 3 Carbon Displacement",
+    parameter: "Supply Chain Security",
+    biogenicSilica: "Domestic agricultural sourcing insulated from import shocks",
+    traditionalSilica: "Dependent on mineral extraction and import logistics",
+    advantage: "Domestic Supply Resilience",
   },
   {
-    parameter: "Hazardous Chemical Refining",
-    greenSilicon:
-      "Closed-loop hydrometallurgical purification (Zero toxic chlorosilanes)",
-    minedSilicon:
-      "Hazardous trichlorosilane (TCS) and toxic SiCl4 distillation",
-    advantage: "Non-Toxic Closed Loop Process",
-  },
-  {
-    parameter: "Trace Critical Impurities (B, P)",
-    greenSilicon: "<1 ppm Boron & Phosphorus (High-Purity Grade)",
-    minedSilicon:
-      "High trace boron and phosphorus requiring multiple chemical passes",
-    advantage: "Precision Low-Impurity Specification",
+    parameter: "By-Product Integration",
+    biogenicSilica: "Co-generates process steam and agricultural soil products",
+    traditionalSilica: "Mineral quarrying with heavy solid tailings liabilities",
+    advantage: "Circular Resource Recovery",
   },
 ];
 
-const APPLICATION_TABS = [
+const APPLICATION_AREAS = [
   {
-    id: "electronics",
-    title: "Advanced Electronics & Wafers",
-    role: "High-Purity Silicon (6N / 99.999%)",
-    icon: Cpu,
-    headline:
-      "Ultra-pure 6N silicon (99.999%) for advanced electronics and clean technology.",
+    id: "rubber-tires",
+    title: "Rubber & Tire Reinforcement",
+    role: "Green Tire Formulations",
+    headline: "Enhancing rolling resistance and wear performance.",
     description:
-      "Engineered specifically for high-spec silicon applications. Our 6N purity (99.999%) Green Silicon meets the stringent requirements for crystal pulling, advanced substrate production, and precision electronic fabrication with minimal crystal lattice defect densities.",
+      "Biogenic silica serves as a high-reinforcing filler for automotive tires and industrial rubber compounds, improving fuel efficiency, wet-grip traction, and tread longevity.",
     specs: [
-      "Silicon Purity: ≥ 99.999% (6N Purity)",
-      "Boron (B) Impurity: ≤ 0.5 ppm",
-      "Phosphorus (P) Impurity: ≤ 0.5 ppm",
-      "Total Carbon & Oxygen: ≤ 0.5 ppma",
+      "High specific surface area for optimal polymer dispersion",
+      "Reduces rolling resistance to lower vehicle fuel consumption",
+      "Compatible with modern synthetic and natural elastomer matrices",
+      "Sustainable alternative to carbon black and mined silica",
     ],
   },
   {
-    id: "solar",
-    title: "Photovoltaic Wafers",
-    role: "High-Efficiency Solar Grade",
-    icon: Zap,
-    headline:
-      "Ultra-low carbon silicon for next-generation TOPCon and HJT solar cells.",
+    id: "construction",
+    title: "Green Concrete & Infrastructure",
+    role: "Supplementary Cementitious Material",
+    headline: "Strengthening durability while reducing cement content.",
     description:
-      "Displacing coal-fired polysilicon production, our Green Silicon enables tier-1 solar manufacturers to produce ultra-high efficiency solar wafers with a 65% lower embodied carbon score, accelerating the global transition to true net-zero clean energy.",
+      "Active pozzolanic biogenic silica reacts with calcium hydroxide during cement hydration, enhancing compressive strength, reducing permeability, and lowering concrete embodied carbon.",
     specs: [
-      "Purity Rating: ≥ 6N Grade Specification (99.999%)",
-      "Minority Carrier Lifetime: > 1,200 µs",
-      "Resistivity Range: 0.5 – 3.0 Ω·cm",
-      "Embodied Carbon Footprint: -65% vs Mined Quartz",
+      "Accelerates early and long-term compressive strength development",
+      "Significantly reduces chloride penetration and chemical corrosion",
+      "Allows partial displacement of Portland cement in structural mix designs",
+      "Optimizes pore structure in precast and marine grade concrete",
     ],
   },
   {
-    id: "power",
-    title: "Power Electronics & MEMS",
-    role: "Discrete Devices & Sensors",
-    icon: Layers,
-    headline:
-      "High dielectric strength and thermal conductivity for automotive and industrial power devices.",
+    id: "coatings-chemicals",
+    title: "Specialty Coatings & Chemicals",
+    role: "Industrial Thixotrope & Matting Agent",
+    headline: "Precision rheology and finish control for industrial coatings.",
     description:
-      "Tailored for high-voltage power management ICs, IGBT substrates, and precision MEMS micro-sensors, our green silicon delivers optimal thermal dissipation and switching reliability across electric vehicle and industrial robotics architectures.",
+      "Engineered particle sizing provides consistent matting, anti-settling, and viscosity control across architectural paints, industrial resins, and high-performance sealants.",
     specs: [
-      "Thermal Conductivity: 148 W/(m·K)",
-      "Dislocation Etch Pit Density (EPD): < 100 cm⁻²",
-      "Surface Defect Free: Class 10 Cleanroom Handled",
-      "Heavy Metals: < 1 ppm Total",
+      "Controlled particle distribution for uniform surface finishes",
+      "Excellent thixotropic rheology control in paints and adhesives",
+      "Chemically inert with high thermal and chemical stability",
+      "Consistent batch-to-batch dispersibility in solvent and waterborne systems",
     ],
   },
   {
-    id: "anodes",
-    title: "Advanced Silicon Anodes",
-    role: "High-Density Energy Storage",
-    icon: Sparkles,
-    headline:
-      "Engineered nano-silicon for next-generation high-energy EV batteries.",
+    id: "downstream",
+    title: "Downstream Materials & Silicon",
+    role: "Strategic Development Area",
+    headline: "Evaluating high-purity precursors for domestic industries.",
     description:
-      "Produced with calibrated particle morphology to serve as high-capacity active material for advanced lithium-ion and solid-state battery anodes, offering up to 10x higher specific theoretical capacity compared to legacy graphite.",
+      "Rivanta evaluates downstream refining pathways to convert biogenic silica into high-purity precursors for energy storage anodes, ceramics, and advanced clean technology components.",
     specs: [
-      "Theoretical Specific Capacity: ~3,500 mAh/g",
-      "Precursor Silicon Purity: ≥ 6N Specification (99.999%)",
-      "Sub-Micron d50 Classification: 80 – 150 nm",
-      "First Cycle Coulombic Efficiency: ≥ 88%",
+      "Targeting high chemical purity from agricultural residues",
+      "Evaluating battery anode precursor compatibility and morphology",
+      "Structured to support long-term domestic supply-chain resilience",
+      "Development projects advanced through phased technical qualification",
     ],
   },
 ];
@@ -131,77 +115,70 @@ export default function GreenSiliconPage() {
     <>
       {/* Framed Canvas Hero */}
       <SubpageHero
-        badge="High-Purity Advanced Material"
-        title="Engineering Sustainable Deep-Tech With"
-        highlightedText="Green Silicon (6N)."
-        description="Developing advanced, low-carbon circular refining infrastructure to synthesize ultra-high purity Green Silicon with verified 6N purity (99.999%) for clean technology, solar photovoltaics, and advanced electronics."
+        badge="Advanced Materials"
+        title="Strengthening Domestic Manufacturing With"
+        highlightedText="Biogenic Silica."
+        description="Developing high-quality biogenic silica from agricultural residues to supply domestic rubber, concrete, specialty coatings, and advanced industrial supply chains."
         imageSrc="/images/bio-silica-lab.jpg"
         breadcrumbs={[
-          { label: "Ventures", href: "/#ventures" },
-          { label: "Green Silicon (6N)" },
+          { label: "Our Businesses", href: "/#businesses" },
+          { label: "Advanced Materials" },
         ]}
-        primaryCtaText="Request 6N Technical Lot"
-        primaryCtaHref="/contact"
-        secondaryCtaText="Compare Mined vs Green Silicon"
-        secondaryCtaHref="#comparison"
-        telemetryTag="Green Silicon Purity 6N (99.999%) • Advanced Grade"
+        primaryCtaText="Explore Applications"
+        primaryCtaHref="#applications"
+        secondaryCtaText="Contact Commercial Desk"
+        secondaryCtaHref="/contact"
+        telemetryTag="Advanced Materials • Industrial Grade"
       />
 
       {/* Infinite Industrial Ticker */}
       <MarqueeText
-        phrase="GREEN SILICON (6N PURITY / 99.999%) — SOLAR & ELECTRONICS GRADE — 65% EMBODIED CARBON REDUCTION — ZERO COAL SMELTING — ADVANCED CIRCULAR DEEP-TECH — "
+        phrase="BIOGENIC SILICA — RUBBER REINFORCEMENT — GREEN CONCRETE — SPECIALTY COATINGS — DOMESTIC SUPPLY-CHAIN RESILIENCE — DOWNSTREAM PRECURSORS — "
         theme="light"
       />
 
-      {/* Flagship Technical Differentiation (Materials Science Comparison Table) */}
-      <section id="comparison" className="py-20 md:py-32 bg-[#f6f8f6]">
+      {/* Material Benchmark Comparison */}
+      <section className="py-20 md:py-32 bg-[#f6f8f6]">
         <div className="u-container u-container--1 u-container--pad">
           <div className="max-w-3xl mb-12 md:mb-16">
             <div className="u-ts--1 mb-4 reveal-up">
               <span className="indicator-dot"></span>
-              <span>Deep-Tech Benchmark</span>
+              <span>Material Comparison</span>
             </div>
             <h2 className="font-sans font-normal text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight text-[#13271e] reveal-up delay-100">
-              Why Green Silicon out-engineers mined quartz smelting.
+              Sustainable materials for modern industry.
             </h2>
             <p className="font-sans text-base md:text-lg text-[#13271e]/80 font-light mt-4 leading-relaxed reveal-up delay-200">
-              Conventional electronic silicon relies on carbon-heavy coal
-              smelting of mined quartz at 1900°C followed by toxic chlorosilane
-              distillation. Rivanta transforms sustainable agricultural residues
-              into ultra-pure 6N silicon (99.999%) with zero coal usage and an audited 65%
-              reduction in cradle-to-gate carbon emissions.
+              Biogenic silica derived from agricultural residues provides high surface area, consistent reactivity, and commercial advantages over conventional mined quartz materials.
             </p>
           </div>
 
-          {/* Desktop & Mobile Responsive Comparison Table */}
+          {/* Comparison Table */}
           <div className="overflow-x-auto rounded-3xl bg-white border border-[#13271e]/10 shadow-sm reveal-up delay-250">
             <table className="w-full text-left border-collapse min-w-[700px]">
               <thead>
                 <tr className="border-b border-[#13271e]/10 bg-[#f0f4f1] text-[#13271e] font-mono text-xs uppercase tracking-wider">
-                  <th className="p-6">Technical Metric</th>
+                  <th className="p-6">Parameter</th>
                   <th className="p-6 text-[#e06425] font-semibold">
-                    Rivanta Green Silicon (6N)
+                    Rivanta Biogenic Silica
                   </th>
                   <th className="p-6 text-[#13271e]/70">
-                    Conventional Mined Silicon
+                    Conventional Mined Silica
                   </th>
-                  <th className="p-6 text-[#2d7a54]">Engineered Advantage</th>
+                  <th className="p-6 text-[#2d7a54]">Commercial Advantage</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-[#13271e]/8 font-sans text-sm">
-                {COMPARISON_ROWS.map((row, idx) => (
-                  <tr
-                    key={idx}
-                    className="hover:bg-[#f6f8f6] transition-colors"
-                  >
+                {MATERIAL_COMPARISONS.map((row, idx) => (
+                  <tr key={idx} className="hover:bg-[#f6f8f6] transition-colors">
                     <td className="p-6 font-medium text-[#13271e] font-mono text-xs uppercase tracking-wider">
                       {row.parameter}
                     </td>
                     <td className="p-6 text-[#13271e] font-medium bg-[#fae9dc]/20">
-                      {row.greenSilicon}
+                      {row.biogenicSilica}
                     </td>
                     <td className="p-6 text-[#13271e]/70">
-                      {row.minedSilicon}
+                      {row.traditionalSilica}
                     </td>
                     <td className="p-6 font-mono text-xs font-semibold text-[#2d7a54]">
                       {row.advantage}
@@ -214,23 +191,23 @@ export default function GreenSiliconPage() {
         </div>
       </section>
 
-      {/* Interactive Application Focus Tabs */}
-      <section className="py-20 md:py-28 bg-[#eceee9] border-t border-[#13271e]/8">
+      {/* Applications Showcase */}
+      <section id="applications" className="py-20 md:py-28 bg-[#eceee9] border-t border-[#13271e]/8">
         <div className="u-container u-container--1 u-container--pad">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
             <div>
               <div className="u-ts--1 mb-4 reveal-up">
                 <span className="indicator-dot"></span>
-                <span>Advanced Material Applications</span>
+                <span>Industrial Applications</span>
               </div>
               <h2 className="font-sans font-normal text-3xl sm:text-4xl md:text-5xl tracking-tight text-[#13271e] reveal-up delay-100">
-                Calibrated specifications for high-purity industrial applications.
+                Diverse applications across key sectors.
               </h2>
             </div>
 
-            {/* Application Selector Tabs */}
+            {/* Application Tabs */}
             <div className="flex items-center gap-2 flex-wrap reveal-up delay-200">
-              {APPLICATION_TABS.map((tab, idx) => (
+              {APPLICATION_AREAS.map((tab, idx) => (
                 <button
                   key={tab.id}
                   type="button"
@@ -249,22 +226,21 @@ export default function GreenSiliconPage() {
 
           {/* Active Tab Showcase Card */}
           <div className="p-8 sm:p-12 rounded-3xl bg-white border border-[#13271e]/10 shadow-lg card-interactive reveal-up delay-250 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            <div className="lg:col-span-12 h-1.5 w-full rounded-full flowline-animated" />
             <div className="lg:col-span-7 space-y-5">
               <span className="font-mono text-xs uppercase tracking-wider text-[#e06425] font-semibold">
-                Sector: {APPLICATION_TABS[activeTab].role}
+                Sector: {APPLICATION_AREAS[activeTab].role}
               </span>
               <h3 className="font-sans font-medium text-2xl sm:text-3xl md:text-4xl text-[#13271e] leading-snug">
-                {APPLICATION_TABS[activeTab].headline}
+                {APPLICATION_AREAS[activeTab].headline}
               </h3>
               <p className="font-sans text-base text-[#13271e]/80 font-light leading-relaxed">
-                {APPLICATION_TABS[activeTab].description}
+                {APPLICATION_AREAS[activeTab].description}
               </p>
 
               <div className="pt-4 flex items-center gap-4 flex-wrap">
                 <Link href="/contact" className="u-btn--1">
                   <span className="btn_label">
-                    Request 6N Technical Testing Lot
+                    Engage Commercial Desk
                     <div className="label_corner">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -300,21 +276,21 @@ export default function GreenSiliconPage() {
                 <Link
                   href="/projects"
                   className="u-btn--3"
-                  data-label="View Infrastructure Projects"
+                  data-label="View Projects"
                 >
-                  <span className="btn_label">View Infrastructure Projects</span>
+                  <span className="btn_label">View Projects</span>
                 </Link>
               </div>
             </div>
 
-            {/* Target Specifications Matrix */}
+            {/* Application Features */}
             <div className="lg:col-span-5 p-6 rounded-2xl bg-[#f6f8f6] border border-[#13271e]/8 space-y-4">
               <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-[#13271e] font-semibold border-b border-[#13271e]/10 pb-3">
                 <FileCheck className="w-4 h-4 text-[#2d7a54]" />
-                <span>6N Target Specification Sheet</span>
+                <span>Commercial Specifications</span>
               </div>
               <ul className="space-y-3 font-mono text-xs text-[#13271e]/85">
-                {APPLICATION_TABS[activeTab].specs.map((spec, sIdx) => (
+                {APPLICATION_AREAS[activeTab].specs.map((spec, sIdx) => (
                   <li
                     key={sIdx}
                     className="flex items-center gap-2.5 p-2.5 rounded-lg bg-white border border-[#13271e]/6"
@@ -325,8 +301,7 @@ export default function GreenSiliconPage() {
                 ))}
               </ul>
               <div className="pt-2 text-[11px] font-sans text-[#13271e]/60 font-light">
-                *Customized high-purity green silicon specifications, ingot
-                sizing, and testing lots available on formal inquiry.
+                *Material specifications and sample lots available for qualified industrial partners upon formal inquiry.
               </div>
             </div>
           </div>

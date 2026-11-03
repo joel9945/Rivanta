@@ -1,108 +1,105 @@
 "use client";
 
-import MarqueeText from "@/components/MarqueeText";
-import SubpageHero from "@/components/SubpageHero";
-import {
-    Activity,
-    AlertCircle,
-    ArrowRight,
-    ArrowUpRight,
-    Flame,
-    Fuel,
-    Plane,
-} from "lucide-react";
+import React, { useState } from "react";
 import Link from "next/link";
-import { useState } from "react";
+import SubpageHero from "@/components/SubpageHero";
+import MarqueeText from "@/components/MarqueeText";
+import {
+  Activity,
+  ArrowRight,
+  ArrowUpRight,
+  Flame,
+  Fuel,
+  Plane,
+  ShieldCheck,
+  Building2,
+} from "lucide-react";
 
-const SPEC_METRICS = [
-  {
-    id: "drop-in",
-    value: "100%",
-    label: "Drop-In Parity",
-    detail:
-      "Identical freezing point (-47°C), flash point, and density to conventional Jet A-1 kerosene.",
-    trend: "ASTM D7566 Annex",
-  },
-  {
-    id: "emissions",
-    value: "Up to -80%",
-    label: "Lifecycle GHG Reduction",
-    detail:
-      "Cradle-to-wake greenhouse gas displacement assessed under ICAO CORSIA baseline standards.",
-    trend: "CORSIA Audited",
-  },
-  {
-    id: "feedstock-class",
-    value: "Non-Food",
-    label: "Feedstock Integrity",
-    detail:
-      "Strictly non-competing second-generation lignocellulosic residues and non-edible lipid fractions.",
-    trend: "Zero Land-Use Conflict",
-  },
-  {
-    id: "aromatics",
-    value: "Low Aromatic",
-    label: "Soot & Particulate Abatement",
-    detail:
-      "Near-zero sulfur and low aromatic content dramatically lowers contrail formation in upper atmospheres.",
-    trend: "Cleaner Combustion",
-  },
-];
-
-const SIGNATURE_VENTURE_CARDS = [
+const STRATEGIC_PATHWAYS = [
   {
     index: "01.",
-    title: "Alcohol-to-Jet (ATJ)",
-    badge: "ASTM D7566 Annex A5",
-    text: "Catalytic dehydration of non-food biological alcohols into olefins, followed by oligomerization, hydrogenation, and precision distillation into synthetic paraffinic kerosene.",
+    title: "Alcohol-to-Jet Pathways",
+    badge: "Strategic Pathway",
+    text: "Evaluating catalytic conversion routes transforming non-food biological alcohols into synthetic paraffinic kerosene suited for commercial aviation blending.",
     bg: "#fae9dc",
     textColor: "#13271e",
     accent: "#e06425",
     icon: Fuel,
-    stat: "High Paraffinic Selectivity",
+    stat: "Non-Food Biomass Feedstocks",
   },
   {
     index: "02.",
-    title: "Gasification + FT Synthesis",
-    badge: "ASTM D7566 Annex A1",
-    text: "High-temperature gasification of dry agricultural straw into clean synthesis gas (syngas: CO + H2), followed by catalytic hydrocarbon chain growth via Fischer-Tropsch reactors.",
+    title: "Gasification & Synthesis",
+    badge: "Thermochemical Route",
+    text: "Investigating biomass gasification paired with catalytic hydrocarbon synthesis to convert agricultural residues into drop-in aviation fuel components.",
     bg: "#d6e8dc",
     textColor: "#13271e",
     accent: "#2d7a54",
     icon: Flame,
-    stat: "Multi-Biomass Resilience",
+    stat: "High Biomass Flexibility",
   },
   {
     index: "03.",
-    title: "HEFA Co-Processing",
-    badge: "ASTM D7566 Annex A2",
-    text: "Catalytic deoxygenation and isomerization of non-edible industrial fats and waste cooking fractions, producing branched synthetic hydrocarbons ready for immediate pipeline blending.",
+    title: "Technology Partnerships",
+    badge: "Collaborative Model",
+    text: "Partnering with established global process licensors and aviation stakeholders to identify bankable, certifiable processing systems for domestic deployment.",
     bg: "#132c21",
     textColor: "#ffffff",
     accent: "#ea6e2d",
     icon: Plane,
-    stat: "Commercial Aviation Maturity",
+    stat: "Licensor Alignment",
   },
 ];
 
-const CRITERIA_STEPS = [
+const EVALUATION_PARAMETERS = [
+  {
+    id: "drop-in-capability",
+    value: "Drop-In Objective",
+    label: "Fuel Compatibility",
+    detail: "Targeting complete physical and performance compatibility with conventional aviation fueling infrastructure.",
+    trend: "Infrastructure Readiness",
+  },
+  {
+    id: "feedstock-integrity",
+    value: "Non-Food Biomass",
+    label: "Feedstock Ringfencing",
+    detail: "Strictly utilizing non-food agricultural residues to prevent competition with food production or arable land.",
+    trend: "Responsible Sourcing",
+  },
+  {
+    id: "emissions-profile",
+    value: "Long-Term Reductions",
+    label: "Lifecycle Assessment",
+    detail: "Designed to deliver substantial lifecycle carbon reductions compared to conventional fossil jet fuels.",
+    trend: "Aviation Decarbonization",
+  },
+  {
+    id: "standards-alignment",
+    value: "Aviation Standards",
+    label: "Certification Readiness",
+    detail: "Aligning process design with international aviation fuel certification standards and off-take specifications.",
+    trend: "Industry Compliance",
+  },
+];
+
+const EVALUATION_STEPS = [
   {
     step: "01",
-    title: "Zero Infrastructure Retooling Required",
+    title: "Techno-Economic Feasibility",
     detail:
-      "Synthesized drop-in SAF flows through existing airport hydrant pipelines, storage terminals, and standard commercial jet engine architectures without modification.",
+      "Assessing process economics, capital intensity, and energy balances across proven catalytic and thermochemical conversion technologies.",
   },
   {
     step: "02",
-    title: "Strict Food-vs-Fuel Ringfencing",
+    title: "Feedstock Security & Supply Integration",
     detail:
-      "Feedstock aggregation strictly excludes arable food crops, utilizing exclusively regional agricultural residues and second-generation non-edible materials.",
+      "Establishing long-term biomass aggregation agreements to ensure continuous, cost-effective feedstock availability without food-chain conflict.",
   },
   {
     step: "03",
-    title: "Rigorous ASTM Compliance & Certification",
+    title: "Commercial & Airline Collaboration",
     detail:
-      "Engineered to ASTM D7566 synthetic paraffinic kerosene standards, ensuring 100% chemical parity and seamless drop-in blending with Jet A-1 fuel.",
+      "Engaging domestic airlines, fuel distributors, and regulatory bodies to structure long-term off-take frameworks and blending roadmaps.",
   },
 ];
 
@@ -113,80 +110,58 @@ export default function SafPage() {
     <>
       {/* Framed Canvas Hero */}
       <SubpageHero
-        badge="Synthetic Clean Hydrocarbon Pathway"
-        title="Engineering Drop-In Synthetic Fuels For"
-        highlightedText="Sustainable Aviation."
-        description="Rivanta Green develops advanced synthetic hydrocarbon pathways to produce drop-in Sustainable Aviation Fuel (SAF) from non-food biological residues — accelerating aviation decarbonization."
-        imageSrc="/images/newsroom-solar.jpg"
+        badge="Future Fuels"
+        title="Exploring The Future Of"
+        highlightedText="Aviation Fuels."
+        description="Evaluating sustainable aviation fuel pathways from non-food agricultural residues to support the long-term decarbonization of domestic and international air corridors."
+        imageSrc="/images/golden-hour-saf-refinery.png"
         breadcrumbs={[
-          { label: "Ventures", href: "/#ventures" },
-          { label: "Aviation Fuel (SAF)" },
+          { label: "Our Businesses", href: "/#businesses" },
+          { label: "Sustainable Aviation Fuels" },
         ]}
-        primaryCtaText="Inquire on Technology Dialogue"
+        primaryCtaText="Engage on Aviation Dialogue"
         primaryCtaHref="/contact"
-        secondaryCtaText="View Infrastructure Projects"
+        secondaryCtaText="View Infrastructure Pipeline"
         secondaryCtaHref="/projects"
-        telemetryTag="ASTM D7566 Standards • CORSIA Compliant"
+        telemetryTag="Aviation Decarbonization • Planned Development Area"
       />
 
       {/* Infinite Industrial Ticker */}
       <MarqueeText
-        phrase="SUSTAINABLE AVIATION FUEL (SAF) — ASTM D7566 SYNTHETIC KEROSENE — ALCOHOL-TO-JET (ATJ) — GASIFICATION-FT — 80% LIFECYCLE GHG ABATEMENT — NON-FOOD BIOMASS — "
-        theme="dark"
+        phrase="SUSTAINABLE AVIATION FUELS — AVIATION DECARBONIZATION — NON-FOOD BIOMASS — STRATEGIC TECHNOLOGY PARTNERSHIPS — DOMESTIC FUEL SECURITY — "
+        theme="light"
       />
 
-      {/* Overview Layout (Matching Homepage PlatformHgroup) */}
-      <section id="details" className="py-20 md:py-32 bg-[#f6f8f6]">
+      {/* Strategic Overview */}
+      <section className="py-20 md:py-32 bg-[#f6f8f6]">
         <div className="u-container u-container--1 u-container--pad">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
             <div className="lg:col-span-4">
               <div className="u-ts--1 sticky top-28 reveal-up">
                 <span className="indicator-dot"></span>
-                <span>The Aviation Mandate</span>
+                <span>The Aviation Opportunity</span>
               </div>
             </div>
 
             <div className="lg:col-span-8 flex flex-col space-y-8 md:space-y-10">
               <h2 className="font-sans font-normal text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.12] text-[#13271e] reveal-up delay-100">
-                Aviation cannot decarbonize with batteries alone.{" "}
-                <span className="text-[#a0b0a5]">
-                  Drop-in synthetic fuels are vital.
-                </span>
+                Long-term opportunities in{" "}
+                <span className="text-[#a0b0a5]">clean aviation fuels.</span>
               </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-[#13271e]/80 text-base md:text-lg font-light leading-relaxed reveal-up delay-200">
                 <p>
-                  Long-haul commercial aviation requires immense volumetric and
-                  gravimetric energy density. Battery and hydrogen technologies
-                  cannot bridge transcontinental flights without heavy payload
-                  compromises. Drop-in synthetic paraffinic kerosene is the
-                  essential near-term solution.
+                  Aviation represents one of the most demanding sectors to decarbonize, requiring high-energy-density drop-in liquid fuels that perform reliably across commercial jet fleets without infrastructure retooling.
                 </p>
                 <p>
-                  Rivanta Green utilizes licensed conversion
-                  technologies that transform regional agricultural residues
-                  into certified drop-in fuels matching every physical criterion
-                  of Jet A-1 kerosene.
+                  Rivanta Green is conducting structured technical evaluations into conversion pathways that can process non-food agricultural residues into certifiable sustainable aviation fuels, positioning the enterprise for long-term industrial participation.
                 </p>
               </div>
 
-              {/* Commercial Specification Highlight */}
-              <div className="p-6 sm:p-8 rounded-2xl bg-white border border-[#13271e]/10 shadow-xs flex items-start gap-4 reveal-up delay-300">
-                <Activity className="w-5 h-5 text-[#2d7a54] flex-shrink-0 mt-0.5" />
-                <div className="space-y-1">
-                  <h3 className="font-sans font-medium text-base text-[#13271e]">
-                    Commercial SAF Synthesis Pathway
-                  </h3>
-                  <p className="font-sans text-xs sm:text-sm text-[#13271e]/75 font-light leading-relaxed">
-                    Our sustainable aviation fuel architecture integrates certified conversion pathways, optimized regional feedstock aggregation, and ASTM D7566 fuel standards for direct commercial deployment.
-                  </p>
-                </div>
-              </div>
-
-              <div className="pt-2 reveal-up delay-400">
+              <div className="pt-2 reveal-up delay-300">
                 <Link href="/contact" className="u-btn--1">
                   <span className="btn_label">
-                    Initiate Technical Collaboration
+                    Initiate Technical Dialogue
                     <div className="label_corner">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -224,11 +199,11 @@ export default function SafPage() {
         </div>
       </section>
 
-      {/* Signature 3-Color Card Trio (Matching Homepage UspCards) */}
+      {/* Signature 3-Color Card Trio */}
       <section className="w-full bg-transparent reveal-fade">
         <div className="w-full">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-0">
-            {SIGNATURE_VENTURE_CARDS.map((card, idx) => {
+            {STRATEGIC_PATHWAYS.map((card, idx) => {
               const Icon = card.icon;
               const isDark = card.textColor === "#ffffff";
 
@@ -303,27 +278,27 @@ export default function SafPage() {
         </div>
       </section>
 
-      {/* Interactive Specifications Deck */}
+      {/* Evaluation Parameters Deck */}
       <section className="py-20 md:py-28 bg-[#eceee9] border-t border-[#13271e]/8">
         <div className="u-container u-container--1 u-container--pad">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 gap-6">
             <div>
               <div className="u-ts--1 mb-4 reveal-up">
                 <span className="indicator-dot"></span>
-                <span>International Standards</span>
+                <span>Evaluation Parameters</span>
               </div>
               <h2 className="font-sans font-normal text-3xl sm:text-4xl md:text-5xl tracking-tight text-[#13271e] reveal-up delay-100">
-                Rigorous drop-in fuel specifications & criteria.
+                Technical criteria for future fuels.
               </h2>
             </div>
             <div className="font-mono text-xs uppercase tracking-wider text-[#13271e]/60 flex items-center gap-2 reveal-up delay-200">
               <Activity className="w-4 h-4 text-[#e06425]" />
-              <span>ASTM D7566 • Def Stan 91-091</span>
+              <span>Strategic Evaluation Stage</span>
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {SPEC_METRICS.map((metric, idx) => {
+            {EVALUATION_PARAMETERS.map((metric, idx) => {
               const isSelected = selectedMetric === idx;
 
               return (
@@ -359,7 +334,7 @@ export default function SafPage() {
 
                   <div>
                     <div
-                      className={`font-sans font-light tracking-tight text-3xl sm:text-4xl md:text-[2.6rem] leading-none mb-3 ${
+                      className={`font-sans font-light tracking-tight text-2xl sm:text-3xl leading-snug mb-3 ${
                         isSelected ? "text-white" : "text-[#13271e]"
                       }`}
                     >
@@ -387,29 +362,27 @@ export default function SafPage() {
         </div>
       </section>
 
-      {/* Compliance & Technical Evaluation */}
+      {/* Structured Feasibility Phasing */}
       <section className="py-20 md:py-32 bg-[#f6f8f6]">
         <div className="u-container u-container--1 u-container--pad">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             <div className="lg:col-span-4">
               <div className="u-ts--1 sticky top-28 reveal-up">
                 <span className="indicator-dot"></span>
-                <span>Evaluation Pillars</span>
+                <span>Evaluation Framework</span>
               </div>
             </div>
 
             <div className="lg:col-span-8 flex flex-col space-y-8">
               <h2 className="font-sans font-normal text-3xl sm:text-4xl md:text-5xl tracking-tight text-[#13271e] reveal-up delay-100">
-                Structured for commercial off-take and global aviation decarbonization.
+                A methodical pathway to aviation participation.
               </h2>
               <p className="font-sans text-base md:text-lg text-[#13271e]/80 font-light max-w-2xl reveal-up delay-200">
-                To guarantee zero fuel incompatibility and full certification,
-                our technical review aligns with global airline consortia and
-                the International Civil Aviation Organization (ICAO).
+                Sustainable aviation fuel development is approached through rigorous techno-economic evaluation, feedstock security planning, and commercial alignment with domestic airlines and fuel distributors.
               </p>
 
               <div className="space-y-4 pt-4">
-                {CRITERIA_STEPS.map((s, idx) => (
+                {EVALUATION_STEPS.map((s, idx) => (
                   <div
                     key={s.step}
                     className={`p-6 sm:p-8 rounded-2xl bg-white border border-[#13271e]/10 shadow-xs grid grid-cols-1 sm:grid-cols-12 gap-4 items-center card-interactive reveal-up delay-${(idx + 1) * 75}`}
@@ -468,9 +441,9 @@ export default function SafPage() {
                 <Link
                   href="/projects"
                   className="u-btn--3"
-                  data-label="View Infrastructure Projects"
+                  data-label="View Projects"
                 >
-                  <span className="btn_label">View Infrastructure Projects</span>
+                  <span className="btn_label">View Projects</span>
                 </Link>
               </div>
             </div>

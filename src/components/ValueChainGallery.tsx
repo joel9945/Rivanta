@@ -18,55 +18,55 @@ interface GallerySlide {
 const SLIDES: GallerySlide[] = [
   {
     id: "01",
-    category: "01 / RAW MATERIALS",
-    title: "Sustained by agricultural residues.",
-    desc: "Rice husk, straw, and sugarcane residues form the feedstock foundation for Rivanta's integrated bio-refining infrastructure.",
-    short: "Agricultural residues",
+    category: "01 / AGRICULTURAL RESOURCES",
+    title: "Sustained by agricultural resources.",
+    desc: "Agricultural residues represent an underutilized domestic resource, forming the supply foundation for Rivanta's planned industrial facilities.",
+    short: "Agricultural resources",
     img: "/images/gallery/01-raw-materials.jpg",
     href: "/feedstock",
   },
   {
     id: "02",
-    category: "02 / RENEWABLE GAS",
-    title: "Converting organic matter into CBG.",
-    desc: "Industrial anaerobic digestion and gas upgrading delivering commercial-grade Compressed Biogas and nutrient-rich bio-fertilizer.",
-    short: "Compressed biogas",
+    category: "02 / RENEWABLE GASEOUS FUELS",
+    title: "Developing alternative gaseous fuels.",
+    desc: "Commercial Compressed Biogas (CBG) infrastructure designed for city gas distribution networks and industrial clean mobility off-take.",
+    short: "Compressed Biogas (CBG)",
     img: "/images/gallery/02-renewable-gas.jpg",
     href: "/cbg",
   },
   {
     id: "03",
     category: "03 / ENERGY RECOVERY",
-    title: "Capturing thermodynamic plant synergy.",
-    desc: "Integrated closed-loop cogeneration and heat recovery engineered to maximize thermal efficiency across manufacturing streams.",
-    short: "Energy recovery",
+    title: "Industrial energy efficiency.",
+    desc: "Integrated closed-loop cogeneration and thermal heat recovery engineered to maximize utility efficiency across manufacturing operations.",
+    short: "Energy efficiency",
     img: "/images/gallery/03-energy-integration.jpg",
     href: "/projects",
   },
   {
     id: "04",
     category: "04 / ADVANCED MATERIALS",
-    title: "High-purity bio-silica & green silicon.",
-    desc: "Specialized extraction refining biogenic silica into high-purity industrial materials and 6N green silicon (99.999%).",
-    short: "Bio-silica & silicon",
+    title: "Advanced biogenic materials.",
+    desc: "Developing domestic manufacturing capabilities in high-value biogenic silica, supporting resilient domestic industrial supply chains.",
+    short: "Advanced materials",
     img: "/images/gallery/04-bio-silica.jpg",
     href: "/bio-silica",
   },
   {
     id: "05",
-    category: "05 / CLEAN FUELS",
-    title: "Drop-in sustainable aviation fuel.",
-    desc: "Synthetic paraffinic kerosene pathways engineered to ASTM D7566 standards for direct blending into commercial aviation infrastructure.",
-    short: "Aviation fuel (SAF)",
+    category: "05 / SUSTAINABLE FUELS",
+    title: "Exploring future aviation fuels.",
+    desc: "Evaluating emerging technology partnerships and sustainable aviation fuel (SAF) pathways to participate in long-term transport decarbonization.",
+    short: "Sustainable aviation",
     img: "/images/gallery/05-future-fuels.jpg",
     href: "/saf",
   },
   {
     id: "06",
-    category: "06 / CIRCULAR CO-PRODUCTS",
-    title: "Zero-waste circular mineral products.",
-    desc: "Biochar and mineral coproducts returning organic carbon to agricultural soils and industrial supply chains.",
-    short: "Biochar & minerals",
+    category: "06 / RESOURCE RECOVERY",
+    title: "Responsible resource recovery.",
+    desc: "Evaluating soil-amendment applications and industrial mineral recovery for co-products, minimizing material losses across the facility lifecycle.",
+    short: "Resource recovery",
     img: "/images/gallery/06-circular-products.jpg",
     href: "/sustainability",
   },
@@ -92,111 +92,92 @@ export default function ValueChainGallery() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [prevSlide, nextSlide]);
 
-  const activeSlide = SLIDES[current];
+  const active = SLIDES[current];
 
   return (
     <section
-      id="value-chain"
-      className="py-20 md:py-32 bg-[#f7f7f3] border-t border-[#13271e]/10 relative z-10"
-      aria-label="Integrated Bio-Value Chain"
+      id="portfolio-showcase"
+      aria-label="Integrated Industrial Workstreams"
+      className="w-full bg-[#f6f8f6] py-20 md:py-32 border-t border-[#13271e]/8"
     >
-      <div className="w-full max-w-[1680px] mx-auto px-4 sm:px-6 md:px-10 lg:px-14">
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 mb-8 md:mb-10 border-t border-[#13271e]/15 pt-7">
-          <div>
-            <div className="flex items-center gap-2 mb-3">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#e06425] animate-pulse" />
-              <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#737d71] font-bold">
-                04 / VALUE CHAIN & INFRASTRUCTURE
-              </span>
-            </div>
-            <h2 className="font-sans font-light text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] tracking-[-0.04em] leading-[1.08] text-[#18251f] max-w-3xl">
-              From agricultural residue{" "}
-              <span className="font-normal italic text-[#18251f]">
-                to industrial value.
-              </span>
-            </h2>
+      <div className="u-container u-container--1 u-container--pad">
+        {/* Section Identifier */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 mb-10 md:mb-14 border-b border-[#13271e]/10 gap-4">
+          <div className="flex items-center gap-2.5">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#e06425]" />
+            <span className="font-mono text-xs uppercase tracking-[0.18em] text-[#13271e]/75 font-semibold">
+              05 / INTEGRATED INDUSTRIAL WORKSTREAMS
+            </span>
           </div>
-          <p className="font-sans text-sm md:text-base text-[#687168] leading-relaxed max-w-sm font-light">
-            An overview of the advanced processes, refining streams, and
-            high-value materials engineered across Rivanta&apos;s
-            bio-manufacturing ecosystem.
-          </p>
+          <span className="font-mono text-xs text-[#13271e]/50 uppercase tracking-wider">
+            Portfolio Focus Areas
+          </span>
         </div>
 
-        {/* Interactive Main Stage (Expansive Cinematic Dimension) */}
-        <div className="relative h-[600px] sm:h-[680px] md:h-[760px] lg:h-[820px] xl:h-[860px] rounded-2xl md:rounded-[32px] overflow-hidden bg-[#25352e] shadow-2xl">
-          {/* Layered Crossfading Photos */}
-          {SLIDES.map((slide, idx) => (
-            <div
-              key={slide.id}
-              className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${
-                idx === current
-                  ? "opacity-100 z-0"
-                  : "opacity-0 pointer-events-none"
-              }`}
-            >
-              <Image
-                src={slide.img}
-                alt={slide.title}
-                fill
-                priority={idx === 0}
-                className="object-cover object-center scale-[1.02] transition-transform duration-1000 ease-out"
-                sizes="(max-width: 1680px) 100vw, 1680px"
-              />
-            </div>
-          ))}
+        {/* Gallery Hero Viewer */}
+        <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] lg:aspect-[2.2/1] rounded-[24px] lg:rounded-[36px] overflow-hidden shadow-2xl bg-[#13271e] text-white group select-none">
+          {/* Main Background Image */}
+          <div className="absolute inset-0">
+            <Image
+              src={active.img}
+              alt={active.title}
+              fill
+              sizes="100vw"
+              priority
+              className="object-cover object-center transition-all duration-700 ease-out group-hover:scale-[1.02]"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/20" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/20 to-transparent" />
+          </div>
 
-          {/* Cinematic Dark Gradient Shade — concentrated only at the base so top 60% of image is completely clear */}
-          <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#081512]/95 via-[#081512]/35 via-45% to-transparent pointer-events-none" />
-
-          {/* Top Info Bar */}
-          <div className="absolute left-6 right-6 sm:left-10 sm:right-10 md:left-12 md:right-12 top-6 sm:top-8 md:top-10 z-20 flex justify-between items-center text-[#f4f3eb] font-mono text-[11px] sm:text-xs font-semibold uppercase tracking-[0.16em]">
-            <span className="drop-shadow-md">Rivanta Green / Industrial Ecosystem</span>
-            <span className="px-3 py-1.5 rounded-full bg-black/30 backdrop-blur-md border border-white/20 shadow-md">
-              {String(current + 1).padStart(2, "0")} / 06
+          {/* Top Overlays */}
+          <div className="absolute top-6 left-6 sm:top-8 sm:left-8 right-6 sm:right-8 flex items-center justify-between z-10">
+            <span className="font-mono text-[11px] sm:text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-white/15 backdrop-blur-md text-white/90 font-medium">
+              RIVANTA GREEN / INDUSTRIAL PORTFOLIO
+            </span>
+            <span className="font-mono text-xs sm:text-sm font-semibold tracking-wider text-white/80 bg-black/40 backdrop-blur-md px-3 py-1 rounded-full">
+              {active.id} / 0{SLIDES.length}
             </span>
           </div>
 
-          {/* Bottom Active Information & Navigation Controls */}
-          <div className="absolute left-6 right-6 sm:left-10 sm:right-10 md:left-12 md:right-12 bottom-6 sm:bottom-10 md:bottom-12 z-20 flex flex-col sm:flex-row sm:items-end justify-between gap-6 sm:gap-10">
-            {/* Active Workstream Text Callout */}
-            <div className="flex-1 max-w-2xl text-white">
-              <span className="font-mono text-xs uppercase tracking-[0.18em] text-[#d6b97a] font-bold block mb-2">
-                {activeSlide.category}
+          {/* Bottom Narrative Overlay */}
+          <div className="absolute bottom-6 left-6 sm:bottom-10 sm:left-10 right-6 sm:right-10 flex flex-col md:flex-row md:items-end justify-between gap-6 z-10">
+            <div className="max-w-xl">
+              <span className="font-mono text-xs text-[#f9a65c] uppercase tracking-widest block mb-2 font-medium">
+                {active.category}
               </span>
-              <h3 className="font-sans text-2xl sm:text-3xl md:text-4xl lg:text-[2.85rem] font-normal leading-[1.12] tracking-[-0.03em] mb-2 sm:mb-3 drop-shadow-md">
-                {activeSlide.title}
+              <h3 className="font-sans font-light text-2xl sm:text-3xl md:text-4xl text-white tracking-tight mb-3 leading-snug">
+                {active.title}
               </h3>
-              <p className="font-sans text-sm sm:text-base md:text-lg text-[#e9e9e5] font-light leading-relaxed max-w-xl">
-                {activeSlide.desc}
+              <p className="font-sans text-xs sm:text-sm md:text-base text-white/80 font-light leading-relaxed mb-4 line-clamp-3 md:line-clamp-none">
+                {active.desc}
               </p>
-              <div className="mt-5 sm:mt-6">
-                <Link
-                  href={activeSlide.href}
-                  className="group inline-flex items-center gap-1.5 font-sans text-xs sm:text-sm text-white font-medium border-b border-[#a5b3aa] pb-0.5 hover:border-[#d6b97a] hover:text-[#d6b97a] transition-all"
-                >
-                  <span>Explore this workstream</span>
-                  <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </Link>
-              </div>
+              <Link
+                href={active.href}
+                className="inline-flex items-center gap-2 font-sans text-xs sm:text-sm font-medium text-white hover:text-[#f9a65c] transition-colors group/link"
+              >
+                <span className="border-b border-white/40 group-hover/link:border-[#f9a65c] pb-0.5">
+                  Explore this workstream
+                </span>
+                <ArrowUpRight className="w-3.5 h-3.5 text-[#f9a65c] transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+              </Link>
             </div>
 
-            {/* Stage Left/Right Tactile Controls */}
-            <div className="flex items-center gap-3 self-end sm:self-auto shrink-0">
+            {/* Slide Navigation Buttons */}
+            <div className="flex items-center gap-2 self-end md:self-auto">
               <button
                 type="button"
                 onClick={prevSlide}
+                className="w-11 h-11 rounded-full bg-white/15 hover:bg-white/30 backdrop-blur-md flex items-center justify-center text-white transition-all cursor-pointer border-0"
                 aria-label="Previous workstream"
-                className="w-12 h-12 rounded-2xl border border-white/40 hover:border-white bg-black/30 hover:bg-white text-white hover:text-[#18251f] backdrop-blur-md flex items-center justify-center transition-all duration-300 cursor-pointer active:scale-95 shadow-md"
               >
                 <ArrowLeft className="w-5 h-5" />
               </button>
               <button
                 type="button"
                 onClick={nextSlide}
+                className="w-11 h-11 rounded-full bg-white/15 hover:bg-white/30 backdrop-blur-md flex items-center justify-center text-white transition-all cursor-pointer border-0"
                 aria-label="Next workstream"
-                className="w-12 h-12 rounded-2xl border border-white/40 hover:border-white bg-black/30 hover:bg-white text-white hover:text-[#18251f] backdrop-blur-md flex items-center justify-center transition-all duration-300 cursor-pointer active:scale-95 shadow-md"
               >
                 <ArrowRight className="w-5 h-5" />
               </button>
@@ -204,53 +185,41 @@ export default function ValueChainGallery() {
           </div>
         </div>
 
-        {/* Thumbnail Track / Rail (6 Workstream Cards) */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 lg:gap-5 mt-5 sm:mt-6">
+        {/* Thumbnail Selector Strip */}
+        <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
           {SLIDES.map((slide, idx) => {
-            const isActive = idx === current;
+            const isSelected = idx === current;
             return (
               <button
-                key={slide.id}
                 type="button"
+                key={slide.id}
                 onClick={() => setCurrent(idx)}
-                className={`text-left transition-all duration-300 group cursor-pointer ${
-                  isActive ? "opacity-100" : "opacity-65 hover:opacity-90"
+                className={`relative text-left p-3 rounded-2xl transition-all duration-300 cursor-pointer overflow-hidden border-0 ${
+                  isSelected
+                    ? "bg-[#13271e] text-white ring-2 ring-[#e06425] shadow-lg -translate-y-1"
+                    : "bg-white text-[#13271e]/75 hover:bg-[#13271e]/5"
                 }`}
-                aria-label={`Go to slide ${idx + 1}: ${slide.short}`}
               >
-                {/* Thumbnail Image Box */}
-                <div
-                  className={`relative h-28 sm:h-32 md:h-36 rounded-2xl overflow-hidden bg-[#78877e] transition-all duration-300 ${
-                    isActive
-                      ? "ring-2 ring-[#bca16b] shadow-xl ring-offset-2 ring-offset-[#f7f7f3] scale-[1.02]"
-                      : "group-hover:scale-[1.02] shadow-sm"
-                  }`}
-                >
+                <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden mb-2">
                   <Image
                     src={slide.img}
                     alt={slide.short}
                     fill
-                    className="object-cover object-center"
-                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
+                    sizes="20vw"
+                    className="object-cover"
                   />
-                  {isActive && (
-                    <div className="absolute bottom-0 inset-x-0 h-1 bg-[#c4aa72]" />
-                  )}
-                </div>
-
-                {/* Number & Short Label */}
-                <div className="flex items-baseline gap-2 mt-3">
-                  <span className="font-mono text-xs text-[#9aa096] font-semibold">
-                    {slide.id}
-                  </span>
-                  <span
-                    className={`font-sans text-xs sm:text-sm font-semibold leading-tight line-clamp-1 transition-colors ${
-                      isActive ? "text-[#18251f]" : "text-[#788075]"
+                  <div
+                    className={`absolute inset-0 transition-opacity ${
+                      isSelected ? "bg-black/20" : "bg-black/40 hover:bg-black/10"
                     }`}
-                  >
-                    {slide.short}
-                  </span>
+                  />
                 </div>
+                <span className="font-mono text-[10px] block opacity-60 uppercase mb-0.5">
+                  {slide.id}
+                </span>
+                <span className="font-sans text-xs font-medium tracking-tight block truncate">
+                  {slide.short}
+                </span>
               </button>
             );
           })}

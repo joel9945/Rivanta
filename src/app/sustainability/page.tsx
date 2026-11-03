@@ -1,7 +1,9 @@
 "use client";
 
-import MarqueeText from "@/components/MarqueeText";
+import React, { useState } from "react";
+import Link from "next/link";
 import SubpageHero from "@/components/SubpageHero";
+import MarqueeText from "@/components/MarqueeText";
 import {
   Activity,
   ArrowRight,
@@ -11,154 +13,145 @@ import {
   RefreshCw,
   ShieldCheck,
   Wind,
+  Flame,
 } from "lucide-react";
-import Link from "next/link";
-import { useState } from "react";
 
-const LCA_STAGES = [
+const STEWARDSHIP_PILLARS = [
   {
-    step: "01",
-    phase: "Agronomic Field Diversion",
-    title: "100% Stubble Burning Avoidance",
-    metric: "0% Seasonal Field Fires",
-    delta: "Massive PM2.5 & CO2e Prevention",
+    id: "water-stewardship",
+    title: "Industrial Water Stewardship",
+    subtitle: "Closed-Loop Design Objective",
+    metricValue: "ZLD Target",
+    metricLabel: "Design Standard",
+    progressPct: 90,
     description:
-      "Rice husk is aggregated directly from regional millers within a 100km radius, preventing seasonal open-air field burning that degrades regional airsheds across millions of residents.",
-    deliverable: "Scope 1 agricultural emissions elimination",
+      "Engineering facilities with Zero Liquid Discharge (ZLD) as a primary design objective where technically and operationally applicable, incorporating multi-stage recycling to minimize freshwater intake.",
+    icon: Droplet,
+    color: "#2d7a54",
   },
   {
-    step: "02",
-    phase: "Thermo-Chemical Processing",
-    title: "Isothermal Energy Integration",
-    metric: "<700°C Thermal Threshold",
-    delta: "50%+ Thermal Energy Savings",
+    id: "air-emissions",
+    title: "Air Quality & Emission Controls",
+    subtitle: "Continuous Monitoring",
+    metricValue: "CEMS Standards",
+    metricLabel: "Regulatory Alignment",
+    progressPct: 85,
     description:
-      "Controlled calcination maintains the 100% non-crystalline amorphous structure. Waste flue gas is routed through Heat Recovery Steam Generators (HRSG), supplying 100% of process steam.",
-    deliverable: "Zero fossil fuel reliance for internal steam loops",
-  },
-  {
-    step: "03",
-    phase: "Water & Effluent Circulation",
-    title: "Zero Liquid Discharge (ZLD)",
-    metric: "98%+ Closed-Loop Water Recovery",
-    delta: "Zero Toxic Effluent Discharge",
-    description:
-      "Process wash water is treated through multi-stage high-recovery reverse osmosis and mechanical vapor recompression (MVR) evaporators, recycling pure condensate continuously.",
-    deliverable: "Groundwater conservation & zero chemical discharge",
-  },
-  {
-    step: "04",
-    phase: "Downstream Displacement",
-    title: "Scope 3 Industrial Decarbonization",
-    metric: "-65% Embodied CO2e vs Mined Quartz",
-    delta: "Direct Supply Chain Decarbonization",
-    description:
-      "When integrated into clean technologies and solar photovoltaic systems, Green Silicon (with 6N purity / 99.999%) displaces virgin fossil-melted quartz and carbon-intensive electric-arc smelting at scale.",
-    deliverable: "Audited cradle-to-gate LCA displacement under ISO 14044",
-  },
-];
-
-const IMPACT_PILLARS = [
-  {
-    id: "air-quality",
-    title: "Airshed Smog Mitigation",
-    subtitle: "Field Burning Elimination",
-    metricValue: "100%",
-    metricLabel: "Residue Diversion",
-    progressPct: 100,
-    description:
-      "By securing regional farmer off-take contracts, we eliminate seasonal stubble burning, removing thousands of metric tons of toxic PM2.5, carbon monoxide, and polycyclic aromatic hydrocarbons from rural airsheds.",
+      "Integrating continuous emission monitoring systems (CEMS), high-efficiency baghouse filters, and enclosed pneumatic handling systems to manage particulate matter and operational emissions.",
     icon: Wind,
     color: "#e06425",
   },
   {
-    id: "embodied-carbon",
-    title: "Scope 3 Materials Decarbonization",
-    subtitle: "Embodied Carbon Displacement",
-    metricValue: "-65%",
-    metricLabel: "Carbon Intensity Delta",
-    progressPct: 65,
+    id: "energy-efficiency",
+    title: "Waste-Heat & Energy Recovery",
+    subtitle: "Process Integration",
+    metricValue: "Thermal Loops",
+    metricLabel: "Efficiency Target",
+    progressPct: 80,
     description:
-      "Traditional high-purity silicon requires smelting mined quartz sand at over 1900°C with heavy fossil carbon reductants. Rivanta's Green Silicon achieves 6N purity (99.999%) through clean circular processing at a fraction of that thermal energy, yielding a verified 65% cradle-to-gate carbon abatement.",
-    icon: BarChart3,
-    color: "#2d7a54",
-  },
-  {
-    id: "water-stewardship",
-    title: "Closed-Loop Aquifer Stewardship",
-    subtitle: "Zero Liquid Discharge (ZLD)",
-    metricValue: "98%+",
-    metricLabel: "Process Condensate Recycled",
-    progressPct: 98,
-    description:
-      "Multi-stage membrane filtration and thermal crystallizers ensure zero hazardous effluent leaves the facility. Over 98% of all process wash water is recovered and reused internally.",
-    icon: Droplet,
+      "Recovering waste heat from high-temperature process streams to generate process steam and preheat incoming streams, reducing external thermal energy demand across plant operations.",
+    icon: Flame,
     color: "#34835a",
   },
   {
-    id: "soil-rejuvenation",
-    title: "Agricultural Topsoil Rejuvenation",
-    subtitle: "Bio-Fertilizer Circularity",
-    metricValue: "100%",
-    metricLabel: "Digestate Recirculation",
-    progressPct: 100,
+    id: "circular-byproducts",
+    title: "Circular By-Product Recovery",
+    subtitle: "Resource Utilization",
+    metricValue: "Soil Nutrients",
+    metricLabel: "By-Product Use",
+    progressPct: 90,
     description:
-      "Anaerobic digestion residues are pelletized into Fermented Organic Manure (FOM) and distributed back to regional farmlands, replenishing organic carbon, mycorrhizal biodiversity, and soil moisture holding capacity.",
+      "Processing residual streams and anaerobic digestate into organic soil amendments, returning valuable carbon and nutrients to regional farmland to support sustainable agriculture.",
     icon: RefreshCw,
     color: "#ea6e2d",
   },
 ];
 
+const FRAMEWORK_STAGES = [
+  {
+    step: "01",
+    phase: "Resource Sourcing",
+    title: "Agricultural Residue Utilization",
+    focus: "Field Diversion",
+    description:
+      "Organizing regional procurement of agricultural residues through structured partnerships, providing a commercial alternative to avoidable open-field burning across agrarian belts.",
+    deliverable: "Supply chain traceability and verified regional sourcing",
+  },
+  {
+    step: "02",
+    phase: "Thermal Efficiency",
+    title: "Energy-Efficient Process Design",
+    focus: "Thermal Integration",
+    description:
+      "Designing conversion systems with integrated heat-exchange loops, ensuring thermal energy generated during processing is captured and recycled for plant utilities.",
+    deliverable: "Reduced primary fuel consumption and balanced energy budgets",
+  },
+  {
+    step: "03",
+    phase: "Water Conservation",
+    title: "Closed-Loop Water Management",
+    focus: "Effluent Minimization",
+    description:
+      "Applying membrane filtration and condensation recycling systems to treat and reuse process water, maintaining water conservation as an essential operational principle.",
+    deliverable: "ZLD engineering standards applied across all processing loops",
+  },
+  {
+    step: "04",
+    phase: "Material Reintegration",
+    title: "Circular Materials & Downstream Use",
+    focus: "By-Product Valorization",
+    description:
+      "Developing commercial channels for refined biogenic materials and enriched organic soil nutrients, ensuring comprehensive material utilization across the full production cycle.",
+    deliverable: "Auditable material lifecycle accounting aligned with ISO standards",
+  },
+];
+
 export default function SustainabilityPage() {
-  const [activeLcaStep, setActiveLcaStep] = useState(0);
+  const [activeStage, setActiveStage] = useState(0);
 
   return (
     <>
       {/* Framed Canvas Hero */}
       <SubpageHero
-        badge="Evidence-Based Impact"
+        badge="Environmental Stewardship"
         title="Responsible Engineering For"
-        highlightedText="Measurable Ecological Value."
-        description="Our environmental framework is built on transparent lifecycle accounting, resource efficiency, and verified operational benchmarks — strictly grounded in engineering reality, not speculative marketing."
+        highlightedText="Sustainable Industrial Growth."
+        description="Our environmental framework integrates water stewardship, emissions controls, waste-heat recovery, and auditable governance into every stage of project planning and industrial operations."
         imageSrc="/images/hero-facility.jpg"
-        breadcrumbs={[{ label: "Sustainability & Ecological Impact" }]}
-        primaryCtaText="Inspect LCA Framework"
-        primaryCtaHref="#lca-flow"
-        secondaryCtaText="Explore Feedstock Supply"
+        breadcrumbs={[{ label: "Sustainability" }]}
+        primaryCtaText="Review Operational Pillars"
+        primaryCtaHref="#pillars"
+        secondaryCtaText="Explore Feedstock Sourcing"
         secondaryCtaHref="/feedstock"
-        telemetryTag="ISO 14044 LCA • Scope 3 Displacement"
+        telemetryTag="Environmental Stewardship • ISO 14064 Benchmarks"
       />
 
       {/* Infinite Industrial Ticker */}
       <MarqueeText
-        phrase="EVIDENCE-BASED SUSTAINABILITY — ISO 14040/14044 LIFE CYCLE ASSESSMENT — SCOPE 3 INDUSTRIAL DISPLACEMENT — ZERO PROCESS LIQUID DISCHARGE — 100% AGRICULTURAL STUBBLE BURNING DIVERSION — "
+        phrase="WATER STEWARDSHIP — EMISSIONS CONTROLS — WASTE-HEAT RECOVERY — CIRCULAR RESOURCE RECOVERY — ZERO LIQUID DISCHARGE DESIGN OBJECTIVES — AUDITABLE GOVERNANCE — "
         theme="light"
       />
 
-      {/* 4 Core Ecological Impact Pillars with Interactive Progress Gauges */}
-      <section className="py-20 md:py-32 bg-[#f6f8f6]">
+      {/* 4 Core Stewardship Pillars */}
+      <section id="pillars" className="py-20 md:py-32 bg-[#f6f8f6]">
         <div className="u-container u-container--1 u-container--pad">
           <div className="max-w-3xl mb-12 md:mb-16">
             <div className="u-ts--1 mb-4 reveal-up">
               <span className="indicator-dot"></span>
-              <span>Ecological Interventions</span>
+              <span>Operational Commitments</span>
             </div>
             <h2 className="font-sans font-normal text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.12] text-[#13271e] reveal-up delay-100">
-              Four pillars of verified{" "}
-              <span className="text-[#a0b0a5]">
-                environmental intervention.
-              </span>
+              Four pillars of responsible{" "}
+              <span className="text-[#a0b0a5]">industrial operations.</span>
             </h2>
             <p className="font-sans text-base md:text-lg text-[#13271e]/80 font-light mt-4 leading-relaxed reveal-up delay-200">
-              Every facility design is governed by strict mass and energy
-              balances that eliminate agricultural waste liabilities while
-              manufacturing low-carbon industrial raw materials.
+              We apply rigorous engineering standards across water conservation, air emissions management, energy efficiency, and circular by-product recovery across all planned facilities.
             </p>
           </div>
 
-          {/* Impact Pillars Grid with Animated Gauges */}
+          {/* Stewardship Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {IMPACT_PILLARS.map((pillar, idx) => {
+            {STEWARDSHIP_PILLARS.map((pillar, idx) => {
               const Icon = pillar.icon;
 
               return (
@@ -193,7 +186,7 @@ export default function SustainabilityPage() {
                     </p>
                   </div>
 
-                  {/* Animated Metric Gauge Bar */}
+                  {/* Standard Indicator Bar */}
                   <div className="pt-4 border-t border-[#13271e]/8 space-y-2">
                     <div className="flex items-center justify-between">
                       <span className="font-mono text-xs text-[#13271e]/70">
@@ -208,7 +201,7 @@ export default function SustainabilityPage() {
                     </div>
                     <div className="w-full h-2 rounded-full bg-[#f0f4f1] overflow-hidden">
                       <div
-                        className="h-full rounded-full animated-meter-fill transition-all duration-1000"
+                        className="h-full rounded-full transition-all duration-1000"
                         style={{
                           width: `${pillar.progressPct}%`,
                           backgroundColor: pillar.color,
@@ -223,38 +216,35 @@ export default function SustainabilityPage() {
         </div>
       </section>
 
-      {/* Interactive Cradle-to-Gate Life Cycle Assessment (LCA) Flowsheet */}
-      <section
-        id="lca-flow"
-        className="py-20 md:py-28 bg-[#eceee9] border-t border-[#13271e]/8"
-      >
+      {/* Operational Environmental Management Framework */}
+      <section className="py-20 md:py-28 bg-[#eceee9] border-t border-[#13271e]/8">
         <div className="u-container u-container--1 u-container--pad">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
             <div>
               <div className="u-ts--1 mb-4 reveal-up">
                 <span className="indicator-dot"></span>
-                <span>ISO 14044 LCA Boundary</span>
+                <span>Environmental Management</span>
               </div>
               <h2 className="font-sans font-normal text-3xl sm:text-4xl md:text-5xl tracking-tight text-[#13271e] reveal-up delay-100">
-                Cradle-to-gate lifecycle flowsheet.
+                Integrated resource management.
               </h2>
             </div>
             <div className="font-mono text-xs uppercase tracking-wider text-[#13271e]/60 flex items-center gap-2 reveal-up delay-200">
               <Activity className="w-4 h-4 text-[#e06425]" />
-              <span>Audited Greenhouse Gas Baseline</span>
+              <span>Standardized Accounting Frameworks</span>
             </div>
           </div>
 
-          {/* Interactive Stage Step Selector */}
+          {/* Stage Selector */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-            {LCA_STAGES.map((stage, idx) => {
-              const isSelected = activeLcaStep === idx;
+            {FRAMEWORK_STAGES.map((stage, idx) => {
+              const isSelected = activeStage === idx;
 
               return (
                 <button
                   key={stage.step}
                   type="button"
-                  onClick={() => setActiveLcaStep(idx)}
+                  onClick={() => setActiveStage(idx)}
                   className={`p-6 rounded-2xl text-left border transition-all duration-300 cursor-pointer card-interactive reveal-up delay-${(idx + 1) * 75} ${
                     isSelected
                       ? "bg-[#132c21] text-white border-[#132c21] shadow-lg"
@@ -275,14 +265,16 @@ export default function SustainabilityPage() {
                           : "bg-[#f6f8f6] text-[#2d7a54]"
                       }`}
                     >
-                      {stage.metric}
+                      {stage.focus}
                     </span>
                   </div>
                   <h4 className="font-sans font-medium text-base mb-1">
                     {stage.title}
                   </h4>
                   <span
-                    className={`font-mono text-xs block ${isSelected ? "text-white/60" : "text-[#13271e]/60"}`}
+                    className={`font-mono text-xs block ${
+                      isSelected ? "text-white/60" : "text-[#13271e]/60"
+                    }`}
                   >
                     {stage.phase}
                   </span>
@@ -293,52 +285,49 @@ export default function SustainabilityPage() {
 
           {/* Active Stage Detailed Breakdown */}
           <div className="p-8 sm:p-12 rounded-3xl bg-white border border-[#13271e]/10 shadow-lg card-interactive reveal-up delay-300">
-            {/* Animated Industrial Energy Beam */}
-            <div className="h-1.5 w-full rounded-full flowline-animated mb-8" />
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-8 space-y-4">
                 <div className="flex items-center gap-3">
                   <span className="font-mono text-xs uppercase tracking-wider text-[#e06425] font-semibold">
-                    Stage {LCA_STAGES[activeLcaStep].step} Detailed Protocol
+                    Stage {FRAMEWORK_STAGES[activeStage].step} Operational Specification
                   </span>
                   <span className="font-mono text-xs text-[#2d7a54] font-medium bg-[#d6e8dc]/40 px-2.5 py-0.5 rounded">
-                    {LCA_STAGES[activeLcaStep].delta}
+                    {FRAMEWORK_STAGES[activeStage].focus}
                   </span>
                 </div>
 
                 <h3 className="font-sans font-medium text-2xl sm:text-3xl text-[#13271e]">
-                  {LCA_STAGES[activeLcaStep].title}
+                  {FRAMEWORK_STAGES[activeStage].title}
                 </h3>
 
                 <p className="font-sans text-base text-[#13271e]/80 font-light leading-relaxed">
-                  {LCA_STAGES[activeLcaStep].description}
+                  {FRAMEWORK_STAGES[activeStage].description}
                 </p>
 
                 <div className="pt-2 flex items-center gap-2 text-xs font-mono text-[#2d7a54]">
                   <CheckCircle2 className="w-4 h-4 flex-shrink-0" />
                   <span>
-                    Deliverable: {LCA_STAGES[activeLcaStep].deliverable}
+                    Objective: {FRAMEWORK_STAGES[activeStage].deliverable}
                   </span>
                 </div>
               </div>
 
               <div className="lg:col-span-4 p-6 rounded-2xl bg-[#f6f8f6] border border-[#13271e]/8 space-y-3">
                 <span className="font-mono text-xs uppercase tracking-wider text-[#13271e]/60 font-semibold block">
-                  Accounting Benchmark
+                  Design Benchmark
                 </span>
                 <div className="font-sans font-medium text-xl text-[#13271e]">
-                  {LCA_STAGES[activeLcaStep].metric}
+                  {FRAMEWORK_STAGES[activeStage].focus}
                 </div>
                 <p className="font-sans text-xs text-[#13271e]/70 font-light leading-relaxed">
-                  Calculated against electric-arc mined quartz calcination and
-                  seasonal open-air burning baseline data.
+                  Evaluated against industrial environmental standards and regional regulatory clearances.
                 </p>
                 <div className="pt-2 border-t border-[#13271e]/10">
                   <Link
                     href="/contact"
                     className="inline-flex items-center gap-1.5 font-mono text-xs uppercase text-[#e06425] font-medium hover:underline"
                   >
-                    <span>Request Full LCA Dossier</span>
+                    <span>Engage Corporate Desk</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
@@ -348,7 +337,7 @@ export default function SustainabilityPage() {
         </div>
       </section>
 
-      {/* Third-Party Auditing & Standards Box */}
+      {/* Governance & Verification Callout */}
       <section className="py-20 md:py-32 bg-[#f6f8f6]">
         <div className="u-container u-container--1 u-container--pad">
           <div className="p-8 sm:p-12 rounded-3xl bg-[#132c21] text-white flex flex-col md:flex-row items-center justify-between gap-8 card-interactive reveal-up">
@@ -357,16 +346,11 @@ export default function SustainabilityPage() {
                 <ShieldCheck className="w-4 h-4" />
                 <span>Governance & Verification Framework</span>
               </div>
-              <h3 className="font-sans font-medium text-2xl sm:text-3xl md:text-4xl">
-                Structured for third-party verification under ISO 14040/14044 &
-                ISO 14064.
+              <h3 className="font-sans font-normal text-2xl sm:text-3xl md:text-4xl">
+                Structured for auditable environmental accountability.
               </h3>
               <p className="font-sans text-sm md:text-base text-white/75 font-light leading-relaxed">
-                We strictly distinguish project engineering models from
-                empirical operational baselines. Lifecycle assessments, circular
-                resource yields, and carbon displacement figures are modeled
-                under ISO 14040/14044 frameworks and structured for accredited
-                third-party verification.
+                We distinguish project design models from operational performance. Lifecycle accounting, water reuse systems, and emissions controls are planned under standardized environmental benchmarks and structured for independent verification.
               </p>
             </div>
 

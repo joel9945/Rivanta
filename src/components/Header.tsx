@@ -20,7 +20,7 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
   const [prevPathname, setPrevPathname] = useState(pathname);
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<"manufacturing" | "company" | null>(null);
+  const [activeDropdown, setActiveDropdown] = useState<"businesses" | "company" | null>(null);
   const navRef = useRef<HTMLElement>(null);
 
   // Close dropdown and drawer upon route transition
@@ -92,14 +92,17 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
 
 
 
-  const isManufacturingActive =
+  const isBusinessesActive =
     pathname?.startsWith("/green-silicon") ||
+    pathname?.startsWith("/bio-silica") ||
     pathname?.startsWith("/cbg") ||
-    pathname?.startsWith("/saf");
+    pathname?.startsWith("/saf") ||
+    pathname?.startsWith("/feedstock");
 
   const isCompanyActive =
     pathname === "/about" ||
-    pathname === "/investors";
+    pathname === "/investors" ||
+    pathname === "/newsroom";
 
   const isTransparent = !scrolled;
 
@@ -173,29 +176,29 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
               className="flex items-center gap-1 xl:gap-2"
               aria-label="Main Navigation"
             >
-              {/* 1. Manufacturing Dropdown Console */}
+              {/* 1. Our Businesses Dropdown Console */}
               <div
                 className="relative"
-                onMouseEnter={() => setActiveDropdown("manufacturing")}
+                onMouseEnter={() => setActiveDropdown("businesses")}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <button
                   type="button"
                   onClick={() =>
                     setActiveDropdown((prev) =>
-                      prev === "manufacturing" ? null : "manufacturing"
+                      prev === "businesses" ? null : "businesses"
                     )
                   }
                   className={getDropdownTriggerClass(
-                    activeDropdown === "manufacturing" || isManufacturingActive
+                    activeDropdown === "businesses" || isBusinessesActive
                   )}
-                  aria-expanded={activeDropdown === "manufacturing"}
+                  aria-expanded={activeDropdown === "businesses"}
                   aria-haspopup="true"
                 >
-                  <span>Manufacturing</span>
+                  <span>Our Businesses</span>
                   <ChevronDown
                     className={`w-3.5 h-3.5 transition-transform duration-300 ${
-                      activeDropdown === "manufacturing"
+                      activeDropdown === "businesses"
                         ? isTransparent
                           ? "rotate-180 text-[#f9a65c]"
                           : "rotate-180 text-[#e06425]"
@@ -206,21 +209,21 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
                   />
                 </button>
 
-                {/* Sleek Minimalist Dropdown Panel (No AI-template clutter, zero borders) */}
-                {activeDropdown === "manufacturing" && (
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-68 rounded-2xl p-1.5 animate-in fade-in slide-in-from-top-1 duration-150 z-50 text-left bg-white/95 backdrop-blur-2xl shadow-[0_12px_36px_rgba(19,39,30,0.12)] border-0">
+                {/* Sleek Minimalist Dropdown Panel */}
+                {activeDropdown === "businesses" && (
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-72 rounded-2xl p-1.5 animate-in fade-in slide-in-from-top-1 duration-150 z-50 text-left bg-white/95 backdrop-blur-2xl shadow-[0_12px_36px_rgba(19,39,30,0.12)] border-0">
                     <div className="flex flex-col gap-0.5">
                       <Link
-                        href="/green-silicon"
+                        href="/bio-silica"
                         onClick={() => setActiveDropdown(null)}
                         className={`group flex items-center justify-between px-3.5 py-2.5 rounded-xl transition-all duration-150 ${
-                          pathname === "/green-silicon"
+                          pathname === "/bio-silica" || pathname === "/green-silicon"
                             ? "bg-[#fae9dc]/70 text-[#e06425]"
                             : "text-[#13271e] hover:bg-[#13271e]/[0.04] hover:text-[#e06425]"
                         }`}
                       >
                         <span className="font-sans text-[13px] font-medium tracking-tight">
-                          Green Silicon
+                          Advanced Materials
                         </span>
                         <ArrowUpRight className="w-3.5 h-3.5 opacity-30 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all text-[#e06425]" />
                       </Link>
@@ -250,7 +253,22 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
                         }`}
                       >
                         <span className="font-sans text-[13px] font-medium tracking-tight">
-                          Sustainable Aviation Fuel (SAF)
+                          Sustainable Aviation Fuels (SAF)
+                        </span>
+                        <ArrowUpRight className="w-3.5 h-3.5 opacity-30 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all text-[#e06425]" />
+                      </Link>
+
+                      <Link
+                        href="/feedstock"
+                        onClick={() => setActiveDropdown(null)}
+                        className={`group flex items-center justify-between px-3.5 py-2.5 rounded-xl transition-all duration-150 ${
+                          pathname === "/feedstock"
+                            ? "bg-[#d6e8dc]/70 text-[#2d7a54]"
+                            : "text-[#13271e] hover:bg-[#13271e]/[0.04] hover:text-[#e06425]"
+                        }`}
+                      >
+                        <span className="font-sans text-[13px] font-medium tracking-tight">
+                          Circular Feedstock & Recovery
                         </span>
                         <ArrowUpRight className="w-3.5 h-3.5 opacity-30 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all text-[#e06425]" />
                       </Link>
@@ -336,7 +354,22 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
                         }`}
                       >
                         <span className="font-sans text-[13px] font-medium tracking-tight">
-                          About Rivanta
+                          About Us
+                        </span>
+                        <ArrowUpRight className="w-3.5 h-3.5 opacity-30 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all text-[#e06425]" />
+                      </Link>
+
+                      <Link
+                        href="/newsroom"
+                        onClick={() => setActiveDropdown(null)}
+                        className={`group flex items-center justify-between px-3.5 py-2.5 rounded-xl transition-all duration-150 ${
+                          pathname === "/newsroom"
+                            ? "bg-[#d6e8dc]/70 text-[#2d7a54]"
+                            : "text-[#13271e] hover:bg-[#13271e]/[0.04] hover:text-[#e06425]"
+                        }`}
+                      >
+                        <span className="font-sans text-[13px] font-medium tracking-tight">
+                          Media & Insights
                         </span>
                         <ArrowUpRight className="w-3.5 h-3.5 opacity-30 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all text-[#e06425]" />
                       </Link>
@@ -473,95 +506,99 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
 
           {/* Grouped Navigation Links */}
           <div className="flex flex-col py-8 space-y-8 flex-1">
-            {/* Group 1: Strategic Manufacturing */}
+            {/* Group 1: Strategic Businesses */}
             <div>
-              <span className="font-mono text-xs uppercase tracking-wider text-[#e06425] font-semibold block mb-3">
-                Strategic Manufacturing
+              <span className="font-mono text-xs uppercase tracking-wider text-[#f9a65c] font-semibold block mb-3">
+                Our Businesses
               </span>
               <div className="grid grid-cols-1 gap-2.5 text-left">
                 <Link
-                  href="/green-silicon"
+                  href="/bio-silica"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="font-sans text-xl font-light hover:text-[#ea6e2d] transition-colors flex items-center justify-between py-1"
+                  className="font-sans text-xl font-light hover:text-[#f9a65c] transition-colors py-1"
                 >
-                  <span>Green Silicon</span>
-                  <span className="font-mono text-[10px] uppercase px-2 py-0.5 rounded bg-[#e06425] text-white">
-                    6N Purity
-                  </span>
+                  Advanced Materials
                 </Link>
                 <Link
                   href="/cbg"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="font-sans text-xl font-light hover:text-[#ea6e2d] transition-colors py-1"
+                  className="font-sans text-xl font-light hover:text-[#f9a65c] transition-colors py-1"
                 >
                   Compressed Biogas (CBG)
                 </Link>
                 <Link
                   href="/saf"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="font-sans text-xl font-light hover:text-[#ea6e2d] transition-colors py-1"
+                  className="font-sans text-xl font-light hover:text-[#f9a65c] transition-colors py-1"
                 >
-                  Sustainable Aviation Fuel (SAF)
+                  Sustainable Aviation Fuels (SAF)
+                </Link>
+                <Link
+                  href="/feedstock"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="font-sans text-xl font-light hover:text-[#f9a65c] transition-colors py-1"
+                >
+                  Circular Materials & Feedstock
                 </Link>
               </div>
             </div>
 
-            {/* Group 2: Operations & Impact */}
+            {/* Group 2: Industrial Strategy & Stewardship */}
             <div>
-              <span className="font-mono text-xs uppercase tracking-wider text-[#e06425] font-semibold block mb-3">
-                Operations & Impact
+              <span className="font-mono text-xs uppercase tracking-wider text-[#f9a65c] font-semibold block mb-3">
+                Strategy & Operations
               </span>
               <div className="grid grid-cols-1 gap-2.5 text-left">
                 <Link
-                  href="/feedstock"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="font-sans text-lg font-light text-white/90 hover:text-[#ea6e2d] transition-colors"
-                >
-                  Circular Economy & Feedstock
-                </Link>
-                <Link
                   href="/sustainability"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="font-sans text-lg font-light text-white/90 hover:text-[#ea6e2d] transition-colors"
+                  className="font-sans text-lg font-light text-white/90 hover:text-[#f9a65c] transition-colors"
                 >
-                  Sustainability & Carbon LCA
+                  Environmental Stewardship
                 </Link>
                 <Link
                   href="/projects"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="font-sans text-lg font-light text-white/90 hover:text-[#ea6e2d] transition-colors"
+                  className="font-sans text-lg font-light text-white/90 hover:text-[#f9a65c] transition-colors"
                 >
-                  Project Infrastructure
+                  Industrial Infrastructure & Projects
+                </Link>
+                <Link
+                  href="/investors"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="font-sans text-lg font-light text-white/90 hover:text-[#f9a65c] transition-colors"
+                >
+                  Investors & Capital
                 </Link>
               </div>
             </div>
 
             {/* Group 3: Corporate & Engagement */}
             <div>
-              <span className="font-mono text-xs uppercase tracking-wider text-[#e06425] font-semibold block mb-3">
+              <span className="font-mono text-xs uppercase tracking-wider text-[#f9a65c] font-semibold block mb-3">
                 Company & Governance
               </span>
               <div className="grid grid-cols-2 gap-2.5 text-left">
                 <Link
                   href="/about"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="font-sans text-base font-light text-white/80 hover:text-[#ea6e2d] transition-colors"
+                  className="font-sans text-base font-light text-white/80 hover:text-[#f9a65c] transition-colors"
                 >
-                  About Rivanta
+                  About Us
                 </Link>
                 <Link
-                  href="/investors"
+                  href="/newsroom"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="font-sans text-base font-light text-white/80 hover:text-[#ea6e2d] transition-colors"
+                  className="font-sans text-base font-light text-white/80 hover:text-[#f9a65c] transition-colors"
                 >
-                  Investors & Capital
+                  Media & Insights
                 </Link>
                 <Link
                   href="/contact"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="font-sans text-base font-light text-white/80 hover:text-[#ea6e2d] transition-colors"
+                  className="font-sans text-base font-light text-white/80 hover:text-[#f9a65c] transition-colors"
                 >
-                  Official Contact
+                  Corporate Desk
                 </Link>
               </div>
             </div>

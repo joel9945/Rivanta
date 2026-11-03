@@ -16,49 +16,49 @@ const COMMERCIAL_TRACKS = [
   {
     id: "offtake",
     title: "Multi-Year Industrial Off-Take",
-    subtitle: "Green Silicon (6N) & CBG Supply Agreements",
-    detail: "Structuring 5 to 10 year off-take agreements with advanced materials users, solar wafer producers, and regional City Gas Distribution (CGD) entities.",
-    terms: "Long-Term Take-or-Pay • Price Indexing Mechanisms",
+    subtitle: "Biogenic Silica & Commercial CBG Off-Take",
+    detail: "Structuring long-term supply agreements with industrial materials buyers, rubber compounders, and regional City Gas Distribution (CGD) entities.",
+    terms: "Long-Term Off-Take • Structured Pricing Models",
     icon: TrendingUp,
   },
   {
     id: "project-equity",
-    title: "Green Infrastructure Project Equity",
+    title: "Industrial Infrastructure Equity",
     subtitle: "Asset-Level Capital Structuring",
-    detail: "Partnering with institutional green funds, development finance institutions (DFIs), and sovereign sustainability vehicles to co-capitalize commercial manufacturing facilities.",
-    terms: "Senior Secured Debt • Infrastructure Equity Tranches",
+    detail: "Partnering with institutional infrastructure funds, financial institutions, and strategic industrial partners to co-capitalize manufacturing facilities.",
+    terms: "Senior Project Debt • Infrastructure Equity Co-Investment",
     icon: Building2,
   },
   {
     id: "feedstock-jv",
-    title: "Catchment Joint Ventures & FPO Links",
-    subtitle: "Agronomic Upstream Integration",
-    detail: "Establishing structured joint ventures with large rice milling clusters and regional agricultural organizations, ensuring long-term biomass security with shared upside.",
-    terms: "Indexed Biomass Contracts • Farmer Prosperity Models",
+    title: "Regional Sourcing Joint Ventures",
+    subtitle: "Agricultural Upstream Integration",
+    detail: "Structuring long-term procurement partnerships with milling clusters and regional agricultural organizations, ensuring continuous biomass security.",
+    terms: "Long-Term Supply Agreements • Shared Economic Value",
     icon: ShieldCheck,
   },
 ];
 
 const RISK_PILLARS = [
   {
-    category: "Feedstock Price Volatility",
-    mitigation: "Secured through 3 to 5 year bilateral supply contracts with regional millers within a 100km radius, combined with indexed buffer storage facilities.",
-    rating: "Hedging Mechanism: Contractual Collars",
+    category: "Feedstock Price & Volume Volatility",
+    mitigation: "Secured through bilateral procurement contracts with regional milling networks, backed by dedicated buffer storage infrastructure.",
+    rating: "Procurement Mechanism: Contractual Collars",
   },
   {
     category: "Technology & Process Risk",
-    mitigation: "Licensed equipment packages backed by vendor performance warranties and process completion guarantees under turnkey EPC structures.",
-    rating: "Warranties: Tier-1 Technology Licensors",
+    mitigation: "Equipment packages engineered to established industrial standards with vendor performance warranties and staged technical qualification.",
+    rating: "Engineering: Tier-1 Industrial Equipment Standards",
   },
   {
-    category: "Market Off-Take Risk",
-    mitigation: "Dual revenue model pairing high-value clean technology materials (Green Silicon with 6N purity / 99.999%) with regulated, government-backed clean mobility fuel programs (SATAT).",
-    rating: "Off-Take: Multi-Sector Diversification",
+    category: "Commercial Off-Take Diversification",
+    mitigation: "Balanced portfolio pairing biogenic industrial materials with regulated renewable fuel programs (SATAT) and commercial gas off-take.",
+    rating: "Off-Take: Multi-Sector Commercial Diversification",
   },
   {
-    category: "Environmental & Regulatory",
-    mitigation: "Zero Liquid Discharge (ZLD) closed-loop engineering and ISO 14064 aligned carbon accounting eliminating regulatory exposure.",
-    rating: "Standards: ISO 14064 Compliance Framework",
+    category: "Environmental & Regulatory Compliance",
+    mitigation: "Zero Liquid Discharge (ZLD) design objectives and standardized lifecycle accounting framework ensuring statutory compliance.",
+    rating: "Compliance: Audited Environmental Governance",
   },
 ];
 
@@ -212,7 +212,7 @@ export default function InvestorsPage() {
                 <span>Confidential Investor Data Room</span>
               </div>
               <h3 className="font-sans font-medium text-2xl sm:text-3xl">
-                Access detailed financial models, mass balances & FEED reports.
+                Access project briefing materials, engineering overviews & commercial decks.
               </h3>
               <p className="font-sans text-sm text-white/75 font-light">
                 Available to verified institutional equity partners, off-take procurement executives, and accredited financial institutions under mutual NDA.

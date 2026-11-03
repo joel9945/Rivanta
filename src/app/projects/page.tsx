@@ -11,109 +11,144 @@ import {
   CheckCircle2,
   ArrowRight,
   Building,
+  Factory,
+  Layers,
+  Flame,
+  Truck,
 } from "lucide-react";
 
-const PHASES = [
+const PROJECT_INITIATIVES = [
+  {
+    id: "init-cbg",
+    name: "Commercial Biogas & Bio-Fertilizer Facilities",
+    vertical: "Alternative Fuels & Soil Products",
+    status: "Engineering & Planning",
+    scope:
+      "Integrated anaerobic digestion systems producing commercial-grade biomethane for regional grid supply and enriched organic soil amendments.",
+    deliverables: [
+      "Process engineering and environmental clearance documentation",
+      "Gas off-take framework with city gas distribution networks",
+      "Digestate valorization for regional agricultural soil application",
+      "Modular facility design for regional replication",
+    ],
+    badge: "Alternative Fuels",
+    color: "#2d7a54",
+  },
+  {
+    id: "init-silica",
+    name: "Biogenic Silica Refining Facility",
+    vertical: "Advanced Materials",
+    status: "Under Development",
+    scope:
+      "Advanced manufacturing facility designed to extract high-purity biogenic silica from agricultural residues for rubber, concrete, and industrial applications.",
+    deliverables: [
+      "Material quality testing with industrial compounding partners",
+      "Zero Liquid Discharge (ZLD) utility integration design",
+      "Thermal energy recovery from process exhaust streams",
+      "Evaluation of downstream high-purity precursor pathways",
+    ],
+    badge: "Advanced Materials",
+    color: "#e06425",
+  },
+  {
+    id: "init-saf",
+    name: "Sustainable Aviation Fuel Processing",
+    vertical: "Aviation Decarbonization",
+    status: "Feasibility Stage",
+    scope:
+      "Techno-economic evaluation of alcohol-to-jet and catalytic synthesis pathways utilizing non-food agricultural biomass feedstocks.",
+    deliverables: [
+      "Feedstock availability assessment for non-food biomass",
+      "Technology partner screening and licensor evaluation",
+      "Long-term airline off-take interest mapping",
+      "Regulatory alignment with national bio-aviation directives",
+    ],
+    badge: "Strategic Study",
+    color: "#3f6050",
+  },
+  {
+    id: "init-logistics",
+    name: "Regional Biomass Aggregation Hubs",
+    vertical: "Supply Chain & Logistics",
+    status: "Proposed",
+    scope:
+      "Decentralized collection, pre-treatment, and storage depots situated near major milling clusters to secure stable, year-round feedstock availability.",
+    deliverables: [
+      "Regional milling density mapping across key agrarian belts",
+      "Automated quality inspection and moisture control bays",
+      "Farmer Producer Organization (FPO) long-term procurement frameworks",
+      "Enclosed storage infrastructure with fire safety controls",
+    ],
+    badge: "Supply Infrastructure",
+    color: "#4a6b58",
+  },
+];
+
+const DEVELOPMENT_PHASES = [
   {
     phase: "Phase 01",
-    name: "Feedstock Catchment & Agronomic Modeling",
+    name: "Feedstock Profiling & Feasibility Studies",
     status: "Completed",
     timeline: "2024 – 2025",
     progress: 100,
     description:
-      "Comprehensive biomass availability studies, regional rice mill mapping, sample chemical characterization of rice husk ash, and initial thermodynamic mass balance modeling.",
+      "Comprehensive regional biomass availability mapping, milling partner surveys, sample material characterization, and preliminary mass-balance modeling.",
     deliverables: [
-      "Feedstock aggregation logistics model across 100km radius",
-      "Laboratory chemical characterization of Green Silicon (6N / 99.999%) yield",
-      "Initial geotechnical and statutory site suitability screening",
-      "Agronomic Farmer Producer Organization (FPO) off-take framework",
+      "Regional biomass collection models across milling clusters",
+      "Laboratory testing of biogenic silica extraction samples",
+      "Preliminary site suitability and zoning reviews",
+      "Initial engagement frameworks with agricultural organizations",
     ],
   },
   {
     phase: "Phase 02",
-    name: "Front-End Engineering Design (FEED) & Clearances",
+    name: "Engineering & Regulatory Clearances",
     status: "Underway",
     timeline: "2025 – 2026",
-    progress: 65,
+    progress: 60,
     description:
-      "Detailed process engineering, equipment sizing, vendor qualification, Environmental Impact Assessment (EIA) baseline monitoring, and off-take specification alignment.",
+      "Detailed process engineering, vendor qualification, environmental clearance applications, and preliminary commercial off-take structuring.",
     deliverables: [
-      "Process Flow Diagrams (PFD) and Piping & Instrumentation Diagrams (P&ID)",
-      "Licensor selection for 6N green silicon purification and gas upgrading",
-      "Statutory environmental clearances and land acquisition closure",
-      "Grid interconnection study with state transmission utility",
+      "Process engineering packages and equipment sizing",
+      "Statutory environmental clearances and land documentation",
+      "Utility interconnection reviews for power and water",
+      "Commercial off-take discussions with industrial users",
     ],
   },
   {
     phase: "Phase 03",
-    name: "Commercial EPC & Infrastructure Realization",
-    status: "Planned",
+    name: "Facility Construction & Commissioning",
+    status: "Proposed",
     timeline: "2026 – 2027",
-    progress: 15,
+    progress: 10,
     description:
-      "Civil works construction, equipment procurement and erection, utility interconnection (substation, water treatment, boiler plant), commissioning, and ramp-up.",
+      "Civil works execution, equipment installation, utility integration, cold and hot commissioning, and commercial production commencement.",
     deliverables: [
-      "Turnkey manufacturing facility construction & erection",
-      "Cold & hot commissioning of flagship green silicon (6N) production train",
-      "Biomethane grid compression and cascade filling commissioning",
-      "Commercial off-take delivery to advanced clean technology and electronics partners",
+      "Turnkey facility erection under industrial safety codes",
+      "Installation of automated DCS control systems",
+      "Testing and commissioning of production lines",
+      "Commercial delivery to industrial and energy partners",
     ],
   },
 ];
 
-const ASSET_UNITS = [
+const OPERATIONAL_STANDARDS = [
   {
-    id: "unit-01",
-    unitCode: "UNIT 01",
-    name: "Flagship Green Silicon & Cogeneration Train",
-    footprint: "14.5 Acres Allocated",
-    grid: "33kV Dedicated Substation Interconnect",
-    status: "Engineering Specified",
+    title: "Process Control Automation",
     description:
-      "Advanced reduction reactors, hydrometallurgical purification tanks, flash dry systems, and induction refining units yielding 6N purity (99.999%) Green Silicon.",
-    badge: "Flagship Asset",
-    color: "#e06425",
-  },
-  {
-    id: "unit-02",
-    unitCode: "UNIT 02",
-    name: "Anaerobic Digestion & Biomethane Enrichment",
-    footprint: "8.0 Acres Allocated",
-    grid: "CGD Pipeline Interconnect & Cascade Bay",
-    status: "Technology Aligned",
-    description:
-      "Continuous Stirred Tank Reactors (CSTR), biological desulfurization columns, selective membrane gas separation, and 250-bar cascade compression cylinders.",
-    badge: "Renewable Gas",
-    color: "#2d7a54",
-  },
-  {
-    id: "unit-03",
-    unitCode: "UNIT 03",
-    name: "Zero Liquid Discharge & Process Water Loop",
-    footprint: "4.2 Acres Allocated",
-    grid: "High-Efficiency Closed-Loop Recirculation",
-    status: "Closed-Loop Design",
-    description:
-      "Multi-stage high-recovery reverse osmosis, mechanical vapor recompression (MVR) evaporators, and crystallizers recovering 98%+ of process water.",
-    badge: "ZLD System",
-    color: "#3f6050",
-  },
-];
-
-const SAFETY_SYSTEMS = [
-  {
-    title: "Distributed Control System (DCS)",
-    description: "Centralized SCADA architecture with dual-redundant programmable logic controllers (PLCs), monitoring temperature profiles, flow rates, and chemical stoichiometry in real time.",
+      "Centralized instrumentation and control systems monitoring process temperatures, flow rates, and operational parameters to maintain consistent output quality.",
     icon: Cog,
   },
   {
-    title: "Continuous Emission Monitoring (CEMS)",
-    description: "Multi-gas stack sensors providing 24/7 telemetry of particulate matter (PM), sulfur dioxide, and nitrogen oxides directly connected to state environmental regulatory servers.",
+    title: "Continuous Emission Monitoring",
+    description:
+      "Stack sensors and emission controls installed to ensure operational compliance with applicable statutory environmental standards and regulatory norms.",
     icon: ShieldCheck,
   },
   {
-    title: "Automated Material Handling & Safety",
-    description: "Dust explosion suppression, pneumatic enclosed transport conveyors, and infrared flame detectors engineered for volatile agricultural biomass dust environments.",
+    title: "Industrial Safety Architecture",
+    description:
+      "Enclosed pneumatic conveying, dust suppression systems, and comprehensive fire protection measures engineered for agricultural biomass handling environments.",
     icon: HardHat,
   },
 ];
@@ -125,27 +160,104 @@ export default function ProjectsPage() {
     <>
       {/* Framed Canvas Hero */}
       <SubpageHero
-        badge="Capital Infrastructure"
-        title="Engineering Modern Infrastructure For"
-        highlightedText="Operational Permanence."
-        description="Our manufacturing assets are engineered to institutional standards — combining robust civil engineering, automated SCADA process control, and transparent implementation milestones."
+        badge="Industrial Infrastructure"
+        title="Developing Modern Infrastructure For"
+        highlightedText="Long-Term Capability."
+        description="Our manufacturing and energy projects are engineered to institutional standards — prioritizing disciplined capital allocation, environmental compliance, and long-term operating reliability."
         imageSrc="/images/hero-facility.jpg"
-        breadcrumbs={[{ label: "Infrastructure" }, { label: "Projects & Engineering" }]}
-        primaryCtaText="Inspect Project Phasing"
-        primaryCtaHref="#roadmap"
-        secondaryCtaText="Contact Engineering Desk"
+        breadcrumbs={[{ label: "Infrastructure & Projects" }]}
+        primaryCtaText="Inspect Project Pipeline"
+        primaryCtaHref="#pipeline"
+        secondaryCtaText="Contact Corporate Desk"
         secondaryCtaHref="/contact"
-        telemetryTag="Phase 2 FEED • Industrial Safety Instrumented"
+        telemetryTag="Industrial Development • Bhopal, India"
       />
 
       {/* Infinite Industrial Ticker */}
       <MarqueeText
-        phrase="INFRASTRUCTURE BLUEPRINT — ADVANCED PROCESS ENGINEERING — 33KV GRID INTERCONNECTION — CONTINUOUS EMISSION MONITORING (CEMS) — ASME & IS STANDARDS COMPLIANT — "
+        phrase="MANUFACTURING INFRASTRUCTURE — ALTERNATIVE FUELS — BIOGENIC SILICA — LOGISTICS HUBS — PROCESS RELIABILITY — DISCIPLINED CAPITAL STEWARDSHIP — "
         theme="light"
       />
 
-      {/* Phased Roadmap Interactive Timeline */}
-      <section id="roadmap" className="py-20 md:py-32 bg-[#f6f8f6]">
+      {/* Project Initiatives Overview */}
+      <section id="pipeline" className="py-20 md:py-32 bg-[#f6f8f6]">
+        <div className="u-container u-container--1 u-container--pad">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 gap-6">
+            <div>
+              <div className="u-ts--1 mb-4 reveal-up">
+                <span className="indicator-dot"></span>
+                <span>Project Initiatives</span>
+              </div>
+              <h2 className="font-sans font-normal text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.12] text-[#13271e] reveal-up delay-100">
+                Core development initiatives.
+              </h2>
+            </div>
+            <p className="font-sans text-sm md:text-base text-[#13271e]/70 max-w-md reveal-up delay-200">
+              Every initiative is classified by its verified development status, reflecting disciplined project progression from concept through execution.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {PROJECT_INITIATIVES.map((init, idx) => (
+              <div
+                key={init.id}
+                className={`p-8 md:p-10 rounded-3xl bg-white border border-[#13271e]/10 shadow-xs flex flex-col justify-between space-y-6 card-interactive reveal-up delay-${(idx + 1) * 75}`}
+              >
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-xs uppercase tracking-wider px-2.5 py-1 rounded bg-[#f6f8f6] text-[#e06425] font-semibold">
+                      {init.badge}
+                    </span>
+                    <span
+                      className={`font-mono text-[10px] uppercase tracking-wider px-2.5 py-1 rounded font-medium ${
+                        init.status === "Under Development"
+                          ? "bg-[#e06425]/10 text-[#e06425]"
+                          : init.status === "Engineering & Planning"
+                          ? "bg-[#2d7a54]/10 text-[#2d7a54]"
+                          : "bg-black/5 text-[#13271e]/70"
+                      }`}
+                    >
+                      {init.status}
+                    </span>
+                  </div>
+
+                  <span className="font-mono text-xs text-[#13271e]/60 block">
+                    {init.vertical}
+                  </span>
+
+                  <h3 className="font-sans font-medium text-2xl text-[#13271e] leading-snug">
+                    {init.name}
+                  </h3>
+
+                  <p className="font-sans text-sm md:text-base text-[#13271e]/75 font-light leading-relaxed">
+                    {init.scope}
+                  </p>
+                </div>
+
+                <div className="pt-4 border-t border-[#13271e]/8 space-y-2">
+                  <span className="font-mono text-[11px] uppercase tracking-wider text-[#13271e]/60 block font-semibold">
+                    Key Workstreams:
+                  </span>
+                  <div className="space-y-1.5">
+                    {init.deliverables.map((item, dIdx) => (
+                      <div
+                        key={dIdx}
+                        className="flex items-start gap-2 text-xs font-sans text-[#13271e]/80 font-light"
+                      >
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#2d7a54] flex-shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Phased Roadmap Timeline */}
+      <section className="py-20 md:py-28 bg-[#eceee9] border-t border-[#13271e]/8">
         <div className="u-container u-container--1 u-container--pad">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
             <div className="lg:col-span-4">
@@ -158,17 +270,17 @@ export default function ProjectsPage() {
             <div className="lg:col-span-8 flex flex-col space-y-8 md:space-y-10">
               <div>
                 <h2 className="font-sans font-normal text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.12] text-[#13271e] reveal-up delay-100">
-                  Phased realization from FEED to{" "}
-                  <span className="text-[#a0b0a5]">commercial production.</span>
+                  Disciplined execution across{" "}
+                  <span className="text-[#a0b0a5]">defined phases.</span>
                 </h2>
                 <p className="font-sans text-base md:text-lg text-[#13271e]/80 font-light mt-4 leading-relaxed reveal-up delay-200">
-                  Structured engineering milestones aligning FEED design, industrial procurement, and commercial EPC execution under auditable governance standards.
+                  Phased development ensures technical qualification, statutory approvals, and commercial alignment precede major capital deployment.
                 </p>
               </div>
 
               {/* Interactive Timeline Tabs */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 p-1.5 rounded-2xl bg-[#e1e4de] reveal-up delay-250">
-                {PHASES.map((p, idx) => (
+                {DEVELOPMENT_PHASES.map((p, idx) => (
                   <button
                     key={p.phase}
                     type="button"
@@ -181,13 +293,15 @@ export default function ProjectsPage() {
                   >
                     <div className="flex items-center justify-between mb-1">
                       <span>{p.phase}</span>
-                      <span className={`px-1.5 py-0.5 rounded text-[10px] ${
-                        p.status === "Completed"
-                          ? "bg-[#2d7a54]/20 text-[#2d7a54]"
-                          : p.status === "Underway"
-                          ? "bg-[#e06425]/20 text-[#e06425]"
-                          : "bg-black/10 text-[#13271e]/60"
-                      }`}>
+                      <span
+                        className={`px-1.5 py-0.5 rounded text-[10px] ${
+                          p.status === "Completed"
+                            ? "bg-[#2d7a54]/20 text-[#2d7a54]"
+                            : p.status === "Underway"
+                            ? "bg-[#e06425]/20 text-[#e06425]"
+                            : "bg-black/10 text-[#13271e]/60"
+                        }`}
+                      >
                         {p.status}
                       </span>
                     </div>
@@ -200,41 +314,42 @@ export default function ProjectsPage() {
 
               {/* Active Phase Detail Card */}
               <div className="p-8 sm:p-10 rounded-3xl bg-white border border-[#13271e]/10 shadow-md card-interactive reveal-up delay-300">
-                <div className="h-1.5 w-full rounded-full flowline-animated mb-6" />
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#13271e]/8 pb-6 mb-6">
                   <div>
                     <span className="font-mono text-xs uppercase tracking-wider text-[#e06425] font-semibold block mb-1">
-                      {PHASES[activePhaseIndex].phase} — {PHASES[activePhaseIndex].timeline}
+                      {DEVELOPMENT_PHASES[activePhaseIndex].phase} — {DEVELOPMENT_PHASES[activePhaseIndex].timeline}
                     </span>
                     <h3 className="font-sans font-medium text-2xl md:text-3xl text-[#13271e]">
-                      {PHASES[activePhaseIndex].name}
+                      {DEVELOPMENT_PHASES[activePhaseIndex].name}
                     </h3>
                   </div>
 
                   <div className="flex items-center gap-3">
-                    <span className="font-mono text-xs text-[#13271e]/60">Stage Progress</span>
-                    <div className="w-24 h-2.5 rounded-full bg-[#e1e4de] overflow-hidden">
-                      <div
-                        className="h-full bg-[#e06425] transition-all duration-700"
-                        style={{ width: `${PHASES[activePhaseIndex].progress}%` }}
-                      />
-                    </div>
-                    <span className="font-mono text-xs font-semibold text-[#13271e]">
-                      {PHASES[activePhaseIndex].progress}%
+                    <span className="font-mono text-xs text-[#13271e]/60">Stage Status</span>
+                    <span
+                      className={`font-mono text-xs font-semibold px-2.5 py-1 rounded ${
+                        DEVELOPMENT_PHASES[activePhaseIndex].status === "Completed"
+                          ? "bg-[#2d7a54]/10 text-[#2d7a54]"
+                          : DEVELOPMENT_PHASES[activePhaseIndex].status === "Underway"
+                          ? "bg-[#e06425]/10 text-[#e06425]"
+                          : "bg-black/5 text-[#13271e]/70"
+                      }`}
+                    >
+                      {DEVELOPMENT_PHASES[activePhaseIndex].status}
                     </span>
                   </div>
                 </div>
 
                 <p className="font-sans text-base text-[#13271e]/80 font-light leading-relaxed mb-6">
-                  {PHASES[activePhaseIndex].description}
+                  {DEVELOPMENT_PHASES[activePhaseIndex].description}
                 </p>
 
                 <div>
                   <h4 className="font-mono text-xs uppercase tracking-wider text-[#13271e]/60 block mb-3 font-semibold">
-                    Key Deliverables & Verification Gates:
+                    Core Deliverables:
                   </h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {PHASES[activePhaseIndex].deliverables.map((item, idx) => (
+                    {DEVELOPMENT_PHASES[activePhaseIndex].deliverables.map((item, idx) => (
                       <div
                         key={idx}
                         className="p-3.5 rounded-xl bg-[#f6f8f6] border border-[#13271e]/6 flex items-start gap-3"
@@ -253,81 +368,21 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* Industrial Asset Blueprint (Dedicated Unit Architecture) */}
-      <section className="py-20 md:py-28 bg-[#eceee9] border-t border-[#13271e]/8">
-        <div className="u-container u-container--1 u-container--pad">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 gap-6">
-            <div>
-              <div className="u-ts--1 mb-4 reveal-up">
-                <span className="indicator-dot"></span>
-                <span>Asset Blueprint</span>
-              </div>
-              <h2 className="font-sans font-normal text-3xl sm:text-4xl md:text-5xl tracking-tight text-[#13271e] reveal-up delay-100">
-                Integrated manufacturing unit operations.
-              </h2>
-            </div>
-            <div className="font-mono text-xs uppercase tracking-wider text-[#13271e]/60 flex items-center gap-2 reveal-up delay-200">
-              <Building className="w-4 h-4 text-[#e06425]" />
-              <span>Consolidated 26.7-Acre Footprint</span>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {ASSET_UNITS.map((unit, idx) => (
-              <div
-                key={unit.id}
-                className={`p-8 md:p-10 rounded-3xl bg-white border border-[#13271e]/10 shadow-xs flex flex-col justify-between space-y-6 card-interactive reveal-up delay-${(idx + 1) * 100}`}
-              >
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span className="font-mono text-xs font-semibold px-2.5 py-1 rounded bg-[#f6f8f6] text-[#e06425]">
-                      {unit.unitCode}
-                    </span>
-                    <span className="font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 rounded bg-[#f0f4f1] text-[#2d7a54] font-medium">
-                      {unit.badge}
-                    </span>
-                  </div>
-
-                  <h3 className="font-sans font-medium text-2xl text-[#13271e] leading-snug">
-                    {unit.name}
-                  </h3>
-
-                  <p className="font-sans text-sm text-[#13271e]/75 font-light leading-relaxed">
-                    {unit.description}
-                  </p>
-                </div>
-
-                <div className="pt-4 border-t border-[#13271e]/8 space-y-2 text-xs font-mono">
-                  <div className="flex items-center justify-between text-[#13271e]/70">
-                    <span>Footprint:</span>
-                    <span className="font-medium text-[#13271e]">{unit.footprint}</span>
-                  </div>
-                  <div className="flex items-center justify-between text-[#13271e]/70">
-                    <span>Grid Link:</span>
-                    <span className="font-medium text-[#2d7a54]">{unit.grid}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Control & Safety Architecture */}
+      {/* Engineering Standards */}
       <section className="py-20 md:py-32 bg-[#f6f8f6]">
         <div className="u-container u-container--1 u-container--pad">
           <div className="max-w-2xl mb-12 md:mb-16">
             <div className="u-ts--1 mb-4 reveal-up">
               <span className="indicator-dot"></span>
-              <span>Process Reliability</span>
+              <span>Engineering Standards</span>
             </div>
             <h2 className="font-sans font-normal text-3xl sm:text-4xl md:text-5xl tracking-tight text-[#13271e] reveal-up delay-100">
-              Safety-instrumented industrial automation.
+              Operational safety and reliability.
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            {SAFETY_SYSTEMS.map((sys, idx) => {
+            {OPERATIONAL_STANDARDS.map((sys, idx) => {
               const Icon = sys.icon;
               return (
                 <div
@@ -351,19 +406,19 @@ export default function ProjectsPage() {
           <div className="p-8 sm:p-10 rounded-3xl bg-[#132c21] text-white flex flex-col md:flex-row items-center justify-between gap-6 reveal-up">
             <div className="max-w-xl space-y-2">
               <span className="font-mono text-xs uppercase tracking-wider text-[#ea6e2d]">
-                EPC & Technology Licensors
+                Industrial Partnership Desk
               </span>
               <h3 className="font-sans font-medium text-2xl sm:text-3xl">
-                Interested in equipment supply or turnkey engineering tenders?
+                Collaborate on industrial development initiatives.
               </h3>
               <p className="font-sans text-sm text-white/75 font-light">
-                Our projects procurement desk conducts regular vendor qualification rounds for reaction vessels, filter presses, and gas compression modules.
+                Connect with our corporate team to discuss project partnerships, technology collaboration, or equipment qualification.
               </p>
             </div>
 
             <Link href="/contact" className="u-btn--1 flex-shrink-0">
               <span className="btn_label">
-                Engage Projects Desk
+                Engage Corporate Desk
                 <div className="label_corner">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

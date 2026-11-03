@@ -13,72 +13,74 @@ import {
   ArrowUpRight,
   Layers,
   Recycle,
+  Truck,
+  Users,
 } from "lucide-react";
 
-const LOGISTICS_PILLARS = [
+const SOURCING_PILLARS = [
   {
-    title: "Regional Catchment Hubs (50–100 km Radius)",
+    title: "Regional Aggregation Hubs",
     description:
-      "Centralized aggregation hubs established in close proximity to high-density rice milling clusters, minimizing transport carbon footprint and haulage costs.",
+      "Establishing centralized collection and pre-treatment hubs near high-density agricultural clusters, optimizing regional transport logistics and supply reliability.",
     icon: MapPin,
-    stat: "50-100 km Catchment Radius",
+    stat: "Regional Hub Sourcing",
   },
   {
-    title: "Weatherproof Covered Storage & Thermal Safety",
+    title: "Enclosed Storage & Safety",
     description:
-      "High-clearance ventilated hangars equipped with continuous temperature probes, active aeration tunnels, and automated spark/dust explosion suppression systems.",
+      "Modern covered storage facilities equipped with moisture testing, ventilation controls, and dust suppression systems engineered for agricultural biomass.",
     icon: Warehouse,
-    stat: "Automated Spark Suppression",
+    stat: "Quality & Safety Standards",
   },
   {
-    title: "NIR Moisture Verification & Quality Gates",
+    title: "Quality Verification Gates",
     description:
-      "In-line Near-Infrared (NIR) sensors analyze incoming deliveries at weighbridges. Husk with moisture >12% is routed through solar drying tunnels before storage.",
+      "Systematic inbound inspection protocols assessing moisture levels and material composition before processing to ensure continuous operational consistency.",
     icon: ShieldCheck,
-    stat: "<12% Moisture Quality Threshold",
+    stat: "Standardized Testing",
   },
   {
-    title: "Direct Miller & Farmer Producer (FPO) Contracts",
+    title: "Farmer & Miller Partnerships",
     description:
-      "Long-term guaranteed off-take contracts with regional rice millers and Farmer Producer Organizations, injecting steady income into rural farming economies.",
+      "Direct long-term procurement frameworks with regional millers and Farmer Producer Organizations (FPOs), delivering stable secondary revenue to rural communities.",
     icon: Sprout,
-    stat: "Multi-Year Supply Contracts",
+    stat: "Community Value Creation",
   },
 ];
 
-const SIGNATURE_VENTURE_CARDS = [
+const CIRCULAR_FLOW = [
   {
     index: "01.",
-    title: "Upstream Aggregation",
-    badge: "Field Diversion",
-    text: "Rice husk and field residues are collected from regional millers, preventing hundreds of thousands of tons of open-air agricultural burning each harvest season.",
+    title: "Value Beyond the Harvest",
+    badge: "Field Utilization",
+    text: "Agricultural residues represent an important yet underutilized resource. Rivanta aims to support their productive use through organized industrial development.",
     bg: "#fae9dc",
     textColor: "#13271e",
     accent: "#e06425",
     icon: MapPin,
-    stat: "100% Burning Diversion",
+    stat: "Productive Biomass Use",
   },
   {
     index: "02.",
-    title: "Industrial Refining",
-    badge: "Dual-Stream Processing",
-    text: "Biomass is thermally calcined and refined to synthesize ultra-pure Green Silicon (6N purity / 99.999%), while organic residues generate biomethane and process steam.",
+    title: "Industrial Processing",
+    badge: "Materials & Energy",
+    text: "Biomass is converted into high-value biogenic materials, clean biomethane, and process utilities through energy-efficient manufacturing operations.",
     bg: "#d6e8dc",
     textColor: "#13271e",
     accent: "#2d7a54",
     icon: Layers,
-    stat: "Zero Residual Ash Waste",
+    stat: "Resource Recovery",
   },
   {
     index: "03.",
-    title: "Downstream Reintegration",
-    badge: "Nutrient Recycling",
-    text: "Digestate co-products are pelletized into Fermented Organic Manure (FOM) and delivered back to farmers, replenishing soil carbon and closing the loop.",
+    title: "Soil Health Reintegration",
+    badge: "Circular Agriculture",
+    text: "Enriched organic digestate is returned to agricultural soils as fermented organic manure, replenishing essential carbon and nutrients for farming communities.",
     bg: "#132c21",
     textColor: "#ffffff",
     accent: "#ea6e2d",
     icon: Recycle,
-    stat: "Closed-Loop Nutrient Return",
+    stat: "Soil Health Restoration",
   },
 ];
 
@@ -90,26 +92,26 @@ export default function FeedstockPage() {
         badge="Supply Chain & Circularity"
         title="Building Resilient Supply Chains For"
         highlightedText="Agricultural Biomass."
-        description="Our feedstock architecture combines regional aggregation logistics, automated quality testing, and multi-year miller partnerships to secure continuous biomass supplies without competing with food security."
+        description="Our feedstock architecture combines regional aggregation logistics, standardized quality testing, and multi-year miller partnerships to secure continuous biomass supplies without competing with food security."
         imageSrc="/images/feedstock-aggregation.jpg"
         breadcrumbs={[
-          { label: "Circularity" },
+          { label: "Our Businesses", href: "/#businesses" },
           { label: "Feedstock Sourcing" },
         ]}
-        primaryCtaText="Partner as Feedstock Supplier"
+        primaryCtaText="Partner as Sourcing Supplier"
         primaryCtaHref="/contact"
-        secondaryCtaText="Explore Green Silicon (6N)"
-        secondaryCtaHref="/green-silicon"
-        telemetryTag="NIR Sensor Testing • 100km Catchment"
+        secondaryCtaText="Explore Advanced Materials"
+        secondaryCtaHref="/bio-silica"
+        telemetryTag="Feedstock Supply Architecture • Bhopal, India"
       />
 
       {/* Infinite Industrial Ticker */}
       <MarqueeText
-        phrase="AGRONOMIC BIOMASS SOURCING — 50-100 KM CATCHMENT RADIUS — NIR MOISTURE VALIDATION (<12%) — FARMER PRODUCER PARTNERSHIPS (FPOs) — ZERO-WASTE CLOSED-LOOP CIRCULARITY — "
+        phrase="AGRICULTURAL RESIDUE UTILIZATION — REGIONAL SOURCING HUBS — FARMER PRODUCER PARTNERSHIPS — VALUE BEYOND THE HARVEST — SOIL NUTRIENT CIRCULARITY — "
         theme="sage"
       />
 
-      {/* Sourcing Strategy Editorial (Matching Homepage PlatformHgroup) */}
+      {/* Sourcing Strategy Editorial */}
       <section className="py-20 md:py-32 bg-[#f6f8f6]">
         <div className="u-container u-container--1 u-container--pad">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
@@ -122,22 +124,22 @@ export default function FeedstockPage() {
 
             <div className="lg:col-span-8 flex flex-col space-y-8 md:space-y-10">
               <h2 className="font-sans font-normal text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.12] text-[#13271e] reveal-up delay-100">
-                Transforming agricultural residues into{" "}
-                <span className="text-[#a0b0a5]">dependable industrial inputs.</span>
+                A more productive use of{" "}
+                <span className="text-[#a0b0a5]">domestic resources.</span>
               </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-[#13271e]/80 text-base md:text-lg font-light leading-relaxed reveal-up delay-200">
                 <p>
-                  Industrial processing requires rigid predictability in feedstock moisture, biogenic precursor yield, and supply security. Our aggregation network contracts directly with regional rice mills and agrarian Farmer Producer Organizations (FPOs).
+                  Industrial processing requires consistency in material quality, predictable delivery schedules, and transparent procurement logistics. Our aggregation framework establishes direct partnerships with milling networks and Farmer Producer Organizations.
                 </p>
                 <p>
-                  By creating a reliable, transparent monetization channel for rice husk and crop residues, we transform regional waste into bankable economic value while eliminating the seasonal air pollution associated with crop residue burning.
+                  By creating organized, dependable monetization channels for crop residues, we support rural livelihoods while contributing to reduced seasonal residue burning across key agricultural belts.
                 </p>
               </div>
 
-              {/* Logistics Pillars Grid */}
+              {/* Sourcing Pillars Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
-                {LOGISTICS_PILLARS.map((p, idx) => {
+                {SOURCING_PILLARS.map((p, idx) => {
                   const Icon = p.icon;
                   return (
                     <div
@@ -198,11 +200,11 @@ export default function FeedstockPage() {
                 </Link>
 
                 <Link
-                  href="/green-silicon"
+                  href="/bio-silica"
                   className="u-btn--3"
-                  data-label="Explore Green Silicon Specs"
+                  data-label="Explore Advanced Materials"
                 >
-                  <span className="btn_label">Explore Green Silicon Specs</span>
+                  <span className="btn_label">Explore Advanced Materials</span>
                 </Link>
               </div>
             </div>
@@ -210,11 +212,11 @@ export default function FeedstockPage() {
         </div>
       </section>
 
-      {/* Signature 3-Color Card Trio: Closed Loop Circularity (Matching Homepage UspCards) */}
+      {/* Signature 3-Color Card Trio */}
       <section className="w-full bg-transparent reveal-fade">
         <div className="w-full">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-0">
-            {SIGNATURE_VENTURE_CARDS.map((card, idx) => {
+            {CIRCULAR_FLOW.map((card, idx) => {
               const Icon = card.icon;
               const isDark = card.textColor === "#ffffff";
 
@@ -266,7 +268,10 @@ export default function FeedstockPage() {
                     >
                       {card.text}
                     </p>
-                    <div className="pt-2 font-mono text-xs uppercase tracking-wider font-medium" style={{ color: card.accent }}>
+                    <div
+                      className="pt-2 font-mono text-xs uppercase tracking-wider font-medium"
+                      style={{ color: card.accent }}
+                    >
                       {card.stat}
                     </div>
                   </div>

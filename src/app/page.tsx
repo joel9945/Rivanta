@@ -6,30 +6,34 @@ import MarqueeText from "@/components/MarqueeText";
 import CompanySpotlight from "@/components/CompanySpotlight";
 import CorporateFoundations from "@/components/CorporateFoundations";
 import ValueChainGallery from "@/components/ValueChainGallery";
+import SharedValueAndContribution from "@/components/SharedValueAndContribution";
 
 export default function Home() {
   return (
     <>
-      {/* Framed Hero Canvas */}
+      {/* 1. Framed Hero Canvas */}
       <Hero />
 
-      {/* Platform Overview */}
+      {/* 2. Corporate Introduction */}
       <PlatformHgroup />
 
-      {/* 3-Cards Venture Portfolio: Green Silicon (6N Purity), CBG, SAF */}
+      {/* 3. Our Businesses: 6 Strategic Business Verticals */}
       <UspCards />
 
-      {/* Infinite Industrial Intelligence Ticker */}
+      {/* 4. Infinite Industrial Ticker */}
       <MarqueeText />
 
-      {/* Editorial Company Narrative */}
+      {/* 5. Strategic Focus & National Priorities */}
       <CompanySpotlight />
 
-      {/* Corporate Purpose, Vision, Mission & Foundations */}
+      {/* 6. Environmental Stewardship & Operations */}
       <CorporateFoundations />
 
-      {/* Value Chain & Workstreams Gallery */}
+      {/* 7. Integrated Industrial Workstreams Portfolio */}
       <ValueChainGallery />
+
+      {/* 8. Creating Shared Value: Farmers & Communities + Contribution to India */}
+      <SharedValueAndContribution />
     </>
   );
 }

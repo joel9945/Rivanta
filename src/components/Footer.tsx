@@ -38,7 +38,7 @@ export default async function Footer() {
             </h3>
 
             <p className="font-sans text-sm md:text-base text-white/70 font-light max-w-md leading-relaxed">
-              Rivanta Green Innovative Venture Private Limited is developing an integrated biomass manufacturing ecosystem: flagship Green Silicon (6N purity / 99.999%), compressed biogas, and sustainable aviation fuel pathways.
+              Rivanta Green Innovative Venture Private Limited is an emerging Indian industrial enterprise developing an integrated portfolio across renewable energy, advanced materials, sustainable fuels, and circular manufacturing.
             </p>
 
             <div>
@@ -48,18 +48,18 @@ export default async function Footer() {
 
           {/* Right Navigation Columns */}
           <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-4 gap-8 text-sm">
-            {/* Column 1: Manufacturing */}
+            {/* Column 1: Our Businesses */}
             <div className="flex flex-col space-y-4">
               <span className="font-mono text-xs uppercase tracking-wider text-white/50">
-                Manufacturing
+                Our Businesses
               </span>
               <ul className="space-y-3 font-sans font-light text-white/80 text-xs sm:text-sm">
                 <li>
                   <Link
-                    href="/green-silicon"
+                    href="/bio-silica"
                     className="hover:text-[#ea6e2d] transition-colors"
                   >
-                    Green Silicon (6N / 99.999%)
+                    Advanced Materials
                   </Link>
                 </li>
                 <li>
@@ -67,7 +67,7 @@ export default async function Footer() {
                     href="/cbg"
                     className="hover:text-[#ea6e2d] transition-colors"
                   >
-                    Compressed Biogas
+                    Compressed Biogas (CBG)
                   </Link>
                 </li>
                 <li>
@@ -75,32 +75,32 @@ export default async function Footer() {
                     href="/saf"
                     className="hover:text-[#ea6e2d] transition-colors"
                   >
-                    Aviation Fuel (SAF)
+                    Sustainable Aviation Fuels
                   </Link>
                 </li>
-              </ul>
-            </div>
-
-            {/* Column 2: Operations */}
-            <div className="flex flex-col space-y-4">
-              <span className="font-mono text-xs uppercase tracking-wider text-white/50">
-                Operations
-              </span>
-              <ul className="space-y-3 font-sans font-light text-white/80 text-xs sm:text-sm">
                 <li>
                   <Link
                     href="/feedstock"
                     className="hover:text-[#ea6e2d] transition-colors"
                   >
-                    Feedstock Sourcing
+                    Circular Materials
                   </Link>
                 </li>
+              </ul>
+            </div>
+
+            {/* Column 2: Strategy & Operations */}
+            <div className="flex flex-col space-y-4">
+              <span className="font-mono text-xs uppercase tracking-wider text-white/50">
+                Strategy & Operations
+              </span>
+              <ul className="space-y-3 font-sans font-light text-white/80 text-xs sm:text-sm">
                 <li>
                   <Link
                     href="/sustainability"
                     className="hover:text-[#ea6e2d] transition-colors"
                   >
-                    Sustainability
+                    Environmental Stewardship
                   </Link>
                 </li>
                 <li>
@@ -108,7 +108,7 @@ export default async function Footer() {
                     href="/projects"
                     className="hover:text-[#ea6e2d] transition-colors"
                   >
-                    Infrastructure
+                    Industrial Infrastructure
                   </Link>
                 </li>
                 <li>
@@ -116,16 +116,24 @@ export default async function Footer() {
                     href="/about"
                     className="hover:text-[#ea6e2d] transition-colors"
                   >
-                    About Rivanta
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/newsroom"
+                    className="hover:text-[#ea6e2d] transition-colors"
+                  >
+                    Media & Insights
                   </Link>
                 </li>
               </ul>
             </div>
 
-            {/* Column 3: Commercial */}
+            {/* Column 3: Institutional */}
             <div className="flex flex-col space-y-4">
               <span className="font-mono text-xs uppercase tracking-wider text-white/50">
-                Commercial
+                Institutional
               </span>
               <ul className="space-y-3 font-sans font-light text-white/80 text-xs sm:text-sm">
                 <li>
@@ -133,7 +141,7 @@ export default async function Footer() {
                     href="/investors"
                     className="hover:text-[#ea6e2d] transition-colors"
                   >
-                    Investors & Partners
+                    Investors & Capital
                   </Link>
                 </li>
                 <li>
@@ -141,7 +149,15 @@ export default async function Footer() {
                     href="/contact"
                     className="hover:text-[#ea6e2d] transition-colors"
                   >
-                    Contact & Off-Take Desk
+                    Commercial Off-Take Desk
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/contact"
+                    className="hover:text-[#ea6e2d] transition-colors"
+                  >
+                    Corporate Directory
                   </Link>
                 </li>
               </ul>

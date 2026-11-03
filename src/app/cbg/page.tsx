@@ -9,92 +9,94 @@ import {
   Sprout,
   ArrowRight,
   ArrowUpRight,
-  Activity,
   Fuel,
+  Activity,
+  ShieldCheck,
+  Building2,
 } from "lucide-react";
 
-const SPEC_METRICS = [
-  {
-    id: "methane",
-    value: "≥90.0%",
-    label: "Methane (CH4) Enrichment",
-    detail: "Purified biomethane complying strictly with IS 16087 standards for automotive and industrial grid injection.",
-    trend: "IS 16087 Benchmark",
-  },
-  {
-    id: "co2-removal",
-    value: "≤4.0%",
-    label: "Carbon Dioxide Residual",
-    detail: "High-efficiency selective hollow-fiber membrane separation ensuring maximum volumetric energy density.",
-    trend: "Membrane Upgrading",
-  },
-  {
-    id: "h2s-scrub",
-    value: "<20 mg/m³",
-    label: "H2S Concentration",
-    detail: "Biological desulfurization trickling filters combined with zinc oxide polishing beds for pipeline integrity.",
-    trend: "Zero Pipeline Corrosion",
-  },
-  {
-    id: "cascade-pressure",
-    value: "250 bar",
-    label: "Cascade Compression",
-    detail: "High-pressure multistage reciprocating compressors for mobile cascade storage and city gas network off-take.",
-    trend: "250 Bar Storage",
-  },
-];
-
-const SIGNATURE_VENTURE_CARDS = [
+const STRATEGIC_CHANNELS = [
   {
     index: "01.",
-    title: "City Gas & Industrial Grid",
-    badge: "Thermal Off-Take",
-    text: "Supplying high-caloric biomethane directly into regional City Gas Distribution (CGD) networks to displace fossil natural gas in ceramic, metallurgical, and manufacturing plants.",
+    title: "City Gas Distribution",
+    badge: "Grid Integration",
+    text: "Supplying commercial-grade biomethane into regional city gas networks, providing a clean alternative for domestic piped gas and commercial heating systems.",
     bg: "#fae9dc",
     textColor: "#13271e",
     accent: "#e06425",
     icon: Flame,
-    stat: "≥90% Caloric Equivalent",
+    stat: "Pipeline-Quality Biomethane",
   },
   {
     index: "02.",
-    title: "Fermented Organic Manure",
-    badge: "Circular Bio-Fertilizer",
-    text: "Digestate co-product is dewatered and enriched into high-humus solid FOM pellets and liquid bio-nutrients, returning organic carbon and micronutrients to regional soils.",
+    title: "Commercial Mobility",
+    badge: "Clean Transport",
+    text: "Delivering compressed biomethane for vehicular transport and commercial fleet corridors, supporting lower tailpipe emissions across heavy and light transport fleets.",
     bg: "#d6e8dc",
     textColor: "#13271e",
     accent: "#2d7a54",
-    icon: Sprout,
-    stat: "High Humic Acid & NPK",
+    icon: Fuel,
+    stat: "Vehicular Alternative Fuel",
   },
   {
     index: "03.",
-    title: "Green Commercial Mobility",
-    badge: "Bio-CNG Transport",
-    text: "Compressed Bio-CNG for commercial logistics fleets and long-haul transport corridors, reducing particulate matter and tailpipe greenhouse emissions by up to 85%.",
+    title: "Circular Soil Nutrients",
+    badge: "Resource Recovery",
+    text: "Refining organic digestion by-products into fermented organic fertilizers, returning vital organic carbon and macro-nutrients directly to regional farmlands.",
     bg: "#132c21",
     textColor: "#ffffff",
     accent: "#ea6e2d",
-    icon: Fuel,
-    stat: "-85% PM & GHG Reduction",
+    icon: Sprout,
+    stat: "Soil Health Restoration",
   },
 ];
 
-const FEEDSTOCK_TYPES = [
+const COMMERCIAL_PARAMETERS = [
+  {
+    id: "methane-content",
+    value: "Commercial Grade",
+    label: "Methane Enrichment",
+    detail: "Purified biomethane engineered to meet commercial specifications for industrial and grid applications.",
+    trend: "Commercial Specification",
+  },
+  {
+    id: "energy-parity",
+    value: "Caloric Equivalence",
+    label: "Fuel Performance",
+    detail: "Direct operational alternative to fossil natural gas in commercial burners and industrial heating applications.",
+    trend: "Industrial Heating",
+  },
+  {
+    id: "policy-alignment",
+    value: "National Mandates",
+    label: "Policy Integration",
+    detail: "Aligned with national bioenergy directives promoting domestic renewable fuel blending and energy diversification.",
+    trend: "Energy Transition",
+  },
+  {
+    id: "byproduct-recovery",
+    value: "Closed Loop",
+    label: "Nutrient Recycling",
+    detail: "Comprehensive digestate recovery producing organic soil amendments for sustainable agriculture.",
+    trend: "Circular Agriculture",
+  },
+];
+
+const FEEDSTOCK_CATEGORIES = [
   {
     step: "01",
-    name: "Agronomic Field Straw & Stubble",
-    characteristics: "Paddy straw, wheat straw, and crop stalks shredded and conditioned to eliminate open-field burning while unlocking hemicellulose sugars.",
+    name: "Crop Residues & Agronomic Straw",
+    characteristics: "Paddy straw, wheat straw, and crop stalks procured from regional agricultural belts to support productive biomass utilization.",
   },
   {
     step: "02",
-    name: "Agro-Processing Residues & Pressmud",
-    characteristics: "Milling byproducts, sugarcane pressmud, and distillery decanter wastes offering rapid methanogenic kinetics and high volatile solids.",
+    name: "Agro-Industrial Processing By-Products",
+    characteristics: "Residues from agro-processing, milling clusters, and food processing facilities suited for anaerobic digestion.",
   },
   {
     step: "03",
-    name: "Engineered Co-Digestion Mixtures",
-    characteristics: "Precision C:N ratio balancing across multi-substrate blends to ensure continuous digester stability and maximize biomethane yield per ton.",
+    name: "Organic Residue Blends",
+    characteristics: "Engineered multi-substrate blends configured to maintain balanced digestion performance and reliable gas yield.",
   },
 ];
 
@@ -105,58 +107,58 @@ export default function CbgPage() {
     <>
       {/* Framed Canvas Hero */}
       <SubpageHero
-        badge="Renewable Clean Gas Pathway"
-        title="Biomethane Enrichment From"
-        highlightedText="Agricultural Biomass Residues."
-        description="Developing utility-scale Compressed Biogas (CBG) facilities to convert regional biomass streams into high-purity renewable methane, displacing fossil natural gas in transport and industrial thermal networks."
+        badge="Sustainable Fuels"
+        title="Supporting India's Energy Transition With"
+        highlightedText="Compressed Biogas."
+        description="Developing commercial Compressed Biogas facilities to convert agricultural residues into clean biomethane for transportation, city gas distribution, and industrial heating."
         imageSrc="/images/cbg-plant.jpg"
         breadcrumbs={[
-          { label: "Ventures", href: "/#ventures" },
+          { label: "Our Businesses", href: "/#businesses" },
           { label: "Compressed Biogas (CBG)" },
         ]}
-        primaryCtaText="Inquire on Gas Off-Take"
+        primaryCtaText="Contact Commercial Desk"
         primaryCtaHref="/contact"
-        secondaryCtaText="Explore Feedstock Logistics"
+        secondaryCtaText="Explore Feedstock Sourcing"
         secondaryCtaHref="/feedstock"
-        telemetryTag="Methane Index ≥90% • IS 16087 Certified"
+        telemetryTag="Alternative Fuels • Commercial Biomethane"
       />
 
       {/* Infinite Industrial Ticker */}
       <MarqueeText
-        phrase="COMPRESSED BIOGAS (CBG) — ≥90% METHANE ENRICHMENT (CH4) — FERMENTED ORGANIC MANURE (FOM) — IS 16087 SPECIFICATIONS — SCOPE 1 & 2 DISPLACEMENT — ZERO STUBBLE BURNING — "
+        phrase="COMPRESSED BIOGAS — COMMERCIAL BIOMETHANE — CITY GAS DISTRIBUTION — GREEN COMMERCIAL MOBILITY — SOIL HEALTH RESTORATION — NATIONAL BIOENERGY ALIGNMENT — "
         theme="sage"
       />
 
-      {/* Overview Layout (Matching Homepage PlatformHgroup) */}
+      {/* Overview Layout */}
       <section id="details" className="py-20 md:py-32 bg-[#f6f8f6]">
         <div className="u-container u-container--1 u-container--pad">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
             <div className="lg:col-span-4">
               <div className="u-ts--1 sticky top-28 reveal-up">
                 <span className="indicator-dot"></span>
-                <span>The CBG Opportunity</span>
+                <span>The Energy Opportunity</span>
               </div>
             </div>
 
             <div className="lg:col-span-8 flex flex-col space-y-8 md:space-y-10">
               <h2 className="font-sans font-normal text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.12] text-[#13271e] reveal-up delay-100">
-                Decarbonizing industrial heat and transport through{" "}
-                <span className="text-[#a0b0a5]">anaerobic enrichment.</span>
+                Diversified domestic energy from{" "}
+                <span className="text-[#a0b0a5]">agricultural resources.</span>
               </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-[#13271e]/80 text-base md:text-lg font-light leading-relaxed reveal-up delay-200">
                 <p>
-                  Compressed Biogas (CBG) is purified biomethane produced via the anaerobic microbiological digestion of crop residues and organic agro-waste. Once desulfurized and stripped of carbon dioxide, it delivers an identical calorific value to fossil compressed natural gas.
+                  Compressed Biogas (CBG) is purified biomethane produced through the controlled anaerobic digestion of crop residues and agricultural by-products, delivering caloric parity with fossil natural gas.
                 </p>
                 <p>
-                  Rivanta Green is developing modern CBG infrastructure to inject drop-in renewable methane directly into regional gas grids and commercial logistics cascades, converting liability agricultural waste into continuous baseload energy.
+                  Rivanta Green is developing modern CBG facilities to supply clean biomethane into regional transportation corridors and city gas networks, turning agricultural residues into dependable domestic energy.
                 </p>
               </div>
 
               <div className="pt-2 reveal-up delay-300">
                 <Link href="/contact" className="u-btn--1">
                   <span className="btn_label">
-                    Initiate Off-Take Discussion
+                    Engage Commercial Desk
                     <div className="label_corner">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -194,11 +196,11 @@ export default function CbgPage() {
         </div>
       </section>
 
-      {/* Signature 3-Color Card Trio (Matching Homepage UspCards) */}
+      {/* Signature 3-Color Card Trio */}
       <section className="w-full bg-transparent reveal-fade">
         <div className="w-full">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-0">
-            {SIGNATURE_VENTURE_CARDS.map((card, idx) => {
+            {STRATEGIC_CHANNELS.map((card, idx) => {
               const Icon = card.icon;
               const isDark = card.textColor === "#ffffff";
 
@@ -250,7 +252,10 @@ export default function CbgPage() {
                     >
                       {card.text}
                     </p>
-                    <div className="pt-2 font-mono text-xs uppercase tracking-wider font-medium" style={{ color: card.accent }}>
+                    <div
+                      className="pt-2 font-mono text-xs uppercase tracking-wider font-medium"
+                      style={{ color: card.accent }}
+                    >
                       {card.stat}
                     </div>
                   </div>
@@ -268,27 +273,27 @@ export default function CbgPage() {
         </div>
       </section>
 
-      {/* Interactive Specifications Deck */}
+      {/* Commercial Parameters Deck */}
       <section className="py-20 md:py-28 bg-[#eceee9] border-t border-[#13271e]/8">
         <div className="u-container u-container--1 u-container--pad">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 gap-6">
             <div>
               <div className="u-ts--1 mb-4 reveal-up">
                 <span className="indicator-dot"></span>
-                <span>Engineering Standards</span>
+                <span>Commercial Parameters</span>
               </div>
               <h2 className="font-sans font-normal text-3xl sm:text-4xl md:text-5xl tracking-tight text-[#13271e] reveal-up delay-100">
-                Caloric parity with pipeline compressed natural gas.
+                Reliable alternative gaseous fuel.
               </h2>
             </div>
             <div className="font-mono text-xs uppercase tracking-wider text-[#13271e]/60 flex items-center gap-2 reveal-up delay-200">
               <Activity className="w-4 h-4 text-[#e06425]" />
-              <span>CEMS Audited • 250 Bar Cascade</span>
+              <span>National Bioenergy Standards</span>
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {SPEC_METRICS.map((metric, idx) => {
+            {COMMERCIAL_PARAMETERS.map((metric, idx) => {
               const isSelected = selectedMetric === idx;
 
               return (
@@ -304,14 +309,18 @@ export default function CbgPage() {
                   <div className="flex items-center justify-between mb-6">
                     <div
                       className={`w-12 h-12 rounded-xl flex items-center justify-center ${
-                        isSelected ? "bg-white/10 text-[#ea6e2d]" : "bg-[#f6f8f6] text-[#13271e]"
+                        isSelected
+                          ? "bg-white/10 text-[#ea6e2d]"
+                          : "bg-[#f6f8f6] text-[#13271e]"
                       }`}
                     >
                       <Flame className="w-6 h-6" />
                     </div>
                     <span
                       className={`font-mono text-xs uppercase tracking-wider px-2.5 py-1 rounded-full ${
-                        isSelected ? "bg-[#ea6e2d] text-white" : "bg-[#f0f4f1] text-[#2d7a54]"
+                        isSelected
+                          ? "bg-[#ea6e2d] text-white"
+                          : "bg-[#f0f4f1] text-[#2d7a54]"
                       }`}
                     >
                       {metric.trend}
@@ -320,7 +329,7 @@ export default function CbgPage() {
 
                   <div>
                     <div
-                      className={`font-sans font-light tracking-tight text-3xl sm:text-4xl md:text-[2.6rem] leading-none mb-3 ${
+                      className={`font-sans font-light tracking-tight text-2xl sm:text-3xl leading-snug mb-3 ${
                         isSelected ? "text-white" : "text-[#13271e]"
                       }`}
                     >
@@ -348,7 +357,7 @@ export default function CbgPage() {
         </div>
       </section>
 
-      {/* Feedstock Compatibility & Digestate Valorization */}
+      {/* Feedstock & Co-Products */}
       <section className="py-20 md:py-32 bg-[#f6f8f6]">
         <div className="u-container u-container--1 u-container--pad">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
@@ -361,14 +370,14 @@ export default function CbgPage() {
 
             <div className="lg:col-span-8 flex flex-col space-y-8">
               <h2 className="font-sans font-normal text-3xl sm:text-4xl md:text-5xl tracking-tight text-[#13271e] reveal-up delay-100">
-                Multi-substrate conditioning & biological digestate recovery.
+                Sustained sourcing and organic fertilizer recovery.
               </h2>
               <p className="font-sans text-base md:text-lg text-[#13271e]/80 font-light max-w-2xl reveal-up delay-200">
-                Beyond clean methane, the solid digestate residue is refined into Fermented Organic Manure (FOM) — returning vital soil carbon, nitrogen, phosphorus, and moisture retention to agricultural farmlands.
+                In addition to clean biomethane, anaerobic digestion produces valuable organic digestate that is processed into fermented organic manure to enrich agricultural soils.
               </p>
 
               <div className="space-y-4 pt-4">
-                {FEEDSTOCK_TYPES.map((f, idx) => (
+                {FEEDSTOCK_CATEGORIES.map((f, idx) => (
                   <div
                     key={f.step}
                     className={`p-6 sm:p-8 rounded-2xl bg-white border border-[#13271e]/10 shadow-xs grid grid-cols-1 sm:grid-cols-12 gap-4 items-center card-interactive reveal-up delay-${(idx + 1) * 75}`}
@@ -391,7 +400,7 @@ export default function CbgPage() {
               <div className="pt-8 flex flex-col sm:flex-row items-center gap-4 reveal-up delay-300">
                 <Link href="/contact" className="u-btn--1 w-full sm:w-auto">
                   <span className="btn_label">
-                    Inquire on Gas Off-take
+                    Engage Commercial Desk
                     <div className="label_corner">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"

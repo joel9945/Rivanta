@@ -6,7 +6,7 @@ interface MarqueeTextProps {
 }
 
 export default function MarqueeText({
-  phrase = "Green Silicon (6N Purity / 99.999%) — Compressed Biogas & Bio-CNG — Sustainable Aviation Fuel (SAF) — Circular Economy & Scope 3 Abatement — ",
+  phrase = "ADVANCED MATERIALS — SUSTAINABLE FUELS — RENEWABLE ENERGY — RESOURCE RECOVERY — INDUSTRIAL INFRASTRUCTURE — BUILDING INDUSTRIAL VALUE FROM INDIA'S RESOURCES — ",
   theme = "light",
 }: MarqueeTextProps) {
   const bgClass =
@@ -19,17 +19,17 @@ export default function MarqueeText({
   const dotColor = theme === "dark" ? "text-[#ea6e2d]" : "text-[#e06425]";
 
   return (
-    <section className={`w-full py-7 md:py-10 border-y overflow-hidden select-none ${bgClass}`}>
+    <section className={`w-full py-7 md:py-9 border-y overflow-hidden select-none ${bgClass}`}>
       <div className="marquee">
         <div className="marquee_scroll">
           <div className="marquee_collection">
-            <span className="font-mono text-lg sm:text-xl md:text-2xl uppercase tracking-wider whitespace-nowrap flex items-center gap-4">
+            <span className="font-mono text-base sm:text-lg md:text-xl uppercase tracking-wider whitespace-nowrap flex items-center gap-4">
               <span>{phrase}</span>
               <span className={`inline-block ${dotColor}`}>✦</span>
             </span>
           </div>
           <div className="marquee_collection" aria-hidden="true">
-            <span className="font-mono text-lg sm:text-xl md:text-2xl uppercase tracking-wider whitespace-nowrap flex items-center gap-4">
+            <span className="font-mono text-base sm:text-lg md:text-xl uppercase tracking-wider whitespace-nowrap flex items-center gap-4">
               <span>{phrase}</span>
               <span className={`inline-block ${dotColor}`}>✦</span>
             </span>

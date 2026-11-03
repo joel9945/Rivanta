@@ -1,120 +1,218 @@
 import React from "react";
 import Link from "next/link";
-import { Sparkles, Flame, Fuel, ArrowUpRight } from "lucide-react";
+import { Sparkles, Flame, Fuel, Zap, RefreshCw, Building2, ArrowUpRight } from "lucide-react";
 
-const CARDS = [
+interface BusinessVertical {
+  id: string;
+  index: string;
+  title: string;
+  status: string;
+  statusType: "active" | "planned" | "eval";
+  description: string;
+  focusAreas: string[];
+  href: string;
+  bg: string;
+  textColor: string;
+  icon: React.ElementType;
+  accent: string;
+}
+
+const VERTICALS: BusinessVertical[] = [
   {
+    id: "advanced-materials",
     index: "01.",
-    title: "Green Silicon",
-    badge: "6N Purity (99.999%)",
-    text: "Synthesizing high-purity Green Silicon (6N / 99.999%) from circular sustainable feedstocks to supply advanced photovoltaic wafers, clean electronics, and energy storage.",
+    title: "Advanced Materials",
+    status: "Under Development",
+    statusType: "active",
+    description: "Developing domestic capabilities in biogenic silica and industrial materials, with long-term opportunities in high-value domestic supply chains.",
+    focusAreas: ["Bio-Silica applications", "Industrial silica materials", "Domestic supply chains", "Future silicon-related manufacturing"],
+    href: "/bio-silica",
     bg: "#fae9dc",
     textColor: "#13271e",
     icon: Sparkles,
     accent: "#e06425",
-    href: "/green-silicon",
   },
   {
+    id: "compressed-biogas",
     index: "02.",
     title: "Compressed Biogas (CBG)",
-    badge: "Renewable Gas Pathway",
-    text: "Harnessing regional agricultural biomass residues through anaerobic digestion, biological desulfurization, and biomethane enrichment for clean mobility and industrial off-take.",
+    status: "Under Development",
+    statusType: "active",
+    description: "Establishing commercial Compressed Biogas infrastructure from regional agricultural residues to support domestic energy diversification and clean transport.",
+    focusAreas: ["Alternative gaseous fuels", "CBG distribution infrastructure", "Domestic energy diversification", "Industrial & mobility off-take"],
+    href: "/cbg",
     bg: "#d6e8dc",
     textColor: "#13271e",
     icon: Flame,
     accent: "#2d7a54",
-    href: "/cbg",
   },
   {
+    id: "sustainable-aviation-fuels",
     index: "03.",
-    title: "Sustainable Aviation Fuel",
-    badge: "Synthetic Hydrocarbons",
-    text: "Synthesizing drop-in synthetic paraffinic kerosene (SAF) from certified agricultural biomass feedstocks to drive commercial aviation decarbonization.",
+    title: "Sustainable Aviation Fuels",
+    status: "Strategic Evaluation",
+    statusType: "eval",
+    description: "Evaluating technology pathways and industrial partnerships for drop-in synthetic fuels to support the long-term decarbonization of commercial aviation.",
+    focusAreas: ["Low-carbon aviation fuels", "Industrial technology partnerships", "Decarbonization corridors", "Synthetic fuel evaluation"],
+    href: "/saf",
     bg: "#132c21",
     textColor: "#ffffff",
     icon: Fuel,
     accent: "#ea6e2d",
-    href: "/saf",
+  },
+  {
+    id: "renewable-utilities",
+    index: "04.",
+    title: "Renewable Energy & Utilities",
+    status: "Planned Integration",
+    statusType: "planned",
+    description: "Planning captive biomass-based cogeneration and energy-efficient utilities to ensure reliable, resource-efficient power for manufacturing operations.",
+    focusAreas: ["Biomass-based infrastructure", "Captive power generation", "Industrial energy efficiency", "Utility integration"],
+    href: "/projects",
+    bg: "#f3f5f3",
+    textColor: "#13271e",
+    icon: Zap,
+    accent: "#c47a27",
+  },
+  {
+    id: "circular-materials",
+    index: "05.",
+    title: "Circular Materials & Recovery",
+    status: "Under Development",
+    statusType: "active",
+    description: "Utilizing industrial co-products and biochar streams for soil improvement and mineral recovery, reducing material losses across operating cycles.",
+    focusAreas: ["Co-product utilization", "Biochar evaluation", "Soil improvement inputs", "Responsible resource recovery"],
+    href: "/feedstock",
+    bg: "#e9ede9",
+    textColor: "#13271e",
+    icon: RefreshCw,
+    accent: "#2d7a54",
+  },
+  {
+    id: "industrial-infrastructure",
+    index: "06.",
+    title: "Industrial Infrastructure",
+    status: "Planned Development",
+    statusType: "planned",
+    description: "Planning integrated manufacturing campuses with specialized logistics, regional utilities, and long-term capacity for industrial expansion.",
+    focusAreas: ["Integrated industrial campuses", "Regional logistics hubs", "Utility interconnections", "Long-term infrastructure planning"],
+    href: "/projects",
+    bg: "#183226",
+    textColor: "#ffffff",
+    icon: Building2,
+    accent: "#f4a261",
   },
 ];
 
 export default function UspCards() {
   return (
-    <section id="ventures" className="w-full bg-transparent">
-      <div className="w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-0">
-          {CARDS.map((card, idx) => {
-            const Icon = card.icon;
-            const isDark = card.textColor === "#ffffff";
+    <section id="businesses" aria-label="Our Businesses" className="w-full bg-[#f6f8f6] py-16 md:py-24 border-b border-[#13271e]/10">
+      <div className="u-container u-container--1 u-container--pad">
+        {/* Section Header */}
+        <div className="pb-8 md:pb-12 border-b border-[#13271e]/10">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+            <span className="font-mono text-xs uppercase tracking-[0.16em] text-[#13271e]/60 font-medium">
+              02 / OUR BUSINESSES
+            </span>
+            <span className="font-mono text-xs text-[#13271e]/50 uppercase tracking-wider">
+              Strategic Industrial Portfolio
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-baseline">
+            <div className="lg:col-span-6">
+              <h2 className="font-sans font-light text-3xl sm:text-4xl md:text-5xl tracking-[-0.02em] leading-[1.15] text-[#13271e]">
+                A Diversified Industrial Portfolio.
+              </h2>
+            </div>
+            <div className="lg:col-span-6">
+              <p className="font-sans text-base md:text-lg text-[#13271e]/80 font-light leading-relaxed">
+                Rivanta Green is developing business interests across advanced materials, sustainable fuels, renewable energy, and resource-efficient manufacturing, with a focus on long-term industrial value creation.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* 6-Vertical Portfolio Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 pt-10 md:pt-14">
+          {VERTICALS.map((vertical, idx) => {
+            const Icon = vertical.icon;
+            const isDark = vertical.textColor === "#ffffff";
 
             return (
               <Link
-                key={card.index}
-                href={card.href}
-                suppressHydrationWarning
-                style={{ backgroundColor: card.bg, color: card.textColor }}
-                className={`group relative min-h-[420px] sm:min-h-[460px] lg:min-h-[500px] p-8 sm:p-10 md:p-12 flex flex-col justify-between transition-all duration-500 overflow-hidden text-left card-interactive reveal-up delay-${(idx + 1) * 100}`}
+                key={vertical.id}
+                href={vertical.href}
+                style={{ backgroundColor: vertical.bg, color: vertical.textColor }}
+                className={`group relative rounded-2xl p-8 sm:p-9 flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:-translate-y-1 overflow-hidden text-left reveal-up delay-${((idx % 3) + 1) * 100}`}
               >
-                {/* Index & Badge in Top Row */}
-                <div className="flex items-center justify-between w-full opacity-75 z-10">
-                  <span
-                    className={`font-mono text-[10.5px] uppercase tracking-wider px-2.5 py-1 rounded font-medium ${
-                      isDark ? "bg-white/10 text-white" : "bg-black/5 text-[#13271e]"
-                    }`}
-                  >
-                    {card.badge}
-                  </span>
-                  <span className="font-mono text-xs md:text-sm tracking-wider uppercase font-medium">
-                    {card.index}
-                  </span>
-                </div>
-
-                {/* Tactile Icon in Middle */}
-                <div className="my-auto py-8 z-10">
-                  <div
-                    className={`w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center transition-transform duration-500 group-hover:scale-110 shadow-sm ${
-                      isDark ? "bg-white/10" : "bg-black/5"
-                    }`}
-                  >
-                    <Icon
-                      className="w-8 h-8 md:w-10 md:h-10"
-                      style={{ color: card.accent }}
-                    />
-                  </div>
-                </div>
-
-                {/* Card Content at bottom */}
-                <div className="flex flex-col space-y-3 z-10">
-                  <div className="flex items-center justify-between gap-4">
-                    <h3 className="font-sans font-medium text-2xl md:text-3xl tracking-tight leading-tight group-hover:text-[#e06425] transition-colors duration-200">
-                      {card.title}
-                    </h3>
-                    <div
-                      className={`card-arrow-circle w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center transition-all duration-300 ${
-                        isDark ? "bg-white/10 text-white" : "bg-black/5 text-[#13271e]"
-                      } group-hover:bg-[#e06425] group-hover:text-white`}
+                {/* Top Row: Index and Actual Status Badge */}
+                <div>
+                  <div className="flex items-center justify-between w-full mb-6">
+                    <span className="font-mono text-xs tracking-wider uppercase font-medium opacity-60">
+                      {vertical.index}
+                    </span>
+                    <span
+                      className={`font-mono text-[11px] uppercase tracking-wider px-2.5 py-1 rounded font-medium ${
+                        vertical.statusType === "active"
+                          ? isDark
+                            ? "bg-[#2d7a54]/40 text-[#86efac] border border-[#86efac]/30"
+                            : "bg-[#2d7a54]/10 text-[#2d7a54] border border-[#2d7a54]/20"
+                          : isDark
+                          ? "bg-white/10 text-white/80 border border-white/20"
+                          : "bg-black/5 text-[#13271e]/70 border border-black/10"
+                      }`}
                     >
-                      <ArrowUpRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                    </div>
+                      {vertical.status}
+                    </span>
                   </div>
+
+                  {/* Icon & Title */}
+                  <div className="flex items-center gap-4 mb-4">
+                    <div
+                      className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-105 ${
+                        isDark ? "bg-white/10" : "bg-black/5"
+                      }`}
+                    >
+                      <Icon className="w-6 h-6" style={{ color: vertical.accent }} />
+                    </div>
+                    <h3 className="font-sans font-medium text-xl sm:text-2xl tracking-tight leading-snug group-hover:text-[#e06425] transition-colors duration-200">
+                      {vertical.title}
+                    </h3>
+                  </div>
+
+                  {/* Factual Description */}
                   <p
-                    className={`font-sans text-sm md:text-base leading-relaxed font-light ${
+                    className={`font-sans text-sm font-light leading-relaxed mb-6 ${
                       isDark ? "text-white/80" : "text-[#13271e]/80"
                     }`}
                   >
-                    {card.text}
+                    {vertical.description}
                   </p>
                 </div>
 
-                {/* Subtle Hover Ambient Glow */}
-                <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
-                  style={{
-                    background: `radial-gradient(circle at 80% 20%, ${
-                      card.accent
-                    }20, transparent 70%)`,
-                  }}
-                />
+                {/* Focus Areas Bullets & Arrow CTA */}
+                <div className="pt-6 border-t border-current/10 flex flex-col gap-4">
+                  <div className="flex flex-wrap gap-1.5">
+                    {vertical.focusAreas.slice(0, 3).map((area, i) => (
+                      <span
+                        key={i}
+                        className={`font-sans text-[11.5px] px-2 py-0.5 rounded ${
+                          isDark ? "bg-white/5 text-white/70" : "bg-black/5 text-[#13271e]/70"
+                        }`}
+                      >
+                        {area}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex items-center justify-between text-xs font-mono font-medium pt-1">
+                    <span className="opacity-80 group-hover:opacity-100 transition-opacity">
+                      Business Overview
+                    </span>
+                    <ArrowUpRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-[#e06425]" />
+                  </div>
+                </div>
               </Link>
             );
           })}

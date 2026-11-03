@@ -16,15 +16,13 @@ export interface InquiryResult {
 }
 
 const ALLOWED_SECTORS = [
-  "Green Silicon (6N Purity / 99.999%)",
-  "Bio-Silica Manufacturing (Flagship)",
+  "Advanced Materials & Biogenic Silica",
   "Compressed Biogas (CBG)",
-  "Sustainable Aviation Fuel (SAF)",
-  "Feedstock Sourcing & Supply",
-  "Renewable Energy Infrastructure",
-  "Industrial Decarbonization",
-  "Regenerative Bio-Ventures",
+  "Sustainable Aviation Fuels (SAF)",
+  "Feedstock Sourcing & Logistics",
+  "Renewable Energy & Infrastructure",
   "Capital & Joint Venture Structuring",
+  "General Corporate Engagement",
 ];
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

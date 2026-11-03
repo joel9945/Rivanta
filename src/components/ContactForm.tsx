@@ -11,7 +11,7 @@ export default function ContactForm() {
     name: "",
     email: "",
     org: "",
-    sector: "Green Silicon (6N Purity / 99.999%)",
+    sector: "Advanced Materials & Biogenic Silica",
     message: "",
     honeypot: "",
   });
@@ -29,7 +29,7 @@ export default function ContactForm() {
           name: "",
           email: "",
           org: "",
-          sector: "Green Silicon (6N Purity / 99.999%)",
+          sector: "Advanced Materials & Biogenic Silica",
           message: "",
           honeypot: "",
         });
@@ -188,11 +188,13 @@ export default function ContactForm() {
             onChange={(e) => setFormData({ ...formData, sector: e.target.value })}
             className="w-full px-4 py-2.5 rounded-xl bg-[#f6f8f6] border border-[#13271e]/10 text-sm focus:outline-none focus:border-[#e06425] transition-colors cursor-pointer"
           >
-            <option>Green Silicon (6N Purity / 99.999%)</option>
+            <option>Advanced Materials & Biogenic Silica</option>
             <option>Compressed Biogas (CBG)</option>
-            <option>Sustainable Aviation Fuel (SAF)</option>
-            <option>Feedstock Sourcing & Supply</option>
+            <option>Sustainable Aviation Fuels (SAF)</option>
+            <option>Feedstock Sourcing & Logistics</option>
+            <option>Renewable Energy & Infrastructure</option>
             <option>Capital & Joint Venture Structuring</option>
+            <option>General Corporate Engagement</option>
           </select>
         </div>
       </div>

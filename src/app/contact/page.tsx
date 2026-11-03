@@ -59,36 +59,36 @@ const DEPARTMENTS = [
   {
     role: "Commercial Off-Take Desk",
     email: "commercial@rivantagreen.com",
-    focus: "Green Silicon (6N purity / 99.999%) product specifications, material trials, sample requests, and supply contracts.",
+    focus: "Biogenic silica commercial off-take, material specification alignment, and technical inquiries for industrial users.",
   },
   {
     role: "Feedstock Sourcing & Logistics",
     email: "sourcing@rivantagreen.com",
-    focus: "Biomass aggregation partnerships, rice milling network logistics, and regional cooperative off-take.",
+    focus: "Biomass procurement partnerships, regional milling network logistics, and agricultural organization collaboration.",
   },
   {
     role: "Capital & Project Finance",
     email: "investors@rivantagreen.com",
-    focus: "Infrastructure equity, development finance (DFI) collaboration, and joint venture project structures.",
+    focus: "Industrial infrastructure equity, financial institution collaboration, and joint venture project structures.",
   },
 ];
 
 const FAQS = [
   {
-    q: "How can industrial clients request testing samples of Green Silicon?",
-    a: "Qualified technology, solar wafer, and electronics procurement teams can request certified 6N purity (99.999%) testing lots. Submit your inquiry selecting 'Green Silicon (6N Purity / 99.999%)' with your target material or crystal specifications.",
+    q: "How can industrial partners request material samples of Biogenic Silica?",
+    a: "Qualified manufacturing, rubber compounding, concrete, and coatings procurement teams can request technical specifications and material evaluation samples. Submit your inquiry selecting 'Advanced Materials & Biogenic Silica' along with your application requirements.",
   },
   {
-    q: "What is the typical commercial off-take agreement structure for Compressed Biogas (CBG)?",
-    a: "We structure 5 to 10 year take-or-pay supply contracts with City Gas Distribution (CGD) companies and industrial off-takers, delivered via pipeline injection or 250-bar mobile cascade storage banks.",
+    q: "What commercial structures are used for Compressed Biogas (CBG) off-take?",
+    a: "We structure long-term commercial supply agreements with City Gas Distribution (CGD) companies and industrial off-takers, delivered via pipeline interconnection or mobile cascade storage.",
   },
   {
-    q: "How can regional rice millers and Farmer Producer Organizations (FPOs) partner with Rivanta?",
-    a: "We execute multi-year biomass supply agreements offering guaranteed floor pricing, scheduled trailer collections, and on-site moisture testing to establish dependable secondary income for agricultural communities.",
+    q: "How can regional millers and Farmer Producer Organizations (FPOs) partner with Rivanta?",
+    a: "We establish multi-year biomass procurement agreements offering structured pricing, organized regional collection, and transparent testing to generate dependable secondary revenue for agricultural communities.",
   },
   {
-    q: "Are laboratory Certificates of Analysis (COA) available for material lots?",
-    a: "Yes. Every production run is accompanied by an independent accredited laboratory COA documenting amorphous phase verification via XRD, trace metals via ICP-OES, and specific surface area via BET nitrogen adsorption.",
+    q: "Are technical specifications and test documentation available for industrial clients?",
+    a: "Yes. Technical dossiers documenting material composition, specific surface area, and physical properties are shared with qualified partners following preliminary commercial alignment.",
   },
 ];
 
