@@ -11,72 +11,124 @@ import {
   MapPin,
   Globe,
   ChevronRight,
+  ChevronLeft,
   ChevronDown,
   FileText,
   Search,
   SlidersHorizontal,
+  Bookmark,
 } from "lucide-react";
 
 interface SectionMeta {
   id: string;
   num: string;
   title: string;
-  category: "governance" | "collection" | "security" | "rights" | "contact";
-  categoryLabel: string;
+  part: number;
+  partLabel: string;
 }
 
 const SECTIONS_META: SectionMeta[] = [
-  { id: "section-1", num: "01", title: "Introduction", category: "governance", categoryLabel: "Governance & Scope" },
-  { id: "section-2", num: "02", title: "Scope of This Policy", category: "governance", categoryLabel: "Governance & Scope" },
-  { id: "section-3", num: "03", title: "Information We Collect", category: "collection", categoryLabel: "Data Collection & Use" },
-  { id: "section-4", num: "04", title: "How We Use Personal Information", category: "collection", categoryLabel: "Data Collection & Use" },
-  { id: "section-5", num: "05", title: "Consent and Lawful Processing", category: "collection", categoryLabel: "Data Collection & Use" },
-  { id: "section-6", num: "06", title: "Cookies and Website Technologies", category: "collection", categoryLabel: "Data Collection & Use" },
-  { id: "section-7", num: "07", title: "Information Sharing and Disclosure", category: "security", categoryLabel: "Security & Retention" },
-  { id: "section-8", num: "08", title: "Data Security", category: "security", categoryLabel: "Security & Retention" },
-  { id: "section-9", num: "09", title: "Data Retention", category: "security", categoryLabel: "Security & Retention" },
-  { id: "section-10", num: "10", title: "Your Privacy Rights", category: "rights", categoryLabel: "Rights & Compliance" },
-  { id: "section-11", num: "11", title: "International Data Transfers", category: "rights", categoryLabel: "Rights & Compliance" },
-  { id: "section-12", num: "12", title: "Third-Party Websites", category: "rights", categoryLabel: "Rights & Compliance" },
-  { id: "section-13", num: "13", title: "Children's Privacy", category: "rights", categoryLabel: "Rights & Compliance" },
-  { id: "section-14", num: "14", title: "Changes to This Privacy Policy", category: "rights", categoryLabel: "Rights & Compliance" },
-  { id: "section-15", num: "15", title: "Privacy Enquiries and Grievance Redressal", category: "contact", categoryLabel: "Grievance & Contact" },
-  { id: "section-16", num: "16", title: "Contact Information", category: "contact", categoryLabel: "Grievance & Contact" },
+  { id: "section-1", num: "01", title: "Introduction", part: 1, partLabel: "Part 1: Foundations & Collection" },
+  { id: "section-2", num: "02", title: "Scope of This Policy", part: 1, partLabel: "Part 1: Foundations & Collection" },
+  { id: "section-3", num: "03", title: "Information We Collect", part: 1, partLabel: "Part 1: Foundations & Collection" },
+  { id: "section-4", num: "04", title: "How We Use Personal Information", part: 1, partLabel: "Part 1: Foundations & Collection" },
+  { id: "section-5", num: "05", title: "Consent and Lawful Processing", part: 2, partLabel: "Part 2: Processing & Safeguards" },
+  { id: "section-6", num: "06", title: "Cookies and Website Technologies", part: 2, partLabel: "Part 2: Processing & Safeguards" },
+  { id: "section-7", num: "07", title: "Information Sharing and Disclosure", part: 2, partLabel: "Part 2: Processing & Safeguards" },
+  { id: "section-8", num: "08", title: "Data Security", part: 2, partLabel: "Part 2: Processing & Safeguards" },
+  { id: "section-9", num: "09", title: "Data Retention", part: 3, partLabel: "Part 3: Retention & User Rights" },
+  { id: "section-10", num: "10", title: "Your Privacy Rights", part: 3, partLabel: "Part 3: Retention & User Rights" },
+  { id: "section-11", num: "11", title: "International Data Transfers", part: 3, partLabel: "Part 3: Retention & User Rights" },
+  { id: "section-12", num: "12", title: "Third-Party Websites", part: 3, partLabel: "Part 3: Retention & User Rights" },
+  { id: "section-13", num: "13", title: "Children's Privacy", part: 4, partLabel: "Part 4: Governance & Redressal" },
+  { id: "section-14", num: "14", title: "Changes to This Privacy Policy", part: 4, partLabel: "Part 4: Governance & Redressal" },
+  { id: "section-15", num: "15", title: "Privacy Enquiries and Grievance Redressal", part: 4, partLabel: "Part 4: Governance & Redressal" },
+  { id: "section-16", num: "16", title: "Contact Information", part: 4, partLabel: "Part 4: Governance & Redressal" },
 ];
 
-const CATEGORIES = [
-  { key: "all", label: "All 16 Sections", count: 16 },
-  { key: "governance", label: "Governance & Scope", count: 2 },
-  { key: "collection", label: "Collection & Use", count: 4 },
-  { key: "security", label: "Security & Retention", count: 3 },
-  { key: "rights", label: "Rights & Compliance", count: 5 },
-  { key: "contact", label: "Grievance & Contact", count: 2 },
+const PARTS = [
+  {
+    page: 1,
+    label: "Part 1",
+    title: "Foundations & Collection",
+    range: "Sections 01–04",
+    sectionIds: ["section-1", "section-2", "section-3", "section-4"],
+  },
+  {
+    page: 2,
+    label: "Part 2",
+    title: "Processing & Safeguards",
+    range: "Sections 05–08",
+    sectionIds: ["section-5", "section-6", "section-7", "section-8"],
+  },
+  {
+    page: 3,
+    label: "Part 3",
+    title: "Retention & User Rights",
+    range: "Sections 09–12",
+    sectionIds: ["section-9", "section-10", "section-11", "section-12"],
+  },
+  {
+    page: 4,
+    label: "Part 4",
+    title: "Governance & Redressal",
+    range: "Sections 13–16",
+    sectionIds: ["section-13", "section-14", "section-15", "section-16"],
+  },
 ];
 
 export default function PrivacyPolicyClient() {
-  // By default, open Section 1 so user immediately has context, while remaining 15 are compact
+  // Pagination State: 1 to 4 (or 'all' for complete document view)
+  const [currentPage, setCurrentPage] = useState<number | "all">(1);
+
+  // By default, expand the sections of the active page for immediate, friction-free reading
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({
     "section-1": true,
+    "section-2": true,
+    "section-3": true,
+    "section-4": true,
   });
-  const [searchQuery, setSearchQuery] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("all");
 
-  // Handle hash jump on initial mount or route hash change
+  const [searchQuery, setSearchQuery] = useState("");
+
+  // Handle URL hash anchor jumps on mount
   useEffect(() => {
     if (typeof window === "undefined" || !window.location.hash) return;
     const targetId = window.location.hash.replace("#", "");
     if (!targetId.startsWith("section-")) return;
 
     const timer = setTimeout(() => {
+      const matchedPart = PARTS.find((p) => p.sectionIds.includes(targetId));
+      if (matchedPart) {
+        setCurrentPage(matchedPart.page);
+      }
       setOpenSections((prev) => ({ ...prev, [targetId]: true }));
       const el = document.getElementById(targetId);
       if (el) {
         el.scrollIntoView({ behavior: "smooth", block: "start" });
       }
-    }, 100);
+    }, 120);
 
     return () => clearTimeout(timer);
   }, []);
+
+  const handlePageChange = (newPage: number | "all") => {
+    setCurrentPage(newPage);
+    if (newPage !== "all") {
+      const activePart = PARTS.find((p) => p.page === newPage);
+      if (activePart) {
+        const nextOpen = { ...openSections };
+        activePart.sectionIds.forEach((id) => {
+          nextOpen[id] = true;
+        });
+        setOpenSections(nextOpen);
+      }
+    }
+    const readingArea = document.getElementById("privacy-reading-area");
+    if (readingArea) {
+      readingArea.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   const toggleSection = (id: string) => {
     setOpenSections((prev) => ({
@@ -86,14 +138,20 @@ export default function PrivacyPolicyClient() {
   };
 
   const handleSelectSectionFromNav = (id: string) => {
+    const matchedPart = PARTS.find((p) => p.sectionIds.includes(id));
+    if (matchedPart) {
+      setCurrentPage(matchedPart.page);
+    }
     setOpenSections((prev) => ({
       ...prev,
       [id]: true,
     }));
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+    setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }, 120);
   };
 
   const expandAll = () => {
@@ -108,21 +166,29 @@ export default function PrivacyPolicyClient() {
     setOpenSections({});
   };
 
-  const areAllExpanded = useMemo(() => {
-    return SECTIONS_META.every((sec) => openSections[sec.id]);
-  }, [openSections]);
+  // Filter sections based on pagination and search query
+  const displayedSections = useMemo(() => {
+    if (searchQuery.trim()) {
+      return SECTIONS_META.filter(
+        (sec) =>
+          sec.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          sec.num.includes(searchQuery.trim())
+      );
+    }
+    if (currentPage === "all") {
+      return SECTIONS_META;
+    }
+    return SECTIONS_META.filter((sec) => sec.part === currentPage);
+  }, [currentPage, searchQuery]);
 
-  const filteredSections = useMemo(() => {
-    return SECTIONS_META.filter((sec) => {
-      const matchesCategory =
-        selectedCategory === "all" || sec.category === selectedCategory;
-      const matchesSearch =
-        !searchQuery.trim() ||
-        sec.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        sec.num.includes(searchQuery.trim());
-      return matchesCategory && matchesSearch;
-    });
-  }, [selectedCategory, searchQuery]);
+  const areAllOnPageExpanded = useMemo(() => {
+    return displayedSections.every((sec) => openSections[sec.id]);
+  }, [displayedSections, openSections]);
+
+  const activePartMeta = useMemo(() => {
+    if (currentPage === "all") return null;
+    return PARTS.find((p) => p.page === currentPage);
+  }, [currentPage]);
 
   return (
     <div className="bg-[#f6f8f6] min-h-screen text-[#13271e]">
@@ -177,13 +243,13 @@ export default function PrivacyPolicyClient() {
         </div>
       </header>
 
-      {/* 2. Document Body with Sticky Table of Contents Sidebar */}
-      <main className="py-8 sm:py-12 md:py-16">
+      {/* 2. Document Body with Paginated Reading Area */}
+      <main id="privacy-reading-area" className="py-8 sm:py-12 md:py-16 scroll-mt-24">
         <div className="u-container u-container--1 u-container--pad">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-            {/* Left Sidebar: Table of Contents (Sticky on Desktop) */}
+            {/* Left Sidebar: Table of Contents & Part Index (Sticky on Desktop) */}
             <aside className="hidden lg:block lg:col-span-4 sticky top-28 space-y-5">
-              <div className="bg-white rounded-3xl p-5 border border-[#13271e]/10 shadow-xs space-y-3">
+              <div className="bg-white rounded-3xl p-5 border border-[#13271e]/10 shadow-xs space-y-4">
                 <div className="flex items-center justify-between pb-3 border-b border-[#13271e]/10">
                   <span className="font-mono text-xs uppercase tracking-widest text-[#e06425] font-semibold flex items-center gap-2">
                     <FileText className="w-4 h-4" />
@@ -192,31 +258,90 @@ export default function PrivacyPolicyClient() {
                   <span className="font-mono text-[11px] text-[#13271e]/50 font-medium">16 Sections</span>
                 </div>
 
-                <nav aria-label="Table of Contents" className="space-y-0.5 max-h-[calc(100vh-320px)] overflow-y-auto nav-scroller pr-1.5">
-                  {SECTIONS_META.map((sec) => {
-                    const isOpen = !!openSections[sec.id];
+                {/* 4 Paginated Parts Grouping */}
+                <div className="space-y-3">
+                  {PARTS.map((part) => {
+                    const isPartActive = currentPage === part.page;
                     return (
-                      <button
-                        key={sec.id}
-                        type="button"
-                        onClick={() => handleSelectSectionFromNav(sec.id)}
-                        className={`w-full text-left group flex items-center justify-between py-1.5 px-2.5 rounded-xl font-sans text-xs transition-all cursor-pointer border-0 ${
-                          isOpen
-                            ? "bg-[#fae9dc]/70 text-[#e06425] font-medium"
-                            : "text-[#13271e]/75 hover:text-[#13271e] hover:bg-[#13271e]/[0.03]"
+                      <div
+                        key={part.page}
+                        className={`rounded-2xl p-2.5 transition-all ${
+                          isPartActive
+                            ? "bg-[#f8faf8] border border-[#e06425]/30 shadow-2xs"
+                            : "border border-transparent hover:border-[#13271e]/8"
                         }`}
                       >
-                        <div className="flex items-center gap-2 truncate">
-                          <span className={`font-mono text-[10px] ${isOpen ? "text-[#e06425] font-bold" : "text-[#13271e]/40 font-semibold"}`}>
-                            {sec.num}
+                        <button
+                          type="button"
+                          onClick={() => handlePageChange(part.page)}
+                          className="w-full text-left flex items-center justify-between cursor-pointer border-0 bg-transparent mb-1.5"
+                        >
+                          <div className="flex items-center gap-2">
+                            <span
+                              className={`px-2 py-0.5 rounded-full font-mono text-[10px] uppercase font-bold tracking-wider ${
+                                isPartActive
+                                  ? "bg-[#e06425] text-white"
+                                  : "bg-[#13271e]/8 text-[#13271e]/70"
+                              }`}
+                            >
+                              {part.label}
+                            </span>
+                            <span className="font-sans text-xs font-semibold text-[#13271e] truncate">
+                              {part.title}
+                            </span>
+                          </div>
+                          <span className="font-mono text-[10px] text-[#13271e]/40">
+                            {part.range}
                           </span>
-                          <span className="truncate">{sec.title}</span>
+                        </button>
+
+                        <div className="space-y-0.5 pl-2 border-l-2 border-[#13271e]/10 ml-2">
+                          {SECTIONS_META.filter((sec) => sec.part === part.page).map((sec) => {
+                            const isOpen = !!openSections[sec.id];
+                            return (
+                              <button
+                                key={sec.id}
+                                type="button"
+                                onClick={() => handleSelectSectionFromNav(sec.id)}
+                                className={`w-full text-left group flex items-center justify-between py-1 px-2 rounded-lg font-sans text-[11px] transition-all cursor-pointer border-0 ${
+                                  isPartActive && isOpen
+                                    ? "bg-[#fae9dc]/70 text-[#e06425] font-medium"
+                                    : "text-[#13271e]/75 hover:text-[#13271e] hover:bg-[#13271e]/[0.03]"
+                                }`}
+                              >
+                                <div className="flex items-center gap-1.5 truncate">
+                                  <span className="font-mono text-[10px] text-[#13271e]/40 font-semibold">
+                                    {sec.num}
+                                  </span>
+                                  <span className="truncate">{sec.title}</span>
+                                </div>
+                                {isPartActive && isOpen && (
+                                  <span className="w-1.5 h-1.5 rounded-full bg-[#e06425] flex-shrink-0" />
+                                )}
+                              </button>
+                            );
+                          })}
                         </div>
-                        {isOpen && <span className="w-1.5 h-1.5 rounded-full bg-[#e06425] flex-shrink-0" />}
-                      </button>
+                      </div>
                     );
                   })}
-                </nav>
+                </div>
+
+                {/* View All Sections Toggle */}
+                <div className="pt-2 border-t border-[#13271e]/8">
+                  <button
+                    type="button"
+                    onClick={() => handlePageChange(currentPage === "all" ? 1 : "all")}
+                    className={`w-full py-2 px-3 rounded-xl font-mono text-xs font-medium flex items-center justify-center gap-2 transition-all cursor-pointer border ${
+                      currentPage === "all"
+                        ? "bg-[#13271e] text-white border-[#13271e]"
+                        : "bg-white text-[#13271e]/75 border-[#13271e]/15 hover:border-[#13271e]/30"
+                    }`}
+                  >
+                    <Bookmark className="w-3.5 h-3.5" />
+                    <span>{currentPage === "all" ? "Exit Continuous View" : "View All 16 Sections (Continuous)"}</span>
+                  </button>
+                </div>
               </div>
 
               {/* Quick Contact Desk Card */}
@@ -253,61 +378,104 @@ export default function PrivacyPolicyClient() {
               </div>
             </aside>
 
-            {/* Right Column: Interactive Non-Stretching Accordion System */}
-            <article className="lg:col-span-8 space-y-4">
-              {/* Interactive Toolbar: Filter Pills, Search Bar & Expand/Collapse Toggle */}
-              <div className="bg-white rounded-2xl p-4 sm:p-5 border border-[#13271e]/10 shadow-xs space-y-3">
+            {/* Right Column: Paginated Non-Stretching Content Flow */}
+            <article className="lg:col-span-8 space-y-5">
+              {/* Top Navigation & Pagination Control Bar */}
+              <div className="bg-white rounded-2xl p-4 sm:p-5 border border-[#13271e]/10 shadow-xs space-y-3.5">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                  {/* Category Filter Title / Search Bar */}
-                  <div className="relative flex-1 max-w-sm">
-                    <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-[#13271e]/40" />
-                    <input
-                      type="text"
-                      placeholder="Filter 16 sections (e.g., cookies, rights, data)..."
-                      value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
-                      className="w-full pl-9 pr-3 py-1.5 rounded-xl border border-[#13271e]/10 bg-[#f8faf8] text-xs font-sans text-[#13271e] placeholder:text-[#13271e]/40 focus:outline-none focus:border-[#e06425] transition-colors"
-                    />
+                  {/* Current Page / Part Banner */}
+                  <div>
+                    {activePartMeta ? (
+                      <div>
+                        <div className="flex items-center gap-2">
+                          <span className="px-2.5 py-0.5 rounded-full bg-[#e06425]/10 text-[#e06425] font-mono text-xs font-bold uppercase tracking-wider">
+                            {activePartMeta.label}
+                          </span>
+                          <span className="font-mono text-xs text-[#13271e]/50">
+                            {activePartMeta.range}
+                          </span>
+                        </div>
+                        <h2 className="font-sans text-base sm:text-lg font-medium text-[#13271e] tracking-tight mt-0.5">
+                          {activePartMeta.title}
+                        </h2>
+                      </div>
+                    ) : (
+                      <div>
+                        <span className="px-2.5 py-0.5 rounded-full bg-[#13271e] text-white font-mono text-xs font-bold uppercase tracking-wider">
+                          All 16 Sections
+                        </span>
+                        <h2 className="font-sans text-base sm:text-lg font-medium text-[#13271e] tracking-tight mt-0.5">
+                          Complete Statutory Policy
+                        </h2>
+                      </div>
+                    )}
                   </div>
 
                   {/* Expand / Collapse All Toggle Button */}
-                  <div className="flex items-center gap-2 self-end sm:self-auto">
+                  <div className="flex items-center gap-2 self-start sm:self-auto">
                     <button
                       type="button"
-                      onClick={areAllExpanded ? collapseAll : expandAll}
+                      onClick={areAllOnPageExpanded ? collapseAll : expandAll}
                       className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-sans text-xs font-medium text-[#13271e] bg-[#f0f4f1] hover:bg-[#e1e4de] transition-colors cursor-pointer border-0"
                     >
                       <SlidersHorizontal className="w-3.5 h-3.5 text-[#e06425]" />
-                      <span>{areAllExpanded ? "Collapse All (16)" : "Expand All (16)"}</span>
+                      <span>{areAllOnPageExpanded ? "Collapse View" : "Expand All"}</span>
                     </button>
                   </div>
                 </div>
 
-                {/* Category Pills */}
-                <div className="flex items-center gap-1.5 overflow-x-auto nav-scroller pt-1 pb-0.5">
-                  {CATEGORIES.map((cat) => {
-                    const isSelected = selectedCategory === cat.key;
-                    return (
-                      <button
-                        key={cat.key}
-                        type="button"
-                        onClick={() => setSelectedCategory(cat.key)}
-                        className={`whitespace-nowrap px-3 py-1 rounded-full font-mono text-[11px] font-medium transition-all cursor-pointer border-0 ${
-                          isSelected
-                            ? "bg-[#13271e] text-white shadow-xs"
-                            : "bg-[#f0f4f1] text-[#13271e]/75 hover:bg-[#e1e4de] hover:text-[#13271e]"
-                        }`}
-                      >
-                        <span>{cat.label}</span>
-                      </button>
-                    );
-                  })}
+                {/* Pagination Switcher Controls */}
+                <div className="pt-2 border-t border-[#13271e]/8 flex flex-wrap items-center justify-between gap-2.5">
+                  <div className="flex items-center gap-1.5">
+                    {PARTS.map((part) => {
+                      const isActive = currentPage === part.page;
+                      return (
+                        <button
+                          key={part.page}
+                          type="button"
+                          onClick={() => handlePageChange(part.page)}
+                          className={`px-3 py-1.5 rounded-xl font-mono text-xs font-semibold transition-all cursor-pointer border ${
+                            isActive
+                              ? "bg-[#e06425] text-white border-[#e06425] shadow-xs"
+                              : "bg-[#f8faf8] text-[#13271e]/75 border-[#13271e]/10 hover:border-[#13271e]/25 hover:text-[#13271e]"
+                          }`}
+                        >
+                          <span className="hidden sm:inline">{part.label}: </span>
+                          <span>{part.range.replace("Sections ", "")}</span>
+                        </button>
+                      );
+                    })}
+
+                    <button
+                      type="button"
+                      onClick={() => handlePageChange("all")}
+                      className={`px-3 py-1.5 rounded-xl font-mono text-xs font-medium transition-all cursor-pointer border ${
+                        currentPage === "all"
+                          ? "bg-[#13271e] text-white border-[#13271e] shadow-xs"
+                          : "bg-[#f8faf8] text-[#13271e]/60 border-[#13271e]/10 hover:text-[#13271e]"
+                      }`}
+                    >
+                      All (16)
+                    </button>
+                  </div>
+
+                  {/* Search Bar */}
+                  <div className="relative w-full sm:w-48">
+                    <Search className="w-3.5 h-3.5 absolute left-2.5 top-1/2 -translate-y-1/2 text-[#13271e]/40" />
+                    <input
+                      type="text"
+                      placeholder="Search policy..."
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      className="w-full pl-8 pr-2.5 py-1 rounded-xl border border-[#13271e]/10 bg-[#f8faf8] text-xs font-sans text-[#13271e] placeholder:text-[#13271e]/40 focus:outline-none focus:border-[#e06425] transition-colors"
+                    />
+                  </div>
                 </div>
               </div>
 
-              {/* 16 Collapsible Section Cards */}
-              <div className="space-y-3">
-                {filteredSections.map((sec) => {
+              {/* Paginated Sections Container (Exactly 4 per page, Zero Stretching) */}
+              <div className="space-y-3.5">
+                {displayedSections.map((sec) => {
                   const isOpen = !!openSections[sec.id];
                   return (
                     <div
@@ -316,7 +484,7 @@ export default function PrivacyPolicyClient() {
                       className={`scroll-mt-28 rounded-2xl border transition-all duration-200 overflow-hidden ${
                         isOpen
                           ? "bg-white border-[#e06425]/40 shadow-sm"
-                          : "bg-white/80 hover:bg-white border-[#13271e]/10 hover:border-[#13271e]/20"
+                          : "bg-white/85 hover:bg-white border-[#13271e]/10 hover:border-[#13271e]/20"
                       }`}
                     >
                       {/* Section Accordion Trigger Header */}
@@ -338,7 +506,7 @@ export default function PrivacyPolicyClient() {
                           </span>
                           <div className="min-w-0">
                             <span className="font-mono text-[10px] uppercase tracking-wider text-[#e06425] font-semibold block mb-0.5">
-                              {sec.categoryLabel}
+                              {sec.partLabel}
                             </span>
                             <h2 className="font-sans text-base sm:text-lg font-medium text-[#13271e] tracking-tight truncate">
                               {sec.title}
@@ -372,12 +540,68 @@ export default function PrivacyPolicyClient() {
                   );
                 })}
 
-                {filteredSections.length === 0 && (
+                {displayedSections.length === 0 && (
                   <div className="p-8 text-center bg-white rounded-2xl border border-[#13271e]/10 text-[#13271e]/60 text-sm">
-                    No sections matched your filter query. Click &quot;All 16 Sections&quot; to reset.
+                    No sections matched your search query. Clear search to view sections.
                   </div>
                 )}
               </div>
+
+              {/* Bottom Pagination Stepper (Prev / Next & Numbered Page Pills) */}
+              {currentPage !== "all" && (
+                <div className="p-4 sm:p-5 rounded-2xl bg-white border border-[#13271e]/10 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4 mt-6">
+                  {/* Prev Button */}
+                  <button
+                    type="button"
+                    disabled={currentPage === 1}
+                    onClick={() => handlePageChange(currentPage - 1)}
+                    className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl font-sans text-xs font-medium transition-all border cursor-pointer ${
+                      currentPage === 1
+                        ? "opacity-40 cursor-not-allowed bg-transparent border-[#13271e]/10 text-[#13271e]/50"
+                        : "bg-[#f8faf8] hover:bg-[#fae9dc] hover:text-[#e06425] border-[#13271e]/10 text-[#13271e]"
+                    }`}
+                  >
+                    <ChevronLeft className="w-4 h-4" />
+                    <span>Previous Part</span>
+                  </button>
+
+                  {/* Centered Numbered Page Pills */}
+                  <div className="flex items-center gap-1.5">
+                    {PARTS.map((part) => {
+                      const isActive = currentPage === part.page;
+                      return (
+                        <button
+                          key={part.page}
+                          type="button"
+                          onClick={() => handlePageChange(part.page)}
+                          className={`w-8 h-8 rounded-xl font-mono text-xs font-semibold flex items-center justify-center transition-all cursor-pointer border ${
+                            isActive
+                              ? "bg-[#e06425] text-white border-[#e06425] shadow-xs"
+                              : "bg-[#f8faf8] text-[#13271e]/75 border-[#13271e]/10 hover:border-[#e06425] hover:text-[#e06425]"
+                          }`}
+                        >
+                          {part.page}
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  {/* Next Button */}
+                  <button
+                    type="button"
+                    disabled={currentPage === 4}
+                    onClick={() => handlePageChange(currentPage + 1)}
+                    className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl font-sans text-xs font-medium transition-all border cursor-pointer ${
+                      currentPage === 4
+                        ? "opacity-40 cursor-not-allowed bg-transparent border-[#13271e]/10 text-[#13271e]/50"
+                        : "bg-[#f8faf8] hover:bg-[#fae9dc] hover:text-[#e06425] border-[#13271e]/10 text-[#13271e]"
+                    }`}
+                  >
+                    <span>Next Part</span>
+                    <ChevronRight className="w-4 h-4" />
+                  </button>
+                </div>
+              )}
             </article>
           </div>
         </div>
