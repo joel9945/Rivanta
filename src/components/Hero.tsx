@@ -172,10 +172,7 @@ export default function Hero({ onExploreVentures }: HeroProps = {}) {
         {/* Content Inner Container */}
         <div className="relative z-10 w-full h-full flex flex-col justify-between p-5 sm:p-8 md:p-12 lg:p-16 max-w-[1524px] mx-auto">
           {/* Top Spacing to clear floating header */}
-          <div className="pt-16 sm:pt-20 md:pt-24 flex items-center justify-between animate-hero-1">
-            <span className="font-mono text-[10px] tracking-wider uppercase text-white/60 bg-black/40 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
-              Conceptual Industrial Visualization
-            </span>
+          <div className="pt-16 sm:pt-20 md:pt-24 flex items-center justify-end animate-hero-1">
             {/* Pillar Counter */}
             <div className="hidden sm:flex items-center gap-3 font-mono text-xs uppercase tracking-widest text-white/70">
               <span className="text-white font-medium text-sm">
