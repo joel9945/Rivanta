@@ -178,6 +178,14 @@ export default async function Footer() {
                 </li>
                 <li>
                   <a
+                    href="mailto:support@rivantagreen.com"
+                    className="hover:text-[#ea6e2d] transition-colors"
+                  >
+                    support@rivantagreen.com
+                  </a>
+                </li>
+                <li>
+                  <a
                     href="https://linkedin.com"
                     target="_blank"
                     rel="noreferrer"
@@ -255,13 +263,24 @@ export default async function Footer() {
               </div>
               <div>
                 <span className="text-white/50 font-mono text-[11px] block">
-                  Official Email:
+                  Corporate Inquiries:
                 </span>
                 <a
                   href="mailto:info@rivantagreen.com"
                   className="text-white hover:text-[#f9a65c] transition-colors font-medium text-sm"
                 >
                   info@rivantagreen.com
+                </a>
+              </div>
+              <div>
+                <span className="text-white/50 font-mono text-[11px] block">
+                  Partner Support:
+                </span>
+                <a
+                  href="mailto:support@rivantagreen.com"
+                  className="text-white hover:text-[#f9a65c] transition-colors font-medium text-sm"
+                >
+                  support@rivantagreen.com
                 </a>
               </div>
             </div>

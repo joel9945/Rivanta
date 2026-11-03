@@ -608,9 +608,15 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
               <a href="tel:+919893025375" className="hover:text-[#e06425] transition-colors font-medium">
                 +91 98930 25375
               </a>
-              <a href="mailto:info@rivantagreen.com" className="hover:text-[#e06425] transition-colors text-white/50">
-                info@rivantagreen.com
-              </a>
+              <div className="flex items-center gap-2 text-white/50 text-[11px]">
+                <a href="mailto:info@rivantagreen.com" className="hover:text-[#e06425] transition-colors">
+                  info@rivantagreen.com
+                </a>
+                <span>•</span>
+                <a href="mailto:support@rivantagreen.com" className="hover:text-[#e06425] transition-colors">
+                  support@rivantagreen.com
+                </a>
+              </div>
             </div>
           </div>
         </div>

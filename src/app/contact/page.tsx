@@ -39,7 +39,7 @@ const OFFICES = [
     ],
     phone: "+91 98930 25375",
     phoneTel: "+919893025375",
-    email: "info@rivantagreen.com",
+    email: "support@rivantagreen.com",
     website: "www.rivantagreen.com",
     webUrl: "https://www.rivantagreen.com",
     isPrimary: false,
@@ -48,25 +48,16 @@ const OFFICES = [
 
 const DEPARTMENTS = [
   {
-    role: "General Corporate Desk & Main Line",
+    role: "Corporate Inquiries & Commercial Desk",
     email: "info@rivantagreen.com",
     phone: "+91 98930 25375",
-    focus: "Official corporate correspondence, executive offices, general inquiries, and media relations.",
+    focus: "Official corporate correspondence, executive offices, commercial off-take, strategic industrial partnerships, and media relations.",
   },
   {
-    role: "Commercial Off-Take Desk",
-    email: "commercial@rivantagreen.com",
-    focus: "Biogenic silica commercial off-take, material specification alignment, and technical inquiries for industrial users.",
-  },
-  {
-    role: "Feedstock Sourcing & Logistics",
-    email: "sourcing@rivantagreen.com",
-    focus: "Biomass procurement partnerships, regional milling network logistics, and agricultural organization collaboration.",
-  },
-  {
-    role: "Corporate Strategy & Project Planning",
-    email: "info@rivantagreen.com",
-    focus: "Strategic industrial partnerships, institutional collaboration, and project infrastructure planning.",
+    role: "Operations & Partner Support Desk",
+    email: "support@rivantagreen.com",
+    phone: "+91 98930 25375",
+    focus: "Feedstock sourcing coordination, partner operations, technical documentation assistance, and operational inquiries.",
   },
 ];
 
@@ -110,7 +101,7 @@ export default function ContactPage() {
 
       {/* Infinite Industrial Ticker */}
       <MarqueeText
-        phrase="HEAD OFFICE: KASTURBA NAGAR, BHOPAL — ADDRESS: ARERA COLONY, BHOPAL — PHONE: +91 98930 25375 — EMAIL: INFO@RIVANTAGREEN.COM — "
+        phrase="REGISTERED OFFICE: ARERA COLONY, BHOPAL — CORPORATE OFFICE: KASTURBA NAGAR, BHOPAL — PHONE: +91 98930 25375 — INFO: INFO@RIVANTAGREEN.COM — SUPPORT: SUPPORT@RIVANTAGREEN.COM — "
         theme="light"
       />
 
@@ -139,7 +130,7 @@ export default function ContactPage() {
               </div>
             </a>
 
-            {/* Email Card */}
+            {/* Corporate Email Card */}
             <a
               href="mailto:info@rivantagreen.com"
               className="p-6 rounded-2xl bg-[#f6f8f6] hover:bg-[#d6e8dc] border border-[#13271e]/10 transition-all duration-300 group flex items-start gap-4"
@@ -149,13 +140,34 @@ export default function ContactPage() {
               </div>
               <div>
                 <span className="font-mono text-[11px] uppercase tracking-wider text-[#13271e]/60 block mb-1">
-                  Official Email
+                  Corporate Inquiries
                 </span>
                 <span className="font-sans font-medium text-base text-[#13271e] group-hover:text-[#2d7a54] transition-colors block truncate max-w-[200px]">
                   info@rivantagreen.com
                 </span>
                 <span className="font-mono text-[11px] text-[#13271e]/50 mt-1 block">
-                  Prompt Attention
+                  General & Commercial
+                </span>
+              </div>
+            </a>
+
+            {/* Operations & Support Email Card */}
+            <a
+              href="mailto:support@rivantagreen.com"
+              className="p-6 rounded-2xl bg-[#f6f8f6] hover:bg-[#d6e8dc] border border-[#13271e]/10 transition-all duration-300 group flex items-start gap-4"
+            >
+              <div className="w-11 h-11 rounded-xl bg-[#2d7a54]/10 text-[#2d7a54] group-hover:bg-[#2d7a54] group-hover:text-white flex items-center justify-center shrink-0 transition-colors">
+                <Mail className="w-5 h-5" />
+              </div>
+              <div>
+                <span className="font-mono text-[11px] uppercase tracking-wider text-[#13271e]/60 block mb-1">
+                  Partner Support
+                </span>
+                <span className="font-sans font-medium text-base text-[#13271e] group-hover:text-[#2d7a54] transition-colors block truncate max-w-[200px]">
+                  support@rivantagreen.com
+                </span>
+                <span className="font-mono text-[11px] text-[#13271e]/50 mt-1 block">
+                  Operations & Sourcing
                 </span>
               </div>
             </a>
@@ -174,24 +186,6 @@ export default function ContactPage() {
                 </span>
                 <span className="font-mono text-[11px] text-[#13271e]/50 mt-1 block">
                   Monday through Saturday
-                </span>
-              </div>
-            </div>
-
-            {/* Location Card */}
-            <div className="p-6 rounded-2xl bg-[#f6f8f6] border border-[#13271e]/10 flex items-start gap-4">
-              <div className="w-11 h-11 rounded-xl bg-[#e06425]/10 text-[#e06425] flex items-center justify-center shrink-0">
-                <MapPin className="w-5 h-5" />
-              </div>
-              <div>
-                <span className="font-mono text-[11px] uppercase tracking-wider text-[#13271e]/60 block mb-1">
-                  City Location
-                </span>
-                <span className="font-sans font-medium text-base text-[#13271e] block">
-                  Bhopal, MP
-                </span>
-                <span className="font-mono text-[11px] text-[#13271e]/50 mt-1 block">
-                  Madhya Pradesh, India
                 </span>
               </div>
             </div>

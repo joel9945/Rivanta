@@ -148,14 +148,24 @@ const structuredData = {
           },
         },
       ],
-      contactPoint: {
-        "@type": "ContactPoint",
-        contactType: "corporate communications",
-        telephone: "+91 98930 25375",
-        email: "info@rivantagreen.com",
-        areaServed: "IN",
-        availableLanguage: ["English", "Hindi"],
-      },
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          contactType: "corporate communications",
+          telephone: "+91 98930 25375",
+          email: "info@rivantagreen.com",
+          areaServed: "IN",
+          availableLanguage: ["English", "Hindi"],
+        },
+        {
+          "@type": "ContactPoint",
+          contactType: "customer support",
+          telephone: "+91 98930 25375",
+          email: "support@rivantagreen.com",
+          areaServed: "IN",
+          availableLanguage: ["English", "Hindi"],
+        },
+      ],
       knowsAbout: [
         "Biogenic Silica",
         "Bio-Silica",
