@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   description:
     "Embedding resource efficiency, responsible water management, emissions control and circular material utilization into industrial development.",
   alternates: {
-    canonical: "https://rivantagreen.com/sustainability",
+    canonical: "https://www.rivantagreen.com/sustainability",
   },
   openGraph: {
     title: "Sustainability & Environmental Stewardship | Rivanta Green",
     description:
       "Embedding resource efficiency, responsible water management, emissions control and circular material utilization into industrial development.",
-    url: "https://rivantagreen.com/sustainability",
+    url: "https://www.rivantagreen.com/sustainability",
     images: [
       {
         url: "/images/og-rivanta.jpg",
@@ -35,33 +35,33 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "WebPage",
-      "@id": "https://rivantagreen.com/sustainability#webpage",
-      url: "https://rivantagreen.com/sustainability",
+      "@id": "https://www.rivantagreen.com/sustainability#webpage",
+      url: "https://www.rivantagreen.com/sustainability",
       name: "Sustainability & Environmental Stewardship — Circular Industrial Development",
       description:
         "Responsible resource utilization, crop-residue air quality mitigation, co-product recovery, and disciplined environmental governance.",
       isPartOf: {
-        "@id": "https://rivantagreen.com/#website",
+        "@id": "https://www.rivantagreen.com/#website",
       },
       about: {
-        "@id": "https://rivantagreen.com/#organization",
+        "@id": "https://www.rivantagreen.com/#organization",
       },
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://rivantagreen.com/sustainability#breadcrumb",
+      "@id": "https://www.rivantagreen.com/sustainability#breadcrumb",
       itemListElement: [
         {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://rivantagreen.com",
+          item: "https://www.rivantagreen.com",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Sustainability",
-          item: "https://rivantagreen.com/sustainability",
+          item: "https://www.rivantagreen.com/sustainability",
         },
       ],
     },

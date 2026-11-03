@@ -13,13 +13,13 @@ export const metadata: Metadata = {
   description:
     "Rivanta Green is developing integrated industrial initiatives across bio-silica, compressed biogas, sustainable aviation fuel and biomass valorisation in India.",
   alternates: {
-    canonical: "https://rivantagreen.com",
+    canonical: "https://www.rivantagreen.com",
   },
   openGraph: {
     title: "Rivanta Green | Sustainable Industrial Innovation",
     description:
       "Rivanta Green is developing integrated industrial initiatives across bio-silica, compressed biogas, sustainable aviation fuel and biomass valorisation in India.",
-    url: "https://rivantagreen.com",
+    url: "https://www.rivantagreen.com",
     siteName: "Rivanta Green",
     images: [
       {

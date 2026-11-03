@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   description:
     "Exploring sustainable aviation fuel opportunities through technology evaluation and prospective industrial collaboration.",
   alternates: {
-    canonical: "https://rivantagreen.com/saf",
+    canonical: "https://www.rivantagreen.com/saf",
   },
   openGraph: {
     title: "Sustainable Aviation Fuel (SAF) Development | Rivanta Green",
     description:
       "Exploring sustainable aviation fuel opportunities through technology evaluation and prospective industrial collaboration.",
-    url: "https://rivantagreen.com/saf",
+    url: "https://www.rivantagreen.com/saf",
     images: [
       {
         url: "/images/og-rivanta.jpg",
@@ -35,33 +35,33 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "WebPage",
-      "@id": "https://rivantagreen.com/saf#webpage",
-      url: "https://rivantagreen.com/saf",
+      "@id": "https://www.rivantagreen.com/saf#webpage",
+      url: "https://www.rivantagreen.com/saf",
       name: "Sustainable Aviation Fuel (SAF) — Strategic Pathways & Aviation Decarbonization",
       description:
         "Evaluating drop-in sustainable aviation fuel development pathways and industrial partnerships to support long-term decarbonization.",
       isPartOf: {
-        "@id": "https://rivantagreen.com/#website",
+        "@id": "https://www.rivantagreen.com/#website",
       },
       about: {
-        "@id": "https://rivantagreen.com/#organization",
+        "@id": "https://www.rivantagreen.com/#organization",
       },
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://rivantagreen.com/saf#breadcrumb",
+      "@id": "https://www.rivantagreen.com/saf#breadcrumb",
       itemListElement: [
         {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://rivantagreen.com",
+          item: "https://www.rivantagreen.com",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Sustainable Aviation Fuels",
-          item: "https://rivantagreen.com/saf",
+          item: "https://www.rivantagreen.com/saf",
         },
       ],
     },

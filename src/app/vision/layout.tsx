@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   description:
     "Strengthening India's industrial capabilities by connecting domestic resources with advanced manufacturing and long-term economic opportunity.",
   alternates: {
-    canonical: "https://rivantagreen.com/vision",
+    canonical: "https://www.rivantagreen.com/vision",
   },
   openGraph: {
     title: "Corporate Vision & National Development | Rivanta Green",
     description:
       "Strengthening India's industrial capabilities by connecting domestic resources with advanced manufacturing and long-term economic opportunity.",
-    url: "https://rivantagreen.com/vision",
+    url: "https://www.rivantagreen.com/vision",
     images: [
       {
         url: "/images/og-rivanta.jpg",
@@ -35,33 +35,33 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "WebPage",
-      "@id": "https://rivantagreen.com/vision#webpage",
-      url: "https://rivantagreen.com/vision",
+      "@id": "https://www.rivantagreen.com/vision#webpage",
+      url: "https://www.rivantagreen.com/vision",
       name: "Corporate Vision & Long-Term Ambition — Building Value for India",
       description:
         "Long-term industrial strategy aligned with India's economic priorities, domestic manufacturing capabilities, and resource-efficient industrialization.",
       isPartOf: {
-        "@id": "https://rivantagreen.com/#website",
+        "@id": "https://www.rivantagreen.com/#website",
       },
       about: {
-        "@id": "https://rivantagreen.com/#organization",
+        "@id": "https://www.rivantagreen.com/#organization",
       },
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://rivantagreen.com/vision#breadcrumb",
+      "@id": "https://www.rivantagreen.com/vision#breadcrumb",
       itemListElement: [
         {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://rivantagreen.com",
+          item: "https://www.rivantagreen.com",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Corporate Vision",
-          item: "https://rivantagreen.com/vision",
+          item: "https://www.rivantagreen.com/vision",
         },
       ],
     },

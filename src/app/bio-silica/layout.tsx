@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   description:
     "Advancing domestic capabilities in biogenic silica and high-value industrial materials for emerging manufacturing applications.",
   alternates: {
-    canonical: "https://rivantagreen.com/bio-silica",
+    canonical: "https://www.rivantagreen.com/bio-silica",
   },
   openGraph: {
     title: "Bio-Silica & Advanced Materials | Rivanta Green",
     description:
       "Advancing domestic capabilities in biogenic silica and high-value industrial materials for emerging manufacturing applications.",
-    url: "https://rivantagreen.com/bio-silica",
+    url: "https://www.rivantagreen.com/bio-silica",
     images: [
       {
         url: "/images/og-rivanta.jpg",
@@ -35,33 +35,33 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "WebPage",
-      "@id": "https://rivantagreen.com/bio-silica#webpage",
-      url: "https://rivantagreen.com/bio-silica",
+      "@id": "https://www.rivantagreen.com/bio-silica#webpage",
+      url: "https://www.rivantagreen.com/bio-silica",
       name: "Bio-Silica & Advanced Materials — Biogenic Silica & Industrial Silicon Precursors",
       description:
         "Developing biogenic silica (SiO2) from agricultural residues and evaluating green silicon precursor pathways for domestic manufacturing.",
       isPartOf: {
-        "@id": "https://rivantagreen.com/#website",
+        "@id": "https://www.rivantagreen.com/#website",
       },
       about: {
-        "@id": "https://rivantagreen.com/#organization",
+        "@id": "https://www.rivantagreen.com/#organization",
       },
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://rivantagreen.com/bio-silica#breadcrumb",
+      "@id": "https://www.rivantagreen.com/bio-silica#breadcrumb",
       itemListElement: [
         {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://rivantagreen.com",
+          item: "https://www.rivantagreen.com",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Bio-Silica & Silicon",
-          item: "https://rivantagreen.com/bio-silica",
+          item: "https://www.rivantagreen.com/bio-silica",
         },
       ],
     },

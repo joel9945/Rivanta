@@ -21,7 +21,7 @@ const robotoMono = Roboto_Mono({
   weight: ["400", "500"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://rivantagreen.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.rivantagreen.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

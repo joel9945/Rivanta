@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   description:
     "Developing renewable gas infrastructure to support cleaner mobility, industrial energy requirements and India's energy diversification.",
   alternates: {
-    canonical: "https://rivantagreen.com/cbg",
+    canonical: "https://www.rivantagreen.com/cbg",
   },
   openGraph: {
     title: "Compressed Biogas (CBG) Infrastructure | Rivanta Green",
     description:
       "Developing renewable gas infrastructure to support cleaner mobility, industrial energy requirements and India's energy diversification.",
-    url: "https://rivantagreen.com/cbg",
+    url: "https://www.rivantagreen.com/cbg",
     images: [
       {
         url: "/images/og-rivanta.jpg",
@@ -35,33 +35,33 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "WebPage",
-      "@id": "https://rivantagreen.com/cbg#webpage",
-      url: "https://rivantagreen.com/cbg",
+      "@id": "https://www.rivantagreen.com/cbg#webpage",
+      url: "https://www.rivantagreen.com/cbg",
       name: "Compressed Biogas (CBG) — Clean Energy from Regional Agricultural Residues",
       description:
         "Developing commercial Compressed Biogas infrastructure utilizing anaerobic digestion of agricultural residues to support domestic energy diversification.",
       isPartOf: {
-        "@id": "https://rivantagreen.com/#website",
+        "@id": "https://www.rivantagreen.com/#website",
       },
       about: {
-        "@id": "https://rivantagreen.com/#organization",
+        "@id": "https://www.rivantagreen.com/#organization",
       },
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://rivantagreen.com/cbg#breadcrumb",
+      "@id": "https://www.rivantagreen.com/cbg#breadcrumb",
       itemListElement: [
         {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://rivantagreen.com",
+          item: "https://www.rivantagreen.com",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Compressed Biogas (CBG)",
-          item: "https://rivantagreen.com/cbg",
+          item: "https://www.rivantagreen.com/cbg",
         },
       ],
     },

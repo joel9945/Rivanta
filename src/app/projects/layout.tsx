@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     "Advancing a portfolio of proposed industrial facilities through feasibility, engineering, infrastructure planning and phased development.",
   alternates: {
-    canonical: "https://rivantagreen.com/projects",
+    canonical: "https://www.rivantagreen.com/projects",
   },
   openGraph: {
     title: "Projects & Industrial Infrastructure | Rivanta Green",
     description:
       "Advancing a portfolio of proposed industrial facilities through feasibility, engineering, infrastructure planning and phased development.",
-    url: "https://rivantagreen.com/projects",
+    url: "https://www.rivantagreen.com/projects",
     images: [
       {
         url: "/images/og-rivanta.jpg",
@@ -36,33 +36,33 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "WebPage",
-      "@id": "https://rivantagreen.com/projects#webpage",
-      url: "https://rivantagreen.com/projects",
+      "@id": "https://www.rivantagreen.com/projects#webpage",
+      url: "https://www.rivantagreen.com/projects",
       name: "Projects & Infrastructure — Integrated Industrial Manufacturing Campuses",
       description:
         "Planning and developing integrated manufacturing facilities, captive cogeneration utilities, and regional infrastructure.",
       isPartOf: {
-        "@id": "https://rivantagreen.com/#website",
+        "@id": "https://www.rivantagreen.com/#website",
       },
       about: {
-        "@id": "https://rivantagreen.com/#organization",
+        "@id": "https://www.rivantagreen.com/#organization",
       },
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://rivantagreen.com/projects#breadcrumb",
+      "@id": "https://www.rivantagreen.com/projects#breadcrumb",
       itemListElement: [
         {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://rivantagreen.com",
+          item: "https://www.rivantagreen.com",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Projects & Infrastructure",
-          item: "https://rivantagreen.com/projects",
+          item: "https://www.rivantagreen.com/projects",
         },
       ],
     },

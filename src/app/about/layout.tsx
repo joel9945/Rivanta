@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   description:
     "Rivanta Green is an Indian industrial enterprise developing a diversified portfolio of strategic manufacturing and clean-energy initiatives.",
   alternates: {
-    canonical: "https://rivantagreen.com/about",
+    canonical: "https://www.rivantagreen.com/about",
   },
   openGraph: {
     title: "About Us — Corporate Identity & Industrial Ambition | Rivanta Green",
     description:
       "Rivanta Green is an Indian industrial enterprise developing a diversified portfolio of strategic manufacturing and clean-energy initiatives.",
-    url: "https://rivantagreen.com/about",
+    url: "https://www.rivantagreen.com/about",
     images: [
       {
         url: "/images/og-rivanta.jpg",
@@ -35,33 +35,33 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "AboutPage",
-      "@id": "https://rivantagreen.com/about#webpage",
-      url: "https://rivantagreen.com/about",
+      "@id": "https://www.rivantagreen.com/about#webpage",
+      url: "https://www.rivantagreen.com/about",
       name: "About Rivanta Green — Corporate Identity & Industrial Ambition",
       description:
         "Corporate identity, governance, and long-term industrial ambition of Rivanta Green Innovative Venture Private Limited.",
       isPartOf: {
-        "@id": "https://rivantagreen.com/#website",
+        "@id": "https://www.rivantagreen.com/#website",
       },
       about: {
-        "@id": "https://rivantagreen.com/#organization",
+        "@id": "https://www.rivantagreen.com/#organization",
       },
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://rivantagreen.com/about#breadcrumb",
+      "@id": "https://www.rivantagreen.com/about#breadcrumb",
       itemListElement: [
         {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://rivantagreen.com",
+          item: "https://www.rivantagreen.com",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "About Us",
-          item: "https://rivantagreen.com/about",
+          item: "https://www.rivantagreen.com/about",
         },
       ],
     },

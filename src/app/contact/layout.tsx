@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   description:
     "Connect with Rivanta Green for strategic partnerships, technology collaboration, feedstock sourcing and prospective commercial opportunities.",
   alternates: {
-    canonical: "https://rivantagreen.com/contact",
+    canonical: "https://www.rivantagreen.com/contact",
   },
   openGraph: {
     title: "Contact Corporate Desk | Rivanta Green",
     description:
       "Connect with Rivanta Green for strategic partnerships, technology collaboration, feedstock sourcing and prospective commercial opportunities.",
-    url: "https://rivantagreen.com/contact",
+    url: "https://www.rivantagreen.com/contact",
     images: [
       {
         url: "/images/og-rivanta.jpg",
@@ -35,21 +35,21 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "ContactPage",
-      "@id": "https://rivantagreen.com/contact#webpage",
-      url: "https://rivantagreen.com/contact",
+      "@id": "https://www.rivantagreen.com/contact#webpage",
+      url: "https://www.rivantagreen.com/contact",
       name: "Contact Corporate Desk — Industrial Inquiries & Commercial Partnerships",
       description:
         "Connect with Rivanta Green for industrial partnerships, feedstock aggregation, commercial off-take discussions, and corporate inquiries.",
       isPartOf: {
-        "@id": "https://rivantagreen.com/#website",
+        "@id": "https://www.rivantagreen.com/#website",
       },
       about: {
-        "@id": "https://rivantagreen.com/#organization",
+        "@id": "https://www.rivantagreen.com/#organization",
       },
     },
     {
       "@type": "FAQPage",
-      "@id": "https://rivantagreen.com/contact#faq",
+      "@id": "https://www.rivantagreen.com/contact#faq",
       mainEntity: [
         {
           "@type": "Question",
@@ -87,19 +87,19 @@ const jsonLd = {
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://rivantagreen.com/contact#breadcrumb",
+      "@id": "https://www.rivantagreen.com/contact#breadcrumb",
       itemListElement: [
         {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://rivantagreen.com",
+          item: "https://www.rivantagreen.com",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Contact Us",
-          item: "https://rivantagreen.com/contact",
+          item: "https://www.rivantagreen.com/contact",
         },
       ],
     },
