@@ -264,12 +264,6 @@ export default async function Footer() {
                   info@rivantagreen.com
                 </a>
               </div>
-              <div>
-                <span className="text-white/50 font-mono text-[11px] block">
-                  Portal:
-                </span>
-                <span className="text-white/90">www.rivantagreen.com</span>
-              </div>
             </div>
           </div>
         </div>

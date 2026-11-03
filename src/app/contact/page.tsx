@@ -12,7 +12,7 @@ import {
   MapPin,
   Phone,
   Mail,
-  Globe,
+  Clock,
 } from "lucide-react";
 
 const OFFICES = [
@@ -160,28 +160,23 @@ export default function ContactPage() {
               </div>
             </a>
 
-            {/* Web Card */}
-            <a
-              href="https://www.rivantagreen.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-6 rounded-2xl bg-[#f6f8f6] hover:bg-[#fae9dc] border border-[#13271e]/10 transition-all duration-300 group flex items-start gap-4"
-            >
-              <div className="w-11 h-11 rounded-xl bg-[#132c21]/10 text-[#132c21] group-hover:bg-[#132c21] group-hover:text-white flex items-center justify-center shrink-0 transition-colors">
-                <Globe className="w-5 h-5" />
+            {/* Desk Hours Card */}
+            <div className="p-6 rounded-2xl bg-[#f6f8f6] border border-[#13271e]/10 flex items-start gap-4">
+              <div className="w-11 h-11 rounded-xl bg-[#132c21]/10 text-[#132c21] flex items-center justify-center shrink-0">
+                <Clock className="w-5 h-5" />
               </div>
               <div>
                 <span className="font-mono text-[11px] uppercase tracking-wider text-[#13271e]/60 block mb-1">
-                  Official Portal
+                  Desk Hours
                 </span>
-                <span className="font-sans font-medium text-base text-[#13271e] group-hover:text-[#e06425] transition-colors block">
-                  www.rivantagreen.com
+                <span className="font-sans font-medium text-base text-[#13271e] block">
+                  09:30 – 18:30 IST
                 </span>
                 <span className="font-mono text-[11px] text-[#13271e]/50 mt-1 block">
-                  Official Corporate Domain
+                  Monday through Saturday
                 </span>
               </div>
-            </a>
+            </div>
 
             {/* Location Card */}
             <div className="p-6 rounded-2xl bg-[#f6f8f6] border border-[#13271e]/10 flex items-start gap-4">
