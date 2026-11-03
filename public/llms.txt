@@ -1,28 +1,29 @@
-# Rivanta Green Innovative Venture Private Limited
+# Rivanta Green
 
-> Building industrial value from India's resources through advanced materials, renewable fuels and integrated manufacturing.
+> Emerging Indian industrial enterprise developing strategic capabilities across advanced materials, renewable fuels, and circular manufacturing.
 
-## Corporate Profile
-- **Entity**: Rivanta Green Innovative Venture Private Limited
-- **Short Name**: Rivanta Green
-- **Website**: https://www.rivantagreen.com
-- **Head & Registered Office**: B-29, 3rd Floor, Kasturba Nagar, Next to Lake City Hospital, Chetak Bridge, Bhopal, Madhya Pradesh, India
-- **Address**: E4/271 Arera Colony, Huzur, Bhopal, Madhya Pradesh 462016, India
-- **Corporate Desk**: info@rivantagreen.com | +91 98930 25375
+Rivanta Green is an Indian industrial enterprise focused on converting underutilized agricultural residues—primarily rice husk and straw—into high-value industrial materials and clean energy vectors. The enterprise is structured around five strategic priorities: agricultural residue utilization, reducing crop-residue open burning, building domestic industrial manufacturing capabilities, reducing import dependence for strategic inputs, and advancing circular manufacturing systems.
 
-## Core Industrial Development Verticals
-- **Advanced Materials & Biogenic Silica**: Developing high-purity amorphous biogenic silica (SiO2) derived from rice husk ash and evaluating downstream green silicon precursor pathways for rubber compounding, low-carbon concrete, and advanced industrial materials.
-  Link: https://www.rivantagreen.com/bio-silica
-- **Compressed Biogas (CBG)**: Developing commercial anaerobic digestion and biomethane enrichment facilities to convert surplus agricultural residues into Compressed Biogas for clean transport and industrial off-take in alignment with India's SATAT initiative.
-  Link: https://www.rivantagreen.com/cbg
-- **Sustainable Aviation Fuel (SAF)**: Evaluating technology pathways, synthesis routes, and industrial partnerships for drop-in synthetic aviation fuels from regional bio-feedstocks.
-  Link: https://www.rivantagreen.com/saf
-- **Agricultural Residue Aggregation**: Establishing structured multi-year aggregation networks with regional millers and Farmer Producer Organizations (FPOs) for rice husk and agricultural straw.
-  Link: https://www.rivantagreen.com/feedstock
-- **Industrial Infrastructure & Utilities**: Planning integrated manufacturing facilities with captive biomass-based cogeneration and energy-efficient utilities.
-  Link: https://www.rivantagreen.com/projects
-- **Environmental Stewardship & Governance**: Addressing crop-residue open burning, improving regional air quality, and advancing circular co-product recovery.
-  Link: https://www.rivantagreen.com/sustainability
-- **Corporate Vision & Strategy**: Aligning industrial development with national priorities: domestic manufacturing capability, import substitution, and rural economic value creation.
-  Link: https://www.rivantagreen.com/vision
+## Corporate Identity & Registry
 
+- **Legal Entity**: Rivanta Green Innovative Venture Private Limited *(also listed in public company records as Rivanta Green Innovative Ventures Private Limited)*
+- **Corporate Identity Number (CIN)**: U32900MP2026PTC087753 *(Incorporated October 19, 2026)*
+- **Registered Office**: E4/271 Arera Colony, Huzur, Bhopal, Madhya Pradesh 462016, India
+- **Corporate & Operations Office**: B-29, 3rd Floor, Kasturba Nagar, Next to Lake City Hospital, Chetak Bridge, Bhopal, Madhya Pradesh 462023, India
+- **Official Website**: https://www.rivantagreen.com
+- **Direct Corporate Desk**: info@rivantagreen.com | +91 98930 25375
+
+## Industrial Development Initiatives
+
+- [Bio-Silica & Advanced Materials](https://www.rivantagreen.com/bio-silica): Development of biogenic silica (SiO2) derived from agricultural residues; evaluating target high-purity (up to 6N / 99.9999% target) green silicon precursor pathways to strengthen domestic advanced manufacturing supply chains.
+- [Compressed Biogas (CBG)](https://www.rivantagreen.com/cbg): Development of commercial anaerobic digestion and biomethane enrichment facilities to convert regional crop residues into renewable gas for mobility and industrial energy.
+- [Sustainable Aviation Fuel (SAF)](https://www.rivantagreen.com/saf): Technology evaluation and preliminary assessment of sustainable aviation fuel pathways and synthesis routes from agricultural residues.
+- [Feedstock & Biomass Aggregation](https://www.rivantagreen.com/feedstock): Development of structured regional procurement, aggregation, and logistics networks with millers and Farmer Producer Organizations (FPOs).
+- [Industrial Infrastructure](https://www.rivantagreen.com/projects): Planning and engineering of proposed integrated manufacturing campuses with planned captive biomass cogeneration and efficient utility systems.
+
+## Strategy, Governance & Corporate Responsibility
+
+- [Environmental Stewardship](https://www.rivantagreen.com/sustainability): Environmental strategy offering commercial alternatives to open stubble burning, targeting reduced air pollution, circular co-product recovery, and responsible water management.
+- [Corporate Vision & Purpose](https://www.rivantagreen.com/vision): Long-term alignment with national priorities: domestic manufacturing capability, clean energy transition, import substitution, and regional economic contribution.
+- [About Us & Leadership](https://www.rivantagreen.com/about): Corporate identity, governance foundations, and industrial development framework.
+- [Contact Corporate Desk](https://www.rivantagreen.com/contact): Direct corporate communication channels for commercial off-take, industrial partnerships, technology collaboration, and institutional inquiries.

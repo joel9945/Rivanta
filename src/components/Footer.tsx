@@ -207,10 +207,10 @@ export default async function Footer() {
 
         {/* Registered Office & Coordinates Bar */}
         <div className="py-10 border-b border-white/10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-xs text-white/70">
-          {/* Head & Registered Office */}
+          {/* Corporate & Operations Office */}
           <div className="space-y-2">
             <div className="font-mono uppercase tracking-wider text-[#f9a65c] font-semibold text-[11px]">
-              Head & Registered Office
+              Corporate & Operations Office
             </div>
             <div className="font-sans font-medium text-white text-sm">
               Rivanta Green Innovative Venture Private Limited
@@ -220,14 +220,14 @@ export default async function Footer() {
               <br />
               Next to Lake City Hospital, Chetak Bridge,
               <br />
-              Bhopal, Madhya Pradesh, India.
+              Bhopal, Madhya Pradesh, 462023 - India.
             </p>
           </div>
 
-          {/* Address */}
+          {/* Registered Office (MCA) */}
           <div className="space-y-2">
             <div className="font-mono uppercase tracking-wider text-[#f9a65c] font-semibold text-[11px]">
-              Address
+              Registered Office
             </div>
             <p className="font-light leading-relaxed text-white/75 pt-1">
               E4/271 Arera Colony, Huzur,

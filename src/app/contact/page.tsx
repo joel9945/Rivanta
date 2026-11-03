@@ -17,12 +17,12 @@ import {
 
 const OFFICES = [
   {
-    badge: "Head Office & Registered Office",
+    badge: "Corporate & Operations Office",
     entity: "Rivanta Green Innovative Venture Private Limited",
     lines: [
       "B-29, 3rd Floor, Kasturba Nagar,",
       "Next to Lake City Hospital, Chetak Bridge,",
-      "Bhopal, Madhya Pradesh, India.",
+      "Bhopal, Madhya Pradesh, 462023 - India.",
     ],
     phone: "+91 98930 25375",
     phoneTel: "+919893025375",
@@ -32,7 +32,7 @@ const OFFICES = [
     isPrimary: true,
   },
   {
-    badge: "Address",
+    badge: "Registered Office (MCA)",
     lines: [
       "E4/271 Arera Colony, Huzur,",
       "Bhopal, Madhya Pradesh, 462016 - India.",

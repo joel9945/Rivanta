@@ -103,7 +103,13 @@ const structuredData = {
       "@id": `${siteUrl}/#organization`,
       name: "Rivanta Green Innovative Venture Private Limited",
       legalName: "Rivanta Green Innovative Venture Private Limited",
-      alternateName: ["Rivanta Green", "Rivanta"],
+      alternateName: [
+        "Rivanta Green",
+        "Rivanta",
+        "Rivanta Green Innovative Ventures Private Limited",
+        "Rivanta Green Innovative Ventures",
+      ],
+      identifier: "U32900MP2026PTC087753",
       url: siteUrl,
       logo: {
         "@type": "ImageObject",
@@ -121,13 +127,27 @@ const structuredData = {
       },
       address: {
         "@type": "PostalAddress",
-        streetAddress:
-          "B-29, 3rd Floor, Kasturba Nagar, Next to Lake City Hospital, Chetak Bridge",
+        streetAddress: "E4/271 Arera Colony, Huzur",
         addressLocality: "Bhopal",
         addressRegion: "Madhya Pradesh",
-        postalCode: "462023",
+        postalCode: "462016",
         addressCountry: "IN",
       },
+      location: [
+        {
+          "@type": "Place",
+          name: "Corporate & Operations Office",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress:
+              "B-29, 3rd Floor, Kasturba Nagar, Next to Lake City Hospital, Chetak Bridge",
+            addressLocality: "Bhopal",
+            addressRegion: "Madhya Pradesh",
+            postalCode: "462023",
+            addressCountry: "IN",
+          },
+        },
+      ],
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "corporate communications",
