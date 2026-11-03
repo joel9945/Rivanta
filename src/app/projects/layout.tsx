@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Projects & Infrastructure — Integrated Industrial Manufacturing Campuses",
+  title:
+    "Projects & Infrastructure — Integrated Industrial Manufacturing Campuses",
   description:
     "Advancing a portfolio of proposed industrial facilities through feasibility, engineering, infrastructure planning and phased development.",
   alternates: {
@@ -83,4 +84,3 @@ export default function ProjectsLayout({
     </>
   );
 }
-
