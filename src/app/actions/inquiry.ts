@@ -21,7 +21,7 @@ const ALLOWED_SECTORS = [
   "Sustainable Aviation Fuels (SAF)",
   "Feedstock Sourcing & Logistics",
   "Renewable Energy & Infrastructure",
-  "Capital & Joint Venture Structuring",
+  "Strategic Partnerships & Development",
   "General Corporate Engagement",
 ];
 
@@ -91,6 +91,6 @@ export async function submitInquiry(data: InquiryInput): Promise<InquiryResult> 
 
   return {
     success: true,
-    message: "Thank you for connecting with Rivanta Green. Our technical team has received your parameters.",
+    message: "Thank you for connecting with Rivanta Green. Our team has received your inquiry.",
   };
 }

@@ -31,13 +31,13 @@ export default function SubpageHero({
   highlightedText,
   description,
   imageSrc,
-  imageAlt = "Rivanta Green Industrial Infrastructure",
+  imageAlt = "Rivanta Green Industrial Infrastructure Concept",
   breadcrumbs,
   primaryCtaText = "Explore specifications",
   primaryCtaHref = "#details",
   secondaryCtaText,
   secondaryCtaHref,
-  telemetryTag = "Operational Target • ISO 14064 Aligned",
+  telemetryTag = "Industrial Development • Environmental Planning",
 }: SubpageHeroProps) {
   const canvasRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);

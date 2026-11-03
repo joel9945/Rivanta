@@ -25,7 +25,7 @@ const VERTICALS: BusinessVertical[] = [
     status: "Under Development",
     statusType: "active",
     description: "Developing domestic capabilities in biogenic silica and industrial materials, with long-term opportunities in high-value domestic supply chains.",
-    focusAreas: ["Bio-Silica applications", "Industrial silica materials", "Domestic supply chains", "Future silicon-related manufacturing"],
+    focusAreas: ["Biogenic silica applications", "Industrial silica materials", "Domestic supply chains", "Downstream materials evaluation"],
     href: "/bio-silica",
     bg: "#fae9dc",
     textColor: "#13271e",

@@ -93,7 +93,6 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
 
 
   const isBusinessesActive =
-    pathname?.startsWith("/green-silicon") ||
     pathname?.startsWith("/bio-silica") ||
     pathname?.startsWith("/cbg") ||
     pathname?.startsWith("/saf") ||
@@ -101,8 +100,7 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
 
   const isCompanyActive =
     pathname === "/about" ||
-    pathname === "/investors" ||
-    pathname === "/newsroom";
+    pathname === "/vision";
 
   const isTransparent = !scrolled;
 
@@ -217,13 +215,13 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
                         href="/bio-silica"
                         onClick={() => setActiveDropdown(null)}
                         className={`group flex items-center justify-between px-3.5 py-2.5 rounded-xl transition-all duration-150 ${
-                          pathname === "/bio-silica" || pathname === "/green-silicon"
+                          pathname === "/bio-silica"
                             ? "bg-[#fae9dc]/70 text-[#e06425]"
                             : "text-[#13271e] hover:bg-[#13271e]/[0.04] hover:text-[#e06425]"
                         }`}
                       >
                         <span className="font-sans text-[13px] font-medium tracking-tight">
-                          Advanced Materials
+                          Bio-Silica & Silicon
                         </span>
                         <ArrowUpRight className="w-3.5 h-3.5 opacity-30 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all text-[#e06425]" />
                       </Link>
@@ -301,12 +299,12 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
                 Projects
               </Link>
 
-              {/* 5. Investors (Dedicated Direct Link) */}
+              {/* 5. Vision (Dedicated Direct Link) */}
               <Link
-                href="/investors"
-                className={getNavLinkClass(pathname === "/investors")}
+                href="/vision"
+                className={getNavLinkClass(pathname === "/vision")}
               >
-                Investors
+                Vision
               </Link>
 
               {/* 6. Company Dropdown Console */}
@@ -360,31 +358,16 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
                       </Link>
 
                       <Link
-                        href="/newsroom"
+                        href="/vision"
                         onClick={() => setActiveDropdown(null)}
                         className={`group flex items-center justify-between px-3.5 py-2.5 rounded-xl transition-all duration-150 ${
-                          pathname === "/newsroom"
+                          pathname === "/vision"
                             ? "bg-[#d6e8dc]/70 text-[#2d7a54]"
                             : "text-[#13271e] hover:bg-[#13271e]/[0.04] hover:text-[#e06425]"
                         }`}
                       >
                         <span className="font-sans text-[13px] font-medium tracking-tight">
-                          Media & Insights
-                        </span>
-                        <ArrowUpRight className="w-3.5 h-3.5 opacity-30 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all text-[#e06425]" />
-                      </Link>
-
-                      <Link
-                        href="/investors"
-                        onClick={() => setActiveDropdown(null)}
-                        className={`group flex items-center justify-between px-3.5 py-2.5 rounded-xl transition-all duration-150 ${
-                          pathname === "/investors"
-                            ? "bg-[#d6e8dc]/70 text-[#2d7a54]"
-                            : "text-[#13271e] hover:bg-[#13271e]/[0.04] hover:text-[#e06425]"
-                        }`}
-                      >
-                        <span className="font-sans text-[13px] font-medium tracking-tight">
-                          Investors & Capital
+                          Vision & Purpose
                         </span>
                         <ArrowUpRight className="w-3.5 h-3.5 opacity-30 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all text-[#e06425]" />
                       </Link>
@@ -517,7 +500,7 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
                   onClick={() => setMobileMenuOpen(false)}
                   className="font-sans text-xl font-light hover:text-[#f9a65c] transition-colors py-1"
                 >
-                  Advanced Materials
+                  Bio-Silica & Silicon
                 </Link>
                 <Link
                   href="/cbg"
@@ -564,11 +547,11 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
                   Industrial Infrastructure & Projects
                 </Link>
                 <Link
-                  href="/investors"
+                  href="/vision"
                   onClick={() => setMobileMenuOpen(false)}
                   className="font-sans text-lg font-light text-white/90 hover:text-[#f9a65c] transition-colors"
                 >
-                  Investors & Capital
+                  Vision & Purpose
                 </Link>
               </div>
             </div>
@@ -585,13 +568,6 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
                   className="font-sans text-base font-light text-white/80 hover:text-[#f9a65c] transition-colors"
                 >
                   About Us
-                </Link>
-                <Link
-                  href="/newsroom"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="font-sans text-base font-light text-white/80 hover:text-[#f9a65c] transition-colors"
-                >
-                  Media & Insights
                 </Link>
                 <Link
                   href="/contact"

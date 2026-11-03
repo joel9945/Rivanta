@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
-import { ArrowRight, CheckCircle2, Loader2, AlertCircle } from "lucide-react";
 import { submitInquiry, type InquiryResult } from "@/app/actions/inquiry";
+import { AlertCircle, ArrowRight, CheckCircle2, Loader2 } from "lucide-react";
+import React, { useState } from "react";
 
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -37,7 +37,8 @@ export default function ContactForm() {
     } catch {
       setResult({
         success: false,
-        message: "A network error occurred while submitting your inquiry. Please try again.",
+        message:
+          "A network error occurred while submitting your inquiry. Please try again.",
       });
     } finally {
       setIsSubmitting(false);
@@ -51,10 +52,10 @@ export default function ContactForm() {
           <CheckCircle2 className="w-10 h-10" />
         </div>
         <h3 className="font-sans font-medium text-2xl text-[#13271e]">
-          Inquiry Successfully Transmitted
+          Inquiry Received
         </h3>
         <p className="font-sans text-sm text-[#13271e]/70 max-w-md">
-          {result.message} A member of our technical and commercial team will contact you directly within 24 business hours.
+          {result.message} Our team will review your inquiry and follow up directly.
         </p>
         <button
           type="button"
@@ -132,7 +133,9 @@ export default function ContactForm() {
             type="email"
             placeholder="name@company.com"
             value={formData.email}
-            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, email: e.target.value })
+            }
             className={`w-full px-4 py-2.5 rounded-xl bg-[#f6f8f6] border text-sm focus:outline-none transition-colors ${
               result?.errors?.email
                 ? "border-red-400 focus:border-red-500"
@@ -185,7 +188,9 @@ export default function ContactForm() {
           <select
             id="contact-sector"
             value={formData.sector}
-            onChange={(e) => setFormData({ ...formData, sector: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, sector: e.target.value })
+            }
             className="w-full px-4 py-2.5 rounded-xl bg-[#f6f8f6] border border-[#13271e]/10 text-sm focus:outline-none focus:border-[#e06425] transition-colors cursor-pointer"
           >
             <option>Advanced Materials & Biogenic Silica</option>
@@ -193,7 +198,7 @@ export default function ContactForm() {
             <option>Sustainable Aviation Fuels (SAF)</option>
             <option>Feedstock Sourcing & Logistics</option>
             <option>Renewable Energy & Infrastructure</option>
-            <option>Capital & Joint Venture Structuring</option>
+            <option>Strategic Partnerships & Development</option>
             <option>General Corporate Engagement</option>
           </select>
         </div>
@@ -204,14 +209,16 @@ export default function ContactForm() {
           htmlFor="contact-message"
           className="block font-mono text-[11px] uppercase tracking-wider text-[#13271e]/70 mb-1"
         >
-          Inquiry Parameters & Project Scope
+          Inquiry Details
         </label>
         <textarea
           id="contact-message"
           rows={4}
-          placeholder="Outline target product specifications, estimated off-take volume, delivery timeline, or partnership parameters..."
+          placeholder="Please describe your organization, requirements, or areas of potential partnership..."
           value={formData.message}
-          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+          onChange={(e) =>
+            setFormData({ ...formData, message: e.target.value })
+          }
           className="w-full px-4 py-2.5 rounded-xl bg-[#f6f8f6] border border-[#13271e]/10 text-sm focus:outline-none focus:border-[#e06425] transition-colors resize-none"
         ></textarea>
       </div>
@@ -224,11 +231,11 @@ export default function ContactForm() {
         {isSubmitting ? (
           <>
             <Loader2 className="w-4 h-4 animate-spin" />
-            <span>Transmitting Inquiry...</span>
+            <span>Submitting Inquiry...</span>
           </>
         ) : (
           <>
-            <span>Submit Formal Business Inquiry</span>
+            <span>Submit Business Inquiry</span>
             <ArrowRight className="w-4 h-4" />
           </>
         )}

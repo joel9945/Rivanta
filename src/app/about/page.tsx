@@ -45,39 +45,39 @@ const STRATEGIC_VALUES = [
   },
   {
     index: "03.",
-    title: "Auditable Governance",
-    badge: "Institutional Integrity",
+    title: "Corporate Accountability",
+    badge: "Institutional Governance",
     description:
-      "Upholding transparent corporate governance, rigorous regulatory compliance, and internationally recognized lifecycle environmental accounting benchmarks.",
+      "Operating with disciplined corporate governance, statutory compliance planning, and transparent frameworks for resource accounting and operational reporting.",
     bg: "#132c21",
     textColor: "#ffffff",
     accent: "#ea6e2d",
     icon: ShieldCheck,
-    stat: "Standardized Governance Frameworks",
+    stat: "Disciplined Governance Standards",
   },
 ];
 
 const DEVELOPMENT_MILESTONES = [
   {
-    stage: "Current Activities",
-    status: "Operational Sourcing",
-    title: "Feedstock Sourcing & Supply Chain Organization",
+    stage: "Stage 01",
+    status: "Project Planning",
+    title: "Feedstock Sourcing & Supply Chain Modeling",
     detail:
-      "Establishing structured agricultural residue collection agreements, regional milling partnerships, and preliminary quality verification networks.",
+      "Developing regional agricultural residue collection frameworks, engaging prospective milling partners, and evaluating material handling logistics.",
   },
   {
-    stage: "Under Development",
-    status: "Engineering & Clearances",
-    title: "Facility Planning & Front-End Engineering",
+    stage: "Stage 02",
+    status: "In Preparation",
+    title: "Facility Planning & Detailed Engineering",
     detail:
-      "Conducting comprehensive process engineering, statutory clearance applications, and utility integration planning for proposed manufacturing hubs.",
+      "Advancing process engineering packages, preparing statutory clearance documentation, and assessing utility integration requirements for planned hubs.",
   },
   {
-    stage: "Strategic Evaluation",
-    status: "Long-Term Pipeline",
-    title: "Downstream Materials & Advanced Fuel Partnerships",
+    stage: "Stage 03",
+    status: "Strategic Evaluation",
+    title: "Commercial Structuring & Downstream Pathways",
     detail:
-      "Evaluating commercial off-take partnerships, technology qualification protocols, and downstream advanced materials manufacturing opportunities.",
+      "Evaluating prospective industrial off-take arrangements, technology licensor qualification, and downstream biogenic material applications.",
   },
 ];
 
@@ -380,9 +380,9 @@ export default function AboutPage() {
                       </div>
                       <CheckCircle2 className="w-5 h-5 text-[#2d7a54]" />
                     </div>
-                    <h4 className="font-sans font-medium text-lg mb-1">
+                    <h3 className="font-sans font-medium text-lg mb-1">
                       {m.title}
-                    </h4>
+                    </h3>
                     <p
                       className={`font-sans text-xs sm:text-sm font-light leading-relaxed ${
                         activeMilestone === idx

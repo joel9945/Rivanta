@@ -32,21 +32,21 @@ const PILLARS: readonly PillarItem[] = [
     description:
       "Rivanta Green Innovative Venture Private Limited is developing an integrated portfolio across renewable energy, advanced materials, sustainable fuels, and resource-efficient manufacturing.",
     image: "/images/hero-facility.png",
-    alt: "Rivanta Green Industrial Development Facility",
+    alt: "Rivanta Green Industrial Development Facility Concept",
   },
   {
     index: "02",
     tag: "Domestic Manufacturing",
-    title: "Advanced Materials",
-    badge: "Biogenic Materials",
-    line1: "Engineering Advanced Materials",
-    line2Prefix: "For ",
-    line2Highlight: "Domestic Industry.",
+    title: "Bio-Silica & Silicon",
+    badge: "Silicon & Biogenic Materials",
+    line1: "Engineering Bio-Silica &",
+    line2Prefix: "Green ",
+    line2Highlight: "Silicon.",
     fontSizeClass: "text-4xl sm:text-6xl md:text-7xl lg:text-[5.25rem] xl:text-[5.75rem]",
     description:
-      "Developing high-purity biogenic silica and evaluating downstream advanced materials to strengthen domestic industrial supply chains from agricultural resources.",
+      "Developing high-purity biogenic silica and evaluating downstream green silicon materials to strengthen domestic manufacturing and clean technology supply chains.",
     image: "/images/green-silicon-refinery.jpg",
-    alt: "Rivanta Advanced Materials Refining Platform",
+    alt: "Rivanta Biogenic Silica & Green Silicon Development Concept",
   },
   {
     index: "03",
@@ -60,7 +60,7 @@ const PILLARS: readonly PillarItem[] = [
     description:
       "Developing commercial anaerobic digestion and biomethane enrichment facilities to convert agricultural residues into clean Compressed Biogas for transportation and industrial grids.",
     image: "/images/biogas-plant-golden-hour.png",
-    alt: "Rivanta Biogas Industrial Processing Architecture",
+    alt: "Rivanta Biogas Industrial Processing Concept",
   },
   {
     index: "04",

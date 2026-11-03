@@ -152,10 +152,10 @@ export default function CorporateFoundations() {
             </div>
             <div>
               <h4 className="font-sans text-base font-semibold text-[#13271e] tracking-tight mb-1">
-                Auditable Governance
+                Environmental Planning & Accountability
               </h4>
               <p className="font-sans text-xs sm:text-sm text-[#13271e]/75 font-light leading-relaxed">
-                Institutional transparency with lifecycle carbon accounting structured for independent third-party verification under ISO 14064 benchmarks.
+                Our project planning incorporates environmental benchmarks, resource efficiency standards, and systems for future operating performance monitoring.
               </p>
             </div>
           </div>

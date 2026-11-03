@@ -67,28 +67,28 @@ const DEPARTMENTS = [
     focus: "Biomass procurement partnerships, regional milling network logistics, and agricultural organization collaboration.",
   },
   {
-    role: "Capital & Project Finance",
-    email: "investors@rivantagreen.com",
-    focus: "Industrial infrastructure equity, financial institution collaboration, and joint venture project structures.",
+    role: "Corporate Strategy & Project Planning",
+    email: "info@rivantagreen.com",
+    focus: "Strategic industrial partnerships, institutional collaboration, and project infrastructure planning.",
   },
 ];
 
 const FAQS = [
   {
-    q: "How can industrial partners request material samples of Biogenic Silica?",
-    a: "Qualified manufacturing, rubber compounding, concrete, and coatings procurement teams can request technical specifications and material evaluation samples. Submit your inquiry selecting 'Advanced Materials & Biogenic Silica' along with your application requirements.",
+    q: "How can industrial partners inquire about Biogenic Silica?",
+    a: "Industrial procurement and technical teams in rubber compounding, construction materials, and specialty coatings can request material specification summaries and discuss technical feasibility. Submit your inquiry selecting 'Advanced Materials & Biogenic Silica' along with application requirements.",
   },
   {
     q: "What commercial structures are used for Compressed Biogas (CBG) off-take?",
-    a: "We structure long-term commercial supply agreements with City Gas Distribution (CGD) companies and industrial off-takers, delivered via pipeline interconnection or mobile cascade storage.",
+    a: "Commercial off-take discussions for planned facilities are structured around long-term agreements with City Gas Distribution (CGD) entities and industrial consumers, with delivery evaluated via regional pipeline interconnection or mobile cascade logistics.",
   },
   {
     q: "How can regional millers and Farmer Producer Organizations (FPOs) partner with Rivanta?",
-    a: "We establish multi-year biomass procurement agreements offering structured pricing, organized regional collection, and transparent testing to generate dependable secondary revenue for agricultural communities.",
+    a: "We develop multi-year biomass aggregation frameworks offering structured pricing, organized regional collection, and verified moisture testing to support dependable secondary value for agricultural communities.",
   },
   {
-    q: "Are technical specifications and test documentation available for industrial clients?",
-    a: "Yes. Technical dossiers documenting material composition, specific surface area, and physical properties are shared with qualified partners following preliminary commercial alignment.",
+    q: "Are technical specifications available for industrial partners?",
+    a: "Preliminary material specification summaries and physical property profiles are shared with qualified industrial partners under formal technical review.",
   },
 ];
 
@@ -102,13 +102,13 @@ export default function ContactPage() {
         badge="Official Corporate Directory"
         title="Direct Channels For Commercial And"
         highlightedText="Corporate Engagement."
-        description="Connect with our registered corporate offices in Bhopal, Madhya Pradesh, or route your parameters directly to our specialized commercial, engineering, and capital desks."
+        description="Connect with our corporate offices in Bhopal, Madhya Pradesh, or submit an inquiry directly to our commercial and corporate desks."
         breadcrumbs={[{ label: "Contact & Corporate Desk" }]}
-        primaryCtaText="Submit Formal Inquiry"
+        primaryCtaText="Submit Business Inquiry"
         primaryCtaHref="#inquiry-form"
         secondaryCtaText="View Corporate Background"
         secondaryCtaHref="/about"
-        telemetryTag="Direct Phone • +91 98930 25375 • 24hr SLA"
+        telemetryTag="Direct Phone • +91 98930 25375 • Bhopal, India"
       />
 
       {/* Infinite Industrial Ticker */}
@@ -158,7 +158,7 @@ export default function ContactPage() {
                   info@rivantagreen.com
                 </span>
                 <span className="font-mono text-[11px] text-[#13271e]/50 mt-1 block">
-                  24-Hour Business SLA
+                  Prompt Attention
                 </span>
               </div>
             </a>
@@ -181,7 +181,7 @@ export default function ContactPage() {
                   www.rivantagreen.com
                 </span>
                 <span className="font-mono text-[11px] text-[#13271e]/50 mt-1 block">
-                  SSL Encrypted & Audited
+                  Official Corporate Domain
                 </span>
               </div>
             </a>
@@ -335,13 +335,13 @@ export default function ContactPage() {
                 <div className="mb-8">
                   <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-[#e06425] font-semibold mb-2">
                     <ShieldCheck className="w-4 h-4 text-[#2d7a54]" />
-                    <span>Direct Server-Validated Portal</span>
+                    <span>Business Inquiries</span>
                   </div>
                   <h3 className="font-sans font-medium text-2xl sm:text-3xl tracking-tight text-[#13271e]">
-                    Formal Business Inquiry
+                    Business Inquiry
                   </h3>
                   <p className="font-sans text-sm text-[#13271e]/70 font-light mt-1">
-                    Provide your organization details and partnership scope. Our technical desk responds within 24 business hours.
+                    Tell us about your organization and the scope of your inquiry. Our team will review and respond promptly.
                   </p>
                 </div>
 
@@ -378,9 +378,9 @@ export default function ContactPage() {
                     onClick={() => setOpenFaq(isOpen ? null : idx)}
                     className="w-full p-6 text-left flex items-center justify-between gap-4 cursor-pointer"
                   >
-                    <span className="font-sans font-medium text-lg text-[#13271e]">
+                    <h3 className="font-sans font-medium text-lg text-[#13271e]">
                       {faq.q}
-                    </span>
+                    </h3>
                     <div className="w-8 h-8 rounded-full bg-[#f6f8f6] flex items-center justify-center flex-shrink-0 text-[#13271e]">
                       {isOpen ? (
                         <ChevronUp className="w-4 h-4" />

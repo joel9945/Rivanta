@@ -113,10 +113,10 @@ export default function PartnerModal({ isOpen, onClose }: PartnerModalProps) {
               id="partner-modal-title"
               className="font-sans font-medium text-2xl text-[#13271e]"
             >
-              Inquiry Transmitted
+              Inquiry Received
             </h3>
             <p className="font-sans text-sm text-[#13271e]/70 max-w-md">
-              {result.message} Our technical partnerships desk will review your project parameters within 24 business hours.
+              {result.message} Our team will review your inquiry and follow up directly.
             </p>
             <button
               type="button"
@@ -143,7 +143,7 @@ export default function PartnerModal({ isOpen, onClose }: PartnerModalProps) {
                 Partner with Rivanta
               </h3>
               <p className="font-sans text-xs sm:text-sm text-[#13271e]/70 font-light mt-1">
-                Collaborate on multi-megawatt energy deployment, industrial decarbonization, or circular bio-ventures.
+                Connect regarding industrial collaboration, commercial off-take, or regional sourcing partnerships.
               </p>
             </div>
 
@@ -281,7 +281,7 @@ export default function PartnerModal({ isOpen, onClose }: PartnerModalProps) {
                   <option>Sustainable Aviation Fuels (SAF)</option>
                   <option>Feedstock Sourcing & Logistics</option>
                   <option>Renewable Energy & Infrastructure</option>
-                  <option>Capital & Joint Venture Structuring</option>
+                  <option>Strategic Partnerships & Development</option>
                   <option>General Corporate Engagement</option>
                 </select>
               </div>
@@ -314,7 +314,7 @@ export default function PartnerModal({ isOpen, onClose }: PartnerModalProps) {
               {isSubmitting ? (
                 <>
                   <Loader2 className="w-4 h-4 animate-spin" />
-                  <span>Transmitting...</span>
+                  <span>Submitting...</span>
                 </>
               ) : (
                 <>

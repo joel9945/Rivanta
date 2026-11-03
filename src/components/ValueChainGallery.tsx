@@ -46,9 +46,9 @@ const SLIDES: GallerySlide[] = [
   {
     id: "04",
     category: "04 / ADVANCED MATERIALS",
-    title: "Advanced biogenic materials.",
-    desc: "Developing domestic manufacturing capabilities in high-value biogenic silica, supporting resilient domestic industrial supply chains.",
-    short: "Advanced materials",
+    title: "High-purity bio-silica & silicon.",
+    desc: "Developing domestic capabilities in high-value biogenic silica and evaluating green silicon precursor pathways for domestic manufacturing.",
+    short: "Bio-silica & silicon",
     img: "/images/gallery/04-bio-silica.jpg",
     href: "/bio-silica",
   },
@@ -96,7 +96,7 @@ export default function ValueChainGallery() {
 
   return (
     <section
-      id="portfolio-showcase"
+      id="businesses"
       aria-label="Integrated Industrial Workstreams"
       className="w-full bg-[#f6f8f6] py-20 md:py-32 border-t border-[#13271e]/8"
     >
@@ -105,9 +105,9 @@ export default function ValueChainGallery() {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 mb-10 md:mb-14 border-b border-[#13271e]/10 gap-4">
           <div className="flex items-center gap-2.5">
             <span className="w-2.5 h-2.5 rounded-full bg-[#e06425]" />
-            <span className="font-mono text-xs uppercase tracking-[0.18em] text-[#13271e]/75 font-semibold">
+            <h2 className="font-mono text-xs uppercase tracking-[0.18em] text-[#13271e]/75 font-semibold">
               05 / INTEGRATED INDUSTRIAL WORKSTREAMS
-            </span>
+            </h2>
           </div>
           <span className="font-mono text-xs text-[#13271e]/50 uppercase tracking-wider">
             Portfolio Focus Areas

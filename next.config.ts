@@ -49,6 +49,30 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  async redirects() {
+    return [
+      {
+        source: "/green-silicon",
+        destination: "/bio-silica",
+        permanent: true,
+      },
+      {
+        source: "/investors",
+        destination: "/vision",
+        permanent: true,
+      },
+      {
+        source: "/newsroom",
+        destination: "/about",
+        permanent: true,
+      },
+      {
+        source: "/technology",
+        destination: "/projects",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

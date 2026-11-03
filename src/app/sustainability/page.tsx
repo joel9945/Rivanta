@@ -102,7 +102,7 @@ const FRAMEWORK_STAGES = [
     focus: "By-Product Valorization",
     description:
       "Developing commercial channels for refined biogenic materials and enriched organic soil nutrients, ensuring comprehensive material utilization across the full production cycle.",
-    deliverable: "Auditable material lifecycle accounting aligned with ISO standards",
+    deliverable: "Material lifecycle accounting structured for environmental transparency",
   },
 ];
 
@@ -123,12 +123,12 @@ export default function SustainabilityPage() {
         primaryCtaHref="#pillars"
         secondaryCtaText="Explore Feedstock Sourcing"
         secondaryCtaHref="/feedstock"
-        telemetryTag="Environmental Stewardship • ISO 14064 Benchmarks"
+        telemetryTag="Environmental Stewardship • Design Accountability"
       />
 
       {/* Infinite Industrial Ticker */}
       <MarqueeText
-        phrase="WATER STEWARDSHIP — EMISSIONS CONTROLS — WASTE-HEAT RECOVERY — CIRCULAR RESOURCE RECOVERY — ZERO LIQUID DISCHARGE DESIGN OBJECTIVES — AUDITABLE GOVERNANCE — "
+        phrase="WATER STEWARDSHIP — EMISSION CONTROLS — WASTE HEAT RECOVERY — CIRCULAR RESOURCE RECOVERY — ZERO LIQUID DISCHARGE OBJECTIVES — ENVIRONMENTAL ACCOUNTABILITY — "
         theme="light"
       />
 
@@ -145,7 +145,7 @@ export default function SustainabilityPage() {
               <span className="text-[#a0b0a5]">industrial operations.</span>
             </h2>
             <p className="font-sans text-base md:text-lg text-[#13271e]/80 font-light mt-4 leading-relaxed reveal-up delay-200">
-              We apply rigorous engineering standards across water conservation, air emissions management, energy efficiency, and circular by-product recovery across all planned facilities.
+              Our project planning incorporates environmental engineering priorities across water conservation, air emissions management, energy efficiency, and circular by-product utilization across all planned facilities.
             </p>
           </div>
 
@@ -231,7 +231,7 @@ export default function SustainabilityPage() {
             </div>
             <div className="font-mono text-xs uppercase tracking-wider text-[#13271e]/60 flex items-center gap-2 reveal-up delay-200">
               <Activity className="w-4 h-4 text-[#e06425]" />
-              <span>Standardized Accounting Frameworks</span>
+              <span>Environmental Planning Frameworks</span>
             </div>
           </div>
 
@@ -268,9 +268,9 @@ export default function SustainabilityPage() {
                       {stage.focus}
                     </span>
                   </div>
-                  <h4 className="font-sans font-medium text-base mb-1">
+                  <h3 className="font-sans font-medium text-base mb-1">
                     {stage.title}
-                  </h4>
+                  </h3>
                   <span
                     className={`font-mono text-xs block ${
                       isSelected ? "text-white/60" : "text-[#13271e]/60"
@@ -347,10 +347,10 @@ export default function SustainabilityPage() {
                 <span>Governance & Verification Framework</span>
               </div>
               <h3 className="font-sans font-normal text-2xl sm:text-3xl md:text-4xl">
-                Structured for auditable environmental accountability.
+                Planning for environmental accountability and transparency.
               </h3>
               <p className="font-sans text-sm md:text-base text-white/75 font-light leading-relaxed">
-                We distinguish project design models from operational performance. Lifecycle accounting, water reuse systems, and emissions controls are planned under standardized environmental benchmarks and structured for independent verification.
+                We maintain a clear distinction between project design targets and operational results. Water reuse systems, emissions controls, and resource accounting are planned in accordance with applicable statutory guidelines and established environmental engineering practices.
               </p>
             </div>
 

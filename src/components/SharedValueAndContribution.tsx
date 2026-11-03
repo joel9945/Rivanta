@@ -64,7 +64,7 @@ export default function SharedValueAndContribution() {
                   Agricultural Procurement
                 </h3>
                 <p className="font-sans text-sm text-[#13271e]/75 font-light leading-relaxed">
-                  Structured commercial agreements with regional farmer collectives and agricultural aggregators for seasonal biomass residues.
+                  Developing structured procurement frameworks with regional farmer collectives and agricultural aggregators for seasonal biomass residues.
                 </p>
               </div>
             </div>
@@ -78,7 +78,7 @@ export default function SharedValueAndContribution() {
                   Rural Supply Chains & Logistics
                 </h3>
                 <p className="font-sans text-sm text-[#13271e]/75 font-light leading-relaxed">
-                  Developing local transport, storage, and handling networks, creating recurring business for rural logistics operators.
+                  Planning local transport, storage, and handling networks to engage regional logistics operators and local enterprises.
                 </p>
               </div>
             </div>
@@ -92,7 +92,7 @@ export default function SharedValueAndContribution() {
                   Employment & Skills
                 </h3>
                 <p className="font-sans text-sm text-[#13271e]/75 font-light leading-relaxed">
-                  Generating direct and indirect manufacturing roles alongside technical skills development for local youth and engineering personnel.
+                  Aiming to generate direct and indirect manufacturing roles alongside technical skills development for local youth and engineering personnel.
                 </p>
               </div>
             </div>
@@ -225,3 +225,4 @@ export default function SharedValueAndContribution() {
     </>
   );
 }
+

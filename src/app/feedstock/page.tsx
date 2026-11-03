@@ -21,30 +21,30 @@ const SOURCING_PILLARS = [
   {
     title: "Regional Aggregation Hubs",
     description:
-      "Establishing centralized collection and pre-treatment hubs near high-density agricultural clusters, optimizing regional transport logistics and supply reliability.",
+      "Planning centralized collection and pre-treatment hubs near high-density agricultural clusters to optimize regional logistics and supply reliability.",
     icon: MapPin,
-    stat: "Regional Hub Sourcing",
+    stat: "Proposed Regional Hubs",
   },
   {
     title: "Enclosed Storage & Safety",
     description:
-      "Modern covered storage facilities equipped with moisture testing, ventilation controls, and dust suppression systems engineered for agricultural biomass.",
+      "Designing modern covered storage facilities equipped with moisture testing, ventilation controls, and dust suppression systems engineered for agricultural biomass.",
     icon: Warehouse,
-    stat: "Quality & Safety Standards",
+    stat: "Planned Storage Infrastructure",
   },
   {
     title: "Quality Verification Gates",
     description:
-      "Systematic inbound inspection protocols assessing moisture levels and material composition before processing to ensure continuous operational consistency.",
+      "Developing inbound inspection protocols to assess moisture levels and material composition before processing, supporting operational consistency.",
     icon: ShieldCheck,
-    stat: "Standardized Testing",
+    stat: "Standardized Quality Framework",
   },
   {
     title: "Farmer & Miller Partnerships",
     description:
-      "Direct long-term procurement frameworks with regional millers and Farmer Producer Organizations (FPOs), delivering stable secondary revenue to rural communities.",
+      "Structuring direct procurement frameworks with regional millers and Farmer Producer Organizations (FPOs) to provide commercial alternatives for crop residues.",
     icon: Sprout,
-    stat: "Community Value Creation",
+    stat: "Agrarian Value Creation",
   },
 ];
 
@@ -92,7 +92,7 @@ export default function FeedstockPage() {
         badge="Supply Chain & Circularity"
         title="Building Resilient Supply Chains For"
         highlightedText="Agricultural Biomass."
-        description="Our feedstock architecture combines regional aggregation logistics, standardized quality testing, and multi-year miller partnerships to secure continuous biomass supplies without competing with food security."
+        description="Our feedstock architecture is being developed around regional aggregation logistics, standardized quality testing, and collaborative miller partnerships to support continuous biomass supply without competing with food security."
         imageSrc="/images/feedstock-aggregation.jpg"
         breadcrumbs={[
           { label: "Our Businesses", href: "/#businesses" },

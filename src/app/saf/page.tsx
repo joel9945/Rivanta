@@ -42,7 +42,7 @@ const STRATEGIC_PATHWAYS = [
     index: "03.",
     title: "Technology Partnerships",
     badge: "Collaborative Model",
-    text: "Partnering with established global process licensors and aviation stakeholders to identify bankable, certifiable processing systems for domestic deployment.",
+    text: "Evaluating prospective collaboration with established technology licensors and aviation stakeholders to identify bankable, certifiable conversion pathways for domestic deployment.",
     bg: "#132c21",
     textColor: "#ffffff",
     accent: "#ea6e2d",
@@ -62,7 +62,7 @@ const EVALUATION_PARAMETERS = [
   {
     id: "feedstock-integrity",
     value: "Non-Food Biomass",
-    label: "Feedstock Ringfencing",
+    label: "Non-Food Biomass",
     detail: "Strictly utilizing non-food agricultural residues to prevent competition with food production or arable land.",
     trend: "Responsible Sourcing",
   },
@@ -93,13 +93,13 @@ const EVALUATION_STEPS = [
     step: "02",
     title: "Feedstock Security & Supply Integration",
     detail:
-      "Establishing long-term biomass aggregation agreements to ensure continuous, cost-effective feedstock availability without food-chain conflict.",
+      "Evaluating regional biomass aggregation logistics to support continuous feedstock availability without impacting food systems.",
   },
   {
     step: "03",
     title: "Commercial & Airline Collaboration",
     detail:
-      "Engaging domestic airlines, fuel distributors, and regulatory bodies to structure long-term off-take frameworks and blending roadmaps.",
+      "Initiating preliminary dialogue with domestic airlines, fuel distributors, and industry forums to understand off-take parameters and blending timelines.",
   },
 ];
 
@@ -119,7 +119,7 @@ export default function SafPage() {
           { label: "Our Businesses", href: "/#businesses" },
           { label: "Sustainable Aviation Fuels" },
         ]}
-        primaryCtaText="Engage on Aviation Dialogue"
+        primaryCtaText="Contact Commercial Desk"
         primaryCtaHref="/contact"
         secondaryCtaText="View Infrastructure Pipeline"
         secondaryCtaHref="/projects"

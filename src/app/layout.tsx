@@ -53,9 +53,6 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     title: "Rivanta Green — Building Industrial Value From India's Resources",
     description:
@@ -64,10 +61,10 @@ export const metadata: Metadata = {
     siteName: "Rivanta Green Innovative Venture",
     images: [
       {
-        url: "/images/hero-facility.png",
+        url: "/images/og-rivanta.jpg",
         width: 1200,
         height: 630,
-        alt: "Rivanta Green Industrial Development Facility",
+        alt: "Rivanta Green Industrial Development Facility Concept",
       },
     ],
     locale: "en_US",
@@ -78,7 +75,7 @@ export const metadata: Metadata = {
     title: "Rivanta Green — Building Industrial Value From India's Resources",
     description:
       "Emerging Indian industrial enterprise developing an integrated portfolio across renewable energy, advanced materials, sustainable fuels, and circular manufacturing.",
-    images: ["/images/hero-facility.png"],
+    images: ["/images/og-rivanta.jpg"],
   },
   icons: {
     icon: [
@@ -92,35 +89,67 @@ export const metadata: Metadata = {
 
 const structuredData = {
   "@context": "https://schema.org",
-  "@type": "Corporation",
-  name: "Rivanta Green Innovative Venture Private Limited",
-  alternateName: "Rivanta Green",
-  url: siteUrl,
-  logo: `${siteUrl}/logo/logo-icon.svg`,
-  description:
-    "Diversified Indian industrial enterprise developing an integrated portfolio across renewable energy, advanced materials, sustainable fuels, and resource-efficient manufacturing.",
-  email: "info@rivantagreen.com",
-  telephone: "+91 98930 25375",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "B-29, 3rd Floor, Kasturba Nagar, Next to Lake City Hospital, Chetak Bridge",
-    addressLocality: "Bhopal",
-    addressRegion: "Madhya Pradesh",
-    addressCountry: "IN",
-  },
-  parentOrganization: {
-    "@type": "Corporation",
-    name: "Golden Soil Ventures Private Limited",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "E4/271 Arera Colony, Huzur",
-      addressLocality: "Bhopal",
-      addressRegion: "Madhya Pradesh",
-      postalCode: "462016",
-      addressCountry: "IN",
+  "@graph": [
+    {
+      "@type": "Corporation",
+      "@id": `${siteUrl}/#organization`,
+      name: "Rivanta Green Innovative Venture Private Limited",
+      alternateName: "Rivanta Green",
+      url: siteUrl,
+      logo: `${siteUrl}/logo/logo-icon.svg`,
+      description:
+        "Emerging Indian industrial enterprise developing an integrated portfolio across renewable energy, advanced materials, sustainable fuels, and circular manufacturing.",
+      email: "info@rivantagreen.com",
+      telephone: "+91 98930 25375",
+      foundingLocation: {
+        "@type": "Place",
+        name: "Bhopal, Madhya Pradesh, India",
+      },
+      address: {
+        "@type": "PostalAddress",
+        streetAddress:
+          "B-29, 3rd Floor, Kasturba Nagar, Next to Lake City Hospital, Chetak Bridge",
+        addressLocality: "Bhopal",
+        addressRegion: "Madhya Pradesh",
+        addressCountry: "IN",
+      },
+      parentOrganization: {
+        "@type": "Corporation",
+        name: "Golden Soil Ventures Private Limited",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "E4/271 Arera Colony, Huzur",
+          addressLocality: "Bhopal",
+          addressRegion: "Madhya Pradesh",
+          postalCode: "462016",
+          addressCountry: "IN",
+        },
+      },
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "corporate communications",
+        telephone: "+91 98930 25375",
+        email: "info@rivantagreen.com",
+      },
+      knowsAbout: [
+        "Biogenic Silica",
+        "Compressed Biogas (CBG)",
+        "Sustainable Aviation Fuels",
+        "Agricultural Residue Valorization",
+        "Circular Industrial Materials",
+        "Industrial Infrastructure",
+      ],
     },
-  },
-  sameAs: ["https://linkedin.com", "https://x.com"],
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      url: siteUrl,
+      name: "Rivanta Green",
+      publisher: {
+        "@id": `${siteUrl}/#organization`,
+      },
+    },
+  ],
 };
 
 export default function RootLayout({

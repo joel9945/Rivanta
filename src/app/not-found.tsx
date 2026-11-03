@@ -32,11 +32,11 @@ export default function NotFound() {
         </div>
 
         <h1 className="font-sans font-light text-4xl sm:text-5xl md:text-6xl tracking-tight text-white leading-tight">
-          Resource not located on this node.
+          Page Not Found
         </h1>
 
         <p className="font-sans text-white/70 text-base font-light leading-relaxed">
-          The requested URL does not match any public venture dispatch or document. Please return to the Rivanta platform home.
+          The page you are looking for is unavailable or may have moved. Return to our homepage or contact our team for assistance.
         </p>
 
         <div className="pt-4">
@@ -45,7 +45,7 @@ export default function NotFound() {
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#e06425] hover:bg-[#ea6e2d] text-white font-mono text-xs uppercase tracking-wider transition-colors cursor-pointer"
           >
             <ArrowLeft className="w-4 h-4" />
-            <span>Return to Home</span>
+            <span>Return to Homepage</span>
           </Link>
         </div>
       </div>

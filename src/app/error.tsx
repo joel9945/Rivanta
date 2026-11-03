@@ -43,15 +43,15 @@ export default function ErrorBoundary({ error, reset }: ErrorProps) {
       <div className="max-w-xl mx-auto my-auto text-center space-y-6">
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-md font-mono text-xs uppercase tracking-wider text-white/80">
           <span className="w-2 h-2 rounded-full bg-[#ea6e2d]"></span>
-          <span>System Notice</span>
+          <span>Notice</span>
         </div>
 
         <h1 className="font-sans font-light text-4xl sm:text-5xl md:text-6xl tracking-tight text-white leading-tight">
-          An operational interruption occurred.
+          Something Went Wrong
         </h1>
 
         <p className="font-sans text-white/70 text-base font-light leading-relaxed">
-          The requested system node encountered an unexpected condition. Our technical desk has recorded the telemetry digest.
+          We could not load this page. Please try again or return to the homepage.
         </p>
 
         {error.digest && (
@@ -67,14 +67,14 @@ export default function ErrorBoundary({ error, reset }: ErrorProps) {
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#e06425] hover:bg-[#ea6e2d] text-white font-mono text-xs uppercase tracking-wider transition-colors cursor-pointer w-full sm:w-auto justify-center"
           >
             <RotateCcw className="w-4 h-4" />
-            <span>Retry Connection</span>
+            <span>Try Again</span>
           </button>
           <Link
             href="/"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-mono text-xs uppercase tracking-wider transition-colors cursor-pointer w-full sm:w-auto justify-center"
           >
             <Home className="w-4 h-4" />
-            <span>Return to Home</span>
+            <span>Return to Homepage</span>
           </Link>
         </div>
       </div>
