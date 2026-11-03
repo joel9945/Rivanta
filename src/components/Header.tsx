@@ -142,7 +142,7 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
             <Link
               href="/"
               className="group flex items-center transition-all duration-300 flex-shrink-0 select-none ml-1 sm:ml-2 md:ml-4"
-              aria-label="RIVANTA - Green Innovative Venture Private Limited"
+              aria-label="RIVANTA - Green Innovative Ventures Private Limited"
             >
               <div
                 className={`relative w-auto flex-shrink-0 flex items-center transition-all duration-300 ${
@@ -153,7 +153,7 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
               >
                 <Image
                   src={isTransparent ? "/logo/logo-brand-lockup-light.svg" : "/logo/logo-brand-lockup.svg"}
-                  alt="RIVANTA - Green Innovative Venture Private Limited"
+                  alt="RIVANTA - Green Innovative Ventures Private Limited"
                   width={320}
                   height={75}
                   className={`w-auto object-contain transition-all duration-300 group-hover:scale-[1.02] ${
@@ -469,7 +469,7 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
               <div className="relative h-13 sm:h-15 w-auto flex-shrink-0 flex items-center">
                 <Image
                   src="/logo/logo-brand-lockup-light.svg"
-                  alt="RIVANTA - Green Innovative Venture Private Limited"
+                  alt="RIVANTA - Green Innovative Ventures Private Limited"
                   width={340}
                   height={64}
                   className="h-12 sm:h-14 w-auto object-contain filter drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]"

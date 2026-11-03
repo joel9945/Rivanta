@@ -18,7 +18,7 @@ import {
 const OFFICES = [
   {
     badge: "Corporate & Operations Office",
-    entity: "Rivanta Green Innovative Venture Private Limited",
+    entity: "Rivanta Green Innovative Ventures Private Limited",
     lines: [
       "B-29, 3rd Floor, Kasturba Nagar,",
       "Next to Lake City Hospital, Chetak Bridge,",

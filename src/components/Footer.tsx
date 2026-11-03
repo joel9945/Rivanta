@@ -34,7 +34,7 @@ export default async function Footer() {
             </h3>
 
             <p className="font-sans text-sm md:text-base text-white/70 font-light max-w-md leading-relaxed">
-              Rivanta Green Innovative Venture Private Limited is an emerging
+              Rivanta Green Innovative Ventures Private Limited is an emerging
               Indian industrial enterprise developing an integrated portfolio
               across renewable energy, advanced materials, sustainable fuels,
               and circular manufacturing.
@@ -221,7 +221,7 @@ export default async function Footer() {
               Corporate & Operations Office
             </div>
             <div className="font-sans font-medium text-white text-sm">
-              Rivanta Green Innovative Venture Private Limited
+              Rivanta Green Innovative Ventures Private Limited
             </div>
             <p className="font-light leading-relaxed text-white/75">
               B-29, 3rd Floor, Kasturba Nagar,
@@ -293,7 +293,7 @@ export default async function Footer() {
             <Link href="/" className="inline-block group" aria-label="Rivanta Green Home">
               <Image
                 src="/logo/logo-brand-lockup-light.svg"
-                alt="Rivanta Green Innovative Venture Private Limited"
+                alt="Rivanta Green Innovative Ventures Private Limited"
                 width={360}
                 height={85}
                 className="h-11 md:h-13 w-auto object-contain filter drop-shadow-[0_2px_12px_rgba(242,178,36,0.3)] transition-transform duration-300 group-hover:scale-[1.02]"
@@ -303,7 +303,7 @@ export default async function Footer() {
 
           <div className="flex flex-col sm:flex-row items-center sm:items-end gap-2 sm:gap-6 text-center sm:text-right font-mono text-xs text-white/50">
             <div>
-              © {currentYear} Rivanta Green Innovative Venture Pvt. Ltd. All rights reserved.
+              © {currentYear} Rivanta Green Innovative Ventures Pvt. Ltd. All rights reserved.
             </div>
             <div className="text-[11px] text-white/40 uppercase tracking-wider">
               Bhopal, Madhya Pradesh, India
