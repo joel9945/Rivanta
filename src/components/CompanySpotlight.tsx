@@ -67,7 +67,7 @@ export default function CompanySpotlight() {
             </span>
           </div>
           <span className="font-mono text-xs text-[#13271e]/50 uppercase tracking-wider">
-            Building Value From India's Resources
+            Building Value From India&apos;s Resources
           </span>
         </div>
 
@@ -83,7 +83,7 @@ export default function CompanySpotlight() {
           </div>
           <div className="lg:col-span-5 flex flex-col justify-between space-y-6 pt-1 sm:pt-2">
             <p className="font-sans text-base sm:text-lg text-[#13271e]/80 font-light leading-relaxed">
-              India's industrial expansion requires dependable domestic supply chains, clean alternative fuels, and responsible resource utilization. Rivanta is aligning its manufacturing ambitions with these critical national priorities.
+              India&apos;s industrial expansion requires dependable domestic supply chains, clean alternative fuels, and responsible resource utilization. Rivanta is aligning its manufacturing ambitions with these critical national priorities.
             </p>
             <div className="flex items-center gap-5 pt-2">
               <Link href="/about" className="u-btn--1" aria-label="About Rivanta">

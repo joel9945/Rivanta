@@ -3,14 +3,14 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Compressed Biogas (CBG) — Clean Energy from Regional Agricultural Residues",
   description:
-    "Developing commercial Compressed Biogas infrastructure utilizing anaerobic digestion of agricultural residues to support domestic energy diversification and clean mobility in India.",
+    "Developing renewable gas infrastructure to support cleaner mobility, industrial energy requirements and India's energy diversification.",
   alternates: {
     canonical: "https://rivantagreen.com/cbg",
   },
   openGraph: {
     title: "Compressed Biogas (CBG) Infrastructure | Rivanta Green",
     description:
-      "Developing commercial Compressed Biogas infrastructure from agricultural residues in alignment with India's clean energy goals.",
+      "Developing renewable gas infrastructure to support cleaner mobility, industrial energy requirements and India's energy diversification.",
     url: "https://rivantagreen.com/cbg",
     images: [
       {
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Compressed Biogas (CBG) Infrastructure | Rivanta Green",
     description:
-      "Developing commercial Compressed Biogas infrastructure from agricultural residues in alignment with India's clean energy goals.",
+      "Developing renewable gas infrastructure to support cleaner mobility, industrial energy requirements and India's energy diversification.",
     images: ["/images/og-rivanta.jpg"],
   },
 };

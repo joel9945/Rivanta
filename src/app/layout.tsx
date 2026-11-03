@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     template: "%s | Rivanta Green",
   },
   description:
-    "Rivanta Green Innovative Venture Private Limited is an emerging Indian industrial enterprise developing an integrated portfolio across renewable energy, advanced materials, sustainable fuels, and circular manufacturing.",
+    "Building industrial value from India's resources through advanced materials, renewable fuels and integrated manufacturing.",
   keywords: [
     "Rivanta Green",
     "Rivanta Green Innovative Venture Private Limited",
@@ -112,18 +112,6 @@ const structuredData = {
         addressLocality: "Bhopal",
         addressRegion: "Madhya Pradesh",
         addressCountry: "IN",
-      },
-      parentOrganization: {
-        "@type": "Corporation",
-        name: "Golden Soil Ventures Private Limited",
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: "E4/271 Arera Colony, Huzur",
-          addressLocality: "Bhopal",
-          addressRegion: "Madhya Pradesh",
-          postalCode: "462016",
-          addressCountry: "IN",
-        },
       },
       contactPoint: {
         "@type": "ContactPoint",

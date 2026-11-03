@@ -3,14 +3,14 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Projects & Infrastructure — Integrated Industrial Manufacturing Campuses",
   description:
-    "Planning and developing integrated industrial campuses with captive utilities, regional biomass aggregation networks, and disciplined execution benchmarks.",
+    "Advancing a portfolio of proposed industrial facilities through feasibility, engineering, infrastructure planning and phased development.",
   alternates: {
     canonical: "https://rivantagreen.com/projects",
   },
   openGraph: {
     title: "Projects & Industrial Infrastructure | Rivanta Green",
     description:
-      "Planning and developing integrated manufacturing facilities, captive cogeneration utilities, and regional supply chain infrastructure.",
+      "Advancing a portfolio of proposed industrial facilities through feasibility, engineering, infrastructure planning and phased development.",
     url: "https://rivantagreen.com/projects",
     images: [
       {
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Projects & Industrial Infrastructure | Rivanta Green",
     description:
-      "Planning and developing integrated manufacturing facilities, captive cogeneration utilities, and regional supply chain infrastructure.",
+      "Advancing a portfolio of proposed industrial facilities through feasibility, engineering, infrastructure planning and phased development.",
     images: ["/images/og-rivanta.jpg"],
   },
 };

@@ -111,7 +111,7 @@ export default function BioSilicaPage() {
         badge="Advanced Materials & Silicon"
         title="Engineering Bio-Silica &"
         highlightedText="Green Silicon."
-        description="Developing high-grade biogenic silica (SiO₂) from agricultural residues and evaluating downstream green silicon precursor pathways for rubber, concrete, and advanced industrial applications."
+        description="Advancing domestic capabilities in biogenic silica and high-value industrial materials for emerging manufacturing applications."
         imageSrc="/images/bio-silica-lab.jpg"
         breadcrumbs={[
           { label: "Our Businesses", href: "/#businesses" },

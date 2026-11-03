@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Feedstock & Agricultural Value — Biomass Aggregation & Farmer Engagement",
+  title: "Feedstock & Agricultural Value — Biomass Aggregation & Supply Chain Logistics",
   description:
-    "Building resilient aggregation frameworks for rice husk and agricultural straw, converting regional crop residue challenges into structured rural economic participation.",
+    "Building structured agricultural residue procurement and logistics networks to support reliable industrial feedstock supply.",
   alternates: {
     canonical: "https://rivantagreen.com/feedstock",
   },
   openGraph: {
     title: "Feedstock & Agricultural Value | Rivanta Green",
     description:
-      "Structured biomass aggregation frameworks converting agricultural residues into commercial feedstock and rural economic opportunities.",
+      "Building structured agricultural residue procurement and logistics networks to support reliable industrial feedstock supply.",
     url: "https://rivantagreen.com/feedstock",
     images: [
       {
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Feedstock & Agricultural Value | Rivanta Green",
     description:
-      "Structured biomass aggregation frameworks converting agricultural residues into commercial feedstock and rural economic opportunities.",
+      "Building structured agricultural residue procurement and logistics networks to support reliable industrial feedstock supply.",
     images: ["/images/og-rivanta.jpg"],
   },
 };

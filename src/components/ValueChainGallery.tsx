@@ -132,9 +132,14 @@ export default function ValueChainGallery() {
 
           {/* Top Overlays */}
           <div className="absolute top-6 left-6 sm:top-8 sm:left-8 right-6 sm:right-8 flex items-center justify-between z-10">
-            <span className="font-mono text-[11px] sm:text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-white/15 backdrop-blur-md text-white/90 font-medium">
-              RIVANTA GREEN / INDUSTRIAL PORTFOLIO
-            </span>
+            <div className="flex items-center gap-2">
+              <span className="font-mono text-[11px] sm:text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-white/15 backdrop-blur-md text-white/90 font-medium">
+                RIVANTA GREEN / INDUSTRIAL PORTFOLIO
+              </span>
+              <span className="hidden sm:inline-block font-mono text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-md text-white/60 border border-white/10">
+                Planning Visualization
+              </span>
+            </div>
             <span className="font-mono text-xs sm:text-sm font-semibold tracking-wider text-white/80 bg-black/40 backdrop-blur-md px-3 py-1 rounded-full">
               {active.id} / 0{SLIDES.length}
             </span>

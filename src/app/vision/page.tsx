@@ -15,7 +15,6 @@ import {
   Compass,
   RefreshCw,
   Droplet,
-  Layers,
   Users,
 } from "lucide-react";
 
@@ -136,7 +135,7 @@ export default function VisionPage() {
         badge="Vision & Mission"
         title="Industrial Progress Beyond"
         highlightedText="Resource Depletion."
-        description="Rivanta Green is founded on the conviction that India's industrial future must not depend on continuous environmental extraction. By addressing nature dependency, seasonal stubble burning, and critical material imports, we build enduring industrial capability from agricultural resources."
+        description="Strengthening India's industrial capabilities by connecting domestic resources with advanced manufacturing and long-term economic opportunity."
         imageSrc="/images/company-innovation.jpg"
         breadcrumbs={[
           { label: "Company", href: "/about" },

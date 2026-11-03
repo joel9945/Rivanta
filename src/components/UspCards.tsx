@@ -38,7 +38,7 @@ const VERTICALS: BusinessVertical[] = [
     title: "Compressed Biogas (CBG)",
     status: "Under Development",
     statusType: "active",
-    description: "Establishing commercial Compressed Biogas infrastructure from regional agricultural residues to support domestic energy diversification and clean transport.",
+    description: "Developing commercial Compressed Biogas infrastructure from regional agricultural residues to support domestic energy diversification and clean transport.",
     focusAreas: ["Alternative gaseous fuels", "CBG distribution infrastructure", "Domestic energy diversification", "Industrial & mobility off-take"],
     href: "/cbg",
     bg: "#d6e8dc",

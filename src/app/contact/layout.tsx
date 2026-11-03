@@ -3,14 +3,14 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Contact Corporate Desk — Industrial Inquiries & Commercial Partnerships",
   description:
-    "Connect with Rivanta Green Innovative Venture Private Limited for industrial partnerships, feedstock aggregation, commercial off-take discussions, and corporate inquiries.",
+    "Connect with Rivanta Green for strategic partnerships, technology collaboration, feedstock sourcing and prospective commercial opportunities.",
   alternates: {
     canonical: "https://rivantagreen.com/contact",
   },
   openGraph: {
     title: "Contact Corporate Desk | Rivanta Green",
     description:
-      "Connect with Rivanta Green for industrial partnerships, feedstock aggregation, commercial off-take discussions, and corporate inquiries.",
+      "Connect with Rivanta Green for strategic partnerships, technology collaboration, feedstock sourcing and prospective commercial opportunities.",
     url: "https://rivantagreen.com/contact",
     images: [
       {
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Contact Corporate Desk | Rivanta Green",
     description:
-      "Connect with Rivanta Green for industrial partnerships, feedstock aggregation, commercial off-take discussions, and corporate inquiries.",
+      "Connect with Rivanta Green for strategic partnerships, technology collaboration, feedstock sourcing and prospective commercial opportunities.",
     images: ["/images/og-rivanta.jpg"],
   },
 };

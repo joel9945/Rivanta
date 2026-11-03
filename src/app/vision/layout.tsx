@@ -3,14 +3,14 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Corporate Vision & Long-Term Ambition — Building Value for India",
   description:
-    "Aligning industrial development with India's long-term economic priorities: domestic manufacturing capabilities, import substitution, and rural economic value creation.",
+    "Strengthening India's industrial capabilities by connecting domestic resources with advanced manufacturing and long-term economic opportunity.",
   alternates: {
     canonical: "https://rivantagreen.com/vision",
   },
   openGraph: {
     title: "Corporate Vision & National Development | Rivanta Green",
     description:
-      "Long-term industrial strategy aligned with India's economic priorities, domestic manufacturing, and resource-efficient industrialization.",
+      "Strengthening India's industrial capabilities by connecting domestic resources with advanced manufacturing and long-term economic opportunity.",
     url: "https://rivantagreen.com/vision",
     images: [
       {
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Corporate Vision & National Development | Rivanta Green",
     description:
-      "Long-term industrial strategy aligned with India's economic priorities, domestic manufacturing, and resource-efficient industrialization.",
+      "Strengthening India's industrial capabilities by connecting domestic resources with advanced manufacturing and long-term economic opportunity.",
     images: ["/images/og-rivanta.jpg"],
   },
 };

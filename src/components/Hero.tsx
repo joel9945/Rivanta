@@ -30,7 +30,7 @@ const PILLARS: readonly PillarItem[] = [
     line2Highlight: "India's Resources.",
     fontSizeClass: "text-4xl sm:text-6xl md:text-7xl lg:text-[5.25rem] xl:text-[5.75rem]",
     description:
-      "Rivanta Green Innovative Venture Private Limited is developing an integrated portfolio across renewable energy, advanced materials, sustainable fuels, and resource-efficient manufacturing.",
+      "Building industrial value from India's resources through advanced materials, renewable fuels and integrated manufacturing.",
     image: "/images/hero-facility.png",
     alt: "Rivanta Green Industrial Development Facility Concept",
   },
@@ -172,7 +172,10 @@ export default function Hero({ onExploreVentures }: HeroProps = {}) {
         {/* Content Inner Container */}
         <div className="relative z-10 w-full h-full flex flex-col justify-between p-6 md:p-12 lg:p-16 max-w-[1524px] mx-auto">
           {/* Top Spacing to clear floating header */}
-          <div className="pt-20 md:pt-24 flex items-center justify-end animate-hero-1">
+          <div className="pt-20 md:pt-24 flex items-center justify-between animate-hero-1">
+            <span className="font-mono text-[10px] tracking-wider uppercase text-white/60 bg-black/40 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
+              Conceptual Industrial Visualization
+            </span>
             {/* Pillar Counter */}
             <div className="hidden sm:flex items-center gap-3 font-mono text-xs uppercase tracking-widest text-white/70">
               <span className="text-white font-medium text-sm">

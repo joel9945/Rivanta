@@ -3,14 +3,14 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Sustainability & Environmental Stewardship — Circular Industrial Development",
   description:
-    "Committed to responsible resource utilization, crop-residue air quality mitigation, co-product recovery, and disciplined environmental governance.",
+    "Embedding resource efficiency, responsible water management, emissions control and circular material utilization into industrial development.",
   alternates: {
     canonical: "https://rivantagreen.com/sustainability",
   },
   openGraph: {
     title: "Sustainability & Environmental Stewardship | Rivanta Green",
     description:
-      "Responsible resource utilization, crop-residue air quality mitigation, and circular manufacturing frameworks.",
+      "Embedding resource efficiency, responsible water management, emissions control and circular material utilization into industrial development.",
     url: "https://rivantagreen.com/sustainability",
     images: [
       {
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Sustainability & Environmental Stewardship | Rivanta Green",
     description:
-      "Responsible resource utilization, crop-residue air quality mitigation, and circular manufacturing frameworks.",
+      "Embedding resource efficiency, responsible water management, emissions control and circular material utilization into industrial development.",
     images: ["/images/og-rivanta.jpg"],
   },
 };

@@ -11,8 +11,6 @@ import {
   Flame,
   Fuel,
   Plane,
-  ShieldCheck,
-  Building2,
 } from "lucide-react";
 
 const STRATEGIC_PATHWAYS = [
@@ -113,7 +111,7 @@ export default function SafPage() {
         badge="Future Fuels"
         title="Exploring The Future Of"
         highlightedText="Aviation Fuels."
-        description="Evaluating sustainable aviation fuel pathways from non-food agricultural residues to support the long-term decarbonization of domestic and international air corridors."
+        description="Exploring sustainable aviation fuel opportunities through technology evaluation and prospective industrial collaboration."
         imageSrc="/images/golden-hour-saf-refinery.png"
         breadcrumbs={[
           { label: "Our Businesses", href: "/#businesses" },

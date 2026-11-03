@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { FooterPartnerButton, ScrollToTopButton } from "./FooterInteractions";
 
 async function getCopyrightYear(): Promise<number> {
@@ -204,7 +205,7 @@ export default async function Footer() {
           </div>
         </div>
 
-        {/* Corporate Offices & Registered Coordinates Bar */}
+        {/* Registered Office & Coordinates Bar */}
         <div className="py-10 border-b border-white/10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-xs text-white/70">
           {/* Head & Registered Office */}
           <div className="space-y-2">
@@ -223,15 +224,12 @@ export default async function Footer() {
             </p>
           </div>
 
-          {/* Corporate Office */}
+          {/* Address */}
           <div className="space-y-2">
             <div className="font-mono uppercase tracking-wider text-[#f9a65c] font-semibold text-[11px]">
-              Corporate Office
+              Address
             </div>
-            <div className="font-sans font-medium text-white text-sm">
-              Golden Soil Ventures Private Limited
-            </div>
-            <p className="font-light leading-relaxed text-white/75">
+            <p className="font-light leading-relaxed text-white/75 pt-1">
               E4/271 Arera Colony, Huzur,
               <br />
               Bhopal, Madhya Pradesh, 462016 - India.
@@ -276,26 +274,28 @@ export default async function Footer() {
           </div>
         </div>
 
-        {/* Corporate Copyright Row */}
-        <div className="pt-10 pb-4 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-white/10">
-          <div className="font-mono text-xs text-white/50 text-center sm:text-left">
-            © {currentYear} Rivanta Green Innovative Venture Pvt. Ltd. All
-            rights reserved.
+        {/* Corporate Identity & Copyright Row */}
+        <div className="pt-10 pb-4 flex flex-col md:flex-row items-center justify-between gap-6 border-t border-white/10">
+          <div className="flex items-center gap-4">
+            <Link href="/" className="inline-block group" aria-label="Rivanta Green Home">
+              <Image
+                src="/logo/logo-brand-lockup-light.svg"
+                alt="Rivanta Green Innovative Venture Private Limited"
+                width={360}
+                height={85}
+                className="h-11 md:h-13 w-auto object-contain filter drop-shadow-[0_2px_12px_rgba(242,178,36,0.3)] transition-transform duration-300 group-hover:scale-[1.02]"
+              />
+            </Link>
           </div>
-          <div className="font-mono text-[11px] text-white/40 text-center sm:text-right uppercase tracking-wider">
-            Bhopal, Madhya Pradesh, India
-          </div>
-        </div>
 
-        {/* Massive Watermark Typography with Exact Authentic Logo Font */}
-        <div className="mt-8 md:mt-12 select-none pointer-events-none opacity-[0.08] flex items-center justify-center overflow-hidden px-4 md:px-8">
-          <svg
-            viewBox="10 0 1115 113"
-            className="w-full max-w-[1500px] h-auto fill-current text-white"
-            aria-hidden="true"
-          >
-            <path d="M530 1c0,2 -28,47 -54,88 -7,12 -13,21 -13,22 0,0 3,0 7,0l6 0 6 -9c26,-44 44,-71 45,-71 1,0 6,7 11,16 13,21 30,50 35,58l4 6 11 0c6,0 11,0 11,0 1,-1 -6,-12 -14,-26 -8,-13 -23,-38 -33,-54 -16,-26 -22,-34 -22,-30l0 0zm143 55l-1 55 7 0 6 0 1 -38c0,-24 0,-38 1,-38 1,0 4,2 7,5 5,4 41,34 75,61 8,7 15,12 15,12 1,0 1,-25 1,-56l0 -56 -6 1 -6 0 0 38 -1 38 -15 -12c-49,-40 -81,-66 -82,-66 -1,0 -2,25 -2,56l0 0zm380 -48c-11,19 -56,91 -59,96 -2,3 -3,6 -3,6 0,1 3,1 6,1l7 0 21 -35c12,-20 23,-38 25,-40 1,-3 3,-5 4,-5 1,0 14,21 38,63l11 17 11 0c6,0 11,0 11,-1 0,-1 -11,-19 -29,-50 -6,-9 -12,-20 -14,-24 -9,-15 -22,-36 -23,-36 -1,0 -3,4 -6,8l0 0zm-1043 49l0 54 11 0 11 0 0 -49 1 -49 24 0c21,0 26,0 30,2 14,7 19,22 11,33 -6,7 -13,10 -31,10l-16 1 10 10c6,5 18,17 27,26l16 16 12 0c7,0 12,0 12,-1 0,0 -9,-10 -21,-22 -15,-15 -20,-21 -18,-21 5,0 16,-5 22,-9 9,-6 12,-14 12,-23 0,-9 -2,-15 -9,-21 -13,-11 -22,-12 -68,-12l-36 0 0 55 0 0zm195 -55c0,0 0,25 -1,54l0 55 11 0 11 0 -1 -54 0 -55 -10 0c-6,0 -10,0 -10,0l0 0zm83 1c0,1 4,7 8,14 4,7 20,31 34,54 14,22 26,41 27,41 2,0 69,-108 69,-110 0,0 -3,0 -7,0l-7 0 -23 38c-13,21 -24,40 -25,41 -2,3 -3,2 -11,-11 -18,-29 -27,-43 -34,-56l-8 -12 -11 0c-7,0 -12,0 -12,1l0 0zm561 4c0,3 0,6 0,6 0,1 10,1 21,1l21 0 0 48 0 49 11 0 10 0 1 -49 0 -48 21 0 21 -1 1 -5 0 -6 -53 0 -54 0 0 5z" />
-          </svg>
+          <div className="flex flex-col sm:flex-row items-center sm:items-end gap-2 sm:gap-6 text-center sm:text-right font-mono text-xs text-white/50">
+            <div>
+              © {currentYear} Rivanta Green Innovative Venture Pvt. Ltd. All rights reserved.
+            </div>
+            <div className="text-[11px] text-white/40 uppercase tracking-wider">
+              Bhopal, Madhya Pradesh, India
+            </div>
+          </div>
         </div>
       </div>
     </footer>

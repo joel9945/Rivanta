@@ -13,8 +13,6 @@ import {
   ArrowUpRight,
   Layers,
   Recycle,
-  Truck,
-  Users,
 } from "lucide-react";
 
 const SOURCING_PILLARS = [
@@ -92,7 +90,7 @@ export default function FeedstockPage() {
         badge="Supply Chain & Circularity"
         title="Building Resilient Supply Chains For"
         highlightedText="Agricultural Biomass."
-        description="Our feedstock architecture is being developed around regional aggregation logistics, standardized quality testing, and collaborative miller partnerships to support continuous biomass supply without competing with food security."
+        description="Building structured agricultural residue procurement and logistics networks to support reliable industrial feedstock supply."
         imageSrc="/images/feedstock-aggregation.jpg"
         breadcrumbs={[
           { label: "Our Businesses", href: "/#businesses" },

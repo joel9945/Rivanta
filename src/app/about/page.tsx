@@ -12,7 +12,6 @@ import {
   ArrowRight,
   ArrowUpRight,
   CheckCircle2,
-  Building2,
   TrendingUp,
   Cpu,
   Factory,
@@ -89,9 +88,9 @@ const STRATEGIC_PRIORITIES = [
     icon: Factory,
   },
   {
-    title: "Rural Value Creation",
+    title: "Regional Procurement Networks",
     description:
-      "Generating secondary economic value for farming communities and rural logistics operators through organized biomass procurement.",
+      "Establishing commercial procurement networks with agricultural producers, aggregators, and logistics operators to secure sustainable biomass supply.",
     icon: TrendingUp,
   },
   {
@@ -118,7 +117,7 @@ export default function AboutPage() {
         badge="Corporate Profile"
         title="Building Industrial Value From"
         highlightedText="India's Resources."
-        description="Rivanta Green Innovative Venture Private Limited is an emerging Indian industrial enterprise developing an integrated portfolio across renewable energy, advanced materials, sustainable fuels, and circular manufacturing."
+        description="Rivanta Green is an Indian industrial enterprise developing a diversified portfolio of strategic manufacturing and clean-energy initiatives."
         imageSrc="/images/company-innovation.jpg"
         breadcrumbs={[{ label: "About Us" }]}
         primaryCtaText="Explore Projects"

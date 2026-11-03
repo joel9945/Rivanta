@@ -3,14 +3,14 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Bio-Silica & Advanced Materials — Biogenic Silica & Industrial Silicon Precursors",
   description:
-    "Developing high-purity biogenic silica (SiO₂) from agricultural residues and evaluating downstream green silicon precursor pathways for rubber, green concrete, and advanced industrial materials.",
+    "Advancing domestic capabilities in biogenic silica and high-value industrial materials for emerging manufacturing applications.",
   alternates: {
     canonical: "https://rivantagreen.com/bio-silica",
   },
   openGraph: {
     title: "Bio-Silica & Advanced Materials | Rivanta Green",
     description:
-      "Developing high-purity biogenic silica (SiO₂) and evaluating downstream green silicon precursor pathways from agricultural residues.",
+      "Advancing domestic capabilities in biogenic silica and high-value industrial materials for emerging manufacturing applications.",
     url: "https://rivantagreen.com/bio-silica",
     images: [
       {
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Bio-Silica & Advanced Materials | Rivanta Green",
     description:
-      "Developing high-purity biogenic silica (SiO₂) and evaluating downstream green silicon precursor pathways from agricultural residues.",
+      "Advancing domestic capabilities in biogenic silica and high-value industrial materials for emerging manufacturing applications.",
     images: ["/images/og-rivanta.jpg"],
   },
 };

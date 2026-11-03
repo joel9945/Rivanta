@@ -3,14 +3,14 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About Us — Corporate Identity, Leadership & Industrial Ambition",
   description:
-    "Learn about Rivanta Green Innovative Venture Private Limited, an emerging diversified Indian industrial enterprise developing domestic capabilities across advanced materials, sustainable fuels, and circular manufacturing.",
+    "Rivanta Green is an Indian industrial enterprise developing a diversified portfolio of strategic manufacturing and clean-energy initiatives.",
   alternates: {
     canonical: "https://rivantagreen.com/about",
   },
   openGraph: {
     title: "About Us — Corporate Identity & Industrial Ambition | Rivanta Green",
     description:
-      "Emerging diversified Indian industrial enterprise developing domestic capabilities across advanced materials, sustainable fuels, and circular manufacturing.",
+      "Rivanta Green is an Indian industrial enterprise developing a diversified portfolio of strategic manufacturing and clean-energy initiatives.",
     url: "https://rivantagreen.com/about",
     images: [
       {
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "About Us — Corporate Identity & Industrial Ambition | Rivanta Green",
     description:
-      "Emerging diversified Indian industrial enterprise developing domestic capabilities across advanced materials, sustainable fuels, and circular manufacturing.",
+      "Rivanta Green is an Indian industrial enterprise developing a diversified portfolio of strategic manufacturing and clean-energy initiatives.",
     images: ["/images/og-rivanta.jpg"],
   },
 };

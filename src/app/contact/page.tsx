@@ -6,7 +6,6 @@ import ContactForm from "@/components/ContactForm";
 import MarqueeText from "@/components/MarqueeText";
 import {
   Building,
-  Clock,
   ShieldCheck,
   ChevronDown,
   ChevronUp,
@@ -14,7 +13,6 @@ import {
   Phone,
   Mail,
   Globe,
-  ArrowUpRight,
 } from "lucide-react";
 
 const OFFICES = [
@@ -34,8 +32,7 @@ const OFFICES = [
     isPrimary: true,
   },
   {
-    badge: "Corporate Office",
-    entity: "Golden Soil Ventures Private Limited",
+    badge: "Address",
     lines: [
       "E4/271 Arera Colony, Huzur,",
       "Bhopal, Madhya Pradesh, 462016 - India.",
@@ -102,7 +99,7 @@ export default function ContactPage() {
         badge="Official Corporate Directory"
         title="Direct Channels For Commercial And"
         highlightedText="Corporate Engagement."
-        description="Connect with our corporate offices in Bhopal, Madhya Pradesh, or submit an inquiry directly to our commercial and corporate desks."
+        description="Connect with Rivanta Green for strategic partnerships, technology collaboration, feedstock sourcing and prospective commercial opportunities."
         breadcrumbs={[{ label: "Contact & Corporate Desk" }]}
         primaryCtaText="Submit Business Inquiry"
         primaryCtaHref="#inquiry-form"
@@ -113,7 +110,7 @@ export default function ContactPage() {
 
       {/* Infinite Industrial Ticker */}
       <MarqueeText
-        phrase="HEAD OFFICE: KASTURBA NAGAR, BHOPAL — CORPORATE OFFICE: ARERA COLONY, BHOPAL — PHONE: +91 98930 25375 — EMAIL: INFO@RIVANTAGREEN.COM — "
+        phrase="HEAD OFFICE: KASTURBA NAGAR, BHOPAL — ADDRESS: ARERA COLONY, BHOPAL — PHONE: +91 98930 25375 — EMAIL: INFO@RIVANTAGREEN.COM — "
         theme="light"
       />
 
@@ -217,10 +214,10 @@ export default function ContactPage() {
               <div>
                 <div className="u-ts--1 mb-4 reveal-up">
                   <span className="indicator-dot"></span>
-                  <span>Corporate Offices</span>
+                  <span>Office Locations</span>
                 </div>
                 <h2 className="font-sans font-normal text-3xl sm:text-4xl tracking-tight text-[#13271e] reveal-up delay-100">
-                  Registered & Corporate Offices.
+                  Registered Office & Address.
                 </h2>
                 <p className="font-sans text-sm md:text-base text-[#13271e]/75 font-light mt-2 leading-relaxed reveal-up delay-200">
                   Headquartered in Bhopal, Madhya Pradesh, supporting regional bio-industrial aggregation and engineering.

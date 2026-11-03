@@ -11,8 +11,6 @@ import {
   ArrowUpRight,
   Fuel,
   Activity,
-  ShieldCheck,
-  Building2,
 } from "lucide-react";
 
 const STRATEGIC_CHANNELS = [
@@ -110,7 +108,7 @@ export default function CbgPage() {
         badge="Sustainable Fuels"
         title="Supporting India's Energy Transition With"
         highlightedText="Compressed Biogas."
-        description="Developing commercial Compressed Biogas facilities to convert agricultural residues into clean biomethane for transportation, city gas distribution, and industrial heating."
+        description="Developing renewable gas infrastructure to support cleaner mobility, industrial energy requirements and India's energy diversification."
         imageSrc="/images/cbg-plant.jpg"
         breadcrumbs={[
           { label: "Our Businesses", href: "/#businesses" },

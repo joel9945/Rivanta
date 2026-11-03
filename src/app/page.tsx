@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import PlatformHgroup from "@/components/PlatformHgroup";
 import MarqueeText from "@/components/MarqueeText";
+import IndustrialOpportunity from "@/components/IndustrialOpportunity";
 import CompanySpotlight from "@/components/CompanySpotlight";
 import CorporateFoundations from "@/components/CorporateFoundations";
 import ValueChainGallery from "@/components/ValueChainGallery";
@@ -10,14 +11,14 @@ import ValueChainGallery from "@/components/ValueChainGallery";
 export const metadata: Metadata = {
   title: "Rivanta Green — Diversified Industrial Enterprise",
   description:
-    "Rivanta Green Innovative Venture Private Limited is an emerging Indian industrial enterprise developing an integrated portfolio across advanced materials, sustainable fuels, renewable energy, and circular manufacturing.",
+    "Building industrial value from India's resources through advanced materials, renewable fuels and integrated manufacturing.",
   alternates: {
     canonical: "https://rivantagreen.com",
   },
   openGraph: {
     title: "Rivanta Green — Diversified Industrial Enterprise",
     description:
-      "Emerging Indian industrial enterprise developing an integrated portfolio across advanced materials, sustainable fuels, renewable energy, and circular manufacturing.",
+      "Building industrial value from India's resources through advanced materials, renewable fuels and integrated manufacturing.",
     url: "https://rivantagreen.com",
     images: [
       {
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Rivanta Green — Diversified Industrial Enterprise",
     description:
-      "Emerging Indian industrial enterprise developing an integrated portfolio across advanced materials, sustainable fuels, renewable energy, and circular manufacturing.",
+      "Building industrial value from India's resources through advanced materials, renewable fuels and integrated manufacturing.",
     images: ["/images/og-rivanta.jpg"],
   },
 };
@@ -49,13 +50,16 @@ export default function Home() {
       {/* 3. Infinite Industrial Ticker */}
       <MarqueeText />
 
-      {/* 4. Strategic Focus & National Priorities */}
+      {/* 4. India's Industrial Opportunity */}
+      <IndustrialOpportunity />
+
+      {/* 5. Strategic Focus & National Priorities */}
       <CompanySpotlight />
 
-      {/* 5. Environmental Stewardship & Operations */}
+      {/* 6. Environmental Stewardship & Operations */}
       <CorporateFoundations />
 
-      {/* 6. Integrated Industrial Workstreams Portfolio */}
+      {/* 7. Integrated Industrial Workstreams Portfolio */}
       <ValueChainGallery />
     </>
   );

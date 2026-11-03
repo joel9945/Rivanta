@@ -17,13 +17,11 @@ console.log("===================================================================
 console.log("RIVANTA GREEN — AUTOMATED PRODUCTION HTML METADATA & SCHEMA VERIFICATION");
 console.log("================================================================================");
 
-let allPass = true;
 const results = [];
 
 for (const r of routes) {
   if (!fs.existsSync(r.file)) {
     console.error(`FAILED: File not found: ${r.file}`);
-    allPass = false;
     continue;
   }
 
@@ -31,7 +29,6 @@ for (const r of routes) {
   const titleMatch = html.match(/<title>([^<]+)<\/title>/);
   const descMatch = html.match(/<meta name="description" content="([^"]+)"/);
   const canonicalMatch = html.match(/<link rel="canonical" href="([^"]+)"/);
-  const ogTitleMatch = html.match(/<meta property="og:title" content="([^"]+)"/);
   const ogUrlMatch = html.match(/<meta property="og:url" content="([^"]+)"/);
   const ogImageMatch = html.match(/<meta property="og:image" content="([^"]+)"/);
   const jsonLdBlocks = [...html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/g)].map(m => {

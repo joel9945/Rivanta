@@ -10,11 +10,6 @@ import {
   ShieldCheck,
   CheckCircle2,
   ArrowRight,
-  Building,
-  Factory,
-  Layers,
-  Flame,
-  Truck,
 } from "lucide-react";
 
 const PROJECT_INITIATIVES = [
@@ -88,9 +83,9 @@ const DEVELOPMENT_PHASES = [
   {
     phase: "Stage 01",
     name: "Feasibility & Baseline Modeling",
-    status: "Project Planning",
+    status: "Completed Studies",
     timeline: "Stage 1",
-    progress: 100,
+    stageStatus: "Baseline Evaluation Completed",
     description:
       "Regional agricultural residue availability mapping, milling cluster assessments, material characterization studies, and preliminary mass-balance modeling.",
     deliverables: [
@@ -105,7 +100,7 @@ const DEVELOPMENT_PHASES = [
     name: "Detailed Engineering & Regulatory Preparation",
     status: "In Preparation",
     timeline: "Stage 2",
-    progress: 60,
+    stageStatus: "Engineering & Permitting Underway",
     description:
       "Detailed process engineering, vendor screening, statutory clearance documentation preparation, and commercial off-take framework discussions.",
     deliverables: [
@@ -120,7 +115,7 @@ const DEVELOPMENT_PHASES = [
     name: "Facility Construction & Commissioning",
     status: "Proposed",
     timeline: "Proposed Stage",
-    progress: 10,
+    stageStatus: "Phased Execution Planned",
     description:
       "Civil works execution, equipment erection, utility integration, phased commissioning, and commercial production commencement subject to necessary statutory approvals.",
     deliverables: [
@@ -136,19 +131,19 @@ const OPERATIONAL_STANDARDS = [
   {
     title: "Process Control Automation",
     description:
-      "Centralized instrumentation and control systems monitoring process temperatures, flow rates, and operational parameters to maintain consistent output quality.",
+      "Centralized instrumentation and control systems planned to monitor process temperatures, flow rates, and operational parameters to maintain consistent output quality.",
     icon: Cog,
   },
   {
     title: "Continuous Emission Monitoring",
     description:
-      "Stack sensors and emission controls installed to ensure operational compliance with applicable statutory environmental standards and regulatory norms.",
+      "Stack sensors and emission controls planned to ensure operational compliance with applicable statutory environmental standards and regulatory norms.",
     icon: ShieldCheck,
   },
   {
     title: "Industrial Safety Architecture",
     description:
-      "Enclosed pneumatic conveying, dust suppression systems, and comprehensive fire protection measures engineered for agricultural biomass handling environments.",
+      "Enclosed pneumatic conveying, dust suppression systems, and comprehensive fire protection measures engineered for planned agricultural biomass handling environments.",
     icon: HardHat,
   },
 ];
@@ -163,8 +158,8 @@ export default function ProjectsPage() {
         badge="Industrial Infrastructure"
         title="Developing Modern Infrastructure For"
         highlightedText="Long-Term Capability."
-        description="Our manufacturing and energy projects are engineered to institutional standards — prioritizing disciplined capital allocation, environmental compliance, and long-term operating reliability."
-        imageSrc="/images/hero-facility.jpg"
+        description="Advancing a portfolio of proposed industrial facilities through feasibility, engineering, infrastructure planning and phased development."
+        imageSrc="/images/hero-facility.png"
         breadcrumbs={[{ label: "Infrastructure & Projects" }]}
         primaryCtaText="Inspect Project Pipeline"
         primaryCtaHref="#pipeline"

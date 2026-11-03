@@ -7,7 +7,6 @@ import MarqueeText from "@/components/MarqueeText";
 import {
   Activity,
   ArrowRight,
-  BarChart3,
   CheckCircle2,
   Droplet,
   RefreshCw,
@@ -23,7 +22,6 @@ const STEWARDSHIP_PILLARS = [
     subtitle: "Closed-Loop Design Objective",
     metricValue: "ZLD Target",
     metricLabel: "Design Standard",
-    progressPct: 90,
     description:
       "Engineering facilities with Zero Liquid Discharge (ZLD) as a primary design objective where technically and operationally applicable, incorporating multi-stage recycling to minimize freshwater intake.",
     icon: Droplet,
@@ -35,9 +33,8 @@ const STEWARDSHIP_PILLARS = [
     subtitle: "Continuous Monitoring",
     metricValue: "CEMS Standards",
     metricLabel: "Regulatory Alignment",
-    progressPct: 85,
     description:
-      "Integrating continuous emission monitoring systems (CEMS), high-efficiency baghouse filters, and enclosed pneumatic handling systems to manage particulate matter and operational emissions.",
+      "Planning continuous emission monitoring systems (CEMS), high-efficiency baghouse filters, and enclosed pneumatic handling systems to manage particulate matter and operational emissions.",
     icon: Wind,
     color: "#e06425",
   },
@@ -47,7 +44,6 @@ const STEWARDSHIP_PILLARS = [
     subtitle: "Process Integration",
     metricValue: "Thermal Loops",
     metricLabel: "Efficiency Target",
-    progressPct: 80,
     description:
       "Recovering waste heat from high-temperature process streams to generate process steam and preheat incoming streams, reducing external thermal energy demand across plant operations.",
     icon: Flame,
@@ -59,7 +55,6 @@ const STEWARDSHIP_PILLARS = [
     subtitle: "Resource Utilization",
     metricValue: "Soil Nutrients",
     metricLabel: "By-Product Use",
-    progressPct: 90,
     description:
       "Processing residual streams and anaerobic digestate into organic soil amendments, returning valuable carbon and nutrients to regional farmland to support sustainable agriculture.",
     icon: RefreshCw,
@@ -116,8 +111,8 @@ export default function SustainabilityPage() {
         badge="Environmental Stewardship"
         title="Responsible Engineering For"
         highlightedText="Sustainable Industrial Growth."
-        description="Our environmental framework integrates water stewardship, emissions controls, waste-heat recovery, and auditable governance into every stage of project planning and industrial operations."
-        imageSrc="/images/hero-facility.jpg"
+        description="Embedding resource efficiency, responsible water management, emissions control and circular material utilization into industrial development."
+        imageSrc="/images/hero-facility.png"
         breadcrumbs={[{ label: "Sustainability" }]}
         primaryCtaText="Review Operational Pillars"
         primaryCtaHref="#pillars"
@@ -186,28 +181,17 @@ export default function SustainabilityPage() {
                     </p>
                   </div>
 
-                  {/* Standard Indicator Bar */}
-                  <div className="pt-4 border-t border-[#13271e]/8 space-y-2">
-                    <div className="flex items-center justify-between">
-                      <span className="font-mono text-xs text-[#13271e]/70">
-                        {pillar.metricLabel}
-                      </span>
-                      <span
-                        className="font-mono text-base font-semibold"
-                        style={{ color: pillar.color }}
-                      >
-                        {pillar.metricValue}
-                      </span>
-                    </div>
-                    <div className="w-full h-2 rounded-full bg-[#f0f4f1] overflow-hidden">
-                      <div
-                        className="h-full rounded-full transition-all duration-1000"
-                        style={{
-                          width: `${pillar.progressPct}%`,
-                          backgroundColor: pillar.color,
-                        }}
-                      />
-                    </div>
+                  {/* Design Alignment Indicator */}
+                  <div className="pt-4 border-t border-[#13271e]/8 flex items-center justify-between">
+                    <span className="font-mono text-xs text-[#13271e]/70">
+                      {pillar.metricLabel}
+                    </span>
+                    <span
+                      className="font-mono text-xs font-semibold px-2.5 py-1 rounded bg-[#13271e]/5"
+                      style={{ color: pillar.color }}
+                    >
+                      {pillar.metricValue}
+                    </span>
                   </div>
                 </div>
               );

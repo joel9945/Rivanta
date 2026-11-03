@@ -74,7 +74,7 @@ export default function CorporateFoundations() {
           </div>
           <div className="lg:col-span-5 flex flex-col justify-between space-y-6 pt-1 sm:pt-2">
             <p className="font-sans text-base sm:text-lg text-[#13271e]/80 font-light leading-relaxed">
-              Environmental responsibility is central to Rivanta's industrial development approach. Our planning emphasizes efficient resource utilization, water management, emission control, and the responsible handling of industrial materials.
+              Environmental responsibility is central to Rivanta&apos;s industrial development approach. Our planning emphasizes efficient resource utilization, water management, emission control, and the responsible handling of industrial materials.
             </p>
             <div className="flex items-center gap-5 pt-2">
               <Link

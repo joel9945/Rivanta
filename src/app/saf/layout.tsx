@@ -3,14 +3,14 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Sustainable Aviation Fuel (SAF) — Strategic Pathways & Aviation Decarbonization",
   description:
-    "Evaluating drop-in sustainable aviation fuel development pathways and industrial partnerships to support long-term decarbonization of commercial aviation in India.",
+    "Exploring sustainable aviation fuel opportunities through technology evaluation and prospective industrial collaboration.",
   alternates: {
     canonical: "https://rivantagreen.com/saf",
   },
   openGraph: {
     title: "Sustainable Aviation Fuel (SAF) Development | Rivanta Green",
     description:
-      "Evaluating technology pathways and industrial partnerships for drop-in synthetic aviation fuels from regional bio-feedstocks.",
+      "Exploring sustainable aviation fuel opportunities through technology evaluation and prospective industrial collaboration.",
     url: "https://rivantagreen.com/saf",
     images: [
       {
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Sustainable Aviation Fuel (SAF) Development | Rivanta Green",
     description:
-      "Evaluating technology pathways and industrial partnerships for drop-in synthetic aviation fuels from regional bio-feedstocks.",
+      "Exploring sustainable aviation fuel opportunities through technology evaluation and prospective industrial collaboration.",
     images: ["/images/og-rivanta.jpg"],
   },
 };

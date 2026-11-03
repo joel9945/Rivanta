@@ -17,11 +17,11 @@ export default function SharedValueAndContribution() {
             <div className="flex items-center gap-2.5">
               <span className="w-2.5 h-2.5 rounded-full bg-[#e06425]" />
               <span className="font-mono text-xs uppercase tracking-[0.18em] text-[#13271e]/75 font-semibold">
-                06 / FARMERS & REGIONAL COMMUNITIES
+                06 / BIOMASS SOURCING & SUPPLY INTEGRATION
               </span>
             </div>
             <span className="font-mono text-xs text-[#13271e]/50 uppercase tracking-wider">
-              Rural Economic Integration
+              Commercial Feedstock Architecture
             </span>
           </div>
 
@@ -29,15 +29,15 @@ export default function SharedValueAndContribution() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start mb-14 md:mb-18">
             <div className="lg:col-span-7">
               <h2 className="font-sans font-light text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] tracking-[-0.02em] leading-[1.14] text-[#13271e]">
-                Creating Value Beyond{" "}
+                Structured Supply Chain{" "}
                 <span className="font-normal italic text-[#e06425]">
-                  Industry.
+                  Integration.
                 </span>
               </h2>
             </div>
             <div className="lg:col-span-5 flex flex-col justify-between space-y-6 pt-1 sm:pt-2">
               <p className="font-sans text-base sm:text-lg text-[#13271e]/80 font-light leading-relaxed">
-                Our proposed agricultural sourcing and industrial initiatives aim to create additional economic opportunities for farming communities, regional enterprises, and skilled workers.
+                Our proposed agricultural sourcing architecture establishes commercial procurement networks with regional aggregators, milling clusters, and transportation operators to secure long-term industrial feedstock supply.
               </p>
               <div className="pt-2">
                 <Link
@@ -53,7 +53,7 @@ export default function SharedValueAndContribution() {
             </div>
           </div>
 
-          {/* 4 Pillars of Rural & Community Opportunity */}
+          {/* 4 Pillars of Biomass Supply Architecture */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             <div className="p-7 rounded-2xl bg-[#f8faf8] border border-[#13271e]/8 flex flex-col justify-between space-y-4">
               <div className="w-10 h-10 rounded-xl bg-white text-[#e06425] flex items-center justify-center shadow-xs border border-[#13271e]/8">
@@ -75,10 +75,10 @@ export default function SharedValueAndContribution() {
               </div>
               <div>
                 <h3 className="font-sans text-lg font-semibold text-[#13271e] tracking-tight mb-2">
-                  Rural Supply Chains & Logistics
+                  Logistics & Depot Networks
                 </h3>
                 <p className="font-sans text-sm text-[#13271e]/75 font-light leading-relaxed">
-                  Planning local transport, storage, and handling networks to engage regional logistics operators and local enterprises.
+                  Planning local transport, storage, and handling networks to engage regional logistics operators and local transportation fleets.
                 </p>
               </div>
             </div>
@@ -89,10 +89,10 @@ export default function SharedValueAndContribution() {
               </div>
               <div>
                 <h3 className="font-sans text-lg font-semibold text-[#13271e] tracking-tight mb-2">
-                  Employment & Skills
+                  Workforce & Technical Roles
                 </h3>
                 <p className="font-sans text-sm text-[#13271e]/75 font-light leading-relaxed">
-                  Aiming to generate direct and indirect manufacturing roles alongside technical skills development for local youth and engineering personnel.
+                  Aiming to generate direct and indirect manufacturing roles alongside technical skills development for plant operations and logistics personnel.
                 </p>
               </div>
             </div>
@@ -103,10 +103,10 @@ export default function SharedValueAndContribution() {
               </div>
               <div>
                 <h3 className="font-sans text-lg font-semibold text-[#13271e] tracking-tight mb-2">
-                  Community Engagement
+                  Regional Commercial Value
                 </h3>
                 <p className="font-sans text-sm text-[#13271e]/75 font-light leading-relaxed">
-                  Fostering transparent, responsible community relationships focused on regional infrastructure improvement and ecological well-being.
+                  Fostering commercial relationships that convert seasonal agricultural co-products into sustained economic participation for agrarian belts.
                 </p>
               </div>
             </div>
@@ -138,7 +138,7 @@ export default function SharedValueAndContribution() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start mb-14 md:mb-18">
             <div className="lg:col-span-7">
               <h2 className="font-sans font-light text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] tracking-[-0.02em] leading-[1.14] text-white">
-                Contributing to India's{" "}
+                Contributing to India&apos;s{" "}
                 <span className="font-normal italic text-[#f9a65c]">
                   Industrial Growth.
                 </span>
@@ -146,7 +146,7 @@ export default function SharedValueAndContribution() {
             </div>
             <div className="lg:col-span-5 flex flex-col justify-between space-y-6 pt-1 sm:pt-2">
               <p className="font-sans text-base sm:text-lg text-white/80 font-light leading-relaxed">
-                Rivanta's long-term development strategy seeks to connect domestic resources with manufacturing opportunities, supporting industrial diversification, regional economic activity, and more resilient supply chains.
+                Rivanta&apos;s long-term development strategy seeks to connect domestic resources with manufacturing opportunities, supporting industrial diversification, regional economic activity, and more resilient supply chains.
               </p>
               <div className="pt-2">
                 <Link
