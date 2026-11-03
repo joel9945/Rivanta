@@ -9,17 +9,18 @@ import CorporateFoundations from "@/components/CorporateFoundations";
 import ValueChainGallery from "@/components/ValueChainGallery";
 
 export const metadata: Metadata = {
-  title: "Rivanta Green — Diversified Industrial Enterprise",
+  title: "Rivanta Green | Sustainable Industrial Innovation",
   description:
-    "Building industrial value from India's resources through advanced materials, renewable fuels and integrated manufacturing.",
+    "Rivanta Green is developing integrated industrial initiatives across bio-silica, compressed biogas, sustainable aviation fuel and biomass valorisation in India.",
   alternates: {
     canonical: "https://rivantagreen.com",
   },
   openGraph: {
-    title: "Rivanta Green — Diversified Industrial Enterprise",
+    title: "Rivanta Green | Sustainable Industrial Innovation",
     description:
-      "Building industrial value from India's resources through advanced materials, renewable fuels and integrated manufacturing.",
+      "Rivanta Green is developing integrated industrial initiatives across bio-silica, compressed biogas, sustainable aviation fuel and biomass valorisation in India.",
     url: "https://rivantagreen.com",
+    siteName: "Rivanta Green",
     images: [
       {
         url: "/images/og-rivanta.jpg",
@@ -31,9 +32,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rivanta Green — Diversified Industrial Enterprise",
+    title: "Rivanta Green | Sustainable Industrial Innovation",
     description:
-      "Building industrial value from India's resources through advanced materials, renewable fuels and integrated manufacturing.",
+      "Rivanta Green is developing integrated industrial initiatives across bio-silica, compressed biogas, sustainable aviation fuel and biomass valorisation in India.",
     images: ["/images/og-rivanta.jpg"],
   },
 };

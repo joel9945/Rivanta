@@ -30,7 +30,7 @@ const PILLARS: readonly PillarItem[] = [
     line2Highlight: "India's Resources.",
     fontSizeClass: "text-4xl sm:text-6xl md:text-7xl lg:text-[5.25rem] xl:text-[5.75rem]",
     description:
-      "Building industrial value from India's resources through advanced materials, renewable fuels and integrated manufacturing.",
+      "Developing integrated industrial initiatives across bio-silica, compressed biogas, sustainable aviation fuel and biomass valorisation in India.",
     image: "/images/hero-facility.png",
     alt: "Rivanta Green Industrial Development Facility Concept",
   },

@@ -26,23 +26,26 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://rivantagreen.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Rivanta Green — Building Industrial Value From India's Resources",
+    default: "Rivanta Green | Sustainable Industrial Innovation",
     template: "%s | Rivanta Green",
   },
   description:
-    "Building industrial value from India's resources through advanced materials, renewable fuels and integrated manufacturing.",
+    "Rivanta Green is developing integrated industrial initiatives across bio-silica, compressed biogas, sustainable aviation fuel and biomass valorisation in India.",
   keywords: [
     "Rivanta Green",
     "Rivanta Green Innovative Venture Private Limited",
     "Indian Industrial Enterprise",
+    "Sustainable Industrial Innovation",
     "Advanced Materials",
     "Biogenic Silica",
+    "Bio-Silica",
     "Compressed Biogas",
     "CBG India",
     "Sustainable Aviation Fuels",
     "SAF",
+    "Biomass Valorisation",
     "Agricultural Residue Utilization",
-    "Circular Economy",
+    "Circular Industrial Materials",
     "Industrial Infrastructure India",
   ],
   authors: [{ name: "Rivanta Green Innovative Venture Pvt. Ltd." }],
@@ -54,11 +57,11 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: "Rivanta Green — Building Industrial Value From India's Resources",
+    title: "Rivanta Green | Sustainable Industrial Innovation",
     description:
-      "Rivanta Green Innovative Venture Private Limited is an emerging Indian industrial enterprise developing an integrated portfolio across renewable energy, advanced materials, sustainable fuels, and circular manufacturing.",
+      "Rivanta Green is developing integrated industrial initiatives across bio-silica, compressed biogas, sustainable aviation fuel and biomass valorisation in India.",
     url: siteUrl,
-    siteName: "Rivanta Green Innovative Venture",
+    siteName: "Rivanta Green",
     images: [
       {
         url: "/images/og-rivanta.jpg",
@@ -67,23 +70,28 @@ export const metadata: Metadata = {
         alt: "Rivanta Green Industrial Development Facility Concept",
       },
     ],
-    locale: "en_US",
+    locale: "en_IN",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rivanta Green — Building Industrial Value From India's Resources",
+    title: "Rivanta Green | Sustainable Industrial Innovation",
     description:
-      "Emerging Indian industrial enterprise developing an integrated portfolio across renewable energy, advanced materials, sustainable fuels, and circular manufacturing.",
+      "Rivanta Green is developing integrated industrial initiatives across bio-silica, compressed biogas, sustainable aviation fuel and biomass valorisation in India.",
     images: ["/images/og-rivanta.jpg"],
   },
   icons: {
     icon: [
-      { url: "/logo/logo-icon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-48x48.png", sizes: "48x48", type: "image/png" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/favicon-192x192.png", sizes: "192x192", type: "image/png" },
     ],
     apple: [
-      { url: "/logo/logo-icon.svg", type: "image/svg+xml" },
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
     ],
+    shortcut: "/favicon.ico",
   },
 };
 
@@ -91,14 +99,20 @@ const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Corporation",
+      "@type": ["Corporation", "Organization"],
       "@id": `${siteUrl}/#organization`,
       name: "Rivanta Green Innovative Venture Private Limited",
-      alternateName: "Rivanta Green",
+      legalName: "Rivanta Green Innovative Venture Private Limited",
+      alternateName: ["Rivanta Green", "Rivanta"],
       url: siteUrl,
-      logo: `${siteUrl}/logo/logo-icon.svg`,
+      logo: {
+        "@type": "ImageObject",
+        url: `${siteUrl}/logo/logo-brand-lockup.svg`,
+        caption: "Rivanta Green Innovative Venture Private Limited",
+      },
+      image: `${siteUrl}/images/og-rivanta.jpg`,
       description:
-        "Emerging Indian industrial enterprise developing an integrated portfolio across renewable energy, advanced materials, sustainable fuels, and circular manufacturing.",
+        "Rivanta Green is developing integrated industrial initiatives across bio-silica, compressed biogas, sustainable aviation fuel and biomass valorisation in India.",
       email: "info@rivantagreen.com",
       telephone: "+91 98930 25375",
       foundingLocation: {
@@ -111,6 +125,7 @@ const structuredData = {
           "B-29, 3rd Floor, Kasturba Nagar, Next to Lake City Hospital, Chetak Bridge",
         addressLocality: "Bhopal",
         addressRegion: "Madhya Pradesh",
+        postalCode: "462023",
         addressCountry: "IN",
       },
       contactPoint: {
@@ -118,12 +133,16 @@ const structuredData = {
         contactType: "corporate communications",
         telephone: "+91 98930 25375",
         email: "info@rivantagreen.com",
+        areaServed: "IN",
+        availableLanguage: ["English", "Hindi"],
       },
       knowsAbout: [
         "Biogenic Silica",
+        "Bio-Silica",
         "Compressed Biogas (CBG)",
-        "Sustainable Aviation Fuels",
-        "Agricultural Residue Valorization",
+        "Sustainable Aviation Fuel (SAF)",
+        "Biomass Valorisation",
+        "Agricultural Residue Utilization",
         "Circular Industrial Materials",
         "Industrial Infrastructure",
       ],
@@ -133,6 +152,8 @@ const structuredData = {
       "@id": `${siteUrl}/#website`,
       url: siteUrl,
       name: "Rivanta Green",
+      alternateName: ["Rivanta Green Innovative Venture", "Rivanta"],
+      inLanguage: "en-IN",
       publisher: {
         "@id": `${siteUrl}/#organization`,
       },
