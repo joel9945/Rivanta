@@ -137,6 +137,24 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
     };
   }, []);
 
+  // Freeze background scrolling and pause Lenis when mobile drawer is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+      const win = typeof window !== "undefined" ? (window as unknown as { lenis?: { stop?: () => void; start?: () => void } }) : null;
+      win?.lenis?.stop?.();
+    } else {
+      document.body.style.overflow = "";
+      const win = typeof window !== "undefined" ? (window as unknown as { lenis?: { stop?: () => void; start?: () => void } }) : null;
+      win?.lenis?.start?.();
+    }
+    return () => {
+      document.body.style.overflow = "";
+      const win = typeof window !== "undefined" ? (window as unknown as { lenis?: { stop?: () => void; start?: () => void } }) : null;
+      win?.lenis?.start?.();
+    };
+  }, [mobileMenuOpen]);
+
   const hasDarkHero =
     pathname === "/" ||
     pathname === "/about" ||
@@ -520,6 +538,7 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
           role="dialog"
           aria-modal="true"
           aria-label="Mobile Navigation"
+          data-lenis-prevent="true"
         >
           {/* Subtle Ambient Glows */}
           <div className="absolute top-0 right-0 w-80 h-80 rounded-full bg-[radial-gradient(circle,_rgba(224,100,37,0.15),_transparent_70%)] pointer-events-none" />
@@ -555,7 +574,15 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
           </div>
 
           {/* 2. Scrollable Navigation List with Visible Custom Scroller (.nav-scroller) */}
-          <div className="nav-scroller flex-1 relative z-10 px-5 sm:px-7 py-5 overflow-y-auto space-y-6">
+          <div
+            className="nav-scroller flex-1 min-h-0 relative z-10 px-5 sm:px-7 py-5 overflow-y-auto space-y-6"
+            data-lenis-prevent="true"
+            style={{
+              WebkitOverflowScrolling: "touch",
+              touchAction: "pan-y",
+              overscrollBehavior: "contain",
+            }}
+          >
             {/* Primary Quick Links */}
             <div>
               <Link

@@ -88,6 +88,8 @@ html, body {
   overflow-y: scroll !important;
   overflow-x: hidden !important;
   -webkit-overflow-scrolling: touch !important;
+  touch-action: pan-y !important;
+  overscroll-behavior: contain !important;
   scrollbar-width: thin !important;
   scrollbar-color: #e06425 rgba(255, 255, 255, 0.12) !important;
 }

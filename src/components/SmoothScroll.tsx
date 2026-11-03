@@ -18,9 +18,9 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
     const lenis = new Lenis({
       lerp: 0.075, // Viscous fluid inertia damping (glides effortlessly like water)
       wheelMultiplier: 1.02,
-      touchMultiplier: 1.25,
+      touchMultiplier: 1.0,
       smoothWheel: true,
-      syncTouch: true,
+      syncTouch: false, // Keep native touch gestures free and responsive on mobile
       orientation: "vertical",
       gestureOrientation: "vertical",
       infinite: false,
