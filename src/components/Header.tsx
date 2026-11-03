@@ -591,9 +591,14 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
                 <ArrowUpRight className="w-4 h-4" />
               </Link>
             )}
-            <span className="font-mono text-xs text-white/50">
-              contact@rivantagreen.com
-            </span>
+            <div className="flex flex-col items-center gap-1 font-mono text-xs text-white/70">
+              <a href="tel:+919893025375" className="hover:text-[#e06425] transition-colors font-medium">
+                +91 98930 25375
+              </a>
+              <a href="mailto:info@rivantagreen.com" className="hover:text-[#e06425] transition-colors text-white/50">
+                info@rivantagreen.com
+              </a>
+            </div>
           </div>
         </div>
       )}

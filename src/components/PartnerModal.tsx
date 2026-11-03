@@ -183,7 +183,7 @@ export default function PartnerModal({ isOpen, onClose }: PartnerModalProps) {
                   id="inquiry-name"
                   required
                   type="text"
-                  placeholder="Dr. Julian Vance"
+                  placeholder="e.g. Rajesh Sharma"
                   value={formData.name}
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
@@ -212,7 +212,7 @@ export default function PartnerModal({ isOpen, onClose }: PartnerModalProps) {
                   id="inquiry-email"
                   required
                   type="email"
-                  placeholder="vance@infrastructure.com"
+                  placeholder="name@company.com"
                   value={formData.email}
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
@@ -243,7 +243,7 @@ export default function PartnerModal({ isOpen, onClose }: PartnerModalProps) {
                   id="inquiry-org"
                   required
                   type="text"
-                  placeholder="Renewable Energy Partners"
+                  placeholder="Company or Enterprise Name"
                   value={formData.org}
                   onChange={(e) =>
                     setFormData({ ...formData, org: e.target.value })

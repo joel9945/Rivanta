@@ -1,19 +1,19 @@
 "use client";
 
-import React, { useState } from "react";
-import Link from "next/link";
-import SubpageHero from "@/components/SubpageHero";
 import MarqueeText from "@/components/MarqueeText";
+import SubpageHero from "@/components/SubpageHero";
 import {
-  Droplet,
-  Wind,
-  RefreshCw,
-  BarChart3,
-  ArrowRight,
   Activity,
+  ArrowRight,
+  BarChart3,
   CheckCircle2,
+  Droplet,
+  RefreshCw,
   ShieldCheck,
+  Wind,
 } from "lucide-react";
+import Link from "next/link";
+import { useState } from "react";
 
 const LCA_STAGES = [
   {
@@ -145,10 +145,14 @@ export default function SustainabilityPage() {
             </div>
             <h2 className="font-sans font-normal text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.12] text-[#13271e] reveal-up delay-100">
               Four pillars of verified{" "}
-              <span className="text-[#a0b0a5]">environmental intervention.</span>
+              <span className="text-[#a0b0a5]">
+                environmental intervention.
+              </span>
             </h2>
             <p className="font-sans text-base md:text-lg text-[#13271e]/80 font-light mt-4 leading-relaxed reveal-up delay-200">
-              Every facility design is governed by strict mass and energy balances that eliminate agricultural waste liabilities while manufacturing low-carbon industrial raw materials.
+              Every facility design is governed by strict mass and energy
+              balances that eliminate agricultural waste liabilities while
+              manufacturing low-carbon industrial raw materials.
             </p>
           </div>
 
@@ -165,7 +169,10 @@ export default function SustainabilityPage() {
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
                       <div className="w-12 h-12 rounded-2xl bg-[#f0f4f1] flex items-center justify-center">
-                        <Icon className="w-6 h-6" style={{ color: pillar.color }} />
+                        <Icon
+                          className="w-6 h-6"
+                          style={{ color: pillar.color }}
+                        />
                       </div>
                       <span className="font-mono text-xs uppercase tracking-wider text-[#13271e]/60">
                         Pillar 0{idx + 1}
@@ -189,8 +196,13 @@ export default function SustainabilityPage() {
                   {/* Animated Metric Gauge Bar */}
                   <div className="pt-4 border-t border-[#13271e]/8 space-y-2">
                     <div className="flex items-center justify-between">
-                      <span className="font-mono text-xs text-[#13271e]/70">{pillar.metricLabel}</span>
-                      <span className="font-mono text-base font-semibold" style={{ color: pillar.color }}>
+                      <span className="font-mono text-xs text-[#13271e]/70">
+                        {pillar.metricLabel}
+                      </span>
+                      <span
+                        className="font-mono text-base font-semibold"
+                        style={{ color: pillar.color }}
+                      >
                         {pillar.metricValue}
                       </span>
                     </div>
@@ -212,7 +224,10 @@ export default function SustainabilityPage() {
       </section>
 
       {/* Interactive Cradle-to-Gate Life Cycle Assessment (LCA) Flowsheet */}
-      <section id="lca-flow" className="py-20 md:py-28 bg-[#eceee9] border-t border-[#13271e]/8">
+      <section
+        id="lca-flow"
+        className="py-20 md:py-28 bg-[#eceee9] border-t border-[#13271e]/8"
+      >
         <div className="u-container u-container--1 u-container--pad">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
             <div>
@@ -247,19 +262,28 @@ export default function SustainabilityPage() {
                   }`}
                 >
                   <div className="flex items-center justify-between mb-2">
-                    <span className="font-mono text-2xl font-light" style={{ color: isSelected ? "#ea6e2d" : "#e06425" }}>
+                    <span
+                      className="font-mono text-2xl font-light"
+                      style={{ color: isSelected ? "#ea6e2d" : "#e06425" }}
+                    >
                       {stage.step}
                     </span>
-                    <span className={`font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 rounded ${
-                      isSelected ? "bg-white/10 text-white" : "bg-[#f6f8f6] text-[#2d7a54]"
-                    }`}>
+                    <span
+                      className={`font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 rounded ${
+                        isSelected
+                          ? "bg-white/10 text-white"
+                          : "bg-[#f6f8f6] text-[#2d7a54]"
+                      }`}
+                    >
                       {stage.metric}
                     </span>
                   </div>
                   <h4 className="font-sans font-medium text-base mb-1">
                     {stage.title}
                   </h4>
-                  <span className={`font-mono text-xs block ${isSelected ? "text-white/60" : "text-[#13271e]/60"}`}>
+                  <span
+                    className={`font-mono text-xs block ${isSelected ? "text-white/60" : "text-[#13271e]/60"}`}
+                  >
                     {stage.phase}
                   </span>
                 </button>
@@ -292,7 +316,9 @@ export default function SustainabilityPage() {
 
                 <div className="pt-2 flex items-center gap-2 text-xs font-mono text-[#2d7a54]">
                   <CheckCircle2 className="w-4 h-4 flex-shrink-0" />
-                  <span>Deliverable: {LCA_STAGES[activeLcaStep].deliverable}</span>
+                  <span>
+                    Deliverable: {LCA_STAGES[activeLcaStep].deliverable}
+                  </span>
                 </div>
               </div>
 
@@ -304,7 +330,8 @@ export default function SustainabilityPage() {
                   {LCA_STAGES[activeLcaStep].metric}
                 </div>
                 <p className="font-sans text-xs text-[#13271e]/70 font-light leading-relaxed">
-                  Calculated against electric-arc mined quartz calcination and seasonal open-air burning baseline data.
+                  Calculated against electric-arc mined quartz calcination and
+                  seasonal open-air burning baseline data.
                 </p>
                 <div className="pt-2 border-t border-[#13271e]/10">
                   <Link
@@ -331,10 +358,15 @@ export default function SustainabilityPage() {
                 <span>Governance & Verification Framework</span>
               </div>
               <h3 className="font-sans font-medium text-2xl sm:text-3xl md:text-4xl">
-                Structured for third-party verification under ISO 14040/14044 & ISO 14064.
+                Structured for third-party verification under ISO 14040/14044 &
+                ISO 14064.
               </h3>
               <p className="font-sans text-sm md:text-base text-white/75 font-light leading-relaxed">
-                We strictly distinguish project engineering models from empirical operational baselines. Lifecycle assessments, circular resource yields, and carbon displacement figures are modeled under ISO 14040/14044 frameworks and structured for accredited third-party verification.
+                We strictly distinguish project engineering models from
+                empirical operational baselines. Lifecycle assessments, circular
+                resource yields, and carbon displacement figures are modeled
+                under ISO 14040/14044 frameworks and structured for accredited
+                third-party verification.
               </p>
             </div>
 

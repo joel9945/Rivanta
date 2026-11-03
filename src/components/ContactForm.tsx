@@ -103,7 +103,7 @@ export default function ContactForm() {
             id="contact-name"
             required
             type="text"
-            placeholder="Dr. Julian Vance"
+            placeholder="e.g. Rajesh Sharma"
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             className={`w-full px-4 py-2.5 rounded-xl bg-[#f6f8f6] border text-sm focus:outline-none transition-colors ${
@@ -130,7 +130,7 @@ export default function ContactForm() {
             id="contact-email"
             required
             type="email"
-            placeholder="vance@enterprise.com"
+            placeholder="name@company.com"
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
             className={`w-full px-4 py-2.5 rounded-xl bg-[#f6f8f6] border text-sm focus:outline-none transition-colors ${
@@ -159,7 +159,7 @@ export default function ContactForm() {
             id="contact-org"
             required
             type="text"
-            placeholder="Industrial Materials Group"
+            placeholder="Company or Enterprise Name"
             value={formData.org}
             onChange={(e) => setFormData({ ...formData, org: e.target.value })}
             className={`w-full px-4 py-2.5 rounded-xl bg-[#f6f8f6] border text-sm focus:outline-none transition-colors ${

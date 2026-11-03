@@ -98,7 +98,27 @@ const structuredData = {
   logo: `${siteUrl}/logo/logo-icon.svg`,
   description:
     "Industrial manufacturing venture operating in agricultural biomass valorization, Green Silicon (6N purity / 99.999%), compressed biogas, and sustainable aviation fuel pathways.",
-  email: "contact@rivantagreen.com",
+  email: "info@rivantagreen.com",
+  telephone: "+91 98930 25375",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "B-29, 3rd Floor, Kasturba Nagar, Next to Lake City Hospital, Chetak Bridge",
+    addressLocality: "Bhopal",
+    addressRegion: "Madhya Pradesh",
+    addressCountry: "IN",
+  },
+  parentOrganization: {
+    "@type": "Corporation",
+    name: "Golden Soil Ventures Private Limited",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "E4/271 Arera Colony, Huzur",
+      addressLocality: "Bhopal",
+      addressRegion: "Madhya Pradesh",
+      postalCode: "462016",
+      addressCountry: "IN",
+    },
+  },
   sameAs: ["https://linkedin.com", "https://x.com"],
 };
 

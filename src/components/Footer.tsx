@@ -155,6 +155,22 @@ export default async function Footer() {
               <ul className="space-y-3 font-sans font-light text-white/80 text-xs sm:text-sm">
                 <li>
                   <a
+                    href="tel:+919893025375"
+                    className="hover:text-[#ea6e2d] transition-colors"
+                  >
+                    +91 98930 25375
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="mailto:info@rivantagreen.com"
+                    className="hover:text-[#ea6e2d] transition-colors"
+                  >
+                    info@rivantagreen.com
+                  </a>
+                </li>
+                <li>
+                  <a
                     href="https://linkedin.com"
                     target="_blank"
                     rel="noreferrer"
@@ -173,18 +189,73 @@ export default async function Footer() {
                     X (Twitter)
                   </a>
                 </li>
-                <li>
-                  <a
-                    href="mailto:contact@rivantagreen.com"
-                    className="hover:text-[#ea6e2d] transition-colors"
-                  >
-                    Email Desk
-                  </a>
-                </li>
               </ul>
 
               <div className="pt-2">
                 <ScrollToTopButton />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Corporate Offices & Registered Coordinates Bar */}
+        <div className="py-10 border-b border-white/10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-xs text-white/70">
+          {/* Head & Registered Office */}
+          <div className="space-y-2">
+            <div className="font-mono uppercase tracking-wider text-[#f9a65c] font-semibold text-[11px]">
+              Head & Registered Office
+            </div>
+            <div className="font-sans font-medium text-white text-sm">
+              Rivanta Green Innovative Venture Private Limited
+            </div>
+            <p className="font-light leading-relaxed text-white/75">
+              B-29, 3rd Floor, Kasturba Nagar,<br />
+              Next to Lake City Hospital, Chetak Bridge,<br />
+              Bhopal, Madhya Pradesh, India.
+            </p>
+          </div>
+
+          {/* Corporate Office */}
+          <div className="space-y-2">
+            <div className="font-mono uppercase tracking-wider text-[#f9a65c] font-semibold text-[11px]">
+              Corporate Office
+            </div>
+            <div className="font-sans font-medium text-white text-sm">
+              Golden Soil Ventures Private Limited
+            </div>
+            <p className="font-light leading-relaxed text-white/75">
+              E4/271 Arera Colony, Huzur,<br />
+              Bhopal, Madhya Pradesh, 462016 - India.
+            </p>
+          </div>
+
+          {/* Direct Contact Coordinates */}
+          <div className="space-y-2">
+            <div className="font-mono uppercase tracking-wider text-[#f9a65c] font-semibold text-[11px]">
+              Direct Corporate Desk
+            </div>
+            <div className="space-y-1.5 font-sans">
+              <div>
+                <span className="text-white/50 font-mono text-[11px] block">Direct Line:</span>
+                <a
+                  href="tel:+919893025375"
+                  className="text-white hover:text-[#f9a65c] transition-colors font-medium text-sm"
+                >
+                  +91 98930 25375
+                </a>
+              </div>
+              <div>
+                <span className="text-white/50 font-mono text-[11px] block">Official Email:</span>
+                <a
+                  href="mailto:info@rivantagreen.com"
+                  className="text-white hover:text-[#f9a65c] transition-colors font-medium text-sm"
+                >
+                  info@rivantagreen.com
+                </a>
+              </div>
+              <div>
+                <span className="text-white/50 font-mono text-[11px] block">Portal:</span>
+                <span className="text-white/90">www.rivantagreen.com</span>
               </div>
             </div>
           </div>
