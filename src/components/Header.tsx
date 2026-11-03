@@ -146,19 +146,19 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
               <div
                 className={`relative w-auto flex-shrink-0 flex items-center transition-all duration-300 ${
                   isTransparent
-                    ? "h-14 sm:h-16 md:h-18 lg:h-20"
-                    : "h-10 sm:h-11 md:h-12 lg:h-12.5"
+                    ? "h-11 sm:h-12 md:h-13 lg:h-14"
+                    : "h-9 sm:h-10 md:h-10.5 lg:h-11"
                 }`}
               >
                 <Image
                   src={isTransparent ? "/logo/logo-brand-lockup-light.svg" : "/logo/logo-brand-lockup.svg"}
                   alt="RIVANTA - Green Innovative Venture Private Limited"
-                  width={300}
-                  height={72}
+                  width={280}
+                  height={62}
                   className={`w-auto object-contain transition-all duration-300 group-hover:scale-[1.02] ${
                     isTransparent
-                      ? "h-13 sm:h-15 md:h-17 lg:h-18 filter drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)] drop-shadow-[0_4px_24px_rgba(0,0,0,0.7)]"
-                      : "h-9.5 sm:h-10.5 md:h-11.5 lg:h-12"
+                      ? "h-10 sm:h-11 md:h-12 lg:h-13 filter drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)] drop-shadow-[0_4px_24px_rgba(0,0,0,0.7)]"
+                      : "h-8.5 sm:h-9.5 md:h-10 lg:h-10.5"
                   }`}
                   priority
                 />
