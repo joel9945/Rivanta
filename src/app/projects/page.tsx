@@ -1,16 +1,16 @@
 "use client";
 
-import React, { useState } from "react";
-import Link from "next/link";
-import SubpageHero from "@/components/SubpageHero";
 import MarqueeText from "@/components/MarqueeText";
+import SubpageHero from "@/components/SubpageHero";
 import {
-  HardHat,
-  Cog,
-  ShieldCheck,
-  CheckCircle2,
   ArrowRight,
+  CheckCircle2,
+  Cog,
+  HardHat,
+  ShieldCheck,
 } from "lucide-react";
+import Link from "next/link";
+import { useState } from "react";
 
 const PROJECT_INITIATIVES = [
   {
@@ -188,7 +188,9 @@ export default function ProjectsPage() {
               </h2>
             </div>
             <p className="font-sans text-sm md:text-base text-[#13271e]/70 max-w-md reveal-up delay-200">
-              Every initiative is classified by its verified development status, reflecting disciplined project progression from concept through execution.
+              Every initiative is classified by its verified development status,
+              reflecting disciplined project progression from concept through
+              execution.
             </p>
           </div>
 
@@ -208,8 +210,8 @@ export default function ProjectsPage() {
                         init.status === "Under Development"
                           ? "bg-[#e06425]/10 text-[#e06425]"
                           : init.status === "Engineering & Planning"
-                          ? "bg-[#2d7a54]/10 text-[#2d7a54]"
-                          : "bg-black/5 text-[#13271e]/70"
+                            ? "bg-[#2d7a54]/10 text-[#2d7a54]"
+                            : "bg-black/5 text-[#13271e]/70"
                       }`}
                     >
                       {init.status}
@@ -269,7 +271,9 @@ export default function ProjectsPage() {
                   <span className="text-[#a0b0a5]">defined phases.</span>
                 </h2>
                 <p className="font-sans text-base md:text-lg text-[#13271e]/80 font-light mt-4 leading-relaxed reveal-up delay-200">
-                  Phased development ensures technical qualification, statutory approvals, and commercial alignment precede major capital deployment.
+                  Phased development ensures technical qualification, statutory
+                  approvals, and commercial alignment precede major capital
+                  deployment.
                 </p>
               </div>
 
@@ -293,8 +297,8 @@ export default function ProjectsPage() {
                           p.status === "Completed"
                             ? "bg-[#2d7a54]/20 text-[#2d7a54]"
                             : p.status === "Underway"
-                            ? "bg-[#e06425]/20 text-[#e06425]"
-                            : "bg-black/10 text-[#13271e]/60"
+                              ? "bg-[#e06425]/20 text-[#e06425]"
+                              : "bg-black/10 text-[#13271e]/60"
                         }`}
                       >
                         {p.status}
@@ -312,7 +316,8 @@ export default function ProjectsPage() {
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#13271e]/8 pb-6 mb-6">
                   <div>
                     <span className="font-mono text-xs uppercase tracking-wider text-[#e06425] font-semibold block mb-1">
-                      {DEVELOPMENT_PHASES[activePhaseIndex].phase} — {DEVELOPMENT_PHASES[activePhaseIndex].timeline}
+                      {DEVELOPMENT_PHASES[activePhaseIndex].phase} —{" "}
+                      {DEVELOPMENT_PHASES[activePhaseIndex].timeline}
                     </span>
                     <h3 className="font-sans font-medium text-2xl md:text-3xl text-[#13271e]">
                       {DEVELOPMENT_PHASES[activePhaseIndex].name}
@@ -320,14 +325,18 @@ export default function ProjectsPage() {
                   </div>
 
                   <div className="flex items-center gap-3">
-                    <span className="font-mono text-xs text-[#13271e]/60">Stage Status</span>
+                    <span className="font-mono text-xs text-[#13271e]/60">
+                      Stage Status
+                    </span>
                     <span
                       className={`font-mono text-xs font-semibold px-2.5 py-1 rounded ${
-                        DEVELOPMENT_PHASES[activePhaseIndex].status === "Completed"
+                        DEVELOPMENT_PHASES[activePhaseIndex].status ===
+                        "Completed"
                           ? "bg-[#2d7a54]/10 text-[#2d7a54]"
-                          : DEVELOPMENT_PHASES[activePhaseIndex].status === "Underway"
-                          ? "bg-[#e06425]/10 text-[#e06425]"
-                          : "bg-black/5 text-[#13271e]/70"
+                          : DEVELOPMENT_PHASES[activePhaseIndex].status ===
+                              "Underway"
+                            ? "bg-[#e06425]/10 text-[#e06425]"
+                            : "bg-black/5 text-[#13271e]/70"
                       }`}
                     >
                       {DEVELOPMENT_PHASES[activePhaseIndex].status}
@@ -344,17 +353,19 @@ export default function ProjectsPage() {
                     Core Deliverables:
                   </h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {DEVELOPMENT_PHASES[activePhaseIndex].deliverables.map((item, idx) => (
-                      <div
-                        key={idx}
-                        className="p-3.5 rounded-xl bg-[#f6f8f6] border border-[#13271e]/6 flex items-start gap-3"
-                      >
-                        <CheckCircle2 className="w-4 h-4 text-[#2d7a54] flex-shrink-0 mt-0.5" />
-                        <span className="font-sans text-xs sm:text-sm text-[#13271e]/85 font-light">
-                          {item}
-                        </span>
-                      </div>
-                    ))}
+                    {DEVELOPMENT_PHASES[activePhaseIndex].deliverables.map(
+                      (item, idx) => (
+                        <div
+                          key={idx}
+                          className="p-3.5 rounded-xl bg-[#f6f8f6] border border-[#13271e]/6 flex items-start gap-3"
+                        >
+                          <CheckCircle2 className="w-4 h-4 text-[#2d7a54] flex-shrink-0 mt-0.5" />
+                          <span className="font-sans text-xs sm:text-sm text-[#13271e]/85 font-light">
+                            {item}
+                          </span>
+                        </div>
+                      ),
+                    )}
                   </div>
                 </div>
               </div>
@@ -407,7 +418,8 @@ export default function ProjectsPage() {
                 Collaborate on industrial development initiatives.
               </h3>
               <p className="font-sans text-sm text-white/75 font-light">
-                Connect with our corporate team to discuss project partnerships, technology collaboration, or equipment qualification.
+                Connect with our corporate team to discuss project partnerships,
+                technology collaboration, or equipment qualification.
               </p>
             </div>
 

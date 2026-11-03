@@ -1,17 +1,17 @@
 "use client";
 
-import React, { useState } from "react";
-import Link from "next/link";
-import SubpageHero from "@/components/SubpageHero";
 import MarqueeText from "@/components/MarqueeText";
+import SubpageHero from "@/components/SubpageHero";
 import {
-  Activity,
-  ArrowRight,
-  ArrowUpRight,
-  Flame,
-  Fuel,
-  Plane,
+    Activity,
+    ArrowRight,
+    ArrowUpRight,
+    Flame,
+    Fuel,
+    Plane,
 } from "lucide-react";
+import Link from "next/link";
+import { useState } from "react";
 
 const STRATEGIC_PATHWAYS = [
   {
@@ -54,28 +54,32 @@ const EVALUATION_PARAMETERS = [
     id: "drop-in-capability",
     value: "Drop-In Objective",
     label: "Fuel Compatibility",
-    detail: "Targeting complete physical and performance compatibility with conventional aviation fueling infrastructure.",
+    detail:
+      "Targeting complete physical and performance compatibility with conventional aviation fueling infrastructure.",
     trend: "Infrastructure Readiness",
   },
   {
     id: "feedstock-integrity",
     value: "Non-Food Biomass",
     label: "Non-Food Biomass",
-    detail: "Strictly utilizing non-food agricultural residues to prevent competition with food production or arable land.",
+    detail:
+      "Strictly utilizing non-food agricultural residues to prevent competition with food production or arable land.",
     trend: "Responsible Sourcing",
   },
   {
     id: "emissions-profile",
     value: "Long-Term Reductions",
     label: "Lifecycle Assessment",
-    detail: "Designed to deliver substantial lifecycle carbon reductions compared to conventional fossil jet fuels.",
+    detail:
+      "Designed to deliver substantial lifecycle carbon reductions compared to conventional fossil jet fuels.",
     trend: "Aviation Decarbonization",
   },
   {
     id: "standards-alignment",
     value: "Aviation Standards",
     label: "Certification Readiness",
-    detail: "Aligning process design with international aviation fuel certification standards and off-take specifications.",
+    detail:
+      "Aligning process design with international aviation fuel certification standards and off-take specifications.",
     trend: "Industry Compliance",
   },
 ];
@@ -149,10 +153,17 @@ export default function SafPage() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-[#13271e]/80 text-base md:text-lg font-light leading-relaxed reveal-up delay-200">
                 <p>
-                  Aviation represents one of the most demanding sectors to decarbonize, requiring high-energy-density drop-in liquid fuels that perform reliably across commercial jet fleets without infrastructure retooling.
+                  Aviation represents one of the most demanding sectors to
+                  decarbonize, requiring high-energy-density drop-in liquid
+                  fuels that perform reliably across commercial jet fleets
+                  without infrastructure retooling.
                 </p>
                 <p>
-                  Rivanta Green is conducting structured technical evaluations into conversion pathways that can process non-food agricultural residues into certifiable sustainable aviation fuels, positioning the enterprise for long-term industrial participation.
+                  Rivanta Green is conducting structured technical evaluations
+                  into conversion pathways that can process non-food
+                  agricultural residues into certifiable sustainable aviation
+                  fuels, positioning the enterprise for long-term industrial
+                  participation.
                 </p>
               </div>
 
@@ -376,7 +387,10 @@ export default function SafPage() {
                 A methodical pathway to aviation participation.
               </h2>
               <p className="font-sans text-base md:text-lg text-[#13271e]/80 font-light max-w-2xl reveal-up delay-200">
-                Sustainable aviation fuel development is approached through rigorous techno-economic evaluation, feedstock security planning, and commercial alignment with domestic airlines and fuel distributors.
+                Sustainable aviation fuel development is approached through
+                rigorous techno-economic evaluation, feedstock security
+                planning, and commercial alignment with domestic airlines and
+                fuel distributors.
               </p>
 
               <div className="space-y-4 pt-4">

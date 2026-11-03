@@ -28,3 +28,4 @@ for (const f of files) {
   }
 }
 console.log("Broken assets:", broken);
+

@@ -1,19 +1,19 @@
 "use client";
 
-import React, { useState } from "react";
-import Link from "next/link";
-import SubpageHero from "@/components/SubpageHero";
 import MarqueeText from "@/components/MarqueeText";
+import SubpageHero from "@/components/SubpageHero";
 import {
   Activity,
   ArrowRight,
   CheckCircle2,
   Droplet,
+  Flame,
   RefreshCw,
   ShieldCheck,
   Wind,
-  Flame,
 } from "lucide-react";
+import Link from "next/link";
+import { useState } from "react";
 
 const STEWARDSHIP_PILLARS = [
   {
@@ -88,7 +88,8 @@ const FRAMEWORK_STAGES = [
     focus: "Effluent Minimization",
     description:
       "Applying membrane filtration and condensation recycling systems to treat and reuse process water, maintaining water conservation as an essential operational principle.",
-    deliverable: "ZLD engineering standards applied across all processing loops",
+    deliverable:
+      "ZLD engineering standards applied across all processing loops",
   },
   {
     step: "04",
@@ -97,7 +98,8 @@ const FRAMEWORK_STAGES = [
     focus: "By-Product Valorization",
     description:
       "Developing commercial channels for refined biogenic materials and enriched organic soil nutrients, ensuring comprehensive material utilization across the full production cycle.",
-    deliverable: "Material lifecycle accounting structured for environmental transparency",
+    deliverable:
+      "Material lifecycle accounting structured for environmental transparency",
   },
 ];
 
@@ -140,7 +142,10 @@ export default function SustainabilityPage() {
               <span className="text-[#a0b0a5]">industrial operations.</span>
             </h2>
             <p className="font-sans text-base md:text-lg text-[#13271e]/80 font-light mt-4 leading-relaxed reveal-up delay-200">
-              Our project planning incorporates environmental engineering priorities across water conservation, air emissions management, energy efficiency, and circular by-product utilization across all planned facilities.
+              Our project planning incorporates environmental engineering
+              priorities across water conservation, air emissions management,
+              energy efficiency, and circular by-product utilization across all
+              planned facilities.
             </p>
           </div>
 
@@ -273,7 +278,8 @@ export default function SustainabilityPage() {
               <div className="lg:col-span-8 space-y-4">
                 <div className="flex items-center gap-3">
                   <span className="font-mono text-xs uppercase tracking-wider text-[#e06425] font-semibold">
-                    Stage {FRAMEWORK_STAGES[activeStage].step} Operational Specification
+                    Stage {FRAMEWORK_STAGES[activeStage].step} Operational
+                    Specification
                   </span>
                   <span className="font-mono text-xs text-[#2d7a54] font-medium bg-[#d6e8dc]/40 px-2.5 py-0.5 rounded">
                     {FRAMEWORK_STAGES[activeStage].focus}
@@ -304,7 +310,8 @@ export default function SustainabilityPage() {
                   {FRAMEWORK_STAGES[activeStage].focus}
                 </div>
                 <p className="font-sans text-xs text-[#13271e]/70 font-light leading-relaxed">
-                  Evaluated against industrial environmental standards and regional regulatory clearances.
+                  Evaluated against industrial environmental standards and
+                  regional regulatory clearances.
                 </p>
                 <div className="pt-2 border-t border-[#13271e]/10">
                   <Link
@@ -334,7 +341,11 @@ export default function SustainabilityPage() {
                 Planning for environmental accountability and transparency.
               </h3>
               <p className="font-sans text-sm md:text-base text-white/75 font-light leading-relaxed">
-                We maintain a clear distinction between project design targets and operational results. Water reuse systems, emissions controls, and resource accounting are planned in accordance with applicable statutory guidelines and established environmental engineering practices.
+                We maintain a clear distinction between project design targets
+                and operational results. Water reuse systems, emissions
+                controls, and resource accounting are planned in accordance with
+                applicable statutory guidelines and established environmental
+                engineering practices.
               </p>
             </div>
 
