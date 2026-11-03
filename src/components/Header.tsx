@@ -7,6 +7,8 @@ import { usePathname } from "next/navigation";
 import {
   ArrowUpRight,
   ChevronDown,
+  Mail,
+  Phone,
   X,
 } from "lucide-react";
 
@@ -498,29 +500,33 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
         </div>
       </header>
 
-      {/* Fullscreen Mobile Menu Drawer (Zero Borders) */}
+      {/* Fullscreen Simple Mobile Navigation Drawer with Visible Custom Scroller */}
       {mobileMenuOpen && (
         <div
-          className="fixed inset-0 z-50 bg-[#13271e] text-white flex flex-col p-6 sm:p-8 overflow-y-auto animate-in fade-in duration-300"
+          className="fixed inset-0 z-50 bg-[#0e2219] text-white flex flex-col overflow-hidden animate-in fade-in duration-200"
           role="dialog"
           aria-modal="true"
           aria-label="Mobile Navigation"
         >
-          {/* Header Bar (Zero Borders) */}
-          <div className="flex items-center justify-between pb-6">
+          {/* Subtle Ambient Glows */}
+          <div className="absolute top-0 right-0 w-80 h-80 rounded-full bg-[radial-gradient(circle,_rgba(224,100,37,0.15),_transparent_70%)] pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-[radial-gradient(circle,_rgba(45,122,84,0.18),_transparent_70%)] pointer-events-none" />
+
+          {/* 1. Fixed Top Header Bar (Never scrolls away) */}
+          <div className="relative z-20 flex items-center justify-between px-5 sm:px-7 py-3.5 border-b border-white/10 bg-[#0e2219]/95 backdrop-blur-md flex-shrink-0">
             <Link
               href="/"
               onClick={() => setMobileMenuOpen(false)}
               className="flex items-center"
               aria-label="RIVANTA Home"
             >
-              <div className="relative h-13 sm:h-15 w-auto flex-shrink-0 flex items-center">
+              <div className="relative h-10 sm:h-12 w-auto flex items-center">
                 <Image
                   src="/logo/logo-brand-lockup-light.svg"
                   alt="RIVANTA - Green Innovative Ventures Private Limited"
-                  width={340}
-                  height={64}
-                  className="h-12 sm:h-14 w-auto object-contain filter drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]"
+                  width={320}
+                  height={60}
+                  className="h-9 sm:h-11 w-auto object-contain filter drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]"
                   priority
                 />
               </div>
@@ -528,142 +534,183 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors cursor-pointer border-0"
+              className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 active:scale-95 border border-white/10 flex items-center justify-center text-white transition-all cursor-pointer"
               aria-label="Close navigation menu"
             >
               <X className="w-5 h-5" />
             </button>
           </div>
 
-          {/* Grouped Navigation Links */}
-          <div className="flex flex-col py-8 space-y-8 flex-1">
-            {/* Group 1: Strategic Businesses */}
+          {/* 2. Scrollable Navigation List with Visible Custom Scroller (.nav-scroller) */}
+          <div className="nav-scroller flex-1 relative z-10 px-5 sm:px-7 py-5 overflow-y-auto space-y-6">
+            {/* Primary Quick Links */}
             <div>
-              <span className="font-mono text-xs uppercase tracking-wider text-[#f9a65c] font-semibold block mb-3">
+              <Link
+                href="/"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`flex items-center justify-between py-2 text-lg transition-colors border-b border-white/8 ${
+                  pathname === "/" ? "text-[#f9a65c] font-semibold" : "text-white/90 hover:text-[#f9a65c] font-light"
+                }`}
+              >
+                <span>Home</span>
+                {pathname === "/" && <span className="w-2 h-2 rounded-full bg-[#f9a65c]" />}
+              </Link>
+            </div>
+
+            {/* Core Businesses */}
+            <div>
+              <span className="font-mono text-xs uppercase tracking-[0.16em] text-[#f9a65c] font-semibold block mb-2">
                 Our Businesses
               </span>
-              <div className="grid grid-cols-1 gap-2.5 text-left">
-                <Link
-                  href="/bio-silica"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="font-sans text-xl font-light hover:text-[#f9a65c] transition-colors py-1"
-                >
-                  Bio-Silica & Silicon
-                </Link>
-                <Link
-                  href="/cbg"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="font-sans text-xl font-light hover:text-[#f9a65c] transition-colors py-1"
-                >
-                  Compressed Biogas (CBG)
-                </Link>
-                <Link
-                  href="/saf"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="font-sans text-xl font-light hover:text-[#f9a65c] transition-colors py-1"
-                >
-                  Sustainable Aviation Fuels (SAF)
-                </Link>
-                <Link
-                  href="/feedstock"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="font-sans text-xl font-light hover:text-[#f9a65c] transition-colors py-1"
-                >
-                  Circular Materials & Feedstock
-                </Link>
+              <div className="space-y-0.5">
+                {[
+                  { label: "Bio-Silica & Silicon", href: "/bio-silica" },
+                  { label: "Compressed Biogas (CBG)", href: "/cbg" },
+                  { label: "Sustainable Aviation Fuels (SAF)", href: "/saf" },
+                  { label: "Circular Feedstock & Recovery", href: "/feedstock" },
+                ].map((item) => {
+                  const isActive = pathname === item.href;
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={`flex items-center justify-between py-2.5 text-[15px] sm:text-base transition-colors border-b border-white/5 ${
+                        isActive
+                          ? "text-[#f9a65c] font-medium"
+                          : "text-white/85 hover:text-[#f9a65c] font-light"
+                      }`}
+                    >
+                      <span>{item.label}</span>
+                      {isActive ? (
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#f9a65c]" />
+                      ) : (
+                        <ArrowUpRight className="w-3.5 h-3.5 text-white/30" />
+                      )}
+                    </Link>
+                  );
+                })}
               </div>
             </div>
 
-            {/* Group 2: Industrial Strategy & Stewardship */}
+            {/* Strategy & Operations */}
             <div>
-              <span className="font-mono text-xs uppercase tracking-wider text-[#f9a65c] font-semibold block mb-3">
+              <span className="font-mono text-xs uppercase tracking-[0.16em] text-[#f9a65c] font-semibold block mb-2">
                 Strategy & Operations
               </span>
-              <div className="grid grid-cols-1 gap-2.5 text-left">
-                <Link
-                  href="/sustainability"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="font-sans text-lg font-light text-white/90 hover:text-[#f9a65c] transition-colors"
-                >
-                  Environmental Stewardship
-                </Link>
-                <Link
-                  href="/projects"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="font-sans text-lg font-light text-white/90 hover:text-[#f9a65c] transition-colors"
-                >
-                  Industrial Infrastructure & Projects
-                </Link>
-                <Link
-                  href="/vision"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="font-sans text-lg font-light text-white/90 hover:text-[#f9a65c] transition-colors"
-                >
-                  Vision & Purpose
-                </Link>
+              <div className="space-y-0.5">
+                {[
+                  { label: "Environmental Stewardship", href: "/sustainability" },
+                  { label: "Industrial Infrastructure & Projects", href: "/projects" },
+                  { label: "Vision & Purpose", href: "/vision" },
+                ].map((item) => {
+                  const isActive = pathname === item.href;
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={`flex items-center justify-between py-2.5 text-[15px] sm:text-base transition-colors border-b border-white/5 ${
+                        isActive
+                          ? "text-[#f9a65c] font-medium"
+                          : "text-white/85 hover:text-[#f9a65c] font-light"
+                      }`}
+                    >
+                      <span>{item.label}</span>
+                      {isActive ? (
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#f9a65c]" />
+                      ) : (
+                        <ArrowUpRight className="w-3.5 h-3.5 text-white/30" />
+                      )}
+                    </Link>
+                  );
+                })}
               </div>
             </div>
 
-            {/* Group 3: Corporate & Engagement */}
+            {/* Company & Governance */}
             <div>
-              <span className="font-mono text-xs uppercase tracking-wider text-[#f9a65c] font-semibold block mb-3">
+              <span className="font-mono text-xs uppercase tracking-[0.16em] text-[#f9a65c] font-semibold block mb-2">
                 Company & Governance
               </span>
-              <div className="grid grid-cols-2 gap-2.5 text-left">
-                <Link
-                  href="/about"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="font-sans text-base font-light text-white/80 hover:text-[#f9a65c] transition-colors"
+              <div className="space-y-0.5">
+                {[
+                  { label: "About Us", href: "/about" },
+                  { label: "Commercial Off-Take Desk", href: "/contact" },
+                ].map((item) => {
+                  const isActive = pathname === item.href;
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={`flex items-center justify-between py-2.5 text-[15px] sm:text-base transition-colors border-b border-white/5 ${
+                        isActive
+                          ? "text-[#f9a65c] font-medium"
+                          : "text-white/85 hover:text-[#f9a65c] font-light"
+                      }`}
+                    >
+                      <span>{item.label}</span>
+                      {isActive ? (
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#f9a65c]" />
+                      ) : (
+                        <ArrowUpRight className="w-3.5 h-3.5 text-white/30" />
+                      )}
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Contact Action */}
+            <div className="pt-4">
+              {onOpenPartnerModal ? (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    onOpenPartnerModal();
+                  }}
+                  className="w-full py-3.5 px-6 rounded-full bg-[#e06425] hover:bg-[#ea6e2d] active:scale-[0.99] text-white font-sans text-sm font-semibold flex items-center justify-center gap-2 shadow-md transition-all cursor-pointer border-0"
                 >
-                  About Us
-                </Link>
+                  <span>Contact Corporate Desk</span>
+                  <ArrowUpRight className="w-4 h-4" />
+                </button>
+              ) : (
                 <Link
                   href="/contact"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="font-sans text-base font-light text-white/80 hover:text-[#f9a65c] transition-colors"
+                  className="w-full py-3.5 px-6 rounded-full bg-[#e06425] hover:bg-[#ea6e2d] active:scale-[0.99] text-white font-sans text-sm font-semibold flex items-center justify-center gap-2 shadow-md transition-all cursor-pointer border-0"
                 >
-                  Corporate Desk
+                  <span>Contact Corporate Desk</span>
+                  <ArrowUpRight className="w-4 h-4" />
                 </Link>
-              </div>
+              )}
             </div>
-          </div>
 
-          {/* Bottom Action (Zero Borders) */}
-          <div className="mt-auto pt-6 flex flex-col items-center gap-4">
-            {onOpenPartnerModal ? (
-              <button
-                type="button"
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenPartnerModal();
-                }}
-                className="w-full py-4 rounded-full bg-[#e06425] hover:bg-[#ea6e2d] text-white font-sans text-sm font-semibold flex items-center justify-center gap-2 cursor-pointer transition-colors border-0"
+            {/* Direct Contact Coordinates */}
+            <div className="pt-4 pb-12 border-t border-white/10 flex flex-col items-center gap-2 text-center text-xs font-mono text-white/70">
+              <a
+                href="tel:+919893025375"
+                className="text-white/90 hover:text-[#f9a65c] transition-colors flex items-center gap-1.5"
               >
-                <span>Contact Us</span>
-                <ArrowUpRight className="w-4 h-4" />
-              </button>
-            ) : (
-              <Link
-                href="/contact"
-                onClick={() => setMobileMenuOpen(false)}
-                className="w-full py-4 rounded-full bg-[#e06425] hover:bg-[#ea6e2d] text-white font-sans text-sm font-semibold flex items-center justify-center gap-2 cursor-pointer transition-colors border-0"
-              >
-                <span>Contact Us</span>
-                <ArrowUpRight className="w-4 h-4" />
-              </Link>
-            )}
-            <div className="flex flex-col items-center gap-1 font-mono text-xs text-white/70">
-              <a href="tel:+919893025375" className="hover:text-[#e06425] transition-colors font-medium">
-                +91 98930 25375
+                <Phone className="w-3.5 h-3.5 text-[#ea6e2d]" />
+                <span className="font-medium">+91 98930 25375</span>
               </a>
-              <div className="flex items-center gap-2 text-white/50 text-[11px]">
-                <a href="mailto:info@rivantagreen.com" className="hover:text-[#e06425] transition-colors">
-                  info@rivantagreen.com
+
+              <div className="flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1 text-[11px] text-white/50">
+                <a href="mailto:info@rivantagreen.com" className="hover:text-[#f9a65c] transition-colors flex items-center gap-1">
+                  <Mail className="w-3 h-3 text-[#ea6e2d]" />
+                  <span>info@rivantagreen.com</span>
                 </a>
                 <span>•</span>
-                <a href="mailto:support@rivantagreen.com" className="hover:text-[#e06425] transition-colors">
+                <a href="mailto:support@rivantagreen.com" className="hover:text-[#f9a65c] transition-colors">
                   support@rivantagreen.com
                 </a>
+              </div>
+
+              <div className="text-[10px] text-white/35 uppercase tracking-wider pt-1">
+                Rivanta Green Innovative Ventures Pvt. Ltd.
               </div>
             </div>
           </div>
