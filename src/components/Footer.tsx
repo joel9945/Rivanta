@@ -151,6 +151,14 @@ export default async function Footer() {
                     Corporate Directory
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    href="/privacy-policy"
+                    className="hover:text-[#ea6e2d] transition-colors"
+                  >
+                    Privacy Policy
+                  </Link>
+                </li>
               </ul>
             </div>
 
@@ -302,8 +310,15 @@ export default async function Footer() {
           </div>
 
           <div className="flex flex-col sm:flex-row items-center sm:items-end gap-2 sm:gap-6 text-center sm:text-right font-mono text-xs text-white/50">
-            <div>
-              © {currentYear} Rivanta Green Innovative Ventures Pvt. Ltd. All rights reserved.
+            <div className="flex flex-wrap items-center justify-center sm:justify-end gap-2 sm:gap-3">
+              <Link
+                href="/privacy-policy"
+                className="hover:text-[#f9a65c] transition-colors underline decoration-white/20 underline-offset-4"
+              >
+                Privacy Policy
+              </Link>
+              <span>•</span>
+              <span>© {currentYear} Rivanta Green Innovative Ventures Pvt. Ltd. All rights reserved.</span>
             </div>
             <div className="text-[11px] text-white/40 uppercase tracking-wider">
               Bhopal, Madhya Pradesh, India
