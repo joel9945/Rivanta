@@ -197,7 +197,7 @@ export default function Hero({ onExploreVentures }: HeroProps = {}) {
               </span>
               <span className="block">
                 {PILLARS[activePillar].line2Prefix}
-                <span className="font-normal italic text-[#f9a65c] inline pr-2 py-0.5">
+                <span className="font-bold text-[#f9a65c] inline pr-2 py-0.5">
                   {PILLARS[activePillar].line2Highlight}
                 </span>
               </span>

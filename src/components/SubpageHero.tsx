@@ -162,7 +162,7 @@ export default function SubpageHero({
             <h1 className="font-sans font-light text-3xl sm:text-5xl md:text-6xl lg:text-[4.5rem] tracking-tight leading-[1.05] text-white max-w-5xl">
               {title}{" "}
               {highlightedText && (
-                <span className="italic font-normal shimmer-headline">
+                <span className="font-bold shimmer-headline">
                   {highlightedText}
                 </span>
               )}
