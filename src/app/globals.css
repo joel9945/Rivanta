@@ -392,32 +392,32 @@ main.page-main > .page-content {
   100% { transform: translateX(-50%); }
 }
 
-/* Hero Framed Canvas with Elegant Permanent Rounded Corners */
+/* Hero Framed Canvas with Smooth Scroll Expansion to Screen Edges */
 .hero-frame-canvas {
   position: relative;
-  margin: 14px;
-  border-radius: 28px;
+  margin: var(--hero-canvas-margin, 14px);
+  border-radius: var(--hero-canvas-radius, 28px);
   overflow: hidden;
   isolation: isolate;
-  height: calc(100vh - 28px);
+  height: calc(100vh - (var(--hero-canvas-margin, 14px) * 2));
   min-height: 640px;
   box-shadow: 0 20px 50px -15px rgba(14, 34, 25, 0.25);
 }
 
 @media (max-width: 1024px) {
   .hero-frame-canvas {
-    margin: 10px;
-    border-radius: 20px;
+    margin: var(--hero-canvas-margin, 10px);
+    border-radius: var(--hero-canvas-radius, 20px);
     height: auto;
-    min-height: calc(100dvh - 20px);
+    min-height: calc(100dvh - (var(--hero-canvas-margin, 10px) * 2));
   }
 }
 
-/* Subpage Framed Canvas matching Homepage Aesthetics with Permanent Rounded Corners */
+/* Subpage Framed Canvas matching Homepage Hero Aesthetics with Smooth Scroll Expansion */
 .subpage-frame-canvas {
   position: relative;
-  margin: 14px;
-  border-radius: 28px;
+  margin: var(--subpage-canvas-margin, 14px);
+  border-radius: var(--subpage-canvas-radius, 28px);
   overflow: hidden;
   isolation: isolate;
   min-height: 480px;
@@ -432,15 +432,14 @@ main.page-main > .page-content {
 
 @media (min-width: 1025px) {
   .subpage-frame-canvas {
-    border-radius: 28px;
     min-height: 620px;
   }
 }
 
 @media (max-width: 1024px) {
   .subpage-frame-canvas {
-    margin: 10px;
-    border-radius: 20px;
+    margin: var(--subpage-canvas-margin, 10px);
+    border-radius: var(--subpage-canvas-radius, 20px);
     min-height: 480px;
   }
 }
