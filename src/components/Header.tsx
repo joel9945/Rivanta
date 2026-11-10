@@ -67,6 +67,9 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
     setMobileMenuOpen(false);
   }
 
+  // Dark hero pages feature a dark canvas hero where the navbar must stay transparent and NOT show a white background
+  const hasDarkHero = pathname !== "/privacy-policy";
+
   useEffect(() => {
     if (closeTimeoutRef.current) {
       clearTimeout(closeTimeoutRef.current);
@@ -74,10 +77,24 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
     }
 
     const handleScroll = () => {
-      // Transition to frosted solid header as soon as user scrolls past 30px.
-      // This prevents content beneath the header from bleeding through and overlapping menu text.
-      const scrollY = window.scrollY;
-      setScrolled(scrollY > 30);
+      if (hasDarkHero) {
+        const heroEl =
+          document.getElementById("hero") ||
+          document.getElementById("subpage-hero");
+
+        if (heroEl) {
+          const rect = heroEl.getBoundingClientRect();
+          // The white navbar MUST NOT show in the hero section.
+          // It only transitions to the white navbar AFTER the hero section has scrolled past the header (~80px).
+          setScrolled(rect.bottom <= 80);
+        } else {
+          // While on a hero route, stay in transparent hero mode (never turn white in hero)
+          setScrolled(false);
+        }
+      } else {
+        // Routes without a hero section (e.g. /privacy-policy) use the white navbar
+        setScrolled(true);
+      }
     };
 
     handleScroll();
@@ -101,7 +118,7 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
         lenis.off("scroll", handleScroll);
       }
     };
-  }, [pathname]);
+  }, [pathname, hasDarkHero]);
 
   // Close dropdown on click outside or Escape key
   useEffect(() => {
@@ -154,17 +171,6 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
       win?.lenis?.start?.();
     };
   }, [mobileMenuOpen]);
-
-  const hasDarkHero =
-    pathname === "/" ||
-    pathname === "/about" ||
-    pathname === "/bio-silica" ||
-    pathname === "/cbg" ||
-    pathname === "/feedstock" ||
-    pathname === "/projects" ||
-    pathname === "/saf" ||
-    pathname === "/sustainability" ||
-    pathname === "/vision";
 
   const isBusinessesActive =
     pathname?.startsWith("/bio-silica") ||
