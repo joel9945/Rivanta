@@ -24,20 +24,6 @@ export default function ScrollRevealProvider({
     const revealSelector =
       ".reveal, .reveal-up, .reveal-left, .reveal-right, .reveal-fade, .reveal-scale, .reveal-stagger";
 
-    // Check for elements currently visible in viewport
-    const checkVisible = () => {
-      if (isDestroyed) return;
-      const targets = document.querySelectorAll(revealSelector);
-      const windowHeight = window.innerHeight;
-
-      targets.forEach((el) => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top <= windowHeight * 0.95 && rect.bottom >= 0) {
-          el.classList.add("is-revealed");
-        }
-      });
-    };
-
     const initEngine = () => {
       if (isDestroyed) return;
 
@@ -48,6 +34,8 @@ export default function ScrollRevealProvider({
         return;
       }
 
+      // Native IntersectionObserver handles initial-in-viewport elements asynchronously
+      // without layout thrashing from getBoundingClientRect() loops
       observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
@@ -73,8 +61,7 @@ export default function ScrollRevealProvider({
         });
       };
 
-      // Perform initial check and start observing
-      checkVisible();
+      // Start observing targets asynchronously
       observeElements();
 
       // Observe future route transitions/mutations asynchronously without layout thrashing

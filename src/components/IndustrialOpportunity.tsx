@@ -62,7 +62,7 @@ export default function IndustrialOpportunity() {
           <div className="flex items-center gap-2.5">
             <span className="w-2.5 h-2.5 rounded-full bg-[#e06425]" />
             <span className="font-mono text-xs uppercase tracking-[0.18em] text-[#13271e]/75 font-semibold">
-              NATIONAL PERSPECTIVE
+              02 / NATIONAL PERSPECTIVE
             </span>
           </div>
           <span className="font-mono text-xs text-[#13271e]/50 uppercase tracking-wider">

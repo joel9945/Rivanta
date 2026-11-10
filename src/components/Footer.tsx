@@ -34,7 +34,7 @@ export default async function Footer() {
             </h3>
 
             <p className="font-sans text-sm md:text-base text-white/70 font-light max-w-md leading-relaxed">
-              Rivanta Green Innovative Ventures Private Limited is an emerging
+              Rivanta Green Innovative Venture Private Limited is an emerging
               Indian industrial enterprise developing an integrated portfolio
               across renewable energy, advanced materials, sustainable fuels,
               and circular manufacturing.
@@ -194,23 +194,24 @@ export default async function Footer() {
                 </li>
                 <li>
                   <a
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/company/rivantagreen"
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     className="hover:text-[#ea6e2d] transition-colors"
                   >
                     LinkedIn
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="https://x.com"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="hover:text-[#ea6e2d] transition-colors"
+                  <span
+                    className="text-white/40 cursor-default select-none inline-flex items-center gap-1.5"
+                    title="Rivanta Green official corporate X presence in verification"
                   >
-                    X (Twitter)
-                  </a>
+                    <span>X (Twitter)</span>
+                    <span className="font-mono text-[9px] text-[#f9a65c]/60 uppercase tracking-wider">
+                      (Pending)
+                    </span>
+                  </span>
                 </li>
               </ul>
 
@@ -229,7 +230,7 @@ export default async function Footer() {
               Corporate & Operations Office
             </div>
             <div className="font-sans font-medium text-white text-sm">
-              Rivanta Green Innovative Ventures Private Limited
+              Rivanta Green Innovative Venture Private Limited
             </div>
             <p className="font-light leading-relaxed text-white/75">
               B-29, 3rd Floor, Kasturba Nagar,
@@ -301,7 +302,7 @@ export default async function Footer() {
             <Link href="/" className="inline-block group" aria-label="Rivanta Green Home">
               <Image
                 src="/logo/logo-brand-lockup-light.svg"
-                alt="Rivanta Green Innovative Ventures Private Limited"
+                alt="Rivanta Green Innovative Venture Private Limited"
                 width={360}
                 height={85}
                 className="h-11 md:h-13 w-auto object-contain filter drop-shadow-[0_2px_12px_rgba(242,178,36,0.3)] transition-transform duration-300 group-hover:scale-[1.02]"
@@ -318,7 +319,7 @@ export default async function Footer() {
                 Privacy Policy
               </Link>
               <span>•</span>
-              <span>© {currentYear} Rivanta Green Innovative Ventures Pvt. Ltd. All rights reserved.</span>
+              <span>© {currentYear} Rivanta Green Innovative Venture Pvt. Ltd. All rights reserved.</span>
             </div>
             <div className="text-[11px] text-white/40 uppercase tracking-wider">
               Bhopal, Madhya Pradesh, India

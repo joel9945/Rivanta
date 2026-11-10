@@ -1,9 +1,30 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useSyncExternalStore } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Play, Pause } from "lucide-react";
+
+/**
+ * Hydration-safe external store for prefers-reduced-motion media query (WCAG 2.2.2).
+ * Server snapshot returns false to match static server-rendered HTML.
+ * Client snapshot reads matchMedia, and React reconciles safely without hydration errors (#418).
+ */
+function subscribeReducedMotion(callback: () => void): () => void {
+  if (typeof window === "undefined") return () => {};
+  const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+  mediaQuery.addEventListener("change", callback);
+  return () => mediaQuery.removeEventListener("change", callback);
+}
+
+function getReducedMotionSnapshot(): boolean {
+  if (typeof window === "undefined") return false;
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
+function getServerReducedMotionSnapshot(): boolean {
+  return false;
+}
 
 interface PillarItem {
   readonly index: string;
@@ -84,15 +105,29 @@ interface HeroProps {
 
 export default function Hero({ onExploreVentures }: HeroProps = {}) {
   const [activePillar, setActivePillar] = useState(0);
+  const prefersReducedMotion = useSyncExternalStore(
+    subscribeReducedMotion,
+    getReducedMotionSnapshot,
+    getServerReducedMotionSnapshot
+  );
+
+  // User-controlled manual playback override: null = follow system motion preference, boolean = explicit user toggle
+  const [userOverride, setUserOverride] = useState<boolean | null>(null);
+
+  // Effective playback state: user override takes precedence; defaults to paused under reduced motion
+  const isPlaying = userOverride !== null ? userOverride : !prefersReducedMotion;
   const heroRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
 
+  // Automated carousel advance with pause/resume support
   useEffect(() => {
+    if (!isPlaying) return;
+
     const timer = setInterval(() => {
       setActivePillar((prev) => (prev + 1) % PILLARS.length);
     }, 6000);
     return () => clearInterval(timer);
-  }, []);
+  }, [isPlaying]);
 
   // Smooth Scroll Expansion: expands canvas to touch screen edges as user scrolls down
   useEffect(() => {
@@ -202,7 +237,7 @@ export default function Hero({ onExploreVentures }: HeroProps = {}) {
             </h1>
           </div>
 
-          {/* Bottom Area: Dynamic Pillar Description + Signature Integrated Bio Notched Button */}
+          {/* Bottom Area: Dynamic Pillar Description + Rivanta Signature Notched Cutout Button */}
           <div className="pt-5 sm:pt-6 border-t border-white/15 flex flex-col lg:flex-row items-start lg:items-end justify-between gap-6 lg:gap-8">
             <div className="max-w-xl animate-hero-3">
               {/* Category Tag & Badge */}
@@ -220,8 +255,21 @@ export default function Hero({ onExploreVentures }: HeroProps = {}) {
                 {PILLARS[activePillar].description}
               </p>
 
-              {/* Dynamic Pillar Navigation Highlight */}
+              {/* Dynamic Pillar Navigation Highlight with Accessible Play/Pause Toggle */}
               <div className="mt-4 flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => setUserOverride(!isPlaying)}
+                  className="w-7 h-7 rounded-full bg-white/10 hover:bg-white/25 active:scale-95 text-white/80 hover:text-white transition-all cursor-pointer border-0 flex items-center justify-center mr-1"
+                  aria-label={isPlaying ? "Pause automated slide progression" : "Resume automated slide progression"}
+                  aria-pressed={!isPlaying}
+                >
+                  {isPlaying ? (
+                    <Pause className="w-3.5 h-3.5" aria-hidden="true" />
+                  ) : (
+                    <Play className="w-3.5 h-3.5 ml-0.5" aria-hidden="true" />
+                  )}
+                </button>
                 {PILLARS.map((p, idx) => (
                   <button
                     key={p.index}
@@ -233,6 +281,7 @@ export default function Hero({ onExploreVentures }: HeroProps = {}) {
                         : "w-2.5 bg-white/30 hover:bg-white/60"
                     }`}
                     aria-label={`Select pillar ${p.index}: ${p.title}`}
+                    aria-current={activePillar === idx ? "true" : undefined}
                   />
                 ))}
                 <span
@@ -244,7 +293,7 @@ export default function Hero({ onExploreVentures }: HeroProps = {}) {
               </div>
             </div>
 
-            {/* Integrated Bio's Exact Signature Notched Cutout Button (.u-btn--1) */}
+            {/* Rivanta Signature Notched Cutout Button (.u-btn--1) */}
             <div className="flex-shrink-0 animate-hero-4">
               <Link
                 href="#ventures"

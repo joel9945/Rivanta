@@ -221,7 +221,7 @@ export default function PrivacyPolicyClient() {
             </h1>
 
             <p className="font-sans text-base sm:text-lg text-[#13271e]/75 font-light leading-relaxed">
-              Rivanta Green Innovative Ventures Private Limited
+              Rivanta Green Innovative Venture Private Limited
             </p>
 
             {/* Document Key Metadata Badges */}
@@ -616,7 +616,7 @@ function renderSectionBody(id: string) {
       return (
         <>
           <p>
-            Rivanta Green Innovative Ventures Private Limited (“Rivanta Green,” “Company,” “we,” “our,” or “us”) respects the privacy of individuals who interact with our organisation and is committed to handling personal information responsibly, transparently, and securely.
+            Rivanta Green Innovative Venture Private Limited (“Rivanta Green,” “Company,” “we,” “our,” or “us”) respects the privacy of individuals who interact with our organisation and is committed to handling personal information responsibly, transparently, and securely.
           </p>
           <p>
             This Privacy Policy explains how we collect, use, process, store, disclose, and protect personal information obtained through our official website, business communications, corporate enquiries, and other relevant interactions.
@@ -901,7 +901,7 @@ function renderSectionBody(id: string) {
           <div className="p-5 rounded-2xl bg-[#f8faf8] border border-[#13271e]/10 space-y-4">
             <div>
               <h4 className="font-sans text-base font-semibold text-[#13271e]">
-                Rivanta Green Innovative Ventures Private Limited
+                Rivanta Green Innovative Venture Private Limited
               </h4>
               <span className="font-mono text-[11px] text-[#13271e]/60 block mt-0.5">
                 Corporate Office &amp; Operations Headquarters
@@ -961,7 +961,7 @@ function renderSectionBody(id: string) {
             </div>
 
             <div className="text-[11px] text-[#13271e]/50 font-mono">
-              © 2026 Rivanta Green Innovative Ventures Private Limited. All rights reserved.
+              © 2026 Rivanta Green Innovative Venture Private Limited. All rights reserved.
             </div>
           </div>
         </div>

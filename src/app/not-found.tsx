@@ -52,7 +52,7 @@ export default function NotFound() {
 
       {/* Footer Info */}
       <div className="text-center font-mono text-xs text-white/40">
-        Rivanta Green Innovative Ventures Private Limited
+        Rivanta Green Innovative Venture Private Limited
       </div>
     </div>
   );

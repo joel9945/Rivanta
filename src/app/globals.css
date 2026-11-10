@@ -1,5 +1,16 @@
 @import "tailwindcss";
 
+@theme {
+  --color-rivanta-forest: #13271e;
+  --color-rivanta-terracotta: #e06425;
+  --color-rivanta-emerald: #2d7a54;
+  --color-rivanta-amber: #f9a65c;
+  --color-rivanta-orange: #ea6e2d;
+  --color-rivanta-cream: #f6f8f6;
+  --color-rivanta-dark: #0e2219;
+  --color-rivanta-deep: #132c21;
+}
+
 :root {
   /* Rivanta Refined Organic & Warm Palette (Not Neon, Not Over-saturated) */
   --color--1: #c5d4ca;       /* Sage mist */
@@ -21,7 +32,7 @@
   --color-orange-tint: #fef5ee;
   --color-orange-rgb: 224, 100, 37;
 
-  /* Card Colors matching Integrated Bio's 3-card structure */
+  /* Rivanta Corporate 3-Card Foundation Theme Palette */
   --card-green-bg: #d6e8dc;
   --card-dark-bg: #142a20;
   --card-orange-bg: #fae9dc;
@@ -184,7 +195,7 @@ main.page-main > .page-content {
 }
 
 /* =========================================================
-   SIGNATURE INTEGRATED BIO BUTTON STYLES (REVERSE ENGINEERED)
+   RIVANTA SIGNATURE ANGLED NOTCHED BUTTON STYLES
    ========================================================= */
 
 /* Signature Angled Cutout Button (.u-btn--1) */
@@ -765,9 +776,18 @@ main.page-main > .page-content {
   animation: energy-pulse-flow 2.5s linear infinite;
 }
 
-/* Pause Marquee on Hover for Interactive Tactility */
-.marquee:hover .marquee_scroll {
+/* Pause Marquee on Hover / Focus for Interactive Tactility and Accessibility */
+.marquee:hover .marquee_scroll,
+.marquee:focus-within .marquee_scroll {
   animation-play-state: paused;
+}
+
+/* Reduced Motion Override for Marquee Ticker (WCAG 2.2.2) */
+@media (prefers-reduced-motion: reduce) {
+  .marquee_scroll {
+    animation: none;
+    transform: none;
+  }
 }
 
 /* Animated Progress Bar */
@@ -818,7 +838,7 @@ main.page-main > .page-content {
   animation: pulse-ring 2.4s cubic-bezier(0.2, 0, 0.4, 1) infinite;
 }
 
-/* 3 Signature Card Themes matching Homepage UspCards */
+/* 3 Signature Foundation Card Themes */
 .card-theme-orange {
   background-color: var(--card-orange-bg);
   color: var(--color--7);

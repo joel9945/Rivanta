@@ -105,10 +105,21 @@ export default function SubpageHero({
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(224,100,37,0.22),_transparent_65%)]" />
           </div>
         ) : (
-          <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0e2219] via-[#0e2219]/90 to-[#0e2219]/80" />
-            <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,_rgba(45,122,84,0.4),_transparent_70%)] animate-float-1" />
-            <div className="absolute bottom-1/4 left-10 w-[450px] h-[450px] rounded-full bg-[radial-gradient(circle,_rgba(224,100,37,0.3),_transparent_70%)] animate-float-2" />
+          <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden rounded-[inherit]">
+            {/* Deep Industrial Slate-Evergreen Backdrop */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#13271e] via-[#0e2219] to-[#07130e]" />
+            {/* Fine Precision Engineering Grid */}
+            <div
+              className="absolute inset-0 opacity-[0.06]"
+              style={{
+                backgroundImage:
+                  "linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)",
+                backgroundSize: "48px 48px",
+              }}
+            />
+            {/* Grounded Terracotta & Forest Architectural Depth Accent */}
+            <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(ellipse_80%_60%_at_80%_20%,_rgba(224,100,37,0.12),_transparent_70%)]" />
+            <div className="absolute bottom-0 left-0 w-full h-1/2 bg-[radial-gradient(ellipse_60%_50%_at_20%_90%,_rgba(45,122,84,0.16),_transparent_70%)]" />
           </div>
         )}
 

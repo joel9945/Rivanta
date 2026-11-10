@@ -17,7 +17,11 @@ export default function MarqueeText({
       : "bg-[#f6f8f6] text-[#13271e]/80 border-[#13271e]/10";
 
   return (
-    <section className={`w-full py-5 sm:py-7 md:py-9 border-y overflow-hidden select-none ${bgClass}`}>
+    <section
+      className={`w-full py-5 sm:py-7 md:py-9 border-y overflow-hidden select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#e06425]/40 ${bgClass}`}
+      tabIndex={0}
+      aria-label="Industrial Capabilities Marquee. Tab or hover to pause animation."
+    >
       <div className="marquee">
         <div className="marquee_scroll">
           <div className="marquee_collection">

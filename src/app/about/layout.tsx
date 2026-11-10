@@ -17,7 +17,7 @@ export const metadata: Metadata = {
         url: "/images/og-rivanta.jpg",
         width: 1200,
         height: 630,
-        alt: "About Rivanta Green Innovative Ventures",
+        alt: "About Rivanta Green Innovative Venture",
       },
     ],
   },
@@ -39,7 +39,7 @@ const jsonLd = {
       url: "https://www.rivantagreen.com/about",
       name: "About Rivanta Green — Corporate Identity & Industrial Ambition",
       description:
-        "Corporate identity, governance, and long-term industrial ambition of Rivanta Green Innovative Ventures Private Limited.",
+        "Corporate identity, governance, and long-term industrial ambition of Rivanta Green Innovative Venture Private Limited.",
       isPartOf: {
         "@id": "https://www.rivantagreen.com/#website",
       },
