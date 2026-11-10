@@ -69,14 +69,9 @@ html, body {
   scrollbar-width: none !important;    /* Firefox */
 }
 
-/* Hide scrollbar completely across all browsers while retaining full smooth scrolling */
-* {
-  -ms-overflow-style: none !important;
-  scrollbar-width: none !important;
-}
-
-::-webkit-scrollbar,
-*::-webkit-scrollbar {
+/* Hide page scrollbar cleanly while retaining responsive fluid scrolling */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
   display: none !important;
   width: 0 !important;
   height: 0 !important;
@@ -400,44 +395,33 @@ main.page-main > .page-content {
 /* Hero Framed Canvas with Elegant Permanent Rounded Corners */
 .hero-frame-canvas {
   position: relative;
-  margin: var(--hero-canvas-margin, 14px);
-  border-radius: var(--hero-canvas-radius, 28px);
+  margin: 14px;
+  border-radius: 28px;
   overflow: hidden;
   isolation: isolate;
-  transform: translateZ(0);
-  -webkit-mask-image: -webkit-radial-gradient(white, black);
-  height: calc(100vh - (var(--hero-canvas-margin, 14px) * 2));
+  height: calc(100vh - 28px);
   min-height: 640px;
   box-shadow: 0 20px 50px -15px rgba(14, 34, 25, 0.25);
-  transition: margin 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-              border-radius 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-              height 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: margin, border-radius;
 }
 
 @media (max-width: 1024px) {
   .hero-frame-canvas {
-    margin: var(--hero-canvas-margin, 10px);
-    border-radius: var(--hero-canvas-radius, 20px);
+    margin: 10px;
+    border-radius: 20px;
     height: auto;
-    min-height: calc(100dvh - (var(--hero-canvas-margin, 10px) * 2));
+    min-height: calc(100dvh - 20px);
   }
 }
 
 /* Subpage Framed Canvas matching Homepage Aesthetics with Permanent Rounded Corners */
 .subpage-frame-canvas {
   position: relative;
-  margin: var(--subpage-canvas-margin, 14px);
-  border-radius: var(--subpage-canvas-radius, 28px);
+  margin: 14px;
+  border-radius: 28px;
   overflow: hidden;
   isolation: isolate;
-  transform: translateZ(0);
-  -webkit-mask-image: -webkit-radial-gradient(white, black);
   min-height: 480px;
   box-shadow: 0 20px 50px -15px rgba(14, 34, 25, 0.25);
-  transition: margin 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-              border-radius 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: margin, border-radius;
 }
 
 @media (min-width: 768px) {
@@ -448,15 +432,15 @@ main.page-main > .page-content {
 
 @media (min-width: 1025px) {
   .subpage-frame-canvas {
-    border-radius: var(--subpage-canvas-radius, 28px);
+    border-radius: 28px;
     min-height: 620px;
   }
 }
 
 @media (max-width: 1024px) {
   .subpage-frame-canvas {
-    margin: var(--subpage-canvas-margin, 10px);
-    border-radius: var(--subpage-canvas-radius, 20px);
+    margin: 10px;
+    border-radius: 20px;
     min-height: 480px;
   }
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ChevronRight } from "lucide-react";
@@ -39,53 +39,12 @@ export default function SubpageHero({
   secondaryCtaHref,
   telemetryTag = "Industrial Development • Environmental Planning",
 }: SubpageHeroProps) {
-  const canvasRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    let ticking = false;
-
-    const updateScrollState = () => {
-      const scrollY = window.scrollY;
-      const threshold = 180;
-      const progress = Math.min(1, Math.max(0, scrollY / threshold));
-
-      const isMobile = window.innerWidth <= 1024;
-      const initialMargin = isMobile ? 10 : 14;
-      const baseRadius = isMobile ? 20 : 28;
-
-      const currentMargin = Math.max(0, initialMargin * (1 - progress));
-
-      if (canvasRef.current) {
-        canvasRef.current.style.setProperty("--subpage-canvas-margin", `${currentMargin.toFixed(1)}px`);
-        canvasRef.current.style.setProperty("--subpage-canvas-radius", `${baseRadius}px`);
-      }
-
-      ticking = false;
-    };
-
-    const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(updateScrollState);
-        ticking = true;
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    window.addEventListener("resize", handleScroll, { passive: true });
-    updateScrollState();
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleScroll);
-    };
-  }, []);
 
   return (
     <section id="subpage-hero" ref={sectionRef} className="relative w-full p-0">
       {/* Framed Canvas matching Homepage Hero Aesthetics with Permanent Rounded Corners */}
       <div
-        ref={canvasRef}
         className="subpage-frame-canvas relative flex flex-col justify-between text-white shadow-2xl bg-[#0e2219] rounded-[20px] lg:rounded-[28px] overflow-hidden"
       >
         {/* Background Image / Ambient Gradients */}

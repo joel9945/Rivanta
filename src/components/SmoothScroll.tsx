@@ -14,13 +14,14 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
   const pathname = usePathname();
 
   useEffect(() => {
-    // Initialize Lenis with hydrodynamic liquid momentum (fluid water physics)
+    // Initialize Lenis with fast, responsive, buttery-smooth momentum (zero lag, zero sluggish drag)
     const lenis = new Lenis({
-      lerp: 0.075, // Viscous fluid inertia damping (glides effortlessly like water)
-      wheelMultiplier: 1.02,
-      touchMultiplier: 1.0,
+      lerp: 0.12,          // Responsive, fluid linear interpolation without sluggish inertia drag
+      wheelMultiplier: 1.0, // Natural 1:1 wheel response
+      touchMultiplier: 1.0, // Clean 1:1 touch response
       smoothWheel: true,
-      syncTouch: false, // Keep native touch gestures free and responsive on mobile
+      syncTouch: false,    // Keep native 120Hz touch gestures on mobile/tablets
+      autoRaf: true,       // Optimized internal RAF lifecycle that sleeps when idle
       orientation: "vertical",
       gestureOrientation: "vertical",
       infinite: false,
@@ -32,15 +33,7 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
     // @ts-expect-error global lenis attachment
     window.lenis = lenis;
 
-    let rafId: number;
-    function raf(time: number) {
-      lenis.raf(time);
-      rafId = requestAnimationFrame(raf);
-    }
-
-    rafId = requestAnimationFrame(raf);
-
-    // Smoothly handle all hash anchor clicks with fluid wave surge
+    // Smoothly handle all hash anchor clicks
     const handleAnchorClick = (e: MouseEvent) => {
       const target = (e.target as HTMLElement).closest("a");
       if (!target) return;
@@ -51,10 +44,8 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
           e.preventDefault();
           lenis.scrollTo(targetElement as HTMLElement, {
             offset: -80,
-            duration: 1.5,
-            // Hydrodynamic fluid wave surge (zero jerk, liquid coast, soft settling)
-            easing: (t) =>
-              t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2,
+            duration: 1.0,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
           });
         }
       }
@@ -63,20 +54,16 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
     document.addEventListener("click", handleAnchorClick);
 
     return () => {
-      cancelAnimationFrame(rafId);
       document.removeEventListener("click", handleAnchorClick);
       lenis.destroy();
     };
   }, []);
 
-  // Smooth liquid reset on route changes across pages
+  // Instant clean reset on route changes across pages
   useEffect(() => {
     if (lenisRef.current) {
       lenisRef.current.scrollTo(0, {
-        immediate: false,
-        duration: 1.2,
-        easing: (t) =>
-          t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2,
+        immediate: true,
       });
     }
   }, [pathname]);

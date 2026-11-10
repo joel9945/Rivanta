@@ -76,47 +76,59 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
       closeTimeoutRef.current = null;
     }
 
-    const handleScroll = () => {
+    let isTicking = false;
+    let cachedHeroHeight = 0;
+
+    const measureHero = () => {
       if (hasDarkHero) {
         const heroEl =
           document.getElementById("hero") ||
           document.getElementById("subpage-hero");
+        cachedHeroHeight = heroEl ? heroEl.offsetHeight : 0;
+      }
+    };
 
-        if (heroEl) {
-          const rect = heroEl.getBoundingClientRect();
+    const updateScrolledState = () => {
+      if (hasDarkHero) {
+        if (cachedHeroHeight <= 0) {
+          measureHero();
+        }
+        if (cachedHeroHeight > 0) {
           // The white navbar MUST NOT show in the hero section.
           // It only transitions to the white navbar AFTER the hero section has scrolled past the header (~80px).
-          setScrolled(rect.bottom <= 80);
+          const isPast = window.scrollY >= Math.max(80, cachedHeroHeight - 80);
+          setScrolled((prev) => (prev !== isPast ? isPast : prev));
         } else {
-          // While on a hero route, stay in transparent hero mode (never turn white in hero)
           setScrolled(false);
         }
       } else {
         // Routes without a hero section (e.g. /privacy-policy) use the white navbar
         setScrolled(true);
       }
+      isTicking = false;
     };
 
-    handleScroll();
-    const rafId = requestAnimationFrame(handleScroll);
+    const onScrollOrResize = () => {
+      if (!isTicking) {
+        requestAnimationFrame(updateScrolledState);
+        isTicking = true;
+      }
+    };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    window.addEventListener("resize", handleScroll, { passive: true });
+    const onResize = () => {
+      measureHero();
+      onScrollOrResize();
+    };
 
-    // Also sync with smooth-scroll (Lenis) if available
-    const win = typeof window !== "undefined" ? (window as unknown as { lenis?: { on?: (event: string, cb: () => void) => void; off?: (event: string, cb: () => void) => void } }) : null;
-    const lenis = win?.lenis;
-    if (lenis && typeof lenis.on === "function") {
-      lenis.on("scroll", handleScroll);
-    }
+    measureHero();
+    updateScrolledState();
+
+    window.addEventListener("scroll", onScrollOrResize, { passive: true });
+    window.addEventListener("resize", onResize, { passive: true });
 
     return () => {
-      cancelAnimationFrame(rafId);
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleScroll);
-      if (lenis && typeof lenis.off === "function") {
-        lenis.off("scroll", handleScroll);
-      }
+      window.removeEventListener("scroll", onScrollOrResize);
+      window.removeEventListener("resize", onResize);
     };
   }, [pathname, hasDarkHero]);
 

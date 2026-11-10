@@ -77,10 +77,13 @@ export default function ScrollRevealProvider({
       checkVisible();
       observeElements();
 
-      // Observe future route transitions/mutations only after initial hydration has settled
+      // Observe future route transitions/mutations asynchronously without layout thrashing
+      let mutationRaf: number | null = null;
       mutationObserver = new MutationObserver(() => {
-        checkVisible();
-        observeElements();
+        if (mutationRaf) cancelAnimationFrame(mutationRaf);
+        mutationRaf = requestAnimationFrame(() => {
+          observeElements();
+        });
       });
 
       mutationObserver.observe(document.body, {

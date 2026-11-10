@@ -84,7 +84,6 @@ interface HeroProps {
 
 export default function Hero({ onExploreVentures }: HeroProps = {}) {
   const [activePillar, setActivePillar] = useState(0);
-  const heroRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -94,51 +93,10 @@ export default function Hero({ onExploreVentures }: HeroProps = {}) {
     return () => clearInterval(timer);
   }, []);
 
-  // Smooth Scroll Expansion: expands canvas to touch screen edges as user scrolls down
-  useEffect(() => {
-    let ticking = false;
-
-    const updateScrollState = () => {
-      const scrollY = window.scrollY;
-      const threshold = 180;
-      const progress = Math.min(1, Math.max(0, scrollY / threshold));
-
-      const isMobile = window.innerWidth <= 1024;
-      const initialMargin = isMobile ? 10 : 14;
-      const baseRadius = isMobile ? 20 : 28;
-
-      const currentMargin = Math.max(0, initialMargin * (1 - progress));
-
-      if (heroRef.current) {
-        heroRef.current.style.setProperty("--hero-canvas-margin", `${currentMargin.toFixed(1)}px`);
-        heroRef.current.style.setProperty("--hero-canvas-radius", `${baseRadius}px`);
-      }
-
-      ticking = false;
-    };
-
-    const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(updateScrollState);
-        ticking = true;
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    window.addEventListener("resize", handleScroll, { passive: true });
-    updateScrollState();
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleScroll);
-    };
-  }, []);
-
   return (
     <section id="hero" ref={sectionRef} className="relative w-full p-0">
       {/* 100vh Framed Canvas with Permanent Rounded Corners on Top and Bottom */}
       <div
-        ref={heroRef}
         className="hero-frame-canvas relative flex flex-col justify-between text-white shadow-2xl rounded-[20px] lg:rounded-[28px] overflow-hidden"
       >
         {/* Background Image Carousel with Smooth Cross-Fade Across All 3 Pillars */}
