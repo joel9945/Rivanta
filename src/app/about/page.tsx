@@ -137,10 +137,25 @@ export default function AboutPage() {
       <section className="py-12 sm:py-16 md:py-28 lg:py-32 bg-[#f6f8f6]">
         <div className="u-container u-container--1 u-container--pad">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
-            <div className="lg:col-span-4">
-              <div className="u-ts--1 sticky top-28 reveal-up">
+            <div className="lg:col-span-4 space-y-6 lg:sticky lg:top-28">
+              <div className="u-ts--1 reveal-up">
                 <span className="indicator-dot"></span>
                 <span>Corporate Purpose</span>
+              </div>
+
+              <div className="relative aspect-[4/5] sm:aspect-[4/3] lg:aspect-[4/5] rounded-3xl overflow-hidden shadow-lg border border-[#13271e]/10 group reveal-up delay-100">
+                <Image
+                  src="/images/about-industrial-plant-ground.jpg"
+                  alt="Rivanta Green Sustainable Bio-Refinery Campus"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0e2219]/85 via-[#0e2219]/25 to-transparent pointer-events-none" />
+                <div className="absolute bottom-5 left-5 right-5 text-white">
+                  <p className="font-mono text-[10px] uppercase tracking-wider text-[#f9a65c]">Integrated Enterprise</p>
+                  <p className="font-sans text-xs text-white/90 font-light mt-0.5">Sustainable industrial innovation in central India</p>
+                </div>
               </div>
             </div>
 
