@@ -1,0 +1,70 @@
+#map[data-map-layout="split"] { height:auto; min-height:0; display:block; padding:96px clamp(24px,5vw,96px) 72px; background:#080908; color:#f3f1eb; font-family:'Manrope',sans-serif; -webkit-font-smoothing:antialiased; }
+#map[data-map-layout="split"]::before { display:none; }
+#map[data-map-layout="split"] .rivanta-ecosystem-layout { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.1fr); align-items:center; gap:40px 64px; max-width:1400px; margin-inline:auto; }
+#map[data-map-layout="split"] .citadel-map-header { grid-column:1 / -1; grid-row:1; position:static; display:grid; grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr); align-items:end; gap:32px; width:100%; margin:0; padding:0 0 32px; border-bottom:1px solid #ffffff2b; text-align:left; pointer-events:auto; }
+#map[data-map-layout="split"] #map-title { max-width:none; width:100%; margin:0; color:#f3f1eb; font-family:inherit; font-size:clamp(36px,3.7vw,56px); font-weight:500; line-height:1.12; letter-spacing:-.04em; text-transform:none; }
+#map[data-map-layout="split"] .rivanta-map-lede { max-width:440px; margin:0; color:#a8aca1; font-size:15px; font-weight:400; line-height:1.65; }
+#map[data-map-layout="split"] .citadel-map-controls { display:contents; }
+#map[data-map-layout="split"] .rivanta-map-index-panel { grid-column:1; grid-row:2; min-width:0; }
+#map[data-map-layout="split"] .citadel-map-partners { display:grid; margin:0; padding:0; overflow:visible; border:0; border-radius:0; background:none; }
+#map[data-map-layout="split"] .citadel-map-partner { min-width:0; width:auto; border:0; }
+#map[data-map-layout="split"] .citadel-map-partner-button { position:relative; width:100%; display:grid; grid-template-columns:minmax(0,1fr) 24px; align-items:center; gap:16px; margin:0; padding:0; border:0; border-radius:0; background:transparent; color:#a8aca1; font-family:inherit; font-weight:400; text-align:left; cursor:pointer; transition:color .18s ease; }
+#map[data-map-layout="split"] .citadel-map-partner-button span { min-width:0; }
+#map[data-map-layout="split"] .citadel-map-partner-button::after { content:''; justify-self:end; color:inherit; font-size:22px; line-height:1; }
+#map[data-map-layout="split"] .citadel-map-partner-button:hover { background:transparent; color:#f3f1eb; }
+#map[data-map-layout="split"] .citadel-map-partner-button.is-active { background:transparent; color:#efa554; }
+#map[data-map-layout="split"] .citadel-map-partner-button:focus-visible { outline:2px solid #efa554; outline-offset:5px; }
+#map[data-map-layout="split"] .rivanta-product-tabs { grid-template-columns:minmax(0,1fr); gap:0; }
+#map[data-map-layout="split"] .rivanta-product-tabs .citadel-map-partner { border-bottom:1px solid #ffffff26; }
+#map[data-map-layout="split"] .rivanta-product-tabs .citadel-map-partner:first-child { border-top:1px solid #ffffff26; }
+#map[data-map-layout="split"] .rivanta-product-tabs .citadel-map-partner-button { min-height:82px; padding:20px 0 20px 20px; font-size:clamp(23px,1.95vw,30px); font-weight:500; line-height:1.25; letter-spacing:-.025em; }
+#map[data-map-layout="split"] .rivanta-product-tabs .citadel-map-partner-button::before { content:''; position:absolute; top:50%; left:0; width:6px; height:6px; transform:translateY(-50%); background:transparent; }
+#map[data-map-layout="split"] .rivanta-product-tabs .citadel-map-partner-button.is-active::before { background:#efa554; }
+#map[data-map-layout="split"] .rivanta-map-detail { min-height:160px; margin-top:26px; padding:0 0 0 20px; }
+#map[data-map-layout="split"] .citadel-map-card { position:relative; left:auto; top:auto; bottom:auto; width:100%; max-width:none; min-height:0; margin:0; padding:0; transform:none; border:0; border-radius:0; background:transparent; color:#f3f1eb; box-shadow:none; }
+#map[data-map-layout="split"] .citadel-map-card::after { display:none; }
+#map[data-map-layout="split"] .citadel-map-card-inner { display:block; }
+#map[data-map-layout="split"] .citadel-map-card-logo-slot { display:none; }
+#map[data-map-layout="split"] .citadel-map-card h3 { margin:0 0 12px; color:#f3f1eb; font-family:inherit; font-size:20px; font-weight:500; line-height:1.3; letter-spacing:-.01em; text-transform:none; }
+#map[data-map-layout="split"] .citadel-map-card[data-selection-group="product"] h3 { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; }
+#map[data-map-layout="split"] .citadel-map-card p { max-width:480px; margin:0; color:#a8aca1; font-family:inherit; font-size:16px; font-weight:400; line-height:1.65; }
+#map[data-map-layout="split"] .citadel-map-visit { display:inline-flex; align-items:center; min-height:42px; margin-top:14px; padding:0; border:0; border-radius:0; background:transparent; color:#f3f1eb; font-family:inherit; font-size:13px; font-weight:500; line-height:1.4; letter-spacing:0; text-decoration:underline; text-decoration-color:#ffffff55; text-underline-offset:6px; text-transform:none; }
+#map[data-map-layout="split"] .citadel-map-visit::after { content:''; margin-left:16px; color:#efa554; font-size:17px; }
+#map[data-map-layout="split"] .citadel-map-visit:hover { color:#efa554; background:transparent; }
+#map[data-map-layout="split"] .citadel-map-visit:focus-visible { outline:2px solid #efa554; outline-offset:4px; }
+#map[data-map-layout="split"] .rivanta-map-supports { grid-column:1 / -1; grid-row:3; display:grid; grid-template-columns:220px minmax(0,1fr); align-items:start; gap:32px; padding-top:24px; border-top:1px solid #ffffff2b; }
+#map[data-map-layout="split"] .rivanta-map-support-label { margin:8px 0 0; color:#d1d2c9; font-size:15px; font-weight:400; line-height:1.5; letter-spacing:0; }
+#map[data-map-layout="split"] .rivanta-support-controls { grid-template-columns:repeat(4,minmax(0,1fr)); gap:24px; }
+#map[data-map-layout="split"] .rivanta-support-controls .citadel-map-partner-button { min-height:44px; font-size:13px; line-height:1.5; }
+#map[data-map-layout="split"] .rivanta-support-controls .citadel-map-partner-button::after { font-size:17px; }
+#map[data-map-layout="split"] .rivanta-map-visual { --india-map-height:clamp(380px,50svh,560px); grid-column:2; grid-row:2; position:relative; width:100%; max-width:100%; height:var(--india-map-height); margin:0; overflow:hidden; }
+#map[data-map-layout="split"] .rivanta-map-visual::before { content:none; }
+#map[data-map-layout="split"] .citadel-map-animation { position:absolute; top:50%; left:50%; width:calc(var(--india-map-height) * 1.12 * 1277 / 809); max-width:none; height:calc(var(--india-map-height) * 1.12); margin:0; aspect-ratio:1277 / 809; transform:translate(-50%,-50%); perspective:none; }
+@media (min-width:768px) and (max-width:1100px) {
+  #map[data-map-layout="split"] { padding-inline:32px; }
+  #map[data-map-layout="split"] .rivanta-ecosystem-layout { gap:32px; }
+  #map[data-map-layout="split"] .citadel-map-header { grid-template-columns:minmax(0,1fr); gap:18px; }
+  #map[data-map-layout="split"] .rivanta-map-lede { max-width:600px; }
+  #map[data-map-layout="split"] .rivanta-map-visual { --india-map-height:clamp(320px,46vw,470px); }
+  #map[data-map-layout="split"] .rivanta-product-tabs .citadel-map-partner-button { font-size:24px; }
+  #map[data-map-layout="split"] .rivanta-map-supports { grid-template-columns:minmax(0,1fr); gap:16px; }
+}
+@media (max-width:767px) {
+  #map[data-map-layout="split"] { padding:48px 20px; }
+  #map[data-map-layout="split"] .rivanta-ecosystem-layout { grid-template-columns:minmax(0,1fr); gap:28px; }
+  #map[data-map-layout="split"] .citadel-map-header { grid-column:1; grid-row:1; grid-template-columns:minmax(0,1fr); gap:18px; padding-bottom:24px; }
+  #map[data-map-layout="split"] #map-title { font-size:38px; }
+  #map[data-map-layout="split"] .rivanta-map-lede { font-size:14px; }
+  #map[data-map-layout="split"] .rivanta-map-visual { --india-map-height:clamp(250px,72vw,350px); grid-column:1; grid-row:2; }
+  #map[data-map-layout="split"] .rivanta-map-index-panel { grid-column:1; grid-row:3; }
+  #map[data-map-layout="split"] .rivanta-product-tabs .citadel-map-partner-button { min-height:72px; padding-block:18px; font-size:22px; }
+  #map[data-map-layout="split"] .rivanta-map-detail { min-height:0; margin-top:22px; padding-left:20px; }
+  #map[data-map-layout="split"] .citadel-map-card p { font-size:14px; }
+  #map[data-map-layout="split"] .citadel-map-card h3 { font-size:18px; }
+  #map[data-map-layout="split"] .rivanta-map-supports { grid-column:1; grid-row:4; grid-template-columns:minmax(0,1fr); gap:16px; }
+  #map[data-map-layout="split"] .rivanta-map-support-label { margin:0; font-size:14px; }
+  #map[data-map-layout="split"] .rivanta-support-controls { grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px 20px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  #map[data-map-layout="split"] .citadel-map-partner-button { transition:none; }
+}

@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SiteShell from "@/components/SiteShell";
 import { ModalProvider } from "@/context/ModalContext";
 import ScrollRevealProvider from "@/components/ScrollRevealProvider";
 import SmoothScroll from "@/components/SmoothScroll";
@@ -218,18 +219,9 @@ export default function RootLayout({
         <ModalProvider>
           <SmoothScroll>
             <ScrollRevealProvider>
-              <div className="relative min-h-screen bg-[#f6f8f6] text-[#13271e] font-sans selection:bg-[#e06425]/20 selection:text-[#13271e]">
-                {/* Shared Floating Corporate Header */}
-                <Header />
-
-                {/* Shared Framed Main Page Content & Evergreen Footer */}
-                <main id="page-main" className="page-main">
-                  <div id="page-content" className="page-content">
-                    {children}
-                  </div>
-                  <Footer />
-                </main>
-              </div>
+              <SiteShell footer={<Footer />}>
+                {children}
+              </SiteShell>
             </ScrollRevealProvider>
           </SmoothScroll>
         </ModalProvider>

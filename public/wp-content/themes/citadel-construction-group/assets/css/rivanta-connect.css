@@ -1,0 +1,77 @@
+.rivanta-connect {
+  position:relative;
+  display:grid;
+  align-items:center;
+  min-height:100svh;
+  padding:144px clamp(24px,5vw,96px) 128px;
+  background:linear-gradient(180deg,#f7f4ee 0%,#f7f4ee 86%,#ffffff 100%);
+  color:#21170f;
+  font-family:'Manrope',sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+.rivanta-connect * { box-sizing:border-box; }
+.rivanta-connect-inner { width:100%; max-width:1320px; margin-inline:auto; }
+.rivanta-connect-layout { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.05fr); align-items:center; gap:clamp(40px,6vw,96px); }
+.rivanta-connect-eyebrow { margin:0 0 24px; color:#82532f; font-size:11px; font-weight:600; line-height:1.4; letter-spacing:.18em; text-transform:uppercase; }
+.rivanta-connect #find-partner-title { margin:0; color:#21170f; font-family:inherit; font-size:clamp(40px,4.2vw,64px); font-weight:500; line-height:1.08; letter-spacing:-.045em; text-transform:none; }
+.rivanta-connect #find-partner-title span { color:#98501f; }
+.rivanta-connect-lede { max-width:470px; margin:28px 0 32px; color:#655b50; font-size:16px; font-weight:400; line-height:1.7; }
+.rivanta-connect-primary { display:inline-flex; align-items:center; justify-content:space-between; gap:28px; min-height:54px; padding:16px 22px; border:1px solid transparent; border-radius:7px; background:#f79b35; color:#21170f; font-family:inherit; font-size:14px; font-weight:600; line-height:1.4; text-decoration:none; transition:background-color .18s ease; }
+.rivanta-connect-primary span { font-size:22px; font-weight:400; line-height:1; }
+.rivanta-connect-primary:hover { background:#ffb35b; color:#21170f; }
+.rivanta-connect-email { display:block; width:max-content; max-width:100%; margin-top:18px; padding-block:3px; color:#655b50; font-size:14px; line-height:1.5; text-decoration:underline; text-decoration-color:#655b5050; text-underline-offset:5px; }
+.rivanta-connect-email:hover { color:#98501f; }
+.rivanta-connect a:focus-visible { outline:2px solid #b75c15; outline-offset:5px; border-radius:4px; }
+.rivanta-contact-directory { min-width:0; overflow:hidden; border:1px solid #ded6ca; border-radius:18px; background:#fffdfa; box-shadow:0 16px 48px #21170f08; }
+.rivanta-directory-heading { padding:30px 30px 24px; border-bottom:1px solid #21170f1c; }
+.rivanta-directory-eyebrow { margin:0 0 14px; color:#82532f; font-size:10px; font-weight:600; line-height:1.5; letter-spacing:.13em; text-transform:uppercase; }
+.rivanta-directory-heading h3 { margin:0; color:#21170f; font-family:inherit; font-size:22px; font-weight:500; line-height:1.35; letter-spacing:-.02em; text-transform:none; }
+.rivanta-contact-offices { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr)); gap:26px; padding:26px 30px 30px; }
+.rivanta-contact-office { min-width:0; }
+.rivanta-contact-office h4 { margin:0 0 12px; color:#82532f; font-family:inherit; font-size:11px; font-weight:600; line-height:1.4; letter-spacing:.07em; text-transform:uppercase; }
+.rivanta-contact-office address { margin:0; color:#655b50; font-family:inherit; font-size:14px; font-weight:400; font-style:normal; line-height:1.7; }
+.rivanta-corporate-desk { padding:26px 30px 28px; background:#211b15; color:#f7f4ee; }
+.rivanta-corporate-desk h4 { margin:0 0 22px; color:#f7f4ee; font-family:inherit; font-size:16px; font-weight:500; line-height:1.4; letter-spacing:0; text-transform:none; }
+.rivanta-desk-label { display:block; margin-bottom:6px; color:#d1c1af; font-size:11px; font-weight:400; line-height:1.5; }
+.rivanta-desk-line a { display:inline-flex; align-items:center; gap:16px; max-width:100%; color:#ffb35b; font-size:26px; font-weight:500; line-height:1.4; letter-spacing:-.02em; text-decoration:none; }
+.rivanta-desk-line a span { font-size:21px; }
+.rivanta-desk-line a:hover { color:#ffd5a3; }
+.rivanta-desk-emails { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr)); gap:20px 24px; margin:22px 0 0; padding-top:20px; border-top:1px solid #ffffff24; }
+.rivanta-desk-emails div { min-width:0; }
+.rivanta-desk-emails dt { margin:0 0 7px; color:#d1c1af; font-size:11px; font-weight:400; line-height:1.5; }
+.rivanta-desk-emails dd { margin:0; }
+.rivanta-desk-emails a { display:inline-flex; align-items:center; gap:8px; max-width:100%; color:#f7f4ee; font-size:14px; font-weight:400; line-height:1.5; text-decoration:none; }
+.rivanta-desk-emails a span { color:#ffb35b; font-size:16px; }
+.rivanta-desk-emails a:hover { color:#ffb35b; }
+.rivanta-corporate-desk a:focus-visible { outline-color:#ffb35b; }
+@media (max-width:1000px) {
+  .rivanta-connect { padding-inline:32px; }
+  .rivanta-connect-layout { gap:36px; }
+  .rivanta-directory-heading { padding-inline:24px; }
+  .rivanta-contact-offices { padding-inline:24px; }
+  .rivanta-corporate-desk { padding-inline:24px; }
+}
+@media (max-width:780px) {
+  .rivanta-connect { display:block; min-height:0; padding:64px 24px 48px; }
+  .rivanta-connect-layout { grid-template-columns:minmax(0,1fr); gap:36px; }
+  .rivanta-connect-eyebrow { margin-bottom:20px; }
+  .rivanta-connect #find-partner-title { font-size:clamp(32px,8.5vw,48px); }
+  .rivanta-connect-lede { margin:22px 0 26px; font-size:15px; line-height:1.65; }
+  .rivanta-connect-primary { min-height:52px; }
+  .rivanta-contact-directory { border-radius:14px; }
+  .rivanta-directory-heading { padding:24px; }
+  .rivanta-directory-heading h3 { font-size:21px; }
+  .rivanta-contact-offices { padding:24px; }
+  .rivanta-corporate-desk { padding:24px; }
+}
+@media (max-width:420px) {
+  .rivanta-connect { padding-inline:20px; }
+  .rivanta-directory-heading { padding:24px 20px 22px; }
+  .rivanta-directory-heading h3 { font-size:20px; }
+  .rivanta-contact-offices { gap:24px; padding:24px 20px; }
+  .rivanta-corporate-desk { padding:24px 20px; }
+  .rivanta-desk-line a { font-size:23px; gap:12px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .rivanta-connect a { transition:none; }
+}

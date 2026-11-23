@@ -241,7 +241,7 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
                 className={`relative w-auto flex-shrink-0 flex items-center transition-all duration-300 ${
                   isTransparent
                     ? "h-13 sm:h-14 md:h-15 lg:h-16"
-                    : "h-9.5 sm:h-10 md:h-11 lg:h-11.5"
+                    : "h-11.5 sm:h-12 md:h-12.5 lg:h-13"
                 }`}
               >
                 <Image
@@ -252,7 +252,7 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
                   className={`w-auto object-contain transition-all duration-300 group-hover:scale-[1.02] ${
                     isTransparent
                       ? "h-12 sm:h-13 md:h-14 lg:h-15 filter drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)] drop-shadow-[0_4px_24px_rgba(0,0,0,0.7)]"
-                      : "h-9 sm:h-9.5 md:h-10.5 lg:h-11"
+                      : "h-11 sm:h-11.5 md:h-12 lg:h-12.5"
                   }`}
                   priority
                 />

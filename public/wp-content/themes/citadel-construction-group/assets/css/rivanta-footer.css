@@ -1,0 +1,68 @@
+.rivanta-footer-brand .rivanta-footer-content {
+  width:calc(100% - clamp(40px,10vw,192px));
+  max-width:1320px;
+  margin-inline:auto;
+  padding:72px 0 28px;
+  color:#ccc8bf;
+  font-family:'Manrope',sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+.rivanta-footer-content * { box-sizing:border-box; }
+.rivanta-footer-intro { display:flex; align-items:center; justify-content:space-between; gap:48px; padding-bottom:36px; border-bottom:1px solid #ffffff24; }
+.rivanta-footer-company { max-width:480px; }
+.rivanta-footer-content .rivanta-footer-company h2 { margin:0 0 14px; color:#f5f1e9; font-family:inherit; font-size:24px; font-weight:500; line-height:1.35; letter-spacing:-.02em; text-transform:none; }
+.rivanta-footer-company p { max-width:420px; margin:0; color:#aaa69d; font-size:14px; font-weight:400; line-height:1.65; }
+.rivanta-footer-direct { display:grid; justify-items:end; gap:12px; }
+.rivanta-footer-direct a { display:inline-flex; align-items:center; gap:18px; max-width:100%; color:#f5f1e9; font-weight:400; line-height:1.4; text-decoration:none; }
+.rivanta-footer-direct .rivanta-footer-email { font-size:24px; letter-spacing:-.02em; }
+.rivanta-footer-direct .rivanta-footer-phone { color:#b7b2a7; font-size:17px; }
+.rivanta-footer-direct a span { color:#f9b363; font-size:20px; }
+.rivanta-footer-columns { display:grid; grid-template-columns:.85fr 1.1fr 1.35fr 1.2fr; gap:clamp(28px,3vw,48px); padding-block:40px; }
+.rivanta-footer-column { min-width:0; }
+.rivanta-footer-content .rivanta-footer-column h3 { margin:0 0 20px; color:#ded7cb; font-family:inherit; font-size:11px; font-weight:600; line-height:1.4; letter-spacing:.1em; text-transform:uppercase; }
+.rivanta-footer-column ul { display:grid; gap:10px; margin:0; padding:0; list-style:none; }
+.rivanta-footer-column li { margin:0; padding:0; }
+.rivanta-footer-column a { color:#c9c5bc; font-size:14px; font-weight:400; line-height:1.5; text-decoration:none; }
+.rivanta-footer-column li a { display:inline-block; padding-block:2px; }
+.rivanta-footer-column address { margin:0; color:#aaa69d; font-family:inherit; font-size:14px; font-weight:400; font-style:normal; line-height:1.8; }
+.rivanta-footer-external { padding-left:3px; color:#8e8a81; font-size:12px; }
+.rivanta-footer-column .rivanta-footer-map-link { display:inline-flex; gap:8px; margin-top:14px; padding-block:3px; color:#d6aa75; font-size:12px; }
+.rivanta-footer-support { margin-top:24px; }
+.rivanta-footer-support p { margin:0 0 7px; color:#aaa69d; font-size:12px; line-height:1.5; }
+.rivanta-footer-support a { display:inline-block; max-width:100%; font-size:13px; overflow-wrap:anywhere; }
+.rivanta-footer-support a span { color:#d6aa75; }
+.rivanta-footer-bottom { display:flex; align-items:center; justify-content:space-between; gap:24px; padding-top:22px; border-top:1px solid #ffffff24; }
+.rivanta-footer-bottom p { margin:0; color:#99968f; font-size:11px; font-weight:400; line-height:1.6; }
+.rivanta-footer-bottom-links { display:flex; align-items:center; flex-shrink:0; gap:28px; }
+.rivanta-footer-bottom a { display:inline-flex; align-items:center; gap:9px; min-height:40px; color:#c9c5bc; font-size:12px; line-height:1.4; text-decoration:none; }
+.rivanta-footer-linkedin img { display:block; width:16px; height:16px; object-fit:contain; filter:invert(1); opacity:.8; }
+.rivanta-footer-bottom a span { color:#d6aa75; }
+.rivanta-footer-back-top span { font-size:18px; }
+.rivanta-footer-content a { transition:color .18s ease; }
+.rivanta-footer-content a:hover { color:#ffb35b; }
+.rivanta-footer-content a:focus-visible { outline:2px solid #ffb35b; outline-offset:5px; border-radius:2px; }
+@media (max-width:1050px) {
+  .rivanta-footer-intro { gap:32px; }
+  .rivanta-footer-direct .rivanta-footer-email { font-size:21px; }
+  .rivanta-footer-columns { grid-template-columns:1fr 1fr; gap:36px 48px; }
+  .rivanta-footer-column address { max-width:340px; }
+}
+@media (max-width:700px) {
+  .rivanta-footer-brand .rivanta-footer-content { padding-top:48px; }
+  .rivanta-footer-intro { flex-direction:column; align-items:flex-start; gap:28px; padding-bottom:30px; }
+  .rivanta-footer-content .rivanta-footer-company h2 { font-size:21px; }
+  .rivanta-footer-direct { justify-items:start; gap:10px; }
+  .rivanta-footer-direct .rivanta-footer-email { font-size:20px; }
+  .rivanta-footer-columns { gap:32px 24px; padding-block:32px; }
+  .rivanta-footer-content .rivanta-footer-column h3 { margin-bottom:16px; font-size:10px; }
+  .rivanta-footer-column ul { gap:8px; }
+  .rivanta-footer-column a { font-size:13px; }
+  .rivanta-footer-office { grid-column:1 / -1; }
+  .rivanta-footer-column address { font-size:14px; }
+  .rivanta-footer-support { margin-top:20px; }
+  .rivanta-footer-bottom { flex-direction:column; align-items:flex-start; gap:12px; }
+  .rivanta-footer-bottom-links { justify-content:space-between; width:100%; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .rivanta-footer-content a { transition:none; }
+}

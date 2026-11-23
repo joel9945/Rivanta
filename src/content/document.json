@@ -1,0 +1,12 @@
+{
+  "html": {
+    "lang": "en-US"
+  },
+  "body": {
+    "class": "home wp-singular page-template-default page page-id-2 wp-theme-citadel-construction-group"
+  },
+  "main": {
+    "id": "main-content",
+    "class": "citadel-homepage bg-dark"
+  }
+}
