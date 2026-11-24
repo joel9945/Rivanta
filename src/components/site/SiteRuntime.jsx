@@ -82,6 +82,15 @@ function createScrollRuntime() {
 
 export default function SiteRuntime() {
   useEffect(() => {
+    if (!window.location.hash) {
+      try {
+        if ('scrollRestoration' in window.history) {
+          window.history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
+      } catch (_) {}
+    }
+
     const wrapper = document.getElementById('smooth-wrapper');
     const content = document.getElementById('smooth-content');
     if (!wrapper || !content) return;
@@ -95,7 +104,7 @@ export default function SiteRuntime() {
     } else if (!document.querySelector('script[data-rivanta-runtime]')) {
       const script = document.createElement('script');
       script.type = 'module';
-      script.src = '/wp-content/themes/rivanta/assets/js/main.js?ver=india-map-20261118';
+      script.src = '/wp-content/themes/rivanta/assets/js/main.js?ver=scroll-top-20261124';
       script.dataset.rivantaRuntime = 'true';
       document.body.appendChild(script);
     }

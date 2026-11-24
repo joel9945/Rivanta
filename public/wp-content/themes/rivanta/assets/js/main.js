@@ -1,7 +1,7 @@
 // Bump this when you want to force all clients to load fresh JS.
 // Changing this value saves the file with a new mtime, which causes
 // rivanta_asset_version() in PHP to append a new ?ver= query string.
-const THEME_JS_VERSION = '0.3.0';
+const THEME_JS_VERSION = '0.3.1';
 
 import { initScrollRestoration } from './modules/scroll-restoration.js';
 import { initHeroCanvasSequence } from './modules/hero-native-scroll.js';
