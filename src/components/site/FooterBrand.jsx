@@ -9,7 +9,7 @@ export function FooterBrand({ isSubpage = false }) {
   ];
 
   return (
-    <section aria-label="Rivanta footer" className="rivanta-footer-brand rivanta-footer-brand bg-dark text-rivanta-light-grey overflow-visible" id="footer-brand" suppressHydrationWarning>
+    <section aria-label="Rivanta footer" className="rivanta-footer-brand bg-dark text-rivanta-light-grey overflow-visible" id="footer-brand" suppressHydrationWarning>
       <div className="rivanta-container container" suppressHydrationWarning>
         <div className="rivanta-footer-brand-headline rivanta-footer-headline">
           <div className="rivanta-footer-artwork-frame">
@@ -19,7 +19,7 @@ export function FooterBrand({ isSubpage = false }) {
         <div className="rivanta-footer-content">
           <div className="rivanta-footer-intro">
             <div className="rivanta-footer-company">
-              <h2>Rivanta Green Innovative<br/>Venture Private Limited</h2>
+              <h2>Rivanta Green Innovative<br/>Ventures Private Limited</h2>
               <p>Building industrial value from biomass, with resource efficiency at the heart of our plant operations.</p>
             </div>
             <div className="rivanta-footer-direct">
@@ -65,7 +65,7 @@ export function FooterBrand({ isSubpage = false }) {
             <p>© 2026 Rivanta Green Innovative Ventures Private Limited.</p>
             <div className="rivanta-footer-bottom-links">
               <a className="rivanta-footer-linkedin" href="https://www.linkedin.com/company/rivantagreen" target="_blank" rel="noopener noreferrer"><img src="/wp-content/themes/rivanta/assets/social/linkedin.svg" width="16" height="16" alt="" aria-hidden="true"/>LinkedIn</a>
-              <a className="rivanta-footer-back-top" href={isSubpage ? "#" : "#hero"}>Back to top</a>
+              <a className="rivanta-footer-back-top" href={isSubpage ? "#page-top" : "#hero"}>Back to top</a>
             </div>
           </div>
         </div>

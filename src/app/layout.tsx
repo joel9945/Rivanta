@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Roboto_Mono } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import { SiteHeader } from "@/components/site/SiteHeader";
+import { FooterBrand } from "@/components/site/FooterBrand";
 import SiteShell from "@/components/SiteShell";
 import { ModalProvider } from "@/context/ModalContext";
 import ScrollRevealProvider from "@/components/ScrollRevealProvider";
@@ -220,7 +220,7 @@ export default function RootLayout({
         <ModalProvider>
           <SmoothScroll>
             <ScrollRevealProvider>
-              <SiteShell footer={<Footer />}>
+              <SiteShell header={<SiteHeader isSubpage />} footer={<FooterBrand isSubpage />}>
                 {children}
               </SiteShell>
             </ScrollRevealProvider>

@@ -1,4 +1,5 @@
 import { BrandLogo } from './BrandLogo';
+import MobileNavigation from './MobileNavigation';
 
 export function SiteHeader({ isSubpage = false }) {
   const links = {
@@ -12,18 +13,9 @@ export function SiteHeader({ isSubpage = false }) {
 
   return (
     <header
-      className={`rivanta-site-header${isSubpage ? ' is-content-mode' : ''}`}
+      className={`rivanta-site-header rivanta-has-mobile-menu${isSubpage ? ' is-content-mode' : ''}`}
+      {...(isSubpage ? { 'data-logo-cover-surface': 'dark' } : {})}
       {...(!isSubpage ? { 'data-module': 'scrollspy-nav' } : {})}
-      style={
-        isSubpage
-          ? {
-              backgroundColor: 'rgba(10, 10, 10, 0.94)',
-              backdropFilter: 'blur(16px)',
-              WebkitBackdropFilter: 'blur(16px)',
-              borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
-            }
-          : undefined
-      }
       suppressHydrationWarning
     >
       <div
@@ -145,6 +137,7 @@ export function SiteHeader({ isSubpage = false }) {
         >
           Contact Rivanta
         </a>
+        <MobileNavigation links={links} />
       </div>
     </header>
   );

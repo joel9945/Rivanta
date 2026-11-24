@@ -1,0 +1,260 @@
+/* Reuse the homepage footer directory without loading its global page theme. */
+@import "../../../public/wp-content/themes/rivanta/assets/css/rivanta-footer.css";
+
+@font-face {
+  font-family: "Rivanta Chrome Montserrat";
+  font-style: normal;
+  font-weight: 300 800;
+  font-display: swap;
+  src: url("/wp-content/themes/rivanta/assets/fonts/Montserrat-Variable.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url("/wp-content/themes/rivanta/assets/fonts/Manrope-Variable-Latin.woff2") format("woff2");
+}
+
+.rivanta-subpage-shell {
+  --chrome-orange: #f7953e;
+  --chrome-black: #000;
+  --chrome-white: #fff;
+  --chrome-nav: #161616eb;
+  --chrome-font: "Rivanta Chrome Montserrat", sans-serif;
+}
+
+.rivanta-subpage-shell .rivanta-site-header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 50;
+  width: 100%;
+  color: var(--chrome-white);
+  font-family: var(--chrome-font);
+  line-height: 1.5;
+}
+
+.rivanta-subpage-shell .rivanta-site-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  min-height: 84px;
+  margin-inline: auto;
+  padding: 32px 5% 0;
+}
+
+.rivanta-subpage-shell .rivanta-site-header-brand {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  position: relative;
+  line-height: 0;
+}
+
+.rivanta-subpage-shell .rivanta-brand-logo {
+  display: block;
+  width: clamp(180px, 17vw, 246px);
+  height: auto;
+  aspect-ratio: 2160 / 520;
+}
+
+.rivanta-subpage-shell .logo-cover {
+  position: absolute;
+  z-index: -1;
+  top: -270px;
+  left: -10px;
+  width: 300px;
+  height: 600px;
+  background: var(--chrome-black);
+  filter: blur(90px);
+  transform: rotate(70deg);
+  pointer-events: none;
+}
+
+.rivanta-subpage-shell .rivanta-site-nav-wrap { display: contents; }
+.rivanta-subpage-shell .rivanta-site-nav {
+  position: relative;
+  border-radius: 999px;
+  padding: 4px;
+  background: var(--chrome-nav);
+  box-shadow: 0 8px 24px #00000029;
+}
+
+.rivanta-subpage-shell .rivanta-site-nav-list {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.rivanta-subpage-shell .rivanta-site-nav-link,
+.rivanta-subpage-shell .rivanta-site-header-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .74rem;
+  font-weight: 600;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color .18s ease, background-color .22s ease, transform .18s ease;
+}
+
+.rivanta-subpage-shell .rivanta-site-nav-link {
+  border-radius: 999px;
+  padding: .58rem 1.05rem;
+  color: var(--chrome-white);
+}
+
+.rivanta-subpage-shell[data-active-section="about"] .rivanta-site-nav-link[href="/#about"],
+.rivanta-subpage-shell[data-active-section="products"] .rivanta-site-nav-link[href="/#case-studies"],
+.rivanta-subpage-shell[data-active-section="ecosystem"] .rivanta-site-nav-link[href="/#map"],
+.rivanta-subpage-shell .rivanta-site-nav-link:hover {
+  background: var(--chrome-white);
+  color: var(--chrome-black);
+}
+
+.rivanta-subpage-shell .rivanta-site-header-cta {
+  border-radius: .2rem;
+  padding: .5rem .875rem;
+  background: var(--chrome-orange);
+  color: var(--chrome-black);
+}
+
+.rivanta-subpage-shell .rivanta-site-header-cta:hover { transform: translateY(-2px); }
+.rivanta-subpage-shell .rivanta-site-header-cta:active { transform: translateY(0); }
+.rivanta-subpage-shell .rivanta-site-header a:focus-visible {
+  outline: 2px solid var(--chrome-orange);
+  outline-offset: 5px;
+}
+
+.rivanta-subpage-shell .screen-reader-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.rivanta-subpage-shell .rivanta-footer-brand {
+  position: relative;
+  background: var(--chrome-black);
+  color: var(--chrome-white);
+  padding-top: 0;
+}
+
+.rivanta-subpage-shell .rivanta-footer-brand .rivanta-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.rivanta-subpage-shell .rivanta-footer-headline {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  margin: 0;
+  overflow: hidden;
+}
+
+.rivanta-subpage-shell .rivanta-footer-artwork-frame {
+  position: relative;
+  width: min(76%, 1320px);
+  aspect-ratio: 1849 / 521;
+  margin-inline: auto;
+  overflow: hidden;
+}
+
+.rivanta-subpage-shell .rivanta-footer-artwork {
+  position: absolute;
+  display: block;
+  max-width: none;
+  width: 103.624%;
+  height: auto;
+  left: -2.975%;
+  top: -28.599%;
+}
+
+.rivanta-subpage-shell .rivanta-footer-headline::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: -1px 0 auto;
+  height: 28%;
+  min-height: 24px;
+  background: linear-gradient(to bottom, #fff 0%, #fff 3%, #ffffffd9 22%, #ffffff73 50%, #ffffff1f 76%, #fff0 100%);
+  pointer-events: none;
+}
+
+.rivanta-subpage-shell .rivanta-footer-brand .rivanta-footer-content {
+  padding-top: clamp(3rem, 6vw, 6rem);
+  padding-bottom: clamp(2rem, 4vw, 4rem);
+}
+
+@media (max-width: 1024px) {
+  .rivanta-subpage-shell .rivanta-site-header-inner { padding: 20px 3% 0; gap: 12px; }
+  .rivanta-subpage-shell .rivanta-site-nav-list { gap: 0; }
+  .rivanta-subpage-shell .rivanta-site-nav-link { padding-inline: .85rem; }
+}
+
+@media (max-width: 767px) {
+  .rivanta-subpage-shell .rivanta-site-header-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+  .rivanta-subpage-shell .rivanta-brand-logo { width: min(42vw, 190px); }
+  .rivanta-subpage-shell .rivanta-site-header-cta { grid-area: 1 / 2; font-size: .66rem; min-height: 40px; }
+  .rivanta-subpage-shell .rivanta-site-nav-wrap { display: block; grid-column: 1 / -1; min-width: 0; }
+  .rivanta-subpage-shell .rivanta-site-nav-list { justify-content: space-between; }
+  .rivanta-subpage-shell .rivanta-site-nav-link { min-height: 44px; padding: .5rem .6rem; font-size: .66rem; }
+  .rivanta-subpage-shell .rivanta-footer-artwork-frame { width: 90%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rivanta-subpage-shell .rivanta-site-header a { transition: none; }
+}
+
+/* The same compact header on the homepage and every inner page. */
+@media (max-width: 1024px) {
+  .rivanta-site-header.rivanta-has-mobile-menu {
+    min-height: 0;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+  .rivanta-site-header.rivanta-has-mobile-menu .rivanta-site-header-inner:has(.rivanta-mobile-navigation) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    min-height: 68px;
+    width: calc(100% - 20px);
+    margin: 10px auto 0;
+    padding: 11px 14px;
+    border: 1px solid #ffffff1f;
+    border-radius: 14px;
+    background: #101713f5;
+    box-shadow: 0 6px 24px #0003;
+    backdrop-filter: blur(12px);
+  }
+  .rivanta-site-header .rivanta-site-header-inner .rivanta-site-nav-wrap { display: none; }
+  .rivanta-site-header .rivanta-site-header-brand .rivanta-header-logo { width: clamp(150px, 46vw, 200px); }
+  .rivanta-site-header .logo-cover { display: none; }
+  .rivanta-site-header .rivanta-site-header-inner .rivanta-site-header-cta {
+    display: none;
+  }
+}
