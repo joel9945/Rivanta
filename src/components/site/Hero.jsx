@@ -1,6 +1,6 @@
 export function Hero() {
   return (
-    <section aria-label="Hero" className="rivanta-hero" data-hero-debug-mode="0" data-hero-final-heading={"Agricultural Resources. &lt;br /&gt;\r\n\r\nIndustrial Possibilities."} data-hero-final-subheading="Connecting agricultural resources, industrial innovation and opportunities for shared growth." data-hero-mask-ease-power="1.28" data-hero-mask-svg="/rivanta-hawk.svg" data-hero-opening-heading="FROM AGRICULTURAL RESIDUES TO INDUSTRIAL POSSIBILITIES." data-hero-opening-subheading="Rivanta Green Innovative Venture Private Limited is building the foundation for an integrated industrial ecosystem that transforms agricultural residues into high-value materials, sustainable fuels, and cleaner energy solutions." data-hero-overlay-timing="0.01" data-hero-push-bypass-sensitivity="medium" data-hero-scroll-distance="800" data-hero-text-animation-speed="1.5" data-hero-video-strategy="hold_final" data-module="hero-canvas-sequence" id="hero" suppressHydrationWarning>
+    <section aria-label="Hero" className="rivanta-hero" data-hero-debug-mode="0" data-hero-final-heading={"Agricultural Resources <br />\r\n\r\nIndustrial Possibilities"} data-hero-final-subheading="Connecting agricultural resources, industrial innovation and opportunities for shared growth." data-hero-mask-ease-power="1.28" data-hero-mask-svg="/rivanta-hawk.svg" data-hero-opening-heading="FROM AGRICULTURAL RESIDUES TO INDUSTRIAL POSSIBILITIES." data-hero-opening-subheading="Rivanta Green Innovative Venture Private Limited is building the foundation for an integrated industrial ecosystem that transforms agricultural residues into high-value materials, sustainable fuels, and cleaner energy solutions." data-hero-overlay-timing="0.01" data-hero-push-bypass-sensitivity="medium" data-hero-scroll-distance="800" data-hero-text-animation-speed="1.5" data-hero-video-strategy="hold_final" data-module="hero-canvas-sequence" id="hero" suppressHydrationWarning>
       <div className="rivanta-hero-pin" suppressHydrationWarning>
         <div className="rivanta-hero-visual" suppressHydrationWarning>
           <div className="rivanta-hero-media" suppressHydrationWarning>
@@ -22,15 +22,15 @@ export function Hero() {
             <p className="rivanta-hero-lede w-90 max-w-600px mx-auto text-base md:text-base weight-300">Rivanta Green Innovative Venture Private Limited is building the foundation for an integrated industrial ecosystem that transforms agricultural residues into high-value materials, sustainable fuels, and cleaner energy solutions.</p>
           </div>
           <div aria-live="polite" className="rivanta-hero-final container-sm text-center" suppressHydrationWarning>
-            <p className="rivanta-hero-final-text">Agricultural Resources. <br />
-              Industrial Possibilities.</p>
+            <p className="rivanta-hero-final-text">Agricultural Resources <br />
+              Industrial Possibilities</p>
             <div aria-label="Rivanta focus" className="rivanta-hero-metrics" suppressHydrationWarning>
               <div className="rivanta-hero-metric" suppressHydrationWarning>
                 <p className="rivanta-hero-metric-value"><span>Precipitated Silica</span></p>
                 <p className="rivanta-hero-metric-label">High-value materials from silica-rich biomass</p>
               </div>
               <div className="rivanta-hero-metric" suppressHydrationWarning>
-                <p className="rivanta-hero-metric-value"><span>SAF</span></p>
+                <p className="rivanta-hero-metric-value"><span>Sustainable Aviation Fuel (SAF)</span></p>
                 <p className="rivanta-hero-metric-label">Developing sustainable aviation fuel pathways</p>
               </div>
               <div className="rivanta-hero-metric" suppressHydrationWarning>

@@ -1,5 +1,12 @@
 /* Stable geometry: animation changes pixels, never the scroll position. */
 @font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 300 800;
+  font-display: swap;
+  src: url('../fonts/Montserrat-Variable.woff2') format('woff2');
+}
+@font-face {
   font-family:'Manrope';
   font-style:normal;
   font-weight:400 800;
@@ -66,15 +73,82 @@ html[data-scroll-engine="gsap"] .rivanta-hero-pin { position:relative; }
 .rivanta-hero-canvas { inset:0; width:100%; height:100%; transform:none; zoom:1; }
 .rivanta-hero-opening,.rivanta-hero-final { backface-visibility:hidden; will-change:opacity,transform; }
 .rivanta-hero-opening { padding-inline:20px; }
-.rivanta-hero-final { padding:100px 24px 32px; }
-.rivanta-hero-metrics { max-height:none; margin-top:clamp(2rem,6vh,3.4rem); overflow:visible; }
-.rivanta-hero-final-text { transform:translateY(calc((1 - var(--hero-metrics-visibility)) * 20px)); }
-.rivanta-hero-final,
-.rivanta-hero-final p,
-.rivanta-hero-final span { font-family:'Manrope',sans-serif; }
-.rivanta-hero-final .rivanta-hero-final-text,
-.rivanta-hero-final .rivanta-hero-metric-value { color:#21170F; font-weight:700; }
-.rivanta-hero-final .rivanta-hero-metric-label { color:#38291F; font-weight:500; }
+.rivanta-hero-final {
+  padding: 100px 24px 32px;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.rivanta-hero-final-text {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-size: clamp(2.2rem, 3.8vw, 3.5rem) !important;
+  font-weight: 700 !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.025em !important;
+  color: #0e2219 !important;
+  text-wrap: balance;
+  max-width: 860px;
+  margin: 0 auto !important;
+  transform: translateY(calc((1 - var(--hero-metrics-visibility)) * 20px));
+}
+.rivanta-hero-metrics {
+  max-height: none;
+  margin-top: clamp(2.4rem, 4.5vh, 3.6rem) !important;
+  overflow: visible;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: clamp(24px, 3.5vw, 48px) !important;
+  width: min(1040px, 92vw) !important;
+  margin-inline: auto !important;
+}
+.rivanta-hero-metric {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  padding: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  text-align: center !important;
+  min-height: auto !important;
+  transition: transform 0.2s ease;
+}
+.rivanta-hero-metric:hover {
+  background: transparent !important;
+  transform: translateY(-2px);
+  box-shadow: none !important;
+}
+.rivanta-hero-metric-value {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-size: clamp(1.2rem, 1.45vw, 1.55rem) !important;
+  font-weight: 700 !important;
+  line-height: 1.25 !important;
+  letter-spacing: -0.015em !important;
+  color: #0e2219 !important;
+  margin: 0 0 10px 0 !important;
+  min-height: auto !important;
+  display: block !important;
+  text-wrap: balance;
+}
+.rivanta-hero-metric-value span {
+  font-family: inherit !important;
+  font-weight: inherit !important;
+}
+.rivanta-hero-metric-label {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-size: clamp(0.85rem, 0.92vw, 0.96rem) !important;
+  font-weight: 450 !important;
+  line-height: 1.55 !important;
+  letter-spacing: -0.005em !important;
+  color: rgba(14, 34, 25, 0.82) !important;
+  margin: 0 auto !important;
+  max-width: 280px;
+  text-wrap: pretty;
+}
 .rivanta-site-header[data-logo-tone="dark"] :is(.rivanta-site-nav-link,.rivanta-site-header-cta,.rivanta-mobile-nav-arrow) {
   font-family:'Manrope',sans-serif;
   color:#21170F;
@@ -114,12 +188,12 @@ section[id] { scroll-margin-top:112px; }
   #partners .rivanta-partners-list:not(.is-marquee-animated) .rivanta-partners-logo-link span { font-size:16px; }
   #case-studies { --case-studies-copy-height:200px; }
   .rivanta-site-header .rivanta-site-header-inner { width:100%; box-sizing:border-box; }
-  .rivanta-hero-final { padding:92px 20px 24px; }
-  .rivanta-hero-final-text { font-size:clamp(1.7rem,7vw,2.5rem); }
-  .rivanta-hero-metrics { grid-template-columns:repeat(3,minmax(0,1fr)); width:100%; gap:clamp(8px,2.5vw,16px); margin-top:24px; }
-  .rivanta-hero-metric { min-width:0; }
-  .rivanta-hero-metric-value { font-size:clamp(15px,4.8vw,25px); white-space:nowrap; }
-  .rivanta-hero-metric-label { font-size:clamp(11px,2.9vw,14px); margin-top:.35rem; }
+  .rivanta-hero-final { padding:92px 16px 24px; }
+  .rivanta-hero-final-text { font-size:clamp(1.65rem,6.8vw,2.3rem) !important; letter-spacing:-0.02em !important; }
+  .rivanta-hero-metrics { grid-template-columns:repeat(3,minmax(0,1fr)) !important; width:100% !important; gap:clamp(8px,2.5vw,16px) !important; margin-top:22px !important; }
+  .rivanta-hero-metric { background:transparent !important; border:none !important; border-radius:0 !important; box-shadow:none !important; min-width:0; padding:0 !important; min-height:auto !important; }
+  .rivanta-hero-metric-value { font-size:clamp(11.5px,3.2vw,14px) !important; min-height:auto !important; margin-bottom:4px !important; }
+  .rivanta-hero-metric-label { font-size:10.5px !important; line-height:1.35 !important; }
   .rivanta-about .rivanta-about-column { padding:20px; font-family:'Manrope',sans-serif; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; text-rendering:optimizeLegibility; }
   .rivanta-about .rivanta-about-column :is(h2,p,[data-about-copy-focus]) { font-family:inherit; }
   .rivanta-about [data-about-copy-title] { margin:0 0 12px; font-size:20px; font-weight:600; line-height:1.25; letter-spacing:.02em; }
