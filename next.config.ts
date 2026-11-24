@@ -81,6 +81,22 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async rewrites() {
+    return [
+      {
+        source: "/wp-content/themes/citadel-construction-group/:path*",
+        destination: "/wp-content/themes/rivanta/:path*",
+      },
+      {
+        source: "/wp-content/uploads/2026/07/Citadel-Hero-v2.mp4",
+        destination: "/wp-content/uploads/2026/07/rivanta-hero-v2.mp4",
+      },
+      {
+        source: "/wp-content/uploads/2026/07/Citadel-Hero-v2-scaled.webp",
+        destination: "/wp-content/uploads/2026/07/rivanta-hero-scaled.webp",
+      },
+    ];
+  },
   async headers() {
     return [
       {
