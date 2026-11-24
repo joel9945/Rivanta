@@ -688,8 +688,10 @@ export async function initInteractiveMap() {
     const logoHtml = partner.logo_url
       ? `<img src="${escapeHtml(partner.logo_url)}" alt="${escapeHtml(partner.name || 'Partner')}" loading="lazy">`
       : '';
+    const isExternalUrl = /^https?:\/\//i.test(partner.website_url || '');
+    const targetRelAttr = isExternalUrl ? ' target="_blank" rel="noopener noreferrer"' : '';
     const websiteHtml = partner.website_url
-      ? `<a class="rivanta-map-visit" href="${escapeHtml(partner.website_url)}" target="_blank" rel="noopener noreferrer">Visit Partner</a>`
+      ? `<a class="rivanta-map-visit" href="${escapeHtml(partner.website_url)}"${targetRelAttr}>Visit Partner</a>`
       : '';
 
     cardRoot.dataset.placement = position.placement;

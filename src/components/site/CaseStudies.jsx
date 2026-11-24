@@ -257,7 +257,7 @@ Development may create direct and indirect work in operations, logistics, engine
 </div>
 </div>
 <div className="rivanta-case-study-modal-actions w-full flex flex-col md:flex-row md:items-center md:gap-1">
-<a className="rivanta-case-studies-cta mt-0-75 flex items-center justify-center bg-brand-orange bg-brand-orange-hover text-black leading-100 no-underline rounded-sm px-4 py-3" data-case-study-modal-cta="" hidden={true} rel="noopener noreferrer" target="_blank"></a>
+<a className="rivanta-case-studies-cta mt-0-75 flex items-center justify-center bg-brand-orange bg-brand-orange-hover text-black leading-100 no-underline rounded-sm px-4 py-3" data-case-study-modal-cta="" hidden={true}></a>
 </div>
 </div>
 <div className="rivanta-case-studies-media overflow-hidden order-1 lg:order-2" data-case-study-modal-media-wrap="" hidden={true}>

@@ -902,8 +902,10 @@ export async function initInteractiveMap() {
     const logoHtml = partner.logo_url
       ? `<span class="rivanta-map-card-logo-slot"><picture>${cardLogoSourceHtml}<img src="${escapeHtml(partner.logo_url)}" alt="${escapeHtml(partner.name || 'Partner')}" loading="lazy"${cardLogoClass}></picture></span>`
       : '';
+    const isExternalUrl = /^https?:\/\//i.test(partner.website_url || '');
+    const targetRelAttr = isExternalUrl ? ' target="_blank" rel="noopener noreferrer"' : '';
     const websiteHtml = partner.website_url
-      ? `<a class="rivanta-map-visit" href="${escapeHtml(partner.website_url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(partner.cta_label || 'Explore Pathway')}</a>`
+      ? `<a class="rivanta-map-visit" href="${escapeHtml(partner.website_url)}"${targetRelAttr}>${escapeHtml(partner.cta_label || 'Explore Pathway')}</a>`
       : '';
 
     const selectedControl = Array.from(controlsRoot.querySelectorAll('button[data-partner-key]'))

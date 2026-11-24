@@ -161,9 +161,19 @@ export function initCaseStudiesCarousel() {
         modalCta.href = ctaUrl;
         modalCta.textContent = ctaLabel;
         modalCta.setAttribute('aria-label', ctaLabel);
+        const isExternal = /^https?:\/\//i.test(ctaUrl);
+        if (isExternal) {
+          modalCta.setAttribute('target', '_blank');
+          modalCta.setAttribute('rel', 'noopener noreferrer');
+        } else {
+          modalCta.removeAttribute('target');
+          modalCta.removeAttribute('rel');
+        }
       } else {
         modalCta.hidden = true;
         modalCta.removeAttribute('href');
+        modalCta.removeAttribute('target');
+        modalCta.removeAttribute('rel');
         modalCta.textContent = '';
       }
     }
