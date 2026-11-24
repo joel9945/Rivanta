@@ -74,7 +74,20 @@ html[data-scroll-engine="gsap"] .rivanta-hero-pin { position:relative; }
 .rivanta-hero-opening,.rivanta-hero-final { backface-visibility:hidden; will-change:opacity,transform; }
 .rivanta-hero-opening { padding-inline:20px; }
 .rivanta-hero-final {
-  padding: 100px 24px 32px;
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  left: 0 !important;
+  right: 0 !important;
+  margin: 0 auto !important;
+  padding: 100px 24px 32px !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -87,7 +100,9 @@ html[data-scroll-engine="gsap"] .rivanta-hero-pin { position:relative; }
   letter-spacing: -0.025em !important;
   color: #0e2219 !important;
   text-wrap: balance;
-  max-width: 860px;
+  text-align: center !important;
+  width: 100% !important;
+  max-width: 860px !important;
   margin: 0 auto !important;
   transform: translateY(calc((1 - var(--hero-metrics-visibility)) * 20px));
 }
@@ -98,8 +113,10 @@ html[data-scroll-engine="gsap"] .rivanta-hero-pin { position:relative; }
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   gap: clamp(24px, 3.5vw, 48px) !important;
-  width: min(1040px, 92vw) !important;
-  margin-inline: auto !important;
+  width: 100% !important;
+  max-width: 980px !important;
+  margin: clamp(2.4rem, 4.5vh, 3.6rem) auto 0 !important;
+  align-items: start !important;
 }
 .rivanta-hero-metric {
   background: transparent !important;
@@ -130,9 +147,12 @@ html[data-scroll-engine="gsap"] .rivanta-hero-pin { position:relative; }
   letter-spacing: -0.015em !important;
   color: #0e2219 !important;
   margin: 0 0 10px 0 !important;
-  min-height: auto !important;
-  display: block !important;
+  min-height: 2.8em;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   text-wrap: balance;
+  text-align: center !important;
 }
 .rivanta-hero-metric-value span {
   font-family: inherit !important;
@@ -148,6 +168,7 @@ html[data-scroll-engine="gsap"] .rivanta-hero-pin { position:relative; }
   margin: 0 auto !important;
   max-width: 280px;
   text-wrap: pretty;
+  text-align: center !important;
 }
 .rivanta-site-header[data-logo-tone="dark"] :is(.rivanta-site-nav-link,.rivanta-site-header-cta,.rivanta-mobile-nav-arrow) {
   font-family:'Manrope',sans-serif;
@@ -188,11 +209,11 @@ section[id] { scroll-margin-top:112px; }
   #partners .rivanta-partners-list:not(.is-marquee-animated) .rivanta-partners-logo-link span { font-size:16px; }
   #case-studies { --case-studies-copy-height:200px; }
   .rivanta-site-header .rivanta-site-header-inner { width:100%; box-sizing:border-box; }
-  .rivanta-hero-final { padding:92px 16px 24px; }
+  .rivanta-hero-final { padding:92px 16px 24px !important; }
   .rivanta-hero-final-text { font-size:clamp(1.65rem,6.8vw,2.3rem) !important; letter-spacing:-0.02em !important; }
   .rivanta-hero-metrics { grid-template-columns:repeat(3,minmax(0,1fr)) !important; width:100% !important; gap:clamp(8px,2.5vw,16px) !important; margin-top:22px !important; }
   .rivanta-hero-metric { background:transparent !important; border:none !important; border-radius:0 !important; box-shadow:none !important; min-width:0; padding:0 !important; min-height:auto !important; }
-  .rivanta-hero-metric-value { font-size:clamp(11.5px,3.2vw,14px) !important; min-height:auto !important; margin-bottom:4px !important; }
+  .rivanta-hero-metric-value { font-size:clamp(11.5px,3.2vw,14px) !important; min-height:2.8em !important; margin-bottom:4px !important; }
   .rivanta-hero-metric-label { font-size:10.5px !important; line-height:1.35 !important; }
   .rivanta-about .rivanta-about-column { padding:20px; font-family:'Manrope',sans-serif; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; text-rendering:optimizeLegibility; }
   .rivanta-about .rivanta-about-column :is(h2,p,[data-about-copy-focus]) { font-family:inherit; }

@@ -21,7 +21,7 @@ export function Hero() {
             <h1 className="display-title text-white text-lg md:text-2xl text-balance uppercase tracking-wide mb-6">FROM AGRICULTURAL RESIDUES TO INDUSTRIAL POSSIBILITIES.</h1>
             <p className="rivanta-hero-lede w-90 max-w-600px mx-auto text-base md:text-base weight-300">Rivanta Green Innovative Venture Private Limited is building the foundation for an integrated industrial ecosystem that transforms agricultural residues into high-value materials, sustainable fuels, and cleaner energy solutions.</p>
           </div>
-          <div aria-live="polite" className="rivanta-hero-final container-sm text-center" suppressHydrationWarning>
+          <div aria-live="polite" className="rivanta-hero-final text-center" suppressHydrationWarning>
             <p className="rivanta-hero-final-text">Agricultural Resources <br />
               Industrial Possibilities</p>
             <div aria-label="Rivanta focus" className="rivanta-hero-metrics" suppressHydrationWarning>
