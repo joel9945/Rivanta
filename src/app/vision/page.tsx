@@ -41,7 +41,7 @@ const STRATEGIC_ISSUES = [
     concern:
       "Every harvest season, millions of tonnes of surplus crop residues and paddy straw are burned across agrarian corridors. This open-field burning generates severe seasonal smog, dangerous spikes in PM2.5 and PM10 particulate pollution, and public health disruptions across northern and central India.",
     response:
-      "We provide an organized, commercially viable alternative to open-field burning. Through structured aggregation frameworks with farmers and millers, we channel agricultural residues into high-value biogenic materials and clean Compressed Biogas, converting an atmospheric liability into productive industrial energy.",
+      "We provide an organized, commercially viable alternative to open-field burning. Through structured aggregation frameworks with farmers and millers, we channel agricultural residues into high-value precipitated silica, green silicon materials, and EDSP / EOCM renewable gas, converting an atmospheric liability into productive industrial energy.",
     icon: Wind,
     color: "#e06425",
     stat: "Productive Alternative to Field Burning",
@@ -333,8 +333,8 @@ export default function VisionPage() {
                     </i>
                   </Link>
 
-                  <Link href="/cbg" className="u-btn--3" data-label="View CBG Solutions">
-                    <span className="btn_label">View CBG Solutions</span>
+                  <Link href="/edsp-eocm" className="u-btn--3" data-label="View EDSP / EOCM Solutions">
+                    <span className="btn_label">View EDSP / EOCM Solutions</span>
                   </Link>
                 </div>
               </div>

@@ -17,31 +17,31 @@ import {
 const STRATEGIC_CHANNELS = [
   {
     index: "01.",
-    title: "City Gas Distribution",
-    badge: "Grid Integration",
-    text: "Developing supply pathways for commercial-grade biomethane into regional city gas networks, providing an alternative for domestic piped gas and commercial heating.",
+    title: "EDSP / EOCM Production",
+    badge: "Renewable Energy Solutions",
+    text: "Transforming suitable agricultural residues into purified, methane-rich renewable gas through the Exothermal Drying and Sorting Process and Extracting Organic Carbon as Methane (EDSP/EOCM).",
     bg: "#fae9dc",
     textColor: "#13271e",
     accent: "#e06425",
     icon: Flame,
-    stat: "Pipeline-Quality Biomethane",
+    stat: "Purified Renewable Gas",
   },
   {
     index: "02.",
-    title: "Commercial Mobility",
-    badge: "Clean Transport",
-    text: "Planning compressed biomethane distribution for vehicular transport and commercial fleet corridors, supporting lower emissions across logistics fleets.",
+    title: "Clean Mobility & Grid Supply",
+    badge: "Domestic Clean Fuel",
+    text: "Supplying compressed, methane-rich renewable fuel for compatible natural gas-powered vehicles and regional industrial heating systems, reducing dependence on fossil gas.",
     bg: "#d6e8dc",
     textColor: "#13271e",
     accent: "#2d7a54",
     icon: Fuel,
-    stat: "Vehicular Alternative Fuel",
+    stat: "Vehicular & Industrial Systems",
   },
   {
     index: "03.",
-    title: "Circular Soil Nutrients",
-    badge: "Resource Recovery",
-    text: "Evaluating the processing of organic digestion by-products into fermented organic soil amendments, returning organic carbon and macro-nutrients to regional farmlands.",
+    title: "Organic Fertilizer Recovery",
+    badge: "Nutrient Circularity",
+    text: "Nutrient-rich digestate remaining after the extraction process is converted into high-grade organic fertilizers, restoring soil organic carbon and supporting regenerative agriculture.",
     bg: "#132c21",
     textColor: "#ffffff",
     accent: "#ea6e2d",
@@ -53,30 +53,30 @@ const STRATEGIC_CHANNELS = [
 const COMMERCIAL_PARAMETERS = [
   {
     id: "methane-content",
-    value: "Commercial Grade",
-    label: "Methane Enrichment",
-    detail: "Purified biomethane engineered to meet commercial specifications for industrial and grid applications.",
-    trend: "Commercial Specification",
+    value: "Methane-Rich Gas",
+    label: "EOCM Upgrading",
+    detail: "Renewable gas cleaned and enriched through EOCM to maximize methane concentration for clean mobility and industrial energy applications.",
+    trend: "Purified Biomethane",
+  },
+  {
+    id: "process-technology",
+    value: "EDSP Pre-Treatment",
+    label: "Drying & Sorting",
+    detail: "Exothermal Drying and Sorting Process optimizes residue moisture and substrate quality prior to anaerobic digestion.",
+    trend: "Exothermal Preparation",
   },
   {
     id: "energy-parity",
     value: "Caloric Equivalence",
     label: "Fuel Performance",
-    detail: "Direct operational alternative to fossil natural gas in commercial burners and industrial heating applications.",
-    trend: "Industrial Heating",
-  },
-  {
-    id: "policy-alignment",
-    value: "National Mandates",
-    label: "Policy Integration",
-    detail: "Aligned with national bioenergy directives promoting domestic renewable fuel blending and energy diversification.",
-    trend: "Energy Transition",
+    detail: "Practical alternative to fossil-based natural gas in compatible vehicles and industrial systems from locally available biomass.",
+    trend: "Domestic Energy Supply",
   },
   {
     id: "byproduct-recovery",
-    value: "Closed Loop",
-    label: "Nutrient Recycling",
-    detail: "Comprehensive digestate recovery producing organic soil amendments for sustainable agriculture.",
+    value: "Organic Fertilizers",
+    label: "Digestate Utilization",
+    detail: "Nutrient-rich digestate converted into organic fertilizers, returning value to agriculture and soil health.",
     trend: "Circular Agriculture",
   },
 ];
@@ -84,47 +84,47 @@ const COMMERCIAL_PARAMETERS = [
 const FEEDSTOCK_CATEGORIES = [
   {
     step: "01",
-    name: "Crop Residues & Agronomic Straw",
-    characteristics: "Paddy straw, wheat straw, and crop stalks procured from regional agricultural belts to support productive biomass utilization.",
+    name: "Agricultural Straw & Stalks",
+    characteristics: "Paddy straw, wheat straw, and crop stalks collected through organized regional networks to provide an alternative to open-field burning.",
   },
   {
     step: "02",
-    name: "Agro-Industrial Processing By-Products",
-    characteristics: "Residues from agro-processing, milling clusters, and food processing facilities suited for anaerobic digestion.",
+    name: "Agro-Industrial Crop Residues",
+    characteristics: "Rice husk, bagasse, and agro-processing by-products sorted and pre-treated through exothermal drying for anaerobic digestion.",
   },
   {
     step: "03",
-    name: "Organic Residue Blends",
-    characteristics: "Engineered multi-substrate blends configured to maintain balanced digestion performance and reliable gas yield.",
+    name: "Engineered Substrate Blends",
+    characteristics: "Balanced organic residue blends configured to maintain steady anaerobic digestion and consistent renewable gas yield.",
   },
 ];
 
-export default function CbgPage() {
+export default function EdspEocmPage() {
   const [selectedMetric, setSelectedMetric] = useState(0);
 
   return (
     <>
       {/* Framed Canvas Hero */}
       <SubpageHero
-        badge="Sustainable Fuels"
-        title="Supporting India's Energy Transition With"
-        highlightedText="Compressed Biogas."
-        description="Developing renewable gas infrastructure to support cleaner mobility, industrial energy requirements and India's energy diversification."
-        imageSrc="/images/cbg-plant.jpg"
+        badge="Renewable Energy Solutions"
+        title="Energy That Begins With Nature:"
+        highlightedText="EDSP / EOCM."
+        description="Transforming agricultural residues into a practical energy resource for transport and industry through Exothermal Drying and Sorting Process / Extracting Organic Carbon as Methane (EDSP/EOCM)."
+        imageSrc="/images/edsp-plant.jpg"
         breadcrumbs={[
           { label: "Our Businesses", href: "/#businesses" },
-          { label: "Compressed Biogas (CBG)" },
+          { label: "EDSP / EOCM" },
         ]}
         primaryCtaText="Contact Commercial Desk"
         primaryCtaHref="/contact"
         secondaryCtaText="Explore Feedstock Sourcing"
         secondaryCtaHref="/feedstock"
-        telemetryTag="Alternative Fuels • Commercial Biomethane"
+        telemetryTag="Renewable Energy Solutions • EDSP / EOCM"
       />
 
       {/* Infinite Industrial Ticker */}
       <MarqueeText
-        phrase="COMPRESSED BIOGAS — COMMERCIAL BIOMETHANE — CITY GAS DISTRIBUTION — GREEN COMMERCIAL MOBILITY — SOIL HEALTH RESTORATION — NATIONAL BIOENERGY ALIGNMENT — "
+        phrase="EDSP / EOCM — EXOTHERMAL DRYING AND SORTING PROCESS — EXTRACTING ORGANIC CARBON AS METHANE — RENEWABLE ENERGY SOLUTIONS — ORGANIC FERTILIZERS — DOMESTIC FUEL INDEPENDENCE — "
         theme="sage"
       />
 
@@ -140,32 +140,32 @@ export default function CbgPage() {
 
               <div className="relative aspect-[4/5] sm:aspect-[4/3] lg:aspect-[4/5] rounded-3xl overflow-hidden shadow-lg border border-[#13271e]/10 group reveal-up delay-100">
                 <Image
-                  src="/images/cbg-biomethane-digestor.jpg"
-                  alt="Commercial Anaerobic Digestion and Biomethane Upgrading Facility"
+                  src="/images/edsp-eocm-digestor.jpg"
+                  alt="Anaerobic Digestion and Renewable Gas Upgrading Facility"
                   fill
                   sizes="(max-width: 1024px) 100vw, 33vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0e2219]/85 via-[#0e2219]/25 to-transparent pointer-events-none" />
                 <div className="absolute bottom-5 left-5 right-5 text-white">
-                  <p className="font-mono text-[10px] uppercase tracking-wider text-[#f9a65c]">Commercial Infrastructure</p>
-                  <p className="font-sans text-xs text-white/90 font-light mt-0.5">Biomethane upgrading & industrial grid injection</p>
+                  <p className="font-mono text-[10px] uppercase tracking-wider text-[#f9a65c]">EDSP / EOCM Infrastructure</p>
+                  <p className="font-sans text-xs text-white/90 font-light mt-0.5">Gas purification, methane enrichment & organic fertilizer recovery</p>
                 </div>
               </div>
             </div>
 
             <div className="lg:col-span-8 flex flex-col space-y-8 md:space-y-10">
               <h2 className="font-sans font-normal text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.12] text-[#13271e] reveal-up delay-100">
-                Diversified domestic energy from{" "}
-                <span className="text-[#a0b0a5]">agricultural resources.</span>
+                A practical alternative for{" "}
+                <span className="text-[#a0b0a5]">modern energy needs.</span>
               </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-[#13271e]/80 text-base md:text-lg font-light leading-relaxed reveal-up delay-200">
                 <p>
-                  Compressed Biogas (CBG) is purified biomethane produced through the controlled anaerobic digestion of crop residues and agricultural by-products, delivering caloric parity with fossil natural gas.
+                  Agricultural residues hold the potential to become a valuable source of renewable fuel. Rivanta aims to harness this opportunity through Exothermal Drying and Sorting Process / Extracting Organic Carbon as Methane (EDSP/EOCM), transforming suitable organic materials into a practical energy resource for transport and industry.
                 </p>
                 <p>
-                  Rivanta Green is developing modern CBG facilities to supply clean biomethane into regional transportation corridors and city gas networks, turning agricultural residues into dependable domestic energy.
+                  In the proposed facility, suitable agricultural residues undergo anaerobic digestion, where microorganisms break down organic matter in the absence of oxygen to produce raw gas. Through EOCM processing, the gas is cleaned, enriched to high methane purity, and compressed as renewable gas for clean mobility and industrial energy.
                 </p>
               </div>
 
@@ -302,7 +302,7 @@ export default function CbgPage() {
             </div>
             <div className="font-mono text-xs uppercase tracking-wider text-[#13271e]/60 flex items-center gap-2 reveal-up delay-200">
               <Activity className="w-4 h-4 text-[#e06425]" />
-              <span>National Bioenergy Standards</span>
+              <span>Renewable Energy Standards</span>
             </div>
           </div>
 
@@ -383,8 +383,8 @@ export default function CbgPage() {
 
               <div className="relative aspect-[4/5] sm:aspect-[4/3] lg:aspect-[4/5] rounded-3xl overflow-hidden shadow-lg border border-[#13271e]/10 group reveal-up delay-100">
                 <Image
-                  src="/images/cbg-organic-manure-processing.jpg"
-                  alt="Fermented Organic Manure and Circular Digestate Processing"
+                  src="/images/edsp-organic-fertilizer-processing.jpg"
+                  alt="Organic Fertilizer and Digestate Processing"
                   fill
                   sizes="(max-width: 1024px) 100vw, 33vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
@@ -392,7 +392,7 @@ export default function CbgPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0e2219]/85 via-[#0e2219]/25 to-transparent pointer-events-none" />
                 <div className="absolute bottom-5 left-5 right-5 text-white">
                   <p className="font-mono text-[10px] uppercase tracking-wider text-[#f9a65c]">Circular Co-Product</p>
-                  <p className="font-sans text-xs text-white/90 font-light mt-0.5">Fermented organic bio-manure (FOM) soil nutrients</p>
+                  <p className="font-sans text-xs text-white/90 font-light mt-0.5">Organic fertilizer & soil nutrient recovery</p>
                 </div>
               </div>
             </div>
@@ -402,7 +402,7 @@ export default function CbgPage() {
                 Sustained sourcing and organic fertilizer recovery.
               </h2>
               <p className="font-sans text-base md:text-lg text-[#13271e]/80 font-light max-w-2xl reveal-up delay-200">
-                In addition to clean biomethane, anaerobic digestion produces valuable organic digestate that is processed into fermented organic manure to enrich agricultural soils.
+                In addition to clean renewable gas, anaerobic digestion produces valuable nutrient-rich digestate that may be processed into organic fertilizers to support agricultural soil health.
               </p>
 
               <div className="space-y-4 pt-4">

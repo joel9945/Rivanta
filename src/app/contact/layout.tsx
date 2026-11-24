@@ -53,18 +53,18 @@ const jsonLd = {
       mainEntity: [
         {
           "@type": "Question",
-          name: "How can industrial partners inquire about Biogenic Silica?",
+          name: "How can industrial partners inquire about Precipitated Silica & Silicon?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Industrial procurement and technical teams in rubber compounding, construction materials, and specialty coatings can request material specification summaries and discuss technical feasibility. Submit your inquiry selecting 'Advanced Materials & Biogenic Silica' along with application requirements.",
+            text: "Industrial procurement and technical teams in tyres, rubber compounding, and specialty coatings can request material specification summaries and discuss technical feasibility. Submit your inquiry selecting 'Precipitated Silica & Silicon Materials' along with application requirements.",
           },
         },
         {
           "@type": "Question",
-          name: "What commercial structures are used for Compressed Biogas (CBG) off-take?",
+          name: "What commercial structures are used for EDSP / EOCM renewable gas off-take?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Commercial off-take discussions for planned facilities are structured around long-term agreements with City Gas Distribution (CGD) entities and industrial consumers, with delivery evaluated via regional pipeline interconnection or mobile cascade logistics.",
+            text: "Commercial off-take discussions for planned facilities are structured around long-term agreements with clean mobility consumers, gas distribution networks, and industrial buyers, with delivery evaluated via regional pipeline interconnection or mobile cascade logistics.",
           },
         },
         {

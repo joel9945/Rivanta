@@ -10,7 +10,7 @@ export default function ContactModal() {
     name: '',
     email: '',
     phone: '',
-    interest: 'Silicon / Bio-Silica',
+    interest: 'Precipitated Silica & Silicon',
     message: '',
   });
 
@@ -312,7 +312,7 @@ export default function ContactModal() {
                     type="tel"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="+91 98930 25375"
+                    placeholder="+91 98930 15375"
                     style={{
                       width: '100%',
                       padding: '0.75rem 1rem',
@@ -357,9 +357,9 @@ export default function ContactModal() {
                   onFocus={(e) => (e.target.style.borderColor = '#ed730c')}
                   onBlur={(e) => (e.target.style.borderColor = 'rgba(255, 255, 255, 0.16)')}
                 >
-                  <option value="Silicon / Bio-Silica">Silicon / Bio-Silica (Materials)</option>
+                  <option value="Precipitated Silica & Silicon">Precipitated Silica &amp; Silicon</option>
                   <option value="Sustainable Aviation Fuel">Sustainable Aviation Fuel (SAF)</option>
-                  <option value="Compressed Biogas">Compressed Biogas (CBG)</option>
+                  <option value="EDSP / EOCM">EDSP / EOCM (Renewable Gas)</option>
                   <option value="Biomass Sourcing & Aggregation">Biomass Sourcing &amp; Aggregation</option>
                   <option value="Integrated Campus & Utilities">Integrated Campus &amp; Utilities</option>
                   <option value="Corporate / Partnership Inquiry">General Partnership Inquiry</option>
@@ -418,7 +418,7 @@ export default function ContactModal() {
                   Submit Inquiry
                 </button>
                 <span style={{ fontSize: '0.75rem', color: '#888888' }}>
-                  Direct desk: +91 98930 25375
+                  Direct desk: +91 98930 15375
                 </span>
               </div>
             </form>
@@ -491,7 +491,7 @@ export default function ContactModal() {
             </div>
 
             <p style={{ fontSize: '0.75rem', color: '#888888', margin: 0 }}>
-              Corporate Desk: info@rivantagreen.com | +91 98930 25375
+              Corporate Desk: info@rivantagreen.com | +91 98930 15375
             </p>
           </div>
         )}

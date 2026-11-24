@@ -17,8 +17,8 @@ export interface InquiryResult {
 }
 
 const ALLOWED_SECTORS = [
-  "Advanced Materials & Biogenic Silica",
-  "Compressed Biogas (CBG)",
+  "Precipitated Silica & Silicon Materials",
+  "EDSP / EOCM (Renewable Gas)",
   "Sustainable Aviation Fuels (SAF)",
   "Feedstock Sourcing & Logistics",
   "Renewable Energy & Infrastructure",

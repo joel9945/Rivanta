@@ -58,15 +58,15 @@ export default async function Footer() {
                     href="/bio-silica"
                     className="hover:text-[#ea6e2d] transition-colors"
                   >
-                    Advanced Materials
+                    Precipitated Silica & Silicon
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/cbg"
+                    href="/edsp-eocm"
                     className="hover:text-[#ea6e2d] transition-colors"
                   >
-                    Compressed Biogas (CBG)
+                    EDSP / EOCM (Renewable Gas)
                   </Link>
                 </li>
                 <li>
@@ -170,10 +170,10 @@ export default async function Footer() {
               <ul className="space-y-3 font-sans font-light text-white/80 text-xs sm:text-sm">
                 <li>
                   <a
-                    href="tel:+919893025375"
+                    href="tel:+919893015375"
                     className="hover:text-[#ea6e2d] transition-colors"
                   >
-                    +91 98930 25375
+                    +91 98930 15375
                   </a>
                 </li>
                 <li>
@@ -264,10 +264,10 @@ export default async function Footer() {
                   Direct Line:
                 </span>
                 <a
-                  href="tel:+919893025375"
+                  href="tel:+919893015375"
                   className="text-white hover:text-[#f9a65c] transition-colors font-medium text-sm"
                 >
-                  +91 98930 25375
+                  +91 98930 15375
                 </a>
               </div>
               <div>

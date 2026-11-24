@@ -14,29 +14,29 @@ const MATERIAL_COMPARISONS = [
     parameter: "Raw Material Source",
     biogenicSilica: "Sustainable agricultural residues (rice husk)",
     traditionalSilica: "Mined quartz mineral deposits and chemical synthesis",
-    advantage: "Renewable Agricultural Origin",
+    advantage: "Agricultural Rather Than Mined Origin",
   },
   {
     parameter: "Processing Route",
-    biogenicSilica: "Controlled thermal conversion and purification",
+    biogenicSilica: "Biomass processing, gasification & ash purification",
     traditionalSilica: "High-temperature sodium silicate fusion and acid precipitation",
-    advantage: "Non-Mining Production Route",
+    advantage: "Ash Recovery Production Route",
   },
   {
-    parameter: "Material Structure",
-    biogenicSilica: "Amorphous silica (SiO₂) with high specific surface area",
+    parameter: "Material Characteristics",
+    biogenicSilica: "High-purity Precipitated Silica with high specific surface area",
     traditionalSilica: "Crystalline quartz or synthetic precipitated matrices",
-    advantage: "Amorphous Phase Characteristics",
+    advantage: "Amorphous Silica Quality",
   },
   {
-    parameter: "Supply Chain Model",
-    biogenicSilica: "Domestic agro-residue aggregation from agrarian belts",
+    parameter: "Industrial Applications",
+    biogenicSilica: "Automobile tyres, rubber compounding, coatings & silicon precursors",
     traditionalSilica: "Dependent on mineral extraction and import logistics",
-    advantage: "Domestic Supply Integration",
+    advantage: "Domestic Sourcing for Industry",
   },
   {
-    parameter: "Resource Recovery Integration",
-    biogenicSilica: "Co-generation of process energy and agricultural soil co-products",
+    parameter: "Resource Integration",
+    biogenicSilica: "Co-generation of process gas, heat recovery & biochar evaluation",
     traditionalSilica: "Mineral quarrying with solid tailings management requirements",
     advantage: "Integrated Resource Recovery",
   },
@@ -45,37 +45,23 @@ const MATERIAL_COMPARISONS = [
 const APPLICATION_AREAS = [
   {
     id: "rubber-tires",
-    title: "Rubber & Tire Reinforcement",
-    role: "Prospective Compounding Applications",
-    headline: "Reinforcing elastomeric compounds and wear performance.",
+    title: "Automobile Tyres & Rubber",
+    role: "Reinforcing Elastomeric Applications",
+    headline: "Reinforcing tyre compounds and elastomeric durability.",
     description:
-      "Biogenic silica is being evaluated as a reinforcing filler for automotive tires and industrial rubber compounds to support lower rolling resistance and improved tread durability.",
+      "Precipitated silica recovered from rice husk ash is evaluated as a reinforcing filler for automobile tyres and industrial rubber, supporting lower rolling resistance and improved tread wear performance.",
     specs: [
       "High specific surface area for polymer dispersion testing",
       "Potential reduction in rolling resistance for vehicle fuel efficiency",
       "Compatibility evaluation with synthetic and natural elastomer matrices",
-      "Renewable alternative to mineral-derived industrial silica",
-    ],
-  },
-  {
-    id: "construction",
-    title: "Concrete & Infrastructure",
-    role: "Supplementary Cementitious Material",
-    headline: "Improving structural durability and cement efficiency.",
-    description:
-      "Pozzolanic biogenic silica reacts with calcium hydroxide during cement hydration, enhancing compressive strength, reducing permeability, and lowering concrete embodied carbon.",
-    specs: [
-      "Assessing early and long-term compressive strength development",
-      "Evaluated for reduced chloride penetration and chemical resistance",
-      "Supports partial displacement of Portland cement in structural mixes",
-      "Pore-structure optimization for precast and infrastructure concrete",
+      "Dependable domestic supply for Indian tyre and rubber manufacturers",
     ],
   },
   {
     id: "coatings-chemicals",
-    title: "Specialty Coatings & Industrial Applications",
-    role: "Rheology Control & Matting Applications",
-    headline: "Particle sizing and viscosity control for industrial coatings.",
+    title: "Paints, Coatings & Specialty Products",
+    role: "Rheology Control & Matting Agent",
+    headline: "Consistent particle sizing and viscosity control for industrial coatings.",
     description:
       "Engineered particle sizing provides consistent matting, anti-settling, and viscosity control across architectural paints, industrial resins, and protective coatings.",
     specs: [
@@ -86,16 +72,30 @@ const APPLICATION_AREAS = [
     ],
   },
   {
-    id: "downstream",
-    title: "Downstream Materials & Silicon Evaluation",
-    role: "Evaluative Development Area",
-    headline: "Evaluating high-purity biogenic silica as an industrial precursor.",
+    id: "construction",
+    title: "High-Performance Materials",
+    role: "Industrial & Structural Applications",
+    headline: "Enhancing structural durability and industrial formulation performance.",
     description:
-      "Rivanta is evaluating exploratory processing pathways to determine the technical and commercial feasibility of refining biogenic silica into precursors for industrial applications, advanced ceramics, and clean energy storage.",
+      "Amorphous precipitated silica functions as an advanced pozzolanic and reinforcing additive, improving compressive strength, reducing permeability, and supporting industrial material durability.",
+    specs: [
+      "Assessing early and long-term compressive strength development",
+      "Evaluated for reduced chemical permeability and abrasion resistance",
+      "High reactivity in specialized cementitious and refractory mixes",
+      "Pore-structure optimization for high-durability infrastructure",
+    ],
+  },
+  {
+    id: "silicon-electronics",
+    title: "Silicon for Solar & Electronics",
+    role: "Silicon Precursor Evaluation",
+    headline: "Developing silicon-based materials through specialised technologies.",
+    description:
+      "Silica and silicon play important but different roles. Rivanta is evaluating specialised processing technologies to develop silicon-based materials essential to industries such as solar energy and electronics.",
     specs: [
       "Evaluating chemical purity and physical morphology from agricultural residues",
-      "Assessing feasibility for industrial rubber, concrete, and coating applications",
-      "Exploring potential downstream clean technology precursor pathways",
+      "Developing silicon materials essential for solar energy and electronics",
+      "Targeting reduced reliance on imported industrial materials",
       "Advancing workstreams through phased technical feasibility modeling",
     ],
   },
@@ -109,24 +109,24 @@ export default function BioSilicaPage() {
       {/* Framed Canvas Hero */}
       <SubpageHero
         badge="Advanced Materials & Silicon"
-        title="Engineering Bio-Silica &"
-        highlightedText="Green Silicon."
-        description="Advancing domestic capabilities in biogenic silica and high-value industrial materials for emerging manufacturing applications."
+        title="The Building Blocks of Technology:"
+        highlightedText="Precipitated Silica & Silicon."
+        description="Recovering high-purity Precipitated Silica from agricultural residues and developing silicon-based materials through specialised processing technologies."
         imageSrc="/images/bio-silica-lab.jpg"
         breadcrumbs={[
           { label: "Our Businesses", href: "/#businesses" },
-          { label: "Bio-Silica & Silicon" },
+          { label: "Precipitated Silica & Silicon" },
         ]}
         primaryCtaText="Explore Applications"
         primaryCtaHref="#applications"
         secondaryCtaText="Contact Commercial Desk"
         secondaryCtaHref="/contact"
-        telemetryTag="Advanced Materials • Bio-Silica & Silicon"
+        telemetryTag="Precipitated Silica • Silicon-Based Materials"
       />
 
       {/* Infinite Industrial Ticker */}
       <MarqueeText
-        phrase="BIOGENIC SILICA — GREEN SILICON PRECURSORS — RUBBER REINFORCEMENT — GREEN CONCRETE — SPECIALTY COATINGS — DOMESTIC SUPPLY CHAINS — "
+        phrase="PRECIPITATED SILICA — SILICON-BASED MATERIALS — AUTOMOBILE TYRES & RUBBER — COATINGS & SPECIALTY PRODUCTS — SOLAR & ELECTRONICS — DOMESTIC SELF-RELIANCE — "
         theme="light"
       />
 
@@ -139,10 +139,10 @@ export default function BioSilicaPage() {
               <span>Material Comparison</span>
             </div>
             <h2 className="font-sans font-normal text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight text-[#13271e] reveal-up delay-100">
-              Biogenic materials for modern industry.
+              Small beginnings, significant possibilities.
             </h2>
             <p className="font-sans text-base md:text-lg text-[#13271e]/80 font-light mt-4 leading-relaxed reveal-up delay-200">
-              Biogenic silica derived from agricultural residues provides high surface area, consistent reactivity, and commercial relevance as an alternative to conventional mineral silica.
+              What appears to be an ordinary agricultural by-product holds remarkable industrial potential. Rice husk naturally contains silica, which can be recovered and purified into Precipitated Silica to serve industries in India and around the world.
             </p>
           </div>
 
@@ -153,12 +153,12 @@ export default function BioSilicaPage() {
                 <tr className="border-b border-[#13271e]/10 bg-[#f0f4f1] text-[#13271e] font-mono text-xs uppercase tracking-wider">
                   <th className="p-6">Parameter</th>
                   <th className="p-6 text-[#e06425] font-semibold">
-                    Rivanta Biogenic Silica
+                    Rivanta Precipitated Silica
                   </th>
                   <th className="p-6 text-[#13271e]/70">
                     Conventional Industrial Silica
                   </th>
-                  <th className="p-6 text-[#2d7a54]">Strategic Relevance</th>
+                  <th className="p-6 text-[#2d7a54]">Strategic Value</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-[#13271e]/8 font-sans text-sm">

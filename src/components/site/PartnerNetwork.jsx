@@ -6,9 +6,9 @@ export function PartnerNetwork() {
 <div aria-live="off" className="citadel-partners-track" suppressHydrationWarning>
 <ul className="citadel-partners-list" data-marquee-list="" role="list" suppressHydrationWarning>
 <li className="citadel-partners-item">
-<a aria-label="Explore Silicon / Bio-Silica" className="citadel-partners-logo-link" href="#case-studies">
+<a aria-label="Explore Precipitated Silica &amp; Silicon" className="citadel-partners-logo-link" href="#case-studies">
 <svg aria-hidden="true" focusable="false" viewBox="15 10 65 75" width="30" height="30" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="currentColor" strokeWidth="3.2" strokeLinecap="round" strokeLinejoin="round"><path d="M45 21 66 34v27L45 75 24 61V34Z M24 34l21 13 21-13 M45 47v28"/></g></svg>
-<span>Silicon / Bio-Silica</span>
+<span>Precipitated Silica</span>
 </a>
 </li>
 <li className="citadel-partners-item">
@@ -18,9 +18,9 @@ export function PartnerNetwork() {
 </a>
 </li>
 <li className="citadel-partners-item">
-<a aria-label="Explore CBG" className="citadel-partners-logo-link" href="#case-studies">
+<a aria-label="Explore EDSP / EOCM" className="citadel-partners-logo-link" href="#case-studies">
 <svg aria-hidden="true" focusable="false" viewBox="15 10 65 75" width="30" height="30" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="currentColor" strokeWidth="3.2" strokeLinecap="round" strokeLinejoin="round"><path d="M45 19C39 31 26 40 26 53a19 19 0 0 0 38 0c0-13-13-22-19-34Z M37 60c2 4 5 6 10 6"/></g></svg>
-<span>CBG</span>
+<span>EDSP / EOCM</span>
 </a>
 </li>
 <li className="citadel-partners-item">

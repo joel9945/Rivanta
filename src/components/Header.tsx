@@ -186,7 +186,7 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
 
   const isBusinessesActive =
     pathname?.startsWith("/bio-silica") ||
-    pathname?.startsWith("/cbg") ||
+    pathname?.startsWith("/edsp-eocm") ||
     pathname?.startsWith("/saf") ||
     pathname?.startsWith("/feedstock");
 
@@ -315,22 +315,22 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
                         }`}
                       >
                         <span className="font-sans text-[13px] font-medium tracking-tight">
-                          Bio-Silica & Silicon
+                          Precipitated Silica & Silicon
                         </span>
                         <ArrowUpRight className="w-3.5 h-3.5 opacity-30 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all text-[#e06425]" />
                       </Link>
 
                       <Link
-                        href="/cbg"
+                        href="/edsp-eocm"
                         onClick={() => setActiveDropdown(null)}
                         className={`group flex items-center justify-between px-3.5 py-2.5 rounded-xl transition-all duration-150 ${
-                          pathname === "/cbg"
+                          pathname === "/edsp-eocm"
                             ? "bg-[#d6e8dc]/70 text-[#2d7a54]"
                             : "text-[#13271e] hover:bg-[#13271e]/[0.04] hover:text-[#e06425]"
                         }`}
                       >
                         <span className="font-sans text-[13px] font-medium tracking-tight">
-                          Compressed Biogas (CBG)
+                          EDSP / EOCM (Renewable Gas)
                         </span>
                         <ArrowUpRight className="w-3.5 h-3.5 opacity-30 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all text-[#e06425]" />
                       </Link>
@@ -606,8 +606,8 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
               </span>
               <div className="space-y-0.5">
                 {[
-                  { label: "Bio-Silica & Silicon", href: "/bio-silica" },
-                  { label: "Compressed Biogas (CBG)", href: "/cbg" },
+                  { label: "Precipitated Silica & Silicon", href: "/bio-silica" },
+                  { label: "EDSP / EOCM (Renewable Gas)", href: "/edsp-eocm" },
                   { label: "Sustainable Aviation Fuels (SAF)", href: "/saf" },
                   { label: "Circular Feedstock & Recovery", href: "/feedstock" },
                 ].map((item) => {
@@ -733,11 +733,11 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
             {/* Direct Contact Coordinates */}
             <div className="pt-4 pb-12 border-t border-white/10 flex flex-col items-center gap-2 text-center text-xs font-mono text-white/70">
               <a
-                href="tel:+919893025375"
+                href="tel:+919893015375"
                 className="text-white/90 hover:text-[#f9a65c] transition-colors flex items-center gap-1.5"
               >
                 <Phone className="w-3.5 h-3.5 text-[#ea6e2d]" />
-                <span className="font-medium">+91 98930 25375</span>
+                <span className="font-medium">+91 98930 15375</span>
               </a>
 
               <div className="flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1 text-[11px] text-white/50">

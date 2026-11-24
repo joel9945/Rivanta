@@ -27,12 +27,12 @@ const SLIDES: GallerySlide[] = [
   },
   {
     id: "02",
-    category: "02 / RENEWABLE GASEOUS FUELS",
-    title: "Developing alternative gaseous fuels.",
-    desc: "Commercial Compressed Biogas (CBG) infrastructure designed for city gas distribution networks and industrial clean mobility off-take.",
-    short: "Compressed Biogas (CBG)",
+    category: "02 / RENEWABLE ENERGY SOLUTIONS",
+    title: "EDSP / EOCM renewable gas.",
+    desc: "Purified, methane-rich renewable gas infrastructure engineered through EDSP/EOCM for clean mobility and industrial energy.",
+    short: "EDSP / EOCM",
     img: "/images/gallery/02-renewable-gas.jpg",
-    href: "/cbg",
+    href: "/edsp-eocm",
   },
   {
     id: "03",
@@ -46,9 +46,9 @@ const SLIDES: GallerySlide[] = [
   {
     id: "04",
     category: "04 / ADVANCED MATERIALS",
-    title: "High-purity bio-silica & silicon.",
-    desc: "Developing domestic capabilities in high-value biogenic silica and evaluating green silicon precursor pathways for domestic manufacturing.",
-    short: "Bio-silica & silicon",
+    title: "Precipitated Silica & silicon.",
+    desc: "Recovering precipitated silica from rice husk ash for tyres, rubber, and coatings, while researching silicon materials for solar energy and electronics.",
+    short: "Precipitated Silica & Silicon",
     img: "/images/gallery/04-bio-silica.jpg",
     href: "/bio-silica",
   },
@@ -65,7 +65,7 @@ const SLIDES: GallerySlide[] = [
     id: "06",
     category: "06 / RESOURCE RECOVERY",
     title: "Responsible resource recovery.",
-    desc: "Evaluating soil-amendment applications and industrial mineral recovery for co-products, minimizing material losses across the facility lifecycle.",
+    desc: "Evaluating organic fertilizer recovery from digestate, biochar production, and industrial mineral recovery, minimizing material losses across the facility lifecycle.",
     short: "Resource recovery",
     img: "/images/gallery/06-circular-products.jpg",
     href: "/sustainability",
@@ -202,11 +202,10 @@ export default function ValueChainGallery() {
                 type="button"
                 key={slide.id}
                 onClick={() => setCurrent(idx)}
-                className={`relative text-left p-2.5 sm:p-3 rounded-2xl transition-all duration-300 cursor-pointer overflow-hidden border-0 ${
-                  isSelected
-                    ? "bg-[#13271e] text-white ring-2 ring-[#e06425] shadow-lg -translate-y-1"
-                    : "bg-white text-[#13271e]/75 hover:bg-[#13271e]/5"
-                }`}
+                className={`relative text-left p-2.5 sm:p-3 rounded-2xl transition-all duration-300 cursor-pointer overflow-hidden border-0 ${isSelected
+                  ? "bg-[#13271e] text-white ring-2 ring-[#e06425] shadow-lg -translate-y-1"
+                  : "bg-white text-[#13271e]/75 hover:bg-[#13271e]/5"
+                  }`}
               >
                 <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden mb-2">
                   <Image
@@ -217,9 +216,8 @@ export default function ValueChainGallery() {
                     className="object-cover"
                   />
                   <div
-                    className={`absolute inset-0 transition-opacity ${
-                      isSelected ? "bg-black/20" : "bg-black/40 hover:bg-black/10"
-                    }`}
+                    className={`absolute inset-0 transition-opacity ${isSelected ? "bg-black/20" : "bg-black/40 hover:bg-black/10"
+                      }`}
                   />
                 </div>
                 <span className="font-mono text-[10px] block opacity-60 uppercase mb-0.5">

@@ -193,8 +193,8 @@ export default function ContactForm() {
             }
             className="w-full px-4 py-2.5 rounded-xl bg-[#f6f8f6] border border-[#13271e]/10 text-sm focus:outline-none focus:border-[#e06425] transition-colors cursor-pointer"
           >
-            <option>Advanced Materials & Biogenic Silica</option>
-            <option>Compressed Biogas (CBG)</option>
+            <option>Precipitated Silica & Silicon Materials</option>
+            <option>EDSP / EOCM (Renewable Gas)</option>
             <option>Sustainable Aviation Fuels (SAF)</option>
             <option>Feedstock Sourcing & Logistics</option>
             <option>Renewable Energy & Infrastructure</option>

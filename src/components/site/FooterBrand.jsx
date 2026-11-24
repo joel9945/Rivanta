@@ -24,7 +24,7 @@ export function FooterBrand({ isSubpage = false }) {
             </div>
             <div className="rivanta-footer-direct">
               <a className="rivanta-footer-email" href="mailto:info@rivantagreen.com">info@rivantagreen.com</a>
-              <a className="rivanta-footer-phone" href="tel:+919893025375">+91 98930 25375</a>
+              <a className="rivanta-footer-phone" href="tel:+919893015375">+91 98930 15375</a>
             </div>
           </div>
           <div className="rivanta-footer-columns">
@@ -39,9 +39,9 @@ export function FooterBrand({ isSubpage = false }) {
             <nav className="rivanta-footer-column" aria-labelledby="footer-resources-title">
               <h3 id="footer-resources-title">Discover more</h3>
               <ul>
-                <li><a href="/bio-silica/">Silicon / Bio-Silica</a></li>
+                <li><a href="/bio-silica/">Precipitated Silica &amp; Silicon</a></li>
                 <li><a href="/saf/">Sustainable Aviation Fuel</a></li>
-                <li><a href="/cbg/">Compressed Biogas</a></li>
+                <li><a href="/edsp-eocm/">EDSP / EOCM (Renewable Gas)</a></li>
                 <li><a href="/feedstock/">Biomass sourcing</a></li>
                 <li><a href="/projects/">Industrial ecosystem</a></li>
                 <li><a href="/sustainability/">Plant sustainability</a></li>

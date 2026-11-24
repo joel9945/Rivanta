@@ -15,33 +15,33 @@ import { useState } from "react";
 
 const PROJECT_INITIATIVES = [
   {
-    id: "init-cbg",
-    name: "Commercial Biogas & Bio-Fertilizer Facilities",
-    vertical: "Alternative Fuels & Soil Products",
+    id: "init-edsp-eocm",
+    name: "EDSP / EOCM Renewable Gas & Organic Fertilizer Facilities",
+    vertical: "Renewable Energy Solutions",
     status: "Engineering & Planning",
     scope:
-      "Integrated anaerobic digestion systems producing commercial-grade biomethane for regional grid supply and enriched organic soil amendments.",
+      "Integrated Exothermal Drying and Sorting Process and Extracting Organic Carbon as Methane (EDSP/EOCM) systems producing commercial-grade renewable gas for mobility and grid supply alongside enriched organic soil amendments.",
     deliverables: [
       "Process engineering and environmental clearance documentation",
-      "Gas off-take framework with city gas distribution networks",
-      "Digestate valorization for regional agricultural soil application",
-      "Modular facility design for regional replication",
+      "Gas off-take framework for clean transport and industrial supply",
+      "Digestate valorization for organic fertilizer and soil enrichment",
+      "Modular facility design for regional deployment",
     ],
-    badge: "Alternative Fuels",
+    badge: "Renewable Gas",
     color: "#2d7a54",
   },
   {
     id: "init-silica",
-    name: "Biogenic Silica Refining Facility",
-    vertical: "Advanced Materials",
+    name: "Precipitated Silica & Silicon Materials Facility",
+    vertical: "Advanced Industrial Materials",
     status: "Under Development",
     scope:
-      "Advanced manufacturing facility designed to extract high-purity biogenic silica from agricultural residues for rubber, concrete, and industrial applications.",
+      "Advanced manufacturing facility designed to extract high-purity precipitated silica from rice husk ash for tyres, rubber, and coatings, and research silicon materials for solar energy and electronics.",
     deliverables: [
       "Material quality testing with industrial compounding partners",
       "Zero Liquid Discharge (ZLD) utility integration design",
       "Thermal energy recovery from process exhaust streams",
-      "Evaluation of downstream high-purity precursor pathways",
+      "Evaluation of downstream green silicon material pathways",
     ],
     badge: "Advanced Materials",
     color: "#e06425",
@@ -91,7 +91,7 @@ const DEVELOPMENT_PHASES = [
       "Regional agricultural residue availability mapping, milling cluster assessments, material characterization studies, and preliminary mass-balance modeling.",
     deliverables: [
       "Regional biomass availability mapping across agricultural belts",
-      "Assessment of biogenic silica extraction and CBG conversion pathways",
+      "Assessment of precipitated silica extraction and EDSP / EOCM conversion pathways",
       "Preliminary site suitability reviews and logistics evaluation",
       "Engagement models for agricultural collectives and milling clusters",
     ],

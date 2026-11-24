@@ -32,7 +32,7 @@ const STRATEGIC_THEMES = [
     id: "energy-transition",
     headline: "Supporting India's Energy Transition.",
     challenge: "Alternative Fuel Diversification",
-    description: "Developing domestic Compressed Biogas and alternative gaseous fuels strengthens national energy security while advancing clean industrial and transport fuel options.",
+    description: "Developing domestic EDSP / EOCM renewable gas strengthens national energy security while advancing clean industrial and transport fuel options.",
     icon: Flame,
     color: "#ea6e2d",
   },

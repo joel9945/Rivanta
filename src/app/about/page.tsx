@@ -96,7 +96,7 @@ const STRATEGIC_PRIORITIES = [
   {
     title: "Energy & Materials Diversification",
     description:
-      "Building commercial-scale capacity across Compressed Biogas (CBG) and evaluating Sustainable Aviation Fuel (SAF) production pathways.",
+      "Building commercial-scale capacity across EDSP / EOCM renewable energy solutions and evaluating Sustainable Aviation Fuel (SAF) production pathways.",
     icon: Cpu,
   },
   {
@@ -154,7 +154,7 @@ export default function AboutPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0e2219]/85 via-[#0e2219]/25 to-transparent pointer-events-none" />
                 <div className="absolute bottom-5 left-5 right-5 text-white">
                   <p className="font-mono text-[10px] uppercase tracking-wider text-[#f9a65c]">Integrated Enterprise</p>
-                  <p className="font-sans text-xs text-white/90 font-light mt-0.5">Sustainable industrial innovation in central India</p>
+                  <p className="font-sans text-xs text-white/90 font-light mt-0.5">Proposed 600+ acre industrial campus in Sagar district, MP</p>
                 </div>
               </div>
             </div>
@@ -170,7 +170,7 @@ export default function AboutPage() {
                   India generates substantial volumes of agricultural residues every harvest season. Without structured industrial demand and organized collection logistics, valuable economic potential remains unutilized.
                 </p>
                 <p>
-                  Rivanta Green was incorporated to convert these renewable resources into high-value industrial inputs: biogenic silica, clean biomethane, and circular materials that strengthen domestic manufacturing.
+                  Rivanta Green was incorporated to convert these renewable resources into high-value industrial inputs: precipitated silica, green silicon materials, EDSP / EOCM renewable gas, and circular co-products that strengthen domestic manufacturing.
                 </p>
               </div>
 

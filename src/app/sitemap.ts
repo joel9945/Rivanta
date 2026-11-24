@@ -8,7 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "", priority: 1.0, changeFrequency: "weekly" as const },
     { path: "/about", priority: 0.9, changeFrequency: "monthly" as const },
     { path: "/bio-silica", priority: 0.9, changeFrequency: "weekly" as const },
-    { path: "/cbg", priority: 0.9, changeFrequency: "weekly" as const },
+    { path: "/edsp-eocm", priority: 0.9, changeFrequency: "weekly" as const },
     { path: "/saf", priority: 0.9, changeFrequency: "weekly" as const },
     { path: "/feedstock", priority: 0.85, changeFrequency: "monthly" as const },
     { path: "/sustainability", priority: 0.85, changeFrequency: "monthly" as const },

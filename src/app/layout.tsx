@@ -31,17 +31,18 @@ export const metadata: Metadata = {
     template: "%s | Rivanta Green",
   },
   description:
-    "Rivanta Green is developing integrated industrial initiatives across bio-silica, compressed biogas, sustainable aviation fuel and biomass valorisation in India.",
+    "Rivanta Green is developing an integrated industrial ecosystem across precipitated silica and silicon materials, renewable energy solutions (EDSP/EOCM), sustainable aviation fuel (SAF), and agricultural residue valorisation in India.",
   keywords: [
     "Rivanta Green",
     "Rivanta Green Innovative Venture Private Limited",
     "Indian Industrial Enterprise",
     "Sustainable Industrial Innovation",
     "Advanced Materials",
-    "Biogenic Silica",
-    "Bio-Silica",
-    "Compressed Biogas",
-    "CBG India",
+    "Precipitated Silica",
+    "Silicon Materials",
+    "EDSP EOCM",
+    "Renewable Energy Solutions",
+    "Renewable Gas India",
     "Sustainable Aviation Fuels",
     "SAF",
     "Biomass Valorisation",
@@ -60,7 +61,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Rivanta Green | Sustainable Industrial Innovation",
     description:
-      "Rivanta Green is developing integrated industrial initiatives across bio-silica, compressed biogas, sustainable aviation fuel and biomass valorisation in India.",
+      "Rivanta Green is developing an integrated industrial ecosystem across precipitated silica and silicon materials, renewable energy solutions (EDSP/EOCM), sustainable aviation fuel (SAF), and agricultural residue valorisation in India.",
     url: siteUrl,
     siteName: "Rivanta Green",
     images: [
@@ -78,7 +79,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Rivanta Green | Sustainable Industrial Innovation",
     description:
-      "Rivanta Green is developing integrated industrial initiatives across bio-silica, compressed biogas, sustainable aviation fuel and biomass valorisation in India.",
+      "Rivanta Green is developing an integrated industrial ecosystem across precipitated silica and silicon materials, renewable energy solutions (EDSP/EOCM), sustainable aviation fuel (SAF), and agricultural residue valorisation in India.",
     images: ["/images/og-rivanta.jpg"],
   },
   icons: {
@@ -119,9 +120,9 @@ const structuredData = {
       },
       image: `${siteUrl}/images/og-rivanta.jpg`,
       description:
-        "Rivanta Green is developing integrated industrial initiatives across bio-silica, compressed biogas, sustainable aviation fuel and biomass valorisation in India.",
+        "Rivanta Green is developing an integrated industrial ecosystem across precipitated silica and silicon materials, renewable energy solutions (EDSP/EOCM), sustainable aviation fuel (SAF), and agricultural residue valorisation in India.",
       email: "info@rivantagreen.com",
-      telephone: "+91 98930 25375",
+      telephone: "+91 98930 15375",
       foundingLocation: {
         "@type": "Place",
         name: "Bhopal, Madhya Pradesh, India",
@@ -153,7 +154,7 @@ const structuredData = {
         {
           "@type": "ContactPoint",
           contactType: "corporate communications",
-          telephone: "+91 98930 25375",
+          telephone: "+91 98930 15375",
           email: "info@rivantagreen.com",
           areaServed: "IN",
           availableLanguage: ["English", "Hindi"],
@@ -161,16 +162,16 @@ const structuredData = {
         {
           "@type": "ContactPoint",
           contactType: "customer support",
-          telephone: "+91 98930 25375",
+          telephone: "+91 98930 15375",
           email: "support@rivantagreen.com",
           areaServed: "IN",
           availableLanguage: ["English", "Hindi"],
         },
       ],
       knowsAbout: [
-        "Biogenic Silica",
-        "Bio-Silica",
-        "Compressed Biogas (CBG)",
+        "Precipitated Silica",
+        "Silicon Materials",
+        "EDSP / EOCM (Renewable Energy Solutions)",
         "Sustainable Aviation Fuel (SAF)",
         "Biomass Valorisation",
         "Agricultural Residue Utilization",

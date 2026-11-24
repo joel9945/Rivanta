@@ -24,8 +24,8 @@ const OFFICES = [
       "Next to Lake City Hospital, Chetak Bridge,",
       "Bhopal, Madhya Pradesh, 462023 - India.",
     ],
-    phone: "+91 98930 25375",
-    phoneTel: "+919893025375",
+    phone: "+91 98930 15375",
+    phoneTel: "+919893015375",
     email: "info@rivantagreen.com",
     website: "www.rivantagreen.com",
     webUrl: "https://www.rivantagreen.com",
@@ -37,8 +37,8 @@ const OFFICES = [
       "E4/271 Arera Colony, Huzur,",
       "Bhopal, Madhya Pradesh, 462016 - India.",
     ],
-    phone: "+91 98930 25375",
-    phoneTel: "+919893025375",
+    phone: "+91 98930 15375",
+    phoneTel: "+919893015375",
     email: "support@rivantagreen.com",
     website: "www.rivantagreen.com",
     webUrl: "https://www.rivantagreen.com",
@@ -50,25 +50,25 @@ const DEPARTMENTS = [
   {
     role: "Corporate Inquiries & Commercial Desk",
     email: "info@rivantagreen.com",
-    phone: "+91 98930 25375",
+    phone: "+91 98930 15375",
     focus: "Official corporate correspondence, executive offices, commercial off-take, strategic industrial partnerships, and media relations.",
   },
   {
     role: "Operations & Partner Support Desk",
     email: "support@rivantagreen.com",
-    phone: "+91 98930 25375",
+    phone: "+91 98930 15375",
     focus: "Feedstock sourcing coordination, partner operations, technical documentation assistance, and operational inquiries.",
   },
 ];
 
 const FAQS = [
   {
-    q: "How can industrial partners inquire about Biogenic Silica?",
-    a: "Industrial procurement and technical teams in rubber compounding, construction materials, and specialty coatings can request material specification summaries and discuss technical feasibility. Submit your inquiry selecting 'Advanced Materials & Biogenic Silica' along with application requirements.",
+    q: "How can industrial partners inquire about Precipitated Silica & Silicon?",
+    a: "Industrial procurement and technical teams in tyres, rubber compounding, and specialty coatings can request material specification summaries and discuss technical feasibility. Submit your inquiry selecting 'Precipitated Silica & Silicon Materials' along with application requirements.",
   },
   {
-    q: "What commercial structures are used for Compressed Biogas (CBG) off-take?",
-    a: "Commercial off-take discussions for planned facilities are structured around long-term agreements with City Gas Distribution (CGD) entities and industrial consumers, with delivery evaluated via regional pipeline interconnection or mobile cascade logistics.",
+    q: "What commercial structures are used for EDSP / EOCM renewable gas off-take?",
+    a: "Commercial off-take discussions for planned facilities are structured around long-term agreements with clean mobility consumers, gas distribution networks, and industrial buyers, with delivery evaluated via regional pipeline interconnection or mobile cascade logistics.",
   },
   {
     q: "How can regional millers and Farmer Producer Organizations (FPOs) partner with Rivanta?",
@@ -96,12 +96,12 @@ export default function ContactPage() {
         primaryCtaHref="#inquiry-form"
         secondaryCtaText="View Corporate Background"
         secondaryCtaHref="/about"
-        telemetryTag="Direct Phone • +91 98930 25375 • Bhopal, India"
+        telemetryTag="Direct Phone • +91 98930 15375 • Bhopal, India"
       />
 
       {/* Infinite Industrial Ticker */}
       <MarqueeText
-        phrase="REGISTERED OFFICE: ARERA COLONY, BHOPAL — CORPORATE OFFICE: KASTURBA NAGAR, BHOPAL — PHONE: +91 98930 25375 — INFO: INFO@RIVANTAGREEN.COM — SUPPORT: SUPPORT@RIVANTAGREEN.COM — "
+        phrase="REGISTERED OFFICE: ARERA COLONY, BHOPAL — CORPORATE OFFICE: KASTURBA NAGAR, BHOPAL — PHONE: +91 98930 15375 — INFO: INFO@RIVANTAGREEN.COM — SUPPORT: SUPPORT@RIVANTAGREEN.COM — "
         theme="light"
       />
 
@@ -111,7 +111,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {/* Phone Card */}
             <a
-              href="tel:+919893025375"
+              href="tel:+919893015375"
               className="p-6 rounded-2xl bg-[#f6f8f6] hover:bg-[#fae9dc] border border-[#13271e]/10 transition-all duration-300 group flex items-start gap-4"
             >
               <div className="w-11 h-11 rounded-xl bg-[#e06425]/10 text-[#e06425] group-hover:bg-[#e06425] group-hover:text-white flex items-center justify-center shrink-0 transition-colors">
@@ -122,7 +122,7 @@ export default function ContactPage() {
                   Direct Line
                 </span>
                 <span className="font-sans font-medium text-base text-[#13271e] group-hover:text-[#e06425] transition-colors block">
-                  +91 98930 25375
+                  +91 98930 15375
                 </span>
                 <span className="font-mono text-[11px] text-[#13271e]/50 mt-1 block">
                   Mon – Sat, 09:30 – 18:30 IST

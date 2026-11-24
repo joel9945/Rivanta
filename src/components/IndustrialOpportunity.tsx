@@ -20,10 +20,10 @@ export default function IndustrialOpportunity() {
       subtitle: "Supply Chain Resilience",
       description: "Advanced materials and industrial capabilities.",
       detail:
-        "Developing domestic production of high-purity biogenic silica and evaluating green silicon precursor pathways to reduce import dependency.",
+        "Developing domestic production of precipitated silica from rice husk ash and evaluating silicon material pathways to reduce import dependency.",
       icon: Factory,
       href: "/bio-silica",
-      badge: "Advanced Materials",
+      badge: "Precipitated Silica & Silicon",
       color: "#e06425",
     },
     {
@@ -31,9 +31,9 @@ export default function IndustrialOpportunity() {
       subtitle: "Clean Fuels & Mobility",
       description: "Renewable fuels and energy infrastructure.",
       detail:
-        "Engineering commercial Compressed Biogas facilities and evaluating sustainable aviation fuel pathways to advance domestic energy security.",
+        "Engineering modern EDSP / EOCM facilities and evaluating sustainable aviation fuel pathways to advance domestic energy security.",
       icon: Zap,
-      href: "/cbg",
+      href: "/edsp-eocm",
       badge: "Renewable Gas",
       color: "#34835a",
     },

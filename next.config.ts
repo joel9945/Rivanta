@@ -55,6 +55,11 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/cbg",
+        destination: "/edsp-eocm",
+        permanent: true,
+      },
+      {
         source: "/green-silicon",
         destination: "/bio-silica",
         permanent: true,
