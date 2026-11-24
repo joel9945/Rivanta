@@ -21,16 +21,16 @@ import documentAttributes from "@/content/document.json";
 export const metadata: Metadata = {
   title: "Rivanta Green | Sustainable Industrial Innovation",
   description:
-    "Rivanta Green Innovative Venture Private Limited is developing an Indian biomass-based industrial ecosystem with focus areas including Precipitated Silica, Sustainable Aviation Fuel (SAF), and EDSP / EOCM (Renewable Gas).",
+    "Rivanta Green Innovative Ventures Private Limited is developing an Indian biomass-based industrial ecosystem with focus areas including Precipitated Silica, Sustainable Aviation Fuel (SAF), and EDSP / EOCM (Renewable Gas).",
   alternates: {
     canonical: "https://www.rivantagreen.com",
   },
   openGraph: {
     title: "Rivanta Green | Sustainable Industrial Innovation",
     description:
-      "Rivanta Green Innovative Venture Private Limited is developing an Indian biomass-based industrial ecosystem with focus areas including Precipitated Silica, Sustainable Aviation Fuel (SAF), and EDSP / EOCM (Renewable Gas).",
+      "Rivanta Green Innovative Ventures Private Limited is developing an Indian biomass-based industrial ecosystem with focus areas including Precipitated Silica, Sustainable Aviation Fuel (SAF), and EDSP / EOCM (Renewable Gas).",
     url: "https://www.rivantagreen.com",
-    siteName: "Rivanta Green Innovative Venture Private Limited",
+    siteName: "Rivanta Green Innovative Ventures Private Limited",
     images: [
       {
         url: "/images/og-rivanta.jpg",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Rivanta Green | Sustainable Industrial Innovation",
     description:
-      "Rivanta Green Innovative Venture Private Limited is developing an Indian biomass-based industrial ecosystem with focus areas including Precipitated Silica, Sustainable Aviation Fuel (SAF), and EDSP / EOCM (Renewable Gas).",
+      "Rivanta Green Innovative Ventures Private Limited is developing an Indian biomass-based industrial ecosystem with focus areas including Precipitated Silica, Sustainable Aviation Fuel (SAF), and EDSP / EOCM (Renewable Gas).",
     images: ["/images/og-rivanta.jpg"],
   },
 };

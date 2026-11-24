@@ -13,7 +13,7 @@ export function PartnerDirectory() {
 <div className="rivanta-contact-directory">
 <div className="rivanta-directory-heading">
 <p className="rivanta-directory-eyebrow">Our offices &amp; corporate desk</p>
-<h3>Rivanta Green Innovative Venture Private Limited</h3>
+<h3>Rivanta Green Innovative Ventures Private Limited</h3>
 </div>
 <div className="rivanta-contact-offices">
 <div className="rivanta-contact-office">

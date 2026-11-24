@@ -28,7 +28,7 @@ const STRATEGIC_ISSUES = [
     concern:
       "Heavy industry has historically relied on the extraction of non-renewable geological resources — blasting mountains for mined quartz, excavating silica sands, and depleting scarce groundwater aquifers. This linear model accelerates environmental degradation and carries significant embodied carbon.",
     response:
-      "Rivanta is founded on decoupling industrial manufacturing from finite mineral quarrying. By utilizing annually replenishable agricultural residues such as rice husk, we derive high-purity biogenic silica (SiO₂) without disturbing natural geological formations or virgin mineral deposits.",
+      "Rivanta is founded on decoupling industrial manufacturing from finite mineral quarrying. By utilizing annually replenishable agricultural residues such as rice husk, we derive high-purity Precipitated Silica without disturbing natural geological formations or virgin mineral deposits.",
     icon: Leaf,
     color: "#2d7a54",
     stat: "Agricultural Rather Than Mined Origin",
@@ -39,9 +39,9 @@ const STRATEGIC_ISSUES = [
     tag: "Air Quality Crisis",
     title: "Diverting Seasonal Crop-Residue Burning",
     concern:
-      "Every harvest season, millions of tonnes of surplus crop residues and paddy straw are burned across agrarian corridors. This open-field burning generates severe seasonal smog, dangerous spikes in PM2.5 and PM10 particulate pollution, and public health disruptions across northern and central India.",
+      "Every harvest season, millions of tonnes of surplus crop residues and paddy straw are burned across agrarian corridors. This open-field burning generates severe seasonal smog, dangerous spikes in PM2.5 and PM10 particulate pollution, and public health disruptions across northern and central India, including the Delhi-NCR region.",
     response:
-      "We provide an organized, commercially viable alternative to open-field burning. Through structured aggregation frameworks with farmers and millers, we channel agricultural residues into high-value precipitated silica, green silicon materials, and EDSP / EOCM renewable gas, converting an atmospheric liability into productive industrial energy.",
+      "We provide an organized, commercially viable alternative to open-field burning. Through structured collection networks connecting farmers and rice mills, we channel agricultural residues into high-value Precipitated Silica, research-grade silicon materials, and EDSP / EOCM renewable gas, converting an atmospheric liability into productive industrial energy.",
     icon: Wind,
     color: "#e06425",
     stat: "Productive Alternative to Field Burning",
@@ -54,7 +54,7 @@ const STRATEGIC_ISSUES = [
     concern:
       "Decades of intensive monoculture and excessive reliance on chemical fertilizers have depleted natural organic carbon across agricultural soils, degrading soil microbiomes and reducing natural water-retention capacity.",
     response:
-      "Our processing ecosystem is engineered for complete circular nutrient return. Solid anaerobic digestate and bio-char co-products from our facilities are refined into organic soil amendments, replenishing vital carbon and macro-nutrients back into regional farmland to support long-term soil vitality.",
+      "Our processing ecosystem is engineered for complete circular nutrient return. Solid anaerobic digestate and biochar co-products from our facilities are refined into organic soil amendments, replenishing vital carbon and macro-nutrients back into regional farmland to support long-term soil vitality.",
     icon: Sprout,
     color: "#2d7a54",
     stat: "Nutrient & Carbon Circularity",
@@ -65,9 +65,9 @@ const STRATEGIC_ISSUES = [
     tag: "Industrial Resilience",
     title: "Reducing Industrial Import Dependency",
     concern:
-      "Indian manufacturing remains significantly dependent on foreign supply chains for essential industrial materials, including precipitated silica for green tires, high-performance concrete additives, and imported fossil hydrocarbons.",
+      "Indian manufacturing remains significantly dependent on foreign supply chains for essential industrial materials, including precipitated silica for green tires, high-performance rubber compounds, and imported fossil hydrocarbons.",
     response:
-      "We aim to build qualified domestic industrial manufacturing capabilities directly from Indian agricultural resources. Producing biogenic silica and commercial biomethane domestically strengthens domestic supply-chain resilience and protects key manufacturing sectors from international volatility.",
+      "We aim to build qualified domestic industrial manufacturing capabilities directly from Indian agricultural resources. Producing Precipitated Silica, advanced fuels, and commercial biomethane domestically strengthens domestic supply-chain resilience and protects key manufacturing sectors from international volatility.",
     icon: Factory,
     color: "#13271e",
     stat: "Domestic Manufacturing Capability",
@@ -78,9 +78,9 @@ const STRATEGIC_ISSUES = [
     tag: "Commercial Supply Chain",
     title: "Agricultural Residue Procurement & Logistics",
     concern:
-      "Agricultural residues are historically underutilized or burned in fields due to the absence of organized industrial demand and structured collection logistics.",
+      "Agricultural residues are historically underutilized or burned in fields due to the absence of organized industrial demand, high handling costs, and limited collection logistics.",
     response:
-      "We establish commercial procurement frameworks with regional aggregators, farmer producer organizations, and agricultural processors. Sourcing biomass residues at scale establishes a dependable domestic feedstock supply chain for industrial conversion.",
+      "We establish commercial procurement frameworks connecting regional aggregators, farmer producer organizations, and agricultural processors with our proposed industrial campus. Sourcing biomass residues at scale establishes a dependable domestic feedstock supply chain for industrial conversion.",
     icon: Users,
     color: "#e06425",
     stat: "Commercial Feedstock Procurement",
@@ -103,21 +103,21 @@ const VISION_PILLARS = [
   {
     index: "02.",
     title: "Industrial Circularity",
-    badge: "Zero Landfill Target",
+    badge: "Integrated Biorefinery",
     description:
-      "Ensuring comprehensive resource recovery where every processing output — from biogenic silica and clean biomethane to organic bio-fertilizers — serves a productive commercial use.",
+      "Ensuring comprehensive resource recovery where processing outputs — from Precipitated Silica and SAF to EDSP/EOCM, biochar, carbon fibre, and organic fertilizers — serve productive commercial uses.",
     bg: "#d6e8dc",
     textColor: "#13271e",
     accent: "#2d7a54",
     icon: RefreshCw,
-    stat: "Comprehensive Material Valorization",
+    stat: "Six-Stream Biorefinery Flow",
   },
   {
     index: "03.",
     title: "Institutional Accountability",
     badge: "Governance Standard",
     description:
-      "Operating with disciplined corporate governance, statutory compliance planning, and transparent frameworks for resource accounting to build an enduring Indian industrial institution.",
+      "Operating with disciplined corporate governance, statutory compliance planning, and transparent frameworks for resource accounting to build an enduring Indian industrial enterprise.",
     bg: "#132c21",
     textColor: "#ffffff",
     accent: "#ea6e2d",

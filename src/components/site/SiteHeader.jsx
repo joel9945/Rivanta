@@ -31,7 +31,7 @@ export function SiteHeader({ isSubpage = false }) {
         suppressHydrationWarning
       >
         <a
-          aria-label="Rivanta Green Innovative Venture Private Limited Home"
+          aria-label="Rivanta Green Innovative Ventures Private Limited Home"
           className="rivanta-site-header-brand"
           href={links.home}
           suppressHydrationWarning

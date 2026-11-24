@@ -20,34 +20,34 @@ import {
 const STRATEGIC_VALUES = [
   {
     index: "01.",
-    title: "Industrial Ambition",
-    badge: "Long-Term Vision",
+    title: "Rooted in Agriculture",
+    badge: "Founding Philosophy",
     description:
-      "Developing scalable manufacturing infrastructure that converts underutilized domestic resources into high-value industrial inputs for key manufacturing sectors.",
+      "Connecting India's agricultural resources with modern manufacturing, sustainable fuels, and cleaner energy solutions to build long-term domestic industrial strength.",
     bg: "#fae9dc",
     textColor: "#13271e",
     accent: "#e06425",
     icon: Target,
-    stat: "Integrated Industrial Development",
+    stat: "Agricultural Resources to Industry",
   },
   {
     index: "02.",
     title: "Resource Efficiency",
     badge: "Circular Stewardship",
     description:
-      "Integrating zero-waste engineering and closed-loop process utility design to maximize material recovery while minimizing primary resource consumption.",
+      "Integrating closed-loop resource recovery, recoverable process heat evaluation, and Zero Liquid Discharge (ZLD) water loops to optimize overall campus efficiency.",
     bg: "#d6e8dc",
     textColor: "#13271e",
     accent: "#2d7a54",
     icon: Compass,
-    stat: "Zero Liquid Discharge (ZLD) Design",
+    stat: "Closed-Loop Resource Recovery",
   },
   {
     index: "03.",
     title: "Corporate Accountability",
     badge: "Institutional Governance",
     description:
-      "Operating with disciplined corporate governance, statutory compliance planning, and transparent frameworks for resource accounting and operational reporting.",
+      "Operating with disciplined corporate governance, statutory compliance planning, continuous emission monitoring, and transparent environmental reporting.",
     bg: "#132c21",
     textColor: "#ffffff",
     accent: "#ea6e2d",
@@ -67,9 +67,9 @@ const DEVELOPMENT_MILESTONES = [
   {
     stage: "Stage 02",
     status: "In Preparation",
-    title: "Facility Planning & Detailed Engineering",
+    title: "Proposed 600+ Acre Sagar Industrial Campus",
     detail:
-      "Advancing process engineering packages, preparing statutory clearance documentation, and assessing utility integration requirements for planned hubs.",
+      "Advancing process engineering packages, site infrastructure planning, and statutory clearance preparation for the proposed industrial development in Sagar district, MP.",
   },
   {
     stage: "Stage 03",
@@ -82,27 +82,27 @@ const DEVELOPMENT_MILESTONES = [
 
 const STRATEGIC_PRIORITIES = [
   {
-    title: "Domestic Supply Chain Resilience",
+    title: "Industrial Self-Reliance",
     description:
-      "Strengthening domestic availability of biogenic silica and essential clean energy vectors to support Indian manufacturing competitiveness.",
+      "Strengthening domestic manufacturing capabilities across Precipitated Silica and renewable fuels, reducing reliance on imported industrial materials.",
     icon: Factory,
   },
   {
-    title: "Regional Procurement Networks",
+    title: "Structured Biomass Sourcing",
     description:
-      "Establishing commercial procurement networks with agricultural producers, aggregators, and logistics operators to secure sustainable biomass supply.",
+      "Establishing purchasing and collection networks connecting farmers and rice mills with industrial facilities, creating an alternative to open-field burning.",
     icon: TrendingUp,
   },
   {
-    title: "Energy & Materials Diversification",
+    title: "Proposed 600+ Acre Campus",
     description:
-      "Building commercial-scale capacity across EDSP / EOCM renewable energy solutions and evaluating Sustainable Aviation Fuel (SAF) production pathways.",
+      "Planning an integrated campus in Sagar district, MP, co-locating Precipitated Silica, SAF, and EDSP/EOCM facilities with shared captive utilities.",
     icon: Cpu,
   },
   {
-    title: "Environmental Stewardship",
+    title: "Regional Employment & R&D",
     description:
-      "Designing manufacturing facilities with continuous emissions controls, water recycling systems, and waste-heat recovery loops.",
+      "Envisioning 4,000+ direct employment opportunities across operational functions and establishing a dedicated technical R&D center in Sagar.",
     icon: ShieldCheck,
   },
 ];
@@ -181,10 +181,10 @@ export default function AboutPage() {
                     01
                   </div>
                   <h3 className="font-sans font-medium text-xl text-[#13271e]">
-                    Strategic Vision
+                    The Future We Envision
                   </h3>
                   <p className="font-sans text-sm text-[#13271e]/75 font-light leading-relaxed">
-                    To build a competitive Indian industrial enterprise that creates sustainable economic value from domestic agricultural resources while advancing national manufacturing resilience.
+                    To build a future where India's agricultural resources support cleaner energy, advanced manufacturing, and stronger domestic industries. We envision industrial growth that reduces import dependence, creates opportunities for rural communities, and contributes to a more sustainable and self-reliant India.
                   </p>
                 </div>
 
@@ -193,10 +193,10 @@ export default function AboutPage() {
                     02
                   </div>
                   <h3 className="font-sans font-medium text-xl text-[#13271e]">
-                    Operational Mission
+                    The Purpose That Drives Us
                   </h3>
                   <p className="font-sans text-sm text-[#13271e]/85 font-light leading-relaxed">
-                    To engineer, finance, and operate modern industrial manufacturing facilities that combine high-efficiency processing, environmental responsibility, and value for regional communities.
+                    To transform agricultural residues into valuable energy and industrial materials through reliable technology and responsible manufacturing. Our purpose is to create lasting value for industries, farmers, and communities while promoting efficient resource use and environmental responsibility.
                   </p>
                 </div>
               </div>

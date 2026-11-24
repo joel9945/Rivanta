@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     "Rivanta Green is developing an integrated industrial ecosystem across precipitated silica, renewable energy solutions (EDSP/EOCM), sustainable aviation fuel (SAF), and agricultural residue valorisation in India.",
   keywords: [
     "Rivanta Green",
-    "Rivanta Green Innovative Venture Private Limited",
+    "Rivanta Green Innovative Ventures Private Limited",
     "Indian Industrial Enterprise",
     "Sustainable Industrial Innovation",
     "Advanced Materials",
@@ -50,9 +50,9 @@ export const metadata: Metadata = {
     "Circular Industrial Materials",
     "Industrial Infrastructure India",
   ],
-  authors: [{ name: "Rivanta Green Innovative Venture Pvt. Ltd." }],
-  creator: "Rivanta Green Innovative Venture Pvt. Ltd.",
-  publisher: "Rivanta Green Innovative Venture Pvt. Ltd.",
+  authors: [{ name: "Rivanta Green Innovative Ventures Pvt. Ltd." }],
+  creator: "Rivanta Green Innovative Ventures Pvt. Ltd.",
+  publisher: "Rivanta Green Innovative Ventures Pvt. Ltd.",
   formatDetection: {
     email: false,
     address: false,
@@ -104,19 +104,19 @@ const structuredData = {
     {
       "@type": ["Corporation", "Organization"],
       "@id": `${siteUrl}/#organization`,
-      name: "Rivanta Green Innovative Venture Private Limited",
-      legalName: "Rivanta Green Innovative Venture Private Limited",
+      name: "Rivanta Green Innovative Ventures Private Limited",
+      legalName: "Rivanta Green Innovative Ventures Private Limited",
       alternateName: [
         "Rivanta Green",
         "Rivanta",
-        "Rivanta Green Innovative Venture",
+        "Rivanta Green Innovative Ventures",
       ],
       identifier: "U32900MP2026PTC087753",
       url: siteUrl,
       logo: {
         "@type": "ImageObject",
         url: `${siteUrl}/logo/logo-brand-lockup.svg`,
-        caption: "Rivanta Green Innovative Venture Private Limited",
+        caption: "Rivanta Green Innovative Ventures Private Limited",
       },
       image: `${siteUrl}/images/og-rivanta.jpg`,
       description:
@@ -185,7 +185,7 @@ const structuredData = {
       url: siteUrl,
       name: "Rivanta Green",
       alternateName: [
-        "Rivanta Green Innovative Venture",
+        "Rivanta Green Innovative Ventures",
         "Rivanta Green",
         "Rivanta",
       ],

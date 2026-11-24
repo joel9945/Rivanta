@@ -39,7 +39,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 - **Restrained Motion**: Micro-interactions and transitions must feel purposeful, physical, and restrained, never gratuitous or flashy.
 
 ### Rule Group C — Brand Preservation
-- **Legal Entity Name**: Strict adherence to the exact legal company name: **"Rivanta Green Innovative Venture Private Limited"** (singular "Venture").
+- **Legal Entity Name**: Strict adherence to the exact legal company name: **"Rivanta Green Innovative Ventures Private Limited"** (plural "Ventures").
 - **Enterprise Palette**: Core brand colors: primary dark/forest greens, clean neutrals, and purposeful accents.
 - **Asset Integrity**: Strictly preserve approved typography pairings, logo usage, iconography style, and tone of voice.
 - **No Inventions**: Never invent placeholder brand assets or modify approved corporate identities.

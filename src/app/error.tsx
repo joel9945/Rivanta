@@ -81,7 +81,7 @@ export default function ErrorBoundary({ error, reset }: ErrorProps) {
 
       {/* Footer Info */}
       <div className="text-center font-mono text-xs text-white/40">
-        Rivanta Green Innovative Venture Private Limited • Desk: info@rivantagreen.com • +91 98930 25375
+        Rivanta Green Innovative Ventures Private Limited • Desk: info@rivantagreen.com • +91 98930 25375
       </div>
     </div>
   );

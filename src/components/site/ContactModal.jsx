@@ -120,7 +120,7 @@ export default function ContactModal() {
   )}`;
 
   const handleCopy = () => {
-    const text = `Inquiry to Rivanta Green Innovative Venture Private Limited\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone || 'N/A'}\nInterest: ${formData.interest}\nMessage: ${formData.message}`;
+    const text = `Inquiry to Rivanta Green Innovative Ventures Private Limited\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone || 'N/A'}\nInterest: ${formData.interest}\nMessage: ${formData.message}`;
     navigator.clipboard?.writeText(text).then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 3000);

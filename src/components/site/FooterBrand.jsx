@@ -62,7 +62,7 @@ export function FooterBrand({ isSubpage = false }) {
             </div>
           </div>
           <div className="rivanta-footer-bottom">
-            <p>© 2026 Rivanta Green Innovative Venture Private Limited.</p>
+            <p>© 2026 Rivanta Green Innovative Ventures Private Limited.</p>
             <div className="rivanta-footer-bottom-links">
               <a className="rivanta-footer-linkedin" href="https://www.linkedin.com/company/rivantagreen" target="_blank" rel="noopener noreferrer"><img src="/wp-content/themes/rivanta/assets/social/linkedin.svg" width="16" height="16" alt="" aria-hidden="true"/>LinkedIn</a>
               <a className="rivanta-footer-back-top" href={isSubpage ? "#" : "#hero"}>Back to top</a>
