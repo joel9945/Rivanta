@@ -23,7 +23,7 @@ export default function IndustrialOpportunity() {
         "Developing domestic production of precipitated silica from rice husk ash and evaluating silicon material pathways to reduce import dependency.",
       icon: Factory,
       href: "/bio-silica",
-      badge: "Precipitated Silica & Silicon",
+      badge: "Precipitated Silica",
       color: "#e06425",
     },
     {

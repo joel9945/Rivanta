@@ -53,10 +53,10 @@ const jsonLd = {
       mainEntity: [
         {
           "@type": "Question",
-          name: "How can industrial partners inquire about Precipitated Silica & Silicon?",
+          name: "How can industrial partners inquire about Precipitated Silica?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Industrial procurement and technical teams in tyres, rubber compounding, and specialty coatings can request material specification summaries and discuss technical feasibility. Submit your inquiry selecting 'Precipitated Silica & Silicon Materials' along with application requirements.",
+            text: "Industrial procurement and technical teams in tyres, rubber compounding, and specialty coatings can request material specification summaries and discuss technical feasibility. Submit your inquiry selecting 'Precipitated Silica' along with application requirements.",
           },
         },
         {

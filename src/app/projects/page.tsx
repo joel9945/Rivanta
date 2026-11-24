@@ -32,8 +32,8 @@ const PROJECT_INITIATIVES = [
   },
   {
     id: "init-silica",
-    name: "Precipitated Silica & Silicon Materials Facility",
-    vertical: "Advanced Industrial Materials",
+    name: "Precipitated Silica Facility",
+    vertical: "Advanced Materials",
     status: "Under Development",
     scope:
       "Advanced manufacturing facility designed to extract high-purity precipitated silica from rice husk ash for tyres, rubber, and coatings, and research silicon materials for solar energy and electronics.",

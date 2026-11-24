@@ -315,7 +315,7 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
                         }`}
                       >
                         <span className="font-sans text-[13px] font-medium tracking-tight">
-                          Precipitated Silica & Silicon
+                          Precipitated Silica
                         </span>
                         <ArrowUpRight className="w-3.5 h-3.5 opacity-30 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all text-[#e06425]" />
                       </Link>
@@ -606,7 +606,7 @@ export default function Header({ onOpenPartnerModal }: HeaderProps = {}) {
               </span>
               <div className="space-y-0.5">
                 {[
-                  { label: "Precipitated Silica & Silicon", href: "/bio-silica" },
+                  { label: "Precipitated Silica", href: "/bio-silica" },
                   { label: "EDSP / EOCM (Renewable Gas)", href: "/edsp-eocm" },
                   { label: "Sustainable Aviation Fuels (SAF)", href: "/saf" },
                   { label: "Circular Feedstock & Recovery", href: "/feedstock" },

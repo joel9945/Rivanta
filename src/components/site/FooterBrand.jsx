@@ -39,7 +39,7 @@ export function FooterBrand({ isSubpage = false }) {
             <nav className="rivanta-footer-column" aria-labelledby="footer-resources-title">
               <h3 id="footer-resources-title">Discover more</h3>
               <ul>
-                <li><a href="/bio-silica/">Precipitated Silica &amp; Silicon</a></li>
+                <li><a href="/bio-silica/">Precipitated Silica</a></li>
                 <li><a href="/saf/">Sustainable Aviation Fuel</a></li>
                 <li><a href="/edsp-eocm/">EDSP / EOCM (Renewable Gas)</a></li>
                 <li><a href="/feedstock/">Biomass sourcing</a></li>

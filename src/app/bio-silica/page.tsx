@@ -108,25 +108,25 @@ export default function BioSilicaPage() {
     <>
       {/* Framed Canvas Hero */}
       <SubpageHero
-        badge="Advanced Materials & Silicon"
+        badge="Advanced Materials"
         title="The Building Blocks of Technology:"
-        highlightedText="Precipitated Silica & Silicon."
+        highlightedText="Precipitated Silica."
         description="Recovering high-purity Precipitated Silica from agricultural residues and developing silicon-based materials through specialised processing technologies."
         imageSrc="/images/bio-silica-lab.jpg"
         breadcrumbs={[
           { label: "Our Businesses", href: "/#businesses" },
-          { label: "Precipitated Silica & Silicon" },
+          { label: "Precipitated Silica" },
         ]}
         primaryCtaText="Explore Applications"
         primaryCtaHref="#applications"
         secondaryCtaText="Contact Commercial Desk"
         secondaryCtaHref="/contact"
-        telemetryTag="Precipitated Silica • Silicon-Based Materials"
+        telemetryTag="Precipitated Silica • Advanced Materials"
       />
 
       {/* Infinite Industrial Ticker */}
       <MarqueeText
-        phrase="PRECIPITATED SILICA — SILICON-BASED MATERIALS — AUTOMOBILE TYRES & RUBBER — COATINGS & SPECIALTY PRODUCTS — SOLAR & ELECTRONICS — DOMESTIC SELF-RELIANCE — "
+        phrase="PRECIPITATED SILICA — AUTOMOBILE TYRES & RUBBER — COATINGS & SPECIALTY PRODUCTS — ADVANCED INDUSTRIAL MATERIALS — DOMESTIC SELF-RELIANCE — "
         theme="light"
       />
 

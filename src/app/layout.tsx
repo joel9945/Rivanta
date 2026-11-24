@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     template: "%s | Rivanta Green",
   },
   description:
-    "Rivanta Green is developing an integrated industrial ecosystem across precipitated silica and silicon materials, renewable energy solutions (EDSP/EOCM), sustainable aviation fuel (SAF), and agricultural residue valorisation in India.",
+    "Rivanta Green is developing an integrated industrial ecosystem across precipitated silica, renewable energy solutions (EDSP/EOCM), sustainable aviation fuel (SAF), and agricultural residue valorisation in India.",
   keywords: [
     "Rivanta Green",
     "Rivanta Green Innovative Venture Private Limited",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Rivanta Green | Sustainable Industrial Innovation",
     description:
-      "Rivanta Green is developing an integrated industrial ecosystem across precipitated silica and silicon materials, renewable energy solutions (EDSP/EOCM), sustainable aviation fuel (SAF), and agricultural residue valorisation in India.",
+      "Rivanta Green is developing an integrated industrial ecosystem across precipitated silica, renewable energy solutions (EDSP/EOCM), sustainable aviation fuel (SAF), and agricultural residue valorisation in India.",
     url: siteUrl,
     siteName: "Rivanta Green",
     images: [
@@ -79,7 +79,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Rivanta Green | Sustainable Industrial Innovation",
     description:
-      "Rivanta Green is developing an integrated industrial ecosystem across precipitated silica and silicon materials, renewable energy solutions (EDSP/EOCM), sustainable aviation fuel (SAF), and agricultural residue valorisation in India.",
+      "Rivanta Green is developing an integrated industrial ecosystem across precipitated silica, renewable energy solutions (EDSP/EOCM), sustainable aviation fuel (SAF), and agricultural residue valorisation in India.",
     images: ["/images/og-rivanta.jpg"],
   },
   icons: {
@@ -120,7 +120,7 @@ const structuredData = {
       },
       image: `${siteUrl}/images/og-rivanta.jpg`,
       description:
-        "Rivanta Green is developing an integrated industrial ecosystem across precipitated silica and silicon materials, renewable energy solutions (EDSP/EOCM), sustainable aviation fuel (SAF), and agricultural residue valorisation in India.",
+        "Rivanta Green is developing an integrated industrial ecosystem across precipitated silica, renewable energy solutions (EDSP/EOCM), sustainable aviation fuel (SAF), and agricultural residue valorisation in India.",
       email: "info@rivantagreen.com",
       telephone: "+91 98930 15375",
       foundingLocation: {

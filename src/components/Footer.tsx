@@ -58,7 +58,7 @@ export default async function Footer() {
                     href="/bio-silica"
                     className="hover:text-[#ea6e2d] transition-colors"
                   >
-                    Precipitated Silica & Silicon
+                    Precipitated Silica
                   </Link>
                 </li>
                 <li>

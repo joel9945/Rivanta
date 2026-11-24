@@ -46,9 +46,9 @@ const SLIDES: GallerySlide[] = [
   {
     id: "04",
     category: "04 / ADVANCED MATERIALS",
-    title: "Precipitated Silica & silicon.",
+    title: "Precipitated Silica.",
     desc: "Recovering precipitated silica from rice husk ash for tyres, rubber, and coatings, while researching silicon materials for solar energy and electronics.",
-    short: "Precipitated Silica & Silicon",
+    short: "Precipitated Silica",
     img: "/images/gallery/04-bio-silica.jpg",
     href: "/bio-silica",
   },

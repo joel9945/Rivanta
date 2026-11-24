@@ -10,7 +10,7 @@ export default function ContactModal() {
     name: '',
     email: '',
     phone: '',
-    interest: 'Precipitated Silica & Silicon',
+    interest: 'Precipitated Silica',
     message: '',
   });
 
@@ -357,7 +357,7 @@ export default function ContactModal() {
                   onFocus={(e) => (e.target.style.borderColor = '#ed730c')}
                   onBlur={(e) => (e.target.style.borderColor = 'rgba(255, 255, 255, 0.16)')}
                 >
-                  <option value="Precipitated Silica & Silicon">Precipitated Silica &amp; Silicon</option>
+                  <option value="Precipitated Silica">Precipitated Silica</option>
                   <option value="Sustainable Aviation Fuel">Sustainable Aviation Fuel (SAF)</option>
                   <option value="EDSP / EOCM">EDSP / EOCM (Renewable Gas)</option>
                   <option value="Biomass Sourcing & Aggregation">Biomass Sourcing &amp; Aggregation</option>

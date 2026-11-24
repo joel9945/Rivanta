@@ -63,8 +63,8 @@ const DEPARTMENTS = [
 
 const FAQS = [
   {
-    q: "How can industrial partners inquire about Precipitated Silica & Silicon?",
-    a: "Industrial procurement and technical teams in tyres, rubber compounding, and specialty coatings can request material specification summaries and discuss technical feasibility. Submit your inquiry selecting 'Precipitated Silica & Silicon Materials' along with application requirements.",
+    q: "How can industrial partners inquire about Precipitated Silica?",
+    a: "Industrial procurement and technical teams in tyres, rubber compounding, and specialty coatings can request material specification summaries and discuss technical feasibility. Submit your inquiry selecting 'Precipitated Silica' along with application requirements.",
   },
   {
     q: "What commercial structures are used for EDSP / EOCM renewable gas off-take?",

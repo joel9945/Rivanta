@@ -11,14 +11,14 @@ export function CaseStudies() {
 <div className="citadel-carousel-viewport px-0-25 md:pl-5 md:pr-5 lg:pl-vw-5 lg:pr-vw-5 xl:pl-vw-10 xl:pr-vw-10 2xl:pl-vw-20 2xl:pr-vw-20" data-carousel-viewport="" suppressHydrationWarning>
 <ul className="citadel-case-studies-list" data-carousel-track="" role="list" suppressHydrationWarning>
 <li className="citadel-case-studies-item min-w-0 w-100 md:w-auto" data-carousel-slide="">
-<article className="citadel-case-studies-card grid w-full border-0 p-0 overflow-hidden justify-between shadow-xl bg-white text-black" data-case-study-bg-url="/images/rivanta/company/bio-silica-lab.jpg" data-case-study-cta-label="Explore Pathway" data-case-study-cta-url="/bio-silica" data-case-study-description="Silica-rich residues such as rice husk ash can support precipitated silica and silicon materials development. Precipitated silica is recovered for tyres, rubber, and coatings, while silicon materials are researched for solar energy and electronics." data-case-study-detail-mode="summary" data-case-study-image-alt="Concept illustration — precipitated silica &amp; silicon; not an operating Rivanta asset" data-case-study-image-sizes="" data-case-study-image-srcset="" data-case-study-image-url="/images/rivanta/company/bio-silica-lab.jpg" data-case-study-logo-alt="Precipitated Silica &amp; Silicon" data-case-study-logo-url="/images/rivanta/pathways/silica-dark.svg" data-case-study-meta="Materials" data-case-study-partner="Rivanta · Industrial development" data-case-study-theme="light" data-case-study-title="Precipitated Silica &amp; Silicon" data-case-study-trigger="" role="button" tabIndex={0} data-case-study-expandable="1" suppressHydrationWarning>
+<article className="citadel-case-studies-card grid w-full border-0 p-0 overflow-hidden justify-between shadow-xl bg-white text-black" data-case-study-bg-url="/images/rivanta/company/bio-silica-lab.jpg" data-case-study-cta-label="Explore Pathway" data-case-study-cta-url="/bio-silica" data-case-study-description="Silica-rich residues such as rice husk ash can support precipitated silica and silicon materials development. Precipitated silica is recovered for tyres, rubber, and coatings, while silicon materials are researched for solar energy and electronics." data-case-study-detail-mode="summary" data-case-study-image-alt="Concept illustration — precipitated silica; not an operating Rivanta asset" data-case-study-image-sizes="" data-case-study-image-srcset="" data-case-study-image-url="/images/rivanta/company/bio-silica-lab.jpg" data-case-study-logo-alt="Precipitated Silica" data-case-study-logo-url="/images/rivanta/pathways/silica-dark.svg" data-case-study-meta="Materials" data-case-study-partner="Rivanta · Industrial development" data-case-study-theme="light" data-case-study-title="Precipitated Silica" data-case-study-trigger="" role="button" tabIndex={0} data-case-study-expandable="1" suppressHydrationWarning>
 <div className="citadel-case-studies-content flex flex-col justify-between items-start gap-3 p-fluid-card min-h-0px overflow-hidden order-1">
 <div className="flex flex-col flex-1 min-h-0px w-full">
 <div className="citadel-case-studies-partner-logo-wrap flex items-center justify-start w-full min-h-34px">
-<img alt="Precipitated Silica &amp; Silicon" className="citadel-case-studies-partner-logo" height="334" loading="lazy" src="/images/rivanta/pathways/silica-dark.svg" width="743"/>
+<img alt="Precipitated Silica" className="citadel-case-studies-partner-logo" height="334" loading="lazy" src="/images/rivanta/pathways/silica-dark.svg" width="743"/>
 </div>
 <div className="citadel-case-studies-copy" data-case-study-copy="">
-<h3 className="citadel-case-studies-title m-0 mt-1 text-base lg:text-lg leading-100 font-semibold tracking-tight">Precipitated Silica &amp; Silicon</h3>
+<h3 className="citadel-case-studies-title m-0 mt-1 text-base lg:text-lg leading-100 font-semibold tracking-tight">Precipitated Silica</h3>
 <div className="citadel-case-studies-description m-0 mt-4 text-fluid-sm lg:text-fluid-base leading-145 normal-case tracking-tight">Silica-rich residues such as rice husk ash can support precipitated silica and silicon materials development. Precipitated silica is recovered for tyres, rubber, and coatings, while silicon materials are researched for solar energy and electronics.</div>
 </div>
 <div data-case-study-description-source="" hidden={true}>Precipitated silica recovered from rice husk ash provides an established circular route to industrial-grade silica. Industrial uses include tyre reinforcement, rubber compounding, paints, coatings, and specialty applications.
@@ -29,11 +29,11 @@ Downstream silicon for solar cells and electronics requires separate reduction a
 </div>
 <div>
 <p className="citadel-case-studies-meta m-0 mt-auto text-sm leading-100 font-bold italic normal-case">Materials</p>
-<a aria-label="Explore Precipitated Silica &amp; Silicon" className="citadel-case-studies-cta mt-0-75 flex items-center justify-center bg-brand-orange bg-brand-orange-hover text-black leading-100 no-underline rounded-sm px-4 py-3" data-case-study-cta="" href="/bio-silica">Explore Pathway</a>
+<a aria-label="Explore Precipitated Silica" className="citadel-case-studies-cta mt-0-75 flex items-center justify-center bg-brand-orange bg-brand-orange-hover text-black leading-100 no-underline rounded-sm px-4 py-3" data-case-study-cta="" href="/bio-silica">Explore Pathway</a>
 </div>
 </div>
 <div className="citadel-case-studies-media overflow-hidden order-2">
-<img alt="Concept illustration — silicon / bio-silica; not an operating Rivanta asset" className="w-full h-full block object-cover object-center" loading="lazy" src="/images/rivanta/company/bio-silica-lab.jpg"/>
+<img alt="Concept illustration — precipitated silica; not an operating Rivanta asset" className="w-full h-full block object-cover object-center" loading="lazy" src="/images/rivanta/company/bio-silica-lab.jpg"/>
 </div>
 </article>
 </li>

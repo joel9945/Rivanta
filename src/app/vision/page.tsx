@@ -300,7 +300,7 @@ export default function VisionPage() {
                 <div className="pt-4 flex items-center gap-4 flex-wrap">
                   <Link href="/bio-silica" className="u-btn--1">
                     <span className="btn_label">
-                      Explore Advanced Materials
+                      Explore Precipitated Silica
                       <div className="label_corner">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"

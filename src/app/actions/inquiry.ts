@@ -17,7 +17,7 @@ export interface InquiryResult {
 }
 
 const ALLOWED_SECTORS = [
-  "Precipitated Silica & Silicon Materials",
+  "Precipitated Silica",
   "EDSP / EOCM (Renewable Gas)",
   "Sustainable Aviation Fuels (SAF)",
   "Feedstock Sourcing & Logistics",
