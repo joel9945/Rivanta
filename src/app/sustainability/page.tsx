@@ -40,23 +40,23 @@ const STEWARDSHIP_PILLARS = [
   },
   {
     id: "energy-efficiency",
-    title: "Waste-Heat & Energy Recovery",
-    subtitle: "Process Integration",
-    metricValue: "Thermal Loops",
-    metricLabel: "Efficiency Target",
+    title: "Solar & Wind Energy Integration",
+    subtitle: "Captive Clean Power",
+    metricValue: "Hybrid Power",
+    metricLabel: "Renewable Generation",
     description:
-      "Recovering waste heat from high-temperature process streams to generate process steam and preheat incoming streams, reducing external thermal energy demand across plant operations.",
+      "Envisioning solar PV arrays and wind turbine installations integrated into our industrial campus, alongside process waste-heat recovery, to diversify power supply and reduce reliance on conventional energy sources.",
     icon: Flame,
     color: "#34835a",
   },
   {
     id: "circular-byproducts",
-    title: "Circular By-Product Recovery",
-    subtitle: "Resource Utilization",
-    metricValue: "Soil Nutrients",
-    metricLabel: "By-Product Use",
+    title: "Biochar & Circular By-Products",
+    subtitle: "Resource Recovery",
+    metricValue: "Nutrient & Carbon",
+    metricLabel: "Value from Residues",
     description:
-      "Processing residual streams and anaerobic digestate into organic soil amendments, returning valuable carbon and nutrients to regional farmland to support sustainable agriculture.",
+      "Assessing carbon-rich solids for biochar and carbon fibre research, while processing anaerobic digestate into tested organic fertilizers to return vital nutrients back to agricultural soils.",
     icon: RefreshCw,
     color: "#ea6e2d",
   },
@@ -69,7 +69,7 @@ const FRAMEWORK_STAGES = [
     title: "Agricultural Residue Utilization",
     focus: "Field Diversion",
     description:
-      "Organizing regional procurement of agricultural residues through structured partnerships, providing a commercial alternative to avoidable open-field burning across agrarian belts.",
+      "Organizing regional procurement of agricultural residues through structured partnerships, providing a practical route into industrial production and an alternative to open-field burning in Northern India.",
     deliverable: "Supply chain traceability and verified regional sourcing",
   },
   {
@@ -97,7 +97,7 @@ const FRAMEWORK_STAGES = [
     title: "Circular Materials & Downstream Use",
     focus: "By-Product Valorization",
     description:
-      "Developing commercial channels for refined biogenic materials and enriched organic soil nutrients, ensuring comprehensive material utilization across the full production cycle.",
+      "Developing commercial channels for refined Precipitated Silica, biochar, carbon fibre research, and organic fertilizers, ensuring comprehensive resource recovery from agricultural biomass.",
     deliverable:
       "Material lifecycle accounting structured for environmental transparency",
   },

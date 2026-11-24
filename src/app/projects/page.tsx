@@ -15,67 +15,67 @@ import { useState } from "react";
 
 const PROJECT_INITIATIVES = [
   {
-    id: "init-edsp-eocm",
-    name: "EDSP / EOCM Renewable Gas & Organic Fertilizer Facilities",
-    vertical: "Renewable Energy Solutions",
-    status: "Engineering & Planning",
-    scope:
-      "Integrated Exothermal Drying and Sorting Process and Extracting Organic Carbon as Methane (EDSP/EOCM) systems producing commercial-grade renewable gas for mobility and grid supply alongside enriched organic soil amendments.",
-    deliverables: [
-      "Process engineering and environmental clearance documentation",
-      "Gas off-take framework for clean transport and industrial supply",
-      "Digestate valorization for organic fertilizer and soil enrichment",
-      "Modular facility design for regional deployment",
-    ],
-    badge: "Renewable Gas",
-    color: "#2d7a54",
-  },
-  {
     id: "init-silica",
-    name: "Precipitated Silica Facility",
+    name: "Precipitated Silica Manufacturing Facility",
     vertical: "Advanced Materials",
     status: "Under Development",
     scope:
-      "Advanced manufacturing facility designed to extract high-purity precipitated silica from rice husk ash for tyres, rubber, and coatings, and research silicon materials for solar energy and electronics.",
+      "Proposed industrial facility recovering high-purity Precipitated Silica from rice husk ash for automobile tyres, rubber compounding, and coatings, while researching advanced silicon materials for solar energy and electronics.",
     deliverables: [
-      "Material quality testing with industrial compounding partners",
-      "Zero Liquid Discharge (ZLD) utility integration design",
-      "Thermal energy recovery from process exhaust streams",
-      "Evaluation of downstream green silicon material pathways",
+      "High-purity Precipitated Silica recovery and purification from gasification ash",
+      "Application testing with industrial tyre and rubber compounding partners",
+      "Zero Liquid Discharge (ZLD) utility integration and process water recycling",
+      "Research and development into silicon precursors for solar and electronics",
     ],
     badge: "Advanced Materials",
     color: "#e06425",
   },
   {
     id: "init-saf",
-    name: "Sustainable Aviation Fuel Processing",
+    name: "Sustainable Aviation Fuel (SAF) Facility",
     vertical: "Aviation Decarbonization",
     status: "Feasibility Stage",
     scope:
-      "Techno-economic evaluation of alcohol-to-jet and catalytic synthesis pathways utilizing non-food agricultural biomass feedstocks.",
+      "Proposed facility converting non-food biomass into process gas via gasification, followed by gas cleaning, catalytic fuel synthesis, and refining toward applicable ASTM standards.",
     deliverables: [
-      "Feedstock availability assessment for non-food biomass",
-      "Technology partner screening and licensor evaluation",
-      "Long-term airline off-take interest mapping",
-      "Regulatory alignment with national bio-aviation directives",
+      "Biomass gasification, syngas conditioning, and catalytic fuel conversion",
+      "Refining and fuel component evaluation against ASTM D7566 qualification standards",
+      "Non-food agricultural residue supply chain security and lifecycle assessment",
+      "Positioning domestic manufacturing within evolving aviation off-take markets",
     ],
-    badge: "Strategic Study",
+    badge: "Sustainable Fuels",
     color: "#3f6050",
   },
   {
-    id: "init-logistics",
-    name: "Regional Biomass Aggregation Hubs",
-    vertical: "Supply Chain & Logistics",
-    status: "Proposed",
+    id: "init-edsp-eocm",
+    name: "EDSP / EOCM Renewable Gas & Organic Fertilizer Facility",
+    vertical: "Renewable Energy Solutions",
+    status: "Engineering & Planning",
     scope:
-      "Decentralized collection, pre-treatment, and storage depots situated near major milling clusters to secure stable, year-round feedstock availability.",
+      "Integrated Exothermal Drying and Sorting Process and Extracting Organic Carbon as Methane (EDSP/EOCM) producing purified biomethane for transport and industry alongside organic soil amendments.",
     deliverables: [
-      "Regional milling density mapping across key agrarian belts",
-      "Automated quality inspection and moisture control bays",
-      "Farmer Producer Organization (FPO) long-term procurement frameworks",
-      "Enclosed storage infrastructure with fire safety controls",
+      "Anaerobic digestion and exothermal substrate pre-treatment systems",
+      "Gas cleaning and enrichment into high-concentration biomethane",
+      "Digestate conversion into tested, nutrient-rich organic fertilizers",
+      "Integration with regional natural gas mobility and industrial distribution",
     ],
-    badge: "Supply Infrastructure",
+    badge: "Renewable Gas",
+    color: "#2d7a54",
+  },
+  {
+    id: "init-campus",
+    name: "Integrated Industrial Campus & Shared Utilities",
+    vertical: "Integrated Infrastructure & Utilities",
+    status: "Proposed Development",
+    scope:
+      "Thoughtfully planned integrated industrial campus in Madhya Pradesh, co-locating manufacturing facilities, captive power, process heat recovery, water recycling, and a dedicated R&D center.",
+    deliverables: [
+      "Integrated master plan accommodating 3 major facilities and logistics infrastructure",
+      "Shared utilities: captive power, recoverable process heat, and ZLD water treatment",
+      "Dedicated research and development center for processing technologies",
+      "Hybrid solar and wind installations evaluated for campus power diversification",
+    ],
+    badge: "Integrated Campus",
     color: "#4a6b58",
   },
 ];
@@ -171,7 +171,7 @@ export default function ProjectsPage() {
 
       {/* Infinite Industrial Ticker */}
       <MarqueeText
-        phrase="MANUFACTURING INFRASTRUCTURE — ALTERNATIVE FUELS — BIOGENIC SILICA — LOGISTICS HUBS — PROCESS RELIABILITY — DISCIPLINED CAPITAL STEWARDSHIP — "
+        phrase="INTEGRATED INDUSTRIAL CAMPUS — MADHYA PRADESH — PRECIPITATED SILICA — SUSTAINABLE AVIATION FUEL — EDSP / EOCM — INTEGRATED BIOREFINERY — SHARED UTILITIES — "
         theme="light"
       />
 

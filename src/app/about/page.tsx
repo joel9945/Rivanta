@@ -67,9 +67,9 @@ const DEVELOPMENT_MILESTONES = [
   {
     stage: "Stage 02",
     status: "In Preparation",
-    title: "Proposed 600+ Acre Sagar Industrial Campus",
+    title: "Proposed Integrated Industrial Campus",
     detail:
-      "Advancing process engineering packages, site infrastructure planning, and statutory clearance preparation for the proposed industrial development in Sagar district, MP.",
+      "Advancing process engineering packages, site infrastructure planning, and statutory clearance preparation for the proposed industrial development in Madhya Pradesh.",
   },
   {
     stage: "Stage 03",
@@ -94,15 +94,15 @@ const STRATEGIC_PRIORITIES = [
     icon: TrendingUp,
   },
   {
-    title: "Proposed 600+ Acre Campus",
+    title: "Integrated Industrial Campus",
     description:
-      "Planning an integrated campus in Sagar district, MP, co-locating Precipitated Silica, SAF, and EDSP/EOCM facilities with shared captive utilities.",
+      "Planning an integrated campus in Madhya Pradesh, co-locating Precipitated Silica, SAF, and EDSP/EOCM facilities with shared captive utilities.",
     icon: Cpu,
   },
   {
     title: "Regional Employment & R&D",
     description:
-      "Envisioning 4,000+ direct employment opportunities across operational functions and establishing a dedicated technical R&D center in Sagar.",
+      "Envisioning 4,000+ direct employment opportunities across operational functions and establishing a dedicated technical R&D center for sustainable technologies.",
     icon: ShieldCheck,
   },
 ];
@@ -154,7 +154,7 @@ export default function AboutPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0e2219]/85 via-[#0e2219]/25 to-transparent pointer-events-none" />
                 <div className="absolute bottom-5 left-5 right-5 text-white">
                   <p className="font-mono text-[10px] uppercase tracking-wider text-[#f9a65c]">Integrated Enterprise</p>
-                  <p className="font-sans text-xs text-white/90 font-light mt-0.5">Proposed 600+ acre industrial campus in Sagar district, MP</p>
+                  <p className="font-sans text-xs text-white/90 font-light mt-0.5">Proposed integrated industrial campus in Madhya Pradesh</p>
                 </div>
               </div>
             </div>
