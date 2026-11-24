@@ -1,7 +1,7 @@
 // Size the map before its deferred canvas runtime loads, avoiding a scroll jump.
 export function fitMapToViewport(module=document.querySelector('[data-module="interactive-map"]')) {
   if(!module) return;
-  const stage=module.querySelector('.citadel-map-stage');
+  const stage=module.querySelector('.rivanta-map-stage');
   const controls=module.querySelector('[data-map-controls]');
   const shell=module.querySelector('[data-map-animation]');
   if(!stage || !controls || !shell) return;

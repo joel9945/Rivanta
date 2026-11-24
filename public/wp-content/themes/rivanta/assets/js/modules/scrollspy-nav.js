@@ -6,7 +6,7 @@ export function initScrollspyNav() {
 
   const navList = header.querySelector('[data-nav-list]');
   const navIndicator = header.querySelector('[data-nav-indicator]');
-  const navLinks = Array.from(header.querySelectorAll('.citadel-site-nav-link'));
+  const navLinks = Array.from(header.querySelectorAll('.rivanta-site-nav-link'));
   if (navLinks.length === 0) {
     header.dataset.status = 'no-links';
     return;
@@ -45,7 +45,7 @@ export function initScrollspyNav() {
   const resolveAnchorScrollTop = (targetElement, hash = '') => {
     const headerHeight = header.offsetHeight || 0;
     const targetRect = targetElement.getBoundingClientRect();
-    const targetDocumentTop = window.citadelScroll?.getTop(targetElement)
+    const targetDocumentTop = window.rivantaScroll?.getTop(targetElement)
       ?? (window.scrollY || window.pageYOffset || 0) + targetRect.top;
     const isMobileViewport = window.matchMedia('(max-width: 767px)').matches;
 
@@ -67,7 +67,7 @@ export function initScrollspyNav() {
       return;
     }
 
-    const currentScrollY = window.citadelScroll?.getY() ?? window.scrollY ?? 0;
+    const currentScrollY = window.rivantaScroll?.getY() ?? window.scrollY ?? 0;
     const headerHeight = header.offsetHeight || 0;
     const scrollTop = resolveAnchorScrollTop(anchorTarget.element, hash);
     const heroRect = hero ? hero.getBoundingClientRect() : null;
@@ -109,7 +109,7 @@ export function initScrollspyNav() {
       }
     }
 
-    if (window.citadelScroll) window.citadelScroll.toSection(anchorTarget.element,
+    if (window.rivantaScroll) window.rivantaScroll.toSection(anchorTarget.element,
       () => (header.offsetHeight || 0) - (window.matchMedia('(max-width: 767px)').matches ? 16 : 2),
       scrollBehavior === 'smooth');
     else window.scrollTo({ top: scrollTop, behavior: scrollBehavior });
@@ -164,7 +164,7 @@ export function initScrollspyNav() {
     });
   });
 
-  const ctaLink = header.querySelector('.citadel-site-header-cta');
+  const ctaLink = header.querySelector('.rivanta-site-header-cta');
   document.querySelectorAll('main a[href^="#"]').forEach((link) => {
     const hash = link.getAttribute('href');
     if (!getAnchorTarget(hash)) return;
@@ -173,7 +173,7 @@ export function initScrollspyNav() {
       navigateToAnchor(hash);
     });
   });
-  const navRoot = header.querySelector('.citadel-site-nav');
+  const navRoot = header.querySelector('.rivanta-site-nav');
   const prevArrow = header.querySelector('[data-mobile-nav-prev]');
   const nextArrow = header.querySelector('[data-mobile-nav-next]');
   const accentColor = getComputedStyle(document.documentElement)
@@ -346,7 +346,7 @@ export function initScrollspyNav() {
       return;
     }
 
-    const activeLink = navList.querySelector('.citadel-site-nav-link.is-active');
+    const activeLink = navList.querySelector('.rivanta-site-nav-link.is-active');
     if (!activeLink) {
       navIndicator.style.setProperty('--nav-indicator-width', '0px');
       navIndicator.style.setProperty('--nav-indicator-x', '0px');
@@ -377,12 +377,12 @@ export function initScrollspyNav() {
       return;
     }
 
-    const activeLink = navList.querySelector('.citadel-site-nav-link.is-active');
+    const activeLink = navList.querySelector('.rivanta-site-nav-link.is-active');
     if (!activeLink) {
       return;
     }
 
-    const activeItem = activeLink.closest('.citadel-site-nav-item');
+    const activeItem = activeLink.closest('.rivanta-site-nav-item');
     if (!activeItem) {
       return;
     }
@@ -398,7 +398,7 @@ export function initScrollspyNav() {
       return [];
     }
 
-    return Array.from(navList.querySelectorAll('.citadel-site-nav-item'));
+    return Array.from(navList.querySelectorAll('.rivanta-site-nav-item'));
   };
 
   const getCurrentMobileNavIndex = () => {
@@ -422,7 +422,7 @@ export function initScrollspyNav() {
 
     const boundedIndex = Math.max(0, Math.min(items.length - 1, index));
     const targetItem = items[boundedIndex];
-    const targetLink = targetItem.querySelector('.citadel-site-nav-link');
+    const targetLink = targetItem.querySelector('.rivanta-site-nav-link');
     if (!targetLink) {
       return;
     }
@@ -550,7 +550,7 @@ export function initScrollspyNav() {
       const index = MOBILE_NAV_SECTIONS.indexOf(currentSectionId);
       if (index === 0) {
         window.history.pushState(null, '', '#hero');
-        if (window.citadelScroll) window.citadelScroll.to(0);
+        if (window.rivantaScroll) window.rivantaScroll.to(0);
         else window.scrollTo({ top: 0, behavior: 'smooth' });
       } else if (index > 0) {
         navigateToAnchor('#' + MOBILE_NAV_SECTIONS[index - 1]);
@@ -638,7 +638,7 @@ export function initScrollspyNav() {
     }
 
     const headerHeight = header.offsetHeight || 0;
-    const scrollTop = window.citadelScroll?.getY() ?? window.scrollY ?? 0;
+    const scrollTop = window.rivantaScroll?.getY() ?? window.scrollY ?? 0;
     const heroBottomY = hero.offsetTop + hero.offsetHeight;
     const aboutThresholdY = Math.max(0, aboutSection.offsetTop - headerHeight - 4);
     const isOverHero = scrollTop + headerHeight < heroBottomY;
@@ -701,8 +701,8 @@ export function initScrollspyNav() {
   };
 
   window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('citadel:scroll', onScroll);
-  window.addEventListener('citadel:hero-phase', onScroll);
+  window.addEventListener('rivanta:scroll', onScroll);
+  window.addEventListener('rivanta:hero-phase', onScroll);
   window.addEventListener('resize', onScroll);
   window.addEventListener('hashchange', () => {
     handleIncomingHash(window.location.hash);
@@ -801,7 +801,7 @@ export function initScrollspyNav() {
       }
     };
     document.fonts?.ready.then(() => requestAnimationFrame(settleInitialAnchor));
-    window.addEventListener('citadel:layout-ready', settleInitialAnchor, { once: true });
+    window.addEventListener('rivanta:layout-ready', settleInitialAnchor, { once: true });
     window.addEventListener('load', settleInitialAnchor, { once: true });
     anchorLayoutObserver = new ResizeObserver(settleInitialAnchor);
     anchorLayoutObserver.observe(document.body);

@@ -12,7 +12,7 @@ export function SiteHeader({ isSubpage = false }) {
 
   return (
     <header
-      className={`citadel-site-header${isSubpage ? ' is-content-mode' : ''}`}
+      className={`rivanta-site-header${isSubpage ? ' is-content-mode' : ''}`}
       {...(!isSubpage ? { 'data-module': 'scrollspy-nav' } : {})}
       style={
         isSubpage
@@ -27,12 +27,12 @@ export function SiteHeader({ isSubpage = false }) {
       suppressHydrationWarning
     >
       <div
-        className="citadel-site-header-inner flex items-center justify-between gap-4 md:px-1 lg:px-6 lg:pt-2"
+        className="rivanta-site-header-inner flex items-center justify-between gap-4 md:px-1 lg:px-6 lg:pt-2"
         suppressHydrationWarning
       >
         <a
           aria-label="Rivanta Green Innovative Venture Private Limited Home"
-          className="citadel-site-header-brand"
+          className="rivanta-site-header-brand"
           href={links.home}
           suppressHydrationWarning
         >
@@ -40,10 +40,10 @@ export function SiteHeader({ isSubpage = false }) {
           <span className="screen-reader-text">Rivanta</span>
         </a>
         <div className="logo-cover" suppressHydrationWarning></div>
-        <div className="citadel-site-nav-wrap" data-mobile-nav-wrap="" suppressHydrationWarning>
+        <div className="rivanta-site-nav-wrap" data-mobile-nav-wrap="" suppressHydrationWarning>
           <nav
             aria-label="Primary"
-            className="citadel-site-nav relative"
+            className="rivanta-site-nav relative"
             style={
               isSubpage
                 ? {
@@ -54,38 +54,38 @@ export function SiteHeader({ isSubpage = false }) {
             }
             suppressHydrationWarning
           >
-            <ul className="citadel-site-nav-list flex items-center gap-4" data-nav-list="" suppressHydrationWarning>
-              <li className="citadel-site-nav-item" suppressHydrationWarning>
-                <a className="citadel-site-nav-link" suppressHydrationWarning href={links.about}>
+            <ul className="rivanta-site-nav-list flex items-center gap-4" data-nav-list="" suppressHydrationWarning>
+              <li className="rivanta-site-nav-item" suppressHydrationWarning>
+                <a className="rivanta-site-nav-link" suppressHydrationWarning href={links.about}>
                   About
                 </a>
               </li>
-              <li className="citadel-site-nav-item" suppressHydrationWarning>
-                <a className="citadel-site-nav-link" suppressHydrationWarning href={links.products}>
+              <li className="rivanta-site-nav-item" suppressHydrationWarning>
+                <a className="rivanta-site-nav-link" suppressHydrationWarning href={links.products}>
                   Products
                 </a>
               </li>
-              <li className="citadel-site-nav-item" suppressHydrationWarning>
-                <a className="citadel-site-nav-link" suppressHydrationWarning href={links.ecosystem}>
+              <li className="rivanta-site-nav-item" suppressHydrationWarning>
+                <a className="rivanta-site-nav-link" suppressHydrationWarning href={links.ecosystem}>
                   Ecosystem
                 </a>
               </li>
-              <li className="citadel-site-nav-item" suppressHydrationWarning>
-                <a className="citadel-site-nav-link" suppressHydrationWarning href={links.people}>
+              <li className="rivanta-site-nav-item" suppressHydrationWarning>
+                <a className="rivanta-site-nav-link" suppressHydrationWarning href={links.people}>
                   People
                 </a>
               </li>
             </ul>
             <span
               aria-hidden="true"
-              className="citadel-site-nav-indicator"
+              className="rivanta-site-nav-indicator"
               data-nav-indicator=""
               suppressHydrationWarning
             ></span>
           </nav>
           <button
             aria-label="Previous section"
-            className="citadel-mobile-nav-arrow citadel-mobile-nav-arrow--prev"
+            className="rivanta-mobile-nav-arrow rivanta-mobile-nav-arrow--prev"
             data-mobile-nav-prev=""
             hidden={true}
             suppressHydrationWarning
@@ -108,7 +108,7 @@ export function SiteHeader({ isSubpage = false }) {
           </button>
           <button
             aria-label="Next section"
-            className="citadel-mobile-nav-arrow citadel-mobile-nav-arrow--next"
+            className="rivanta-mobile-nav-arrow rivanta-mobile-nav-arrow--next"
             data-mobile-nav-next=""
             hidden={true}
             suppressHydrationWarning
@@ -131,12 +131,12 @@ export function SiteHeader({ isSubpage = false }) {
           </button>
         </div>
         <a
-          className="citadel-site-header-cta"
+          className="rivanta-site-header-cta"
           href={links.contact}
           style={
             isSubpage
               ? {
-                  background: 'var(--citadel-orange, #f7953e)',
+                  background: 'var(--rivanta-orange, #f7953e)',
                   color: '#000000',
                 }
               : undefined

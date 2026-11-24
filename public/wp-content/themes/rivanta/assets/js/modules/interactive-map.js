@@ -1,6 +1,7 @@
-import { createRippleOverlay } from './createjs-ripple-overlay.js';
+import { INDIA_MAP_DOTS } from './india-map-dots.js';
 import { createExperiment3IntroController } from './interactive-map-experiment-3-intro.js';
 import { createInteractiveMapPinController } from './interactive-map-pin-controller.js';
+import { fitMapToViewport } from './map-layout.js';
 
 const MAP_COMPOSITION_ID = '6BBC61D64AAC439EB6CBC155EFAE038B';
 
@@ -21,6 +22,9 @@ const MAP_GRADIENT_BASE_RADIUS = 1249.2;
 const MAP_GRADIENT_PATH = 'Ehj0A/OMAAAh+cMDHpAAAMAAAB+cg';
 const MAP_GRADIENT_EDGE_TIE_EPSILON = 0.02;
 const MAP_OVERLAY_FADE_MS = 220;
+// Keep regional overlays and their tweens on the stage for future use.
+// Set to true to restore their visibility during partner highlights.
+const MAP_REGIONAL_OVERLAYS_VISIBLE = false;
 const MAP_GRADIENT_BASE_ALPHA = 0.6992;
 const MAP_GRADIENT_ACTIVE_ALPHA = 0.5;
 const MAP_MOBILE_BREAKPOINT = '(max-width: 767px)';
@@ -28,10 +32,7 @@ const MAP_MOBILE_STAGE_FADE_ALPHA = 0.14;
 const MAP_MOBILE_FOCUS_SCALE_MULTIPLIER = 0.9;
 const MAP_MOBILE_FOCUS_MIN_SCALE = 1.08;
 const MAP_MOBILE_FOCUS_MAX_SCALE = 2.2;
-const MAP_MOBILE_FOCUS_PREVIEW_MULTIPLIER = 0.82;
-const MAP_MOBILE_FOCUS_PREVIEW_DURATION = 320;
 const MAP_MOBILE_FOCUS_FINAL_DURATION = 420;
-const MAP_MOBILE_CARD_REVEAL_DELAY = 240;
 const MAP_MOBILE_ACTIVATION_DEDUPE_MS = 380;
 const MAP_PIN_BASE_ALPHA = 0.8;
 const MAP_PIN_SELECTED_HQ_ALPHA = 1;
@@ -120,7 +121,6 @@ export async function initInteractiveMap() {
   let lastControlActivationAt = 0;
   let exportRoot = null;
   let stage = null;
-  let rippleOverlay = null;
   let baseGradientAlpha = MAP_GRADIENT_BASE_ALPHA;
   let introController = null;
   let pinController = null;
@@ -135,7 +135,7 @@ export async function initInteractiveMap() {
       return;
     }
 
-    const shouldAttach = stageRenderingRequested && stageIsVisible;
+    const shouldAttach = stageRenderingRequested && stageIsVisible && !document.hidden;
     if (shouldAttach === stageTickAttached) {
       return;
     }
@@ -146,6 +146,7 @@ export async function initInteractiveMap() {
       window.createjs.Ticker.removeEventListener('tick', stageTickHandler);
     }
     stageTickAttached = shouldAttach;
+    module.dataset.renderState = shouldAttach ? 'running' : 'paused';
   };
 
   const renderStageOnce = () => {
@@ -241,12 +242,6 @@ export async function initInteractiveMap() {
     0,
     1
   );
-  const runtimeMobileCardRevealDelayMs = toNumber(
-    mapRuntimeSettings.mobileCardRevealDelayMs,
-    MAP_MOBILE_CARD_REVEAL_DELAY,
-    0,
-    3000
-  );
   const runtimeMobileActivationDedupeMs = toNumber(
     mapRuntimeSettings.mobileActivationDedupeMs,
     MAP_MOBILE_ACTIVATION_DEDUPE_MS,
@@ -303,55 +298,6 @@ export async function initInteractiveMap() {
     gradientBaselineAlpha: toNumber(mapRuntimeSettings?.intro?.gradientBaselineAlpha, 0.4, 0, 1),
     gradientFadeDelayMs: toNumber(mapRuntimeSettings?.intro?.gradientFadeDelayMs, 180, 0, 4000),
     gradientFadeDurationMs: toNumber(mapRuntimeSettings?.intro?.gradientFadeDurationMs, 760, 0, 6000),
-  };
-  const allowedCompositeOperations = new Set(['lighter', 'lighten', 'overlay', 'screen', 'source-over']);
-  const allowedEaseOptions = new Set([
-    'linear',
-    'quadIn',
-    'quadOut',
-    'quadInOut',
-    'cubicIn',
-    'cubicOut',
-    'cubicInOut',
-    'quartIn',
-    'quartOut',
-    'quartInOut',
-    'quintIn',
-    'quintOut',
-    'quintInOut',
-    'sineIn',
-    'sineOut',
-    'sineInOut',
-    'circIn',
-    'circOut',
-    'circInOut',
-    'backIn',
-    'backOut',
-    'backInOut',
-    'bounceIn',
-    'bounceOut',
-    'bounceInOut',
-  ]);
-  const runtimeRippleCompositeOperation = String(
-    mapRuntimeSettings?.ripple?.compositeOperation || 'lighter'
-  ).trim();
-  const runtimeRippleEase = String(mapRuntimeSettings?.ripple?.ease || 'quadOut').trim();
-  const runtimeRippleSettings = {
-    enabled: mapRuntimeSettings?.ripple?.enabled !== false,
-    ease: allowedEaseOptions.has(runtimeRippleEase) ? runtimeRippleEase : 'quadOut',
-    ringCount: toNumber(mapRuntimeSettings?.ripple?.ringCount, 2, 1, 12),
-    staggerDelayMs: toNumber(mapRuntimeSettings?.ripple?.staggerDelayMs, 100, 0, 2000),
-    ringDurationMs: toNumber(mapRuntimeSettings?.ripple?.ringDurationMs, 1000, 0, 8000),
-    maxScale: toNumber(mapRuntimeSettings?.ripple?.maxScale, 15, 0.1, 50),
-    maxAlpha: toNumber(mapRuntimeSettings?.ripple?.maxAlpha, 0.75, 0, 1),
-    ringRadius: toNumber(mapRuntimeSettings?.ripple?.ringRadius, 60, 1, 500),
-    ringStrokeWidth: toNumber(mapRuntimeSettings?.ripple?.ringStrokeWidth, 3, 0, 100),
-    poolSize: toNumber(mapRuntimeSettings?.ripple?.poolSize, 3, 1, 30),
-    loopCount: toNumber(mapRuntimeSettings?.ripple?.loopCount, 0, 0, 100),
-    loopDelay: toNumber(mapRuntimeSettings?.ripple?.loopDelay, 2000, 0, 10000),
-    compositeOperation: allowedCompositeOperations.has(runtimeRippleCompositeOperation)
-      ? runtimeRippleCompositeOperation
-      : 'lighter',
   };
   baseGradientAlpha = runtimeGradientBaseAlpha;
 
@@ -458,6 +404,15 @@ export async function initInteractiveMap() {
   };
 
   const focusMobileOnPartner = (partnerKey, onComplete) => {
+    if (module.dataset.mapVisual === 'india') {
+      // Keep the complete India outline visible; the old focus bounds describe
+      // the previous regional artwork, rather than geographic product locations.
+      module.classList.remove('is-mobile-focused');
+      mobileFocusActive = false;
+      animationContainer.style.transform = 'none';
+      if (typeof onComplete === 'function') onComplete();
+      return;
+    }
     const unionBounds = getOverlayUnionBounds(partnerKey);
     if (!unionBounds) {
       module.classList.remove('is-mobile-focused');
@@ -468,9 +423,10 @@ export async function initInteractiveMap() {
       return;
     }
 
-    const containerBounds = animationContainer?.getBoundingClientRect();
-    const baseWidth = Number(containerBounds?.width || 0);
-    const baseHeight = Number(containerBounds?.height || 0);
+    // offsetWidth/offsetHeight ignore the current zoom transform, so a new
+    // focus target computes correctly even mid-zoom (no un-zoom reset needed).
+    const baseWidth = Number(animationContainer?.offsetWidth || 0);
+    const baseHeight = Number(animationContainer?.offsetHeight || 0);
     if (baseWidth <= 0 || baseHeight <= 0) {
       module.classList.remove('is-mobile-focused');
       mobileFocusActive = false;
@@ -496,22 +452,12 @@ export async function initInteractiveMap() {
       x: (baseWidth / 2) - (centerX * scale),
       y: (baseHeight / 2) - (centerY * scale),
     };
-    const previewScale = scale * MAP_MOBILE_FOCUS_PREVIEW_MULTIPLIER;
-    const previewTransform = {
-      scaleX: previewScale,
-      scaleY: previewScale,
-      x: (baseWidth / 2) - (centerX * previewScale),
-      y: (baseHeight / 2) - (centerY * previewScale),
-    };
-
     module.classList.add('is-mobile-focused');
-    tweenAnimationContainerTransform(previewTransform, MAP_MOBILE_FOCUS_PREVIEW_DURATION, () => {
-      tweenAnimationContainerTransform(finalTransform, MAP_MOBILE_FOCUS_FINAL_DURATION, () => {
-        mobileFocusActive = true;
-        if (typeof onComplete === 'function') {
-          onComplete();
-        }
-      });
+    tweenAnimationContainerTransform(finalTransform, MAP_MOBILE_FOCUS_FINAL_DURATION, () => {
+      mobileFocusActive = true;
+      if (typeof onComplete === 'function') {
+        onComplete();
+      }
     });
   };
 
@@ -734,7 +680,7 @@ export async function initInteractiveMap() {
     };
 
     const style = getComputedStyle(cardRoot);
-    const baseOffsetPx = parseCssLengthToPx(style.getPropertyValue('--citadel-map-card-offset'));
+    const baseOffsetPx = parseCssLengthToPx(style.getPropertyValue('--rivanta-map-card-offset'));
     const cardSizePx = measureCardSize();
     const pinX = x * mapRect.width;
     const pinY = y * mapRect.height;
@@ -933,23 +879,39 @@ export async function initInteractiveMap() {
     return;
   }
 
+  let lastRenderedCardPartner = null;
+
   const renderCard = (partner) => {
+    lastRenderedCardPartner = partner;
     const primaryLocation = getPrimaryLocation(partner.locations);
     const point = getPartnerPoint(partner, pointMap);
     const partnerKey = partner.partner_key || partner.name || partner.short_name;
-    const locationLabel = partner.hq_location || (primaryLocation
+    const locationLabel = partner.summary || partner.hq_location || (primaryLocation
       ? `${primaryLocation.city || ''}${primaryLocation.state ? `, ${primaryLocation.state}` : ''}`
-      : 'Location details coming soon');
+      : 'Pathway details');
 
+    // Below the mobile breakpoint the card sits on a dark background: serve
+    // the partner's white-on-transparent (marquee) logo there and the on-white
+    // logo otherwise. Partners without a distinct white asset keep the CSS
+    // whitening-filter fallback via the --filtered class.
+    const hasDistinctWhiteLogo = !!partner.marquee_logo_url && partner.marquee_logo_url !== partner.logo_url;
+    const cardLogoSourceHtml = hasDistinctWhiteLogo
+      ? `<source media="${MAP_MOBILE_BREAKPOINT}" srcset="${escapeHtml(partner.marquee_logo_url)}">`
+      : '';
+    const cardLogoClass = hasDistinctWhiteLogo ? '' : ' class="rivanta-map-card-logo--filtered"';
     const logoHtml = partner.logo_url
-      ? `<span class="citadel-map-card-logo-slot"><img src="${escapeHtml(partner.logo_url)}" alt="${escapeHtml(partner.name || 'Partner')}" loading="lazy"></span>`
+      ? `<span class="rivanta-map-card-logo-slot"><picture>${cardLogoSourceHtml}<img src="${escapeHtml(partner.logo_url)}" alt="${escapeHtml(partner.name || 'Partner')}" loading="lazy"${cardLogoClass}></picture></span>`
       : '';
     const websiteHtml = partner.website_url
-      ? `<a class="citadel-map-visit" href="${escapeHtml(partner.website_url)}" target="_blank" rel="noopener noreferrer">Visit Partner</a>`
+      ? `<a class="rivanta-map-visit" href="${escapeHtml(partner.website_url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(partner.cta_label || 'Explore Pathway')}</a>`
       : '';
 
+    const selectedControl = Array.from(controlsRoot.querySelectorAll('button[data-partner-key]'))
+      .find((button) => normalizeKey(button.dataset.partnerKey) === normalizeKey(partnerKey));
+    cardRoot.dataset.selectionGroup = selectedControl?.closest('.rivanta-product-tabs') ? 'product' : 'support';
+
     cardRoot.innerHTML = `
-      <div class="citadel-map-card-inner">
+      <div class="rivanta-map-card-inner">
         ${logoHtml}
         <h3>${escapeHtml(partner.name || 'Partner')}</h3>
         <p>${escapeHtml(locationLabel)}</p>
@@ -958,14 +920,20 @@ export async function initInteractiveMap() {
     `;
 
     const position = getCardPlacement(point, partnerKey);
+    const animRect = animationContainer.getBoundingClientRect();
+    const stageRect = cardRoot.parentElement?.getBoundingClientRect?.() ?? animRect;
+    const pinXInStage = (animRect.left - stageRect.left) + position.x * animRect.width;
+    const pinYInStage = (animRect.top - stageRect.top) + position.y * animRect.height;
+    const cardX = stageRect.width > 0 ? pinXInStage / stageRect.width : position.x;
+    const cardY = stageRect.height > 0 ? pinYInStage / stageRect.height : position.y;
 
     cardRoot.dataset.placement = position.placement;
     setMobileCardMode();
     if (position.offsetPx) {
-      cardRoot.style.setProperty('--citadel-map-card-offset', `${position.offsetPx}px`);
+      cardRoot.style.setProperty('--rivanta-map-card-offset', `${position.offsetPx}px`);
     }
-    cardRoot.style.setProperty('--citadel-map-card-x', `${position.x * 100}%`);
-    cardRoot.style.setProperty('--citadel-map-card-y', `${position.y * 100}%`);
+    cardRoot.style.setProperty('--rivanta-map-card-x', `${cardX * 100}%`);
+    cardRoot.style.setProperty('--rivanta-map-card-y', `${cardY * 100}%`);
   };
 
   let activeInteractionToken = 0;
@@ -978,8 +946,62 @@ export async function initInteractiveMap() {
   const gradientVisualCenter = { x: 638.9, y: 404.7 };
   const gradientTweenState = { x: gradientVisualCenter.x, y: gradientVisualCenter.y };
 
+  let paintGradientBitmap = null;
+  // Keep the existing gradient and selection transitions, using India as the artwork.
+  const installIndiaMapMask = () => {
+    if (module.dataset.mapVisual !== 'india' || !maskedGradientLayer || !window.createjs?.Shape) return;
+    const mask = new window.createjs.Shape();
+    const graphics = mask.graphics.beginFill('#ffffff');
+    INDIA_MAP_DOTS.forEach(([x, y]) => {
+      graphics.moveTo(x + 3, y).drawCircle(x, y, 3);
+    });
+    graphics.endFill();
+    mask._off = true;
+    maskedGradientLayer.mask = mask;
+  };
+
+  const installGradientBitmap = () => {
+    const mask = maskedGradientLayer?.mask;
+    if (!mask?.graphics?.drawAsPath) return;
+    const maskCanvas = document.createElement('canvas');
+    const gradientCanvas = document.createElement('canvas');
+    maskCanvas.width = gradientCanvas.width = Math.ceil(canvasSize.width);
+    maskCanvas.height = gradientCanvas.height = Math.ceil(canvasSize.height);
+    const maskContext = maskCanvas.getContext('2d');
+    const gradientContext = gradientCanvas.getContext('2d');
+    if (!maskContext || !gradientContext) return;
+    // Rasterize the thousands of map-dot paths once. Each tween frame then
+    // composites a gradient against this reusable alpha mask.
+    const matrix = maskedGradientLayer.getMatrix().invert().appendMatrix(mask.getMatrix());
+    maskContext.setTransform(matrix.a, matrix.b, matrix.c, matrix.d, matrix.tx, matrix.ty);
+    mask.graphics.drawAsPath(maskContext);
+    maskContext.fill();
+    paintGradientBitmap = (centerX, centerY) => {
+      const radius = MAP_GRADIENT_BASE_RADIUS * MAP_GRADIENT_SCALE;
+      const gradient = gradientContext.createRadialGradient(centerX, centerY, 0, centerX, centerY, radius);
+      MAP_GRADIENT_COLORS.forEach((color, index) => gradient.addColorStop(MAP_GRADIENT_RATIOS[index], color));
+      gradientContext.clearRect(0, 0, gradientCanvas.width, gradientCanvas.height);
+      gradientContext.globalCompositeOperation = 'source-over';
+      gradientContext.fillStyle = gradient;
+      gradientContext.fillRect(0, 0, gradientCanvas.width, gradientCanvas.height);
+      gradientContext.globalCompositeOperation = 'destination-in';
+      gradientContext.drawImage(maskCanvas, 0, 0);
+      gradientContext.globalCompositeOperation = 'source-over';
+    };
+    paintGradientBitmap(gradientVisualCenter.x, gradientVisualCenter.y);
+    maskedGradientLayer.mask = null;
+    maskedGradientLayer.draw = (context) => {
+      context.drawImage(gradientCanvas, 0, 0);
+      return true;
+    };
+  };
+
   const applyGradientCenter = (centerX, centerY) => {
     if (!maskedGradientShape) {
+      return;
+    }
+    if (paintGradientBitmap) {
+      paintGradientBitmap(centerX, centerY);
       return;
     }
 
@@ -1026,6 +1048,86 @@ export async function initInteractiveMap() {
     return candidate || null;
   };
 
+  // Replace the Animate export's baked-in office dots with dots built from the
+  // CMS offices payload (partner.locations x/y percents from the Offices CPT).
+  // Injected nodes reuse the export's location_dot symbol and the pin
+  // controller's existing naming conventions, so discovery, styling, and
+  // animation are unchanged. Returns false (keeping the baked-in dots) when
+  // the payload carries no office coordinates at all.
+  const injectCmsOfficeDots = (lib, layer) => {
+    if (!layer || typeof lib?.location_dot !== 'function') {
+      return false;
+    }
+
+    const officesByPartnerKey = new Map();
+    partnerList.forEach((partner) => {
+      const partnerKey = String(partner?.partner_key || '');
+      if (!partnerKey || !Array.isArray(partner?.locations)) {
+        return;
+      }
+
+      const offices = partner.locations.filter((location) => (
+        location && Number.isFinite(Number(location.x_percent)) && Number.isFinite(Number(location.y_percent))
+      ));
+      if (offices.length > 0) {
+        officesByPartnerKey.set(partnerKey, offices);
+      }
+    });
+
+    if (officesByPartnerKey.size === 0) {
+      return false;
+    }
+
+    // Hide the baked-in pins and remove them from prop-name discovery.
+    Object.keys(layer).forEach((prop) => {
+      if (!/^[a-z0-9]+_loc_\d+$/i.test(prop) && !/^instance(?:_\d+)?$/i.test(prop)) {
+        return;
+      }
+
+      const node = layer[prop];
+      if (node && typeof node === 'object' && typeof node.alpha === 'number') {
+        node.visible = false;
+        node.alpha = 0;
+        delete layer[prop];
+      }
+    });
+
+    const designToLocal = typeof layer.getMatrix === 'function' ? layer.getMatrix().invert() : null;
+
+    officesByPartnerKey.forEach((offices, partnerKey) => {
+      let prefix = MAP_PARTNER_PREFIX_BY_KEY[partnerKey];
+      if (!prefix) {
+        prefix = normalizeKey(partnerKey).replace(/[^a-z0-9]/g, '');
+        if (!prefix) {
+          return;
+        }
+        // The pin controller reads these maps at initializeFromLayer time.
+        MAP_PARTNER_PREFIX_BY_KEY[partnerKey] = prefix;
+      }
+
+      const primaryIndex = Math.max(0, offices.findIndex((office) => office.is_primary === true));
+
+      offices.forEach((office, index) => {
+        const designX = (Number(office.x_percent) / 100) * canvasSize.width;
+        const designY = (Number(office.y_percent) / 100) * canvasSize.height;
+        const point = designToLocal ? designToLocal.transformPoint(designX, designY) : { x: designX, y: designY };
+
+        const node = new lib.location_dot();
+        const prop = index === primaryIndex ? `${prefix}_hq_cms` : `${prefix}_loc_${index}`;
+        node.name = prop;
+        node.setTransform(point.x, point.y, 1, 1, 0, 0, 0, 4.8, 4.8);
+        layer.addChild(node);
+        layer[prop] = node;
+
+        if (index === primaryIndex) {
+          MAP_HQ_INSTANCE_PROP_BY_PARTNER[partnerKey] = prop;
+        }
+      });
+    });
+
+    return true;
+  };
+
   const initializePinControllerFromLayer = (layer) => {
     if (!pinController) {
       return;
@@ -1043,7 +1145,7 @@ export async function initInteractiveMap() {
 
       overlays.forEach((overlay) => {
         overlay._off = false;
-        overlay.visible = true;
+        overlay.visible = MAP_REGIONAL_OVERLAYS_VISIBLE;
         overlay.alpha = 0;
 
         if (window.createjs?.Tween) {
@@ -1079,7 +1181,7 @@ export async function initInteractiveMap() {
 
     overlays.forEach((overlay) => {
       overlay._off = false;
-      overlay.visible = true;
+      overlay.visible = MAP_REGIONAL_OVERLAYS_VISIBLE;
 
       if (window.createjs?.Tween && window.createjs?.Ease) {
         window.createjs.Tween.removeTweens(overlay);
@@ -1181,7 +1283,7 @@ export async function initInteractiveMap() {
       const point = getPartnerPoint(partner, pointMap);
       const button = document.createElement('button');
       button.type = 'button';
-      button.className = 'citadel-map-hitpoint';
+      button.className = 'rivanta-map-hitpoint';
       button.dataset.partnerKey = partner.partner_key || partner.name || partner.short_name || String(index);
       button.style.setProperty('--map-hitpoint-x', `${point.x * 100}%`);
       button.style.setProperty('--map-hitpoint-y', `${point.y * 100}%`);
@@ -1220,6 +1322,7 @@ export async function initInteractiveMap() {
       introController?.cancelCycle();
 
       if (module.dataset.activeKey === key) {
+        if (module.dataset.mapLayout === 'split') return;
         dismissSelection();
         return;
       }
@@ -1265,14 +1368,12 @@ export async function initInteractiveMap() {
 
   const dismissSelection = () => {
     // Do NOT increment activeInteractionToken — that would orphan intro cycle callbacks.
-    // Do NOT call clearRippleOverlay — let any in-flight ripple finish naturally.
-    rippleOverlay?.stop?.();
     cancelGradientFade();
     clearActiveSelection();
     hideCardInstantly();
     hideAllPartnerOverlaysInstantly();
     resetGradientToCenter();
-    runRestingPinRepopulate();
+    const pinRepopulatePromise = runRestingPinRepopulate();
     fadeGradientToDefault({ delayMs: 0, durationMs: runtimeOverlayFadeMs });
     module.dataset.introState = 'resting';
 
@@ -1282,19 +1383,20 @@ export async function initInteractiveMap() {
 
     // Detach only this stage once the dismiss animations have settled. The
     // CreateJS ticker is shared with other components and must remain running.
-    const rippleSettleMs = runtimeRippleSettings.enabled
-      ? runtimeRippleSettings.ringDurationMs + (runtimeRippleSettings.staggerDelayMs * Math.max(0, runtimeRippleSettings.ringCount - 1))
-      : 0;
-    window.setTimeout(() => {
+    // Pausing must wait for the full resting pin repopulate — pausing earlier
+    // freezes the canvas mid-stagger and later pins never get painted.
+    const fadeSettlePromise = new Promise((resolve) => {
+      window.setTimeout(resolve, runtimeOverlayFadeMs + 200);
+    });
+    Promise.all([Promise.resolve(pinRepopulatePromise), fadeSettlePromise]).then(() => {
       if (!module.dataset.activeKey) {
         pauseStageRendering();
       }
-    }, Math.max(runtimeOverlayFadeMs + 200, rippleSettleMs + 100));
+    });
   };
 
   const setActive = (partnerKey, options = {}) => {
     const suppressCard = options.suppressCard === true;
-    const suppressRipple = options.suppressRipple === true;
     const suppressPinHighlight = options.suppressPinHighlight === true;
     const pinMode = options.pinMode || (suppressPinHighlight ? 'intro' : 'manual');
     const pinHoldMs = Number.isFinite(Number(options.pinHoldMs))
@@ -1319,7 +1421,7 @@ export async function initInteractiveMap() {
       module.dataset.activeKey = String(activeKey || '');
     }
 
-    // Reattach this stage so overlay fades, gradient tweens, and ripple render.
+    // Reattach this stage so overlay fades and gradient tweens render.
     resumeStageRendering();
 
     const activePoint = getPartnerPoint(partner, pointMap);
@@ -1345,18 +1447,57 @@ export async function initInteractiveMap() {
       const isActive = buttonKey === normalizeKey(activeKey);
       button.classList.toggle('is-active', isActive);
       button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
-
-      if (isActive) {
-        const partner = partnerList.find((item) => normalizeKey(item.partner_key || item.name || item.short_name) === buttonKey);
-        if (partner?.highlight_color && isHexColor(partner.highlight_color)) {
-          button.style.backgroundColor = partner.highlight_color;
-        }
-      } else {
-        button.style.backgroundColor = '';
-      }
+      // Active background comes from CSS (.is-active uses the per-button
+      // --rivanta-map-partner-highlight-color var; mobile overrides it with a
+      // faint white wash). Inline styles here would defeat the mobile rule.
+      button.style.backgroundColor = '';
     });
 
     updateOverlay(activeKey);
+
+    // Manual selections run everything in parallel so the card is never gated
+    // behind gradient/overlay/pin choreography. The intro cycle keeps its
+    // chained pacing in the branch below.
+    if (!suppressCard) {
+      const gradientDone = new Promise(resolve => animateGradientTo(gradientTarget, resolve));
+      let pinsDone = Promise.resolve();
+      showPartnerOverlayWithFade(activeKey);
+
+      if (pinController) {
+        if (pinMode === 'intro') {
+          pinsDone = pinController.runIntroPartnerPop(activeKey, {
+            holdMs: pinHoldMs ?? runtimePinAnimation.introHoldMs,
+            durationMs: runtimePinAnimation.popDurationMs,
+            staggerMs: runtimePinAnimation.popStaggerMs,
+          });
+        } else {
+          pinsDone = pinController.applyManualSelectionState(activeKey, {
+            holdMs: pinHoldMs ?? runtimePinAnimation.manualHoldMs,
+            highlightHq: true,
+            durationMs: runtimePinAnimation.popDurationMs,
+            staggerMs: runtimePinAnimation.popStaggerMs,
+          });
+        }
+      }
+
+      if (isMobileLayout) {
+        focusMobileOnPartner(activeKey);
+      }
+
+      renderCard(partner);
+      showCardWithFade();
+      Promise.all([gradientDone, Promise.resolve(pinsDone)]).then(() => {
+        if (interactionToken === activeInteractionToken && module.dataset.activeKey === String(activeKey)) {
+          pauseStageRendering();
+        }
+      });
+
+      if (onTransitionComplete) {
+        onTransitionComplete();
+      }
+      return;
+    }
+
     resetGradientToCenter();
 
     const revealSelection = () => {
@@ -1365,68 +1506,30 @@ export async function initInteractiveMap() {
           return;
         }
 
-        if (suppressRipple) {
-          rippleOverlay?.clear?.();
-        }
-
-        const finishInteraction = () => {
+        const finishIntroStep = () => {
           if (interactionToken !== activeInteractionToken) {
             return;
           }
 
-          if (!suppressRipple) {
-            rippleOverlay?.trigger(activeKey);
+          if (onTransitionComplete) {
+            onTransitionComplete();
           }
-
-          if (suppressCard) {
-            if (onTransitionComplete) {
-              onTransitionComplete();
-            }
-            return;
-          }
-
-          const revealCard = () => {
-            if (interactionToken !== activeInteractionToken) {
-              return;
-            }
-
-            renderCard(partner);
-            showCardWithFade();
-
-            if (onTransitionComplete) {
-              onTransitionComplete();
-            }
-          };
-
-          if (isMobileLayout) {
-            window.setTimeout(revealCard, runtimeMobileCardRevealDelayMs);
-            return;
-          }
-
-          revealCard();
         };
 
         const revealPins = () => {
           if (!pinController) {
-            finishInteraction();
+            finishIntroStep();
             return;
           }
 
-          const pinPromise = pinMode === 'intro'
-            ? pinController.runIntroPartnerPop(activeKey, {
-              holdMs: pinHoldMs ?? runtimePinAnimation.introHoldMs,
-              durationMs: runtimePinAnimation.popDurationMs,
-              staggerMs: runtimePinAnimation.popStaggerMs,
-            })
-            : pinController.applyManualSelectionState(activeKey, {
-              holdMs: pinHoldMs ?? runtimePinAnimation.manualHoldMs,
-              highlightHq: true,
-              durationMs: runtimePinAnimation.popDurationMs,
-              staggerMs: runtimePinAnimation.popStaggerMs,
-            });
+          const pinPromise = pinController.runIntroPartnerPop(activeKey, {
+            holdMs: pinHoldMs ?? runtimePinAnimation.introHoldMs,
+            durationMs: runtimePinAnimation.popDurationMs,
+            staggerMs: runtimePinAnimation.popStaggerMs,
+          });
 
           Promise.resolve(pinPromise).then(() => {
-            finishInteraction();
+            finishIntroStep();
           });
         };
 
@@ -1475,17 +1578,17 @@ export async function initInteractiveMap() {
     controlsRoot.querySelectorAll('button[data-partner-key]').forEach((button) => {
       const partner = partnerLookup.get(normalizeKey(button.getAttribute('data-partner-key')));
       if (partner?.highlight_color && isHexColor(partner.highlight_color)) {
-        button.style.setProperty('--citadel-map-partner-highlight-color', partner.highlight_color);
+        button.style.setProperty('--rivanta-map-partner-highlight-color', partner.highlight_color);
       }
 
       bindPartnerActivation(button, button.getAttribute('data-partner-key'));
     });
   };
 
-  const mapHeader = module.querySelector('.citadel-map-header');
-  const mapStage = module.querySelector('.citadel-map-stage');
-  const mapControls = module.querySelector('.citadel-map-controls');
-  const mapAnimationShell = module.querySelector('.citadel-map-animation');
+  const mapHeader = module.querySelector('.rivanta-map-header');
+  const mapStage = module.querySelector('.rivanta-map-stage');
+  const mapControls = module.querySelector('.rivanta-map-controls');
+  const mapAnimationShell = module.querySelector('.rivanta-map-animation');
 
   pinController = createInteractiveMapPinController({
     createjs: window.createjs,
@@ -1589,10 +1692,6 @@ export async function initInteractiveMap() {
     resetMobileFocus(onComplete);
   };
 
-  const clearRippleOverlay = () => {
-    rippleOverlay?.clear?.();
-  };
-
   const hideAllPinsForIntro = () => {
     pinController?.hideAllPinsInstantly();
   };
@@ -1618,6 +1717,7 @@ export async function initInteractiveMap() {
     mapHeader,
     mapStage,
     mapControls,
+    mapAnimationContainer: animationContainer,
     getControlButtons,
     partnerList,
     setActive,
@@ -1629,7 +1729,6 @@ export async function initInteractiveMap() {
     hideAllPinsForIntro,
     runRestingPinRepopulate,
     showRestingPinsInstantly,
-    clearRippleOverlay,
     fadeGradientToDefault,
     applyIntroGradientBaseline,
     setBaseGradientAlpha,
@@ -1643,65 +1742,7 @@ export async function initInteractiveMap() {
   });
 
   const applyViewportFitLayout = () => {
-    if (!mapHeader || !mapStage || !mapControls || !mapAnimationShell) {
-      return;
-    }
-
-    const viewportWidth = Math.max(1, Math.round(window.innerWidth || 1));
-    const viewportHeight = Math.max(1, Math.round(window.innerHeight || 1));
-    const isWideDesktop = viewportWidth >= 1140;
-
-    const topGap = isWideDesktop
-      ? Math.max(16, Math.min(36, Math.round(viewportHeight * 0.03)))
-      : Math.max(10, Math.min(22, Math.round(viewportHeight * 0.02)));
-    const bottomGap = isWideDesktop
-      ? Math.max(2, Math.min(10, Math.round(viewportHeight * 0.01)))
-      : Math.max(8, Math.min(16, Math.round(viewportHeight * 0.015)));
-    const controlsLift = isWideDesktop ? 14 : 0;
-
-    mapStage.style.marginTop = `${topGap}px`;
-    mapStage.style.marginBottom = `${bottomGap}px`;
-
-    if (!isWideDesktop) {
-      module.style.paddingTop = '';
-      module.style.paddingBottom = '';
-      mapControls.style.marginTop = '';
-      mapAnimationShell.style.width = '';
-      mapAnimationShell.style.height = '';
-      mapAnimationShell.style.maxWidth = '';
-      mapAnimationShell.style.aspectRatio = '';
-      return;
-    }
-
-    const sectionPadTop = Math.max(10, Math.min(20, Math.round(viewportHeight * 0.02)));
-    const sectionPadBottom = Math.max(6, Math.min(14, Math.round(viewportHeight * 0.012)));
-    module.style.paddingTop = `${sectionPadTop}px`;
-    module.style.paddingBottom = `${sectionPadBottom}px`;
-    mapControls.style.marginTop = `${-controlsLift}px`;
-
-    const ratioWidth = 1277;
-    const ratioHeight = 809;
-    const headerHeight = Math.round(mapHeader.getBoundingClientRect().height || 0);
-    const controlsHeight = Math.round(mapControls.getBoundingClientRect().height || 0);
-    const reservedHeight = isWideDesktop
-      ? sectionPadTop + sectionPadBottom + Math.max(0, controlsHeight - controlsLift) + topGap + bottomGap
-      : sectionPadTop + sectionPadBottom + headerHeight + controlsHeight + topGap + bottomGap;
-    const availableHeight = Math.max(320, viewportHeight - reservedHeight);
-
-    const inlineGutter = viewportWidth >= 1536 ? 56 : (viewportWidth >= 1280 ? 40 : 28);
-    const maxWidth = Math.max(520, viewportWidth - (inlineGutter * 2));
-
-    let targetHeight = availableHeight;
-    let targetWidth = Math.round((targetHeight * ratioWidth) / ratioHeight);
-    if (targetWidth > maxWidth) {
-      targetWidth = maxWidth;
-      targetHeight = Math.round((targetWidth * ratioHeight) / ratioWidth);
-    }
-
-    mapAnimationShell.style.width = `${targetWidth}px`;
-    mapAnimationShell.style.height = `${targetHeight}px`;
-    mapAnimationShell.style.maxWidth = '100%';
-    mapAnimationShell.style.aspectRatio = `${ratioWidth} / ${ratioHeight}`;
+    fitMapToViewport(module);
   };
 
   const bootstrapCanvas = async () => {
@@ -1731,8 +1772,17 @@ export async function initInteractiveMap() {
     }
     maskedGradientLayer = findGradientLayer(exportRoot);
     maskedGradientShape = maskedGradientLayer?.shape || null;
+    installIndiaMapMask();
+    installGradientBitmap();
     companyDotsLayer = findCompanyDotsLayer(exportRoot);
+    injectCmsOfficeDots(lib, companyDotsLayer);
     initializePinControllerFromLayer(companyDotsLayer);
+    if (module.dataset.mapVisual === 'india') {
+      // These controls describe product pathways, not geographic facility locations.
+      // Hide the old network markers while retaining the control buttons and cards.
+      if (companyDotsLayer) companyDotsLayer.visible = false;
+      hitpointsRoot.style.display = 'none';
+    }
     if (maskedGradientLayer) {
       maskedGradientLayer.alpha = runtimeGradientBaseAlpha;
     }
@@ -1741,29 +1791,6 @@ export async function initInteractiveMap() {
     stage = new lib.Stage(canvas);
     window.exportRoot = exportRoot;
     window.stage = stage;
-    rippleOverlay = runtimeRippleSettings.enabled
-      ? createRippleOverlay({
-        stage,
-        module,
-        canvas,
-        pointMap: parseJson(module.dataset.mapPointsJson || '', {}),
-        ease: runtimeRippleSettings.ease,
-        loopCount: runtimeRippleSettings.loopCount,
-        loopDelay: runtimeRippleSettings.loopDelay,
-        compositeOperation: runtimeRippleSettings.compositeOperation,
-        maskAnimation: false,
-        maskDisplayObject: maskedGradientLayer?.mask || maskedGradientShape,
-        ringCount: runtimeRippleSettings.ringCount,
-        staggerDelayMs: runtimeRippleSettings.staggerDelayMs,
-        ringDurationMs: runtimeRippleSettings.ringDurationMs,
-        maxScale: runtimeRippleSettings.maxScale,
-        maxAlpha: runtimeRippleSettings.maxAlpha,
-        ringRadius: runtimeRippleSettings.ringRadius,
-        ringStrokeWidth: runtimeRippleSettings.ringStrokeWidth,
-        poolSize: runtimeRippleSettings.poolSize,
-      })
-      : null;
-    module.__citadelRippleOverlay = rippleOverlay;
 
     const startAnimation = () => {
       stage.addChild(exportRoot);
@@ -1783,13 +1810,13 @@ export async function initInteractiveMap() {
       if (typeof IntersectionObserver !== 'undefined') {
         const visibilityObserver = new IntersectionObserver((entries) => {
           for (const entry of entries) {
-            stageIsVisible = entry.isIntersecting;
+            stageIsVisible = entry.isIntersecting && entry.intersectionRatio >= 0.02;
             syncStageTickSubscription();
             if (stageIsVisible) {
               renderStageOnce();
             }
           }
-        }, { threshold: 0 });
+        }, { threshold: [0, 0.02], rootMargin: '-112px 0px 0px 0px' });
         visibilityObserver.observe(canvas);
       }
     };
@@ -1816,6 +1843,7 @@ export async function initInteractiveMap() {
   renderControls();
 
   const dismissOnOutsideClick = (event) => {
+    if (module.dataset.mapLayout === 'split') return;
     if (cardRoot.hidden || !cardRoot.classList.contains('is-visible')) {
       return;
     }
@@ -1825,7 +1853,7 @@ export async function initInteractiveMap() {
       return;
     }
 
-    if (target.closest('.citadel-map-card') || target.closest('[data-map-controls]')) {
+    if (target.closest('.rivanta-map-card') || target.closest('[data-map-controls]')) {
       return;
     }
 
@@ -1840,8 +1868,13 @@ export async function initInteractiveMap() {
   }
 
   applyViewportFitLayout();
-  introController.primeMapIntro();
-  introController.armMapIntroOnViewportEntry();
+  if (module.dataset.mapLayout === 'split') {
+    module.dataset.loaded = 'true';
+    module.dataset.introState = 'resting';
+  } else {
+    introController.primeMapIntro();
+    introController.armMapIntroOnViewportEntry();
+  }
 
   if (typeof mobileMediaQuery.addEventListener === 'function') {
     mobileMediaQuery.addEventListener('change', (event) => {
@@ -1855,7 +1888,37 @@ export async function initInteractiveMap() {
     });
   }
 
-  window.addEventListener('resize', applyViewportFitLayout, { passive: true });
+
+  // Card placement and the mobile focus zoom are measured from live rects at
+  // render/focus time, so they drift when the viewport changes. Refresh the
+  // whole map presentation once resizing settles: re-fit the stage, recompute
+  // the mobile focus transform, redraw the canvas, and re-anchor the open card.
+  let mapResizeRefreshTimer = 0;
+  let lastRefreshViewportWidth = window.innerWidth;
+  window.addEventListener('resize', () => {
+    window.clearTimeout(mapResizeRefreshTimer);
+    mapResizeRefreshTimer = window.setTimeout(() => {
+      const widthChanged = window.innerWidth !== lastRefreshViewportWidth;
+      lastRefreshViewportWidth = window.innerWidth;
+
+      applyViewportFitLayout();
+
+      // Width changes invalidate the px-based zoom transform; height-only
+      // resizes (mobile browser toolbars) must not re-trigger the zoom tween.
+      const activeKey = overlayContainer.dataset.activePartner || '';
+      if (widthChanged && isMobileLayout && mobileFocusActive && activeKey) {
+        focusMobileOnPartner(activeKey);
+      }
+
+      // Force a canvas redraw even while the resting-state ticker is detached.
+      renderStageOnce();
+
+      if (!cardRoot.hidden && cardRoot.classList.contains('is-visible') && lastRenderedCardPartner) {
+        renderCard(lastRenderedCardPartner);
+      }
+    }, 150);
+  }, { passive: true });
+  document.addEventListener('visibilitychange', syncStageTickSubscription);
 
   module.dataset.status = 'booting';
 
@@ -1867,6 +1930,7 @@ export async function initInteractiveMap() {
     cardRoot.classList.remove('is-visible');
     cardRoot.hidden = true;
     module.dataset.status = 'ready';
+    if (module.dataset.mapLayout === 'split') setActive(partnerList[0].partner_key);
   } catch (error) {
     module.dataset.status = 'error';
     // eslint-disable-next-line no-console

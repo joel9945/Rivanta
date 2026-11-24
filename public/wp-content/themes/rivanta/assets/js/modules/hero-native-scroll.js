@@ -2,13 +2,13 @@
 export function initHeroCanvasSequence() {
   const hero=document.querySelector('[data-module="hero-canvas-sequence"]');
   if (!hero || hero.dataset.controller==='native-scroll') return;
-  const visual=hero.querySelector('.citadel-hero-visual');
-  const canvas=hero.querySelector('.citadel-hero-canvas');
+  const visual=hero.querySelector('.rivanta-hero-visual');
+  const canvas=hero.querySelector('.rivanta-hero-canvas');
   const context=canvas?.getContext('2d',{alpha:true});
   if (!visual || !context) return;
   hero.dataset.controller='native-scroll';
-  const openingVideo=hero.querySelector('.citadel-hero-video');
-  const closingVideo=hero.querySelector('.citadel-hero-video-secondary');
+  const openingVideo=hero.querySelector('.rivanta-hero-video');
+  const closingVideo=hero.querySelector('.rivanta-hero-video-secondary');
   const motion=matchMedia('(prefers-reduced-motion: reduce)');
   const metricNodes=['projects','project-value','employees-k'].map(name=>hero.querySelector(`[data-metric="${name}"]`));
   const metricTargets=[Number(hero.dataset.heroMetricTotalProjects)||3,Number(hero.dataset.heroMetricTotalProjectValueBn)||6,Number(hero.dataset.heroMetricCombinedEmployeesK)||1];
@@ -16,7 +16,7 @@ export function initHeroCanvasSequence() {
   const smoothstep=(start,end,value)=>{const t=clamp((value-start)/(end-start));return t*t*(3-2*t);};
   let width=1,height=1,top=0,range=1,pixelRatio=1;
   let target=0,progress=0,lastTime=0,raf=0,heroTrigger=null;
-  const getScrollY=()=>window.citadelScroll?.getY() ?? scrollY;
+  const getScrollY=()=>window.rivantaScroll?.getY() ?? scrollY;
   let inView=true,forceDraw=true,mask=null,maskWidth=1,maskHeight=1,mediaMode='';
   const propertyValues=new Map();
   const setProperty=(name,value)=>{
@@ -64,7 +64,7 @@ export function initHeroCanvasSequence() {
     const phase=progress<0.28 ? 'opening' : progress<0.55 ? 'takeover' : 'final';
     if(hero.dataset.visualPhase!==phase) {
       hero.dataset.visualPhase=phase;
-      dispatchEvent(new Event('citadel:hero-phase'));
+      dispatchEvent(new Event('rivanta:hero-phase'));
     }
     metricNodes.forEach((node,index)=>{
       if(!node) return;
@@ -91,7 +91,7 @@ export function initHeroCanvasSequence() {
     lastTime=time;
     target=motion.matches ? 0 : clamp((getScrollY()-top)/range);
     // ScrollSmoother already interpolates the page; do not add a second lag.
-    const next=window.citadelScroll || !inView || motion.matches ? target : progress+(target-progress)*(1-Math.exp(-dt/65));
+    const next=window.rivantaScroll || !inView || motion.matches ? target : progress+(target-progress)*(1-Math.exp(-dt/65));
     const changed=Math.abs(next-progress)>0.0001;
     progress=Math.abs(target-next)<0.0004 ? target : next;
     if(changed || forceDraw) {forceDraw=false;draw();}
@@ -101,7 +101,7 @@ export function initHeroCanvasSequence() {
   const measure=()=>{
     const rect=visual.getBoundingClientRect();
     width=Math.max(1,Math.round(rect.width));height=Math.max(1,Math.round(rect.height));
-    top=window.citadelScroll?.getTop(hero) ?? scrollY+hero.getBoundingClientRect().top;range=height*2.2;
+    top=window.rivantaScroll?.getTop(hero) ?? scrollY+hero.getBoundingClientRect().top;range=height*2.2;
     pixelRatio=Math.min(devicePixelRatio||1,width<768 ? 1.25 : 1.5);
     const w=Math.round(width*pixelRatio),h=Math.round(height*pixelRatio);
     if(canvas.width!==w || canvas.height!==h) {canvas.width=w;canvas.height=h;}
@@ -109,21 +109,21 @@ export function initHeroCanvasSequence() {
     hero.dataset.sequenceReleaseBoundaryY=String(Math.round(top+range));
     hero.dataset.motion=motion.matches ? 'reduced' : 'standard';
     hero.dataset.sequenceLock='0';forceDraw=true;schedule();
-    if (window.citadelScroll && !heroTrigger && !motion.matches) {
-      heroTrigger=window.citadelScroll.pinHero(hero,hero.querySelector('.citadel-hero-pin'),()=>range);
+    if (window.rivantaScroll && !heroTrigger && !motion.matches) {
+      heroTrigger=window.rivantaScroll.pinHero(hero,hero.querySelector('.rivanta-hero-pin'),()=>range);
     }
     if (heroTrigger) {
       if (motion.matches) heroTrigger.disable();
       else heroTrigger.enable();
     }
-    dispatchEvent(new Event('citadel:layout'));
+    dispatchEvent(new Event('rivanta:layout'));
   };
   hero.getSequenceNavigationState=()=>({motion:motion.matches ? 'reduced' : 'standard',active:false,locked:false,complete:target>=1,releaseBoundaryY:top+range});
   // Section links never wait for the animation or video playback.
   hero.queueAnchorNavigation=()=>false;
   hero.clearQueuedAnchorNavigation=()=>true;
   addEventListener('scroll',schedule,{passive:true});
-  addEventListener('citadel:scroll',()=>{
+  addEventListener('rivanta:scroll',()=>{
     if(document.hidden) return;
     // ScrollSmoother has already rendered this frame. Draw in that same tick;
     // queuing another RAF makes a fast reversal visibly trail by a frame.

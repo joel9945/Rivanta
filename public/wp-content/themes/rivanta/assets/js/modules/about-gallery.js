@@ -14,7 +14,7 @@ export function initAboutGallery() {
     return;
   }
 
-  const section = module.closest('.citadel-about');
+  const section = module.closest('.rivanta-about');
   const compactLayout = window.matchMedia('(max-width: 767px)');
   const copyFields = [
     ['[data-about-copy-title]', 'aboutTitle'],

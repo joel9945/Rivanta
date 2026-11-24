@@ -52,7 +52,7 @@ export default function ContactModal() {
   useEffect(() => {
     if (isOpen) {
       // Pause GSAP smoother scroll if active
-      window.citadelScroll?.smoother?.paused(true);
+      window.rivantaScroll?.smoother?.paused(true);
       document.documentElement.style.overflow = 'hidden';
       document.body.style.overflow = 'hidden';
 
@@ -89,7 +89,7 @@ export default function ContactModal() {
         window.removeEventListener('keydown', handleKeyDown);
       };
     } else {
-      window.citadelScroll?.smoother?.paused(false);
+      window.rivantaScroll?.smoother?.paused(false);
       document.documentElement.style.overflow = '';
       document.body.style.overflow = '';
       if (previousActiveElement.current && typeof previousActiveElement.current.focus === 'function') {

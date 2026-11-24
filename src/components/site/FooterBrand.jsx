@@ -9,9 +9,9 @@ export function FooterBrand({ isSubpage = false }) {
   ];
 
   return (
-    <section aria-label="Rivanta footer" className="citadel-footer-brand rivanta-footer-brand bg-dark text-citadel-light-grey overflow-visible" id="footer-brand" suppressHydrationWarning>
-      <div className="citadel-container container" suppressHydrationWarning>
-        <div className="citadel-footer-brand-headline rivanta-footer-headline">
+    <section aria-label="Rivanta footer" className="rivanta-footer-brand rivanta-footer-brand bg-dark text-rivanta-light-grey overflow-visible" id="footer-brand" suppressHydrationWarning>
+      <div className="rivanta-container container" suppressHydrationWarning>
+        <div className="rivanta-footer-brand-headline rivanta-footer-headline">
           <div className="rivanta-footer-artwork-frame">
             <img alt="RIVANTA — Warm Industrial Stories" className="rivanta-footer-artwork" decoding="async" height="821" loading="lazy" src="/RIVANTA_%20Warm%20Industrial%20Stories.png" width="1916"/>
           </div>
@@ -64,7 +64,7 @@ export function FooterBrand({ isSubpage = false }) {
           <div className="rivanta-footer-bottom">
             <p>© 2026 Rivanta Green Innovative Venture Private Limited.</p>
             <div className="rivanta-footer-bottom-links">
-              <a className="rivanta-footer-linkedin" href="https://www.linkedin.com/company/rivantagreen" target="_blank" rel="noopener noreferrer"><img src="/wp-content/themes/citadel-construction-group/assets/social/linkedin.svg" width="16" height="16" alt="" aria-hidden="true"/>LinkedIn</a>
+              <a className="rivanta-footer-linkedin" href="https://www.linkedin.com/company/rivantagreen" target="_blank" rel="noopener noreferrer"><img src="/wp-content/themes/rivanta/assets/social/linkedin.svg" width="16" height="16" alt="" aria-hidden="true"/>LinkedIn</a>
               <a className="rivanta-footer-back-top" href={isSubpage ? "#" : "#hero"}>Back to top</a>
             </div>
           </div>

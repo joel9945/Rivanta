@@ -164,7 +164,7 @@ export function createRippleOverlay({
   }
 
   const rippleContainer = new createjs.Container();
-  rippleContainer.name = 'citadel-ripple-overlay';
+  rippleContainer.name = 'rivanta-ripple-overlay';
   rippleContainer.mouseEnabled = false;
   rippleContainer.mouseChildren = false;
   rippleContainer.compositeOperation = compositeOperation;
@@ -212,9 +212,9 @@ export function createRippleOverlay({
       return;
     }
 
-    if (ring.__citadelRippleTween) {
+    if (ring.__rivantaRippleTween) {
       createjs.Tween.removeTweens(ring);
-      ring.__citadelRippleTween = null;
+      ring.__rivantaRippleTween = null;
     }
 
     if (ring.parent === rippleContainer) {
@@ -244,7 +244,7 @@ export function createRippleOverlay({
 
       const targetScale = maxScale + (index * 0.18);
       const tween = createjs.Tween.get(ring, { override: true });
-      ring.__citadelRippleTween = tween;
+      ring.__rivantaRippleTween = tween;
       const easeFn = resolveEaseFn(easingOptions[index % easingOptions.length]);
 
       // Staggered tween start times distribute ring animation work across frames to prevent workload spikes and maintain smooth playback.

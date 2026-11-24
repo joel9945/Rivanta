@@ -1,16 +1,16 @@
 /**
  * header-logo-canvas.js
  *
- * Renders the Citadel header logo on a createjs canvas and animates the
+ * Renders the Rivanta header logo on a createjs canvas and animates the
  * US-outline path being drawn on as a stroke when the page first loads.
  *
  * How it works:
  *   1. The SVG logo file is fetched and parsed. The US outline path
- *      (#us_x5F_outline_x5F_path), the CITADEL letter group (#citadel),
+ *      (#us_x5F_outline_x5F_path), the RIVANTA letter group (#rivanta),
  *      and the tagline group (#national_x5F_construction_x5F_group) are
  *      extracted separately.
  *   2. A createjs Stage is created on the <canvas data-logo-canvas> element.
- *      Static tagline shapes are drawn once in grey. CITADEL letter shapes
+ *      Static tagline shapes are drawn once in grey. RIVANTA letter shapes
  *      are redrawn whenever the logo color needs to change (white on dark
  *      backgrounds, black on light backgrounds).
  *   3. On page load the US outline strokes on over TRACE_DURATION_MS using
@@ -19,13 +19,13 @@
  *   4. The stroke color flips to white when the hero enters its locked orange
  *      phase, and back to orange when the hero is at rest or the user has
  *      scrolled past it.
- *   5. The CITADEL letter color is re-evaluated on scroll and section change
+ *   5. The RIVANTA letter color is re-evaluated on scroll and section change
  *      by sampling the background color of whichever page section sits
  *      directly below the header.
  *
  * Dependencies:
  *   - createjs (loaded dynamically from the CDN URL in data-logo-createjs-url)
- *   - SVG logo served from data-logo-svg-url (citadel-logo-svg-line.svg)
+ *   - SVG logo served from data-logo-svg-url (rivanta-logo-svg-line.svg)
  *
  * Triggered by:
  *   main.js → initHeaderLogoCanvas()
@@ -604,7 +604,7 @@ const getSectionForColorSampling = (headerElement) => {
     }
   }
 
-  const homepage = document.querySelector('main.citadel-homepage');
+  const homepage = document.querySelector('main.rivanta-homepage');
   const sectionNodes = homepage ? Array.from(homepage.querySelectorAll('section[id]')) : [];
   for (const sectionNode of sectionNodes) {
     const rect = sectionNode.getBoundingClientRect();
@@ -694,10 +694,10 @@ export async function initHeaderLogoCanvas() {
   }
 
   const usOutlineElement = svgRoot.querySelector('#us_x5F_outline_x5F_path');
-  const citadelElements = Array.from(svgRoot.querySelectorAll('#citadel > *'));
+  const rivantaElements = Array.from(svgRoot.querySelectorAll('#rivanta > *, #rivanta > *'));
   const staticElements = Array.from(svgRoot.querySelectorAll('#national_x5F_construction_x5F_group > *'));
 
-  if (!usOutlineElement || citadelElements.length === 0 || staticElements.length === 0) {
+  if (!usOutlineElement || rivantaElements.length === 0 || staticElements.length === 0) {
     return;
   }
 
@@ -711,7 +711,7 @@ export async function initHeaderLogoCanvas() {
 
   const root = new createjsGlobal.Container();
   const staticContainer = new createjsGlobal.Container();
-  const citadelContainer = new createjsGlobal.Container();
+  const rivantaContainer = new createjsGlobal.Container();
   const traceShape = new createjsGlobal.Shape();
 
   staticElements.forEach((element) => {
@@ -721,20 +721,20 @@ export async function initHeaderLogoCanvas() {
     staticContainer.addChild(shape);
   });
 
-  const citadelShapes = citadelElements.map((element) => {
+  const rivantaShapes = rivantaElements.map((element) => {
     const shape = new createjsGlobal.Shape();
-    citadelContainer.addChild(shape);
+    rivantaContainer.addChild(shape);
     return { shape, element };
   });
 
-  const applyCitadelColor = (nextColor) => {
-    citadelShapes.forEach(({ shape, element }) => {
+  const applyRivantaColor = (nextColor) => {
+    rivantaShapes.forEach(({ shape, element }) => {
       shape.graphics.clear().f(nextColor).s();
       drawSvgElement(shape.graphics, element);
     });
   };
 
-  root.addChild(staticContainer, citadelContainer, traceShape);
+  root.addChild(staticContainer, rivantaContainer, traceShape);
   stage.addChild(root);
 
   const sampledTracePoints = HEADER_LOGO_TRACE_POINTS;
@@ -742,7 +742,7 @@ export async function initHeaderLogoCanvas() {
   const startedAt = performance.now();
   let isTraceDone = sampledTracePoints.length === 0 || prefersReducedMotion;
   let currentTraceProgress = isTraceDone ? 1 : 0;
-  let currentCitadelColor = COLOR_LIGHT;
+  let currentRivantaColor = COLOR_LIGHT;
   let currentUsOutlineColor = COLOR_ORANGE;
 
   const syncCanvasResolution = () => {
@@ -765,7 +765,7 @@ export async function initHeaderLogoCanvas() {
     drawTraceProgress(traceShape, sampledTracePoints, currentTraceProgress, currentUsOutlineColor);
   };
 
-  const refreshCitadelColor = () => {
+  const refreshRivantaColor = () => {
     const section = getSectionForColorSampling(header);
     if (!section) {
       return;
@@ -773,12 +773,12 @@ export async function initHeaderLogoCanvas() {
 
     const sectionBackground = resolveBackgroundColor(section);
     const nextColor = chooseContrastingColor(sectionBackground);
-    if (nextColor === currentCitadelColor) {
+    if (nextColor === currentRivantaColor) {
       return;
     }
 
-    currentCitadelColor = nextColor;
-    applyCitadelColor(currentCitadelColor);
+    currentRivantaColor = nextColor;
+    applyRivantaColor(currentRivantaColor);
     stage.update();
   };
 
@@ -792,14 +792,14 @@ export async function initHeaderLogoCanvas() {
     stage.update();
   };
 
-  applyCitadelColor(currentCitadelColor);
+  applyRivantaColor(currentRivantaColor);
   applyUsOutlineColor(currentUsOutlineColor);
   if (isTraceDone) {
     drawTraceProgress(traceShape, sampledTracePoints, 1, currentUsOutlineColor);
   }
 
   syncCanvasResolution();
-  refreshCitadelColor();
+  refreshRivantaColor();
   refreshUsOutlineColor();
 
   if (!isTraceDone) {
@@ -834,7 +834,7 @@ export async function initHeaderLogoCanvas() {
 
   if (header && typeof MutationObserver !== 'undefined') {
     const headerObserver = new MutationObserver(() => {
-      refreshCitadelColor();
+      refreshRivantaColor();
       refreshUsOutlineColor();
     });
 
@@ -863,15 +863,15 @@ export async function initHeaderLogoCanvas() {
 
     ticking = true;
     window.requestAnimationFrame(() => {
-      refreshCitadelColor();
+      refreshRivantaColor();
       refreshUsOutlineColor();
       ticking = false;
     });
   };
 
   window.addEventListener('scroll', refreshOnScroll, { passive: true });
-  window.addEventListener('citadel:scroll', refreshOnScroll);
-  window.addEventListener('citadel:hero-phase', refreshOnScroll);
+  window.addEventListener('rivanta:scroll', refreshOnScroll);
+  window.addEventListener('rivanta:hero-phase', refreshOnScroll);
 
   brand.classList.add('is-logo-canvas-ready');
   fallbackLogo.setAttribute('aria-hidden', 'true');

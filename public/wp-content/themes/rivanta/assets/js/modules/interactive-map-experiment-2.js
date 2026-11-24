@@ -479,7 +479,7 @@ export async function initInteractiveMap() {
     };
 
     const style = getComputedStyle(cardRoot);
-    const baseOffsetPx = parseCssLengthToPx(style.getPropertyValue('--citadel-map-card-offset'));
+    const baseOffsetPx = parseCssLengthToPx(style.getPropertyValue('--rivanta-map-card-offset'));
     const cardSizePx = measureCardSize();
     const pinX = x * mapRect.width;
     const pinY = y * mapRect.height;
@@ -689,18 +689,18 @@ export async function initInteractiveMap() {
       ? `<img src="${escapeHtml(partner.logo_url)}" alt="${escapeHtml(partner.name || 'Partner')}" loading="lazy">`
       : '';
     const websiteHtml = partner.website_url
-      ? `<a class="citadel-map-visit" href="${escapeHtml(partner.website_url)}" target="_blank" rel="noopener noreferrer">Visit Partner</a>`
+      ? `<a class="rivanta-map-visit" href="${escapeHtml(partner.website_url)}" target="_blank" rel="noopener noreferrer">Visit Partner</a>`
       : '';
 
     cardRoot.dataset.placement = position.placement;
     setMobileCardMode();
     if (position.offsetPx) {
-      cardRoot.style.setProperty('--citadel-map-card-offset', `${position.offsetPx}px`);
+      cardRoot.style.setProperty('--rivanta-map-card-offset', `${position.offsetPx}px`);
     }
-    cardRoot.style.setProperty('--citadel-map-card-x', `${position.x * 100}%`);
-    cardRoot.style.setProperty('--citadel-map-card-y', `${position.y * 100}%`);
+    cardRoot.style.setProperty('--rivanta-map-card-x', `${position.x * 100}%`);
+    cardRoot.style.setProperty('--rivanta-map-card-y', `${position.y * 100}%`);
     cardRoot.innerHTML = `
-      <div class="citadel-map-card-inner">
+      <div class="rivanta-map-card-inner">
         ${logoHtml}
         <h3>${escapeHtml(partner.name || 'Partner')}</h3>
         <p>${escapeHtml(locationLabel)}</p>
@@ -895,7 +895,7 @@ export async function initInteractiveMap() {
       const point = getPartnerPoint(partner, pointMap);
       const button = document.createElement('button');
       button.type = 'button';
-      button.className = 'citadel-map-hitpoint';
+      button.className = 'rivanta-map-hitpoint';
       button.dataset.partnerKey = partner.partner_key || partner.name || partner.short_name || String(index);
       button.style.setProperty('--map-hitpoint-x', `${point.x * 100}%`);
       button.style.setProperty('--map-hitpoint-y', `${point.y * 100}%`);
@@ -1045,7 +1045,7 @@ export async function initInteractiveMap() {
     controlsRoot.querySelectorAll('button[data-partner-key]').forEach((button) => {
       const partner = partnerLookup.get(normalizeKey(button.getAttribute('data-partner-key')));
       if (partner?.highlight_color && isHexColor(partner.highlight_color)) {
-        button.style.setProperty('--citadel-map-partner-highlight-color', partner.highlight_color);
+        button.style.setProperty('--rivanta-map-partner-highlight-color', partner.highlight_color);
       }
 
       bindPartnerActivation(button, button.getAttribute('data-partner-key'));
@@ -1107,7 +1107,7 @@ export async function initInteractiveMap() {
       ringStrokeWidth: 3,
       poolSize: 3,
     });
-    module.__citadelRippleOverlay = rippleOverlay;
+    module.__rivantaRippleOverlay = rippleOverlay;
 
     const startAnimation = () => {
       stage.addChild(exportRoot);

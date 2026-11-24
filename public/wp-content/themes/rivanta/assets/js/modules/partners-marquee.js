@@ -46,7 +46,7 @@ export function initPartnersMarquee() {
   const requestedDirection = module.dataset.marqueeDirection || 'left';
   const direction = requestedDirection === 'right' ? 'right' : 'left';
   module.style.setProperty('--marquee-duration', `${durationSeconds}s`);
-  module.style.setProperty('--marquee-animation-name', direction === 'right' ? 'citadel-marquee-right' : 'citadel-marquee-left');
+  module.style.setProperty('--marquee-animation-name', direction === 'right' ? 'rivanta-marquee-right' : 'rivanta-marquee-left');
   module.dataset.marqueeDirection = direction;
   module.dataset.marqueeInViewOnly = inViewOnly ? '1' : '0';
   module.dataset.marqueeReducedMotionMode = reducedMotionMode;
@@ -89,7 +89,7 @@ export function initPartnersMarquee() {
     pause();
   };
 
-  const logoNodes = Array.from(list.querySelectorAll('.citadel-partners-logo-link'));
+  const logoNodes = Array.from(list.querySelectorAll('.rivanta-partners-logo-link'));
 
   const swapToActiveLogo = (logoNode) => {
     const image = logoNode.querySelector('img[data-marquee-logo-active-src]');

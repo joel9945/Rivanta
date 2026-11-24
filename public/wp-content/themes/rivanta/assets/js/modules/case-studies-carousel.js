@@ -65,7 +65,7 @@ export function initCaseStudiesCarousel() {
     if (modal && modalOriginalParent && modal.parentElement === document.body) {
       modalOriginalParent.appendChild(modal);
     }
-    window.citadelScroll?.smoother.paused(false);
+    window.rivantaScroll?.smoother.paused(false);
     modalState.isOpen = false;
     document.documentElement.classList.remove('is-case-study-modal-open');
     document.body.classList.remove('is-case-study-modal-open');
@@ -183,7 +183,7 @@ export function initCaseStudiesCarousel() {
     modalState.opener = trigger;
     modalState.isOpen = true;
     modal.hidden = false;
-    window.citadelScroll?.smoother.paused(true);
+    window.rivantaScroll?.smoother.paused(true);
     module.dataset.caseStudyModalState = 'open';
     document.documentElement.classList.add('is-case-study-modal-open');
     document.body.classList.add('is-case-study-modal-open');
@@ -271,7 +271,7 @@ export function initCaseStudiesCarousel() {
       const isCut = naturalHeights[index] > target + 1;
 
       if (isCut) {
-        const description = copy.querySelector('.citadel-case-studies-description');
+        const description = copy.querySelector('.rivanta-case-studies-description');
         if (description) {
           const lineHeight = Number.parseFloat(window.getComputedStyle(description).lineHeight) || 20;
           const availableHeight = target - description.offsetTop;
@@ -579,7 +579,7 @@ export function initCaseStudiesCarousel() {
         embla.scrollSnapList().forEach((_, index) => {
           const dot = document.createElement('button');
           dot.type = 'button';
-          dot.className = 'citadel-carousel-dot is-future';
+          dot.className = 'rivanta-carousel-dot is-future';
           dot.setAttribute('role', 'tab');
           dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
           dot.addEventListener('click', () => embla.scrollTo(index));
@@ -701,7 +701,7 @@ export function initCaseStudiesCarousel() {
       updateArrowPositions();
       showArrows();
       module.dataset.status = 'ready';
-      window.dispatchEvent(new Event('citadel:layout-ready'));
+      window.dispatchEvent(new Event('rivanta:layout-ready'));
     })
     .catch((error) => {
       module.dataset.status = 'embla-load-failed';

@@ -19,7 +19,7 @@
   and the anchor/queue systems behave exactly as before.
 */
 
-const getStorageKey = () => `citadel-scroll-position:${window.location.pathname}${window.location.search}`;
+const getStorageKey = () => `rivanta-scroll-position:${window.location.pathname}${window.location.search}`;
 
 const isReloadNavigation = () => {
   try {
@@ -47,7 +47,7 @@ export function initScrollRestoration() {
   let saveRafId = null;
   const saveScrollPosition = () => {
     try {
-      sessionStorage.setItem(storageKey, String(Math.round(window.citadelScroll?.getY() ?? window.scrollY ?? 0)));
+      sessionStorage.setItem(storageKey, String(Math.round(window.rivantaScroll?.getY() ?? window.scrollY ?? 0)));
     } catch {
       // Storage may be unavailable (private mode quotas); restoration is optional.
     }
@@ -125,7 +125,7 @@ export function initScrollRestoration() {
     }
 
     const maxScroll = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
-    if (window.citadelScroll) window.citadelScroll.to(Math.min(savedY, maxScroll), false);
+    if (window.rivantaScroll) window.rivantaScroll.to(Math.min(savedY, maxScroll), false);
     else window.scrollTo({ top: Math.min(savedY, maxScroll), behavior: 'instant' });
   };
 

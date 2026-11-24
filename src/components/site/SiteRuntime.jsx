@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 
 function createScrollRuntime() {
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
-  const notify = () => window.dispatchEvent(new Event('citadel:scroll'));
+  const notify = () => window.dispatchEvent(new Event('rivanta:scroll'));
   let pendingAnchor = null;
   let anchorFrame = 0;
   let destroyed = false;
@@ -50,7 +50,7 @@ function createScrollRuntime() {
     },
     pinHero: () => null,
   };
-  window.citadelScroll = bridge;
+  window.rivantaScroll = bridge;
 
   let scrollTicking = false;
   const onScroll = () => {
@@ -73,7 +73,7 @@ function createScrollRuntime() {
     cancelAnchor();
     window.removeEventListener('scroll', onScroll);
     inputEvents.forEach((type) => window.removeEventListener(type, cancelAnchor));
-    delete window.citadelScroll;
+    delete window.rivantaScroll;
     delete document.documentElement.dataset.scrollEngine;
   };
 
@@ -86,17 +86,17 @@ export default function SiteRuntime() {
     const content = document.getElementById('smooth-content');
     if (!wrapper || !content) return;
 
-    const runtime = window.citadelScroll || createScrollRuntime();
+    const runtime = window.rivantaScroll || createScrollRuntime();
     clearTimeout(runtime.disposeTimer);
     runtime.users = (runtime.users || 0) + 1;
 
-    if (typeof window.bootCitadelModules === 'function') {
-      window.bootCitadelModules();
-    } else if (!document.querySelector('script[data-citadel-runtime]')) {
+    if (typeof window.bootRivantaModules === 'function') {
+      window.bootRivantaModules();
+    } else if (!document.querySelector('script[data-rivanta-runtime]')) {
       const script = document.createElement('script');
       script.type = 'module';
-      script.src = '/wp-content/themes/citadel-construction-group/assets/js/main.js?ver=india-map-20261118';
-      script.dataset.citadelRuntime = 'true';
+      script.src = '/wp-content/themes/rivanta/assets/js/main.js?ver=india-map-20261118';
+      script.dataset.rivantaRuntime = 'true';
       document.body.appendChild(script);
     }
 

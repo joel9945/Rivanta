@@ -5,7 +5,7 @@ export function initRandomizedHomepageLists() {
   }
 
   const applyFooterPartnerDesktopRows = (list) => {
-    if (!list.classList.contains('citadel-footer-brand-partners')) {
+    if (!list.classList.contains('rivanta-footer-brand-partners')) {
       return;
     }
 

@@ -155,7 +155,7 @@ export async function initFooterParallaxGradient() {
     const { width, height } = geometry;
     const animationEnabled = !prefersReducedMotion.matches && window.innerWidth > MOBILE_MAX_WIDTH;
     const maxScrollable = Math.max((document.documentElement.scrollHeight || 1) - (window.innerHeight || 1), 1);
-    const scrollProgress = animationEnabled ? clamp((window.citadelScroll?.getY() ?? window.scrollY ?? 0) / maxScrollable, 0, 1) : 0.5;
+    const scrollProgress = animationEnabled ? clamp((window.rivantaScroll?.getY() ?? window.scrollY ?? 0) / maxScrollable, 0, 1) : 0.5;
     const cycle = animationEnabled ? ((timestamp % LOOP_DURATION_MS) / LOOP_DURATION_MS) * Math.PI * 2 : 0;
     const secondaryCycle = animationEnabled
       ? ((timestamp % SECONDARY_LOOP_DURATION_MS) / SECONDARY_LOOP_DURATION_MS) * Math.PI * 2

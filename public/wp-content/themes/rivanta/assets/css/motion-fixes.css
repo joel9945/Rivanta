@@ -1,0 +1,142 @@
+/* Stable geometry: animation changes pixels, never the scroll position. */
+@font-face {
+  font-family:'Manrope';
+  font-style:normal;
+  font-weight:400 800;
+  font-display:swap;
+  src:url('../fonts/Manrope-Variable-Latin.woff2') format('woff2');
+}
+html { scroll-behavior:auto; scrollbar-gutter:stable; background:#000; }
+#smooth-content { width:100%; }
+.rivanta-brand-logo { display:block; height:auto; aspect-ratio:2160 / 520; }
+.rivanta-header-logo { width:clamp(180px,17vw,246px); }
+.rivanta-site-header-brand { flex-shrink:0; }
+.rivanta-brand-logo [data-logo-typography] [fill="#FFFFFF"] { fill:var(--rivanta-logo-ink, #fff); }
+.rivanta-site-header[data-logo-tone="dark"] .rivanta-header-logo [fill]:not([fill="none"]) { fill:#111111; }
+.rivanta-site-header[data-logo-tone="dark"] .rivanta-header-logo [stroke]:not([stroke="none"]) { stroke:#111111; }
+@media (max-width:767px) {
+  .rivanta-header-logo { width:min(48vw,190px); }
+}
+.rivanta-footer-brand .rivanta-container { width:100%; max-width:100%; margin-inline:0; }
+/* Crop the transparent padding without stretching the supplied artwork.
+   The 1916x821 image contains a visible 1849x521 wordmark. */
+.rivanta-footer-headline { display:grid; justify-items:center; aspect-ratio:auto; margin-bottom:0; }
+.rivanta-footer-artwork-frame { position:relative; width:min(76%,1320px); aspect-ratio:1849 / 521; margin-inline:auto; overflow:hidden; }
+@media (max-width:767px) {
+  .rivanta-footer-artwork-frame { width:90%; }
+}
+.rivanta-footer-brand .rivanta-footer-content {
+  padding-top:clamp(3rem,6vw,6rem);
+  padding-bottom:clamp(2rem,4vw,4rem);
+}
+.rivanta-footer-headline::after {
+  content:"";
+  position:absolute;
+  z-index:1;
+  top:-1px;
+  left:0;
+  right:0;
+  height:28%;
+  min-height:24px;
+  background:linear-gradient(to bottom, #fff 0%, #fff 3%, rgba(255,255,255,.85) 22%, rgba(255,255,255,.45) 50%, rgba(255,255,255,.12) 76%, rgba(255,255,255,0) 100%);
+  pointer-events:none;
+}
+.rivanta-footer-artwork {
+  position:absolute;
+  display:block;
+  max-width:none;
+  width:103.624%;
+  height:auto;
+  left:-2.975%;
+  top:-28.599%;
+}
+html[data-scroll-engine="gsap"] .rivanta-hero-pin { position:relative; }
+.rivanta-site-header { width:100%; max-width:100%; }
+.rivanta-site-header-inner { max-width:100%; }
+.rivanta-hero { --hero-stage-vh:100svh; --hero-live-vh:100svh; --hero-scroll-distance-px:320svh; --hero-vv-offset-top:0px; overflow-anchor:none; }
+#case-studies { --case-studies-copy-height:500px; }
+.rivanta-case-studies-partner-logo-wrap { height:60px; min-height:60px; flex:0 0 60px; }
+.rivanta-case-studies-partner-logo { max-height:52px; }
+.rivanta-case-studies .rivanta-carousel-dots {
+  min-height:var(--pager-dot-size);
+  min-width:calc(7 * var(--pager-dot-size) + var(--pager-active-width) + 7 * clamp(.52rem,.42vw,.78rem));
+}
+.rivanta-hero-pin { top:0; }
+.rivanta-hero-visual { perspective:none; }
+.rivanta-hero-canvas { inset:0; width:100%; height:100%; transform:none; zoom:1; }
+.rivanta-hero-opening,.rivanta-hero-final { backface-visibility:hidden; will-change:opacity,transform; }
+.rivanta-hero-opening { padding-inline:20px; }
+.rivanta-hero-final { padding:100px 24px 32px; }
+.rivanta-hero-metrics { max-height:none; margin-top:clamp(2rem,6vh,3.4rem); overflow:visible; }
+.rivanta-hero-final-text { transform:translateY(calc((1 - var(--hero-metrics-visibility)) * 20px)); }
+.rivanta-hero-final,
+.rivanta-hero-final p,
+.rivanta-hero-final span { font-family:'Manrope',sans-serif; }
+.rivanta-hero-final .rivanta-hero-final-text,
+.rivanta-hero-final .rivanta-hero-metric-value { color:#21170F; font-weight:700; }
+.rivanta-hero-final .rivanta-hero-metric-label { color:#38291F; font-weight:500; }
+.rivanta-site-header[data-logo-tone="dark"] :is(.rivanta-site-nav-link,.rivanta-site-header-cta,.rivanta-mobile-nav-arrow) {
+  font-family:'Manrope',sans-serif;
+  color:#21170F;
+}
+/* The existing navigation controller assigns the CTA's color inline. */
+.rivanta-site-header[data-logo-tone="dark"] .rivanta-site-header-cta { color:#21170F !important; }
+section[id] { scroll-margin-top:112px; }
+.rivanta-map,.rivanta-case-studies { overflow-anchor:none; }
+/* Large standalone wordmarks within the existing full-width marquee. */
+#partners { --rivanta-pathway-gap:clamp(28px,2.5vw,48px); min-height:0; padding-block:clamp(96px,10vw,192px); font-family:'Manrope',sans-serif; -webkit-font-smoothing:antialiased; }
+#partners #partners-title { max-width:1760px; margin:0 auto clamp(64px,6.5vw,124px); padding-inline:40px; color:#f5f3ef; font-family:'Manrope',sans-serif; font-size:clamp(30px,2.8vw,54px); font-weight:400; line-height:1.25; letter-spacing:.01em; text-align:center; text-transform:none; }
+#partners .rivanta-pathway-heading { display:inline; font-weight:650; }
+#partners .rivanta-pathway-subheading { display:inline; color:inherit; font-size:1em; font-weight:400; letter-spacing:inherit; }
+#partners .rivanta-partners-list.is-marquee-animated { gap:var(--rivanta-pathway-gap); padding-right:var(--rivanta-pathway-gap); }
+#partners .rivanta-partners-item { flex:0 0 clamp(200px,12.8vw,260px); width:clamp(200px,12.8vw,260px); min-width:0; padding:0; }
+#partners .rivanta-partners-logo-link { height:80px; min-height:80px; gap:12px; padding:0; border:0; border-radius:0; background:transparent; color:#d2d2d2; white-space:normal; transition:color .18s ease; }
+#partners .rivanta-partners-logo-link svg { flex:0 0 50px; width:50px; height:50px; color:currentColor; }
+#partners .rivanta-partners-logo-link span { min-width:0; font-family:inherit; font-size:clamp(22px,1.55vw,30px); font-weight:650; line-height:1.08; letter-spacing:.015em; text-align:left; text-transform:none; }
+#partners .rivanta-partners-logo-link:hover,
+#partners .rivanta-partners-logo-link:focus-visible { color:#f79b35; background:transparent; }
+#partners .rivanta-partners-logo-link:focus-visible { outline:2px solid #f79b35; outline-offset:-4px; }
+#partners .rivanta-partners-list:not(.is-marquee-animated) { display:flex; flex-wrap:wrap; justify-content:center; width:100%; margin:0; padding:0 20px; gap:24px; }
+@media (min-width:768px) and (max-width:1139px) {
+  #case-studies { --case-studies-copy-height:400px; }
+}
+@media (max-width:767px) {
+  #partners { --rivanta-pathway-gap:24px; padding-block:64px; }
+  #partners #partners-title { margin-bottom:40px; padding-inline:24px; font-size:26px; }
+  #partners .rivanta-pathway-heading { display:block; }
+  #partners .rivanta-pathway-subheading { display:block; margin-top:8px; font-size:.8em; }
+  #partners .rivanta-partners-item { flex-basis:220px; width:220px; }
+  #partners .rivanta-partners-logo-link { height:72px; min-height:72px; gap:10px; }
+  #partners .rivanta-partners-logo-link svg { flex-basis:44px; width:44px; height:44px; }
+  #partners .rivanta-partners-logo-link span { font-size:24px; }
+  #partners .rivanta-partners-list:not(.is-marquee-animated) .rivanta-partners-item { flex-basis:calc(50% - 12px); width:calc(50% - 12px); }
+  #partners .rivanta-partners-list:not(.is-marquee-animated) .rivanta-partners-logo-link svg { flex-basis:28px; width:28px; height:28px; }
+  #partners .rivanta-partners-list:not(.is-marquee-animated) .rivanta-partners-logo-link span { font-size:16px; }
+  #case-studies { --case-studies-copy-height:200px; }
+  .rivanta-site-header .rivanta-site-header-inner { width:100%; box-sizing:border-box; }
+  .rivanta-hero-final { padding:92px 20px 24px; }
+  .rivanta-hero-final-text { font-size:clamp(1.7rem,7vw,2.5rem); }
+  .rivanta-hero-metrics { grid-template-columns:repeat(3,minmax(0,1fr)); width:100%; gap:clamp(8px,2.5vw,16px); margin-top:24px; }
+  .rivanta-hero-metric { min-width:0; }
+  .rivanta-hero-metric-value { font-size:clamp(15px,4.8vw,25px); white-space:nowrap; }
+  .rivanta-hero-metric-label { font-size:clamp(11px,2.9vw,14px); margin-top:.35rem; }
+  .rivanta-about .rivanta-about-column { padding:20px; font-family:'Manrope',sans-serif; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; text-rendering:optimizeLegibility; }
+  .rivanta-about .rivanta-about-column :is(h2,p,[data-about-copy-focus]) { font-family:inherit; }
+  .rivanta-about [data-about-copy-title] { margin:0 0 12px; font-size:20px; font-weight:600; line-height:1.25; letter-spacing:.02em; }
+  .rivanta-about .rivanta-about-body { margin:0; padding:0; gap:10px; }
+  .rivanta-about .rivanta-about-body p { font-size:14px; font-weight:400; line-height:1.5; }
+  .rivanta-about .rivanta-about-network { margin:16px 0 0; padding:12px 0 0; gap:16px; }
+  .rivanta-about [data-about-copy-focus] { max-width:none; font-size:14px; font-weight:500; line-height:1.25; }
+  .rivanta-about .rivanta-about-network-year { flex-shrink:0; font-size:32px; }
+  .rivanta-about .rivanta-about-media { order:-1; height:clamp(180px,30svh,250px); flex-shrink:0; }
+  .rivanta-about .rivanta-about-gallery-viewport { height:100%; aspect-ratio:auto; }
+  .rivanta-about-gallery .rivanta-carousel-arrow { width:44px; height:44px; }
+  .rivanta-about-gallery .rivanta-carousel-arrow[data-carousel-prev] { left:12px; }
+  .rivanta-about-gallery .rivanta-carousel-arrow[data-carousel-next] { right:12px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .rivanta-hero { --hero-scroll-distance-px:100svh; }
+  html { scroll-behavior:auto !important; }
+  .rivanta-hero-opening,.rivanta-hero-final { will-change:auto; }
+  .rivanta-hero-pin { position:relative; }
+}
